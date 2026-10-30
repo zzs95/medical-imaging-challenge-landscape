@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "dfuc-2024",
+    "challenge_name": "DFUC 2024",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Photography"
+      ],
+      "submodality": [
+        "Clinical foot photography"
+      ],
+      "body_region": [
+        "Lower extremity"
+      ],
+      "organ_system": [
+        "Dermatologic"
+      ],
+      "organs_or_structures": [
+        "Foot ulcer regions"
+      ],
+      "diseases": [
+        "Diabetic foot ulcer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Self-supervised instance segmentation of diabetic foot ulcers",
+          "task_family": "Segmentation",
+          "task_subtype": "instance segmentation",
+          "input": [
+            "Foot photograph"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Ulcer mask"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "original_image_count": 2000,
+          "synthetic_image_count": 2000
+        },
+        "validation": {
+          "image_count": 200
+        },
+        "test": {
+          "image_count": 2000
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "agreement-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Signed dataset license agreement and formal email request to the data owners required.",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": false,
+        "submission_artifact": "Segmentation masks"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Other publicly available foot-ulcer segmentation datasets allowed; source must be made available; fully automatic self-supervised solution required."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "mean IoU (mIoU)",
+            "False Negative Error",
+            "False Positive Error"
+          ],
+          "ranking": "Rank by DSC; mIoU then earlier submission timestamp break ties."
+        }
+      ],
+      "cross_task_rule": null,
+      "execution_operator": "Grand Challenge",
+      "execution_mode": "Grand Challenge scores submitted segmentation results",
+      "workflow_evidence": {
+        "date": "2026-10-22",
+        "basis_type": "user_confirmed_submission_and_evaluation_workflow",
+        "summary": "DFUC 2024：上传分割结果，在Grand Challenge平台评分。 依据为2026-10-22用户人工核查反馈。",
+        "independently_verified_in_this_update": false,
+        "qualification": "Human review supplied by user; no new public source independently retrieved. Submission portal, submitted artifact and scoring operator recorded separately; no physical server or automation inferred."
+      }
+    },
+    "submission": {
+      "submission_type": "prediction file",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": [
+        {
+          "task_id": "task1",
+          "format": "Mask image",
+          "content": "0 background, 1 ulcer; filename matches input image"
+        }
+      ],
+      "submission_format": "Segmentation masks",
+      "evaluation_operator": "Grand Challenge",
+      "workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "user_confirmed_submission_and_evaluation_workflow",
+        "summary": "DFUC 2024：上传分割结果，在Grand Challenge平台评分。 依据为2026-10-22用户人工核查反馈。",
+        "independently_verified_in_this_update": false,
+        "qualification": "Human review supplied by user; no new public source independently retrieved. Submission portal, submitted artifact and scoring operator recorded separately; no physical server or automation inferred."
+      }
+    },
+    "schedule": {
+      "training_data_release": "2024-05-31",
+      "validation_data_release": "2024-06-21",
+      "test_data_release": "2024-08-01",
+      "final_submission_deadline": "2024-08-15"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 256,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Validation Stage 2022",
+            "submission_count": 1064
+          },
+          {
+            "official_phase_name": "Testing Phase 2022",
+            "submission_count": 92
+          },
+          {
+            "official_phase_name": "Live Leaderboard 2022",
+            "submission_count": 2406
+          },
+          {
+            "official_phase_name": "Test 2024",
+            "submission_count": 51
+          },
+          {
+            "official_phase_name": "Live 2024",
+            "submission_count": 351
+          },
+          {
+            "official_phase_name": "Validation 2024",
+            "submission_count": 195
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://dfuc2022.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null,
+      "official_website": "https://dfu-challenge.github.io/"
+    },
+    "notes": [
+      "Grand Challenge reuses the dfuc2022 subdomain and contains stale 2022 submission/dataset wording. This record describes DFUC 2024 as named in the source list and confirmed by the organizer site; 2022 dataset counts are not copied into the 2024 edition.",
+      "The 2024 brief supplies dataset counts. Its planned release dates differ from the updated homepage; updated 2024 dates take precedence. Legacy 2022 instructions on the reused platform are not treated as 2024 deadlines.",
+      "Source-list platform_year is 2022; the official challenge edition is 2024. The output directory follows the official edition.",
+      "2026-10-22 最新提交/评价流程人工核查：DFUC 2024：上传分割结果，在Grand Challenge平台评分。 依据为2026-10-22用户人工核查反馈。"
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://dfuc2022.grand-challenge.org/evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/129-27db76ded9fb.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://dfuc2022.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/129-9516722a9688.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dfu-challenge.github.io/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/129-d301920b3d10.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dfuc2022.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/129-overview.json"
+        },
+        {
+          "type": "official organizer publication",
+          "url": "https://dfu-challenge.github.io/docs/DFUC2024%20Challenge%20Brief.pdf",
+          "local_snapshot": "_collection/sources/129-design.pdf",
+          "retrieved_on": "2026-10-02",
+          "supports": [
+            "dataset",
+            "data_access",
+            "data_usage_mode"
+          ]
+        }
+      ],
+      "collection_status": "verified",
+      "unresolved_fields": [],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/dfuc-2024.json",
+          "_collection/verification_20261003/literature_context/dfuc-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "user_confirmed_submission_and_evaluation_workflow",
+          "summary": "DFUC 2024：上传分割结果，在Grand Challenge平台评分。 依据为2026-10-22用户人工核查反馈。",
+          "independently_verified_in_this_update": false,
+          "qualification": "Human review supplied by user; no new public source independently retrieved. Submission portal, submitted artifact and scoring operator recorded separately; no physical server or automation inferred.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/four_submission_hosts_20261022_152726/MICCAI/2024/dfuc-2024.json"
+        }
+      ]
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Photography"
+      ],
+      "harmonized_modalities": [
+        "Clinical photography"
+      ],
+      "video_format_documented": false,
+      "note": "Explicit synonym/group mapping; preserve original clinical_domain labels.",
+      "sources": [
+        {
+          "url": "https://dfuc2022.grand-challenge.org/evaluation/",
+          "local_source": "_collection/sources/129-27db76ded9fb.json"
+        },
+        {
+          "url": "https://dfu-challenge.github.io/",
+          "local_source": "_collection/sources/129-d301920b3d10.json"
+        },
+        {
+          "url": "https://dfuc2022.grand-challenge.org/",
+          "local_source": "_collection/sources/129-overview.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

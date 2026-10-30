@@ -1,0 +1,745 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "drac-2022",
+    "challenge_name": "Diabetic Retinopathy Analysis Challenge MICCAI2022",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2022-09-18",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "OCT"
+      ],
+      "submodality": [
+        "Ultra-wide swept-source OCT angiography"
+      ],
+      "body_region": [
+        "Eye"
+      ],
+      "organ_system": [
+        "Ophthalmic"
+      ],
+      "organs_or_structures": [
+        "Retinal vessels",
+        "Intraretinal microvascular abnormalities",
+        "Nonperfusion areas",
+        "Neovascularization"
+      ],
+      "diseases": [
+        "Diabetic retinopathy"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Quality Assessment",
+        "Classification"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Segmentation of diabetic retinopathy lesions",
+          "task_family": "Segmentation",
+          "task_subtype": "multi-class segmentation",
+          "input": [
+            "UW-OCTA image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Three lesion masks"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Image quality assessment",
+          "task_family": "Quality Assessment",
+          "task_subtype": "ordinal classification",
+          "input": [
+            "UW-OCTA image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Poor / good / excellent quality"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Diabetic retinopathy grading",
+          "task_family": "Classification",
+          "task_subtype": "ordinal classification",
+          "input": [
+            "UW-OCTA image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Non-DR / NPDR / PDR"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "classes": {
+            "1": "Intraretinal microvascular abnormalities",
+            "2": "Nonperfusion areas",
+            "3": "Neovascularization"
+          }
+        },
+        {
+          "task_id": "task2",
+          "classes": {
+            "0": "Poor",
+            "1": "Good",
+            "2": "Excellent"
+          }
+        },
+        {
+          "task_id": "task3",
+          "classes": {
+            "0": "Non-DR",
+            "1": "NPDR",
+            "2": "PDR"
+          }
+        }
+      ],
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits_by_task": {
+        "task1": {
+          "train_image_count": 109,
+          "test_image_count": 65
+        },
+        "task2": {
+          "train_image_count": 665,
+          "test_image_count": 438
+        },
+        "task3": {
+          "train_image_count": 611,
+          "test_image_count": 386
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "registration-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND. 三个任务均明确列 CC BY-NC-ND。",
+      "access_after_challenge": null,
+      "access_scope": "Competition-period data access required registration and signing the challenge rule agreement; later dataset archived on Zenodo.",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": null,
+        "submission_artifact": "prediction file"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Public additional data and publicly pretrained models allowed with paper disclosure."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Intersection of Union (IoU)"
+          ],
+          "ranking": "Mean DSC across labels; mean IoU breaks ties."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "quadratic weighted kappa",
+            "macro-AUC-ovo"
+          ],
+          "ranking": "Quadratic weighted kappa; macro-AUC-ovo breaks ties."
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "quadratic weighted kappa",
+            "macro-AUC-ovo"
+          ],
+          "ranking": "Quadratic weighted kappa; macro-AUC-ovo breaks ties."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "prediction file",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "test_data_release": "2022-08-08",
+      "final_submission_deadline": "2022-09-12"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 1109,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Task 1 Segmentation",
+            "submission_count": 492
+          },
+          {
+            "official_phase_name": "Task 2 Image Quality Assessment",
+            "submission_count": 395
+          },
+          {
+            "official_phase_name": "Task 3 Diabetic Retinopathy Grading",
+            "submission_count": 606
+          },
+          {
+            "official_phase_name": "Task 1 Segmentation - Post Challenge Submission",
+            "submission_count": 220
+          },
+          {
+            "official_phase_name": "Task 2 Image Quality Assessment - Post Challenge Submission",
+            "submission_count": 546
+          },
+          {
+            "official_phase_name": "Task 3 Diabetic Retinopathy Grading - Post Challenge Submission",
+            "submission_count": 454
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://drac22.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": "https://doi.org/10.1016/j.patter.2024.100929"
+    },
+    "notes": [
+      "Training/test sets differ by task; do not sum them as unique patients. Segmentation ground truth corrected on 2022-08-22. Only the latest valid submission determines final ranking."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://drac22.grand-challenge.org/Data/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/117-157f308a6866.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://drac22.grand-challenge.org/Evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/117-1c5e47668c1b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://drac22.grand-challenge.org/post-challenge-submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/117-a7932d3eabf7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://drac22.grand-challenge.org/Rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/117-b3c29794c3c9.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://drac22.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/117-d567342da66f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://drac22.grand-challenge.org/Timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/117-dec0e27456ab.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://drac22.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/117-overview.json"
+        },
+        {
+          "type": "official organizer challenge or dataset paper",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10935505/fullTextXML",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC10935505.json",
+          "title": "DRAC 2022: A public benchmark for diabetic retinopathy analysis on ultra-wide optical coherence tomography angiography images",
+          "supports": [
+            "evaluation.platform",
+            "submission.platform",
+            "data_access.access_scope"
+          ]
+        }
+      ],
+      "collection_status": "verified",
+      "unresolved_fields": [],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10935505/fullTextXML",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC10935505.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer DRAC 2022 paper explicitly describes registered access with challenge-rule agreement and release of test inputs; no generic software license is attributed to the dataset."
+        },
+        "submission.platform": {
+          "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10935505/fullTextXML",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC10935505.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer DRAC 2022 paper explicitly describes registered access with challenge-rule agreement and release of test inputs; no generic software license is attributed to the dataset."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10935505/fullTextXML",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC10935505.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer DRAC 2022 paper explicitly describes registered access with challenge-rule agreement and release of test inputs; no generic software license is attributed to the dataset."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "evaluation.platform",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/drac-2022.json",
+          "_collection/verification_20261003/literature_context/drac-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-ND"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "三个任务均明确列 CC BY-NC-ND。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 3",
+          "text": "CC BY NC ND.",
+          "source": {
+            "url": "https://zenodo.org/api/records/6362349/files/DiabeticRetinopathyAnalysisChallenge2022_03-16-2022_10-21-45.pdf/content",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/37cbf3927bc31eb5.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/6362349/files/DiabeticRetinopathyAnalysisChallenge2022_03-16-2022_10-21-45.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/37cbf3927bc31eb5.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://drac22.grand-challenge.org/Data/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/157f308a6866790a.json",
+          "status": 200
+        },
+        {
+          "url": "https://drac22.grand-challenge.org/Rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/b3c29794c3c9bbe3.json",
+          "status": 200
+        },
+        {
+          "url": "https://drac22.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/6bf684b1f39e2733.json",
+          "status": 200
+        },
+        {
+          "url": "https://drac22.grand-challenge.org/Timeline/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/dec0e27456ab1fff.json",
+          "status": 200
+        },
+        {
+          "url": "https://docs.google.com/document/d/1Q5eEd2llFkdOTawwhqqK87PtFItbSz95",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1113461b5dace3c3.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/api/records/6362349/files/DiabeticRetinopathyAnalysisChallenge2022_03-16-2022_10-21-45.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/37cbf3927bc31eb5.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Observed post-challenge evaluation activity",
+              "summary": "Positive submissions recorded in explicitly named post-challenge or long-term evaluation phases.",
+              "url": "https://drac22.grand-challenge.org/challenge/statistics/",
+              "snapshot": "_collection/sources/117-d567342da66f.json",
+              "scope": "Evidence that the service was used after the competitive phase; cumulative counts do not identify teams or guarantee current acceptance.",
+              "value": [
+                {
+                  "official_phase_name": "Task 1 Segmentation",
+                  "submission_count": 492
+                },
+                {
+                  "official_phase_name": "Task 2 Image Quality Assessment",
+                  "submission_count": 395
+                },
+                {
+                  "official_phase_name": "Task 3 Diabetic Retinopathy Grading",
+                  "submission_count": 606
+                },
+                {
+                  "official_phase_name": "Task 1 Segmentation - Post Challenge Submission",
+                  "submission_count": 220
+                },
+                {
+                  "official_phase_name": "Task 2 Image Quality Assessment - Post Challenge Submission",
+                  "submission_count": 546
+                },
+                {
+                  "official_phase_name": "Task 3 Diabetic Retinopathy Grading - Post Challenge Submission",
+                  "submission_count": 454
+                }
+              ],
+              "excerpt": "",
+              "snapshot_date": "2026-10-02"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "24 lesion-segmentation test-submitting teams.",
+              "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10935505/fullTextXML",
+              "snapshot": "_collection/verification_20261003/papers/PMC10935505.json",
+              "scope": "lesion-segmentation test-submitting teams",
+              "value": {
+                "value": 24,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "semble results of the top three algorithms. In the task of DR lesion segmentation, out of the total 24 teams that submitted the results on the test set, 11 teams submitted method description papers. The average dice similarity coefficient (DSC) of the top ten teams ranged from ",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "45 image-quality submitting teams.",
+              "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10935505/fullTextXML",
+              "snapshot": "_collection/verification_20261003/papers/PMC10935505.json",
+              "scope": "image-quality submitting teams",
+              "value": {
+                "value": 45,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "f the top three methods are shown in Table S1 . In the task of image quality assessment, a total of 45 teams submitted results, and 12 teams submitted method description papers, where the quadratic weighted kappa (QWK) of the top ten teams ranged from 0.7246 to 0.8090. Table S2",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "45 DR-grading submitting teams.",
+              "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10935505/fullTextXML",
+              "snapshot": "_collection/verification_20261003/papers/PMC10935505.json",
+              "scope": "DR-grading submitting teams",
+              "value": {
+                "value": 45,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": " represents the ensemble results of the top three algorithms. In the task of DR grading, a total of 45 teams submitted results, and 13 teams submitted method description papers, where the quadratic weighted kappa of the top ten teams ranged from 0.7157 to 0.8910. Table S3 shows",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "task1 / train_image_count",
+              "value": 109,
+              "unit": "images",
+              "canonical_field": "dataset.splits_by_task.task1.train_image_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task1 / test_image_count",
+              "value": 65,
+              "unit": "images",
+              "canonical_field": "dataset.splits_by_task.task1.test_image_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task2 / train_image_count",
+              "value": 665,
+              "unit": "images",
+              "canonical_field": "dataset.splits_by_task.task2.train_image_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task2 / test_image_count",
+              "value": 438,
+              "unit": "images",
+              "canonical_field": "dataset.splits_by_task.task2.test_image_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task3 / train_image_count",
+              "value": 611,
+              "unit": "images",
+              "canonical_field": "dataset.splits_by_task.task3.train_image_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task3 / test_image_count",
+              "value": 386,
+              "unit": "images",
+              "canonical_field": "dataset.splits_by_task.task3.test_image_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://drac22.grand-challenge.org/Data/",
+              "supports": [
+                "dataset",
+                "labels_and_targets",
+                "data_access"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/117-157f308a6866.json"
+            }
+          ],
+          "source_urls": "https://drac22.grand-challenge.org/Data/; https://drac22.grand-challenge.org/Evaluation/; https://drac22.grand-challenge.org/post-challenge-submission/; https://drac22.grand-challenge.org/Rules/; https://drac22.grand-challenge.org/challenge/statistics/; https://drac22.grand-challenge.org/Timeline/; https://drac22.grand-challenge.org/; https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10935505/fullTextXML; https://doi.org/10.1016/j.patter.2024.100929"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

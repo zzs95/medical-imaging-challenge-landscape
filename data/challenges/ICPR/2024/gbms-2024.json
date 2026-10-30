@@ -1,0 +1,505 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "gbms-2024",
+    "challenge_name": "ICPR 2024 Competition on Segmentation of Pre-Operative and Post-Operative Glioblastoma from MRI",
+    "full_name": "ICPR 2024 Competition on Segmentation of Pre-Operative and Post-Operative Glioblastoma from MRI",
+    "year": 2024,
+    "event": {
+      "conference": "ICPR 2024",
+      "event_type": "challenge"
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "diseases": [
+        "Glioblastoma"
+      ],
+      "submodality": [
+        "T1",
+        "Contrast-enhanced T1",
+        "T2",
+        "FLAIR"
+      ],
+      "body_region": [
+        "Head / brain"
+      ],
+      "clinical_context": "Post-operative glioblastoma segmentation using pre-operative and limited post-operative training data"
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Post-operative glioblastoma segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "source_url": "https://web.archive.org/web/20240901210048/https://gbms2024.in/"
+        }
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Explicit documented task design; no foundation-model objective inferred from participant methods.",
+      "development_access": "Not established",
+      "data_model_flow": "hybrid"
+    },
+    "submission": {
+      "submission_type": "Prediction files (validation); Docker-ready ZIP containing model code, weights, Dockerfile and evaluate.py (final test)",
+      "platform": null,
+      "source_reference": "https://web.archive.org/web/20240901210048/https://gbms2024.in/",
+      "primary_artifacts": [
+        "Validation segmentation predictions",
+        "Final ZIP containing code, model architecture, weights and Docker build files"
+      ],
+      "format_by_task_or_phase": [
+        {
+          "phase": "validation",
+          "artifact": "Predicted segmentation results",
+          "outer_packaging": null,
+          "max_submissions_per_day": 2,
+          "score_feedback": "Registered email"
+        },
+        {
+          "phase": "final test",
+          "archive": ".zip",
+          "required_files": [
+            "Dockerfile",
+            "evaluate.py"
+          ],
+          "required_materials": [
+            "model architecture",
+            "model weights"
+          ],
+          "permitted_file_extensions_examples": [
+            ".py",
+            ".h5",
+            ".pth"
+          ],
+          "input_format": "NIfTI image",
+          "output_format": "NIfTI segmentation",
+          "prebuilt_image_required": false
+        }
+      ],
+      "execution": "Declared protocol: participants submit validation segmentation predictions, with scores returned by email; organizers build and run the final Docker-ready ZIP on hidden test data and score predictions. Email feedback does not establish the delivery channel.",
+      "format_limitations": [
+        "Validation outer packaging not specified.",
+        "Archived submission buttons are placeholders; valid submission endpoint and underlying technical service remain unknown."
+      ],
+      "submission_evidence_status": "User-supplied archived protocol review; format and declared execution established, receiving endpoint and actual runtime records unresolved",
+      "review_source": "latex_sourcev2/data/icpr_delivery_20261025/user_review.json",
+      "review_date": "2026-10-25",
+      "submission_platform": "Not established",
+      "submission_entry": "Not established",
+      "submission_url": null,
+      "submission_status": "Format established; actual delivery endpoint unresolved",
+      "delivery_evidence_status": "User-supplied archive review; no new independent endpoint verification in this update",
+      "delivery_review": {
+        "source_type": "User-supplied documentary review",
+        "local_source": "latex_sourcev2/data/icpr_delivery_20261025/user_review.json",
+        "format_status": "Established",
+        "endpoint_status": "Not established",
+        "execution_infrastructure_status": "Not established",
+        "actual_execution_record_status": "Not independently verified",
+        "excluded_inferences": [
+          "ZIP packaging does not identify the receiving platform.",
+          "Email feedback does not establish email submission.",
+          "ICPR proposal mailbox is not the participant algorithm submission address."
+        ]
+      }
+    },
+    "evaluation": {
+      "platform": null,
+      "metrics": null,
+      "primary_metric": null,
+      "ranking": null,
+      "model_executor": "Participants for validation; organizers for final testing",
+      "scoring_executor": "Organizers",
+      "final_scoring_automated": true,
+      "execution_note": "Declared protocol: participants submit validation segmentation predictions, with scores returned by email; organizers build and run the final Docker-ready ZIP on hidden test data and score predictions. Email feedback does not establish the delivery channel.",
+      "source_reference": "https://web.archive.org/web/20240901210048/https://gbms2024.in/",
+      "evaluation_execution": "Organizer-side Docker inference (declared final)",
+      "execution_evidence_scope": "Declared competition protocol; actual runtime infrastructure and execution records not independently verified"
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "sequences": [
+        "T1",
+        "Contrast-enhanced T1",
+        "T2",
+        "FLAIR"
+      ],
+      "quantity_unit": "cases",
+      "training": {
+        "cases": 60,
+        "case_types": [
+          "pre-operative",
+          "post-operative"
+        ],
+        "annotations_provided": true,
+        "postoperative_followup": "At least one follow-up"
+      },
+      "validation": {
+        "cases": 30,
+        "case_types": [
+          "pre-operative",
+          "post-operative"
+        ],
+        "annotations_provided": false,
+        "postoperative_followup": "At least one follow-up"
+      },
+      "testing": {
+        "cases": 20,
+        "case_types": [
+          "post-operative"
+        ]
+      },
+      "patient_and_followup_separation_across_splits": null,
+      "unique_patient_total": null,
+      "independence_note": "Cases are retained in their reported unit; patient/follow-up independence across splits is not stated. No unique-patient total inferred.",
+      "source_reference": "https://web.archive.org/web/20240901210048/https://gbms2024.in/"
+    },
+    "data_access": {
+      "access_status": "Not established",
+      "review_status": "Reviewed 2026-10-24",
+      "public_download": null,
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_or_terms": null,
+      "license_review_status": "Not established",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "same_edition_subtasks_counted_separately": false
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; formal manuscript not regenerated",
+      "reason": "Official identity and major edition-specific protocol confirmed by human review of two archived official pages. Unspecified metric names do not prevent inclusion."
+    },
+    "provenance": {
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official source cited in human review",
+          "url": "https://icpr2024.org/competitions.html",
+          "review_record": "_collection/portal_classification_review_20261024/user_review.txt"
+        },
+        {
+          "type": "Official source cited in human review",
+          "url": "https://gbms2024.in/",
+          "review_record": "_collection/portal_classification_review_20261024/user_review.txt"
+        },
+        {
+          "type": "Archived official protocol cited in human review",
+          "url": "https://web.archive.org/web/20240901210048/https://gbms2024.in/",
+          "review_record": "_collection/gbms_archive_review_20261024/user_review.txt",
+          "reviewed_on": "2026-10-24"
+        },
+        {
+          "type": "Archived official protocol cited in human review",
+          "url": "https://web.archive.org/web/20250108201010/https://gbms2024.in/",
+          "review_record": "_collection/gbms_archive_review_20261024/user_review.txt",
+          "reviewed_on": "2026-10-24"
+        }
+      ],
+      "unresolved_fields": [
+        "specific evaluation metrics, primary metric and ranking aggregation",
+        "valid submission endpoint and technical service",
+        "validation prediction packaging",
+        "patient and follow-up independence across dataset splits",
+        "harmonized data access, licensing, centers, reuse and participation"
+      ],
+      "gbms_archive_review": {
+        "review_date": "2026-10-24",
+        "local_review": "_collection/gbms_archive_review_20261024/user_review.txt",
+        "archive_dates": [
+          "2024-09-01",
+          "2025-01-08"
+        ],
+        "versions_consistent": "Reported by user",
+        "basis": "User-provided source-linked human review",
+        "independent_archive_access_this_turn": false
+      }
+    },
+    "notes": [
+      "Training/validation/test sizes are 60/30/20 cases; test cases are post-operative only.",
+      "No CIAS metric names, preprocessing rules or submission infrastructure are inferred.",
+      "The recorded protocol is not an independent audit of model execution or final scores."
+    ],
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Not established",
+        "state": "Not established",
+        "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Retained source-linked human review",
+          "local_source": "_collection/portal_classification_review_20261024/user_review.txt",
+          "url": "https://icpr2024.org/competitions.html",
+          "excerpt": "已逐项核对。**10 项中，8 项的提交入口可以补上；SFR/JFR 2022、2023 的结果递交入口仍需保留“未公开确认”。** 分类方面，RSNA Knee 的文本仅用于训练；两场 BraTS-GoAT 2024 属于不同轮次，不能直接合并。\n\n下面区分提交入口、模型执行方与评分方，均按对应年份记录。\n\n| 赛事 | 提交到哪里、提交什么 | 谁运行模型 | 谁计算指标／评估服务 |\n|---|---|---|---|\n| **ImageCLEFmedical Caption 2023** | **Sciebo 文件投递目录**；预测结果 CSV＋方法说明 TXT。私有 GitHub 提供数据及说明，不是评分入口。 | 参赛者自行推理，提交预测结果。 | **组织者运行评价脚本**，计算概念 F1、caption BERTScore 等。Sciebo 负责收文件；当年没有沿用 AIcrowd 实时显示分数的方式。[ceur-ws.org](https://ceur-ws.org/Vol-3497/paper-128.pdf?utm_source=chatgpt.com) |\n| **ImageCLEFmedical GANs 2025** | **AI4MediaBench**；两个任务均提交 ZIP，内含无表头的 `run.csv`，分别填写成员身份预测或来源子集标签。 | 参赛者自行运行预测模型。 | 平台承载组织者评分程序；Task 1 主指标为 Cohen’s κ，Task 2 为 accuracy。应记为“预测文件提交＋平台评分”。[Multimedia Retrieval in CLEF](https://www.imageclef.org/2025?utm_source=chatgpt.com) |\n| **ImageCLEFmedical GANs 2026** | **AI4MediaBench**。Task 1/2 交预测文件；Task 3 正式测试交合成图像、checkpoint 和可运行代码，具体见下文。 | Task 1/2 由参赛者推理；Task 3 由参赛者先生成图像，组织者还会加载生成器进行隐私攻击评估。 | 平台评分程序／组织者评估流程。Task 3 包含质量和隐私评价，不能整体归成“只交预测文件”。[Multimedia Retrieval in CLEF](https://www.imageclef.org/2026?utm_source=chatgpt.com) |\n| **ImageCLEFmedical MedVQA-GI 2024** | **邮件发送至 `steven@simula.no`**。Task 1 交每个指定 prompt 对应的生成图像；Task 2 交模型＋prompts，按类别组织。 | Task 1 参赛者生成；Task 2 **组织者使用提交模型和 prompts 生成图像**。 | 组织者开展图像质量、下游分类及评审委员会评价。未公开独立评分服务名称。[Multimedia Retrieval in CLEF](https://www.imageclef.org/2024/medical/vqa?utm_source=chatgpt.com) |\n| **ImageCLEFmedical MedVQA-GI 2025** | **Hugging Face 模型仓库＋`medvqa` 提交命令＋官方 HF Space 登记**。仓库包含模型、`submission_task1.py` 或 `submission_task2.py`，必要时附 `requirements.txt`。 | 组织者取得仓库访问权限，按接口加载模型进行正式评价；参赛者提交前自行验证。 | 组织者评价流程：Task 1 回答指标，Task 2 合成图像指标及专家评价。**HF 仓库／Space 的存在不能证明计算在 HF 云端执行。**[🇪🇸 CLEF 2025, Madrid · GitHub](https://github.com/simula/ImageCLEFmed-MEDVQA-GI-2025?utm_source=chatgpt.com) |\n| **ImageCLEFmedical MedVQA-GI 2026** | Task 1：**HF 模型仓库＋`medvqa` 登记**。Task 2：**邮件**交 `<TeamName>_task2.zip`，内含 JSONL 回答／解释、团队信息脚本及说明。 | Task 1 组织者加载模型；Task 2 参赛者生成答案与解释后提交。 | 组织者评价。官方明确说明本任务**不使用 AI4MediaBench**。Task 2 的 `.py` 是团队元数据文件，不能因此归成“代码执行提交”。[GitHub](https://github.com/simula/ImageCLEFmed-MEDVQA-GI-2026?utm_source=chatgpt.com) |\n| **COV19D 2023** | **邮件发送至 `d.kollias@qmul.ac.uk`**；交测试预测、GitHub 源代码链接及 arXiv 方法论文链接。 | 参赛者自行推理；前三名另交训练好的模型，供组织者核验。 | 组织者根据隐藏测试标签计算 **macro-F1** 并排名；未公开自动评分服务名称。**CMT 是论文投稿入口。**[mlearn.lincoln.ac.uk](https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/?utm_source=chatgpt.com) |\n| **MSLesSeg 2024** | **邮件发送至 `alessia.rondinella@phd.unict.it`**，邮件中提供可下载仓库链接；文件为 `TEAMNAME.zip`，含 `MASKS/Px_PRED.nii.gz` 和 `DESC/` 内的方法 PDF。 | 参赛者自行完成分割推理。 | 组织者对提交掩膜计算 Dice；官网提供 `DICE_EVAL` 供一致性检查。没有证据支持填写 Grand Challenge、CodaLab 或容器执行平台。[unict.it](https://iplab.dmi.unict.it/mfs/ms-les-seg/?utm_source=chatgpt.com) |\n| **SFR/JFR Data Challenge 2022** | **结果递交入口未公开确认**。HDS 平台用于数据托管／分发，不能直接填为结果提交或评分入口。 | **参赛者运行推理已明确**：组织者向队伍释放加密测试数据及解密密钥，测试批次用于参赛队推理。 | 赛事方依据分类和回归指标评定成绩；具体评分软件／服务名称未确认。[ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S2211568423001183?utm_source=chatgpt.com) |\n| **SFR/JFR Data Challenge 2023** | **结果递交入口未公开确认**。论文只明确 HDS 认证平台分发数据，包括内部、外部评估集。 | 本次取得的公开材料**没有明确说明正式推理运行环境及执行方**，不沿用 2022 年协议。 | 论文报告以 sensitivity、precision、AUC 的加权指标排名；具体评分执行服务未公开确认。[pubmed.ncbi.nlm.nih.gov](https://pubmed.ncbi.nlm.nih.gov/39048455/?utm_source=chatgpt.com) |\n\nGANs 2026 Task 3 的[平台提交协议](https://ai4media-bench.aimultimedialab.ro/api/competitions/5/)还明确要求：`synthetic_dir/` 中放 **5,000 张 256×256 灰度 PNG**，同时提交 `checkpoint.pt`／`.pth`、`model.py`、`load_model.py`、`requirements.txt` 及模型元数据。因此建议编码为 **“生成结果＋模型权重＋代码，组织者补充执行评估”**，不编码为参赛者提交容器。\n\nRSNA Knee 2026 的阶段关系已经可以明确：\n\n| 阶段 | 文本的用途 | 分类含义 |\n|---|---|---|\n| 训练 | 影像与原始放射学报告配对提供，支持从影像和报告共同学习。 | 可以标记为**视觉—语言训练／报告监督**目标。 |\n| 正式测试 | 官方明确：**不提供 `Report` 字段**。模型预测 12 类膝关节异常的置信度。 | 正式评估的是影像异常识别，不能写成测试时图文联合输入。 |\n| 评分 | 以 12 类异常的 macro-AUC 评分。 | 没有独立报告生成、VQA 或图文检索评价。 |\n\n上述依据分别来自官方任务描述和数据说明。**如果你的“视觉—语言”统计要求直接评价跨模态能力，应将它单列为“训练阶段使用文本”，不计入直接跨模态专项评价；如果统计官方训练目标，则可以保留该标签并注明阶段。**[Kaggle](https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/data?select=test_series\\&utm_source=chatgpt.com)\n\nImageCLEF Caption 的影像模态建议逐年填写如下。这里记录的是赛事数据的模态范围，不代表同一病例同时具有所有模态，也不代表这些模态都有独立测试成绩。\n\n| 年份 | 建议填写的具体影像模态 | 证据与限制 |\n|---|---|---|\n| **2022** | **X-ray、CT、MRI、超声、PET、组合模态（如 PET/CT）** | 当届组织者论文明确列出这六类模态概念；不把后续 ROCOv2 的七类清单直接回填至 2022。[repository.essex.ac.uk](https://repository.essex.ac.uk/33424/1/paper-95.pdf?utm_source=chatgpt.com) |\n| **2023** | **X-ray、CT、MRI、超声、PET、血管造影、组合模态（如 PET/CT）** | 当届论文评价章节明确列出七类，且使用 ROCOv2。需保留小注：数据创建章节仍写“六类”且未列血管造影，章节之间存在列举差异。[ceur-ws.org](https://ceur-ws.org/Vol-3497/paper-108.pdf?utm_source=chatgpt.com) |\n| **2024** | **X-ray、CT、MRI、超声、PET、血管造影、组合模态（如 PET/CT）** | 官网确认采用 ROCOv2 开发数据；七类范围来自该数据集的正式说明。新测试集各模态数量未逐项确认。[Multimedia Retrieval in CLEF](https://www.imageclef.org/2024/medical/caption?utm_source=chatgpt.com) |\n| **2025** | **X-ray、CT、MRI、超声、PET、血管造影、组合模态（如 PET/CT）** | 官网明确使用扩展版 ROCOv2；可记录上述数据来源范围，不能据此声称各模态都有独立成绩。[Multimedia Retrieval in CLEF](https://www.imageclef.org/2025/medical/caption?utm_source=chatgpt.com) |\n| **2026** | **X-ray、CT、MRI、超声、PET、血管造影、组合模态（如 PET/CT）** | 官网继续指向 ROCOv2。新增 synthetic 子任务指**生成的新 captions 及其派生 concepts**，不能据此增加“合成影像模态”。[Multimedia Retrieval in CLEF](https://www.imageclef.org/2026/medical/caption?utm_source=chatgpt.com) |\n\n其余身份与去重问题：\n\n| 项目 | 核查结果 | 建议处理 |\n|---|---|---|\n| **ISBI BraTS-GoAT 与 MICCAI BraTS-GoAT 2024** | **不同轮次。** 在 MICCAI BraTS 2024 官方论坛，有人明确询问已关闭的 ISBI GoAT 是否就是当前比赛；组织者回复：该链接对应已结束的 ISBI 2024，当前赛事须另行注册至 BraTS 2024 项目。 | **不要因名称相同而合并。** 按竞赛轮次统计时分开；若 MICCAI GoAT 已包含在“BraTS 2024”总条目中，则避免再次作为独立赛事加计。[synapse.org](https://www.synapse.org/Synapse%3Asyn53708249/discussion/threadId%3D11234?utm_source=chatgpt.com) |\n| **GBMS 2024** | 正式名称为 **ICPR 2024 Competition on Segmentation of Pre-Operative and Post-Operative Glioblastoma from MRI**，ICPR 官方目录单独列出，链接为 `gbms2024.in`。但原站当前无法正常读取，未取得可靠的提交、测试划分和评分协议。 | **身份可确认，协议仍待补。** 可建立独立候选记录；不能套用 CIAS 或 BraTS 的容器协议。[icpr2024.org](https://icpr2024.org/competitions.html?utm_source=chatgpt.com) |\n| **CIAS 2024** | 正式为 **ICPR 2024 Competition on Intracranial Aneurysm Segmentation**。TOF-MRA 二分类分割；40 例训练、10 例隐藏测试。官网要求上传 ZIP，含 `Dockerfile`、`evaluate.py`、模型结构和权重，由组织者运行，计算 Dice、HD95、volumetric similarity。 | **身份与协议缺口均可关闭。** 记为“代码＋权重，以 Docker 构建协议提交；组织者执行与评分”。GBMS 与 CIAS 是官方目录中的两个独立赛事。[cias2024.in](https://cias2024.in/?utm_source=chatgpt.com) |\n| **MILK10k 2025** | 官方落地页称 **MILK10k Benchmark**；2025 年 ISIC 工作坊将其列在公共数据集／benchmark 部分。它有隐藏测试集、预测 CSV 提交及自动评分，但本次未找到另一个具有固定赛期、截止日期和独立奖项的“2025 年竞赛轮次”。 | 建议记为**2025 年发布的持续开放 benchmark**。若论文只统计有明确赛期的 challenge，继续不计入赛事分母；可列入补充 benchmark 表。工作坊论文截止日期不能当作其竞赛截止日期。[challenge.isic-archive.com](https://challenge.isic-archive.com/landing/milk10k/?utm_source=chatgpt.com) |\n\n目前应继续保留的实质缺口是：**SFR/JFR 两年的结果递交入口与评分服务、2023 年正式推理执行方，以及 GBMS 2024 的详细赛事协议。** 这些字段不能用同系列往届或相邻赛事的信息补齐。"
+        },
+        {
+          "section": "Retained source-linked human review",
+          "local_source": "_collection/portal_classification_review_20261024/user_review.txt",
+          "url": "https://gbms2024.in/",
+          "excerpt": "已逐项核对。**10 项中，8 项的提交入口可以补上；SFR/JFR 2022、2023 的结果递交入口仍需保留“未公开确认”。** 分类方面，RSNA Knee 的文本仅用于训练；两场 BraTS-GoAT 2024 属于不同轮次，不能直接合并。\n\n下面区分提交入口、模型执行方与评分方，均按对应年份记录。\n\n| 赛事 | 提交到哪里、提交什么 | 谁运行模型 | 谁计算指标／评估服务 |\n|---|---|---|---|\n| **ImageCLEFmedical Caption 2023** | **Sciebo 文件投递目录**；预测结果 CSV＋方法说明 TXT。私有 GitHub 提供数据及说明，不是评分入口。 | 参赛者自行推理，提交预测结果。 | **组织者运行评价脚本**，计算概念 F1、caption BERTScore 等。Sciebo 负责收文件；当年没有沿用 AIcrowd 实时显示分数的方式。[ceur-ws.org](https://ceur-ws.org/Vol-3497/paper-128.pdf?utm_source=chatgpt.com) |\n| **ImageCLEFmedical GANs 2025** | **AI4MediaBench**；两个任务均提交 ZIP，内含无表头的 `run.csv`，分别填写成员身份预测或来源子集标签。 | 参赛者自行运行预测模型。 | 平台承载组织者评分程序；Task 1 主指标为 Cohen’s κ，Task 2 为 accuracy。应记为“预测文件提交＋平台评分”。[Multimedia Retrieval in CLEF](https://www.imageclef.org/2025?utm_source=chatgpt.com) |\n| **ImageCLEFmedical GANs 2026** | **AI4MediaBench**。Task 1/2 交预测文件；Task 3 正式测试交合成图像、checkpoint 和可运行代码，具体见下文。 | Task 1/2 由参赛者推理；Task 3 由参赛者先生成图像，组织者还会加载生成器进行隐私攻击评估。 | 平台评分程序／组织者评估流程。Task 3 包含质量和隐私评价，不能整体归成“只交预测文件”。[Multimedia Retrieval in CLEF](https://www.imageclef.org/2026?utm_source=chatgpt.com) |\n| **ImageCLEFmedical MedVQA-GI 2024** | **邮件发送至 `steven@simula.no`**。Task 1 交每个指定 prompt 对应的生成图像；Task 2 交模型＋prompts，按类别组织。 | Task 1 参赛者生成；Task 2 **组织者使用提交模型和 prompts 生成图像**。 | 组织者开展图像质量、下游分类及评审委员会评价。未公开独立评分服务名称。[Multimedia Retrieval in CLEF](https://www.imageclef.org/2024/medical/vqa?utm_source=chatgpt.com) |\n| **ImageCLEFmedical MedVQA-GI 2025** | **Hugging Face 模型仓库＋`medvqa` 提交命令＋官方 HF Space 登记**。仓库包含模型、`submission_task1.py` 或 `submission_task2.py`，必要时附 `requirements.txt`。 | 组织者取得仓库访问权限，按接口加载模型进行正式评价；参赛者提交前自行验证。 | 组织者评价流程：Task 1 回答指标，Task 2 合成图像指标及专家评价。**HF 仓库／Space 的存在不能证明计算在 HF 云端执行。**[🇪🇸 CLEF 2025, Madrid · GitHub](https://github.com/simula/ImageCLEFmed-MEDVQA-GI-2025?utm_source=chatgpt.com) |\n| **ImageCLEFmedical MedVQA-GI 2026** | Task 1：**HF 模型仓库＋`medvqa` 登记**。Task 2：**邮件**交 `<TeamName>_task2.zip`，内含 JSONL 回答／解释、团队信息脚本及说明。 | Task 1 组织者加载模型；Task 2 参赛者生成答案与解释后提交。 | 组织者评价。官方明确说明本任务**不使用 AI4MediaBench**。Task 2 的 `.py` 是团队元数据文件，不能因此归成“代码执行提交”。[GitHub](https://github.com/simula/ImageCLEFmed-MEDVQA-GI-2026?utm_source=chatgpt.com) |\n| **COV19D 2023** | **邮件发送至 `d.kollias@qmul.ac.uk`**；交测试预测、GitHub 源代码链接及 arXiv 方法论文链接。 | 参赛者自行推理；前三名另交训练好的模型，供组织者核验。 | 组织者根据隐藏测试标签计算 **macro-F1** 并排名；未公开自动评分服务名称。**CMT 是论文投稿入口。**[mlearn.lincoln.ac.uk](https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/?utm_source=chatgpt.com) |\n| **MSLesSeg 2024** | **邮件发送至 `alessia.rondinella@phd.unict.it`**，邮件中提供可下载仓库链接；文件为 `TEAMNAME.zip`，含 `MASKS/Px_PRED.nii.gz` 和 `DESC/` 内的方法 PDF。 | 参赛者自行完成分割推理。 | 组织者对提交掩膜计算 Dice；官网提供 `DICE_EVAL` 供一致性检查。没有证据支持填写 Grand Challenge、CodaLab 或容器执行平台。[unict.it](https://iplab.dmi.unict.it/mfs/ms-les-seg/?utm_source=chatgpt.com) |\n| **SFR/JFR Data Challenge 2022** | **结果递交入口未公开确认**。HDS 平台用于数据托管／分发，不能直接填为结果提交或评分入口。 | **参赛者运行推理已明确**：组织者向队伍释放加密测试数据及解密密钥，测试批次用于参赛队推理。 | 赛事方依据分类和回归指标评定成绩；具体评分软件／服务名称未确认。[ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S2211568423001183?utm_source=chatgpt.com) |\n| **SFR/JFR Data Challenge 2023** | **结果递交入口未公开确认**。论文只明确 HDS 认证平台分发数据，包括内部、外部评估集。 | 本次取得的公开材料**没有明确说明正式推理运行环境及执行方**，不沿用 2022 年协议。 | 论文报告以 sensitivity、precision、AUC 的加权指标排名；具体评分执行服务未公开确认。[pubmed.ncbi.nlm.nih.gov](https://pubmed.ncbi.nlm.nih.gov/39048455/?utm_source=chatgpt.com) |\n\nGANs 2026 Task 3 的[平台提交协议](https://ai4media-bench.aimultimedialab.ro/api/competitions/5/)还明确要求：`synthetic_dir/` 中放 **5,000 张 256×256 灰度 PNG**，同时提交 `checkpoint.pt`／`.pth`、`model.py`、`load_model.py`、`requirements.txt` 及模型元数据。因此建议编码为 **“生成结果＋模型权重＋代码，组织者补充执行评估”**，不编码为参赛者提交容器。\n\nRSNA Knee 2026 的阶段关系已经可以明确：\n\n| 阶段 | 文本的用途 | 分类含义 |\n|---|---|---|\n| 训练 | 影像与原始放射学报告配对提供，支持从影像和报告共同学习。 | 可以标记为**视觉—语言训练／报告监督**目标。 |\n| 正式测试 | 官方明确：**不提供 `Report` 字段**。模型预测 12 类膝关节异常的置信度。 | 正式评估的是影像异常识别，不能写成测试时图文联合输入。 |\n| 评分 | 以 12 类异常的 macro-AUC 评分。 | 没有独立报告生成、VQA 或图文检索评价。 |\n\n上述依据分别来自官方任务描述和数据说明。**如果你的“视觉—语言”统计要求直接评价跨模态能力，应将它单列为“训练阶段使用文本”，不计入直接跨模态专项评价；如果统计官方训练目标，则可以保留该标签并注明阶段。**[Kaggle](https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/data?select=test_series\\&utm_source=chatgpt.com)\n\nImageCLEF Caption 的影像模态建议逐年填写如下。这里记录的是赛事数据的模态范围，不代表同一病例同时具有所有模态，也不代表这些模态都有独立测试成绩。\n\n| 年份 | 建议填写的具体影像模态 | 证据与限制 |\n|---|---|---|\n| **2022** | **X-ray、CT、MRI、超声、PET、组合模态（如 PET/CT）** | 当届组织者论文明确列出这六类模态概念；不把后续 ROCOv2 的七类清单直接回填至 2022。[repository.essex.ac.uk](https://repository.essex.ac.uk/33424/1/paper-95.pdf?utm_source=chatgpt.com) |\n| **2023** | **X-ray、CT、MRI、超声、PET、血管造影、组合模态（如 PET/CT）** | 当届论文评价章节明确列出七类，且使用 ROCOv2。需保留小注：数据创建章节仍写“六类”且未列血管造影，章节之间存在列举差异。[ceur-ws.org](https://ceur-ws.org/Vol-3497/paper-108.pdf?utm_source=chatgpt.com) |\n| **2024** | **X-ray、CT、MRI、超声、PET、血管造影、组合模态（如 PET/CT）** | 官网确认采用 ROCOv2 开发数据；七类范围来自该数据集的正式说明。新测试集各模态数量未逐项确认。[Multimedia Retrieval in CLEF](https://www.imageclef.org/2024/medical/caption?utm_source=chatgpt.com) |\n| **2025** | **X-ray、CT、MRI、超声、PET、血管造影、组合模态（如 PET/CT）** | 官网明确使用扩展版 ROCOv2；可记录上述数据来源范围，不能据此声称各模态都有独立成绩。[Multimedia Retrieval in CLEF](https://www.imageclef.org/2025/medical/caption?utm_source=chatgpt.com) |\n| **2026** | **X-ray、CT、MRI、超声、PET、血管造影、组合模态（如 PET/CT）** | 官网继续指向 ROCOv2。新增 synthetic 子任务指**生成的新 captions 及其派生 concepts**，不能据此增加“合成影像模态”。[Multimedia Retrieval in CLEF](https://www.imageclef.org/2026/medical/caption?utm_source=chatgpt.com) |\n\n其余身份与去重问题：\n\n| 项目 | 核查结果 | 建议处理 |\n|---|---|---|\n| **ISBI BraTS-GoAT 与 MICCAI BraTS-GoAT 2024** | **不同轮次。** 在 MICCAI BraTS 2024 官方论坛，有人明确询问已关闭的 ISBI GoAT 是否就是当前比赛；组织者回复：该链接对应已结束的 ISBI 2024，当前赛事须另行注册至 BraTS 2024 项目。 | **不要因名称相同而合并。** 按竞赛轮次统计时分开；若 MICCAI GoAT 已包含在“BraTS 2024”总条目中，则避免再次作为独立赛事加计。[synapse.org](https://www.synapse.org/Synapse%3Asyn53708249/discussion/threadId%3D11234?utm_source=chatgpt.com) |\n| **GBMS 2024** | 正式名称为 **ICPR 2024 Competition on Segmentation of Pre-Operative and Post-Operative Glioblastoma from MRI**，ICPR 官方目录单独列出，链接为 `gbms2024.in`。但原站当前无法正常读取，未取得可靠的提交、测试划分和评分协议。 | **身份可确认，协议仍待补。** 可建立独立候选记录；不能套用 CIAS 或 BraTS 的容器协议。[icpr2024.org](https://icpr2024.org/competitions.html?utm_source=chatgpt.com) |\n| **CIAS 2024** | 正式为 **ICPR 2024 Competition on Intracranial Aneurysm Segmentation**。TOF-MRA 二分类分割；40 例训练、10 例隐藏测试。官网要求上传 ZIP，含 `Dockerfile`、`evaluate.py`、模型结构和权重，由组织者运行，计算 Dice、HD95、volumetric similarity。 | **身份与协议缺口均可关闭。** 记为“代码＋权重，以 Docker 构建协议提交；组织者执行与评分”。GBMS 与 CIAS 是官方目录中的两个独立赛事。[cias2024.in](https://cias2024.in/?utm_source=chatgpt.com) |\n| **MILK10k 2025** | 官方落地页称 **MILK10k Benchmark**；2025 年 ISIC 工作坊将其列在公共数据集／benchmark 部分。它有隐藏测试集、预测 CSV 提交及自动评分，但本次未找到另一个具有固定赛期、截止日期和独立奖项的“2025 年竞赛轮次”。 | 建议记为**2025 年发布的持续开放 benchmark**。若论文只统计有明确赛期的 challenge，继续不计入赛事分母；可列入补充 benchmark 表。工作坊论文截止日期不能当作其竞赛截止日期。[challenge.isic-archive.com](https://challenge.isic-archive.com/landing/milk10k/?utm_source=chatgpt.com) |\n\n目前应继续保留的实质缺口是：**SFR/JFR 两年的结果递交入口与评分服务、2023 年正式推理执行方，以及 GBMS 2024 的详细赛事协议。** 这些字段不能用同系列往届或相邻赛事的信息补齐。"
+        },
+        {
+          "section": "Retained source-linked human review",
+          "local_source": "_collection/gbms_archive_review_20261024/user_review.txt",
+          "url": "https://web.archive.org/web/20240901210048/https://gbms2024.in/",
+          "excerpt": "GBMS 2024 人工核查补充（2026-10-24，用户提供）\n来源：\nhttps://web.archive.org/web/20240901210048/https://gbms2024.in/\nhttps://web.archive.org/web/20250108201010/https://gbms2024.in/\n用户核对上述两份官网存档，报告两版协议一致。\n验证阶段提交预测分割结果，每天最多两次，评分通过注册邮箱反馈；外层打包格式未明确。\n最终测试上传ZIP，含Dockerfile、evaluate.py、模型结构及权重；允许.py、.h5、.pth等文件。组织者构建并运行Docker方法，输入NIfTI影像、输出NIfTI分割，自动计算测试指标；不是预构建镜像提交。\n训练60例、验证30例：均混合术前/术后病例，术后病例至少一次随访；训练有标注、验证无标注。测试20例，仅含术后病例。病例/患者及随访是否严格跨集合隔离未说明，不能推导110名独立患者。\n输入MRI序列为T1、增强T1、T2、FLAIR；主要评价术后胶质母细胞瘤分割。\n官网仅称evaluation metrics，未列指标名称、主指标或排名聚合公式，不套用CIAS指标。\n提交按钮为占位链接，有效后台网址及技术服务名称未明确。\n本轮工具未能直接访问两份Wayback存档；按用户提供的来源关联核查写入，未标注为本轮独立网页验证。\n"
+        },
+        {
+          "section": "Retained source-linked human review",
+          "local_source": "_collection/gbms_archive_review_20261024/user_review.txt",
+          "url": "https://web.archive.org/web/20250108201010/https://gbms2024.in/",
+          "excerpt": "GBMS 2024 人工核查补充（2026-10-24，用户提供）\n来源：\nhttps://web.archive.org/web/20240901210048/https://gbms2024.in/\nhttps://web.archive.org/web/20250108201010/https://gbms2024.in/\n用户核对上述两份官网存档，报告两版协议一致。\n验证阶段提交预测分割结果，每天最多两次，评分通过注册邮箱反馈；外层打包格式未明确。\n最终测试上传ZIP，含Dockerfile、evaluate.py、模型结构及权重；允许.py、.h5、.pth等文件。组织者构建并运行Docker方法，输入NIfTI影像、输出NIfTI分割，自动计算测试指标；不是预构建镜像提交。\n训练60例、验证30例：均混合术前/术后病例，术后病例至少一次随访；训练有标注、验证无标注。测试20例，仅含术后病例。病例/患者及随访是否严格跨集合隔离未说明，不能推导110名独立患者。\n输入MRI序列为T1、增强T1、T2、FLAIR；主要评价术后胶质母细胞瘤分割。\n官网仅称evaluation metrics，未列指标名称、主指标或排名聚合公式，不套用CIAS指标。\n提交按钮为占位链接，有效后台网址及技术服务名称未明确。\n本轮工具未能直接访问两份Wayback存档；按用户提供的来源关联核查写入，未标注为本轮独立网页验证。\n"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/gbms-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "local_source": "latex_sourcev2/data/icpr_delivery_20261025/user_review.json",
+          "url": "",
+          "section": "User-supplied CIAS/GBMS delivery-endpoint audit"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-25 access completion: 官网存档有数据划分和提交协议，但数据/提交按钮占位，缺少有效数据准入规则。"
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Not established",
+        "rationale": "官网存档有数据划分和提交协议，但数据/提交按钮占位，缺少有效数据准入规则。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/e4b2e54b0778e34f.json",
+          "_collection/access_completion_20261025/sources/a854df45f4cd8aaf.json",
+          "_collection/access_completion_20261025/sources/c8cbaccc50041110.json"
+        ]
+      }
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 60,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 30,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 20,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Not established",
+          "value": null
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Prior source-linked human review of 2024/2025 official archives retained. Postoperative-only test; no center/geography/team values added.",
+      "sources": [
+        {
+          "url": "https://icpr2024.org/competitions.html",
+          "local_source": "_collection/portal_classification_review_20261024/user_review.txt"
+        },
+        {
+          "url": "https://gbms2024.in/",
+          "local_source": "_collection/portal_classification_review_20261024/user_review.txt"
+        },
+        {
+          "url": "https://web.archive.org/web/20240901210048/https://gbms2024.in/",
+          "local_source": "_collection/gbms_archive_review_20261024/user_review.txt"
+        },
+        {
+          "url": "https://web.archive.org/web/20250108201010/https://gbms2024.in/",
+          "local_source": "_collection/gbms_archive_review_20261024/user_review.txt"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/gbms-2024.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/gbms-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "submission_history": [
+      {
+        "superseded_on": "2026-10-25",
+        "record": {
+          "submission_type": "Prediction files (validation); code and weights with Docker build files (final test)",
+          "platform": null,
+          "source_reference": "https://web.archive.org/web/20240901210048/https://gbms2024.in/",
+          "primary_artifacts": [
+            "Validation segmentation predictions",
+            "Final ZIP containing code, model architecture, weights and Docker build files"
+          ],
+          "format_by_task_or_phase": [
+            {
+              "phase": "validation",
+              "artifact": "Predicted segmentation results",
+              "outer_packaging": null,
+              "max_submissions_per_day": 2,
+              "score_feedback": "Registered email"
+            },
+            {
+              "phase": "final test",
+              "archive": ".zip",
+              "required_files": [
+                "Dockerfile",
+                "evaluate.py"
+              ],
+              "required_materials": [
+                "model architecture",
+                "model weights"
+              ],
+              "permitted_file_extensions_examples": [
+                ".py",
+                ".h5",
+                ".pth"
+              ],
+              "input_format": "NIfTI image",
+              "output_format": "NIfTI segmentation",
+              "prebuilt_image_required": false
+            }
+          ],
+          "execution": "Organizers build and run the submitted Docker method and automatically score test predictions; validation uses participant predictions.",
+          "format_limitations": [
+            "Validation outer packaging not specified.",
+            "Archived submission buttons are placeholders; valid submission endpoint and underlying technical service remain unknown."
+          ],
+          "submission_evidence_status": "Human-reviewed archived edition protocol; runtime execution not independently audited",
+          "review_source": "_collection/gbms_archive_review_20261024/user_review.txt",
+          "review_date": "2026-10-24"
+        }
+      }
+    ],
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Not established",
+      "terms_documented": false,
+      "detail_level": "Not established",
+      "licence_names": [],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "已复查官网存档：明确提交及评估流程，但没有取得数据许可/使用协议正文；Docker 或 ZIP 提交规则不能证明数据再利用权限。",
+      "qualifications": [],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "local_source": "_collection/portal_classification_review_20261024/user_review.txt",
+          "url": "https://icpr2024.org/competitions.html"
+        },
+        {
+          "local_source": "_collection/gbms_archive_review_20261024/user_review.txt",
+          "url": "https://web.archive.org/web/20240901210048/https://gbms2024.in/"
+        },
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/bc8c3c7a0161ecde.json",
+          "url": "https://web.archive.org/web/20240901210048id_/https://gbms2024.in/"
+        },
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/a854df45f4cd8aaf.json",
+          "url": "https://gbms2024.in/"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  }
+}

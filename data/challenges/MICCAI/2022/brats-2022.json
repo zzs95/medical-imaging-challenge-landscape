@@ -1,0 +1,819 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "brats-2022",
+    "challenge_name": "BraTS 2022",
+    "full_name": "The Brain Tumor Segmentation Challenge (2022 Continuous Updates & Generalizability Assessment)",
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2022-R35",
+      "official_programme_row_numbers": "22",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Center for Biomedical Image Computing and Analytics (CBICA), University of Pennsylvania, Philadelphia, PA, USA",
+        "Center for Biomedical Informatics and Information Technology; National Cancer Institute, National Institutes of Health",
+        "Children's National Hospital / George Washington University",
+        "Montreal Neurological Institute, McGill University, Montreal, Canada",
+        "Radiological Society of North America (RSNA), Oak Brook, IL, USA",
+        "Thomas Jefferson University Hospital",
+        "The Ohio State University Wexner Medical Center",
+        "Diagnósticos da América SA (DASA)",
+        "Massachusetts General Hospital, Harvard Medical School, MA, USA",
+        "University of California San Francisco, CA, USA",
+        "CBICA, University of Pennsylvania, Philadelphia, PA, USA",
+        "Center for Intelligent Imaging, University of California San Francisco",
+        "University of California San Francisco",
+        "University of Toronto",
+        "Children's National Hospital",
+        "Sage Bionetworks",
+        "University of Pennsylvania, Philadelphia, PA, USA",
+        "Children's Hospital of Pennsylvania (CHOP), Philadelphia, PA, USA",
+        "University of Zurich, Switzerland"
+      ],
+      "registered_authors": [
+        {
+          "name": "Spyridon Bakas",
+          "affiliation": "Center for Biomedical Image Computing and Analytics (CBICA), University of Pennsylvania, Philadelphia, PA, USA"
+        },
+        {
+          "name": "Keyvan Farahani",
+          "affiliation": "Center for Biomedical Informatics and Information Technology; National Cancer Institute, National Institutes of Health"
+        },
+        {
+          "name": "Marius George Linguraru",
+          "affiliation": "Children's National Hospital / George Washington University"
+        },
+        {
+          "name": "Udunna Anazodo",
+          "affiliation": "Montreal Neurological Institute, McGill University, Montreal, Canada"
+        },
+        {
+          "name": "Christopher Carr",
+          "affiliation": "Radiological Society of North America (RSNA), Oak Brook, IL, USA"
+        },
+        {
+          "name": "Adam Flanders",
+          "affiliation": "Thomas Jefferson University Hospital"
+        },
+        {
+          "name": "Luciano M. Prevedello",
+          "affiliation": "The Ohio State University Wexner Medical Center"
+        },
+        {
+          "name": "Felipe C. Kitamura",
+          "affiliation": "Diagnósticos da América SA (DASA)"
+        },
+        {
+          "name": "Jayashree Kalpathy-Cramer",
+          "affiliation": "Massachusetts General Hospital, Harvard Medical School, MA, USA"
+        },
+        {
+          "name": "John Mongan",
+          "affiliation": "University of California San Francisco, CA, USA"
+        },
+        {
+          "name": "Ujjwal Baid",
+          "affiliation": "CBICA, University of Pennsylvania, Philadelphia, PA, USA"
+        },
+        {
+          "name": "Evan Calabrese",
+          "affiliation": "Center for Intelligent Imaging, University of California San Francisco"
+        },
+        {
+          "name": "Jeffrey D. Rudie",
+          "affiliation": "University of California San Francisco"
+        },
+        {
+          "name": "Errol Colak",
+          "affiliation": "University of Toronto"
+        },
+        {
+          "name": "Zhifan Jiang",
+          "affiliation": "Children's National Hospital"
+        },
+        {
+          "name": "Xinyang Liu",
+          "affiliation": "Children's National Hospital"
+        },
+        {
+          "name": "James Eddy",
+          "affiliation": "Sage Bionetworks"
+        },
+        {
+          "name": "Timothy Bergquist",
+          "affiliation": "Sage Bionetworks"
+        },
+        {
+          "name": "Thomas Yu",
+          "affiliation": "Sage Bionetworks"
+        },
+        {
+          "name": "Verena Chung",
+          "affiliation": "Sage Bionetworks"
+        },
+        {
+          "name": "Russell (Taki) Shinohara",
+          "affiliation": "University of Pennsylvania, Philadelphia, PA, USA"
+        },
+        {
+          "name": "Anahita Fathi Kazerooni",
+          "affiliation": "Children's Hospital of Pennsylvania (CHOP), Philadelphia, PA, USA"
+        },
+        {
+          "name": "Bjoern Menze",
+          "affiliation": "University of Zurich, Switzerland"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Glioma",
+        "Brain tumor subregions"
+      ],
+      "diseases": [
+        "Glioma"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Segmentation of brain tumors in mpMRI scans",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362179",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/TheBrainTumorSegmentationChallenge(2022ContinuousUpdates&GeneralizabilityAssessment)_03-16-2022_10-27-47.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362179",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/TheBrainTumorSegmentationChallenge(2022ContinuousUpdates&GeneralizabilityAssessment)_03-16-2022_10-27-47.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362179",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/TheBrainTumorSegmentationChallenge(2022ContinuousUpdates&GeneralizabilityAssessment)_03-16-2022_10-27-47.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY; CC BY-NC (conditional non-TCIA subsets). 提案列 CC BY，非 TCIA 来源子集可能另受 CC BY-NC 限制；不将全体数据编码为统一允许商业使用。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362179",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/TheBrainTumorSegmentationChallenge(2022ContinuousUpdates&GeneralizabilityAssessment)_03-16-2022_10-27-47.pdf"
+      },
+      "review_status": "Human-confirmed 2026-10-25",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition-specific competition data access",
+      "access_by_scope": [
+        {
+          "scope": "Training/validation",
+          "category": "Individual authorization",
+          "access_steps": [
+            "Synapse Data Access form",
+            "Manual review",
+            "Invitation to BraTS Participants team",
+            "Accept invitation to access data"
+          ],
+          "manual_review": true
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362179",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/TheBrainTumorSegmentationChallenge(2022ContinuousUpdates&GeneralizabilityAssessment)_03-16-2022_10-27-47.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362179",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/TheBrainTumorSegmentationChallenge(2022ContinuousUpdates&GeneralizabilityAssessment)_03-16-2022_10-27-47.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362179",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/TheBrainTumorSegmentationChallenge(2022ContinuousUpdates&GeneralizabilityAssessment)_03-16-2022_10-27-47.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nDice Similarity Coefficient (DSC),\n95% Hausdorff distance (HD),\nSensitivity,\n\n\n\fThe Brain Tumor Segmentation Challenge (2022 Continuous Updates & Generalizability Assessment)\n\nSpecificity,\nPrecision\nThe regions evaluated using these metrics describe the whole tumor, the tumor core, and the enhancing tumor.\nNote that the tumor core includes the part of the tumor that is typically resected (i.e., enhancing, non-enhancing,\nand necrotic tumor), and the whole tumor describes all tumor sub-regions (i.e., tumor core and edema/invasion).\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nIn terms of the assessed and evaluated tumor sub-regions:\ni) the enhancing tumor describes the regions of active tumor and based on this, clinical practice characterizes the\nextent of resection.\nii) the tumor core (incl. the necrotic component) describes what is typically resected during a surgical procedure.\niii) the whole tumor as it defines the whole extent of the tumor, including the peritumoral edematous tissue and\nhighly infiltrated area.\n\n\nIn terms of evaluation metrics, we use:\ni) the Dice Similarity Coefficient, which is commonly used in the assessment of segmentation performance,\nii) the 95% Hausdorff distance as opposed to standard HD, in order to avoid outliers havings too much weight,\niii) Sensitivity and Specificity to determine whether an algorithm has the tendency to over- or undersegment.\niv) Precision to complement the metric of Sensitivity (also known as recall).",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nFor ranking of multidimensional outcomes (or metrics), for each team, we will compute the summation of their\nranks across the average of the 6 metrics described above as a univariate overall summary measure. This measure\nwill decide the overall ranking for each specific team. To visualize the results in an intuitive fashion, we propose to\nvisualize the outcome via an augmented version of radar plot [6].\n\n\n[10] Duan R, Tong J, Lin L, Levine LD, Sammel MD, Stoddard J, Li T, Schmid CH, Chu H, Chen Y. PALM: Patient-\ncentered Treatment Ranking via Large-scale Multivariate Network Meta-analysis. medRxiv. 2020 Jan 1\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nIf an algorithm fails to produce a result metric for a specific test case, this metric will be set to its worst possible\nvalue (0 for the DSC and the image diagonal for the HD).\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nFollowing discussions with the biostatistician involved in the design of this challenge (Dr Shinohara), and also\nwhile considering transparency and fairness to the participants."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Prediction files (validation); containerized algorithm (final)",
+      "platform": "Synapse",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "The participants are required to send the output of their methods to the evaluation platform for the scoring to occur during the training and the validation phases. At the end of the validation phase the participants are asked to identify the method they would like to evaluate in the final testing/ranking phase. The organizers will then confirm receiving the containerized method and will evaluate it in the three hidden testing datasets (BraTS 2021 testing, African-BraTS, pediatric population). The participants will be provided guidelines on the form of the container as we have done in previous years. This will enable confirmation of reproducibility, running of these algorithms to the previous BraTS instances and comparison with results obtained by algorithms of previous years, thereby maximizing solutions in solving the problem of brain tumor segmentation. During the training and validation phases, the participants will have the chance to test the functionality of their submission through both the Cancer Imaging Phenomics Toolkit (CaPTk [5-6], https://github.com/CBICA/CaPTk), and the Federated Tumor Segmentation (FeTS) Platform (https://fets-ai.github.io/Front-End/) that offer the implementation of the evaluation metrics, as well as via the online evaluation platform (synapse). [5] C.Davatzikos, et al. \"Cancer imaging phenomics toolkit: quantitative imaging analytics for precision diagnostics and predictive modeling of clinical outcome.\" Journal of medical imaging, 5.1:011018, 2018. https://doi.org/10.1117/1.jmi.5.1.011018 [6] S.Pati, et al. \"The cancer imaging phenomics toolkit (CaPTk): technical overview.\" International MICCAI Brainlesion Workshop. Springer, Cham, 2019. https://doi.org/10.1007/978-3-030-46643-5_38 The Brain Tumor Segmentation Challenge (2022 Continuous Updates & Generalizability Assessment)",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362179",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/TheBrainTumorSegmentationChallenge(2022ContinuousUpdates&GeneralizabilityAssessment)_03-16-2022_10-27-47.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2022,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362179",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/TheBrainTumorSegmentationChallenge(2022ContinuousUpdates&GeneralizabilityAssessment)_03-16-2022_10-27-47.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.6362179"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://www.med.upenn.edu/cbica/brats/",
+      "registration": "https://doi.org/10.5281/zenodo.6362179",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.6362179",
+          "resolved_record_id": 6362180,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/TheBrainTumorSegmentationChallenge(2022ContinuousUpdates&GeneralizabilityAssessment)_03-16-2022_10-27-47.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/TheBrainTumorSegmentationChallenge(2022ContinuousUpdates&GeneralizabilityAssessment)_03-16-2022_10-27-47.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://www.med.upenn.edu/cbica/brats/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/b367ef3474da1536.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "BraTS"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "2026-10-25人工确认：Synapse数据访问表、BraTS Participants团队邀请；用户确认有团队权限控制及人工审核。",
+        "scope": "Edition-specific competition data access",
+        "access_by_scope": [
+          {
+            "scope": "Training/validation",
+            "category": "Individual authorization",
+            "access_steps": [
+              "Synapse Data Access form",
+              "Manual review",
+              "Invitation to BraTS Participants team",
+              "Accept invitation to access data"
+            ],
+            "manual_review": true
+          }
+        ],
+        "evidence_basis": "Explicit user confirmation of manual authorization; prior public workflow evidence retained, no new independent web verification",
+        "confidence": "Human-confirmed",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362179",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362179",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. The participants are required to send the output of their methods to the evaluation platform for the scoring to occur during the trainin [...] like to evaluate in the final testing/ranking phase. The organizers will then confirm receiving the containerized method and will evaluate it in the three hidden testing datasets (BraTS 2021 testing, African-BraTS, pediatric population). The participants will be provided guidelines on the form of the container as we have done in previous years. This will enable confirmation of reproducibility, running of these algorithms to the previous BraTS instances and comparison with results obtained by algorithms of previous years, thereby maximizing solutions in solving the problem of brain tumor segmentation. Dur"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362179",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results - Registration dates: From now until submission deadline of short papers reporting method and preliminary results (see below). - Now: Availability of training data (with ground truth labels) and validation data (without ground truth labels). - 01 July 2022: Submission of short papers reporting method & preliminar"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362179",
+          "excerpt": ""
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/b367ef3474da1536.json",
+          "url": "https://www.med.upenn.edu/cbica/brats/",
+          "excerpt": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/brats-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round2_20261024/user_review_summary.json",
+          "section": "User-supplied round 2 findings, summarized; independent checks stated separately"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_manual_20261025/user_confirmation.json",
+          "review_date": "2026-10-25",
+          "section": "Explicit human confirmation of manual approval for this edition"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-24 round 2: 补记注册、Data Access表格、用户验证和团队邀请流程；邀请是否自动及2022时点细节仍不足，整体分类暂不变。",
+        "2026-10-25人工确认：Synapse数据访问表、BraTS Participants团队邀请；用户确认有团队权限控制及人工审核。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "2",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        },
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "补记注册、Data Access表格、用户验证和团队邀请流程；邀请是否自动及2022时点细节仍不足，整体分类暂不变。",
+            "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+            "access_by_scope": [
+              {
+                "scope": "Training/validation",
+                "category": "Invitation mechanism unresolved",
+                "access_steps": [
+                  "Register",
+                  "Data Access form",
+                  "User verification",
+                  "Team invitation"
+                ],
+                "manual_review": null
+              }
+            ],
+            "evidence_basis": "User-supplied edition-specific forum summary; automated/manual distinction unresolved",
+            "confidence": "Partial",
+            "source_urls": []
+          }
+        }
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 1251,
+              "unit": "cases",
+              "scope": "BraTS2021 source reused in2022",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 219,
+              "unit": "cases",
+              "scope": "BraTS2021 source reused in2022",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "testing",
+              "value": 570,
+              "unit": "cases",
+              "scope": "BraTS2021 source reused in2022",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "testing",
+              "value": 150,
+              "unit": "cases",
+              "scope": "Africa subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "testing",
+              "value": 95,
+              "unit": "cases",
+              "scope": "Pediatric subset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "USA",
+              "Germany",
+              "Switzerland",
+              "Hungary",
+              "Italy",
+              "India",
+              "Nigeria"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multi-center"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Listed source institutions overlap; do not count list entries as distinct centers.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.6362179",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html"
+        },
+        {
+          "url": "https://www.med.upenn.edu/cbica/brats/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/b367ef3474da1536.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/brats-2022.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Glioma",
+        "Brain tumor subregions"
+      ],
+      "specific_diseases": [
+        "Glioma"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362179"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/brats-2022.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY",
+        "CC BY-NC (conditional non-TCIA subsets)"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "提案列 CC BY，非 TCIA 来源子集可能另受 CC BY-NC 限制；不将全体数据编码为统一允许商业使用。",
+      "qualifications": [
+        "Non-TCIA subset restrictions are conditional in the proposal; no universal commercial-use permission inferred."
+      ],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY. Additional comments: CC-BY, but if any of the non-TCIA contributors object to this license, the specific subset of the BraTS data will be released under a CC-BY-NC license.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.6362179"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362179"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2022/brats-2022.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "USA",
+                  "Germany",
+                  "Switzerland",
+                  "Hungary",
+                  "Italy",
+                  "India",
+                  "Nigeria"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.6362179",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html"
+                },
+                {
+                  "url": "https://www.med.upenn.edu/cbica/brats/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/b367ef3474da1536.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/brats-2022.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Repeated event as open call challenge.",
+              "url": "https://doi.org/10.5281/zenodo.6362179",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R35/TheBrainTumorSegmentationChallenge(2022ContinuousUpdates&GeneralizabilityAssessment)_03-16-2022_10-27-47.pdf",
+              "scope": "Edition-specific lifecycle answer: open-call continuation or a stated future release. Policy/plan coverage only, not evidence that continuing evaluation actually ran.",
+              "value": null,
+              "excerpt": "continued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time event). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some modifications (repeated event). Examples: • One-time event with fixed conference submission deadline • Open call (challenge opens for new submissions after conference deadline) • Repeated event with annual fixed conference submission deadline Repeated event as open call challenge. ",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

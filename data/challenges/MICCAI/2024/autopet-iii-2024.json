@@ -1,0 +1,493 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "autopet-iii-2024",
+    "challenge_name": "AutoPET III",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "PET",
+        "CT"
+      ],
+      "submodality": [
+        "FDG-PET/CT",
+        "PSMA-PET/CT"
+      ],
+      "body_region": [
+        "Whole body"
+      ],
+      "organ_system": [
+        "Oncology"
+      ],
+      "organs_or_structures": [
+        "Tracer-avid tumor lesions"
+      ],
+      "diseases": [
+        "Cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "segmentation",
+          "official_name": "Multitracer multicenter lesion segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "PET and CT volumes without tracer metadata"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Binary lesion mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": 2,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "PET",
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "psma_train": {
+          "study_count": 597
+        },
+        "test": {
+          "patient_count": 200,
+          "strata": [
+            "50 PSMA LMU",
+            "50 PSMA UKT",
+            "50 FDG LMU",
+            "50 FDG UKT"
+          ]
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Training: CC BY-NC 4.0.",
+      "access_after_challenge": null,
+      "access_scope": "Training dataset; explicitly free for participants and nonparticipants under CC BY-NC 4.0"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": "Category 1: public external data allowed. Category 2: only challenge data and reference prediction network; public pretrained models may augment/synthesize data but may not generate the final prediction."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "segmentation",
+          "metrics": [
+            "Foreground Dice",
+            "False-positive volume",
+            "False-negative volume"
+          ],
+          "ranking": "Updated final scheme: mean metrics in four center/tracer subsets, rank subset means, average subset ranks; combine Dice rank 0.5, FPV 0.25, FNV 0.25."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": 5,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "final_submissions_per_team_across_categories": 2
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 936,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary Test Set",
+            "submission_count": 255
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://autopet-iii.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Two award categories share the same segmentation task. Final updated rank scheme supersedes the failed proposed mixed-model statistical ranking. Negative scans contribute FPV only."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://autopet-iii.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-2c85d0080cd4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iii.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_access.public_download",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-34d1d1ff3ac7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iii.grand-challenge.org/results/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-4817052a044e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iii.grand-challenge.org/#automated-lesion-segmentation-in-whole-body-petct-multitracer-multicenter-generalization",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-771f4480ad5c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iii.grand-challenge.org/evaluation-and-ranking/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-99c74fbdbac9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iii.grand-challenge.org/autopet-iii/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-a4d5202173c9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iii.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-a7ba1680cbd5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iii.grand-challenge.org/challenge-publication/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-c3d35b489a0c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iii.grand-challenge.org/task/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-cf320ff7db1a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iii.grand-challenge.org/organization/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-d50950d41bcb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iii.grand-challenge.org/#introduction",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-fccde5c18f53.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iii.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-fd21ce698552.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iii.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/64-overview.json"
+        },
+        {
+          "type": "official conference registered-challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "supports": [
+            "event",
+            "year"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset page restricted: verify final FDG training/validation counts and full resource limits."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_access.public_download"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/autopet-iii-2024.json",
+          "_collection/verification_20261003/literature_context/autopet-iii-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://autopet-iii.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/64-34d1d1ff3ac7.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition source explicitly releases training data with usage terms, without inferring that hidden tests are public."
+        },
+        "data_access.public_download": {
+          "source_url": "https://autopet-iii.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/64-34d1d1ff3ac7.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition source explicitly releases training data with usage terms, without inferring that hidden tests are public."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://autopet-iii.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/64-34d1d1ff3ac7.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition source explicitly releases training data with usage terms, without inferring that hidden tests are public."
+        }
+      }
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "17 teams submitted 27 algorithms.",
+              "url": "https://arxiv.org/abs/2605.05775",
+              "snapshot": "latex_sourcev2/data/resource_information_update_20261027/sources/e052e5413a653e.json",
+              "scope": "autoPET3 / MICCAI2024 organizer report.",
+              "value": {
+                "value": 17,
+                "unit": "submitting teams"
+              },
+              "excerpt": "the contribution of data handling strategies by restricting participants to a fixed baseline model. Seventeen teams submitted 27 algorithms, predominantly nnU-Net-based 3D networks with PET/CT channel concatenation. The top-ranked algorithm achieved a mean DSC of 0.66, FNV of 3.18 mL, and FPV of 2.78 mL across all four test conditions, improving DSC by 8% and reducing the false-negative volume by 5 mL relative to the provided baseline. Ranking was stable across bootstrap resampling and alternative ranking schemes for the top tier. Beyond the benchmark, we provide an in-depth analysis of segmentation performance at the patient and lesion level. Three main conclusions can be drawn: (1) in-domain multitracer PET/CT segmentation is sufficient and probably approaching reader agreement; (2) compositional generalization to unseen tracer-center combinations remains an open problem mainly driven by systematic volume overestimation; (3) heterogeneity and case difficulty drive performance variation substantially more than the choice of algorithm among top-ranked teams. Comments: Preprint submitted to Medical Image Analysis Subjects: Computer Vision and Pattern Recognition (cs.CV) ; Artificial Intelligence (cs.AI) Cite as: arXiv:2605.05775 [cs.CV] (or arXiv:2605.05775v2 [cs.CV] for this vers",
+              "snapshot_date": "2026-10-27"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

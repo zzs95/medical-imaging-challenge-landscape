@@ -1,0 +1,793 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cmrxrecon-2023",
+    "challenge_name": "CMRxRecon 2023",
+    "full_name": "Cardiac MRI Reconstruction Challenge",
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2023-R08",
+      "official_programme_row_numbers": "9",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Human Phenome Institute, Fudan University, China",
+        "Department of Electrical and Electronics Engineering, Imperial College London, UK",
+        "Digital Medical Research Center, School of Basic Medical Sciences, Fudan University, China",
+        "School of Computer and Control Engineering, Yantai University, China and School of Nursing, The Hong Kong Polytechnic University, Hong Kong",
+        "School of Nursing, The Hong Kong Polytechnic University, Hong Kong",
+        "Department of Computer Science, The University of Texas at Dallas",
+        "Institute of Science and Technology for Brain-inspired Intelligence, Fudan University, China",
+        "School of Data Science, Fudan University, China",
+        "Department of Cardiovascular Medicine, Ruijin Hospital, Shanghai Jiao Tong University School of Medicine, China",
+        "Siemens Healthineers Ltd., China",
+        "Philips Healthcare, China"
+      ],
+      "registered_authors": [
+        {
+          "name": "Chengyan Wang",
+          "affiliation": "Human Phenome Institute, Fudan University, China"
+        },
+        {
+          "name": "Xinyu Zhang",
+          "affiliation": "Human Phenome Institute, Fudan University, China"
+        },
+        {
+          "name": "Xutong Kuang",
+          "affiliation": "Human Phenome Institute, Fudan University, China"
+        },
+        {
+          "name": "Chen Qin",
+          "affiliation": "Department of Electrical and Electronics Engineering, Imperial College London, UK"
+        },
+        {
+          "name": "Shuo Wang",
+          "affiliation": "Digital Medical Research Center, School of Basic Medical Sciences, Fudan University, China"
+        },
+        {
+          "name": "Jun Lyu",
+          "affiliation": "School of Computer and Control Engineering, Yantai University, China and School of Nursing, The Hong Kong Polytechnic University, Hong Kong"
+        },
+        {
+          "name": "Jing Qin",
+          "affiliation": "School of Nursing, The Hong Kong Polytechnic University, Hong Kong"
+        },
+        {
+          "name": "Yapeng Tian",
+          "affiliation": "Department of Computer Science, The University of Texas at Dallas"
+        },
+        {
+          "name": "He Wang",
+          "affiliation": "Institute of Science and Technology for Brain-inspired Intelligence, Fudan University, China"
+        },
+        {
+          "name": "Zhensen Chen",
+          "affiliation": "Institute of Science and Technology for Brain-inspired Intelligence, Fudan University, China"
+        },
+        {
+          "name": "Xiahai Zhuang",
+          "affiliation": "School of Data Science, Fudan University, China"
+        },
+        {
+          "name": "Sha Hua",
+          "affiliation": "Department of Cardiovascular Medicine, Ruijin Hospital, Shanghai Jiao Tong University School of Medicine, China"
+        },
+        {
+          "name": "Ying-Hua Chu",
+          "affiliation": "Siemens Healthineers Ltd., China"
+        },
+        {
+          "name": "Weibo Chen",
+          "affiliation": "Philips Healthcare, China"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Heart"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Cardiac chambers",
+        "Left ventricular myocardium"
+      ],
+      "diseases": [],
+      "clinical_context": "Healthy-volunteer reconstruction cohort; arrhythmia is a prospective application rather than an established challenge diagnosis."
+    },
+    "task_profile": {
+      "primary_task_family": "Reconstruction",
+      "secondary_task_families": [],
+      "task_families": [
+        "Reconstruction"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Cine reconstruction",
+          "task_family": "Reconstruction",
+          "task_families": [
+            "Reconstruction"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7840228",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "official_name": "T1 and T2 mapping reconstruction",
+          "task_family": "Reconstruction",
+          "task_families": [
+            "Reconstruction"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7840228",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": true,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7840228",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7840228",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND. 当届提案明确列出 CC BY-NC-ND；未标明版本时不自行补写版本。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7840228",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7840228",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7840228",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7840228",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nPSNR, SSIM, RMSE and Radiologists' scoring\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nWe keep these metrics aligned with the ‘fastMRI’ challenge evaluation metrics for fair evaluations.\n\n\n\n\n\n\fCardiac MRI Reconstruction Challenge",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nWe will use a two-stage evaluation, where quantitative metrics will be used to select the top 5 submissions. These\nfinalists will then be sent to radiologists to determine the winners. We use the SSIM as our quantitative image\nquality index for ranking submissions prior to submission to clinical radiologists. The final ranking will be decided\nbased on the weighting of the quantitative metrics and the qualitative scoring.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nParticipating teams are required to submit docker containers and process all the cases in the test set. For the cases\nwithout valid output, we will assign it to the lowest value of metric.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nPSNR, SSIM and RMSE are commonly used metric and proven valid in previous challenges."
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7840228",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf",
+            "registered_task_index": 2
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7840228",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf",
+            "registered_task_index": 2
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nRoot Mean Square Error (RMSE) of measurements\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\n\n\n\n\fCardiac MRI Reconstruction Challenge\n\nThe RMSE is commonly used to measure the differences between the predicted value by an estimator and the\nactual value.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nThe RMSE are used to compute the rankings. For each case, we will compute the RMSE measurements between\nthe ground truth and the submitted T1 and T2 maps, respectively. Besides, we will compute T1 and T2 maps of the\nleft ventricular myocardial region for more accurate estimations.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nParticipating teams are required to submit docker containers and process all the cases in the test set. For the cases\nwithout valid output, we will assign it to the lowest value of metric.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nRMSE is commonly used metrics and proven valid in previous challenges."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Synapse",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Docker container on the Synapse platform will be used. Linkage to submission instructions is under construction.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7840228",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "protocol_description": "Docker container on the Synapse platform will be used. Linkage to submission instructions is under construction.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7840228",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2023,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7840228",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.7840228"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://cmrxrecon.github.io/",
+      "registration": "https://doi.org/10.5281/zenodo.7840228",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2023/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.7840228",
+          "resolved_record_id": 7840229,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://cmrxrecon.github.io/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/62fd520fee6a42f8.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "CMRxRecon"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Reconstruction"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "CMRxRecon2023当届Synapse数据页明确签署协议并邮件发送组织者，所有申请人工审核；以此细化原注册类别。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840228",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840228",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker container on the Synapse platform will be used. Linkage to submission instructions is under construction. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only [...] to rank challenge results. Before the final submission on the test set, participants can test their docker containers on the validation dataset to avoid submission errors. Cardiac MRI Reconstruction Challenge"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840228",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results [Apr 1, 2023] website opens for registration [May 1, 2023] release training and validation images, submission system opens [Aug 1, 2023] submission system opens for test set [Sept 1, 2023] registration deadline [Sept 5, 2023] docker submission deadline [Oct 10, 2023] release final results"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840228",
+          "excerpt": ""
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840228",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840228",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker container on the Synapse platform will be used. Linkage to submission instructions is under construction. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only [...] to rank challenge results. Before the final submission on the test set, participants can test their docker containers on the Cardiac MRI Reconstruction Challenge validation dataset to avoid submission errors."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840228",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results [Apr 1, 2023] website opens for registration [May 1, 2023] release training and validation images, submission system opens [Aug 1, 2023] submission system opens for test set [Sept 1, 2023] registration deadline [Sept 5, 2023] docker submission deadline [Oct 10, 2023] release final results"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840228",
+          "excerpt": ""
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.txt",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/bb559ea0be82c849.json",
+          "url": "https://www.synapse.org/Synapse:syn51471091/wiki/622256",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn51471091/wiki/622256"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/cmrxrecon-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2023协议明确训练和验证数据供已注册队伍下载。",
+        "CMRxRecon2023当届Synapse数据页明确签署协议并邮件发送组织者，所有申请人工审核；以此细化原注册类别。"
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 120,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 30,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 50,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "China"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Single center"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Fudan; two tasks share 200-volunteer cohort.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.7840228",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html"
+        },
+        {
+          "url": "https://cmrxrecon.github.io/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/62fd520fee6a42f8.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/cmrxrecon-2023.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Heart"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Cardiac chambers",
+        "Left ventricular myocardium"
+      ],
+      "specific_diseases": [],
+      "review_note": "Healthy-volunteer reconstruction cohort; arrhythmia is a prospective application rather than an established challenge diagnosis.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840228"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840228"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/cmrxrecon-2023.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-ND"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-ND；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC ND.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.txt",
+            "url": ""
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/CardiacMRIReconstructionChallenge_04-18-2023_12-01-18.txt",
+          "url": ""
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2023/cmrxrecon-2023.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "China"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.7840228",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R08/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html"
+                },
+                {
+                  "url": "https://cmrxrecon.github.io/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/62fd520fee6a42f8.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/cmrxrecon-2023.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "26 teams completing final Docker submission; retrospective 2024 proposal.",
+              "url": "https://doi.org/10.5281/zenodo.10979478",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R49/Universal Model for Cardiac MRI Reconstruction Cha.pdf",
+              "scope": "teams completing final Docker submission; retrospective 2024 proposal",
+              "value": {
+                "value": 26,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "0-40 teams at MICCAI 2024. This is estimated from the previous 'CMRxRecon' 2023 challenge, in which 26 teams participated in all stages of the challenge, including the submission of the final Docker. According to the post-post-event survey conducted last year, all the 26 partic",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    },
+    "record_field_review": {
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Organizer/platform-side inference",
+          "final_stage": "Final scored test phase",
+          "evidence_scope": "Reported execution",
+          "coding_basis": "Challenge report and edition-specific instructions; paper follow-up 2026-10-27",
+          "evidence_path": "latex_sourcev2/data/paper_followup_20261027/sources/cmrxrecon.txt",
+          "evidence_excerpt": "Section 5.1 reports organizer execution of every submitted Docker; section 3.3 distinguishes validation images from final Docker evaluation.",
+          "rationale": "The report explicitly identifies the organizer as final model executor for cine and mapping reconstruction.",
+          "source_urls": "https://arxiv.org/html/2404.01082v2",
+          "completed_execution_claim": "Reported execution",
+          "review_date": "2026-10-27",
+          "source_section": "3.3; 5.1"
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer challenge report",
+              "source_path": "latex_sourcev2/data/paper_followup_20261027/sources/cmrxrecon.txt",
+              "url": "https://arxiv.org/html/2404.01082v2",
+              "section": "3.1.1; 4.1; 4.6",
+              "value": {
+                "released_data": "Publicly available in the 2024 report",
+                "participant_code": [
+                  "PromptMR",
+                  "cmrx"
+                ]
+              },
+              "scope": "Dated post-event report of released data and named participant implementations; not a claim that hidden tests were released or services remain operational today."
+            }
+          ],
+          "source_urls": "https://arxiv.org/html/2404.01082v2",
+          "basis": "Post-event paper documents accessible released resources, within the expanded resource-information definition."
+        }
+      },
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation, supplemented by targeted organizer-paper and official retrospective-source review"
+    },
+    "literature_followups": [
+      {
+        "review_date": "2026-10-27",
+        "audit_path": "latex_sourcev2/data/paper_followup_20261027",
+        "fields": [
+          "final_inference",
+          "post_challenge_resources"
+        ]
+      }
+    ]
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

@@ -1,0 +1,542 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "stir-2025",
+    "challenge_name": "STIR 2025",
+    "full_name": "STIR 2025",
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": "conference_challenge",
+      "parent_event": "EndoVis 2026"
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Animal tissue specimens"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Porcine abdominal tissue",
+        "Deformable tissue surface"
+      ],
+      "diseases": [],
+      "clinical_context": "Challenge cohort is in-vivo/ex-vivo porcine tissue; human abdominal surgery is the intended application, stored separately rather than counted as human cases."
+    },
+    "task_profile": {
+      "primary_task_family": "Tracking",
+      "task_families": [
+        "Tracking"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Surgical tissue point tracking",
+          "task_family": "Tracking",
+          "task_families": [
+            "Tracking"
+          ],
+          "source_url": "https://arxiv.org/abs/2607.12939"
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": false,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "Endoscopy"
+      ],
+      "population": null,
+      "source_reference": "https://arxiv.org/abs/2607.12939",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Ambiguous",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY. 仅使用 EndoVis 2025 提案 Task 3（STIR）的 CC BY，不混入其他子赛道条款。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-25; access completion",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_by_scope": [
+        {
+          "scope": "STIROrig training",
+          "category": "Account registration"
+        },
+        {
+          "scope": "STIRC2024 validation",
+          "category": "Public download"
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse (validation); organizer submission",
+      "metrics": null,
+      "source_reference": "https://arxiv.org/abs/2607.12939",
+      "execution_note": "Service and artifact descriptions do not by themselves establish execution location or automation."
+    },
+    "submission": {
+      "submission_type": "Docker image link; organizers execute evaluation pipeline",
+      "platform": "Synapse (validation); organizer submission",
+      "source_reference": "https://arxiv.org/abs/2607.12939",
+      "runtime_limits": null
+    },
+    "schedule": {
+      "edition_year": 2025,
+      "source_reference": "https://arxiv.org/abs/2607.12939"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://arxiv.org/abs/2607.12939",
+      "supporting_sources": [
+        "https://zenodo.org/records/15075457",
+        "https://opencas.dkfz.de/endovis/datasetspublications/"
+      ]
+    },
+    "notes": [
+      "Separate annual STIR edition. Accuracy and latency are evaluation components of the same tracking competition; not separate editions."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://arxiv.org/abs/2607.12939",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/e033da9c8bd719a8.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://zenodo.org/records/15075457",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/sources_other/protocol-15075457.pdf",
+          "http_status": null,
+          "text_snapshot": "_collection/sources_other/protocol-15075457.txt",
+          "supports": [
+            "Registered child challenge identity, tasks and submission protocol"
+          ]
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://opencas.dkfz.de/endovis/datasetspublications/",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/332b0eb1c1514383.json",
+          "http_status": 200
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields"
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py"
+    },
+    "review_coding": {
+      "task_families": [
+        "Tracking"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Ambiguous",
+      "data_model_flow": "hybrid"
+    },
+    "record_relationships": {
+      "analytical_unit": "child_challenge_edition",
+      "parent_challenge_id": "endovis25-2025",
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": "Organizer retrospective reports seven teams and challenge results",
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Ambiguous",
+        "state": "Ambiguous",
+        "rationale": "分数据源记录：STIROrig 训练资源经 IEEE DataPort 账号获取；官方另提供 Zenodo STIRC2024 作为公开验证资源。两种开发资源准入不同，保留分数据源说明而不强行统一。",
+        "evidence_basis": "Official edition sources and explicit access procedures; temporal/platform qualifications retained",
+        "review_date": "2026-10-25",
+        "source_urls": [
+          "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn65877821/wiki/631611",
+          "https://raw.githubusercontent.com/athaddius/STIRMetrics/main/README.md",
+          "https://ieeephotonics.org/news/unlock-the-power-of-research-data-with-ieee-dataport/"
+        ],
+        "access_by_scope": [
+          {
+            "scope": "STIROrig training",
+            "category": "Account registration"
+          },
+          {
+            "scope": "STIRC2024 validation",
+            "category": "Public download"
+          }
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "[2607.12939] Point Tracking in Surgery--The 2025 Surgical Tattoos in Infrared Challenge (STIRC2025)",
+          "local_source": "_collection/other_venues_audit_20261024/sources/e033da9c8bd719a8.json",
+          "url": "https://arxiv.org/abs/2607.12939",
+          "excerpt": "ry From: Adam Schmidt [ view email ] [v1] Tue, 14 Jul 2026 16:10:49 UTC (6,661 KB) Full-text links: Access Paper: View a PDF of the paper titled Point Tracking in Surgery--The 2025 Surgical Tattoos in Infrared Challenge (STIRC2025), by Adam Schmidt and 34 other authors View PDF HTML (experimental) TeX Source view license Additional Features Audio Summary Current browse context: cs.CV < prev | next > new"
+        },
+        {
+          "section": "Datasets & Publications – Endoscopic Vision Challenge",
+          "local_source": "_collection/other_venues_audit_20261024/sources/332b0eb1c1514383.json",
+          "url": "https://opencas.dkfz.de/endovis/datasetspublications/",
+          "excerpt": "Datasets & Publications EndoVis 2026 Sub-Challenge Publication Dataset RARE2026 : Recognition of Anomalies in low-pREvalance cancer SurgVu2026 : Surgical Visual Understanding STIR2026 : Surgical Tissue Tracking Using the STIR (Surgical Tattoos in Infrared) Dataset TIGER-SQ-AI2026 : AI-based surgical quality assessment for thoracic lymphadenectomy in minim [...] chmark iMED2026 : Multi-Endoscope Dataset Novel View Synthesis Challenge EndoVis 2025 Sub-Challenge Publication Dataset SurgVu: Surgical Visual Understanding https://arxiv.org/abs/2501.09209 RARE: Recognition of Anomalies in low-pREvalance cancer STIR: Surgical Tissue Tracking Using the STIR (Surgical Tattoos in Infrared) Dataset OSS: Open Suturing Skills https://zenodo.org/records/7940583 EndoVis 2024 Sub-Challenge Publication Dataset PhaKIR: Surgical Procedure Phase Recognition, Keypoint Estimation, and Instrument Instance Segmentation https://doi.org/10.1016/j.media.2026.103945 https://doi.org/10.5281/zenodo.15740620 SegSTRONG-C: Segmenting Surgical Tools Robustly On Non-adversarially Generated Corruptions https:/ [...]  Federated Learning for Surgical Vision https://arxiv.org/abs/2510.04772 EndoVis 2023 Sub-Challenge Publication Dataset SIMS : Surgical Instrument Multi-Domain Segmentation Challenge https://www.synapse.org/Synapse:syn47193563/files/ PitVis : Surgical workflow and instrument recognition in endonasal surgery https://arxiv.org/abs/2409.01184 https://doi.org/10.5522/04/26531686 SurgToolLoc : Surgical Tool  [...] 6/j.media.2025.103674 https://www.synapse.org/Synapse:syn51471789/files/ EndoVis 2022 Sub-Challenge Publication Dataset SurgToolLoc : Endoscopic surgical tool localization by leveraging tool presence labels https://arxiv.org/abs/2305.07152 https://arxiv.org/abs/2501.09209 CholecTriplet2022 : Surgical Action Triplet Detection and Localization https://arxiv.org/abs/2302.06294 https://github.com/CAMMA-public/cholect45 SAR-RARP50: Instrumentation segmentation and Action Recognition on robotic RadicalProstatectomy https://arxiv.org/abs/2401.00496 https://rdr.ucl.ac.uk/projects/SAR-RARP50_Segmentation_of_surgical_instrumentation_and_Action_Recognition_on_Robot-Assisted_Radical_Prostatectomy_Challenge/1910 [...] operative Laparoscopy Fusion https://doi.org/10.1016/j.media.2024.103371 EndoVis 2021 Sub-Challenge Publication Dataset HeiSurf : HeiChole Surgical Workflow Analysis and Full Scene Segmentation https://www.synapse.org/Synapse:syn25101790/files/ GIANA : Gastrointestinal ImAge ANAlysis CholecTriplet2021 : Surgical Action Triplet Recognition https://arxiv.org/abs/2204.04746 https://github.com/CAMMA-public/cholect45 FetReg : Placental Vessel Segmentation and Registration in Fetoscopy https://arxiv.org/abs/2106.05923 https://weiss-develop.cs.ucl.ac.uk/fetreg/ PETRAW : PEg TRAnsfer Workflow recognition by different modalities https://arxiv.org/abs/2202.05821 https://www.synapse.org/#!Synapse:syn25147789/wiki/608848 SimSurgSkill : Objective Surgical Skill Assessment i [...] s://console.cloud.google.com/storage/browser/isi-simsurgskill-2021?pli=1 EndoVis 2020 Sub-Challenge Publication Dataset CATARACTS Segmentation https://arxiv.org/abs/2110.10965 https://ieee-dataport.org/open-access/cataracts CATARACTS Workflow https://ieee-dataport.org/open-access/cataracts MIcro-Surgical Anastomose Workflow recognition on training sessions ( MISAW ) https://www.sciencedirect.com/science/article/abs/pii/S0169260721005265 https://www.synapse.org/#!Synapse:syn21776936/wiki/601700 Surgical visual domain adaptation: from virtual reality to real, clinical environ [...] abs/2102.13644 https://www.synapse.org/#!Synapse:syn22083820/wiki/603200 EndoVis 2019 Sub-Challenge Publication Dataset Robust Medical Instrument Segmentation ( ROBUST-MIS ) https://doi.org/10.1038/s41597-021-00882-2 https://doi.org/10.1016/j.media.2020.101920 https://www.synapse.org/#!Synapse:syn18779624/wiki/592660 Stereo Correspondence and Reconstruction of Endoscopic Data https://arxiv.org/abs/2101. [...] chine-learning https://www.synapse.org/#!Synapse:syn18824884/wiki/592586 EndoVis 2018 Sub-Challenge Publication Dataset Gastrointestinal Image ANAlysis ( GIANA ) https://doi.org/10.1007/978-3-030-64340-9_22 Surgical Workflow Analysis in the SensorOR https://www.synapse.org/#!Synapse:syn21898456/wiki/601956 Robotic Scene Segmentation https://arxiv.org/abs/2001.11190 https://endovissub2018-roboticsceneseg [...] bs/pii/S136184151830865X https://cataracts2018.grand-challenge.org/data/ EndoVis 2017 Sub-Challenge Publication Dataset Gastrointestinal Image ANAlysis ( GIANA ) https://doi.org/10.1007/978-3-030-64340-9_22 Surgical Workflow Analysis in the SensorOR https://www.synapse.org/#!Synapse:syn21898456/wiki/601956 Robotic Instrument Segmentation https://arxiv.org/abs/1902.06426 https://endovissub2017-roboticins [...] https://endovissub2017-kidneyboundarydetection.grand-challenge.org/Data/ EndoVis 2015 Sub-Challenge Publication Dataset Instrument segmentation and tracking https://arxiv.org/pdf/1805.02475.pdf Automatic polyp detection in colonoscopy videos https://ieeexplore.ieee.org/abstract/document/7840040 https://polyp.grand-challenge.org/Databases/ Early Barrett’s cancer detection https://endovissub-barrett.grand"
+        },
+        {
+          "section": "Edition-specific child-task protocol",
+          "local_source": "_collection/sources_other/protocol-15075457.txt",
+          "url": "https://zenodo.org/records/15075457",
+          "excerpt": "sed to train algorithms may, for example, be restricted to the data provided by the challenge or to publicly available data including (open) pre-trained nets. Publicly available data is allowed c) Define the participation policy for members of the organizers' institutes. For example, members of the organizers' institutes may participate in the challenge but are not eligible for awards. Organization members may participate, but they will not be eligible for awar [...] ) Define the policy for result announcement. Examples: • Top 3 performing methods will be announced publicly. • Participating teams can choose whether the performance results will be made public. The methods and results will be announced publicly at the EndoVis Challenge at MICCAI 2025 Page 27 of 47 Biomedical Image Analysis ChallengeS (BIAS) Initiative Endoscopic Vision Challenge 2025 f) Define the publication policy. In particular, provide details on ... • ... who of the participating teams/the participating teams’ members qualifies as author • ... whether the participating teams may publish their own results separately, and (if so) • ... whether an embargo time is defined (so that challenge organizers can publish a challenge paper first). All the methods and results will be included in a joint publication, with all team members as authors. Participants may publish their challenge results only after the challenge is completed with citation of the STIR dataset. Submission method a) Describe the method used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Participants must be provide a link to a docker image which uses our evaluation pipeline (available on github, see item 9). For submission, teams will upload their algorithm that they integrate with our evaluation pipeline. The metrics will be evaluated automatically by our evaluation script. b) Provide information on the possibility for partici [...] nly available validation set. This can be done through the synapse website with a live leaderboard. Docker instructions and an example script will be provided for both the results submission and the benchmarking submission. Challenge schedule Provide a timetable for the challenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results March 31st: Participant Registration, and initial website release. Challenge details uploaded to website, along with an updated test evaluation script to github and tracker for the currently available STIR dataset. STIR 2024’s test set will be released for use as a validation set. April 15th: Submission instructions will be posted. May 30th: Validation runs will be opened for submission on synapse. Page 28 of 47 Biomedical Image Analysis ChallengeS (BIAS) Initiative Endoscopic Vision Challenge 2025 August 20th: Submission deadline. August 27th:  [...] ). Add the URL or a reference to the document of the ethics approval (if available). N/A Data usage agreement Clarify how the data can be used and distributed by the teams that participate in the challenge and by others during and after the challenge. This should include the explicit listing of the license applied. Examples: • CC BY (Attribution) • CC BY-SA (Attribution-ShareAlike) • CC BY-ND (Attribution- [...] ibution-NonCommercial-NoDerivs) CC BY (Attribution) Code availability a) Provide information on the accessibility of the organizers' evaluation software (e.g. code to produce rankings). Preferably, provide a link to the code and add information on the supported platforms. The evaluation code is publicly available on github along with an example tracker. b) In an analogous manner, provide information on the accessibility of the participating teams' code. Participants must share their code and models with the challenge organizers. Participants must agree to publish their code online after the challenge. Conflicts of interest Provide information related to conflicts of interest. In particular provide information related to sponsoring/funding of the challenge. Also, state explicitly who had/will have access to the test case labels and when. Page 29 of 47 Biomedical Image Analysis ChallengeS (BIAS) Initiative Endoscopic Vision Challenge 2025 Sponsorship will be provided by the organizers. Only the organizers will have access to the test data. Participants will not be able to access said data. The authors have no conflicts to report. MISSION OF THE CHALLENGE Field(s) of application State the main field(s) of application that the participating algorithms target. Examples: • Diagnosis • Education • Intervention assistance • Intervention follow-up • Intervention planning • Progno [...] s) Examples: • Classification • Detection • Localization • Modeling • Prediction • Reconstruction • Registration • Retrieval • Segmentation • Tracking Tracking Page 30 of 47 Biomedical Image Analysis ChallengeS (BIAS) Initiative Endoscopic Vision Challenge 2025 Cohorts We distinguish between the target cohort and the challenge cohort. For example, a challenge could be designed around the task of medical instr [...]  number of cases and the specific proportion of training, validation and test cases was chosen. The training and test cases are separated to provide a large amount for training while still leaving a reasonable size for robust evaluation in testing and validation. The total number of cases is limited by the number of labelling experiments we performed. d) Mention further important characteristics of the training, validation and test cases (e.g. [...] ither of: the original validation data that was released as a TMI paper; or the STIR challenge 2024 test data that should be released in the coming months. The test set for STIR 2025 will be ~60 videos of unseen and unpublished videos, different from, and not in the 2024 dataset, or the public validation dataset. The number of cases and characteristics will be like those in STIR 2024: · Similar in/ex vivo distribution to STIR 2024 · Similar types of movements to STIR 2024 Annotation characteristics a) Describe the method for determining the reference annotation, i.e. the desired algorith [...] uctions given to the annotators (if any) prior to the annotation. This may include description of a training phase with the software. Provide the information separately for the training, validation and test cases if necessary. Preferably, provide a link to the annotation protocol. Detailed instructions and protocol are in the dataset paper: https://dx.doi.org/10.21227/w8g4-g548 c) Provide details on the subject(s)/algorithm(s) that annotated the cases (e.g. information on level of expertise such as number of years of professional experienc [...] necessary. N/A Data pre-processing method(s) Describe the method(s) used for pre-processing the raw training data before it is provided to the participating teams. Provide the information separately for the training, validation and test cases if necessary. The image filtering methodology that processes Infrared labels into center labels is described in https://dx.doi.org/10.21227/w8g4-g548 Sources of error a) Describe the most re"
+        },
+        {
+          "section": "Organizer challenge report",
+          "local_source": "_collection/access_flow_review_20261024/sources/facc092647bbc300.json",
+          "url": "https://arxiv.org/html/2607.12939v1",
+          "excerpt": "ent selection saved. Describe the issue below: Description: Why HTML? Report Issue Back to Abstract Download PDF Contents Reading mode Colour theme License: CC BY 4.0 arXiv:2607.12939v1 [cs.CV] 14 Jul 2026 Point Tracking in Surgery–The 2025 Surgical Tattoos in Infrared Challenge (STIRC2025) Adam Schmidt Affiliation: Intuitive Surgical Inc., Sunnyvale, USA Mert Asim Karaoglu Affiliation: ImFusion GmbH, Mun [...]  . Fig. 1: This figure describes the STIR Challenge 2025. Participants submit their algorithms in a docker container. The algorithm receives a video and a list of start points from each sequence in the dataset. Participants use their tracker to estimate the motion of a set of points for every frame in a video. Videos are provided in a streaming manner. The final estimates are then compared to the ground truth lab [...] TIRC2024), and the original STIR dataset. The original STIR dataset (STIROrig) is a dataset that is publicly released and usable for test, validation, or training (available at: https://ieee-dataport.org/open-access/stir-surgical-tattoos-infrared ). This dataset is released as a way to validate, test, design, and evaluate algorithms [ 17 ] . STIROrig remains useful for this exact purpose, in addition to being larger than the challenge dataset. We note that STIROrig has less outlier and error filtering than the [...] g tasks. IV-B 1 BlueJays Fig. 7: Overview of the solution and the consistency-based self-supervised training method provided by team BlueJays. Team BlueJays (Fig. 7 ) proposes a self-supervised tissue tracking method based on contrastive random walks and global matching. The method formulates point tracking as a random walk over a space-time graph, where image patches or pixels are nodes and learned affinities between  [...] the optical-flow estimate is used when both predictions agree. In update mode, points with large disagreement are temporarily frozen and later recalibrated from keyframe-based estimates. In refresh mode, point positions are periodically updated from keyframe references to reduce accumulated drift. In the reported implementation, keyframes are selected every three frames and stored in a rolling buffer of fi [...]  occupying the 1st place. We believe these results are due to it being easy to over-validate on the test+validation sets we release each year. A baseline having the strongest result emphasizes the importance of proper cross-validation and generalization in submissions. For 3D methods, Team NCT_TSO had the most accurate submission, beating all baselines, and team MFTIQProb came second. We believe the 3D Kalman filtering and cons [...] IR Challenge, which was organized as a part of EndoVis at MICCAI 2025. This challenge alongside the publicly released test dataset serves as a resource for methods to test, compare, and iterate on algorithms for tissue tracking and other applications in robotic assisted surgery. References [1] C. Budd and T. Vercauteren (2024) Transferring Relative Monocular Depth to Surgical Vision with Temporal Consis"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/stir-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/295a7cc391b37550.json",
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn65877821/wiki/631611",
+          "section": "Development access follow-up 2026-10-25"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/f293608509323d2a.json",
+          "url": "https://raw.githubusercontent.com/athaddius/STIRMetrics/main/README.md",
+          "section": "Development access follow-up 2026-10-25"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/ieee_dataport_account_policy.json",
+          "url": "https://ieeephotonics.org/news/unlock-the-power-of-research-data-with-ieee-dataport/",
+          "section": "Development access follow-up 2026-10-25"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-25 access completion: 分数据源记录：STIROrig 训练资源经 IEEE DataPort 账号获取；官方另提供 Zenodo STIRC2024 作为公开验证资源。两种开发资源准入不同，保留分数据源说明而不强行统一。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Ambiguous",
+        "rationale": "分数据源记录：STIROrig 训练资源经 IEEE DataPort 账号获取；官方另提供 Zenodo STIRC2024 作为公开验证资源。两种开发资源准入不同，保留分数据源说明而不强行统一。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/e033da9c8bd719a8.json",
+          "_collection/access_completion_20261025/sources/295a7cc391b37550.json",
+          "_collection/access_completion_20261025/sources/be1f9dec74615ff7.json",
+          "_collection/access_completion_20261025/sources/92dff59c2b2e18b2.json",
+          "_collection/access_completion_20261025/sources/33bc773b81a1dfa7.json",
+          "_collection/access_completion_20261025/sources/332b0eb1c1514383.json",
+          "_collection/access_completion_20261025/sources/d0c32fed05800d38.json",
+          "_collection/access_completion_20261025/sources/f293608509323d2a.json",
+          "_collection/access_completion_20261025/sources/68eba75d51ca73af.json",
+          "_collection/access_completion_20261025/sources/ieee_dataport_account_policy.json"
+        ]
+      }
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 1000,
+              "unit": "cases",
+              "scope": "Lower bound",
+              "approximate": false,
+              "lower_bound": true
+            },
+            {
+              "split": "validation",
+              "value": 60,
+              "unit": "cases",
+              "scope": "Prior 2024 test set",
+              "approximate": true,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 60,
+              "unit": "cases",
+              "scope": "Approximate",
+              "approximate": true,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Not established",
+          "value": null
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Read Task3 in 2025 protocol; Intuitive Surgical provider alone insufficient for physical center count.",
+      "sources": [
+        {
+          "url": "https://arxiv.org/abs/2607.12939",
+          "local_source": "_collection/other_venues_audit_20261024/sources/e033da9c8bd719a8.json"
+        },
+        {
+          "url": "https://zenodo.org/records/15075457",
+          "local_source": "_collection/sources_other/protocol-15075457.txt"
+        },
+        {
+          "url": "https://opencas.dkfz.de/endovis/datasetspublications/",
+          "local_source": "_collection/other_venues_audit_20261024/sources/332b0eb1c1514383.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/stir-2025.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Animal tissue specimens"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Porcine abdominal tissue",
+        "Deformable tissue surface"
+      ],
+      "specific_diseases": [],
+      "review_note": "Challenge cohort is in-vivo/ex-vivo porcine tissue; human abdominal surgery is the intended application, stored separately rather than counted as human cases.",
+      "sources": [
+        {
+          "local_source": "_collection/clinical_audit_20261025/stir-2025_task.txt",
+          "url": "https://zenodo.org/records/15075457",
+          "section": "Task3"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/stir-2025.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "仅使用 EndoVis 2025 提案 Task 3（STIR）的 CC BY，不混入其他子赛道条款。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY (Attribution)",
+          "source": {
+            "local_source": "_collection/sources_other/protocol-15075457.txt",
+            "url": "https://zenodo.org/records/15075457"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/protocol-15075457.txt",
+          "url": "https://zenodo.org/records/15075457"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

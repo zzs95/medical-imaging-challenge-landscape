@@ -1,0 +1,568 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "chimera-2025",
+    "challenge_name": "CHIMERA",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI",
+        "Histopathology"
+      ],
+      "submodality": [
+        "Multiparametric prostate MRI",
+        "H&E WSI"
+      ],
+      "body_region": [
+        "Prostate",
+        "Bladder"
+      ],
+      "organ_system": [
+        "Genitourinary system"
+      ],
+      "organs_or_structures": [
+        "Prostate tumor",
+        "Bladder tumor"
+      ],
+      "diseases": [
+        "Prostate cancer",
+        "High-risk non-muscle-invasive bladder cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Survival Prediction",
+      "secondary_task_families": [
+        "Classification"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Prostate biochemical recurrence prediction",
+          "task_family": "Survival Prediction",
+          "task_subtype": "Time-to-event prediction",
+          "input": [
+            "Multiple prostate WSIs",
+            "mpMRI",
+            "Clinical data"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "BCR risk score"
+          ],
+          "granularity": "patient",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "BCG response subtype prediction",
+          "task_family": "Classification",
+          "task_subtype": "Classification",
+          "input": [
+            "Bladder H&E WSI",
+            "Clinical data"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "BRS3 versus BRS1/2"
+          ],
+          "granularity": "patient",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Bladder cancer recurrence prediction",
+          "task_family": "Survival Prediction",
+          "task_subtype": "Time-to-event prediction",
+          "input": [
+            "Bladder H&E WSI",
+            "Bulk RNA-seq",
+            "Clinical data"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Time-to-event risk score"
+          ],
+          "granularity": "patient",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "Prostate mpMRI (T2, ADC, high-b-value)",
+        "H&E WSIs",
+        "Clinical variables",
+        "Bladder bulk RNA-seq (Task 3)",
+        "Provided tissue masks and UNI embeddings"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "task2_train_v2": 182,
+        "task3_train_v2": 176,
+        "note": "V2 sizes; Task 2 RNA-derived BRS is a target, not transcriptomic inference input."
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Public training results subject to challenge-publication embargo and mandatory challenge citation; exact standardized dataset license not established.",
+      "access_after_challenge": null,
+      "access_scope": "Public CHIMERA 2025 training files; hidden testing files excluded"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Freely and publicly available external datasets and pretrained models under a permissive license allowed."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Censored C-index"
+          ],
+          "ranking": "Highest censored C-index."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "F1 score"
+          ],
+          "ranking": "Binary BRS3-versus-BRS1/2 F1."
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Censored C-index"
+          ],
+          "ranking": "Highest censored C-index."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "final_submission_deadline": "2025-08-22",
+      "deadline_timezone": "AoE"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "method_description_required": true,
+      "method_description": "Six-page MICCAI-template manuscript excluding references and public/private GitHub URL under permissive license required for closed testing."
+    },
+    "participation_statistics": {
+      "registered_participants": 416,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Task 3 - Bladder recurrence debug",
+            "submission_count": 128
+          },
+          {
+            "official_phase_name": "Task 1 - Prostate final debug",
+            "submission_count": 78
+          },
+          {
+            "official_phase_name": "Task 2 - Bladder BRS final debug",
+            "submission_count": 127
+          },
+          {
+            "official_phase_name": "Task 1 - Prostate Cancer BRP development",
+            "submission_count": 32
+          },
+          {
+            "official_phase_name": "Task 1 - Prostate final test",
+            "submission_count": 15
+          },
+          {
+            "official_phase_name": "Task 3 - Bladder recurrence final test",
+            "submission_count": 9
+          },
+          {
+            "official_phase_name": "Task 2 - Bladder BRS final test",
+            "submission_count": 10
+          },
+          {
+            "official_phase_name": "Task 2 - Bladder BRS development",
+            "submission_count": 59
+          },
+          {
+            "official_phase_name": "Task 3 - Bladder recurrence development",
+            "submission_count": 83
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://chimera.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Task 2 final evaluation is binary BRS3 versus BRS1/2. Task 3 prose calls the endpoint recurrence, but its reference fields name progression and time_to_prog_or_FUend; the endpoint must be clarified."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://chimera.grand-challenge.org/task-1-prostate-cancer-biochemical-recurrent-prediction/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-0856f141731b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-19390c1b0c07.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera.grand-challenge.org/miccai-2025-workshop/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-3be320fdc47e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera.grand-challenge.org/challenge-rules/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_access.is_public",
+            "data_access.license_or_terms",
+            "data_access.public_download",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-5fba31472c35.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-6f1e3b001c59.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera.grand-challenge.org/task-3-bladder-cancer-recurrence-prediction/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-9530e0b33f34.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera.grand-challenge.org/task-2-bcg-response-subtype-prediction-in-high-risk-nmibc/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-9e97f1e10666.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera.grand-challenge.org/chimera/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-a4cd33e059be.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera.grand-challenge.org/awards/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-a83b279c540f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera.grand-challenge.org/dataset-download/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-c13781dbfd1e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera.grand-challenge.org/sponsor/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-d28e91e222dd.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://chimera.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-ddfc99247dfc.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/42-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "labels_and_targets.task3: recurrence/progression endpoint conflict must be resolved.",
+        "dataset: Task 1 split sizes, hidden split sizes and license need verification."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://chimera.grand-challenge.org/challenge-rules/",
+          "local_snapshot": "_collection/sources/42-5fba31472c35.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official rules impose publication/citation terms on public training data; official data page supplies unsigned AWS download command."
+        },
+        "data_access.is_public": {
+          "source_url": "https://chimera.grand-challenge.org/challenge-rules/",
+          "local_snapshot": "_collection/sources/42-5fba31472c35.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official rules impose publication/citation terms on public training data; official data page supplies unsigned AWS download command."
+        },
+        "data_access.public_download": {
+          "source_url": "https://chimera.grand-challenge.org/challenge-rules/",
+          "local_snapshot": "_collection/sources/42-5fba31472c35.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official rules impose publication/citation terms on public training data; official data page supplies unsigned AWS download command."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://chimera.grand-challenge.org/challenge-rules/",
+          "local_snapshot": "_collection/sources/42-5fba31472c35.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official rules impose publication/citation terms on public training data; official data page supplies unsigned AWS download command."
+        },
+        "data_access.license_or_terms": {
+          "source_url": "https://chimera.grand-challenge.org/challenge-rules/",
+          "local_snapshot": "_collection/sources/42-5fba31472c35.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official rules impose publication/citation terms on public training data; official data page supplies unsigned AWS download command."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_access.is_public",
+          "data_access.license_or_terms",
+          "data_access.public_download"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/chimera-2025.json",
+          "_collection/verification_20261003/literature_context/chimera-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

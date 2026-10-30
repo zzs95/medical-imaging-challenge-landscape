@@ -1,0 +1,573 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "medsegfm-2025",
+    "challenge_name": "MedSegFM 2025: Foundation Models for 3D Biomedical Image Segmentation",
+    "full_name": "MedSegFM 2025: Foundation Models for 3D Biomedical Image Segmentation",
+    "year": 2025,
+    "event": {
+      "conference": "CVPR 2025 - Foundation Models for Medical Vision Workshop",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2025-06-11",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": [
+        "University of Toronto",
+        "University Health Network",
+        "Vector Institute",
+        "University of California, Santa Cruz"
+      ],
+      "international": true
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "MRI",
+        "PET",
+        "Ultrasound",
+        "Microscopy"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain",
+        "Head and Neck",
+        "Abdomen",
+        "Pelvis",
+        "Chest",
+        "Heart",
+        "Spine",
+        "Aorta",
+        "Extremities",
+        "Whole body",
+        "Cell specimens"
+      ],
+      "organ_system": null,
+      "organs_or_structures": null,
+      "diseases": [
+        "Adrenocortical carcinoma",
+        "Colon cancer",
+        "COVID-19 infection"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Interactive 3D segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "interactive segmentation",
+          "input": [
+            "3D biomedical image",
+            "Interaction prompts"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Refined segmentation masks"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Text-guided 3D segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "text-conditioned segmentation",
+          "input": [
+            "3D biomedical image",
+            "Text prompt"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Segmentation masks"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ],
+      "learning_paradigms": [
+        "Foundation models",
+        "Interactive segmentation",
+        "Vision-language segmentation"
+      ],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Segmentation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": {
+          "value": 200000,
+          "unit": "3D image-mask pairs",
+          "approximate": false,
+          "lower_bound": true,
+          "raw_text": "more than 200,000 3D image-mask pairs"
+        },
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT",
+        "MRI",
+        "PET",
+        "Ultrasound",
+        "Microscopy"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "shared_between_child_tracks": true
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": null,
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA 4.0. 官方 2025 数据仓库列 CC BY-NC-SA 4.0；赛中禁止转交数据/链接的规则另行保留，不外推到 2026 届。",
+      "access_after_challenge": null,
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker image"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": null,
+      "platform": "Codabench and organizer Docker evaluation",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice AUC",
+            "NSD AUC",
+            "Final Dice",
+            "Final NSD"
+          ],
+          "ranking": "Case-wise rank aggregation"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Dice",
+            "NSD",
+            "Instance F1",
+            "Matched-instance Dice"
+          ],
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {},
+      "task_outputs": null,
+      "submission_artifact": "Docker image",
+      "execution_mode": "Organizer-run",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Scored submission artifact; additional reproducibility/publication materials recorded separately.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "existing_structured_fields_and_audit",
+        "summary": "已有testing字段明确Docker，最终由组织者工作站运行。",
+        "evidence_ids": [
+          "E3"
+        ],
+        "source_urls": [],
+        "user_material": null,
+        "directly_retrieved_protocol_snapshots": [],
+        "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced."
+      }
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": null
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://link.springer.com/book/10.1007/978-3-032-23496-4",
+      "grand_challenge": null,
+      "platform": "https://www.codabench.org/competitions/5263/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Umbrella entry for the two CVPR 2025 MedSegFM tracks. Count this umbrella once; do not count its two detailed child records as separate challenge editions or sum their shared datasets.",
+      "2026-10-22 提交方式字段同步：已有testing字段明确Docker，最终由组织者工作站运行。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "collection_date_definition": "Date of web and literature metadata collection, not medical-image acquisition.",
+      "source_list": "challenge_list_other_platforms_22_26_v4.json",
+      "source_list_index": 35,
+      "source_list_index_base": 1,
+      "collection_status": "partially_verified",
+      "sources": [
+        {
+          "type": "Official organizer source",
+          "url": "https://www.codabench.org/api/competitions/5263/?format=api",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/47d88aa03ea9afa9.json",
+          "supports": [
+            "task_profile.tasks.task1",
+            "dataset",
+            "organizers"
+          ],
+          "snapshot_sha256": "e532b8b88ca6fd321dccb25f238a8069b8eb2b66e7360a0a01dedba9acdec1de"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://www.codabench.org/api/competitions/5651/?format=api",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/1e29d39f9fd592ef.json",
+          "supports": [
+            "task_profile.tasks.task2",
+            "evaluation",
+            "organizers"
+          ],
+          "snapshot_sha256": "84119570eb9356ae63fc8ffb7ae796250b657bea1c68980d852abc4e351b1815"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://fmv-cvpr25workshop.github.io/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/aac3e9b2493204bf.json",
+          "supports": [
+            "event",
+            "umbrella_track_relationship",
+            "organizers"
+          ],
+          "snapshot_sha256": "124d61a72b9935f77a3c462cd1dd1b2a898850f9680fb223358fed19a1e59a3a"
+        },
+        {
+          "type": "existing_structured_fields_and_audit",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/CVPR/2025/medsegfm-2025.json",
+          "source_urls": [],
+          "supports": [
+            "已有testing字段明确Docker，最终由组织者工作站运行。"
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        "dataset.population.patient_count",
+        "dataset.center_count",
+        "dataset.collection_period.start_year",
+        "data_access.license_or_terms",
+        "participation_statistics.registered_teams"
+      ],
+      "verification_policy": "Only edition-specific official evidence populates facts; unknown values remain null.",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "existing_structured_fields_and_audit",
+          "summary": "已有testing字段明确Docker，最终由组织者工作站运行。",
+          "evidence_ids": [
+            "E3"
+          ],
+          "source_urls": [],
+          "user_material": null,
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/CVPR/2025/medsegfm-2025.json"
+        }
+      ]
+    },
+    "record_level": "umbrella_challenge",
+    "scope_status": "core_medical_imaging",
+    "count_in_core_medical_imaging_review": true,
+    "count_in_edition_statistics": true,
+    "child_challenge_ids": [
+      "medsegfm-interactive-2025",
+      "medsegfm-text-guided-2025"
+    ],
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models",
+        "VLM"
+      ],
+      "previous_task_families": [
+        "Segmentation"
+      ],
+      "previous_emerging_objectives": [
+        "Foundation models",
+        "VLM"
+      ],
+      "task_roles": {
+        "Segmentation": "Declared task output"
+      },
+      "note_zh": "2025 年分割基础模型赛包含交互及文本提示设置；保留 FM/VLM 和分割。现行平台页面含 2026 更新，年份以 2025 工作坊与正式赛会论文集核对。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://www.codabench.org/api/competitions/5263/?format=api",
+          "local_source": "_collection/v4_20261003/sources/47d88aa03ea9afa9.json",
+          "sha256": "e532b8b88ca6fd321dccb25f238a8069b8eb2b66e7360a0a01dedba9acdec1de"
+        },
+        {
+          "url": "https://www.codabench.org/api/competitions/5651/?format=api",
+          "local_source": "_collection/v4_20261003/sources/1e29d39f9fd592ef.json",
+          "sha256": "84119570eb9356ae63fc8ffb7ae796250b657bea1c68980d852abc4e351b1815"
+        },
+        {
+          "url": "https://fmv-cvpr25workshop.github.io/",
+          "local_source": "_collection/v4_20261003/sources/aac3e9b2493204bf.json",
+          "sha256": "124d61a72b9935f77a3c462cd1dd1b2a898850f9680fb223358fed19a1e59a3a"
+        },
+        {
+          "url": "https://link.springer.com/book/10.1007/978-3-032-23496-4",
+          "local_source": "_collection/task_objective_audit_20261025/sources/medsegfm2025_proceedings.txt",
+          "sha256": "df4d73d497a1a166500ccd3c611386d87183c0c07437038ca659b789e3f7644c",
+          "scope": "2025 edition proceedings; published 2026"
+        }
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models",
+        "VLM"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain",
+            "Head and Neck",
+            "Abdomen",
+            "Pelvis",
+            "Chest",
+            "Heart",
+            "Spine",
+            "Aorta",
+            "Extremities",
+            "Whole body",
+            "Cell specimens"
+          ],
+          "note": "2025官方数据卡明确年份，文本提示元数据逐源列出头颈/脑、腹盆腔、胸部、心脏、脊柱、主动脉、下肢、全身肿瘤和显微细胞；按标签映射，保留来源集合。"
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer",
+            "Inflammatory / infectious"
+          ]
+        }
+      },
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/junma/CVPR-BiomedSegFM/raw/main/README.md",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/c6083e3a0b187e66.json"
+        },
+        {
+          "url": "https://huggingface.co/datasets/junma/CVPR-BiomedSegFM/resolve/main/CVPR25_TextSegFMData_with_class.json",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/7863687f5b6aa0b2.json"
+        }
+      ],
+      "note_zh": "2025官方数据卡明确年份，文本提示元数据逐源列出头颈/脑、腹盆腔、胸部、心脏、脊柱、主动脉、下肢、全身肿瘤和显微细胞；按标签映射，保留来源集合。",
+      "anatomical_scope": "2025 supplied dataset metadata, not a reconstruction of every hidden-test sample",
+      "remaining_detail": "",
+      "specific_diseases": [
+        "Adrenocortical carcinoma",
+        "Colon cancer",
+        "COVID-19 infection"
+      ],
+      "disease_scope_note": "Partial explicit development-label inventory; final-test disease mixture not inferred",
+      "disease_review_note": "2025官方开发数据标签明确含肾上腺皮质癌、结肠癌及COVID-19；只回填已核对的类别，不宣称完整覆盖所有数据子集。",
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "2025官方开发数据标签明确含肾上腺皮质癌、结肠癌及COVID-19；只回填已核对的类别，不宣称完整覆盖所有数据子集。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/CVPR/2025/medsegfm-2025.json"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA 4.0"
+      ],
+      "scope": "Named source/development data or edition-specific signed agreement",
+      "agreement_required": null,
+      "summary_zh": "官方 2025 数据仓库列 CC BY-NC-SA 4.0；赛中禁止转交数据/链接的规则另行保留，不外推到 2026 届。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "junma/CVPR-BiomedSegFM · Datasets at Hugging Face Hugging Face Models Datasets Spaces Buckets new Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware Learn Discord Forum GitHub Solutions Team & Enterprise Hugging Face PRO Enterprise Support Inference Providers Inference Endpoints Storage Buckets Log In Sign Up Datasets: junma / CVPR-BiomedSegFM Like 24 Tasks: Image Segmentation Modalities: 3D Tags: medical biomedical 3d cvpr2025 License: cc-by-nc-sa-4.0 Dataset card Files Files and versions xet Community 8 Dataset Viewer The dataset could not be loaded because the splits use different data file formats, which is not supported.\n\t\t\t\t\tRead more about the splits configuration . Click for more details. Couldn't infer the same data file format for all splits. Got {NamedSplit('train'): ('text', {}), NamedSplit('validation'): (None, {})} Error code:   FileFormatMismatchBetweenSplitsError Need help to make the dataset viewer work? Make sure to review how to configure the dataset viewer , and open a discussion for direct support. Sample Usage (Interactive 3D Segmentation) Sample Usage (Text-Guided Segmentation) This repository contains the BiomedSegFM dataset, a crucial resource for the CVPR 2025 Competition: Foundation Models for 3D Biomedical Image Segmentation . Foundation Models for Interactive 3D Biomedical Image Segmentation ( Homepage ) Foundation Models for Text-guided 3D Biomedical Image Segmentation ( Homepage ) CVPR 2025 Competition: Foundation Models for 3D Biomedical Image Segmentation Highly recommend watching the webinar recording to learn about the task settings and baseline methods. The dataset covers five commonly used 3D biomedical image modalities: CT, MR, PET, Ultrasound, and Microscopy. All the images are from public datasets with a License for redistribution. \nTo reduce dataset size, all labeled slices are extracted and preprocessed into npz files. Each npz file contains imgs : image data; shape: (D,H,W); Intensity range: [0, 255] gts : ground truth; shape: (D,H,W); spacing Folder structure 3D_train_npz_all: complete training set 3D_train_npz_random_10percent_16G: randomly selected 10% cases from the above training set. In other words, these cases have been included in the complete training set. Participants are allowed to use other criteria to select 10% cases as the coreset. 3D_val_npz: validation set 3D_val_gt: ground truth of validation set CVPR25_TextSegFMData_with_class.json: text prompt for test-guided segmentation task Sample Usage (Interactive 3D Segmentation) The training npz files contain three keys: imgs , gts , and spacing .\nThe validation (and testing) npz files don't have gts keys. We provide an optional box key in the npz file, which is defined by the middle slice 2D bounding box and the top and bottom slice (closed interval).\nHere is a demo to load the data: import numpy as np\n\nnpz = np.load( 'path to npz file' , allow_pickle= True ) print (npz.keys())\nimgs = npz[ 'imgs' ]\ngts = npz[ 'gts' ] # will not be in the npz for testing cases boxes = npz[ 'boxes' ] # a list of bounding box prompts print (boxes[ 0 ].keys()) # dict_keys(['z_min', 'z_max', 'z_mid', 'z_mid_x_min', 'z_mid_y_min', 'z_mid_x_max', 'z_mid_y_max']) Remarks: Box prompt is optional to use, where the corresponding DSC and NSD scores are also not used during ranking. Some objects don't have box prompts, such as vessels (filename contains vessel ) and multicomponent brain lesions (filename contains brats ), becuase the box is not a proper prompt for such targets. The evaluation script will generate a zero-mask and then algorithms can directly start with the point prompt for segmentation. The provided box prompts is designed for better efficiency for annotators, which may not cover the whole object. Here is the script to generate box prompts from ground truth. Sample Usage (Text-Guided Segmentation) For the training set, we provide a json file with dataset-wise prompts CVPR25_TextSegFMData_with_class.json . In the text prompts, 'instance_label': 1 denotes the instance mask where each label corresponds to one instance (e.g., lesions). It is generated by tumor_instance = cc3d.connected_components(tumor_binary_mask>0) 'instance_label': 0 denotes the common semantic mask For the validation (and hidden testing) set, we provided a text key for each validation npz file import numpy as np\n\nnpz = np.load( 'path to npz file' , allow_pickle= True ) print (npz.keys())\nimgs = npz[ 'imgs' ] print (npz[ 'text_prompts' ]) Remarks: To ensure rotation consistency, all testing cases will be preprocessed to standard rotation by https://nipy.org/nibabel/reference/nibabel.funcs.html#nibabel.funcs.as_closest_canonical Some datasets don't have text prompts, please simply exclude them during model training. For instance labels, the evaluate metric is F1 score where the order of instance id doesn't matter. Copy to bucket new Downloads last month 6,918 Total file size: 340 GB Models trained or fine-tuned on junma/CVPR-BiomedSegFM spc819/Medal-S-V1.0 Image Segmentation • Updated 26 days ago • 16 • 4 abhirajputnikku7/Book_History Translation • Updated Jun 4 System theme Company TOS Privacy About Careers Website Models Datasets Spaces Pricing Docs",
+          "source": {
+            "url": "https://huggingface.co/datasets/junma/CVPR-BiomedSegFM",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/9c24c28ba64d5789.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/junma/CVPR-BiomedSegFM",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/9c24c28ba64d5789.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,818 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "ai4life-mdc-2024",
+    "challenge_name": "AI4Life Microscopy Denoising Challenge",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "Standalone",
+      "event_type": "project_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Microscopy"
+      ],
+      "submodality": [
+        "Fluorescence",
+        "Widefield",
+        "Confocal"
+      ],
+      "body_region": [
+        "Cell specimens",
+        "Biological tissue specimens"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Cellular structures",
+        "Penicillium"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Enhancement",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "jump",
+          "official_name": "JUMP unstructured noise",
+          "task_family": "Enhancement",
+          "task_subtype": "unsupervised denoising",
+          "input": [
+            "Noisy microscopy image/stack"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Denoised image/stack"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "w2s",
+          "official_name": "W2S unstructured noise",
+          "task_family": "Enhancement",
+          "task_subtype": "unsupervised denoising",
+          "input": [
+            "Noisy microscopy image/stack"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Denoised image/stack"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "hagen",
+          "official_name": "Hagen structured noise",
+          "task_family": "Enhancement",
+          "task_subtype": "unsupervised denoising",
+          "input": [
+            "Noisy microscopy image/stack"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Denoised image/stack"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "support",
+          "official_name": "SUPPORT structured noise",
+          "task_family": "Enhancement",
+          "task_subtype": "unsupervised denoising",
+          "input": [
+            "Noisy microscopy image/stack"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Denoised image/stack"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": true,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Microscopy"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY 4.0. JUMP、W2S、FMD、SUPPORT 四个比赛数据记录均列 CC BY 4.0。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container",
+        "test_labels_visible_to_participants": false,
+        "policy": "Denoise the supplied noisy images; clean counterparts remain hidden. Noisy training/inference images can be identical."
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "jump",
+          "metrics": [
+            "PSNR",
+            "SI-PSNR",
+            "SSIM",
+            "MS-SSIM"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "w2s",
+          "metrics": [
+            "PSNR",
+            "SI-PSNR",
+            "SSIM",
+            "MS-SSIM"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "hagen",
+          "metrics": [
+            "PSNR",
+            "SI-PSNR",
+            "SSIM",
+            "MS-SSIM"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "support",
+          "metrics": [
+            "PSNR",
+            "SI-PSNR",
+            "SSIM",
+            "MS-SSIM"
+          ],
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container per dataset leaderboard",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "challenge_launch": "2024-04-05",
+      "submission_start": "2024-06-01",
+      "final_submission_deadline": "2024-07-31"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 149,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Structured Noise 1: Hagen et al",
+            "submission_count": 50
+          },
+          {
+            "official_phase_name": "Structured Noise 2: SUPPORT",
+            "submission_count": 20
+          },
+          {
+            "official_phase_name": "Unstructured Noise 1: JUMP",
+            "submission_count": 47
+          },
+          {
+            "official_phase_name": "Unstructured Noise 2: W2S",
+            "submission_count": 34
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://ai4life-mdc24.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Independent AI4Life project competition; no conference association claimed. Public training and prediction code required for winner title."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/#aim-of-the-challenge",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-0019b3e7242d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-0a86e806c7c2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/data-description/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-134f7baba2a7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/useful-links/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-362f5864766e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/results/",
+          "supports": [
+            "challenge context",
+            "evaluation.platform"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-457425983987.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/challenge-details/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-500ad3266c7e.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-53631c0c98ae.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/evaluation-and-metrics/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-544bf8c43c65.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/organizers-and-contacts/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-599873758c20.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/how-to-submit-you-results/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-60d05195b866.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/#structured-denoising",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-9c69f8c5262c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/#biological-motivation",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-b4d2944dd984.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/#welcome-to-the-ai4life-denoising-challenge-2024",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-b509cf14a13d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/#about-us",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-cf6b6360c88e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/#challenge-tasks",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-d93ab38f9143.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/#unstructured-denoising",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-deaae56ecbee.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/late-submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-f85c84aad2ef.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/#about-this-challenge",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-fb9e279e6e2c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/#denoising-challenge-ai4life-mdc24",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-fbcd98a27288.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/ai4life-mdc24/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-fef3583cb3f1.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-mdc24.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/63-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify dataset-specific subset sizes/licenses, exact winner-ranking metric and external-data policy."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://ai4life-mdc24.grand-challenge.org/results/",
+          "local_snapshot": "_collection/sources/63-457425983987.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': '31.4847', 'url': 'https://ai4life-mdc24.grand-challenge.org/evaluation/074a1cfc-4a0c-4f86-a159-9bcc13a1c304/'}; reviewed for the named edition, not inferred from directory presence alone."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "evaluation.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.body_region",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/ai4life-mdc-2024.json",
+          "_collection/verification_20261003/literature_context/ai4life-mdc-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "当届数据页直接给出各训练数据Zenodo下载记录。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "当届数据页直接给出各训练数据Zenodo下载记录。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/63-134f7baba2a7.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/ai4life-mdc-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "conference_affiliation_review": {
+      "review_date": "2026-10-25",
+      "previous_analysis_conference": "Standalone",
+      "analysis_conference": "Standalone",
+      "primary_conference": null,
+      "organizing_arrangement": "Project / institution-led competition",
+      "primary_relationship": "Project/institution organized; no designated conference host",
+      "related_events": [],
+      "note_zh": "维持AI4Life项目组织，官方说明为Horizon Europe资助项目的挑战赛。",
+      "sources": [
+        {
+          "url": "https://ai4life-mdc24.grand-challenge.org/#aim-of-the-challenge",
+          "local_source": "_collection/sources/63-0019b3e7242d.json",
+          "sha256": "626628e175e4870f6a790b8677a2ca48f7f994dbeee8c04417e0b8025128cc24"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cell specimens",
+            "Biological tissue specimens"
+          ],
+          "note": "2024数据说明包括JUMP细胞染色、W2S、Penicillium及低信噪比生物成像；记录细胞/组织标本，真菌不归入人类器官或动物部位。"
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "sources": [
+        {
+          "url": "https://ai4life-mdc24.grand-challenge.org/data-description/",
+          "local_source": "_collection/sources/63-134f7baba2a7.json"
+        }
+      ],
+      "note_zh": "2024数据说明包括JUMP细胞染色、W2S、Penicillium及低信噪比生物成像；记录细胞/组织标本，真菌不归入人类器官或动物部位。",
+      "anatomical_scope": "Biological specimen context",
+      "remaining_detail": "",
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "针对细胞与生物标本的显微图像去噪，数据含合成噪声；不从细胞系来源推断患者病种。",
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "针对细胞与生物标本的显微图像去噪，数据含合成噪声；不从细胞系来源推断患者病种。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/Standalone/2024/ai4life-mdc-2024.json"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY 4.0"
+      ],
+      "scope": "Named public development/data release only; hidden evaluation rights not inferred",
+      "agreement_required": null,
+      "summary_zh": "JUMP、W2S、FMD、SUPPORT 四个比赛数据记录均列 CC BY 4.0。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"AI4Life-MDC24 Challenge data: JUMP Cell Painting Datasets\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2024-04-03\", \"license\": {\"id\": \"cc-by-4.0\"}, \"description\": \"<p>This is a subset of <em>the cpg0016-jump</em> dataset (<em>Chandrasekaran et al., 2022), available from the Cell Painting Gallery on the Registry of Open Data on AWS (<a href=\\\"https://registry.opendata.aws/cellpainting-gallery/\\\" rel=\\\"nofollow\\\">https://registry.opendata.aws/cellpainting-gallery/</a>).&nbsp;<br><br></em>The selected <strong>subset</strong> contains 517 images with four channels in the form of a single multi-channel tiff file. Gaussian noise is applied to each image to simulate the detector noise.</p>\\n<p>The GitHub repository with the details about the original dataset is available at <a href=\\\"https://github.com/jump-cellpainting/datasets\\\">https://github.com/jump-cellpainting/datasets</a>. The preprint describing the original dataset is&nbsp;<a href=\\\"https://www.biorxiv.org/content/10.1101/2023.03.23.534023v1\\\">available on BioRxiv</a><br><br></p>\\n<p>AI4Life has received funding from the European Union&rsquo;s Horizon Europe research and innovation programme under grant agreement number 101057970. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.</p>\\n<p>&nbsp;</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/10912386",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/bf3334af020931f9.json"
+          }
+        },
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"AI4Life-MDC24 Challenge data: W2S Dataset\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2024-04-04\", \"license\": {\"id\": \"cc-by-4.0\"}, \"description\": \"<p>This is a subset of the W2S dataset: Zhou, R., El Helou, M., Sage, D., Laroche, T., Seitz, A., S&uuml;sstrunk, S. (2020). W2S: Microscopy Data with Joint Denoising and Super-Resolution for Widefield to SIM Mapping. In: Bartoli, A., Fusiello, A. (eds) Computer Vision &ndash; ECCV 2020 Workshops. ECCV 2020. Lecture Notes in Computer Science(), vol 12535. Springer, Cham. <a href=\\\"https://doi.org/10.1007/978-3-030-66415-2_31\\\">https://doi.org/10.1007/978-3-030-66415-2_31</a><br><br>The selected <strong>subset</strong> contains 120 images with three channels, acquired using a conventional fluorescence widefield, in the form of a single multi-channel tiff file.<br><br><span><span><span><span>Code, data, and a copy of the original paper is available at&nbsp; <a href=\\\"https://github.com/IVRL/w2s\\\" target=\\\"_blank\\\" rel=\\\"noopener noreferrer\\\">https://github.com/IVRL/w2s</a></span></span></span></span><br><br>AI4Life has received funding from the European Union&rsquo;s Horizon Europe research and innovation programme under grant agreement number 101057970. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/10925783",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/a77ca838a2ab10ec.json"
+          }
+        },
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"AI4Life-MDC24 Challenge data: Fluorescence Microscopy Datasets for Training Deep Neural Networks\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2024-04-04\", \"license\": {\"id\": \"cc-by-4.0\"}, \"description\": \"<p>This is a subset of the Supporting data for <em>Guy M Hagen, Justin Bendesky, Rosa Machado, Tram-Anh Nguyen, Tanmay Kumar, Jonathan Ventura, Fluorescence microscopy datasets for training deep neural networks, GigaScience, Volume 10, Issue 5, May 2021, giab032, <a href=\\\"https://doi.org/10.1093/gigascience/giab032\\\">https://doi.org/10.1093/gigascience/giab032</a></em><br><br>The selected <strong>subset</strong> contains 79 images from Data Set 4 in the form of a single tiff file.&nbsp;<br><br>The paper describing the original dataset is available here: <a href=\\\"https://academic.oup.com/gigascience/article/10/5/giab032/6269106\\\">https://academic.oup.com/gigascience/article/10/5/giab032/6269106</a><br>The original dataset is available here: <a href=\\\"http://gigadb.org/dataset/100888\\\">http://gigadb.org/dataset/100888</a></p>\\n<p><br>AI4Life has received funding from the European Union&rsquo;s Horizon Europe research and innovation programme under grant agreement number 101057970. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/10925855",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/bb12abba129df160.json"
+          }
+        },
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"AI4Life-MDC24 Challenge data: SUPPORT method dataset\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2024-04-04\", \"license\": {\"id\": \"cc-by-4.0\"}, \"description\": \"<p>This is a subset of the Supporting data for <em>Eom, M., Han, S., Park, P. et al. Statistically unbiased prediction enables accurate denoising of voltage imaging data. Nat Methods <strong>20</strong>, 1581&ndash;1592 (2023). https://doi.org/10.1038/s41592-023-02005-8</em><br>For more details, please see the research publication \\\"<a href=\\\"https://www.nature.com/articles/s41592-023-02005-8\\\">Statistically unbiased prediction enables accurate denoising of voltage imaging data</a>\\\".</p>\\n<p>The selected <strong>subset</strong> contains low-SNR images from the Penicillium dataset in the form of a single tiff file.<br><br>The original dataset is available at <a href=\\\"../record/8176722\\\">https://zenodo.org/record/8176722</a><br><br><br>AI4Life has received funding from the European Union&rsquo;s Horizon Europe research and innovation programme under grant agreement number 101057970. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/10925939",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/118f1c68b8925759.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/10912386",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/bf3334af020931f9.json"
+        },
+        {
+          "url": "https://zenodo.org/api/records/10925783",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/a77ca838a2ab10ec.json"
+        },
+        {
+          "url": "https://zenodo.org/api/records/10925855",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/bb12abba129df160.json"
+        },
+        {
+          "url": "https://zenodo.org/api/records/10925939",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/118f1c68b8925759.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://ai4life-mdc24.grand-challenge.org/data-description/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/134f7baba2a71a9f.json",
+          "status": 200
+        },
+        {
+          "url": "https://ai4life-mdc24.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/0a86e806c7c24022.json",
+          "status": 200
+        },
+        {
+          "url": "https://ai4life-mdc24.grand-challenge.org/results/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/4574259839879456.json",
+          "status": 200
+        },
+        {
+          "url": "https://ai4life-mdc24.grand-challenge.org/#about-us",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/cf6b6360c88ee29a.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/api/records/10912386",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/bf3334af020931f9.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/10925783",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/a77ca838a2ab10ec.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/10925855",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/bb12abba129df160.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/10925939",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/118f1c68b8925759.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

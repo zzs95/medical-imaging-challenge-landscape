@@ -1,0 +1,1713 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "unicorn-2025",
+    "challenge_name": "UNICORN",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "MRI",
+        "Pathology",
+        "Text"
+      ],
+      "submodality": [
+        "H&E",
+        "IHC"
+      ],
+      "body_region": [
+        "Prostate",
+        "Lung",
+        "Stomach",
+        "Breast",
+        "Spine"
+      ],
+      "organ_system": null,
+      "organs_or_structures": null,
+      "diseases": [
+        "Prostate, lung, gastric and breast cancers",
+        "Hip osteoarthritis grading",
+        "Colorectal polyps and dysplasia"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [
+        "Prognosis",
+        "Detection",
+        "Segmentation",
+        "Regression",
+        "Named Entity Recognition",
+        "Report Generation"
+      ],
+      "tasks": [
+        {
+          "task_id": "T1",
+          "official_name": "Classifying HE prostate biopsies into ISUP scores",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "H&E prostate biopsy WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "ISUP score"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Vision"
+        },
+        {
+          "task_id": "T2",
+          "official_name": "Classifying lung nodule malignancy in CT",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "Chest CT with lung nodule"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Malignancy score"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Vision"
+        },
+        {
+          "task_id": "T3",
+          "official_name": "Predicting the time to biochemical recurrence in HE prostatectomies",
+          "task_family": "Prognosis",
+          "task_subtype": null,
+          "input": [
+            "H&E prostatectomy WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Time to biochemical recurrence"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Vision"
+        },
+        {
+          "task_id": "T4",
+          "official_name": "Predicting slide-level tumor proportion score in NSCLC IHC-stained WSI",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "NSCLC IHC-stained WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Tumor proportion score class"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Vision"
+        },
+        {
+          "task_id": "T5",
+          "official_name": "Detecting signet ring cells in HE-stained WSI of gastric cancer",
+          "task_family": "Detection",
+          "task_subtype": null,
+          "input": [
+            "Gastric cancer H&E WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Signet-ring cell detections"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Vision"
+        },
+        {
+          "task_id": "T6",
+          "official_name": "Detecting clinically significant cancer in prostate MRI exams",
+          "task_family": "Detection",
+          "task_subtype": null,
+          "input": [
+            "Prostate MRI exam"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Cancer detection predictions"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Vision"
+        },
+        {
+          "task_id": "T7",
+          "official_name": "Detecting lung nodules in thoracic CT",
+          "task_family": "Detection",
+          "task_subtype": null,
+          "input": [
+            "Thoracic CT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Lung nodule detections"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Vision"
+        },
+        {
+          "task_id": "T8",
+          "official_name": "Detecting mitotic figures in breast cancer HE-stained WSIs",
+          "task_family": "Detection",
+          "task_subtype": null,
+          "input": [
+            "Breast cancer H&E WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Mitotic figure detections"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Vision"
+        },
+        {
+          "task_id": "T9",
+          "official_name": "Segmenting ROIs in breast cancer HE-stained WSIs",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "Breast cancer H&E WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "ROI segmentation"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Vision"
+        },
+        {
+          "task_id": "T10",
+          "official_name": "Segmenting lesions within ROIs in CT",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "CT lesion ROI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Lesion segmentation"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Vision"
+        },
+        {
+          "task_id": "T11",
+          "official_name": "Segmenting three anatomical structures in lumbar spine MRI",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "Lumbar spine MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Three-structure segmentation"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Vision"
+        },
+        {
+          "task_id": "T12",
+          "official_name": "Predicting histopathology sample origin",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "Histopathology report"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Sample origin class"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Language"
+        },
+        {
+          "task_id": "T13",
+          "official_name": "Classifying pulmonary nodule presence",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "Radiology report"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Pulmonary nodule presence score"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Language"
+        },
+        {
+          "task_id": "T14",
+          "official_name": "Classifying kidney abnormality",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "Radiology report"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Kidney abnormality score"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Language"
+        },
+        {
+          "task_id": "T15",
+          "official_name": "Predicting Hip Kellgren-Lawrence score",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "Radiology report"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Hip Kellgren-Lawrence score"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Language"
+        },
+        {
+          "task_id": "T16",
+          "official_name": "Classifying colon histopathology diagnosis",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "Colon histopathology report"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Diagnosis scores"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Language"
+        },
+        {
+          "task_id": "T17",
+          "official_name": "Predicting lesion size measurements",
+          "task_family": "Regression",
+          "task_subtype": null,
+          "input": [
+            "Radiology report"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Lesion size measurements"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Language"
+        },
+        {
+          "task_id": "T18",
+          "official_name": "Predicting prostate volume, PSA, and PSA density",
+          "task_family": "Regression",
+          "task_subtype": null,
+          "input": [
+            "Radiology report"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Prostate volume, PSA, PSA density"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Language"
+        },
+        {
+          "task_id": "T19",
+          "official_name": "Anonymizing report",
+          "task_family": "Named Entity Recognition",
+          "task_subtype": null,
+          "input": [
+            "Radiology or pathology report"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Named entities for anonymization"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Language"
+        },
+        {
+          "task_id": "T20",
+          "official_name": "Generating caption from WSI",
+          "task_family": "Report Generation",
+          "task_subtype": null,
+          "input": [
+            "WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Natural language caption"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "modality_group": "Vision-Language"
+        }
+      ],
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Named entity extraction",
+        "Prognosis",
+        "Quantification / measurement",
+        "Report generation",
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "Detection": "Declared task output",
+        "Named entity extraction": "Ancillary text-only extraction task",
+        "Prognosis": "Declared task output",
+        "Quantification / measurement": "Ancillary text-only extraction task",
+        "Report generation": "Declared task output",
+        "Segmentation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": true,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": true,
+      "report_generation": true,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT",
+        "MRI",
+        "Pathology",
+        "Text"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA 2.0 Generic (development release); Task-specific upstream dataset licences. 官方公开开发集 Zenodo 记录列 CC BY-NC-SA 2.0 Generic；预训练资源表另列各来源许可，保持分来源记录，不套用至隐藏测试。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; round 2",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "Public few-shot development examples",
+          "category": "Public download",
+          "access_steps": [
+            "Zenodo public download"
+          ],
+          "manual_review": false
+        },
+        {
+          "scope": "Validation/test",
+          "category": "Held centrally",
+          "access_steps": [
+            "Platform evaluation; no release inferred"
+          ],
+          "manual_review": null
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Foundation-model pretraining allowed; adaptation may use only supplied few-shot examples. Same model within a modality group; task-specific specialist routing prohibited."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "T1",
+          "metrics": [
+            "Quadratic weighted kappa"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T2",
+          "metrics": [
+            "AUC"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T3",
+          "metrics": [
+            "Censored c-index"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T4",
+          "metrics": [
+            "Quadratic weighted kappa"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T5",
+          "metrics": [
+            "F1 score"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T6",
+          "metrics": [
+            "AUROC",
+            "Average precision"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T7",
+          "metrics": [
+            "Sensitivity"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T8",
+          "metrics": [
+            "F1 score"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T9",
+          "metrics": [
+            "Dice"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T10",
+          "metrics": [
+            "Dice",
+            "Long-axis error",
+            "Short-axis error"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T11",
+          "metrics": [
+            "Dice"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T12",
+          "metrics": [
+            "Unweighted kappa"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T13",
+          "metrics": [
+            "AUC"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T14",
+          "metrics": [
+            "AUC"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T15",
+          "metrics": [
+            "Unweighted kappa"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T16",
+          "metrics": [
+            "Macro AUC"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T17",
+          "metrics": [
+            "RSMAPE"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T18",
+          "metrics": [
+            "RSMAPE"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T19",
+          "metrics": [
+            "Weighted F1"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "T20",
+          "metrics": [
+            "BLEU-4",
+            "ROUGE-L",
+            "METEOR",
+            "CIDEr",
+            "BERTScore"
+          ],
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container plus adaptor",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null,
+        "max_container_size_gb": 20
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "challenge_launch": "2025-04-08",
+      "final_submission_deadline": "2025-09-05",
+      "challenge_event": "2025-09-23"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 327,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Check All",
+            "submission_count": 49
+          },
+          {
+            "official_phase_name": "Check Task 01",
+            "submission_count": 112
+          },
+          {
+            "official_phase_name": "Check Task 02",
+            "submission_count": 98
+          },
+          {
+            "official_phase_name": "Check Task 03",
+            "submission_count": 53
+          },
+          {
+            "official_phase_name": "Check Task 04",
+            "submission_count": 52
+          },
+          {
+            "official_phase_name": "Check Task 05",
+            "submission_count": 81
+          },
+          {
+            "official_phase_name": "Check Task 06",
+            "submission_count": 81
+          },
+          {
+            "official_phase_name": "Check Task 07",
+            "submission_count": 57
+          },
+          {
+            "official_phase_name": "Check Task 08",
+            "submission_count": 42
+          },
+          {
+            "official_phase_name": "Check Task 09",
+            "submission_count": 44
+          },
+          {
+            "official_phase_name": "Check Task 10",
+            "submission_count": 73
+          },
+          {
+            "official_phase_name": "Check Task 11",
+            "submission_count": 67
+          },
+          {
+            "official_phase_name": "Check Task 12",
+            "submission_count": 37
+          },
+          {
+            "official_phase_name": "Check Task 13",
+            "submission_count": 30
+          },
+          {
+            "official_phase_name": "Check Task 14",
+            "submission_count": 15
+          },
+          {
+            "official_phase_name": "Check Task 15",
+            "submission_count": 15
+          },
+          {
+            "official_phase_name": "Check Task 16",
+            "submission_count": 29
+          },
+          {
+            "official_phase_name": "Check Task 17",
+            "submission_count": 14
+          },
+          {
+            "official_phase_name": "Check Task 18",
+            "submission_count": 21
+          },
+          {
+            "official_phase_name": "Check Task 19",
+            "submission_count": 23
+          },
+          {
+            "official_phase_name": "Check Radiology Vision",
+            "submission_count": 73
+          },
+          {
+            "official_phase_name": "Check Pathology Vision",
+            "submission_count": 113
+          },
+          {
+            "official_phase_name": "Check Language",
+            "submission_count": 48
+          },
+          {
+            "official_phase_name": "Check Vision-Language",
+            "submission_count": 40
+          },
+          {
+            "official_phase_name": "Validation Task 01",
+            "submission_count": 14
+          },
+          {
+            "official_phase_name": "Validation Task 02",
+            "submission_count": 20
+          },
+          {
+            "official_phase_name": "Validation Task 03",
+            "submission_count": 12
+          },
+          {
+            "official_phase_name": "Validation Task 04",
+            "submission_count": 15
+          },
+          {
+            "official_phase_name": "Validation Task 05",
+            "submission_count": 12
+          },
+          {
+            "official_phase_name": "Validation Task 06",
+            "submission_count": 27
+          },
+          {
+            "official_phase_name": "Validation Task 07",
+            "submission_count": 9
+          },
+          {
+            "official_phase_name": "Validation Task 08",
+            "submission_count": 15
+          },
+          {
+            "official_phase_name": "Validation Task 09",
+            "submission_count": 16
+          },
+          {
+            "official_phase_name": "Validation Task 10",
+            "submission_count": 19
+          },
+          {
+            "official_phase_name": "Validation Task 11",
+            "submission_count": 21
+          },
+          {
+            "official_phase_name": "Validation Task 12",
+            "submission_count": 6
+          },
+          {
+            "official_phase_name": "Validation Task 13",
+            "submission_count": 4
+          },
+          {
+            "official_phase_name": "Validation Task 14",
+            "submission_count": 4
+          },
+          {
+            "official_phase_name": "Validation Task 15",
+            "submission_count": 4
+          },
+          {
+            "official_phase_name": "Validation Task 16",
+            "submission_count": 5
+          },
+          {
+            "official_phase_name": "Validation Task 17",
+            "submission_count": 6
+          },
+          {
+            "official_phase_name": "Validation Task 18",
+            "submission_count": 5
+          },
+          {
+            "official_phase_name": "Validation Task 19",
+            "submission_count": 11
+          },
+          {
+            "official_phase_name": "Validation Radiology Vision",
+            "submission_count": 17
+          },
+          {
+            "official_phase_name": "Validation Pathology Vision",
+            "submission_count": 24
+          },
+          {
+            "official_phase_name": "Validation Language",
+            "submission_count": 16
+          },
+          {
+            "official_phase_name": "Validation Vision-Language",
+            "submission_count": 7
+          },
+          {
+            "official_phase_name": "Validation All",
+            "submission_count": 7
+          },
+          {
+            "official_phase_name": "Test All (20 tasks)",
+            "submission_count": 5
+          },
+          {
+            "official_phase_name": "Test Radiology Vision (5 tasks)",
+            "submission_count": 4
+          },
+          {
+            "official_phase_name": "Test Pathology Vision (6 tasks)",
+            "submission_count": 5
+          },
+          {
+            "official_phase_name": "Test Language (8 tasks)",
+            "submission_count": 4
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://unicorn.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Includes 12 image or image-language tasks and 8 text-only tasks. Retained as an imaging-inclusive generalist competition, preserving text tasks explicitly. Official task table labels T3 Regression; here categorized as Prognosis because its endpoint is censored time to recurrence.",
+      "Source-list platform_year is 2024; the official challenge edition is 2025. The output directory follows the official edition."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#04042025-register-for-the-kick-off-webinar-on-april-15th-during-which-the-tasks-and-submission-process-will-be-discussed-and-any-initial-questions-will-be-answered-register-here",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-041bbc8edd77.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-078d14d3dead.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/tasklist/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-15e7b4b99ee6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-1658834c30ee.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/resources",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-3beb5153ca60.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#in-recent-years-large-multimodal-foundation-models-have-emerged-as-powerful-tools-capable-of-handling-diverse-tasks-across-vision-and-language-domains-pre-trained-on-large-datasets-these-models-hold-the-promise-of-becoming-generalist-systems-able-to-solve-a-variety-of-tasks-often-solely-based-on-a-few-visual-andor-textual-examples-eg-prompts-or-shots-without-requiring-extensive-task-specific-training-or-large-scale-annotated-data-this-potential-has-drawn-substantial-attention-particularly-in-the-field-of-medical-imaging-where-data-scarcity-and-the-need-for-annotations-are-major-hurdles-however-despite-the-growing-interest-and-development-efforts-the-field-is-experiencing-a-benchmarking-crisis-due-to-the-lack-of-comprehensive-publicly-available-benchmarks-to-assesses-the-performance-of-these-models-across-multiple-clinical-tasks",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-46f61ea1afb4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#the-goal-of-unicorn-is-to-establish-a-public-benchmark-to-measure-how-large-scale-generalist-models-can-perform-across-multiple-tasks-and-handle-the-complexity-of-medical-data-in-different-domains",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-48d691e0060b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/resources/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-4ffe40864ce3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#getting-started",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-510b6f5cee75.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://unicorn.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-529d2f93e323.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-63c8cb35b140.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#welcome-to-the-unicorn-challenge",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-69460578087a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/miccai-workshop/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-6d19078aa7b3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-74616ed5495d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#final-results",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-7d61d84130fd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#resources",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-853eafae743d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-885712fd72b5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/unicorn/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-92361ab29cd4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#as-part-of-the-miccai-2025-lighthouse-challenges-the-unicorn-challenge-aims-to-fill-this-gap-by-providing-a-unified-set-of-20-tasks-to-assess-the-performance-of-multimodal-foundation-models-in-medical-imaging-in-contrast-to-traditional-many-to-one-challenges-where-models-focus-on-a-single-task-unicorn-follows-a-one-to-many-approach-assessing-how-well-a-single-model-can-adapt-to-a-variety-of-tasks-spanning-vision-and-language-in-the-field-of-radiology-and-digital-pathology",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-9db933cdbcbe.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/tasks/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-9fba87b290bd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#background",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-a946ae01b26c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/phases/",
+          "supports": [
+            "challenge context",
+            "evaluation.platform"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-b6e631d852ed.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#08042025-official-challenge-kick-off",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-bba582a94d74.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/requirements-and-guidelines/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-bfe364173734.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#announcements",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-c52da162d8bc.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#27052025-register-for-the-live-qa-session-on-may-27th-during-which-we-will-be-available-to-answer-any-questions-you-might-have-register-here",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-d6180ad2d40d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#07022025-the-first-batch-of-public-few-shot-examples-for-some-of-the-unicorn-tasks-has-been-released-check-it-out-on-zenodo",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-e1021ab69001.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/winners/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-e59f2ec658f3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/#public-datasets-for-local-development-check-our-resources-page",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-e710c6ab3023.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/announcements-news/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-f2c89b972703.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://unicorn.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/47-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify per-task detailed interfaces, few-shot/evaluation counts, task-specific licenses and final cross-task ranking aggregation."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://unicorn.grand-challenge.org/phases/",
+          "local_snapshot": "_collection/sources/47-b6e631d852ed.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official organizer report, submission instructions or native platform submission statistics establishes the challenge evaluation service; reviewed for the named edition, not inferred from directory presence alone."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "evaluation.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.body_region",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/unicorn-2025.json",
+          "_collection/verification_20261003/literature_context/unicorn-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "官方Phases页链接2025年4月公开few-shot开发数据，可用于本地开发；保密验证／测试数据另列。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "Public few-shot development examples",
+            "category": "Public download",
+            "access_steps": [
+              "Zenodo public download"
+            ],
+            "manual_review": false
+          },
+          {
+            "scope": "Validation/test",
+            "category": "Held centrally",
+            "access_steps": [
+              "Platform evaluation; no release inferred"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "Primary protocol / metadata checked",
+        "confidence": "High",
+        "source_urls": [
+          "https://unicorn.grand-challenge.org/phases/",
+          "https://zenodo.org/records/15112095"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-24 round 2: 官方Phases页链接2025年4月公开few-shot开发数据，可用于本地开发；保密验证／测试数据另列。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/unicorn-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/phases/",
+          "local_source": "_collection/access_backfill_round2_20261024/sources/b6e631d852ed5865.json",
+          "review_date": "2026-10-24",
+          "section": "Round 2 development access; task and temporal scope retained"
+        },
+        {
+          "url": "https://zenodo.org/records/15112095",
+          "local_source": "_collection/access_backfill_round2_20261024/sources/208fdf76e08b1c76.json",
+          "review_date": "2026-10-24",
+          "section": "Round 2 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round2_20261024/user_review_summary.json",
+          "section": "User-supplied round 2 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "2",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid",
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Named entity extraction",
+        "Prognosis",
+        "Quantification / measurement",
+        "Report generation",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models",
+        "VLM",
+        "Report generation"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Named entity extraction",
+        "Prognosis",
+        "Quantification / measurement",
+        "Report generation",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models",
+        "VLM",
+        "Report generation"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "Detection",
+        "Named entity extraction",
+        "Prognosis",
+        "Quantification / measurement",
+        "Report generation",
+        "Segmentation"
+      ],
+      "previous_emerging_objectives": [
+        "Foundation models",
+        "VLM",
+        "Report generation"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "Detection": "Declared task output",
+        "Named entity extraction": "Ancillary text-only extraction task",
+        "Prognosis": "Declared task output",
+        "Quantification / measurement": "Ancillary text-only extraction task",
+        "Report generation": "Declared task output",
+        "Segmentation": "Declared task output"
+      },
+      "note_zh": "保留20任务的现有七类标签；量化及实体识别包括纯文本辅助任务，图像文本联合目标来自 WSI caption，不把每个交叉格解释为相同模态上的独立试验。单一共享模型及标准化适配支持 FM。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://unicorn.grand-challenge.org/#04042025-register-for-the-kick-off-webinar-on-april-15th-during-which-the-tasks-and-submission-process-will-be-discussed-and-any-initial-questions-will-be-answered-register-here",
+          "local_source": "_collection/sources/47-041bbc8edd77.json",
+          "sha256": "0508954e9621ee40548185968bf9c46b8fecfa5d84ed5ce19d5cc99d0f70ad93"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/",
+          "local_source": "_collection/sources/47-078d14d3dead.json",
+          "sha256": "a329b2d4882f8e982dc9aefad99dc9904e21c17a2ed395f2d9c30475f865b6a5"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/tasklist/",
+          "local_source": "_collection/sources/47-15e7b4b99ee6.json",
+          "sha256": "80515fbb6ec5f68da4fc36e71e3181a6236e7fde44d628f45b0545e61bd5e6ce"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/resources",
+          "local_source": "_collection/sources/47-3beb5153ca60.json",
+          "sha256": "9bff51daa08f580fb2b90fd7ca9b06a53e8b2918f681e8fa2eef80bb6db0abe0"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#in-recent-years-large-multimodal-foundation-models-have-emerged-as-powerful-tools-capable-of-handling-diverse-tasks-across-vision-and-language-domains-pre-trained-on-large-datasets-these-models-hold-the-promise-of-becoming-generalist-systems-able-to-solve-a-variety-of-tasks-often-solely-based-on-a-few-visual-andor-textual-examples-eg-prompts-or-shots-without-requiring-extensive-task-specific-training-or-large-scale-annotated-data-this-potential-has-drawn-substantial-attention-particularly-in-the-field-of-medical-imaging-where-data-scarcity-and-the-need-for-annotations-are-major-hurdles-however-despite-the-growing-interest-and-development-efforts-the-field-is-experiencing-a-benchmarking-crisis-due-to-the-lack-of-comprehensive-publicly-available-benchmarks-to-assesses-the-performance-of-these-models-across-multiple-clinical-tasks",
+          "local_source": "_collection/sources/47-46f61ea1afb4.json",
+          "sha256": "956516b6943b59078a1cc140d9bf037a86f78d5dbcbbb1437658239cae8cba11"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#the-goal-of-unicorn-is-to-establish-a-public-benchmark-to-measure-how-large-scale-generalist-models-can-perform-across-multiple-tasks-and-handle-the-complexity-of-medical-data-in-different-domains",
+          "local_source": "_collection/sources/47-48d691e0060b.json",
+          "sha256": "ac1f1342e9cb12a6664e46b4f9a64d59fbbc58ee49ff86e177f64af6f1d562b7"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/resources/",
+          "local_source": "_collection/sources/47-4ffe40864ce3.json",
+          "sha256": "6db5e4d3d52e757d86c419deb1ae50ef27a183f8fab3087e7220b4fb760bc056"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#getting-started",
+          "local_source": "_collection/sources/47-510b6f5cee75.json",
+          "sha256": "cd00c26152944799e583dd97655cce860c952c96614a1aa4618aed606cc8340a"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/submission/",
+          "local_source": "_collection/sources/47-63c8cb35b140.json",
+          "sha256": "8a9b1292728275a1732064981b9eee20cb316507fd5b24171bab3710a38fe933"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#welcome-to-the-unicorn-challenge",
+          "local_source": "_collection/sources/47-69460578087a.json",
+          "sha256": "4ff4971202089e550820ea10e1d846ff6eb1f1221f522062aafb0b0c39242696"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/miccai-workshop/",
+          "local_source": "_collection/sources/47-6d19078aa7b3.json",
+          "sha256": "2c61e5612c61d0ae49b4ef75cb66a9c01c976f36c08b20a3a6096c2c3b21a5a9"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#final-results",
+          "local_source": "_collection/sources/47-7d61d84130fd.json",
+          "sha256": "1f6d55c7f26784936e9458a3d4ac3a367bbc823b566d028a757d2de3223f3d1c"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#resources",
+          "local_source": "_collection/sources/47-853eafae743d.json",
+          "sha256": "00c97b0efd502c19b1f2b1a7c793dcf4861b0851733153fa8e29f801621a7149"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/unicorn/",
+          "local_source": "_collection/sources/47-92361ab29cd4.json",
+          "sha256": "20160e2d137898c706ccf4b7281c86b6b521f5f8775c4b58808fea7c42ce0e72"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#as-part-of-the-miccai-2025-lighthouse-challenges-the-unicorn-challenge-aims-to-fill-this-gap-by-providing-a-unified-set-of-20-tasks-to-assess-the-performance-of-multimodal-foundation-models-in-medical-imaging-in-contrast-to-traditional-many-to-one-challenges-where-models-focus-on-a-single-task-unicorn-follows-a-one-to-many-approach-assessing-how-well-a-single-model-can-adapt-to-a-variety-of-tasks-spanning-vision-and-language-in-the-field-of-radiology-and-digital-pathology",
+          "local_source": "_collection/sources/47-9db933cdbcbe.json",
+          "sha256": "fc00ed1ac0184571667576d186d6aa090686388c250f69580c48d326ddc8e7aa"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/tasks/",
+          "local_source": "_collection/sources/47-9fba87b290bd.json",
+          "sha256": "118d76495fe84c36c1029f23423f0cc10268610a40e3bbcb22beafe65862b8ae"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#background",
+          "local_source": "_collection/sources/47-a946ae01b26c.json",
+          "sha256": "6360956a9d08ad4516f8f326fbc71d684ab29e97284ff334dbc6b26f84432d90"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/phases/",
+          "local_source": "_collection/sources/47-b6e631d852ed.json",
+          "sha256": "8056ca576d981296e72a9c0ae356419c61d5c69538aa9c6b8682be44e2b67f40"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#08042025-official-challenge-kick-off",
+          "local_source": "_collection/sources/47-bba582a94d74.json",
+          "sha256": "5998159ffc5929d140c6bb159a2f0e5d341b33a7a976a6fd338e0bdd8578fbce"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/requirements-and-guidelines/",
+          "local_source": "_collection/sources/47-bfe364173734.json",
+          "sha256": "0774538958b32f03fb6a3b155fa29461e4bbb7dc46d14d3516513ff6997761af"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#announcements",
+          "local_source": "_collection/sources/47-c52da162d8bc.json",
+          "sha256": "78a18baaa887e22641936089d56f39182e5af3c3906b520d055f087575266258"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#27052025-register-for-the-live-qa-session-on-may-27th-during-which-we-will-be-available-to-answer-any-questions-you-might-have-register-here",
+          "local_source": "_collection/sources/47-d6180ad2d40d.json",
+          "sha256": "fc6311fe2bd8b1aa21ca56e2d02416629c7d9e365f1eac649a206abfb5e1d034"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#07022025-the-first-batch-of-public-few-shot-examples-for-some-of-the-unicorn-tasks-has-been-released-check-it-out-on-zenodo",
+          "local_source": "_collection/sources/47-e1021ab69001.json",
+          "sha256": "85779e5ab70e080dd9a105c01b674aa054e873b01118b38d050045589729cafa"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/winners/",
+          "local_source": "_collection/sources/47-e59f2ec658f3.json",
+          "sha256": "2bea15993ae6b47dc25cf430bee7ab236db236f2d20d8ef9e3cfc252c04ec2c1"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/#public-datasets-for-local-development-check-our-resources-page",
+          "local_source": "_collection/sources/47-e710c6ab3023.json",
+          "sha256": "6f67045a14f747b5c085622b532f637959574f120848558e83d6f90cf90cee25"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/announcements-news/",
+          "local_source": "_collection/sources/47-f2c89b972703.json",
+          "sha256": "eb67759d5bd3db03c9df471f7b7d726daedef4a40d0e228ec94e577b8ed571b7"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/",
+          "local_source": "_collection/sources/47-overview.json",
+          "sha256": "a329b2d4882f8e982dc9aefad99dc9904e21c17a2ed395f2d9c30475f865b6a5"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Prostate",
+            "Lung",
+            "Stomach",
+            "Breast",
+            "Spine"
+          ],
+          "note": "仅由图像任务T1–T11明确定位前列腺、肺、胃、乳腺和腰椎。后续纯文本任务提到肾/髋/结肠不据此增加图像解剖部位。"
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer",
+            "Degenerative",
+            "Other"
+          ]
+        }
+      },
+      "sources": [
+        {
+          "url": "https://unicorn.grand-challenge.org/tasklist/",
+          "local_source": "_collection/sources/47-15e7b4b99ee6.json"
+        }
+      ],
+      "note_zh": "仅由图像任务T1–T11明确定位前列腺、肺、胃、乳腺和腰椎。后续纯文本任务提到肾/髋/结肠不据此增加图像解剖部位。",
+      "anatomical_scope": "Image-grounded task anatomy; text-only task mentions excluded",
+      "remaining_detail": "T10广域病灶与T20全切片描述的全部组织清单未穷尽。",
+      "specific_diseases": [
+        "Prostate, lung, gastric and breast cancers",
+        "Hip osteoarthritis grading",
+        "Colorectal polyps and dysplasia"
+      ],
+      "disease_scope_note": "Edition-wide mixed imaging/text tasks; osteoarthritis grading is text-only within the included multimodal edition",
+      "disease_review_note": "多任务页面明确多个癌症影像任务，并包含髋关节KL分级和结肠息肉诊断的文本任务；后两者单独注明文本任务范围。",
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "多任务页面明确多个癌症影像任务，并包含髋关节KL分级和结肠息肉诊断的文本任务；后两者单独注明文本任务范围。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2025/unicorn-2025.json"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA 2.0 Generic (development release)",
+        "Task-specific upstream dataset licences"
+      ],
+      "scope": "Public development release and named pretraining sources",
+      "agreement_required": null,
+      "summary_zh": "官方公开开发集 Zenodo 记录列 CC BY-NC-SA 2.0 Generic；预训练资源表另列各来源许可，保持分来源记录，不套用至隐藏测试。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "aset Publisher Zenodo Conference Medical Image Computing and Computer Assisted Intervention 2025 (MICCAI 2025) , Daejeon, 23-27 September 2025 Rights License Creative Commons Attribution Non Commercial Share Alike 2.0 Generic No further description. Read more Citation Export Technical metadata Created April 1, 2025 Modified April 1, 2025 Jump up About About Policies Infrastructure Principles Projects Roadmap Contact Blog Blog Support Help FAQ Developers REST API OAI-PMH Contribute GitHub Donate Funded by Powered by CERN Data Centre & InvenioRDM Status Privacy policy Cookie policy Terms of Use This site uses cookies. Find out more on how we use cooki",
+          "source": {
+            "url": "https://zenodo.org/records/15112095",
+            "local_source": "_collection/access_backfill_round2_20261024/sources/208fdf76e08b1c76.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "cal Image Computing and Computer Assisted Intervention 2025 (MICCAI 2025) , Daejeon, 23-27 September 2025 Rights License Creative Commons Attribution Non Commercial Share Alike 2.0 Generic No further description. Read more Citation Export Technical metadata Created April 1, 2025 Modified April 1, 2025 Jump up About About Policies Infrastructure Principles Projects Roadmap Contact Blog Blog Support Help FAQ Developers REST API OAI-PMH Contribute GitHub Donate Funded by Powered by CERN Data Centre & InvenioRDM Status Privacy policy Cookie policy Terms of Use This site uses cookies. Find out more on how we use cookies Accept all cookies Accept only essential ",
+          "source": {
+            "url": "https://zenodo.org/records/15112095",
+            "local_source": "_collection/access_backfill_round2_20261024/sources/208fdf76e08b1c76.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "le below shows the public datasets that can be used for pre-training the foundation models, described per task. The name of the original dataset, the license for its use, the original public link, and related publications are provided. ¶ Task Dataset License Public links Publication T1 PANDA CC BY-SA-NC 4.0 https://www.kaggle.com/c/prostate-cancer-grade-assessment/data [2] T2 LUNA25 CC-BY-NC https://zenodo.org/records/14223624 https://zenodo.org/records/14673658 [14] T3 LEOPARD CC BY-NC-SA https://leopard.grand-challenge.org/ [7] T4 LUNG_18_193 CC BY 4.0 https://www.synapse.org/Synapse:syn26722626 [13] T5 DigestPath CC BY 4.0 https://doi.org/10.1016",
+          "source": {
+            "url": "https://unicorn.grand-challenge.org/resources/",
+            "local_source": "_collection/sources/47-4ffe40864ce3.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": " per task. The name of the original dataset, the license for its use, the original public link, and related publications are provided. ¶ Task Dataset License Public links Publication T1 PANDA CC BY-SA-NC 4.0 https://www.kaggle.com/c/prostate-cancer-grade-assessment/data [2] T2 LUNA25 CC-BY-NC https://zenodo.org/records/14223624 https://zenodo.org/records/14673658 [14] T3 LEOPARD CC BY-NC-SA https://leopard.grand-challenge.org/ [7] T4 LUNG_18_193 CC BY 4.0 https://www.synapse.org/Synapse:syn26722626 [13] T5 DigestPath CC BY 4.0 https://doi.org/10.1016/j.media.2022.102485 [3] T6 PI-CAI CC BY-NC 4.0 https://zenodo.org/records/6517397 (v2) [11] T7 LUNA1",
+          "source": {
+            "url": "https://unicorn.grand-challenge.org/resources/",
+            "local_source": "_collection/sources/47-4ffe40864ce3.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15112095",
+          "local_source": "_collection/access_backfill_round2_20261024/sources/208fdf76e08b1c76.json"
+        },
+        {
+          "url": "https://unicorn.grand-challenge.org/resources/",
+          "local_source": "_collection/sources/47-4ffe40864ce3.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

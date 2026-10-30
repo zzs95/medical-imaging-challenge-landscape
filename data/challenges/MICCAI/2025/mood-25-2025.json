@@ -1,0 +1,739 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "mood-25-2025",
+    "challenge_name": "Medical Out-of-Distribution Analysis Challenge 2025",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI",
+        "CT",
+        "PET",
+        "SPECT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Whole body",
+        "Brain",
+        "Abdomen"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "Anomalous image regions"
+      ],
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Anomaly Detection",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Image-Level",
+          "task_family": "Anomaly Detection",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Object-Level",
+          "task_family": "Anomaly Detection",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Real-World Anomaly Detection",
+          "task_family": "Anomaly Detection",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Anomalous image regions"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "MRI",
+        "CT",
+        "PET",
+        "SPECT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "HCP Open Access Data Use Terms; CC BY 3.0. 脑 MRI 继承 HCP 数据使用条款；腹部 CT 为 CC BY 3.0；第三任务不发布数据，不能对所有数据赋同一许可。",
+      "access_after_challenge": null,
+      "review_status": "Human-confirmed 2026-10-25",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Competition-time training/development data",
+      "access_by_scope": [
+        {
+          "scope": "Training/development",
+          "category": "Account registration",
+          "access_steps": [
+            "Register",
+            "Download development data"
+          ],
+          "manual_review": null
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design.",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Synapse",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Average Precision (AP)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task3",
+          "metrics": null,
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 3 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.15083913",
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Synapse",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {
+      "year_specific_review": {
+        "official_page_heading": "MICCAI 2025",
+        "result_announcement_status_on_page": "Postponed",
+        "page_mixes_years": true,
+        "stale_content": "abstract deadline August 23 2024",
+        "interpretation": "Current 2025-labelled schedule supports reported results postponement, but stale content warrants caution; final assessment completion remains unverified."
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://synapse.org/mood",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "2026-10-22: 结果发布仍待确认，不能写成未完成评价；本轮Synapse动态内容不足以解决该缺口。",
+      "2026-10-22: 复核原延期证据：官方API页599515标题MICCAI 2025，日程含2025数据/提交日期及结果Postponed；同页摘要截止仍为2024。保留2025页面延期表述并注明混年，不用旧帖子证明最终评价状态。",
+      "2026-10-22 最新人工完成确认（替代旧完成待查状态）：MOOD 2025：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 46,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/40cba6887cd7753d.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://synapse.org/mood",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/8e3fcccecd8eda48.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/15083913",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-15083913.txt",
+          "supports": [
+            "clinical_domain",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://synapse.org/mood",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/mood-25-2025.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://www.synapse.org/Synapse%3Asyn21343101/wiki/632372",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_e41d75d92e56_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "结果发布仍待确认，不能写成未完成评价；本轮Synapse动态内容不足以解决该缺口。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn21343101/wiki/599515",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_a8a9baf56b97_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "复核原延期证据：官方API页599515标题MICCAI 2025，日程含2025数据/提交日期及结果Postponed；同页摘要截止仍为2024。保留2025页面延期表述并注明混年，不用旧帖子证明最终评价状态。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://www.synapse.org/Synapse%3Asyn21343101/wiki/632372",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_e41d75d92e56_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "复核原延期证据：官方API页599515标题MICCAI 2025，日程含2025数据/提交日期及结果Postponed；同页摘要截止仍为2024。保留2025页面延期表述并注明混年，不用旧帖子证明最终评价状态。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://zenodo.org/records/15083913",
+          "local_snapshot": "_collection/sources_other/protocol-15083913.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container on the Synapse platform. Link to submission instructions: https://www.synapse.org/mood"
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/15083913",
+          "local_snapshot": "_collection/sources_other/protocol-15083913.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container on the Synapse platform. Link to submission instructions: https://www.synapse.org/mood"
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/15083913",
+          "local_snapshot": "_collection/sources_other/protocol-15083913.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container on the Synapse platform. Link to submission instructions: https://www.synapse.org/mood"
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/15083913",
+          "local_snapshot": "_collection/sources_other/protocol-15083913.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container on the Synapse platform. Link to submission instructions: https://www.synapse.org/mood"
+        },
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/15083913",
+          "local_snapshot": "_collection/sources_other/protocol-15083913.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/15083913",
+          "local_snapshot": "_collection/sources_other/protocol-15083913.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/15083913",
+          "local_snapshot": "_collection/sources_other/protocol-15083913.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/15083913",
+          "local_snapshot": "_collection/sources_other/protocol-15083913.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/15083913",
+          "local_snapshot": "_collection/sources_other/protocol-15083913.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/15083913",
+          "local_snapshot": "_collection/sources_other/protocol-15083913.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Docker container on the Synapse platform. Link to submission instructions: https://www.synapse.org/mood"
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/15083913",
+          "local_snapshot": "_collection/sources_other/protocol-15083913.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Docker container on the Synapse platform. Link to submission instructions: https://www.synapse.org/mood"
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://synapse.org/mood",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/mood-25-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://synapse.org/mood",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/mood-25-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://synapse.org/mood",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/mood-25-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/mood-25-2025.json",
+          "_collection/verification_20261003/literature_context/mood-25-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "结果发布仍待确认，不能写成未完成评价；本轮Synapse动态内容不足以解决该缺口。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "results_release_postponed",
+            "evidence_state": "searched_not_established",
+            "evidence_ids": [],
+            "reason": "Official 2025 schedule explicitly says result announcement postponed. Hall-of-Fame covers 2024, not 2025; no 2025 final assessment record retrieved."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2025/mood-25-2025.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "复核原延期证据：官方API页599515标题MICCAI 2025，日程含2025数据/提交日期及结果Postponed；同页摘要截止仍为2024。保留2025页面延期表述并注明混年，不用旧帖子证明最终评价状态。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2025/mood-25-2025.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "MOOD 2025：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/four_human_confirmations_20261022_152301/MICCAI/2025/mood-25-2025.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "MOOD 2025：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+        "basis_type": "explicit_user_confirmation",
+        "user_instruction": "BodyMaps 2024、FETUS 2026、MOOD 2025、PUFISEG 2025 都已经完成",
+        "propagation_status": "Canonical JSON, audit, current triage CSV/Excel, decisions and reports synchronized; manuscript and aggregate statistics not regenerated."
+      },
+      "remaining_questions": [],
+      "event_state": "completed",
+      "schedule_year_audit": {
+        "official_page_heading": "MICCAI 2025",
+        "result_announcement_status_on_page": "Postponed",
+        "page_mixes_years": true,
+        "stale_content": "abstract deadline August 23 2024",
+        "interpretation": "Current 2025-labelled schedule supports reported results postponement, but stale content warrants caution; final assessment completion remains unverified."
+      },
+      "basis": "MOOD 2025：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+      "completion_basis": "explicit_user_confirmation",
+      "completion_adjudication": {
+        "decision_id": "mood-25-2025_human_completion_20261022",
+        "date": "2026-10-22",
+        "authorized_by": "user",
+        "instruction": "BodyMaps 2024、FETUS 2026、MOOD 2025、PUFISEG 2025 都已经完成",
+        "analysis_id": "mood-25-2025",
+        "edition_year": 2025,
+        "completion_status": "confirmed",
+        "basis_type": "explicit_user_confirmation",
+        "exact_completion_date": null,
+        "independently_verified_final_completion_by_this_update": false,
+        "qualification": "Explicit human confirmation of actual completion, distinct from plan-based adjudications. Previous documentary evidence and limitations retained; no new public results were independently verified in this update."
+      },
+      "qualification": "Explicit human confirmation of actual completion, distinct from plan-based adjudications. Previous documentary evidence and limitations retained; no new public results were independently verified in this update.",
+      "optional_documentary_limitations": [
+        "Obtain 2025 final results or updated edition-specific organizer statement; current schedule says postponed but page retains some 2024 material."
+      ],
+      "documentary_final_assessment_status_before_human_confirmation": "not_established"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。",
+        "scope": "Competition-time training/development data",
+        "access_by_scope": [
+          {
+            "scope": "Training/development",
+            "category": "Account registration",
+            "access_steps": [
+              "Register",
+              "Download development data"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "Human confirmation supplied by user; no new independent web verification",
+        "confidence": "Human-confirmed",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-25: 2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/mood-25-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_registration_20261025/user_confirmation.json",
+          "review_date": "2026-10-25",
+          "section": "User-confirmed registration/download; scope limited to pending editions"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "HCP Open Access Data Use Terms",
+        "CC BY 3.0"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "脑 MRI 继承 HCP 数据使用条款；腹部 CT 为 CC BY 3.0；第三任务不发布数据，不能对所有数据赋同一许可。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "For the Brain Data the following Licence applies:\"I will not attempt to establish the identity of or attempt to contact any of the included human subjects.I understand that under no circumstances will the code that would link these data to Protected Health Information be given to me, nor will any additional information about individual human subjects be released to me under these Open Access Data Use Terms.I will comply with all relevant rules and regulations imposed by my institution. This may mean that I need my research to be approved or declared exempt by a committee that oversees research on human subjects, e.g. my IRB or Ethics Committee. The released HCP data are not considered de-identified, insofar as certain combinations of HCP Restricted Data (available through a separate process) might allow identification of individuals. Different committees operate under different national, state and local laws and may interpret regulations differently, so it is important to ask about this. If needed and upon request, the HCP will provide a certificate stating that you have accepted the HCP Open Access Data Use Terms.I may redistribute original WU-Minn HCP Open Access data and any derived data as long as the data are redistributed under these same Data Use Terms.I will acknowledge the use of WU-Minn HCP data and data derived from WU-Minn HCP data when publicly presenting any results or algorithms that benefitted from their use.Papers, book chapters, books, posters, oral presentations, and all other printed and digital presentations of results derived from HCP data should contain the following wording in the acknowledgments section: \"Data were provided [in part] by the Human Connectome Project, WU-Minn Consortium (Principal Medical Out-of-Distribution Analysis Challenge 25 Investigators: David Van Essen and Kamil Ugurbil; 1U54MH091657) funded by the 16 NIH Institutes and Centers that support the NIH Blueprint for Neuroscience Research; and by the McDonnell Center for Systems Neuroscience at Washington University.\"Authors of publications or presentations using WU-Minn HCP data should cite relevant publications describing the methods used by the HCP to acquire and process the data. The specific publications that are appropriate to cite in any given study will depend on what HCP data were used and for what purposes. An annotated and appropriately up-to-date list of publications that may warrant consideration is available at http://www.humanconnectome.org/about/acknowledgehcp.htmlThe WU-Minn HCP Consortium as a whole should not be included as an author of publications or presentations if this authorship would be based solely on the use of WU-Minn HCP data.Failure to abide by these guidelines will result in termination of my privileges to access WU-Minn HCP data.\"For the Abdominal data the following Licence applies:\"Citations & Data Usage PolicyThis collection is freely available to browse, download, and use for commercial, scientific and educational purposes as outlined in the Creative Commons Attribution 3.0 Unported License. See TCIA's Data Usage Policies and Restrictions for additional details. Questions may be directed to help@cancerimagingarchive.net.Please be sure to include the following citations in your work if you use this data set: Data CitationSmith K, Clark K, Bennett W, Nolan T, Kirby J, Wolfsberger M, Moulton J, Vendt B, Freymann J. (2015). Data From CT_COLONOGRAPHY. The Cancer Imaging Archive. http://doi.org/10.7937/K9/TCIA.2015.NWTESAY1\"",
+          "source": {
+            "url": "https://zenodo.org/records/15083913",
+            "local_source": "_collection/sources_other/protocol-15083913.txt"
+          }
+        },
+        {
+          "scope": "Edition-specific data-use section 2",
+          "text": "For the Brain Data the following Licence applies:\"I will not attempt to establish the identity of or attempt to contact any of the included human subjects.I understand that under no circumstances will the code that would link these data to Protected Health Information be given to me, nor will any additional information about individual human subjects be released to me under these Open Access Data Use Terms.I will comply with all relevant rules and regulations imposed by my institution. This may mean that I need my research to be approved or declared exempt by a committee that oversees research on human subjects, e.g. my IRB or Ethics Committee. The released HCP data are not considered de-identified, insofar as certain combinations of HCP Restricted Data (available through a separate process) might allow identification of individuals. Different committees operate under different national, state and local laws and may interpret regulations differently, so it is important to ask about this. If needed and upon request, the HCP will provide a certificate stating that you have accepted the HCP Open Access Data Use Terms.I may redistribute original WU-Minn HCP Open Access data and any derived data as long as the data are redistributed under these same Data Use Terms.I will acknowledge the use of WU-Minn HCP data and data derived from WU-Minn HCP data when publicly presenting any results or algorithms that benefitted from their use.Papers, book chapters, books, posters, oral presentations, and all other printed and digital presentations of results derived from HCP data should contain the following wording in the acknowledgments section: \"Data were provided [in part] by the Human Connectome Project, WU-Minn Consortium (Principal Investigators: David Van Essen and Kamil Ugurbil; 1U54MH091657) funded by the 16 NIH Institutes and Centers that support the NIH Blueprint for Neuroscience Research; and by the McDonnell Center for Systems Neuroscience at Washington University.\"Authors of publications or presentations using WU-Minn HCP data should cite relevant publications describing the methods used by the HCP to acquire and process the data. The specific publications that are appropriate to cite in any given study will depend on what HCP data were used and for what purposes. An annotated and appropriately up-to-date list of publications that may warrant consideration is available at http://www.humanconnectome.org/about/acknowledgehcp.htmlThe WU-Minn HCP Consortium as a whole should not be included as an author of publications or presentations if this authorship would be based solely on the use of WU-Minn HCP data.Failure to abide by these guidelines will result in termination of my privileges to access WU-Minn HCP data.\"For the Abdominal data the following Licence applies:\"Citations & Data Usage PolicyThis collection is freely available to browse, download, and use for commercial, scientific and educational purposes as outlined in the Creative Commons Attribution 3.0 Unported License. See TCIA's Data Usage Policies and Restrictions for additional details. Questions may be directed to help@cancerimagingarchive.net.Please be sure to include the following citations in your work if you use this data Medical Out-of-Distribution Analysis Challenge 25 set: Data CitationSmith K, Clark K, Bennett W, Nolan T, Kirby J, Wolfsberger M, Moulton J, Vendt B, Freymann J. (2015). Data From CT_COLONOGRAPHY. The Cancer Imaging Archive. http://doi.org/10.7937/K9/TCIA.2015.NWTESAY1\"",
+          "source": {
+            "url": "https://zenodo.org/records/15083913",
+            "local_source": "_collection/sources_other/protocol-15083913.txt"
+          }
+        },
+        {
+          "scope": "Edition-specific data-use section 3",
+          "text": "We do not release any data in/ for this task",
+          "source": {
+            "url": "https://zenodo.org/records/15083913",
+            "local_source": "_collection/sources_other/protocol-15083913.txt"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15083913",
+          "local_source": "_collection/sources_other/protocol-15083913.txt"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

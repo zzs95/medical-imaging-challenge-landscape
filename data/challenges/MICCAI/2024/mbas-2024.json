@@ -1,0 +1,736 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "mbas-2024",
+    "challenge_name": "MBAS 2024",
+    "full_name": "Multi-class Bi-atrial Segmentation from 3D Contrast-Enhanced Magnetic Resonance Imaging",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R32",
+      "official_programme_row_numbers": "27",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Auckland Bioengineering Institute"
+      ],
+      "registered_authors": [
+        {
+          "name": "Zhao, Jichao",
+          "affiliation": "Auckland Bioengineering Institute"
+        },
+        {
+          "name": "Xu, Fangqiang",
+          "affiliation": "Auckland Bioengineering Institute"
+        },
+        {
+          "name": "Feng, Fan",
+          "affiliation": "Auckland Bioengineering Institute"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Heart"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Right and left atria",
+        "Atrial walls and fibrosis"
+      ],
+      "diseases": [
+        "Atrial fibrillation"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Segment both RA and LA cavities and atrial walls directly from LGE-MRIs",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990823",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/Multi-class Bi-atrial Segmentation from 3D Contrast.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990823",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/Multi-class Bi-atrial Segmentation from 3D Contrast.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990823",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/Multi-class Bi-atrial Segmentation from 3D Contrast.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND. 当届提案明确列出 CC BY-NC-ND；未标明版本时不自行补写版本。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990823",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/Multi-class Bi-atrial Segmentation from 3D Contrast.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24; round 3",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "2024 training",
+          "category": "Individual authorization",
+          "access_steps": [
+            "Signed registration form",
+            "Institutional email to organisers",
+            "Matching CodaLab account",
+            "Organiser approval and email access"
+          ],
+          "manual_review": true
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990823",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/Multi-class Bi-atrial Segmentation from 3D Contrast.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "CodaLab",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990823",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/Multi-class Bi-atrial Segmentation from 3D Contrast.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990823",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/Multi-class Bi-atrial Segmentation from 3D Contrast.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nBoth Dice Similarity Coefficient (DSC) and Hausdorff distance (95%) (HD95) will be used to computing the ranking.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nIn our analysis for the 2018 LA segmentation challenge [Xiong et al. 2021], we found that a high level of agreement\nbetween the main technical measures of DSC of the LA diameter and volume error showed that the\ntop-performing algorithms were capable of producing anatomically accurate segmentation, which is highly\nimportant in clinical applications. The most widely used segmentation metrics: the Dice score and Jaccard\nIndex/IoU produced fairly consistent rankings amongst the top 5 contestants in our 2018 LA chanllege. However,\nthe sensitivity, and specificity produced significantly different rankings in comparison. A potential explanation of\nthis discrepancy is that the sensitivity and specificity do not consider both positive and negative pixels\nsimultaneously, leading to biased measurements. This also likely explains why these metrics are not commonly\nused for evaluating segmentation accuracies.\nFurthermore, Hausdorff Distance (95%) (HD95) evaluatives model by pinpointing the maximum deviation between\nthe prediction result and the ground truth, which highlights key differences and emphasizes the importance of\nboundary accuracy in segmentation tasks. Consequently, given the complementary strengths of these metrics in\ncapturing both overall performance and boundary precision, we employ both DSC and HD95 in the upcoming\nchallenge. It aims to foster a more robust and comprehensive assessment of segmentation performance, catering\n\n\n\n\n\f             Multi-class Bi-atrial Segmentation from 3D Contrast-Enhanced Magnetic Resonance Imaging\n\nto the detailed requirements of clinical application.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nRanking will be based on the output labels of the submitted approach from each team for the 100 3D multi centre\nLGE-MRI testing data evaluated using DSC and HD95 (with same weighting).\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nA missing result will count as a zero score.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nFor segmentation tasks, DSC and HD95 are widely used to evaluate the performance of each approach. The two\nnew published sources are used as metric selection guides:\nhttps://arxiv.org/abs/2206.01653\nhttps://metrics-reloaded.dkfz.de/"
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Prediction / result files (validation); Docker container (final test)",
+      "platform": "CodaLab",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "The submission method for validation and test phases will be through a docker submission of algorithm to the Codalab platform. Instructions will be provided in the GitHub challenge website (URL and content to be established upon acceptance of this proposal).",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990823",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/Multi-class Bi-atrial Segmentation from 3D Contrast.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [
+        {
+          "material": "Complete source ZIP",
+          "purpose": "Method inspection / verification"
+        }
+      ],
+      "runtime_limits": null,
+      "submission_limits": null,
+      "decision_history": [
+        {
+          "previous_submission_type": "Docker container",
+          "review_date": "2026-10-27"
+        }
+      ],
+      "scoring_submission_review": {
+        "basis": "Validation NIfTI predictions; final Docker execution. Extra source ZIP is requested for method inspection, not as an independent scored artifact.",
+        "source_urls": [
+          "https://github.com/JohnnyXu158/MBAS24/blob/main/Submission/README.md"
+        ],
+        "local_source": "latex_sourcev2/data/paper_followup_round2_20261027/sources/mbas_submission.txt"
+      },
+      "phases": [
+        {
+          "phase": "Validation",
+          "artifact": "Zipped NIfTI predictions",
+          "service": "CodaLab"
+        },
+        {
+          "phase": "Final test",
+          "artifact": "DockerHub image reference sent by email",
+          "service": "Organizer email; organizer GPU execution",
+          "source": "https://github.com/JohnnyXu158/MBAS24/blob/main/Submission/MBAS24-HowToSubmit.pdf"
+        }
+      ]
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990823",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/Multi-class Bi-atrial Segmentation from 3D Contrast.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10990823"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://codalab.lisn.upsaclay.fr/competitions/18516",
+      "registration": "https://doi.org/10.5281/zenodo.10990823",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10990823",
+          "resolved_record_id": 10990824,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/Multi-class Bi-atrial Segmentation from 3D Contrast.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/Multi-class Bi-atrial Segmentation from 3D Contrast.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://codalab.lisn.upsaclay.fr/competitions/18516",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/7d340a5749a6600c.json",
+          "http_status": null,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "MBAS"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "用户核验的2024官方规则：机构邮箱发送签署表格、以相同邮箱注册CodaLab，组织者批准后邮件授予数据权限。本轮未独立取得完整CodaLab正文，按人工核实证据回填。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "2024 training",
+            "category": "Individual authorization",
+            "access_steps": [
+              "Signed registration form",
+              "Institutional email to organisers",
+              "Matching CodaLab account",
+              "Organiser approval and email access"
+            ],
+            "manual_review": true
+          }
+        ],
+        "evidence_basis": "User-supplied official 2024 protocol; CodaLab retrieval unavailable in this run",
+        "confidence": "High (human-confirmed)",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990823",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990823",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. The submission method for validation and test phases will be through a docker submission of algorithm to the Codalab platform. Instructions will be provided in the GitHub challenge website (URL and content to be established upon acceptance of this proposal). b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990823",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) Multi-class Bi-atrial Segmentation from 3D Contrast-Enhanced Magnetic Resonance Imaging • associated workshop days (if any) • the release date(s) of the results 1 April, 2024: Challenge websit"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990823",
+          "excerpt": "the foreground containing the atria and the background was assessed. The three metrics used were in agreement as SNR had a strong positive correlation with CR and HET and while CR and HET had a strong negative correlation. Distributions of the quality measurements on all data showed that less than 15% of the data was of high quality (SNR > 3), 70% of the data was of medium quality (SNR = 1 to 3), and over "
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/mbas-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-24 round 3: 用户核验的2024官方规则：机构邮箱发送签署表格、以相同邮箱注册CodaLab，组织者批准后邮件授予数据权限。本轮未独立取得完整CodaLab正文，按人工核实证据回填。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 70,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 30,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 100,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "United States",
+              "China",
+              "Japan",
+              "New Zealand"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10990823",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/mbas-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Heart"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cardiovascular"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Right and left atria",
+        "Atrial walls and fibrosis"
+      ],
+      "specific_diseases": [
+        "Atrial fibrillation"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990823"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/mbas-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-ND"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-ND；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY-NC-ND (Attribution-NonCommercial-NoDerivs)",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10990823"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990823"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/mbas-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "United States",
+                  "China",
+                  "Japan",
+                  "New Zealand"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10990823",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R32/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/mbas-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Organizer/platform-side inference",
+          "final_stage": "Final scored test phase",
+          "evidence_scope": "Specified final-stage protocol",
+          "coding_basis": "Edition-specific organizer paper / final submission guide, reread 2026-10-27",
+          "evidence_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/mbas_submission.txt",
+          "evidence_excerpt": "The final test set is not released to entrants. The final tutorial specifies organizer-assigned GPUs and running submitted models; validation predictions and verification reruns are separate.",
+          "rationale": "The final test set is not released to entrants. The final tutorial specifies organizer-assigned GPUs and running submitted models; validation predictions and verification reruns are separate.",
+          "source_urls": "https://github.com/JohnnyXu158/MBAS24/blob/main/Submission/README.md; https://github.com/JohnnyXu158/MBAS24/blob/main/Submission/MBAS24-HowToSubmit.pdf",
+          "completed_execution_claim": "Specified final-stage protocol",
+          "review_date": "2026-10-27",
+          "source_section": "Test Phase; Final Test Tutorial steps 1–5"
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer paper or official resource",
+              "source_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/mbas_zenodo.txt",
+              "url": "https://zenodo.org/records/19120533",
+              "section": "Repository contents",
+              "value": {
+                "teams_contributing_source_code": 13
+              },
+              "scope": "Thirteen participating teams represented in the official released code archive; not necessarily all attempted or registered teams."
+            }
+          ],
+          "source_urls": "https://zenodo.org/records/19120533",
+          "basis": "Thirteen participating teams represented in the official released code archive; not necessarily all attempted or registered teams."
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer paper or official resource",
+              "source_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/mbas_zenodo.txt",
+              "url": "https://zenodo.org/records/19120533",
+              "section": "Repository contents",
+              "value": {
+                "release_date": "2026-03-19",
+                "resources": "Dataset, splits and participant source code",
+                "team_model_weights": "Not included"
+              },
+              "scope": "Dated official release; the record explicitly excludes team weights, despite broader introductory wording."
+            }
+          ],
+          "source_urls": "https://zenodo.org/records/19120533",
+          "basis": "Dated official release; the record explicitly excludes team weights, despite broader introductory wording."
+        }
+      },
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation with targeted organizer-paper follow-up"
+    },
+    "literature_followups": [
+      {
+        "review_date": "2026-10-27",
+        "audit_path": "latex_sourcev2/data/paper_followup_round2_20261027",
+        "fields": [
+          "final_inference",
+          "reported_participation",
+          "post_challenge_resources",
+          "submission"
+        ]
+      }
+    ]
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

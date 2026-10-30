@@ -1,0 +1,688 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "endocv-2022",
+    "challenge_name": "EndoCV2022",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "ISBI 2022",
+      "event_type": "workshop_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy",
+        "Video"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Gastrointestinal tract"
+      ],
+      "organ_system": [
+        "Gastrointestinal"
+      ],
+      "organs_or_structures": [
+        "Endoscopic artifacts",
+        "Polyps"
+      ],
+      "diseases": [
+        "Colorectal polyps"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Detection",
+      "secondary_task_families": [
+        "Segmentation"
+      ],
+      "tasks": [
+        {
+          "task_id": "ead_detection",
+          "official_name": "EAD 2.0 artifact detection",
+          "task_family": "Detection",
+          "task_subtype": "object detection",
+          "input": [
+            "Endoscopic video frames"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Artifact detections"
+          ],
+          "granularity": "instance-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "ead_segmentation",
+          "official_name": "EAD 2.0 artifact segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "Endoscopic video frames"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Artifact masks"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "polyp_detection",
+          "official_name": "PolypGen 2.0 polyp detection",
+          "task_family": "Detection",
+          "task_subtype": "object detection",
+          "input": [
+            "Endoscopic video frames"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Polyp detections"
+          ],
+          "granularity": "instance-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "polyp_segmentation",
+          "official_name": "PolypGen 2.0 polyp segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "Endoscopic video frames"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Polyp masks"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": true,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "Multi-center endoscopic image/video sequences"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "EndoCV confidentiality agreement required. 当届训练数据发布与参赛声明明确要求数据保密协议；完整协议正文未取得。",
+      "access_after_challenge": "Registered design plans to release all datasets, including tests, after the joint journal paper; actual complete release not established by this design source.",
+      "access_scope": "training data access as stated in the cited edition source",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "hybrid",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": "prediction file and Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "ead_detection",
+          "metrics": [
+            "mAP at IoU 0.25:0.05:0.75",
+            "IoU",
+            "Generalization gap",
+            "Centroid localization error"
+          ],
+          "ranking": "Organizer proceedings describe detection score 0.6 mAP + 0.4 IoU; exact final novelty/generalization aggregation not confirmed."
+        },
+        {
+          "task_id": "ead_segmentation",
+          "metrics": [
+            "Dice / F1",
+            "F2-error",
+            "Positive predictive value",
+            "Hausdorff distance",
+            "Sensitivity"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "polyp_detection",
+          "metrics": [
+            "mAP at IoU 0.25:0.05:0.75",
+            "IoU",
+            "Generalization gap",
+            "Centroid localization error"
+          ],
+          "ranking": "Organizer proceedings describe detection score 0.6 mAP + 0.4 IoU; exact final novelty/generalization aggregation not confirmed."
+        },
+        {
+          "task_id": "polyp_segmentation",
+          "metrics": [
+            "Dice / F1",
+            "F2-error",
+            "Positive predictive value",
+            "Hausdorff distance",
+            "Sensitivity"
+          ],
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "prediction file for rounds 1–2; Docker container for round 3",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "proceedings": "CEUR Workshop Proceedings"
+    },
+    "participation_statistics": {
+      "registered_participants": 562,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Detection task for round-I (PolypGen2.0)",
+            "submission_count": 49
+          },
+          {
+            "official_phase_name": "Segmentation task for round-I (PolypGen2.0)",
+            "submission_count": 103
+          },
+          {
+            "official_phase_name": "Detection task for round-I (EAD2.0)",
+            "submission_count": 4
+          },
+          {
+            "official_phase_name": "Segmentation task for round-I (EAD2.0)",
+            "submission_count": 16
+          },
+          {
+            "official_phase_name": "Round-II (EAD2.0 - detection task)",
+            "submission_count": 6
+          },
+          {
+            "official_phase_name": "Round-II (EAD2.0 - segmentation task)",
+            "submission_count": 3
+          },
+          {
+            "official_phase_name": "Round-II (PolypGen2.0 - segmentation task)",
+            "submission_count": 51
+          },
+          {
+            "official_phase_name": "Round-II (PolypGen2.0 - detection task)",
+            "submission_count": 25
+          },
+          {
+            "official_phase_name": "Challenge",
+            "submission_count": 0
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://endocv2022.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Overview lists EAD 2.0 and PolypGen 2.0 with detection and segmentation objectives. Four task objects reflect those objectives, but exact submission-track decomposition remains unconfirmed. Round 1 uses approximately 20% test data; round 2 approximately 50%; organizers execute containers on the complete test set in round 3. Overview describes 80% unseen-video score plus 20% novelty; detailed metric/ranking specification is not accessible."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://endocv2022.grand-challenge.org/Important-dates/",
+          "supports": [
+            "challenge context",
+            "data_access.access_scope",
+            "data_access.access_status"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/131-b476b989eeda.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://endocv2022.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/131-baa670a1c20d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://endocv2022.grand-challenge.org/Challenge-Rounds/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/131-c8c30dd76139.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://endocv2022.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/131-overview.json"
+        },
+        {
+          "type": "official organizer publication",
+          "url": "https://ceur-ws.org/Vol-3148/EndoCV20.pdf",
+          "local_snapshot": "_collection/sources/131-supplement.pdf",
+          "retrieved_on": "2026-10-02",
+          "supports": [
+            "data_access.access_after_challenge",
+            "evaluation",
+            "task_profile"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Organizer proceedings supply metric definitions, but note not all metrics necessarily appeared on leaderboards. Verify final track-specific ranking, data split counts and license."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://endocv2022.grand-challenge.org/Important-dates/",
+          "local_snapshot": "_collection/sources/131-b476b989eeda.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://endocv2022.grand-challenge.org/Important-dates/",
+          "local_snapshot": "_collection/sources/131-b476b989eeda.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://ceur-ws.org/Vol-3148/EndoCV20.pdf",
+          "local_snapshot": "_collection/sources/131-supplement.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit edition-source post-challenge policy reviewed; planned releases, continuing public access, controlled requests and required deletion are kept distinct."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_after_challenge",
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.center_count",
+          "clinical_domain.body_region"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/endocv-2022.json",
+          "_collection/verification_20261003/literature_context/endocv-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "参加者须发送填写完整的数据协议，资料由组织者提供。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "参加者须发送填写完整的数据协议，资料由组织者提供。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/1a8800ada0528c6c.json",
+          "url": "https://endocv2022.grand-challenge.org/Jointjournal/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/endocv-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Gastrointestinal tract"
+          ],
+          "note": "当届内镜伪影与息肉任务明确属于消化道影像；保留跨上/下消化道范围。"
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Other"
+          ],
+          "note": "Previous disease coding retained; not reclassified in this audit"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://endocv2022.grand-challenge.org/Challenge-Rounds/",
+          "local_source": "_collection/sources/131-c8c30dd76139.json"
+        }
+      ],
+      "note_zh": "当届内镜伪影与息肉任务明确属于消化道影像；保留跨上/下消化道范围。",
+      "anatomical_scope": "Named anatomy from edition-specific materials",
+      "remaining_detail": ""
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Endoscopy",
+        "Video"
+      ],
+      "harmonized_modalities": [
+        "Endoscopy"
+      ],
+      "video_format_documented": true,
+      "note": "Video retained as data-format attribute, not an acquisition modality.",
+      "sources": [
+        {
+          "url": "https://endocv2022.grand-challenge.org/Important-dates/",
+          "local_source": "_collection/sources/131-b476b989eeda.json"
+        },
+        {
+          "url": "https://endocv2022.grand-challenge.org/Challenge-Rounds/",
+          "local_source": "_collection/sources/131-c8c30dd76139.json"
+        },
+        {
+          "url": "https://endocv2022.grand-challenge.org/",
+          "local_source": "_collection/sources/131-overview.json"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Agreement requirement only",
+      "licence_names": [
+        "EndoCV confidentiality agreement required"
+      ],
+      "scope": "Explicitly identified competition rules or named source data; not all components implied",
+      "agreement_required": true,
+      "summary_zh": "当届训练数据发布与参赛声明明确要求数据保密协议；完整协议正文未取得。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": " contact soon. !!! ** Challenge website : 12th November 2021 ** Train data release (release I)** : 15th 20th December 3rd 10th January 2021 (Data confidentiality agreement required!!!) Participation declaration form (deadline - no extension) : 15th January 2022 (Data confidentiality agreement required!!!) - All teams must enter before this date! Summary report to organisers (starts) : 3rd February, 2022 (sent, please contact if you have not received this yet) Test data inference I (~20 % data): 20th January 5th 10th 15th February 2022* (You must have submitted your summary report!!!) Leaderboard setup and submission start : 20th January 7t",
+          "source": {
+            "url": "https://endocv2022.grand-challenge.org/Important-dates/",
+            "local_source": "_collection/sources/131-b476b989eeda.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "10th January 2021 (Data confidentiality agreement required!!!) Participation declaration form (deadline - no extension) : 15th January 2022 (Data confidentiality agreement required!!!) - All teams must enter before this date! Summary report to organisers (starts) : 3rd February, 2022 (sent, please contact if you have not received this yet) Test data inference I (~20 % data): 20th January 5th 10th 15th February 2022* (You must have submitted your summary report!!!) Leaderboard setup and submission start : 20th January 7th 17th February, 2022 Summary report to organisers (deadline) : 15th February, 2022 *Round 1 and round 2 elimination st",
+          "source": {
+            "url": "https://endocv2022.grand-challenge.org/Important-dates/",
+            "local_source": "_collection/sources/131-b476b989eeda.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://endocv2022.grand-challenge.org/Important-dates/",
+          "local_source": "_collection/sources/131-b476b989eeda.json"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "ISBI/2022/endocv-2022.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Registered design plans to release all datasets, including tests, after the joint journal paper; actual complete release not established by this design source.",
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://endocv2022.grand-challenge.org/Important-dates/",
+                  "supports": [
+                    "challenge context",
+                    "data_access.access_scope",
+                    "data_access.access_status"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/131-b476b989eeda.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://endocv2022.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/131-baa670a1c20d.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://endocv2022.grand-challenge.org/Challenge-Rounds/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/131-c8c30dd76139.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://endocv2022.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/131-overview.json"
+                },
+                {
+                  "type": "official organizer publication",
+                  "url": "https://ceur-ws.org/Vol-3148/EndoCV20.pdf",
+                  "local_snapshot": "_collection/sources/131-supplement.pdf",
+                  "retrieved_on": "2026-10-02",
+                  "supports": [
+                    "data_access.access_after_challenge",
+                    "evaluation",
+                    "task_profile"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

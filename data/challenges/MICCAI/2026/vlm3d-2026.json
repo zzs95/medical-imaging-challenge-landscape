@@ -1,0 +1,1151 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "vlm3d-2026",
+    "challenge_name": "Vision-Language Modeling in 3D Medical Imaging",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Whole body"
+      ],
+      "organ_system": [
+        "Multisystem"
+      ],
+      "organs_or_structures": [
+        "Radiology findings",
+        "Tumors"
+      ],
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": null,
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "abnclass",
+          "official_name": "CT Abnormality Classification",
+          "task_family": "Classification",
+          "modality": "CT",
+          "evidence_scope": "active organizer repository and 2026 task-specific competitive outcome",
+          "competition_outcome": "confirmed",
+          "input": "3D volume",
+          "output": "multi-label vector"
+        },
+        {
+          "task_id": "reportgen",
+          "official_name": "CT Report Generation",
+          "task_family": "Report Generation",
+          "modality": "CT",
+          "evidence_scope": "active organizer repository and 2026 task-specific competitive outcome",
+          "competition_outcome": "confirmed",
+          "input": "3D volume",
+          "output": "free-text report"
+        },
+        {
+          "task_id": "ctgen",
+          "official_name": "CT Volume Generation",
+          "task_family": "Synthesis",
+          "modality": "CT",
+          "evidence_scope": "active organizer repository and 2026 task-specific competitive outcome",
+          "competition_outcome": "confirmed",
+          "input": "clinical text",
+          "output": "3D volume"
+        },
+        {
+          "task_id": "mr-abnormality-classification",
+          "official_name": "MRI Abnormality Classification",
+          "task_family": "Classification",
+          "modality": "MRI",
+          "evidence_scope": "active organizer repository and 2026 task-specific competitive outcome",
+          "competition_outcome": "confirmed",
+          "input": "3D volume",
+          "output": "multi-label vector"
+        },
+        {
+          "task_id": "mr-report-generation",
+          "official_name": "MRI Report Generation",
+          "task_family": "Report Generation",
+          "modality": "MRI",
+          "evidence_scope": "active organizer repository and 2026 task-specific competitive outcome",
+          "competition_outcome": "confirmed",
+          "input": "3D volume",
+          "output": "free-text report"
+        },
+        {
+          "task_id": "mr-volume-generation",
+          "official_name": "MRI Volume Generation",
+          "task_family": "Synthesis",
+          "modality": "MRI",
+          "evidence_scope": "active organizer repository and 2026 task-specific competitive outcome",
+          "competition_outcome": "confirmed",
+          "input": "clinical text",
+          "output": "3D volume"
+        }
+      ],
+      "related_task_families": [
+        "Report Generation",
+        "Classification",
+        "Segmentation",
+        "Localization",
+        "Synthesis"
+      ],
+      "registered_tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Vision–Language Understanding in 3D Computed Tomography",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "evidence_scope": "registered_design; actual execution must be checked separately"
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Vision–Language Understanding in 3D Magnetic Resonance Imaging",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "evidence_scope": "registered_design; actual execution must be checked separately"
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Report-Supervision for Multi-Tumor Segmentation in 3D Computed Tomography",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "evidence_scope": "registered_design; actual execution must be checked separately"
+        }
+      ],
+      "primary_output_coding": "Multiple / composite outputs",
+      "executed_task_families": [
+        "Classification",
+        "Report Generation",
+        "Synthesis"
+      ],
+      "registered_only_unverified_execution_task_families": [
+        "Localization",
+        "Segmentation"
+      ],
+      "counting_note": "Six active tracks count as one 2026 challenge edition. Related task families/task_taxonomy retain declared objectives and must not be interpreted as confirmed executed tasks.",
+      "task_families": [
+        "Classification",
+        "Localization",
+        "Report generation",
+        "Segmentation",
+        "Synthesis"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "Localization": "Declared task output",
+        "Report generation": "Declared task output",
+        "Segmentation": "Declared task output",
+        "Synthesis": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": true,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": true,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": true,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Radiology findings",
+        "Tumors"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT",
+        "MRI"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Not established",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "preregistered_data_license": "CC BY-NC-SA",
+      "review_status": "Reviewed 2026-10-24; round 2",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": []
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Forithmus Research Hub",
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19847782",
+      "platform_evidence_stage": "organizer_operational_repository_and_retained_2026_report_results",
+      "platform_scope": "Organizer Docker submission and server-side scoring documented; outcome confirmation does not independently audit every execution or identify all test cohorts.",
+      "registered_design_tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "ROUGE-L",
+            "BLEU-4",
+            "METEOR",
+            "Clinical label F1",
+            "Macro AUROC",
+            "Macro F1",
+            "Precision",
+            "Recall",
+            "Dice",
+            "IoU",
+            "Feature-based FID"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "ROUGE-L",
+            "BLEU-4",
+            "METEOR",
+            "Clinical label F1",
+            "FID-like feature similarity"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Sensitivity",
+            "Specificity",
+            "F1-Score",
+            "AUC",
+            "Localization-adjusted sensitivity",
+            "Dice Similarity Coefficient (DSC)",
+            "Normalized Surface Dice (NSD)",
+            "HD95"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 3 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "abnclass",
+          "competition_outcome": "confirmed",
+          "metrics": null,
+          "ranking": null,
+          "outcome_evidence_ids": [
+            "E4",
+            "E5",
+            "E6"
+          ],
+          "qualification": "Specific published places in assessment_evidence; no full numerical table or final scoring formula inferred from award announcements."
+        },
+        {
+          "task_id": "reportgen",
+          "competition_outcome": "confirmed",
+          "metrics": null,
+          "ranking": null,
+          "outcome_evidence_ids": [
+            "E1",
+            "E4",
+            "E6",
+            "E5"
+          ],
+          "qualification": "Specific published places in assessment_evidence; no full numerical table or final scoring formula inferred from award announcements."
+        },
+        {
+          "task_id": "ctgen",
+          "competition_outcome": "confirmed",
+          "metrics": null,
+          "ranking": null,
+          "outcome_evidence_ids": [
+            "E6",
+            "E7"
+          ],
+          "qualification": "Specific published places in assessment_evidence; no full numerical table or final scoring formula inferred from award announcements."
+        },
+        {
+          "task_id": "mr-abnormality-classification",
+          "competition_outcome": "confirmed",
+          "metrics": null,
+          "ranking": null,
+          "outcome_evidence_ids": [
+            "E5",
+            "E4"
+          ],
+          "qualification": "Specific published places in assessment_evidence; no full numerical table or final scoring formula inferred from award announcements."
+        },
+        {
+          "task_id": "mr-report-generation",
+          "competition_outcome": "confirmed",
+          "metrics": null,
+          "ranking": null,
+          "outcome_evidence_ids": [
+            "E4"
+          ],
+          "qualification": "Specific published places in assessment_evidence; no full numerical table or final scoring formula inferred from award announcements."
+        },
+        {
+          "task_id": "mr-volume-generation",
+          "competition_outcome": "confirmed",
+          "metrics": null,
+          "ranking": null,
+          "outcome_evidence_ids": [
+            "E7",
+            "E6"
+          ],
+          "qualification": "Specific published places in assessment_evidence; no full numerical table or final scoring formula inferred from award announcements."
+        }
+      ],
+      "additional_assessments": {
+        "report_supervised_multi_tumor_segmentation": {
+          "declared": true,
+          "execution_status": "not_independently_verified",
+          "performed": null,
+          "design_source": "https://zenodo.org/records/19847782",
+          "qualification": "Not present among six active tracks in reviewed repository; no independently verified separate execution. Distinct from other challenges such as ReXGroundingCT."
+        },
+        "boston_external_testing": {
+          "declared": true,
+          "execution_status": "not_independently_verified",
+          "performed": null,
+          "design_source": "https://zenodo.org/records/19847782"
+        },
+        "expert_radiologist_assessment": {
+          "declared": true,
+          "execution_status": "not_independently_verified",
+          "performed": null,
+          "design_source": "https://zenodo.org/records/19847782"
+        }
+      }
+    },
+    "submission": {
+      "submission_type": "Algorithm container",
+      "platform": "Forithmus Research Hub",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": [
+        "Classification predictions",
+        "Radiology reports",
+        "Generated CT/MRI volumes"
+      ],
+      "evidence_stage": "organizer_operational_repository",
+      "protocol_source": "https://github.com/forithmus/VLM3D-Dockers"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://vlm3dchallenge.com/",
+      "grand_challenge": null,
+      "platform": "https://research.forithmus.com/collections/vlm3d-challenge",
+      "dataset": null,
+      "github": "https://github.com/forithmus/VLM3D-Dockers",
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "Missing-field evidence review on 2026-10-03: Edition-specific registered design answer (not the form's examples): Algorithm container submission (Type 2) on our own website.",
+      "Missing-field evidence review on 2026-10-03: Explicit submission artifact in the edition's registered-design answer: Algorithm container submission (Type 2) on our own website.",
+      "2026-10-22: Six CT/MRI classification, report-generation and volume-generation tracks have specific competitive outcomes. Registration localization/segmentation, Boston external evaluation and expert assessment remain unverified in execution, not coded as absent. Award ranks do not establish complete numerical final tables; participant external experiments are not organizer Boston tests. Six tracks remain one edition.",
+      "2026-10-22: 维持六项活动赛道既有结果；报告监督分割、Boston外部测试、放射科专家评价仍未证实执行。",
+      "2026-10-22: 六个活动赛道结果保留；报告监督分割、Boston外部测试、专家评价仍未确认执行。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-22",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 31,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://vlm3dchallenge.com/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/121a646148ff74f8.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19847782",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19847782.txt",
+          "supports": [
+            "clinical_domain",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://vlm3dchallenge.com/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/vlm3d-2026.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "primary institutional/participant award announcement or organizer repository",
+          "url": "https://www.linkedin.com/pulse/papers-challenge-wins-our-miccai-2026-strasbourg-bernhard-kainz-vzfwe",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/vlm26_kainz_20261022.json",
+          "supports": [
+            "Participant announcement dated 2026-09-25: Beyond Normals first in CT classification, CT report generation and MR report generation, second in MR classification."
+          ]
+        },
+        {
+          "type": "primary institutional/participant award announcement or organizer repository",
+          "url": "https://www.deepnoid.com/news-events/news/392",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/vlm26_deepnoid_20261022.json",
+          "supports": [
+            "Original participant institution announcement dated 2026-10-02: first MRI classification, second CT classification, fourth CT report generation."
+          ]
+        },
+        {
+          "type": "primary institutional/participant award announcement or organizer repository",
+          "url": "https://cs.kaist.ac.kr/research/spotlights",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/vlm26_kaist_20261022.json",
+          "supports": [
+            "KAIST institutional VLM3D 2026 award announcement: first CT volume generation, second MR volume generation, third CT classification and CT report generation."
+          ]
+        },
+        {
+          "type": "primary institutional/participant award announcement or organizer repository",
+          "url": "https://www.linkedin.com/company/forithmus",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/vlm26_forithmus_awards_web_20261022.json",
+          "supports": [
+            "Organizer-reposted participant statement: FakeBiomeImage first MRI volume generation and second CT volume generation."
+          ]
+        },
+        {
+          "type": "primary institutional/participant award announcement or organizer repository",
+          "url": "https://github.com/forithmus/VLM3D-Dockers",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/vlm26_repo_20261022.json",
+          "supports": [
+            "Organizer repository: six active CT/MR classification, reporting and volume-generation tracks; main-2026 phase; Docker server-side evaluation; abnloc deprecated and not accepted."
+          ]
+        },
+        {
+          "type": "user-supplied documentary review",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/vlm26_user_review_20261022.txt",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "Review hypotheses and interpretation; confirmation sources listed separately"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://github.com/forithmus/VLM3D-Dockers",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_47232e277dc8_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "维持六项活动赛道既有结果；报告监督分割、Boston外部测试、放射科专家评价仍未证实执行。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://github.com/forithmus/VLM3D-Dockers",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_47232e277dc8_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "六个活动赛道结果保留；报告监督分割、Boston外部测试、专家评价仍未确认执行。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Report-supervised multi-tumor segmentation/localization: declared in the registered design, but no independently verified executed separate track or final outcome in reviewed material. Current deprecated abnloc status alone does not prove no historical execution.",
+        "Boston University external test and internal/external performance comparison: planned; actual 2026 execution and cohort-labelled scores not independently verified.",
+        "Expert radiologist assessment: planned; actual 2026 execution/results not independently verified.",
+        "Complete official numerical final-test rankings and test-cohort attribution for all six tracks have not been independently recovered.",
+        "Dataset counts, access conditions, comparable participation statistics and final ranking formulas remain unverified where null."
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "evaluation.platform": {
+          "reviewed_on": "2026-10-22",
+          "source_url": "https://github.com/forithmus/VLM3D-Dockers",
+          "basis": "Six active tracks and server-side Docker protocol in current organizer repository; registered design preserved separately."
+        },
+        "submission.platform": {
+          "reviewed_on": "2026-10-22",
+          "source_url": "https://github.com/forithmus/VLM3D-Dockers",
+          "basis": "Six active tracks and server-side Docker protocol in current organizer repository; registered design preserved separately."
+        },
+        "evaluation.platform_evidence_stage": {
+          "reviewed_on": "2026-10-22",
+          "source_url": "https://github.com/forithmus/VLM3D-Dockers",
+          "basis": "Six active tracks and server-side Docker protocol in current organizer repository; registered design preserved separately."
+        },
+        "evaluation.platform_scope": {
+          "reviewed_on": "2026-10-22",
+          "source_url": "https://github.com/forithmus/VLM3D-Dockers",
+          "basis": "Six active tracks and server-side Docker protocol in current organizer repository; registered design preserved separately."
+        },
+        "submission.submission_type": {
+          "reviewed_on": "2026-10-22",
+          "source_url": "https://github.com/forithmus/VLM3D-Dockers",
+          "basis": "Six active tracks and server-side Docker protocol in current organizer repository; registered design preserved separately."
+        },
+        "submission.evidence_stage": {
+          "reviewed_on": "2026-10-22",
+          "source_url": "https://github.com/forithmus/VLM3D-Dockers",
+          "basis": "Six active tracks and server-side Docker protocol in current organizer repository; registered design preserved separately."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://vlm3dchallenge.com/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/vlm3d-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://vlm3dchallenge.com/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/vlm3d-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://vlm3dchallenge.com/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/vlm3d-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "task_profile.tasks": {
+          "reviewed_on": "2026-10-22",
+          "source_url": "https://github.com/forithmus/VLM3D-Dockers",
+          "basis": "Six active tracks and server-side Docker protocol in current organizer repository; registered design preserved separately."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/vlm3d-2026.json",
+          "_collection/verification_20261003/literature_context/vlm3d-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "revision_history": [
+        {
+          "date": "2026-10-22",
+          "reason": "Reconciled user review with primary award announcements and organizer active-track repository; registered tasks/metrics retained separately.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/vlm26_six_tracks_20261022_010555/MICCAI/2026/vlm3d-2026.json"
+        }
+      ],
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "维持六项活动赛道既有结果；报告监督分割、Boston外部测试、放射科专家评价仍未证实执行。",
+          "previous_assessment": {
+            "value": "confirmed",
+            "event_state": "completed",
+            "evidence_state": "documented_track_outcomes",
+            "evidence_ids": [
+              "E1",
+              "E4",
+              "E5",
+              "E6",
+              "E7",
+              "E8"
+            ],
+            "reason": "Six active 2026 CT/MRI tracks have task-specific competition outcomes. CT report hidden-test scores were previously retained; other tracks have public award/ranking announcements. Additional registered segmentation, Boston testing and expert assessment remain execution-unverified."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2026/vlm3d-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "六个活动赛道结果保留；报告监督分割、Boston外部测试、专家评价仍未确认执行。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2026/vlm3d-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "all_six_current_active_tracks_have_documented_competition_outcomes": true,
+      "track_results": [
+        {
+          "track_id": "abnclass",
+          "name": "CT Abnormality Classification",
+          "modality": "CT",
+          "task_family": "Classification",
+          "competition_outcome": "confirmed",
+          "evidence_type": "track-specific participant/institutional award or ranking announcement",
+          "awards": [
+            {
+              "team_or_institution": "Beyond Normals",
+              "rank": 1,
+              "source_url": "https://www.linkedin.com/pulse/papers-challenge-wins-our-miccai-2026-strasbourg-bernhard-kainz-vzfwe"
+            },
+            {
+              "team_or_institution": "DEEPNOID",
+              "rank": 2,
+              "source_url": "https://www.deepnoid.com/news-events/news/392"
+            },
+            {
+              "team_or_institution": "KAIST CGV",
+              "rank": 3,
+              "source_url": "https://cs.kaist.ac.kr/research/spotlights"
+            }
+          ],
+          "evidence_ids": [
+            "E4",
+            "E5",
+            "E6"
+          ],
+          "complete_official_numerical_final_ranking_verified": false
+        },
+        {
+          "track_id": "reportgen",
+          "name": "CT Report Generation",
+          "modality": "CT",
+          "task_family": "Report Generation",
+          "competition_outcome": "confirmed",
+          "evidence_type": "Retained explicitly 2026 hidden-test scores plus participant/institutional ranking announcements",
+          "awards": [
+            {
+              "team_or_institution": "Beyond Normals",
+              "rank": 1,
+              "source_url": "https://www.linkedin.com/pulse/papers-challenge-wins-our-miccai-2026-strasbourg-bernhard-kainz-vzfwe"
+            },
+            {
+              "team_or_institution": "KAIST CGV",
+              "rank": 3,
+              "source_url": "https://cs.kaist.ac.kr/research/spotlights"
+            },
+            {
+              "team_or_institution": "DEEPNOID",
+              "rank": 4,
+              "source_url": "https://www.deepnoid.com/news-events/news/392"
+            }
+          ],
+          "evidence_ids": [
+            "E1",
+            "E4",
+            "E6",
+            "E5"
+          ],
+          "complete_official_numerical_final_ranking_verified": false,
+          "hidden_test_scores_verified": true,
+          "hidden_test_source_url": "https://research.forithmus.com/api/challenges/ct-report-generation/leaderboard?phase_id=1483b7b7-d855-4d75-816d-6a1ded6ed34a"
+        },
+        {
+          "track_id": "ctgen",
+          "name": "CT Volume Generation",
+          "modality": "CT",
+          "task_family": "Synthesis",
+          "competition_outcome": "confirmed",
+          "evidence_type": "track-specific participant/institutional award or ranking announcement",
+          "awards": [
+            {
+              "team_or_institution": "KAIST CGV",
+              "rank": 1,
+              "source_url": "https://cs.kaist.ac.kr/research/spotlights"
+            },
+            {
+              "team_or_institution": "FakeBiomeImage",
+              "rank": 2,
+              "source_url": "https://www.linkedin.com/company/forithmus"
+            }
+          ],
+          "evidence_ids": [
+            "E6",
+            "E7"
+          ],
+          "complete_official_numerical_final_ranking_verified": false
+        },
+        {
+          "track_id": "mr-abnormality-classification",
+          "name": "MRI Abnormality Classification",
+          "modality": "MRI",
+          "task_family": "Classification",
+          "competition_outcome": "confirmed",
+          "evidence_type": "track-specific participant/institutional award or ranking announcement",
+          "awards": [
+            {
+              "team_or_institution": "DEEPNOID",
+              "rank": 1,
+              "source_url": "https://www.deepnoid.com/news-events/news/392"
+            },
+            {
+              "team_or_institution": "Beyond Normals",
+              "rank": 2,
+              "source_url": "https://www.linkedin.com/pulse/papers-challenge-wins-our-miccai-2026-strasbourg-bernhard-kainz-vzfwe"
+            }
+          ],
+          "evidence_ids": [
+            "E5",
+            "E4"
+          ],
+          "complete_official_numerical_final_ranking_verified": false
+        },
+        {
+          "track_id": "mr-report-generation",
+          "name": "MRI Report Generation",
+          "modality": "MRI",
+          "task_family": "Report Generation",
+          "competition_outcome": "confirmed",
+          "evidence_type": "track-specific participant/institutional award or ranking announcement",
+          "awards": [
+            {
+              "team_or_institution": "Beyond Normals",
+              "rank": 1,
+              "source_url": "https://www.linkedin.com/pulse/papers-challenge-wins-our-miccai-2026-strasbourg-bernhard-kainz-vzfwe"
+            }
+          ],
+          "evidence_ids": [
+            "E4"
+          ],
+          "complete_official_numerical_final_ranking_verified": false
+        },
+        {
+          "track_id": "mr-volume-generation",
+          "name": "MRI Volume Generation",
+          "modality": "MRI",
+          "task_family": "Synthesis",
+          "competition_outcome": "confirmed",
+          "evidence_type": "track-specific participant/institutional award or ranking announcement",
+          "awards": [
+            {
+              "team_or_institution": "FakeBiomeImage",
+              "rank": 1,
+              "source_url": "https://www.linkedin.com/company/forithmus"
+            },
+            {
+              "team_or_institution": "KAIST CGV",
+              "rank": 2,
+              "source_url": "https://cs.kaist.ac.kr/research/spotlights"
+            }
+          ],
+          "evidence_ids": [
+            "E7",
+            "E6"
+          ],
+          "complete_official_numerical_final_ranking_verified": false
+        }
+      ],
+      "qualification": "Confirmed means edition- and track-specific competition outcome evidence. It does not mean independently recovered complete official numeric tables, all registered objectives assessed, or continuing service closed.",
+      "remaining_questions": [
+        "Report-supervised multi-tumor segmentation/localization: declared in the registered design, but no independently verified executed separate track or final outcome in reviewed material. Current deprecated abnloc status alone does not prove no historical execution.",
+        "Boston University external test and internal/external performance comparison: planned; actual 2026 execution and cohort-labelled scores not independently verified.",
+        "Expert radiologist assessment: planned; actual 2026 execution/results not independently verified.",
+        "Complete official numerical final-test rankings and test-cohort attribution for all six tracks have not been independently recovered."
+      ],
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "六个活动赛道结果保留；报告监督分割、Boston外部测试、专家评价仍未确认执行。",
+        "source_urls": [
+          "https://github.com/forithmus/VLM3D-Dockers"
+        ],
+        "evidence_ids": [
+          "E10"
+        ],
+        "details": {},
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_round2_user_20261022.txt",
+        "propagation_status": "Original JSON, audit, current CSV/Excel/reports updated; manuscript/figures/frozen release not regenerated."
+      }
+    },
+    "task_taxonomy_scope": "Declared objectives including localization/segmentation; executed scope is separately recorded in task_profile.executed_task_families.",
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Not established",
+        "state": "Not established",
+        "rationale": "CT-RATE、MR-RATE及比赛专属数据应分别核对；隐藏外部测试不确定开发数据准入。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [],
+        "evidence_basis": "User-supplied round 2 unresolved-issue summary; no new classification asserted",
+        "confidence": "Partial",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "VLM3D2026当届协议明确发布训练数据、Type2算法容器提交和封闭外部测试队列。"
+      },
+      "decision_history": [
+        "VLM3D2026当届协议明确发布训练数据、Type2算法容器提交和封闭外部测试队列。",
+        "2026-10-24 round 2: CT-RATE、MR-RATE及比赛专属数据应分别核对；隐藏外部测试不确定开发数据准入。",
+        "2026-10-25 access completion: CT、脑 MRI 及竞赛专属资源需要分别确认，隐藏外部测试不作为训练数据不可用。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/protocol-19847782.txt",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/47232e277dc8aead.json",
+          "url": "https://github.com/forithmus/VLM3D-Dockers"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/vlm3d-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round2_20261024/user_review_summary.json",
+          "section": "User-supplied round 2 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "2",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Not established",
+        "rationale": "CT、脑 MRI 及竞赛专属资源需要分别确认，隐藏外部测试不作为训练数据不可用。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/d4ce5a858ac62dbb.json",
+          "_collection/access_completion_20261025/sources/c7bca566dfd23862.json"
+        ]
+      }
+    },
+    "review_coding": {
+      "development_access": "Not established",
+      "data_model_flow": "hybrid",
+      "task_families": [
+        "Classification",
+        "Localization",
+        "Report generation",
+        "Segmentation",
+        "Synthesis"
+      ],
+      "emerging_objectives": [
+        "Foundation models",
+        "VLM",
+        "Report generation",
+        "Text-conditioned image generation"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "Localization",
+        "Report generation",
+        "Segmentation",
+        "Synthesis"
+      ],
+      "emerging_objectives": [
+        "Foundation models",
+        "VLM",
+        "Report generation",
+        "Text-conditioned image generation"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "Localization",
+        "Report generation",
+        "Segmentation",
+        "Synthesis"
+      ],
+      "previous_emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "Localization": "Declared task output",
+        "Report generation": "Declared task output",
+        "Segmentation": "Declared task output",
+        "Synthesis": "Declared task output"
+      },
+      "note_zh": "注册摘要明确提出可复现、可泛化3D多模态基础模型目标，补记 FM；肿瘤存在/恶性概率归分类，掩膜归分割，不再重复添加检测。 六类目标更新：官方任务明确要求以文本为条件生成医学影像，增加文本条件影像生成标签，保留VLM与Synthesis编码。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/19847782",
+          "local_source": "_collection/sources_other/protocol-19847782.txt",
+          "sha256": "2368d7a4a1284c8fcb4a18587c658eba1423c85919bb67937a895b9e0eb03d5d"
+        }
+      ],
+      "six_category_update": {
+        "review_date": "2026-10-25",
+        "added_objective": "Text-conditioned image generation",
+        "basis": "Organizer-defined text-to-image task; edition counted once regardless of generation tracks",
+        "definition": "Natural-language prompts or clinical descriptions condition the generation of medical images or volumes; excludes text-guided masks, image-only translation and reconstruction."
+      }
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Primary source: Istanbul Medipol University Hospital (CT-RATE and updated internal test). External validation: Boston University.",
+              "url": "https://zenodo.org/records/19847782",
+              "snapshot": "_collection/sources_other/protocol-19847782.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nPrimary source: Istanbul Medipol University Hospital (CT-RATE and updated internal test). External validation:\nBoston University.",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Primary source: MR-RATE contributing center(s) (Istanbul Medipol University Hospital).",
+              "url": "https://zenodo.org/records/19847782",
+              "snapshot": "_collection/sources_other/protocol-19847782.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nPrimary source: MR-RATE contributing center(s) (Istanbul Medipol University Hospital).",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Contrast-enhanced CT scans acquired for multiple clinical indications with varying reconstruction settings. Primary sources: Istanbul Medipol University Hospital and University Hospital Basel. Page 36 of 43 Biomedical Image Analysis ChallengeS (BIAS) Initiative VLM3D: Vision-Language Modeling in 3D Medical Imaging External validation: University of California San Francisco. Scans acquired by trained CT technologists; reports written by board-certified radiologists; tumor masks created by board-certified radiologists.",
+              "url": "https://zenodo.org/records/19847782",
+              "snapshot": "_collection/sources_other/protocol-19847782.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nContrast-enhanced CT scans acquired for multiple clinical indications with varying reconstruction settings.\nPrimary sources: Istanbul Medipol University Hospital and University Hospital Basel.\n\n\n\n                                                     Page 36 of 43                 Biomedical Image Analysis ChallengeS (BIAS) Initiative\n\f                               VLM3D: Vision-Language Modeling in 3D Medical Imaging\n\n\n\nExternal validation: University of California San Francisco.\nScans acquired by trained CT technologists; reports written by board-certified radiologists; tumor masks created\nby board-certified radiologists.",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

@@ -1,0 +1,562 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "edited-mrs-reconstruction-challenge-2023",
+    "challenge_name": "Edited MRS Reconstruction Challenge",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "ISBI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": "Cartagena",
+        "country": "Colombia",
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Other"
+      ],
+      "submodality": [
+        "GABA-edited MEGA-PRESS MR spectroscopy"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "GABA-edited MR spectra"
+      ],
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Reconstruction",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Track 01: Simulated Data",
+          "task_family": "Reconstruction",
+          "task_subtype": null,
+          "input": [
+            "Corrupted simulated MEGA-PRESS spectra"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Reconstructed spectra"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Track 02: Single Format (Homogeneous) In vivo data",
+          "task_family": "Reconstruction",
+          "task_subtype": null,
+          "input": [
+            "Homogeneous in vivo edited-MRS data"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Reconstructed spectra"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Track 03: Multiple Format (Heterogeneous) In vivo data",
+          "task_family": "Reconstruction",
+          "task_subtype": null,
+          "input": [
+            "Heterogeneous in vivo edited-MRS data"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Reconstructed spectra"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": true,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "GABA-edited MR spectra"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "simulated_training_spectrum_count": 5000,
+        "simulated_test_spectrum_count": 500
+      },
+      "modalities": [
+        "Other"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "track_specific_testing": [
+        {
+          "task_id": "task1",
+          "paradigm": "data-to-model",
+          "test_data_visible_to_participants": true,
+          "submission_artifact": "H5 reconstructed spectra",
+          "source_url": "https://sites.google.com/view/edited-mrs-rec-challenge/challenge-description?authuser=0"
+        }
+      ],
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Organizer-run evaluation",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Mean Squared Error (MSE)",
+            "Signal to noise ratio (SNR)",
+            "Linewidth (FWHM)",
+            "Peak Shapes - GABA, GLX"
+          ],
+          "ranking": "Weighted metric-rank aggregation: MSE 40%, SNR 20%, linewidth 20%, peak shapes 20%."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "MSE",
+            "SNR",
+            "FWHM",
+            "Peak shapes"
+          ],
+          "ranking": "Same metric weights as Track 01."
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "MSE",
+            "SNR",
+            "FWHM",
+            "Peak shapes"
+          ],
+          "ranking": "Same metric weights as Track 01."
+        }
+      ],
+      "cross_task_rule": null,
+      "completion_evidence": {
+        "value": "confirmed",
+        "event_state": "completed",
+        "source_url": "https://sites.google.com/view/edited-mrs-rec-challenge/results",
+        "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/edited_mrs_results_followup_20261021.json",
+        "results_presentation_event": "ISBI 2023, Cartagena, Colombia, 18–21 April 2023",
+        "overall_winner": "Deep Spectral Divers",
+        "note": "Conference date range is not an exact evaluation-completion date. Google Sites and the embedded spreadsheet are result-publication channels, not verified scoring execution platforms."
+      },
+      "execution_details": {
+        "responsible_party": "Challenge organizers",
+        "method": "Metric scripts supplied by organizers; weighted per-track metric-rank aggregation",
+        "basis": "Official evaluation rules plus user clarification that organizers compute the evaluation",
+        "physical_execution_environment": null,
+        "submission_service": null,
+        "note": "Google Sites hosts documentation and Google Sheets presents rankings; neither is identified as the scoring execution service. Local versus cloud execution is unspecified."
+      }
+    },
+    "submission": {
+      "submission_type": "prediction / result file (H5 reconstructed spectra; explicitly documented for Track 01); source code release",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "track_specific_documentation": [
+        {
+          "task_id": "task1",
+          "artifact": "H5 file containing reconstructed test spectra",
+          "source_url": "https://sites.google.com/view/edited-mrs-rec-challenge/challenge-description",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_3a8f15af270f87.json"
+        }
+      ],
+      "source_code_requirement": {
+        "hosting": "GitHub",
+        "license": "MIT",
+        "scope": "All participants, according to Submission Format section; not a verified prediction-upload service."
+      },
+      "mechanism": "Result-file submission to organizers; exact upload service not established",
+      "scope_note": "H5 format explicitly documented for Track 01; do not extend this artifact format to Tracks 02–03 without track-specific evidence."
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://sites.google.com/view/edited-mrs-rec-challenge/home",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": "https://github.com/rmsouza01/Edited-MRS-challenge",
+      "challenge_paper": null
+    },
+    "notes": [
+      "The input is MR spectroscopy rather than a conventional anatomical image volume; retained as an explicitly listed biomedical reconstruction challenge."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 71,
+      "sources": [
+        {
+          "type": "official challenge source",
+          "url": "https://sites.google.com/view/edited-mrs-rec-challenge/home",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/a81b99424c7a6bea.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official challenge source",
+          "url": "https://sites.google.com/view/edited-mrs-rec-challenge/challenge-description",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/3a8f15af270f87b1.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated"
+          ]
+        },
+        {
+          "type": "official challenge source",
+          "url": "https://github.com/rmsouza01/Edited-MRS-challenge",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/adb92e49d80d7c72.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated"
+          ]
+        },
+        {
+          "type": "official conference program, browser extraction",
+          "url": "https://biomedicalimaging.org/2023/challenges/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/isbi-conference-web.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation",
+            "task_profile",
+            "clinical_domain"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://sites.google.com/view/edited-mrs-rec-challenge/home",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/edited-mrs-reconstruction-challenge-2023.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "official result announcement",
+          "url": "https://sites.google.com/view/edited-mrs-rec-challenge/results",
+          "retrieved_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/edited_mrs_results_followup_20261021.json",
+          "supports": [
+            "evaluation.completion_evidence",
+            "event.location"
+          ]
+        },
+        {
+          "type": "official challenge description with user clarification",
+          "url": "https://sites.google.com/view/edited-mrs-rec-challenge/challenge-description?authuser=0",
+          "retrieved_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/edited_mrs_submission_followup_20261021.json",
+          "supports": [
+            "submission.submission_type",
+            "evaluation.platform",
+            "evaluation.execution_details",
+            "data_usage_mode.track_specific_testing"
+          ],
+          "limits": "Track 01 output format explicit; organizer responsibility clarified by user and consistent with official scoring rules; exact submission service and scoring infrastructure not identified."
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-21",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/edited-mrs-reconstruction-challenge-2023.json",
+          "_collection/verification_20261003/literature_context/edited-mrs-reconstruction-challenge-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "field_evidence": {
+        "clinical_domain.organ_system": {
+          "source_url": "https://sites.google.com/view/edited-mrs-rec-challenge/home",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/edited-mrs-reconstruction-challenge-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://sites.google.com/view/edited-mrs-rec-challenge/home",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/edited-mrs-reconstruction-challenge-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://sites.google.com/view/edited-mrs-rec-challenge/home",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/edited-mrs-reconstruction-challenge-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "targeted_review_history": [
+        {
+          "date": "2026-10-21",
+          "scope": "User-supplied result announcement corroborated; completed assessment written into original challenge record.",
+          "previous_sha256": "65f8a441330c1dfea93413f360375a4fcc732f9d0ede7b8d9c0d07ed692d4508",
+          "previous_record_backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/edited_mrs_followup_20261021_155959/canonical.json",
+          "qualification": "Not evidence for CEPHA29; submission and scoring platforms remain unverified. Overall ranking spreadsheet not independently read."
+        },
+        {
+          "date": "2026-10-21",
+          "fields_updated": [
+            "submission.submission_type",
+            "submission.mechanism",
+            "evaluation.platform",
+            "evaluation.execution_details",
+            "data_usage_mode.track_specific_testing"
+          ],
+          "previous_record_backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/edited_mrs_scoring_20261021_160153/canonical.json",
+          "previous_sha256": "f89f26c4641f8f6dc1233d64a6a648f2ffbabf07933b56e1874083d5478b3164",
+          "user_confirmation_scope": "Result-file submission and organizer-computed evaluation only; not whole-record independent double coding."
+        }
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "团队提交注册申请，由组织者在两个工作日内回复并提供数据文件夹；训练及测试谱数据发布，参赛者上传重建结果。"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "团队提交注册申请，由组织者在两个工作日内回复并提供数据文件夹；训练及测试谱数据发布，参赛者上传重建结果。"
+      },
+      "decision_history": [
+        "团队提交注册申请，由组织者在两个工作日内回复并提供数据文件夹；训练及测试谱数据发布，参赛者上传重建结果。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_3a8f15af270f87.json",
+          "url": "https://sites.google.com/view/edited-mrs-rec-challenge/challenge-description"
+        },
+        {
+          "local_source": "_collection/sources_other/a81b99424c7a6bea.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/edited_mrs_submission_followup_20261021.json",
+          "url": "https://sites.google.com/view/edited-mrs-rec-challenge/challenge-description?authuser=0"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/6830979f5bf14576.json",
+          "url": "https://sites.google.com/view/edited-mrs-rec-challenge/team-registration"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/edited-mrs-reconstruction-challenge-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "data-to-model"
+    },
+    "current_inclusion_decision": {
+      "analysis_include": false,
+      "decision_date": "2026-10-24",
+      "decision_basis": "Explicit human scope adjudication",
+      "reason": "Edited magnetic resonance spectroscopy reconstructs spectra rather than medical images or image-derived representations; excluded from the medical-imaging analytical scope.",
+      "source": "User instruction: 移除Edited-MRS 2023",
+      "official_protocol": "https://sites.google.com/view/edited-mrs-rec-challenge/challenge-description"
+    }
+  },
+  "common_note_ids": [
+    "CN02"
+  ]
+}

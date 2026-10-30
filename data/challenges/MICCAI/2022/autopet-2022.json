@@ -1,0 +1,451 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "autopet-2022",
+    "challenge_name": "autoPET",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2022-09-18",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "PET",
+        "CT"
+      ],
+      "submodality": [
+        "FDG-PET",
+        "PET/CT",
+        "Contrast-enhanced CT"
+      ],
+      "body_region": [
+        "Whole body"
+      ],
+      "organ_system": [
+        "Multisystem"
+      ],
+      "organs_or_structures": [
+        "FDG-avid tumor lesions"
+      ],
+      "diseases": [
+        "Malignant melanoma",
+        "Lymphoma",
+        "Lung cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Whole-body FDG-avid tumor lesion segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "binary segmentation",
+          "input": [
+            "FDG-PET volume",
+            "CT volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Tumor lesion mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Expert radiologists manually delineated FDG-avid tumor lesions.",
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": null,
+      "international": null,
+      "center_count": 2,
+      "institutions_description": null,
+      "population": {
+        "patient_count": 900,
+        "study_count": 1014,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "patient_count": 900,
+          "study_count": 1014
+        },
+        "preliminary_test": {
+          "study_count": 5
+        },
+        "final_test": {
+          "study_count": 150,
+          "same_center_study_count": 100,
+          "external_center_study_count": 50
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": "TCIA",
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": true,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": true,
+      "license_or_terms": "CC BY-NC",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": null,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": null,
+        "policy": "Only supplied training data, with data augmentation."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Foreground Dice score",
+            "False positive volume",
+            "False negative volume"
+          ],
+          "ranking": "Average metric ranks with Dice weight 0.5, FP volume 0.25, FN volume 0.25; Dice breaks ties."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_data_release": "2022-04-01",
+      "final_submission_deadline": "2022-09-04",
+      "challenge_event": "2022-09-18"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 705,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Challenge Preliminary Test Set",
+            "submission_count": 253
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://autopet.grand-challenge.org/",
+      "dataset": null,
+      "github": "https://github.com/lab-midas/autoPET",
+      "challenge_paper": null
+    },
+    "notes": [
+      "Updated dataset and overview replace planned 200 test studies with 150 (100 internal, 50 external). Evaluation page still describes the older 200-patient plan; preserved as a source discrepancy."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://autopet.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/124-0263d9c7a046.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet.grand-challenge.org/Rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/124-187cd8f7a127.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet.grand-challenge.org/Evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/124-325045976da5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet.grand-challenge.org/Dataset/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/124-b509bb6784b9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet.grand-challenge.org/Timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/124-f89594ce990a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/124-overview.json"
+        }
+      ],
+      "collection_status": "verified",
+      "unresolved_fields": [],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/autopet-2022.json",
+          "_collection/verification_20261003/literature_context/autopet-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Training/test imaging sources include University Hospital Tübingen and LMU Munich, Germany.",
+              "url": "https://www.eshi-society.org/autopet-challenge-2022/",
+              "snapshot": "latex_sourcev2/data/resource_information_update_20261027/sources/4d84d82182f2ab.json",
+              "scope": "Edition-specific organizer description; geography only, not updating preliminary sample-size estimates.",
+              "value": null,
+              "excerpt": " control patients who were examined by FDG-PET/CT in two large medical centers (University Hospital Tübingen, Germany & University Hospital of the LMU in Munich, Germany). All PET/CT data within this challenge have been acquired on state-of-the-art PET/CT scanners (Siemens Biograph mCT, mCT Flow and Biograph 64, GE Discovery 690) using standardized protocols following international guidelines. CT as well as PET data are provided as 3D volumes consisting of stacks of axial slices. Data provided as part of this challenge consists of whole-body examinations. Usually, the scan range of these examinations extends from the skull base to the mid-thigh level. If clinically relevant, scans can be extended to cover the entire body including the entire head and legs/feet. You can find more details about the PET/CT acquisition protocol, the training and test cohort and the annotation on the official challenge page: https://autopet.grand-challenge.org/Dataset Task Automatic tumor lesion segmentation in whole-body FDG-PET/CT on large-scale database of 1014 studies of 900 patients (training database) acquired on a single site: accurate and fast lesion segmentation avoidance of false positives (brain, bladder, etc.) Testing will be performed on 200 studies (held-out test database) with 100 studi",
+              "snapshot_date": "2026-10-27"
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Observed persistent code/model resource",
+              "summary": "Organizer maintains code, models and documentation for the 2022 methods.",
+              "url": "https://autopet.org/autopeti.html",
+              "snapshot": "latex_sourcev2/data/resource_information_update_20261027/sources/787a5218161e2b.json",
+              "scope": "Continuing method resources, not a claim that hidden test data are public.",
+              "value": null,
+              "excerpt": "ET/CT PSMA PET/CT Longitudinal CT Info autoPET-I The segmentation frontier Task Database Evaluation Codes and Models Leaderboard Organizers Introduction Positron Emission Tomography / Computed Tomography (PET/CT) is an integral part of the diagnostic workup for various malignant solid tumor entities. Due to its wide applicability, Fluorodeoxyglucose (FDG) is the most widely used PET tracer in an oncological setting reflecting glucose consumption of tissues, e.g. typically increased glucose consumption of tumor lesions.\r\n\r\nAs part of the clinical routine analysis, PET/CT is mostly analyzed in a qualitative way by experienced medical imaging experts. Additional quantitative evaluation of PET information would potentially allow for more precise and individualized diagnostic decisions.A crucial initial processing step for quantitative PET/CT analysis is segmentation of tumor lesions enabling accurate feature extraction, tumor characterization, oncologic staging and image-based therapy response assessment. Manual lesion segmentation is however associated with enormous effort and cost and is thus infeasible in clinical routine. Automation of this task is thus necessary for widespread clinical implementation of comprehensive PET image analysis.Recent progress in automated PET/CT lesion ",
+              "snapshot_date": "2026-10-27"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Organizer/platform-side inference",
+          "final_stage": "Final scored test phase",
+          "evidence_scope": "Specified protocol with report of private-test evaluation",
+          "coding_basis": "Challenge report and edition-specific instructions; paper follow-up 2026-10-27",
+          "evidence_path": "latex_sourcev2/data/paper_followup_20261027/sources/autopet_rules.txt",
+          "evidence_excerpt": "Final scoring uses uploaded Docker methods because test images are not accessible to participants; the organizer report describes algorithms evaluated on a private 150-study test set.",
+          "rationale": "Official final-test restrictions and the challenge-report abstract jointly establish evaluation-side inference; no conclusion based on Docker alone.",
+          "source_urls": "https://autopet.grand-challenge.org/Rules/; https://www.nature.com/articles/s42256-024-00912-9",
+          "completed_execution_claim": "Specified protocol with report of private-test evaluation",
+          "review_date": "2026-10-27",
+          "source_section": "Official Rules; organizer report abstract"
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Official retrospective leaderboard",
+              "source_path": "latex_sourcev2/data/paper_followup_20261027/sources/autopet_results.txt",
+              "url": "https://autopet.org/autopeti.html",
+              "section": "Leaderboard",
+              "value": {
+                "named_ranked_team_entries": 14
+              },
+              "scope": "Fourteen numbered team rows on the official retrospective leaderboard, excluding the unnumbered nnUNet baseline. This is listed ranked participation, not necessarily all 27 algorithm submissions or all attempted teams."
+            }
+          ],
+          "source_urls": "https://autopet.org/autopeti.html",
+          "basis": "A source-linked partial ranked-team list satisfies reported participation; scope is retained and algorithms are not converted into teams."
+        }
+      },
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation, supplemented by targeted organizer-paper and official retrospective-source review"
+    },
+    "literature_followups": [
+      {
+        "review_date": "2026-10-27",
+        "audit_path": "latex_sourcev2/data/paper_followup_20261027",
+        "fields": [
+          "final_inference",
+          "reported_participation"
+        ]
+      }
+    ]
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

@@ -1,0 +1,636 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "hecktor-2026",
+    "challenge_name": "HEad and neCK TumOR Lesion Segmentation, Staging and Prognosis",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "PET",
+        "CT"
+      ],
+      "submodality": [
+        "FDG PET/CT"
+      ],
+      "body_region": [
+        "Head and neck"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Primary tumors",
+        "Metastatic lymph nodes"
+      ],
+      "diseases": [
+        "Oropharyngeal cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Classification",
+        "Survival Prediction"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Primary and nodal tumor segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "Semantic segmentation",
+          "input": [
+            "PET/CT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "GTVp/GTVn mask"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Radiological TN staging",
+          "task_family": "Classification",
+          "task_subtype": "Classification",
+          "input": [
+            "PET/CT",
+            "Clinical variables"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "T and N stage categories"
+          ],
+          "granularity": "patient",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Recurrence-free survival prediction",
+          "task_family": "Survival Prediction",
+          "task_subtype": "Time-to-event prediction",
+          "input": [
+            "PET/CT",
+            "Clinical variables"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "RFS risk"
+          ],
+          "granularity": "patient",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": "Mask: 0 background, 1 primary tumor GTVp, 2 nodal tumors GTVn. T/N targets follow AJCC/UICC seventh edition; M stage not predicted.",
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": 11,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "FDG PET",
+        "Low-dose noncontrast CT",
+        "GTVp/GTVn masks",
+        "Clinical CSV",
+        "TN stage and RFS training targets"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "current_dataset_page_training": "Approximately 700 from eight centers.",
+        "current_dataset_page_test": "Approximately 400 from three centers.",
+        "homepage_expanded_cohort": "Approximately 1423 patients; includes additions not reconciled with dataset page."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "request-and-approval",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 当届官方数据页面列 CC BY-NC-SA；不外推到 HECKTOR 2025。",
+      "access_after_challenge": null,
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "GTVp DSC",
+            "GTVn DSC"
+          ],
+          "ranking": "Mean of GTVp/GTVn Dice."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "T-stage balanced accuracy",
+            "N-stage balanced accuracy"
+          ],
+          "ranking": "Mean balanced accuracy over T and N."
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Concordance index"
+          ],
+          "ranking": "Highest C-index."
+        }
+      ],
+      "cross_task_rule": "Single end-to-end pipeline; overall weighted aggregation: segmentation 0.25, TN staging 0.35, prognosis 0.40. Weighted-versus-unweighted consistency used as tie-break."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": 32,
+        "reserved_ram_gb": null,
+        "gpu": "NVIDIA T4",
+        "gpu_vram_gb": 16,
+        "max_processing_time_per_algorithm_job_minutes": 25,
+        "cpu_cores": 8
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "container_max_size_gb": 10
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 457,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Sanity Check",
+            "submission_count": 258
+          },
+          {
+            "official_phase_name": "Validation",
+            "submission_count": 125
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://hecktor26.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "2026 jointly evaluates segmentation, radiological TN stage and recurrence-free survival. HPV is provided clinical information, not a separate 2026 scored HPV task.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date.",
+      "2026-10-22: 已确认：2026参赛论文明确报告最终保留测试指标及前五名。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-0602e0eaf457.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/ground-truth/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-0aeebafce009.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/dataset/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-0c1290044e7b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/paper-submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-0f725e78b3da.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/overview/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-2deed81b96bb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/organizers-information/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-4f5e03462477.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/data-download/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-5c8efe596415.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/task-and-evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-6c9971a05083.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/technical-support/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-96ca9091c171.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://hecktor26.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-b5bce6eecc68.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/event-schedule/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-c7e4bc6aef97.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/participation-policies/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-cd5ef709519f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-e9ef94ec2919.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/submission-instructions/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-edec174477f0.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-f24577fc3652.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor26.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/16-overview.json"
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://papers.miccai.org/miccai-2026-sat/HECKTOR_003.html",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_0d7cde5a5495_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "已确认：2026参赛论文明确报告最终保留测试指标及前五名。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset: expanded homepage counts disagree with apparently older split description; exact final counts unresolved.",
+        "evaluation: weighted score versus rank aggregation and consistency tie-break formula require evaluator confirmation.",
+        "data_access: license and external-data policy not fully verified."
+      ],
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "clinical_domain.organ_system"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/hecktor-2026.json",
+          "_collection/verification_20261003/literature_context/hecktor-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "已确认：2026参赛论文明确报告最终保留测试指标及前五名。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "undetermined",
+            "evidence_state": "searched_not_established",
+            "evidence_ids": [],
+            "reason": "Official 2026 task page and linked phases expose sanity/validation, not final 2026 ranking. 2025 final results must not transfer to 2026."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2026/hecktor-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "scope": "Held-out competition test: segmentation, staging and recurrence-free survival",
+      "basis": "已确认：2026参赛论文明确报告最终保留测试指标及前五名。",
+      "evidence_type": "published_competition_result_or_award",
+      "evidence_sources": [
+        "https://papers.miccai.org/miccai-2026-sat/HECKTOR_003.html"
+      ],
+      "organizer_full_rankings_independently_verified": false,
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "已确认：2026参赛论文明确报告最终保留测试指标及前五名。",
+        "evidence_ids": [
+          "E2"
+        ],
+        "source_urls": [
+          "https://papers.miccai.org/miccai-2026-sat/HECKTOR_003.html"
+        ],
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt",
+        "details": {
+          "test_metrics": {
+            "weighted_score": 0.592,
+            "mean_Dice": 0.6386,
+            "T_stage_balanced_accuracy": 0.5237,
+            "N_stage_balanced_accuracy": 0.6032,
+            "RFS_C_index": 0.5879
+          },
+          "rank": "top five; exact rank not specified"
+        },
+        "propagation_status": "Original challenge JSON, current audit and current review CSV/Excel synchronized; aggregate manuscript, figures and frozen release not regenerated."
+      },
+      "remaining_questions": []
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Explicitly identified competition rules or named source data; not all components implied",
+      "agreement_required": null,
+      "summary_zh": "当届官方数据页面列 CC BY-NC-SA；不外推到 HECKTOR 2025。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "MDA 398 395 396 397 392 MDA New 46 46 46 27 27 HGJ 55 55 55 55 55 HMR 18 17 18 18 17 USZ 11 11 11 11 11 CHUV 53 53 53 44 44 TOTAL 781 777 779 724 691 Licensing and Acknowledgement ¶ If you use this dataset and/or results derived from participating in this challenge, please cite the following paper in any resulting publication or public disclosure Saeed et al., “A Multimodal and Multi-centric Head and Neck Cancer Dataset for Segmentation, Diagnosis and Outcome Prediction,” arXiv:2509.00367 (2025) This dataset is licensed under the CC BY-NC-SA license. ✅ Participants can: Use your dataset to develop and evaluate models for the challenge. Publish paper",
+          "source": {
+            "url": "https://hecktor26.grand-challenge.org/data-download/",
+            "local_source": "_collection/sources/16-5c8efe596415.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "ultimodal and Multi-centric Head and Neck Cancer Dataset for Segmentation, Diagnosis and Outcome Prediction,” arXiv:2509.00367 (2025) This dataset is licensed under the CC BY-NC-SA license. ✅ Participants can: Use your dataset to develop and evaluate models for the challenge. Publish papers based on their results (with proper attribution). Share code or results using the dataset under the same license. ❌ Participants cannot: Use the data to train models for commercial medical software or services. Sell or integrate the data into proprietary datasets. Redistribute a modified dataset under a more restrictive or commercial license.",
+          "source": {
+            "url": "https://hecktor26.grand-challenge.org/data-download/",
+            "local_source": "_collection/sources/16-5c8efe596415.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "d and Neck Cancer Dataset for Segmentation, Diagnosis and Outcome Prediction,” arXiv:2509.00367 (2025) This dataset is licensed under the CC BY-NC-SA license. ✅ Participants can: Use your dataset to develop and evaluate models for the challenge. Publish papers based on their results (with proper attribution). Share code or results using the dataset under the same license. ❌ Participants cannot: Use the data to train models for commercial medical software or services. Sell or integrate the data into proprietary datasets. Redistribute a modified dataset under a more restrictive or commercial license.",
+          "source": {
+            "url": "https://hecktor26.grand-challenge.org/data-download/",
+            "local_source": "_collection/sources/16-5c8efe596415.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://hecktor26.grand-challenge.org/data-download/",
+          "local_source": "_collection/sources/16-5c8efe596415.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

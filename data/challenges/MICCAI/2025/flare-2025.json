@@ -1,0 +1,1376 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "flare-2025",
+    "challenge_name": "Fast, Low-resource, Accurate, Robust, and Effectual Medical Image Analysis",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "MRI",
+        "PET",
+        "Ultrasound",
+        "X-ray",
+        "OCT",
+        "Endoscopy",
+        "Fundus",
+        "Microscopy"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Whole body"
+      ],
+      "organ_system": [
+        "Multisystem"
+      ],
+      "organs_or_structures": [
+        "Organs",
+        "Tumors",
+        "Image findings"
+      ],
+      "diseases": [
+        "Cancer (multiple types)"
+      ],
+      "clinical_context": null,
+      "disease_evidence_scope": "The 2025 protocol explicitly defines a pan-cancer segmentation task. Disease scope is this component, not all organ-segmentation/reconstruction datasets.",
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": null,
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Pan-cancer segmentation in CT scans",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "subtasks": [
+            {
+              "name": "Pan-cancer segmentation",
+              "source_url": "https://zenodo.org/records/15044918"
+            },
+            {
+              "name": "RECIST-to-3D",
+              "source_url": "https://arxiv.org/abs/2511.01600",
+              "evidence_scope": "2025 Task 1 Subtask 2 explicitly identified in participant abstract"
+            }
+          ]
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Abdominal CT Organ Segmentation on Laptop",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "subtasks": [
+            {
+              "name": "Low-resource abdominal CT organ segmentation",
+              "source_url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task2-LaptopSeg"
+            }
+          ]
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Unsupervised Domain Adaptation for Abdominal Organ Segmentation in MRI and PET Scans",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "subtasks": [
+            {
+              "name": "MRI target-domain organ segmentation",
+              "source_url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task3-DomainAdaption"
+            },
+            {
+              "name": "PET target-domain organ segmentation",
+              "source_url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task3-DomainAdaption"
+            }
+          ]
+        },
+        {
+          "task_id": "task4",
+          "official_name": "Foundation Model for 3D CT and MRI scans",
+          "task_family": "Representation Learning",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "subtasks": [
+            {
+              "name": "3D CT foundation models",
+              "source_url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task4-CT-FM"
+            },
+            {
+              "name": "3D MRI foundation models",
+              "source_url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task4-MRI-FM"
+            }
+          ]
+        },
+        {
+          "task_id": "task5",
+          "official_name": "Multimodal Model for Medical Image Parsing",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "subtasks": [
+            {
+              "name": "2D multimodal parsing",
+              "source_url": "https://github.com/BioMedIA-MBZUAI/ME-VLIP",
+              "outputs": [
+                "classification",
+                "detection",
+                "counting",
+                "regression",
+                "report generation"
+              ],
+              "evidence_scope": "Participant 2025 implementation and validation results"
+            },
+            {
+              "name": "3D CT report generation and VQA",
+              "source_url": "https://openreview.net/pdf?id=cFrCa5Rvk6",
+              "evidence_scope": "User documentary review of FeLoRA16-SPP; independent full-text retrieval blocked by OpenReview browser verification on 2026-10-22"
+            }
+          ]
+        },
+        {
+          "task_id": "task6",
+          "official_name": "Agentic System for Medical Image Analysis",
+          "task_family": "Agent",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "subtasks": [
+            {
+              "name": "Agentic medical image analysis",
+              "source_url": "https://zenodo.org/records/15044918",
+              "evidence_scope": "Declared objective only; actual competition assessment not verified"
+            }
+          ]
+        }
+      ],
+      "related_task_families": [
+        "Segmentation",
+        "Classification",
+        "Detection",
+        "Measurement",
+        "Agent",
+        "Representation Learning",
+        "Report Generation",
+        "Visual Question Answering"
+      ],
+      "declared_main_task_count": 6,
+      "primary_output_coding": "Multiple / composite outputs",
+      "counting_note": "Six main tasks and their subtasks belong to one FLARE 2025 edition; do not count branches as additional editions.",
+      "task_extension_evidence": "Report generation supported by the 2025 ME-VLIP participant repository; 3D VQA branch retained from user-supplied FeLoRA16-SPP documentary review, with independent retrieval limitation recorded.",
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Quantification / measurement",
+        "Report generation",
+        "Segmentation",
+        "VQA / multimodal QA"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "Detection": "Declared task output",
+        "Quantification / measurement": "Declared task output",
+        "Report generation": "Declared task output",
+        "Segmentation": "Declared task output",
+        "VQA / multimodal QA": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": true,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": true,
+      "visual_question_answering": true,
+      "reasoning": null,
+      "agent": true
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Organs",
+        "Tumors",
+        "Image findings"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT",
+        "MRI",
+        "PET",
+        "Ultrasound",
+        "X-ray",
+        "OCT",
+        "Endoscopy",
+        "Fundus",
+        "Microscopy"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "center_scope": "Challenge-cohort collection described in the cited source; registered-design cohorts remain planned scope."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 当届数据使用条款列 CC BY-NC-SA；不外推至其他 FLARE 届次。",
+      "access_after_challenge": null,
+      "review_status": "Human-confirmed 2026-10-25",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Competition-time training/development data",
+      "access_by_scope": [
+        {
+          "scope": "Training/development",
+          "category": "Account registration",
+          "access_steps": [
+            "Register",
+            "Download development data"
+          ],
+          "manual_review": null
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Codabench",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Normalized Surface Distance (NSD)",
+            "Runtime",
+            "GPU memory-time area"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Normalized Surface Distance (NSD)",
+            "Runtime"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Normalized Surface Distance (NSD)",
+            "Runtime",
+            "GPU memory-time area"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 3 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task4",
+          "metrics": [
+            "AUROC",
+            "Balanced accuracy",
+            "Runtime",
+            "GPU memory-time area"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 4 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task5",
+          "metrics": [
+            "AUROC",
+            "Balanced accuracy",
+            "FROC score",
+            "Mean Absolute Error",
+            "Runtime",
+            "GPU memory-time area"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 5 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task6",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Normalized Surface Distance (NSD)",
+            "AUROC",
+            "Balanced accuracy",
+            "FROC score",
+            "Mean Absolute Error",
+            "Runtime",
+            "GPU memory-time area"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 6 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.15044918",
+      "platform_scope": "Task 1–4 entry links independently verified; Task 5 entry reported in user documentary review. Task 6 host unverified.",
+      "task_platforms": [
+        {
+          "task_id": "task1",
+          "platform": "Codabench",
+          "competition_url": "https://www.codabench.org/competitions/7149/",
+          "evidence_status": "independently_verified_in_edition_specific_source",
+          "scope": "Associated competition entry; this does not establish final execution for all phases.",
+          "source_url": "https://github.com/zpy2223/MICCAI-FLARE-2025-Task-1"
+        },
+        {
+          "task_id": "task2",
+          "platform": "Codabench",
+          "competition_url": "https://www.codabench.org/competitions/2320/",
+          "evidence_status": "independently_verified_in_edition_specific_source",
+          "scope": "Associated competition entry; this does not establish final execution for all phases.",
+          "source_url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task2-LaptopSeg"
+        },
+        {
+          "task_id": "task3",
+          "platform": "Codabench",
+          "competition_url": "https://www.codabench.org/competitions/2296/",
+          "evidence_status": "independently_verified_in_edition_specific_source",
+          "scope": "Associated competition entry; this does not establish final execution for all phases.",
+          "source_url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task3-DomainAdaption"
+        },
+        {
+          "task_id": "task4",
+          "platform": "Codabench",
+          "competition_url": "https://www.codabench.org/competitions/7150/",
+          "evidence_status": "independently_verified_in_edition_specific_source",
+          "scope": "Associated competition entry; this does not establish final execution for all phases.",
+          "source_url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task4-CT-FM"
+        },
+        {
+          "task_id": "task5",
+          "platform": "Codabench",
+          "competition_url": "https://www.codabench.org/competitions/7151/",
+          "evidence_status": "user_documentary_review; endpoint not independently retrieved",
+          "scope": "Associated competition entry; this does not establish final execution for all phases.",
+          "source_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_user_review_20261022.txt"
+        },
+        {
+          "task_id": "task6",
+          "platform": null,
+          "competition_url": null,
+          "evidence_status": "not_established",
+          "scope": "Associated competition entry; this does not establish final execution for all phases."
+        }
+      ]
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Codabench",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered Docker requirement retained separately; implemented portal artifact incompletely verified",
+      "registered_design_submission_type": "Docker container",
+      "task_submission_review": [
+        {
+          "task_id": "task1",
+          "registered_artifact": "Docker container",
+          "registered_artifact_source": "https://zenodo.org/records/15044918",
+          "actual_portal_artifact": null,
+          "container_implementation_evidence": "independently verified participant repository",
+          "final_automated_execution_independently_verified": false
+        },
+        {
+          "task_id": "task2",
+          "registered_artifact": "Docker container",
+          "registered_artifact_source": "https://zenodo.org/records/15044918",
+          "actual_portal_artifact": null,
+          "container_implementation_evidence": "not established by this check",
+          "final_automated_execution_independently_verified": false
+        },
+        {
+          "task_id": "task3",
+          "registered_artifact": "Docker container",
+          "registered_artifact_source": "https://zenodo.org/records/15044918",
+          "actual_portal_artifact": null,
+          "container_implementation_evidence": "reported in user documentary review; not independently inspected in this check",
+          "final_automated_execution_independently_verified": false
+        },
+        {
+          "task_id": "task4",
+          "registered_artifact": "Docker container",
+          "registered_artifact_source": "https://zenodo.org/records/15044918",
+          "actual_portal_artifact": null,
+          "container_implementation_evidence": "reported in user documentary review; not independently inspected in this check",
+          "final_automated_execution_independently_verified": false
+        },
+        {
+          "task_id": "task5",
+          "registered_artifact": "Docker container",
+          "registered_artifact_source": "https://zenodo.org/records/15044918",
+          "actual_portal_artifact": null,
+          "container_implementation_evidence": "independently verified participant repository",
+          "final_automated_execution_independently_verified": false,
+          "additional_user_review": {
+            "portal": "https://www.codabench.org/competitions/7151/",
+            "baseline": "QWen2.5-VL Docker example",
+            "output": "predictions.json with Answer and original question fields",
+            "sample_input_phase": "validation-hidden",
+            "verification": "User documentary review; OpenReview browser check and Codabench access prevented independent confirmation in this turn. Protocol is not final execution evidence."
+          }
+        },
+        {
+          "task_id": "task6",
+          "registered_artifact": "Docker container",
+          "registered_artifact_source": "https://zenodo.org/records/15044918",
+          "actual_portal_artifact": null,
+          "container_implementation_evidence": "not established by this check",
+          "final_automated_execution_independently_verified": false
+        }
+      ],
+      "qualification": "A Docker implementation does not establish whether the portal received an image reference, image archive, code package or prediction files. Registered-design requirements remain documented; actual upload format and final execution are separate fields.",
+      "submission_artifact": "Docker container (registered design)",
+      "execution_mode": null,
+      "submission_evidence_status": "documented_design",
+      "submission_type_scope": "Registered design; task-specific implementation retained separately",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "existing_structured_fields_and_audit",
+        "summary": "按用户设计口径回填注册Docker要求；保留任务级实际提交与执行的限制，不声称所有赛道均已核实。",
+        "evidence_ids": [
+          "E17"
+        ],
+        "source_urls": [],
+        "user_material": null,
+        "directly_retrieved_protocol_snapshots": [],
+        "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced."
+      },
+      "implementation_verified_for_all_tracks": false
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "participant_result_sources": [
+        {
+          "title": "Lite ENSAM: a lightweight cancer segmentation model for 3D Computed Tomography",
+          "url": "https://arxiv.org/abs/2511.01600",
+          "publication_type": "arXiv preprint",
+          "submitted_on": "2025-11-03",
+          "evidence_scope": "2025 competitive hidden-test results"
+        },
+        {
+          "title": "ME-VLIP: A Modular and Efficient Vision-Language Framework for Generalizable Medical Image Parsing",
+          "url": "https://openreview.net/forum?id=0LYAs4b8T6",
+          "repository": "https://github.com/BioMedIA-MBZUAI/ME-VLIP",
+          "publication_type": "2025 OpenReview challenge submission; repository citation states under review",
+          "evidence_scope": "Validation results; no LNCS publication inferred"
+        },
+        {
+          "title": "FeLoRA16-SPP: Parameter-Efficient Fine-Tuning of 3D Multimodal LLMs for Radiology Report Generation and Visual Question Answering",
+          "url": "https://openreview.net/pdf?id=cFrCa5Rvk6",
+          "evidence_scope": "User-provided paper review; full text could not be independently retrieved"
+        }
+      ]
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://flare-medfm.github.io/",
+      "grand_challenge": null,
+      "platform": "https://www.codabench.org/competitions/7149/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null,
+      "platform_scope": "Task 1 entry; see evaluation.task_platforms for remaining tasks"
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "The shared homepage currently displays a later edition. This record uses the edition-specific official design document.",
+      "2026-10-22: Restored six-task 2025 structure from the 2025 registered design and edition-specific dataset/participant sources. Task 1 hidden-test participant results establish edition-level assessment under the revised rule. Do not import 2026 AutoMSC or renumbered multimodal rules; do not extend one subtask result to all emerging objectives.",
+      "2026-10-22: Task 5多模态竞赛结果已确认（Honorable Mention）；报告生成独立最终结果、Task 4与Task 6仍待补。",
+      "2026-10-22: 本轮仓库未补足Task 4最终结果；Task 5 GREEN验证成绩及Task 6声明不升级为专项最终评价。保留已确认Task 5多模态奖项。",
+      "2026-10-22 提交方式字段同步：按用户设计口径回填注册Docker要求；保留任务级实际提交与执行的限制，不声称所有赛道均已核实。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-22",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 38,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/40cba6887cd7753d.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://flare-medfm.github.io/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/fc091141fb9c61bf.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/15044918",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-15044918.txt",
+          "supports": [
+            "clinical_domain",
+            "clinical_domain.disease_evidence_scope",
+            "clinical_domain.diseases",
+            "dataset.center_scope",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://flare-medfm.github.io/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/flare-2025.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "official 2025 program",
+          "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_miccai_20261022.json",
+          "supports": [
+            "2025 edition and conference affiliation"
+          ]
+        },
+        {
+          "type": "participant hidden-test result",
+          "url": "https://arxiv.org/abs/2511.01600",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_liteensam_20261022.json",
+          "supports": [
+            "2025 Task 1 Subtask 2 hidden-test scores; edition-level assessment evidence"
+          ]
+        },
+        {
+          "type": "participant implementation",
+          "url": "https://github.com/zpy2223/MICCAI-FLARE-2025-Task-1",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_task1repo_20261022.json",
+          "supports": [
+            "2025 Task 1 platform 7149 and Docker inference implementation"
+          ]
+        },
+        {
+          "type": "official dataset card",
+          "url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task2-LaptopSeg",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_laptop_card_20261022.json",
+          "supports": [
+            "2024–2025 Task 2 and platform 2320"
+          ]
+        },
+        {
+          "type": "official dataset card",
+          "url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task3-DomainAdaption",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_uda_card_20261022.json",
+          "supports": [
+            "2024–2025 Task 3 and platform 2296"
+          ]
+        },
+        {
+          "type": "official dataset card",
+          "url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task4-CT-FM",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_ctfm_card_20261022.json",
+          "supports": [
+            "2025 Task 4 CT branch and platform 7150"
+          ]
+        },
+        {
+          "type": "official dataset card",
+          "url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task4-MRI-FM",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_mrifm_card_20261022.json",
+          "supports": [
+            "2025 Task 4 MRI branch and platform 7150"
+          ]
+        },
+        {
+          "type": "participant implementation",
+          "url": "https://github.com/BioMedIA-MBZUAI/ME-VLIP",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_mevlip_20261022.json",
+          "supports": [
+            "2025 Task 5 public/hidden validation results; report GREEN scores public only"
+          ]
+        },
+        {
+          "type": "baseline implementation",
+          "url": "https://github.com/lwubfcse/FLARE25_Task4_baseline_VoCo",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_voco_20261022.json",
+          "supports": [
+            "2025 Task 4 baseline; not final results"
+          ]
+        },
+        {
+          "type": "user-supplied documentary review",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_user_review_20261022.txt",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "Reported subtask mappings, participant paper titles and Task 5 platform 7151; independent verification limitations recorded per field"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://www.linkedin.com/posts/nht189_flare2025-miccai2025-vlm-activity-7390768463222341632-97b-",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_91afb287d4b1_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "Task 5多模态竞赛结果已确认（Honorable Mention）；报告生成独立最终结果、Task 4与Task 6仍待补。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://www.codabench.org/competitions/7151/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_9c16173b7e44_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Access failed/empty; user-supplied documentary review retained",
+          "source_accessible": false,
+          "supports": [
+            "Task 5多模态竞赛结果已确认（Honorable Mention）；报告生成独立最终结果、Task 4与Task 6仍待补。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://openreview.net/pdf?id=0LYAs4b8T6",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_4c471bfff3c5_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Access failed/empty; user-supplied documentary review retained",
+          "source_accessible": false,
+          "supports": [
+            "Task 5多模态竞赛结果已确认（Honorable Mention）；报告生成独立最终结果、Task 4与Task 6仍待补。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://github.com/Tonyxu74/flare2025task4",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_8c7cc1ed6367_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "本轮仓库未补足Task 4最终结果；Task 5 GREEN验证成绩及Task 6声明不升级为专项最终评价。保留已确认Task 5多模态奖项。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        },
+        {
+          "type": "existing_structured_fields_and_audit",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/MICCAI/2025/flare-2025.json",
+          "source_urls": [],
+          "supports": [
+            "按用户设计口径回填注册Docker要求；保留任务级实际提交与执行的限制，不声称所有赛道均已核实。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Actual portal upload format and final execution by task",
+        "Task 5 platform 7151 not independently retrieved in this check",
+        "Objective-specific final results for foundation-model, vision-language/report generation, and agentic tasks",
+        "Complete organizer final rankings/summary and comparable participant counts",
+        "Dataset totals and access remain phase-specific; no cross-task totals inferred"
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "dataset.multi_center": {
+          "source_url": "https://zenodo.org/records/15044918",
+          "local_snapshot": "_collection/sources_other/protocol-15044918.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered challenge cohort curated from 50+ medical centers; lower bound retained without an exact center count."
+        },
+        "dataset.center_type": {
+          "source_url": "https://zenodo.org/records/15044918",
+          "local_snapshot": "_collection/sources_other/protocol-15044918.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered challenge cohort curated from 50+ medical centers; lower bound retained without an exact center count."
+        },
+        "dataset.center_scope": {
+          "source_url": "https://zenodo.org/records/15044918",
+          "local_snapshot": "_collection/sources_other/protocol-15044918.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered challenge cohort curated from 50+ medical centers; lower bound retained without an exact center count."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/15044918",
+          "reviewed_on": "2026-10-22",
+          "basis": "Docker is the registered requirement; actual portal artifact is null pending verification, rather than inferred from Dockerfiles."
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/15044918",
+          "local_snapshot": "_collection/sources_other/protocol-15044918.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Docker containers"
+        },
+        "clinical_domain.diseases": {
+          "source_url": "https://zenodo.org/records/15044918",
+          "local_snapshot": "_collection/sources_other/protocol-15044918.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "The 2025 protocol explicitly defines a pan-cancer segmentation task. Disease scope is this component, not all organ-segmentation/reconstruction datasets."
+        },
+        "clinical_domain.disease_evidence_scope": {
+          "source_url": "https://zenodo.org/records/15044918",
+          "local_snapshot": "_collection/sources_other/protocol-15044918.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "The 2025 protocol explicitly defines a pan-cancer segmentation task. Disease scope is this component, not all organ-segmentation/reconstruction datasets."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://flare-medfm.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/flare-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://flare-medfm.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/flare-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://flare-medfm.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/flare-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "assessment_evidence": {
+          "source_url": "https://arxiv.org/abs/2511.01600",
+          "reviewed_on": "2026-10-22",
+          "basis": "Explicit 2025 competition hidden-test results"
+        },
+        "evaluation.platform": {
+          "source_urls": [
+            "https://github.com/zpy2223/MICCAI-FLARE-2025-Task-1",
+            "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task2-LaptopSeg",
+            "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task3-DomainAdaption",
+            "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task4-CT-FM",
+            "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task4-MRI-FM"
+          ],
+          "reviewed_on": "2026-10-22",
+          "basis": "Task-specific edition links establish Codabench for Tasks 1–4; no inference about Task 6."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.disease_evidence_scope",
+          "clinical_domain.diseases",
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "dataset.center_scope",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "submission.evidence_stage",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/flare-2025.json",
+          "_collection/verification_20261003/literature_context/flare-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "revision_history": [
+        {
+          "date": "2026-10-22",
+          "reason": "User historical review and independent checks of edition-specific sources.",
+          "previous_submission": {
+            "submission_type": "Docker container",
+            "platform": null,
+            "runtime_limits": {
+              "max_processing_time_per_case_minutes": null,
+              "max_ram_gb": null,
+              "reserved_ram_gb": null,
+              "gpu": null,
+              "gpu_vram_gb": null
+            },
+            "submission_limits": {
+              "sanity_check_successful_submissions_per_day": null,
+              "final_submissions_per_team": null,
+              "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+            },
+            "task_outputs": null,
+            "evidence_stage": "registered_design"
+          },
+          "previous_primary_task_family": "Segmentation"
+        }
+      ],
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "Task 5多模态竞赛结果已确认（Honorable Mention）；报告生成独立最终结果、Task 4与Task 6仍待补。",
+          "previous_assessment": {
+            "value": "confirmed",
+            "event_state": "completed",
+            "evidence_state": "published_participant_hidden_test_result",
+            "evidence_ids": [
+              "E3"
+            ],
+            "reason": "Lite ENSAM explicitly reports submission to MICCAI FLARE 2025 Task 1 Subtask 2 and hidden-test DSC 60.7% and NSD 63.6%. This confirms assessment in the edition, not every task or an independently verified complete final ranking."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2025/flare-2025.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "本轮仓库未补足Task 4最终结果；Task 5 GREEN验证成绩及Task 6声明不升级为专项最终评价。保留已确认Task 5多模态奖项。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2025/flare-2025.json"
+        },
+        {
+          "date": "2026-10-22",
+          "basis_type": "existing_structured_fields_and_audit",
+          "summary": "按用户设计口径回填注册Docker要求；保留任务级实际提交与执行的限制，不声称所有赛道均已核实。",
+          "evidence_ids": [
+            "E17"
+          ],
+          "source_urls": [],
+          "user_material": null,
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/MICCAI/2025/flare-2025.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "evidence_type": "published participant hidden-test result",
+      "evidence_source_url": "https://arxiv.org/abs/2511.01600",
+      "scope": "Edition results confirmed for Task 1 Subtask 2 and Task 5; not every task or report-generation endpoint.",
+      "basis": "Existing Task 1 hidden-test paper plus independently retrieved Task 5 multimodal award announcement.",
+      "organizer_full_rankings_independently_verified": false,
+      "organizer_final_overview_paper_located": false,
+      "qualification": "Participant-reported competitive hidden-test evidence is accepted under the revised review rule; full organizer rankings and per-objective completion remain distinct.",
+      "task_result_evidence": [
+        {
+          "task_id": "task1",
+          "status": "published_participant_hidden_test_result",
+          "subtask": "RECIST-to-3D",
+          "metrics": {
+            "DSC_percent": 60.7,
+            "NSD_percent": 63.6
+          },
+          "source_url": "https://arxiv.org/abs/2511.01600"
+        },
+        {
+          "task_id": "task2",
+          "status": "participant_validation_results_reported_by_user",
+          "final_assessment": "not independently verified"
+        },
+        {
+          "task_id": "task3",
+          "status": "participant_runner_up_claim_reported_by_user",
+          "final_assessment": "claim retained; award source not independently inspected"
+        },
+        {
+          "task_id": "task4",
+          "status": "baseline/participant validation evidence",
+          "objective_specific_final_assessment": "not independently verified"
+        },
+        {
+          "task_id": "task5",
+          "status": "participant_award_publicly_documented",
+          "source_url": "https://github.com/BioMedIA-MBZUAI/ME-VLIP",
+          "report_generation_scope": "GREEN 0.75 / 0.71 are public-validation scores; hidden column blank. Not final leaderboard evidence.",
+          "final_award_claim": "Honorable Mention independently verified. Earlier user-reported first-place claim remains unverified; these claims are not conflated.",
+          "award": "Honorable Mention Award",
+          "award_source": "https://www.linkedin.com/posts/nht189_flare2025-miccai2025-vlm-activity-7390768463222341632-97b-"
+        },
+        {
+          "task_id": "task6",
+          "status": "declared objective; actual competition assessment not verified",
+          "source_url": "https://zenodo.org/records/15044918"
+        }
+      ],
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "本轮仓库未补足Task 4最终结果；Task 5 GREEN验证成绩及Task 6声明不升级为专项最终评价。保留已确认Task 5多模态奖项。",
+        "source_urls": [
+          "https://github.com/Tonyxu74/flare2025task4"
+        ],
+        "evidence_ids": [
+          "E16"
+        ],
+        "details": {},
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_round2_user_20261022.txt",
+        "propagation_status": "Original JSON, audit, current CSV/Excel/reports updated; manuscript/figures/frozen release not regenerated."
+      },
+      "objective_assessment": [
+        {
+          "objective": "Foundation-model orientation",
+          "value": "not_established",
+          "evidence_ids": [
+            "E1"
+          ],
+          "reason": "Declared 2025 objective retained. Task 1 hidden-test completion cannot establish final assessment of this separate objective; validation results and user-reported award claims remain separately scoped."
+        },
+        {
+          "objective": "Vision-language",
+          "value": "confirmed",
+          "evidence_ids": [
+            "E13"
+          ],
+          "reason": "Task 5 Multimodal Model for Medical Image Parsing has a public participant Honorable Mention Award announcement. Confirms multimodal task outcome; report-generation-specific final assessment remains separate."
+        },
+        {
+          "objective": "Tool-mediated interaction",
+          "value": "not_established",
+          "evidence_ids": [
+            "E1"
+          ],
+          "reason": "Declared 2025 objective retained. Task 1 hidden-test completion cannot establish final assessment of this separate objective; validation results and user-reported award claims remain separately scoped."
+        },
+        {
+          "objective": "Report generation",
+          "value": "not_established",
+          "evidence_ids": [
+            "E9"
+          ],
+          "reason": "2025 task/participant implementation and public-validation GREEN scores documented; complete official final report-generation evaluation not independently verified."
+        }
+      ],
+      "remaining_questions": [
+        "Task 4 foundation-model and Task 6 tool/agent final outcomes remain unverified.",
+        "Task 5 report-generation-specific final results remain unverified despite task-level multimodal award.",
+        "Codabench 7151 and QWen2.5-VL baseline output-format details supplied by user; direct paper/portal access blocked in this follow-up; no final execution inferred."
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。",
+        "scope": "Competition-time training/development data",
+        "access_by_scope": [
+          {
+            "scope": "Training/development",
+            "category": "Account registration",
+            "access_steps": [
+              "Register",
+              "Download development data"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "Human confirmation supplied by user; no new independent web verification",
+        "confidence": "Human-confirmed",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "提供训练及开发数据；多个赛道最终运行参赛容器，保留各赛道提交差异。"
+      },
+      "decision_history": [
+        "提供训练及开发数据；多个赛道最终运行参赛容器，保留各赛道提交差异。",
+        "2026-10-25: 2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/protocol-15044918.txt",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/flare-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_registration_20261025/user_confirmation.json",
+          "review_date": "2026-10-25",
+          "section": "User-confirmed registration/download; scope limited to pending editions"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid",
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Quantification / measurement",
+        "Report generation",
+        "Segmentation",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "Foundation models",
+        "VLM",
+        "Report generation",
+        "Agent"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Quantification / measurement",
+        "Report generation",
+        "Segmentation",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "Foundation models",
+        "VLM",
+        "Report generation",
+        "Agent"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "Detection",
+        "Quantification / measurement",
+        "Report generation",
+        "Segmentation",
+        "VQA / multimodal QA"
+      ],
+      "previous_emerging_objectives": [
+        "Foundation models",
+        "VLM",
+        "Report generation",
+        "Agent"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "Detection": "Declared task output",
+        "Quantification / measurement": "Declared task output",
+        "Report generation": "Declared task output",
+        "Segmentation": "Declared task output",
+        "VQA / multimodal QA": "Declared task output"
+      },
+      "note_zh": "保留六任务设计及既有分任务证据；FM 来自 CT/MRI 基础模型任务，Agent 来自工具调用任务，不能由某队使用 InternVL 等模型替代。2025 文本任务沿用当届参赛材料，现行 Task5 数据页已重定向 2026，不能反向用作独立当届证明。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15044918",
+          "local_source": "_collection/sources_other/protocol-15044918.txt",
+          "sha256": "67ecddab71531403d7d6763b824800f4e156176cbd524ea514349a1d601f349f"
+        },
+        {
+          "url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task2-LaptopSeg",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_laptop_card_20261022.json",
+          "sha256": "327dd219dcbedad3e398d8c59d5e1c3ea2ba16214b25120fec980d6daaa623ac"
+        },
+        {
+          "url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task3-DomainAdaption",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_uda_card_20261022.json",
+          "sha256": "e28587845d2ea7083ee15ba567dd6cdd7ff948e24f11f55ebf5a6ed6935b0963"
+        },
+        {
+          "url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task4-CT-FM",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_ctfm_card_20261022.json",
+          "sha256": "0d118aa719318a7f081b24ddbbaf9ee21864ee44fcc1afd918a167c4a484bcf4"
+        },
+        {
+          "url": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task4-MRI-FM",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_mrifm_card_20261022.json",
+          "sha256": "abab8d8074d5c92ec6fb968528eaece28b4dff59df804282da7e36b89f7f295f"
+        },
+        {
+          "url": "https://github.com/lwubfcse/FLARE25_Task4_baseline_VoCo",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_voco_20261022.json",
+          "sha256": "67b92e2faaa898b099e2866d9f497cc3d9e4a781904043f745cd5c0f122c2ac8"
+        },
+        {
+          "url": "https://github.com/BioMedIA-MBZUAI/ME-VLIP",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/flare25_mevlip_20261022.json",
+          "sha256": "3e79ac5e9bdef321d81b3f5fd3fb0c510de14bafe15820f9e14cfa8e9bd191b7",
+          "scope": "2025 participant report; not FM-objective evidence"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届数据使用条款列 CC BY-NC-SA；不外推至其他 FLARE 届次。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "CC BY-NC-SA (Attribution-NonCommercial-ShareAlike)",
+          "source": {
+            "url": "https://zenodo.org/records/15044918",
+            "local_source": "_collection/sources_other/protocol-15044918.txt"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15044918",
+          "local_source": "_collection/sources_other/protocol-15044918.txt"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Alberta Health Services Barretos Cancer Hospital, Barretos, Sao Paulo, Brazil Beaumont Health System, Royal Oak, MI Page 11 of 75 Biomedical Image Analysis ChallengeS (BIAS) Initiative Fast, Low-resource, Accurate, Robust, and Effectual Medical Image BioPartners, CA Boston Medical Center, Boston, MA Brigham and Women's Hospital, Boston, MA Cleveland Clinic Cureline, Inc. team and clinical network, Brisbane, CA Hebrew University of Jerusalem International Institute for Molecular Oncology, Poznan IRCAD Institute Strasbourg Lahey Hospital & Medical Center, Burlington, MA Ludwig Maxmilian University of Munich M Health Fairview M.D. Anderson Cancer Center, Houston TX Mayo Clinic, Rochester, MN Memorial Sloan Kettering Cancer Center (New York, NY, USA) National Cancer Institute, Bethesda, MD National Institutes of Health, Bethesda MD Polytechnique & CHUM Research Center Montral Radboud University Medical Center of Nijmegen Roswell Park Cancer Institute, Buffalo NY Sheba Medical Center St. Joseph's Hospital and Medical Center, Phoenix, AZ Tel Aviv University The National Institutes of Health Clinical Center(NIH) University of California, San Francisco, CA University of Chicago University of North Carolina, Chapel Hill, NC University of Pittsburgh/UPMC, Pittsburgh, PA University of Sheffield University of Southern California Washington University School of Medicine, St. Louis, MO Cancer Center West China Hospital Erasmus MC Cancer Institute, Rotterdam Fudan University Shanghai Cancer Center Longgang Central Hospital of Shenzhen, China Longgang District People’s Hospital University Hospital Basel",
+              "url": "https://zenodo.org/records/15044918",
+              "snapshot": "_collection/sources_other/protocol-15044918.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nAlberta Health Services\nBarretos Cancer Hospital, Barretos, Sao Paulo, Brazil\nBeaumont Health System, Royal Oak, MI\n\n\n                                                     Page 11 of 75                 Biomedical Image Analysis ChallengeS (BIAS) Initiative\n\f                           Fast, Low-resource, Accurate, Robust, and Effectual Medical Image\n\n\n\nBioPartners, CA\nBoston Medical Center, Boston, MA\nBrigham and Women's Hospital, Boston, MA\nCleveland Clinic\nCureline, Inc. team and clinical network, Brisbane, CA\nHebrew University of Jerusalem\nInternational Institute for Molecular Oncology, Poznan\nIRCAD Institute Strasbourg\nLahey Hospital & Medical Center, Burlington, MA\nLudwig Maxmilian University of Munich\nM Health Fairview\nM.D. Anderson Cancer Center, Houston TX\nMayo Clinic, Rochester, MN\nMemorial Sloan Kettering Cancer Center (New York, NY, USA)\nNational Cancer Institute, Bethesda, MD\nNational Institutes of Health, Bethesda MD\nPolytechnique & CHUM Research Center Montral\nRadboud University Medical Center of Nijmegen\nRoswell Park Cancer Institute, Buffalo NY\nSheba Medical Center\nSt. Joseph's Hospital and Medical Center, Phoenix, AZ\nTel Aviv University\nThe National Institutes of Health Clinical Center(NIH)\nUniversity of California, San Francisco, CA\nUniversity of Chicago\nUniversity of North Carolina, Chapel Hill, NC\nUniversity of Pittsburgh/UPMC, Pittsburgh, PA\nUniversity of Sheffield\nUniversity of Southern California\nWashington University School of Medicine, St. Louis, MO\nCancer Center West China Hospital\nErasmus MC Cancer Institute, Rotterdam\nFudan University Shanghai Cancer Center\nLonggang Central Hospital of Shenzhen, China\nLonggang District People’s Hospital\nUniversity Hospital Basel",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Open call (challenge opens for new submissions after conference deadline)",
+              "url": "https://zenodo.org/records/15044918",
+              "snapshot": "_collection/sources_other/protocol-15044918.txt",
+              "scope": "Organizer specifies continued evaluation or persistent results; implemented availability is not inferred from this plan.",
+              "value": null,
+              "excerpt": "cal Image\n\nLife cycle type\n\nDefine the intended submission cycle of the challenge. Include information on whether/how the challenge will be\ncontinued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time\nevent). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some\nmodifications (repeated event).\n\n\nExamples:\n\n  • One-time event with fixed conference submission deadline\n\n  • Open call (challenge opens for new submissions after conference deadline)\n\n  • Repeated event with annual fixed conference submission deadline\n\nOpen call (challenge opens for new submissions after conference deadline)\n\nChallenge venue and platform\n\na) Report the event (e.g. conference) that is associated with the challenge (if any).\n\nMICCAI 2025",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

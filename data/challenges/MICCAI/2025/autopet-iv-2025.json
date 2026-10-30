@@ -1,0 +1,686 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "autopet-iv-2025",
+    "challenge_name": "autoPET/CT IV",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": null,
+      "challenge_event_date": "2025-09-27",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "PET",
+        "CT"
+      ],
+      "submodality": [
+        "FDG PET/CT",
+        "PSMA PET/CT",
+        "Longitudinal CT"
+      ],
+      "body_region": [
+        "Whole body"
+      ],
+      "organ_system": [
+        "Multisystem"
+      ],
+      "organs_or_structures": [
+        "Tumor lesions"
+      ],
+      "diseases": [
+        "Melanoma",
+        "Lymphoma",
+        "Lung cancer",
+        "Prostate cancer"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Interactive single-staging PET/CT lesion segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "Interactive segmentation",
+          "input": [
+            "PET",
+            "CT",
+            "Simulated foreground/background click coordinates"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Lesion segmentation at each interaction step"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Longitudinal CT lesion segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "Longitudinal segmentation",
+          "input": [
+            "Baseline CT and lesions",
+            "Follow-up CT",
+            "Lesion-center coordinates"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Follow-up lesion segmentation"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": 2,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "task1_train": {
+          "FDG_studies": 1014,
+          "PSMA_studies": 597
+        },
+        "task1_preliminary_studies": 5,
+        "task1_test_studies": 200,
+        "task1_test_subsets": "50 each: FDG LMU, FDG UKT, PSMA LMU, PSMA UKT.",
+        "task2_cohort": "300 training patients with baseline and follow-up CT.",
+        "task2_train_studies": 300,
+        "task2_train_patients": 300,
+        "task2_preliminary_studies": 5,
+        "task2_test_studies": 140,
+        "task2_test_subsets": "70 UKT and 70 University Hospital Mainz; each longitudinal study includes baseline and follow-up CT."
+      },
+      "center_scope": "Challenge-cohort collection described in the cited source; registered-design cohorts remain planned scope."
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC-BY-NC 4.0",
+      "access_after_challenge": null,
+      "access_scope": "training/development data; not a claim that hidden test data are public"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "All publicly available data and pretrained models, including foundation models, permitted."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "DSC at last click",
+            "FPV at last click",
+            "FNV at last click",
+            "AUC-DSC over clicks",
+            "AUC-FPV over clicks",
+            "AUC-FNV over clicks"
+          ],
+          "ranking": "Average within each center/tracer subset then across subsets; weighted metric ranks 0.25/0.125/0.125/0.25/0.125/0.125."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "DSC",
+            "False-positive volume",
+            "False-negative volume"
+          ],
+          "ranking": "Average over lesions; weighted metric ranks DSC 0.5, FPV 0.25, FNV 0.25."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "final_submission_deadline": "2025-09-01",
+      "deadline_timezone": "UTC+1 23:59"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "method_description_required": true,
+      "method_description": "LNCS-format preprint and public code repository required for prize eligibility."
+    },
+    "participation_statistics": {
+      "registered_participants": 228,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Task 1 Preliminary Test Set",
+            "submission_count": 33
+          },
+          {
+            "official_phase_name": "Task 2 Preliminary Test Set",
+            "submission_count": 32
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://autopet-iv.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Interactive segmentation uses simulated input clicks. Task 1 has eleven steps from no clicks to ten foreground plus ten background clicks. Task 2 has a follow-up lesion-center click and baseline segmentation information. Registration is optional, not a separate ranked task."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iv.grand-challenge.org/dataset/",
+          "supports": [
+            "data_access",
+            "dataset",
+            "dataset.center_count",
+            "dataset.center_scope",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/37-1f1bc25486ac.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iv.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/37-2984601f4a1b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iv.grand-challenge.org/autopet-iv/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/37-38fdeca37e07.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iv.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_access.is_public",
+            "data_access.license_or_terms",
+            "data_access.public_download",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/37-3a08d2e7a8d1.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iv.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/37-57897135643b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iv.grand-challenge.org/tasks/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/37-60843ef41f4d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iv.grand-challenge.org/eval/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/37-6bbc77503607.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iv.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/37-8d3b513f5b1c.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://autopet-iv.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/37-981065708185.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iv.grand-challenge.org/organization/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/37-b648fcc5e635.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iv.grand-challenge.org/challenge-publication/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/37-f195bf2abf64.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-iv.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/37-overview.json"
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://autopet-iv.grand-challenge.org/dataset/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/autopet-iv-2025.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "data_access: dataset-specific licensing still requires verification.",
+        "submission: submission endpoint restricted; compute limits not verified."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://autopet-iv.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/37-3a08d2e7a8d1.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.is_public": {
+          "source_url": "https://autopet-iv.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/37-3a08d2e7a8d1.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.public_download": {
+          "source_url": "https://autopet-iv.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/37-3a08d2e7a8d1.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://autopet-iv.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/37-3a08d2e7a8d1.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.license_or_terms": {
+          "source_url": "https://autopet-iv.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/37-3a08d2e7a8d1.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "dataset.multi_center": {
+          "source_url": "https://autopet-iv.grand-challenge.org/dataset/",
+          "local_snapshot": "_collection/sources/37-1f1bc25486ac.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2025 training/test dataset description explicitly names University Hospital Tübingen and LMU University Hospital Munich."
+        },
+        "dataset.center_type": {
+          "source_url": "https://autopet-iv.grand-challenge.org/dataset/",
+          "local_snapshot": "_collection/sources/37-1f1bc25486ac.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2025 training/test dataset description explicitly names University Hospital Tübingen and LMU University Hospital Munich."
+        },
+        "dataset.center_scope": {
+          "source_url": "https://autopet-iv.grand-challenge.org/dataset/",
+          "local_snapshot": "_collection/sources/37-1f1bc25486ac.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2025 training/test dataset description explicitly names University Hospital Tübingen and LMU University Hospital Munich."
+        },
+        "dataset.center_count": {
+          "source_url": "https://autopet-iv.grand-challenge.org/dataset/",
+          "local_snapshot": "_collection/sources/37-1f1bc25486ac.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2025 training/test dataset description explicitly names University Hospital Tübingen and LMU University Hospital Munich."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://autopet-iv.grand-challenge.org/dataset/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/autopet-iv-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://autopet-iv.grand-challenge.org/dataset/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/autopet-iv-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://autopet-iv.grand-challenge.org/dataset/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/autopet-iv-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_access.is_public",
+          "data_access.license_or_terms",
+          "data_access.public_download",
+          "dataset.center_count",
+          "dataset.center_scope",
+          "dataset.center_type",
+          "dataset.multi_center"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/autopet-iv-2025.json",
+          "_collection/verification_20261003/literature_context/autopet-iv-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "task1_train / FDG_studies",
+              "value": 1014,
+              "unit": "studies",
+              "canonical_field": "dataset.split_details.task1_train.FDG_studies",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task1_train / PSMA_studies",
+              "value": 597,
+              "unit": "studies",
+              "canonical_field": "dataset.split_details.task1_train.PSMA_studies",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task1_preliminary_studies",
+              "value": 5,
+              "unit": "studies",
+              "canonical_field": "dataset.split_details.task1_preliminary_studies",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task1_test_studies",
+              "value": 200,
+              "unit": "studies",
+              "canonical_field": "dataset.split_details.task1_test_studies",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task2_train_studies",
+              "value": 300,
+              "unit": "studies",
+              "canonical_field": "dataset.split_details.task2_train_studies",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task2_train_patients",
+              "value": 300,
+              "unit": "patients",
+              "canonical_field": "dataset.split_details.task2_train_patients",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task2_preliminary_studies",
+              "value": 5,
+              "unit": "studies",
+              "canonical_field": "dataset.split_details.task2_preliminary_studies",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task2_test_studies",
+              "value": 140,
+              "unit": "studies",
+              "canonical_field": "dataset.split_details.task2_test_studies",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://autopet-iv.grand-challenge.org/dataset/",
+              "supports": [
+                "data_access",
+                "dataset",
+                "dataset.center_count",
+                "dataset.center_scope",
+                "dataset.center_type",
+                "dataset.multi_center",
+                "labels_and_targets"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/37-1f1bc25486ac.json"
+            }
+          ],
+          "source_urls": "https://autopet-iv.grand-challenge.org/dataset/; https://autopet-iv.grand-challenge.org/prizes/; https://autopet-iv.grand-challenge.org/autopet-iv/; https://autopet-iv.grand-challenge.org/rules/; https://autopet-iv.grand-challenge.org/timeline/; https://autopet-iv.grand-challenge.org/tasks/; https://autopet-iv.grand-challenge.org/eval/; https://autopet-iv.grand-challenge.org/; https://autopet-iv.grand-challenge.org/challenge/statistics/; https://autopet-iv.grand-challenge.org/organization/; https://autopet-iv.grand-challenge.org/challenge-publication/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

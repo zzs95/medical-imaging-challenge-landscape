@@ -1,0 +1,425 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "mmis-2024",
+    "challenge_name": "MMIS-2024: Multi-rater Medical Image Segmentation for Radiotherapy Planning in Nasopharyngeal Carcinoma and Glioblastoma",
+    "full_name": "MMIS-2024: Multi-rater Medical Image Segmentation for Radiotherapy Planning in Nasopharyngeal Carcinoma and Glioblastoma",
+    "year": 2024,
+    "event": {
+      "conference": "ACM Multimedia 2024 Grand Challenge",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2024-10-28",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": [
+        "Monash University",
+        "University of Adelaide",
+        "Sichuan Cancer Hospital"
+      ],
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Nasopharynx",
+        "Brain"
+      ],
+      "diseases": [
+        "Nasopharyngeal carcinoma",
+        "Glioblastoma"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Multi-rater nasopharyngeal carcinoma segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "multi-rater tumor segmentation",
+          "input": [
+            "T1, T2 and contrast-enhanced T1 MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "30 diverse tumor masks and four rater-personalized masks"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Federated multi-rater glioblastoma segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "federated multi-rater segmentation",
+          "input": [
+            "T1, T2, FLAIR and gadolinium-enhanced T1 MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Diverse tumor masks; personalized masks encouraged"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ],
+      "learning_paradigms": [
+        "Federated learning",
+        "Personalized multi-rater learning"
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": "Gross tumor volume",
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Task 1: four senior radiologists; task 2: two radiation oncologists and two radiology residents.",
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "T1 MRI",
+        "T2 MRI",
+        "Contrast-enhanced T1 MRI",
+        "FLAIR MRI"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "task_datasets": [
+        {
+          "task_id": "task1",
+          "train_count": {
+            "value": 100,
+            "unit": "subjects",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "validation_count": {
+            "value": 20,
+            "unit": "subjects",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "test_count": {
+            "value": 50,
+            "unit": "subjects",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "total_count": {
+            "value": 170,
+            "unit": "subjects",
+            "approximate": false,
+            "lower_bound": false
+          }
+        },
+        {
+          "task_id": "task2",
+          "train_count": {
+            "value": 120,
+            "unit": "scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "evaluation_count": {
+            "value": 20,
+            "unit": "scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "sources": [
+            "LUMIERE",
+            "RHUH",
+            "UPENN-GBM"
+          ]
+        }
+      ]
+    },
+    "data_access": {
+      "is_public": false,
+      "access_status": "registration-and-approval-required",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "license_review_status": "Not established",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": false,
+        "submission_artifact": "Predictions"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": null,
+        "policy": "External datasets are prohibited; publicly available pretrained models are permitted."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": false,
+      "platform": "Organizer manual evaluation",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Generalized Energy Distance",
+            "Soft Dice",
+            "Dice Match",
+            "Dice Max",
+            "Mean expert-wise Dice"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Generalized Energy Distance",
+            "Soft Dice",
+            "Dice Match",
+            "Dice Max",
+            "Mean expert-wise Dice"
+          ],
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Segmentation predictions, code and model weights by email",
+      "platform": "Organizer email",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "max_submissions_per_team": 3
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "task1_data_release": "2024-06-18",
+      "task2_data_release": "2024-07-01",
+      "final_submission_end": "2024-10-24",
+      "leaderboard_release": "2024-10-26",
+      "challenge_event": "2024-10-28"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": true,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": false,
+      "optional_workshop_submission": null
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://2024.acmmm.org/files/MM24-Full_Program.pdf",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "The 2024-08-15 update replaced the earlier Docker submission requirement with emailed predictions, code and weights. Dataset units differ between tasks and are not aggregated."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "last_updated": "2026-10-03",
+      "collection_date_definition": "Date of web and literature metadata collection, not medical-image acquisition.",
+      "source_list": "challenge_list_other_platforms_22_26_v4.json",
+      "source_list_index": 22,
+      "source_list_index_base": 1,
+      "collection_status": "partially_verified",
+      "sources": [
+        {
+          "type": "Official organizer source",
+          "url": "https://mmis2024.vercel.app/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/f0222460fb1dc503.json",
+          "supports": [
+            "task_profile",
+            "clinical_domain",
+            "dataset",
+            "evaluation",
+            "submission",
+            "schedule",
+            "publication"
+          ],
+          "snapshot_sha256": "63abc142d8c81cf315a685eec3f85780bb9fc2737a55f391d6eed09454026d5e"
+        }
+      ],
+      "unresolved_fields": [
+        "evaluation.final_metric_weights",
+        "publication.embargo_duration",
+        "dataset.population.patient_count",
+        "dataset.center_count",
+        "dataset.collection_period.start_year",
+        "data_access.license_or_terms",
+        "participation_statistics.registered_teams"
+      ],
+      "verification_policy": "Only edition-specific official evidence populates facts; unknown values remain null."
+    },
+    "record_level": "challenge_edition",
+    "scope_status": "core_medical_or_biomedical_imaging",
+    "count_in_core_medical_imaging_review": true,
+    "count_in_edition_statistics": true,
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Not established",
+      "terms_documented": false,
+      "detail_level": "Not established",
+      "licence_names": [],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届官网列数据和提交流程，但未取得明确的数据许可或完整使用条款。",
+      "qualifications": [],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "url": "https://mmis2024.vercel.app/",
+          "local_source": "_collection/v4_20261003/sources/f0222460fb1dc503.json"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "search_attempts": [
+        {
+          "url": "https://mmis2024.vercel.app/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/f0222460fb1dc503.json",
+          "status": 200
+        },
+        {
+          "url": "https://2024.acmmm.org/files/MM24-Full_Program.pdf",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/36a3f86c5ad53c78.json",
+          "status": 200
+        },
+        {
+          "url": "https://mmis2024.vercel.app/#term",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/998276a2f6aa37fe.json",
+          "status": 200
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  }
+}

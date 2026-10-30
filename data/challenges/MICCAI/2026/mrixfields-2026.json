@@ -1,0 +1,592 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "mrixfields-2026",
+    "challenge_name": "A Generalizable Cross-Field MRI Translation and Harmonization Challenge",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": [
+        "T1 MRI",
+        "T2 MRI",
+        "FLAIR"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "Brain"
+      ],
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Synthesis",
+      "secondary_task_families": [
+        "Enhancement"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Ultra-High Field MRI Synthesis from Arbitrary Magnetic Field Strengths",
+          "task_family": "Synthesis",
+          "task_subtype": null,
+          "input": [
+            "MRI from an arbitrary field strength"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "7T-equivalent MRI"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Higher-Field MRI Generation from Ultra-Low Magnetic Field Strengths",
+          "task_family": "Enhancement",
+          "task_subtype": null,
+          "input": [
+            "Ultra-low-field MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Higher-field MRI"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Controllable Field-to-Field MRI Synthesis with a Unified Conditional Model",
+          "task_family": "Synthesis",
+          "task_subtype": null,
+          "input": [
+            "Source MRI",
+            "Requested target field strength"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Field-conditioned synthesized MRI"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": true,
+      "enhancement": true,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Brain"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "MRI"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "field_strength_range_tesla": [
+        0.1,
+        7.0
+      ]
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "preregistered_data_license": "CC BY-NC",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Synapse",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "nRMSE",
+            "SSIM",
+            "LPIPS",
+            "Dice",
+            "Normalized volume consistency"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "nRMSE",
+            "SSIM",
+            "LPIPS",
+            "Dice",
+            "Normalized volume consistency"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "nRMSE",
+            "SSIM",
+            "LPIPS",
+            "Dice",
+            "Normalized volume consistency"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 3 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19847223",
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Synapse",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://mrixfields.chihucloud.com/2026/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 28,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://mrixfields.chihucloud.com/2026/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/395c8c0a0135ee5c.json",
+          "supports": [
+            "challenge context",
+            "clinical_domain",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "homepage fields where stated",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19847223",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19847223.txt",
+          "supports": [
+            "clinical_domain",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://mrixfields.chihucloud.com/2026/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/mrixfields-2026.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://zenodo.org/records/19847223",
+          "local_snapshot": "_collection/sources_other/protocol-19847223.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container will be accepted as submission through the Synapse platform. Submission details will be published at the time point of challenge announcement."
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/19847223",
+          "local_snapshot": "_collection/sources_other/protocol-19847223.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container will be accepted as submission through the Synapse platform. Submission details will be published at the time point of challenge announcement."
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/19847223",
+          "local_snapshot": "_collection/sources_other/protocol-19847223.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container will be accepted as submission through the Synapse platform. Submission details will be published at the time point of challenge announcement."
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/19847223",
+          "local_snapshot": "_collection/sources_other/protocol-19847223.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container will be accepted as submission through the Synapse platform. Submission details will be published at the time point of challenge announcement."
+        },
+        "dataset.multi_center": {
+          "source_url": "https://mrixfields.chihucloud.com/2026/",
+          "local_snapshot": "_collection/sources_other/395c8c0a0135ee5c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official dataset description states 2500+ MRI multicenter cases; institution count is not specified."
+        },
+        "dataset.center_type": {
+          "source_url": "https://mrixfields.chihucloud.com/2026/",
+          "local_snapshot": "_collection/sources_other/395c8c0a0135ee5c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official dataset description states 2500+ MRI multicenter cases; institution count is not specified."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/19847223",
+          "local_snapshot": "_collection/sources_other/protocol-19847223.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Docker container will be accepted as submission through the Synapse platform. Submission details will be published at the time point of challenge announcement."
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19847223",
+          "local_snapshot": "_collection/sources_other/protocol-19847223.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Docker container will be accepted as submission through the Synapse platform. Submission details will be published at the time point of challenge announcement."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://mrixfields.chihucloud.com/2026/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/mrixfields-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://mrixfields.chihucloud.com/2026/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/mrixfields-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://mrixfields.chihucloud.com/2026/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/mrixfields-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "data_usage_mode.overall_paradigm",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/mrixfields-2026.json",
+          "_collection/verification_20261003/literature_context/mrixfields-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "2026协议明确已注册队伍下载训练和验证数据、本地训练；Synapse最终运行Docker。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "2026协议明确已注册队伍下载训练和验证数据、本地训练；Synapse最终运行Docker。"
+      },
+      "decision_history": [
+        "2026协议明确已注册队伍下载训练和验证数据、本地训练；Synapse最终运行Docker。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/protocol-19847223.txt",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/mrixfields-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "当届方案明确健康志愿者的跨场强脑MRI，未设疾病队列或病变标签。",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/19847223",
+          "local_source": "_collection/sources_other/protocol-19847223.txt"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "当届方案明确健康志愿者的跨场强脑MRI，未设疾病队列或病变标签。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2026/mrixfields-2026.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Specified acquisition geography",
+              "summary": "The following centers have already contacted us and can support our data collection. Additionally, we are actively reaching out to more international medical centers in the hope of collecting raw data from more sources. Fudan University Brain Imaging Center, Fudan University, China Point Imaging, Shanghai, China Sheshan Campus, Zhongshan Hospital, Fudan University, China These centers participate in retrospective and prospective MRI data collection across multiple field strengths.",
+              "url": "https://zenodo.org/records/19847223",
+              "snapshot": "_collection/sources_other/protocol-19847223.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nThe following centers have already contacted us and can support our data collection. Additionally, we are actively\nreaching out to more international medical centers in the hope of collecting raw data from more sources.\n\n\nFudan University Brain Imaging Center, Fudan University, China\n\n\nPoint Imaging, Shanghai, China\n\n\nSheshan Campus, Zhongshan Hospital, Fudan University, China\n\n\nThese centers participate in retrospective and prospective MRI data collection across multiple field strengths.",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

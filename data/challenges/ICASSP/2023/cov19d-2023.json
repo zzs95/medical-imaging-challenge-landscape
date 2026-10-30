@@ -1,0 +1,436 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cov19d-2023",
+    "challenge_name": "3rd COV19D Competition 2023",
+    "full_name": "3rd COV19D Competition 2023",
+    "year": 2023,
+    "event": {
+      "conference": "ICASSP 2023",
+      "event_type": "conference_challenge",
+      "parent_event": null
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Chest"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Lungs"
+      ],
+      "diseases": [
+        "COVID-19"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "task_families": [
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "COVID-19 detection",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "source_url": "https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/"
+        },
+        {
+          "task_id": "task2",
+          "official_name": "COVID-19 severity assessment",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "source_url": "https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/"
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "CT"
+      ],
+      "population": null,
+      "source_reference": "https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Dataset citation requirement. 当届官网明确：参赛或使用竞赛数据必须引用列出的来源论文；未找到标准许可、商业用途或再分发权限。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": null,
+      "metrics": [
+        {
+          "name": "Macro F1",
+          "role": "ranking"
+        }
+      ],
+      "source_reference": "https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/",
+      "execution_note": "No automatic scoring service named.",
+      "model_executor": "Participants; organizers additionally verify top-three models",
+      "scoring_executor": "Organizers using hidden test labels"
+    },
+    "submission": {
+      "submission_type": "Prediction results with source-code and method-paper links",
+      "platform": "Email to organizers",
+      "source_reference": "https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/",
+      "runtime_limits": null,
+      "submission_contact": "d.kollias@qmul.ac.uk",
+      "primary_artifacts": [
+        "Test predictions"
+      ],
+      "additional_materials": [
+        {
+          "artifact": "GitHub source link and arXiv method-paper link",
+          "purpose": "Required accompanying materials"
+        },
+        {
+          "artifact": "Trained models from top three teams",
+          "purpose": "Organizer verification; not primary scoring submission"
+        }
+      ],
+      "execution": "Participants infer locally; organizers score predictions and separately verify trained models from the top three teams. CMT is for paper submission.",
+      "portal_review_source": "_collection/portal_classification_review_20261024/user_review.txt",
+      "additional_artifacts": [
+        {
+          "artifact": "GitHub source link and arXiv method-paper link",
+          "purpose": "Required accompanying materials"
+        },
+        {
+          "artifact": "Trained models from top three teams",
+          "purpose": "Organizer verification; not primary scoring submission"
+        }
+      ]
+    },
+    "schedule": {
+      "edition_year": 2023,
+      "source_reference": "https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/",
+      "supporting_sources": []
+    },
+    "notes": [
+      "One third-edition competition with two tasks. Distinct from the existing ECCV 2022 second and CVPR 2024 fourth editions."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/14ddb767266e8b88.json",
+          "http_status": 200
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields"
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py",
+      "portal_classification_review": {
+        "date": "2026-10-24",
+        "local_review": "_collection/portal_classification_review_20261024/user_review.txt",
+        "basis": "Human-supplied source-linked review; organizer BraTS reply and ICPR programme also checked directly."
+      }
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "data-to-model"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": "Organizer page names detection and severity winners",
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "The lead researcher emails a completed EULA from an institutional address; organizers reply with dataset access."
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "MLearn: Machine Learning group",
+          "local_source": "_collection/other_venues_audit_20261024/sources/14ddb767266e8b88.json",
+          "url": "https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/",
+          "excerpt": "se diagnosis for many types of clinical and preclinical applications. We will present segmentation, registration, tracking and disease recognition methods and their applications to cardiac analytics, cancer diagnosis, body fat estimation and cell tracking. Finally, we will show novel AI methods that offer explainability in machine learning to provide further insights into learning-based decision making and di [...] apers will be part of the IEEE ICASSP 2023 proceedings. The research groups will be able to use any publicly available datasets as long as they report it in their submitted final paper. We will provide a white paper describing the Competitions, the databases used, as well as baseline models and their results for comparison purposes. B3. General Information In order to participate in the Competitions, teams will need to register. At the end of the Competitions, each team will have to send us: i) their predictions on the test set, ii) a link to a Github repository where their solution/source code will be stored, and iii) a link to an ArXiv paper with 2-8 pages describing their proposed methodology, data used and results. Af [...] validity of the approach. B4. Participation Information In order to participate, teams will have to register; the lead researcher should send an email from their official address (no personal emails will be accepted) to d.kollias@qmul.ac.uk with: i) subject “3rd COV19D Competition: Team Registration”; ii) this EULA filled in, signed and attached; iii) the lead researcher’s official academic/industrial website; please note that the lead researcher cannot be a student (UG/PG/Ph.D.); iv) the emails of each team member v) the team’s name vi) the p oint of contact name and email address (which member of the team will be the main point of contact for future communications, data access etc.) There is a maximum number of 8 participants in each team. As a reply, you will receive access to the dataset’s images and annotations. B5. Final Paper Submission Information The peer review process for the papers will be single blind, including at least two distinct reviews per submission, and will follow IEEE ICASSP standards and policies. The accepted papers will be part of IEEE ICASSP 20 [...] ne for the competitions will be as follows: December 16, 2022: Opening of the Competition; start of registration of research groups; provision of training and validation datasets, of respective annotations and of the baseline approach will follow March 18, 2023: Final submission of results deadline (Results, Code and ArXiv paper sent to d.kollias@qmul.ac.uk) March 19, 2023: Winners announcement March 30, 2023"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Not established",
+          "value": []
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Not established",
+          "value": null
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": {
+            "value": 18,
+            "unit": "participating teams",
+            "comparable": false,
+            "details": "10 teams submitted detection and 9 submitted severity; overlap not specified. 18 participated overall, not established as 18 unique submitting teams."
+          }
+        }
+      },
+      "review_note": "Official post-event account distinguishes participation, submissions and above-baseline scores.",
+      "sources": [
+        {
+          "url": "https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/",
+          "local_source": "_collection/other_venues_audit_20261024/sources/14ddb767266e8b88.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/cov19d-2023.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Chest"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Inflammatory / infectious"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Lungs"
+      ],
+      "specific_diseases": [
+        "COVID-19"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/14ddb767266e8b88.json",
+          "url": "https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/cov19d-2023.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Limited explicit use condition",
+      "licence_names": [
+        "Dataset citation requirement"
+      ],
+      "scope": "Competition data",
+      "agreement_required": null,
+      "summary_zh": "当届官网明确：参赛或使用竞赛数据必须引用列出的来源论文；未找到标准许可、商业用途或再分发权限。",
+      "qualifications": [],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/14ddb767266e8b88.json",
+          "url": "https://mlearn.lincoln.ac.uk/icassp-2023-ai-mia/"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

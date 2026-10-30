@@ -1,0 +1,628 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "pdcadxfoundation-2025",
+    "challenge_name": "Foundation-Model-Driven Parkinson's Disease Auto Diagnosis Challenge",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": [
+        "T1 MRI",
+        "Quantitative susceptibility mapping",
+        "Neuromelanin-sensitive MRI"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "Deep gray matter nuclei"
+      ],
+      "diseases": [
+        "Parkinson’s disease"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Other",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "PD-related anatomy segmentation and disease classification",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": [
+            "T1-weighted MRI",
+            "Quantitative susceptibility mapping",
+            "Neuromelanin-sensitive MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Deep gray matter segmentation",
+            "Parkinson’s disease classification"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ],
+      "related_task_families": [
+        "Segmentation",
+        "Classification"
+      ],
+      "task_families": [
+        "Classification",
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "Segmentation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Deep gray matter nuclei"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "single-center",
+      "multi_center": false,
+      "international": null,
+      "center_count": 1,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "subject_count": 500
+      },
+      "modalities": [
+        "MRI"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "source_dataset": "Ruijin-PD dataset",
+      "center_scope": "Challenge-cohort collection described in the cited source; registered-design cohorts remain planned scope."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC. 当届数据使用条款列 CC BY-NC。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Coefficient",
+            "HD95",
+            "Accuracy",
+            "AUROC"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.15094606"
+    },
+    "submission": {
+      "submission_type": "Prediction files",
+      "platform": "Email",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://ruijin-imit.github.io/challenges/PDCADxFoundation-MICCAI2025",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 49,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/40cba6887cd7753d.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://ruijin-imit.github.io/challenges/PDCADxFoundation-MICCAI2025",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/908c42274914325d.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/15094606",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-15094606.txt",
+          "supports": [
+            "clinical_domain",
+            "dataset.center_count",
+            "dataset.center_scope",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://ruijin-imit.github.io/challenges/PDCADxFoundation-MICCAI2025",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/pdcadxfoundation-2025.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/15094606",
+          "local_snapshot": "_collection/sources_other/protocol-15094606.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered design explicitly specifies algorithm-output delivery by email."
+        },
+        "dataset.multi_center": {
+          "source_url": "https://zenodo.org/records/15094606",
+          "local_snapshot": "_collection/sources_other/protocol-15094606.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered challenge cohort comes from the in-house RING PD project at Ruijin Hospital, Shanghai."
+        },
+        "dataset.center_type": {
+          "source_url": "https://zenodo.org/records/15094606",
+          "local_snapshot": "_collection/sources_other/protocol-15094606.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered challenge cohort comes from the in-house RING PD project at Ruijin Hospital, Shanghai."
+        },
+        "dataset.center_scope": {
+          "source_url": "https://zenodo.org/records/15094606",
+          "local_snapshot": "_collection/sources_other/protocol-15094606.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered challenge cohort comes from the in-house RING PD project at Ruijin Hospital, Shanghai."
+        },
+        "dataset.center_count": {
+          "source_url": "https://zenodo.org/records/15094606",
+          "local_snapshot": "_collection/sources_other/protocol-15094606.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered challenge cohort comes from the in-house RING PD project at Ruijin Hospital, Shanghai."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/15094606",
+          "local_snapshot": "_collection/sources_other/protocol-15094606.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Algorithm output should be sent to organizers via e-mail. Submission instructions will be on the organizer’s website."
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/15094606",
+          "local_snapshot": "_collection/sources_other/protocol-15094606.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Algorithm output should be sent to organizers via e-mail. Submission instructions will be on the organizer’s website."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://ruijin-imit.github.io/challenges/PDCADxFoundation-MICCAI2025",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/pdcadxfoundation-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://ruijin-imit.github.io/challenges/PDCADxFoundation-MICCAI2025",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/pdcadxfoundation-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://ruijin-imit.github.io/challenges/PDCADxFoundation-MICCAI2025",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/pdcadxfoundation-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "dataset.center_count",
+          "dataset.center_scope",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "data_usage_mode.overall_paradigm"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/pdcadxfoundation-2025.json",
+          "_collection/verification_20261003/literature_context/pdcadxfoundation-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "2025官网直接发布训练、验证和测试数据下载链接；参赛者发送预测结果。"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "2025官网直接发布训练、验证和测试数据下载链接；参赛者发送预测结果。"
+      },
+      "decision_history": [
+        "2025官网直接发布训练、验证和测试数据下载链接；参赛者发送预测结果。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/protocol-15094606.txt",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/afacd64835e831d9.json",
+          "url": "https://ruijin-imit.github.io/challenges/PDCADxFoundation-MICCAI2025/#data-download"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/pdcadxfoundation-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "data-to-model",
+      "task_families": [
+        "Classification",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "Segmentation"
+      ],
+      "previous_emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "Segmentation": "Declared task output"
+      },
+      "note_zh": "主办方明确要求基础模型及领域适配用于深部灰质分割和帕金森病分类，两类任务均保留。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://ruijin-imit.github.io/challenges/PDCADxFoundation-MICCAI2025",
+          "local_source": "_collection/sources_other/908c42274914325d.json",
+          "sha256": "2f6f93c51f2750106260abb23410cfcccf6ec36dcc899fc7d39936f895aff7d4"
+        },
+        {
+          "url": "https://zenodo.org/records/15094606",
+          "local_source": "_collection/sources_other/protocol-15094606.txt",
+          "sha256": "21a816ccbc013e47594376db2471c82b5c9a339f18b7c5745d4e69301d5c943c"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届数据使用条款列 CC BY-NC。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "CC BY-NC (Attribution-NonCommercial)",
+          "source": {
+            "url": "https://zenodo.org/records/15094606",
+            "local_source": "_collection/sources_other/protocol-15094606.txt"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15094606",
+          "local_source": "_collection/sources_other/protocol-15094606.txt"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Ruijin Hospital, Shanghai Jiao Tong University School of Medicine",
+              "url": "https://zenodo.org/records/15094606",
+              "snapshot": "_collection/sources_other/protocol-15094606.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nRuijin Hospital, Shanghai Jiao Tong University School of Medicine",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "source cohort",
+              "value": 500,
+              "unit": "subjects",
+              "canonical_field": "dataset.population.subject_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official preregistered challenge design",
+              "url": "https://zenodo.org/records/15094606",
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources_other/protocol-15094606.txt",
+              "supports": [
+                "clinical_domain",
+                "dataset.center_count",
+                "dataset.center_scope",
+                "dataset.center_type",
+                "dataset.multi_center",
+                "preregistered evaluation design",
+                "submission.evidence_stage",
+                "submission.platform",
+                "submission.submission_type",
+                "task_profile"
+              ]
+            }
+          ],
+          "source_urls": "https://conferences.miccai.org/2025/en/challenges.asp; https://ruijin-imit.github.io/challenges/PDCADxFoundation-MICCAI2025; https://zenodo.org/records/15094606"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

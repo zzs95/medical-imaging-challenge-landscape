@@ -1,0 +1,763 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "knight-challenge-2022",
+    "challenge_name": "KNIGHT Challenge",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "ISBI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Abdomen"
+      ],
+      "organ_system": [
+        "Genitourinary"
+      ],
+      "organs_or_structures": [
+        "Renal masses"
+      ],
+      "diseases": [
+        "Renal tumors"
+      ],
+      "clinical_context": null,
+      "disease_evidence_scope": "Official KNIGHT wiki describes renal masses with postoperative pathology-derived risk groups; malignant histologic subtypes are not assumed.",
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [
+        "Other"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Binary follow-up risk classification",
+          "task_family": "Classification",
+          "task_subtype": "binary classification",
+          "input": [
+            "Kidney CT",
+            "Allowed preoperative clinical attributes"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Higher-risk versus lower-risk category"
+          ],
+          "granularity": "patient-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Five-group risk classification",
+          "task_family": "Classification",
+          "task_subtype": "multi-class classification",
+          "input": [
+            "Kidney CT",
+            "Allowed preoperative clinical attributes"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Benign, low, intermediate, high or very-high risk"
+          ],
+          "granularity": "patient-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Bonus: prognostic biomarker discovery",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": [
+            "Kidney CT",
+            "Clinical data"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Prognostic biomarkers"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Renal masses"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": 300,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "source_dataset": "KiTS21 imaging with KNIGHT clinical data and risk labels"
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "KiTS21 source imaging and segmentations used by KNIGHT; CC BY-NC-SA 4.0. KNIGHT官方仓库明确使用KiTS21来源数据；KiTS21官方参与页规定影像及分割标注采用CC BY-NC-SA 4.0。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": false,
+        "submission_artifact": "Task 1 and Task 2 prediction files"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task3",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "prediction file",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "submission_artifact": "Task 1 and Task 2 prediction files",
+      "execution_mode": "Participant-run",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Scored submission artifact; additional reproducibility/publication materials recorded separately.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "user_supplied_review",
+        "summary": "预测文件用于评分；不超过4页短论文为额外材料。",
+        "evidence_ids": [
+          "E3"
+        ],
+        "source_urls": [
+          "https://www.synapse.org/Synapse:syn26544501/discussion/threadId=9012"
+        ],
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+        "directly_retrieved_protocol_snapshots": [],
+        "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced."
+      },
+      "additional_materials": [
+        {
+          "artifact": "Method paper, at most 4 pages",
+          "purpose": "method documentation"
+        }
+      ],
+      "additional_materials_count_as_primary_scored_artifact": false
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://www.synapse.org/Synapse:syn26544501",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": "https://github.com/neheller/KNIGHT",
+      "challenge_paper": null
+    },
+    "notes": [
+      "2026-10-22 提交方式字段同步：预测文件用于评分；不超过4页短论文为额外材料。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 83,
+      "sources": [
+        {
+          "type": "official challenge source",
+          "url": "https://www.synapse.org/Synapse:syn26544501",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/9f239b09de2fdf0b.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official challenge source",
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26544501/wiki",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/bab28e9cd01693f1.json",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "clinical_domain.disease_evidence_scope",
+            "clinical_domain.diseases",
+            "dataset or rules where stated",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "official challenge source",
+          "url": "https://github.com/neheller/KNIGHT",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/0b78bc28a325daf3.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated"
+          ]
+        },
+        {
+          "type": "official conference program, browser extraction",
+          "url": "https://biomedicalimaging.org/2022/challenges/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/isbi-conference-web.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation",
+            "task_profile",
+            "clinical_domain"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://www.synapse.org/Synapse:syn26544501",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/knight-challenge-2022.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "user_supplied_review",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "source_urls": [
+            "https://www.synapse.org/Synapse:syn26544501/discussion/threadId=9012"
+          ],
+          "supports": [
+            "预测文件用于评分；不超过4页短论文为额外材料。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.disease_evidence_scope",
+          "clinical_domain.diseases",
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/knight-challenge-2022.json",
+          "_collection/verification_20261003/literature_context/knight-challenge-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "field_evidence": {
+        "clinical_domain.diseases": {
+          "source_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26544501/wiki",
+          "local_snapshot": "_collection/sources_other/bab28e9cd01693f1.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official KNIGHT wiki describes renal masses with postoperative pathology-derived risk groups; malignant histologic subtypes are not assumed."
+        },
+        "clinical_domain.disease_evidence_scope": {
+          "source_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26544501/wiki",
+          "local_snapshot": "_collection/sources_other/bab28e9cd01693f1.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official KNIGHT wiki describes renal masses with postoperative pathology-derived risk groups; malignant histologic subtypes are not assumed."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://www.synapse.org/Synapse:syn26544501",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/knight-challenge-2022.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://www.synapse.org/Synapse:syn26544501",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/knight-challenge-2022.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://www.synapse.org/Synapse:syn26544501",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/knight-challenge-2022.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "user_supplied_review",
+          "summary": "预测文件用于评分；不超过4页短论文为额外材料。",
+          "evidence_ids": [
+            "E3"
+          ],
+          "source_urls": [
+            "https://www.synapse.org/Synapse:syn26544501/discussion/threadId=9012"
+          ],
+          "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/ISBI/2022/knight-challenge-2022.json"
+        }
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "KNIGHT官方仓库公开临床训练JSON及300名患者影像下载脚本；结合既有当届预测结果提交记录，参赛者处理发布输入后提交预测。"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "KNIGHT官方仓库公开临床训练JSON及300名患者影像下载脚本；结合既有当届预测结果提交记录，参赛者处理发布输入后提交预测。"
+      },
+      "decision_history": [
+        "KNIGHT官方仓库公开临床训练JSON及300名患者影像下载脚本；结合既有当届预测结果提交记录，参赛者处理发布输入后提交预测。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/sources_other/0b78bc28a325daf3.json",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/0b78bc28a325daf3.json",
+          "url": "https://github.com/neheller/KNIGHT"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/knight-challenge-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "data-to-model"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA 4.0"
+      ],
+      "scope": "KiTS21 source imaging and segmentations used by KNIGHT",
+      "agreement_required": null,
+      "summary_zh": "KNIGHT官方仓库明确使用KiTS21来源数据；KiTS21官方参与页规定影像及分割标注采用CC BY-NC-SA 4.0。",
+      "qualifications": [
+        "KNIGHT新增临床JSON、风险标签的独立数据许可仍未明确；仓库MIT不替代影像许可。"
+      ],
+      "scoped_terms": [
+        {
+          "scope": "KiTS21 source imaging and segmentations used by KNIGHT",
+          "text": "KNIGHT官方仓库明确使用KiTS21来源数据；KiTS21官方参与页规定影像及分割标注采用CC BY-NC-SA 4.0。",
+          "text_type": "Reviewer paraphrase",
+          "source": {
+            "url": "https://github.com/neheller/KNIGHT",
+            "local_source": "_collection/legacy_license_followup_20261025/sources/0b78bc28a325daf3.json",
+            "evidence_type": "Official source"
+          }
+        },
+        {
+          "scope": "KiTS21 source imaging and segmentations used by KNIGHT",
+          "text": "KNIGHT官方仓库明确使用KiTS21来源数据；KiTS21官方参与页规定影像及分割标注采用CC BY-NC-SA 4.0。",
+          "text_type": "Reviewer paraphrase",
+          "source": {
+            "url": "https://kits-challenge.org/kits21/participate",
+            "local_source": "_collection/legacy_license_followup_20261025/sources/b9d38030ac097475.json",
+            "evidence_type": "Official source"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.synapse.org/Synapse:syn26544501",
+          "local_source": "_collection/sources_other/9f239b09de2fdf0b.json"
+        },
+        {
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26544501/wiki",
+          "local_source": "_collection/sources_other/bab28e9cd01693f1.json"
+        },
+        {
+          "url": "https://github.com/neheller/KNIGHT",
+          "local_source": "_collection/legacy_license_followup_20261025/sources/0b78bc28a325daf3.json",
+          "evidence_type": "Official source"
+        },
+        {
+          "url": "https://kits-challenge.org/kits21/participate",
+          "local_source": "_collection/legacy_license_followup_20261025/sources/b9d38030ac097475.json",
+          "evidence_type": "Official source"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://github.com/neheller/KNIGHT",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/0b78bc28a325daf3.json",
+          "status": 200
+        },
+        {
+          "url": "https://www.synapse.org/Synapse:syn26544501",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/9f239b09de2fdf0b.json",
+          "status": 200
+        },
+        {
+          "url": "https://biomedicalimaging.org/2022/challenges/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/bbf58238aa3a1944.json",
+          "status": 403
+        },
+        {
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26544501/wiki",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/bab28e9cd01693f1.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/neheller/KNIGHT#MIT-1-ov-file",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/e755d9a25c49e241.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/neheller/KNIGHT/blob/main/LICENSE",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/7dc37614e7207544.json",
+          "status": 200
+        },
+        {
+          "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1e460fb35d79919e.json",
+          "status": 200
+        },
+        {
+          "url": "https://sagebionetworks.org/trust-center",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/def4c6ed544daa61.json",
+          "status": 200
+        },
+        {
+          "url": "https://raw.githubusercontent.com/neheller/kits21/master/README.md",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/f7cd8da8f33e5df9.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://kits-challenge.org/kits21/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/2f0f0f8cc658c2f3.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://www.cancerimagingarchive.net/collection/kits21/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/07ba07288db7bd3b.json",
+          "status": 404,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance.",
+      "evidence_basis": "Official rules, dataset metadata or organizer report",
+      "confidence": "High within stated data scope",
+      "previous_review": {
+        "review_date": "2026-10-25",
+        "review_cohort": "Previously reviewed 215",
+        "review_population": "Legacy 101 previously unestablished records",
+        "state": "Not established",
+        "terms_documented": false,
+        "detail_level": "Not established",
+        "licence_names": [],
+        "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+        "agreement_required": null,
+        "summary_zh": "KNIGHT 官方仓库指向 KiTS21 影像与临床数据；仓库 MIT 不足以证明图像数据许可。",
+        "qualifications": [],
+        "scoped_terms": [],
+        "sources": [
+          {
+            "url": "https://www.synapse.org/Synapse:syn26544501",
+            "local_source": "_collection/sources_other/9f239b09de2fdf0b.json"
+          },
+          {
+            "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26544501/wiki",
+            "local_source": "_collection/sources_other/bab28e9cd01693f1.json"
+          },
+          {
+            "url": "https://github.com/neheller/KNIGHT",
+            "local_source": "_collection/sources_other/0b78bc28a325daf3.json"
+          },
+          {
+            "url": "https://github.com/neheller/KNIGHT",
+            "local_source": "_collection/access_flow_full_audit_20261024/sources/0b78bc28a325daf3.json"
+          }
+        ],
+        "substantive_terms_documented": false,
+        "search_attempts": [
+          {
+            "url": "https://github.com/neheller/KNIGHT",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/0b78bc28a325daf3.json",
+            "status": 200
+          },
+          {
+            "url": "https://www.synapse.org/Synapse:syn26544501",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/9f239b09de2fdf0b.json",
+            "status": 200
+          },
+          {
+            "url": "https://biomedicalimaging.org/2022/challenges/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/bbf58238aa3a1944.json",
+            "status": 403
+          },
+          {
+            "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26544501/wiki",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/bab28e9cd01693f1.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/neheller/KNIGHT#MIT-1-ov-file",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/e755d9a25c49e241.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/neheller/KNIGHT/blob/main/LICENSE",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/7dc37614e7207544.json",
+            "status": 200
+          },
+          {
+            "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/1e460fb35d79919e.json",
+            "status": 200
+          },
+          {
+            "url": "https://sagebionetworks.org/trust-center",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/def4c6ed544daa61.json",
+            "status": 200
+          },
+          {
+            "url": "https://raw.githubusercontent.com/neheller/kits21/master/README.md",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/f7cd8da8f33e5df9.json",
+            "status": 200,
+            "error": null
+          },
+          {
+            "url": "https://kits-challenge.org/kits21/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/2f0f0f8cc658c2f3.json",
+            "status": 200,
+            "error": null
+          },
+          {
+            "url": "https://www.cancerimagingarchive.net/collection/kits21/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/07ba07288db7bd3b.json",
+            "status": 404,
+            "error": null
+          }
+        ],
+        "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+      }
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02"
+  ]
+}

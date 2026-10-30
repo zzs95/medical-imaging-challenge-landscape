@@ -1,0 +1,583 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "isles-2024",
+    "challenge_name": "Ischemic Stroke Lesion Segmentation Challenge 2024",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "SWITCH",
+        "relationship": "Hosting MICCAI workshop",
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "NCCT",
+        "CTA",
+        "CTP"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "Final post-treatment infarct"
+      ],
+      "diseases": [
+        "Ischemic stroke"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "prediction",
+          "official_name": "Final infarct prediction from acute imaging",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "Pre-treatment NCCT, CTA and CTP",
+            "Demographic and clinical table"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Binary final infarct mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": true,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "preregistered_splits": {
+        "train": {
+          "case_count": 200
+        },
+        "test": {
+          "case_count": 100
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "registration-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Registered protocol: CC BY.",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Private data allowed, but also publish a second model trained only on challenge data."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "prediction",
+          "metrics": [
+            "Dice",
+            "Absolute infarct volume difference",
+            "Lesion detection F1",
+            "Absolute lesion count difference"
+          ],
+          "ranking": "Rank each metric at case level, average metric ranks within each case, then average case ranks; platform mean-metric leaderboard differs."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "final_submissions": 1
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {
+      "training_data_release": "2024-05-29",
+      "final_submission_deadline": "2024-08-28",
+      "challenge_event": "2024-10-10"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 1337,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary Docker Evaluation",
+            "submission_count": 90
+          },
+          {
+            "official_phase_name": "Final Test Phase",
+            "submission_count": 32
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://isles-24.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Predicts future final infarct from acute CT; does not segment an already observed final lesion on follow-up MRI. Rules contain legacy ISLES22 naming; official homepage and 2024 schedule establish this edition.",
+      "Registered protocol is preregistration evidence; later official website updates take priority. Planned counts are explicitly labeled and not assumed to equal the final released cohort.",
+      "Preregistered training total is 200, but center-specific train counts sum to 150 in the same document; final train count remains unresolved. Follow-up MRI supplies the target and optional training information, not inference input."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-091fe79067c4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/#task",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-0b5dd804eecb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/#registration",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-0d0170c2caf5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/#outputs",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-17e11f636da1.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/#schedule",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-192092ddb61a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/news-updates/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-19eb3e8915ae.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://isles-24.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-20322cae5a91.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/#inputs",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-3abc5210e14c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/#background",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-473ee7be4093.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/challenge-rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-acd41d775293.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/isles-24/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-b11c83ba453d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/#this-challenge-aims-to-segment-the-final-stroke-infarct-from-pre-interventional-acute-stroke-data",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-e2201afd8338.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/#final-post-treatment-infarct-segmentation-from-pre-treatment-acute-imaging-and-clinical-data",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-e6e23667655b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-e80127085929.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/#ischemic-stroke-lesion-segmentation-challenge-isles24",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-ec73b34d3027.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/#_1",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-f1002a1094bd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/#clinical-decisions-regarding-the-treatment-of-ischemic-stroke-patients-depend-on-the-accurate-estimation-of-core-irreversibly-damaged-tissue-and-penumbra-salvageable-tissue-volumes-albers-et-al-2018-the-clinical-standard-method-for-estimating-perfusion-volumes-is-deconvolution-analysis-consisting-of-i-estimating-perfusion-maps-through-perfusion-ct-ctp-deconvolution-and-ii-thresholding-the-perfusion-maps-lin-et-al-2016-however-the-different-deconvolution-algorithms-their-technical-implementations-and-the-variable-thresholds-used-in-software-packages-significantly-impact-the-estimated-lesions-fahmi-et-al-2012-moreover-core-tissue-tends-to-expand-over-time-due-to-irreversible-damage-of-penumbral-tissue-with-infarct-growth-rates-being-patient-specific-and-dependent-on-diverse-factors-such-as-thrombus-location-and-collateral-circulation-understanding-the-cores-growth-rate-is-clinically-crucial-for-assessing-the-relevance-of-transferring-a-patient-to-a-comprehensive-stroke-center-based-on-transport-times-robben-et-al-2020-moreover-since-not-every-reperfusion-treatment-with-mechanical-thrombectomy-achieves-complete-reperfusion-predicting-infarct-growth-might-provide-interventional-radiologists-with-insights-into-the-potential-benefits-of-additional-reperfusion-attempts-therefore-anticipating-the-temporal-core-evolution-from-acute-imaging-data-is-key-for-clinical-decision-making",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-f118a95837a9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles-24.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-overview.json"
+        },
+        {
+          "type": "official conference registered-challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "supports": [
+            "event",
+            "year"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json"
+        },
+        {
+          "type": "official registered challenge protocol (preregistration, not final report)",
+          "url": "https://zenodo.org/records/10991145/files/Ischemic%20Stroke%20Lesion%20Segmentation%20Challenge%202024.pdf",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "dataset",
+            "evaluation",
+            "submission.evidence_stage",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/62-design-2024.txt"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Confirm final released training/test counts and resource limits; dataset page returns 403 and preregistration training counts conflict."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/10991145/files/Ischemic%20Stroke%20Lesion%20Segmentation%20Challenge%202024.pdf",
+          "local_snapshot": "_collection/sources/62-design-2024.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Participants submit a docker through our evaluating platform. Submission instructions will be shared through our website. Besides, we will release (via Git) a docker template that participants must use to build their solutions. Under exceptional deployment failures, participants will be contacted to fix and resubmit their dockers."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "submission.evidence_stage"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/isles-2024.json",
+          "_collection/verification_20261003/literature_context/isles-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Center 1: University Hospital of Zurich, Switzerland Center 2: University Hospital of Munich, Germany",
+              "url": "https://zenodo.org/records/10991145/files/Ischemic%20Stroke%20Lesion%20Segmentation%20Challenge%202024.pdf",
+              "snapshot": "_collection/sources/62-design-2024.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nCenter 1: University Hospital of Zurich, Switzerland\nCenter 2: University Hospital of Munich, Germany",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train / case_count",
+              "value": 200,
+              "unit": "cases",
+              "canonical_field": "dataset.preregistered_splits.train.case_count",
+              "scope": "Specified dataset allocation in the registered design; not a separately verified final cohort",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test / case_count",
+              "value": 100,
+              "unit": "cases",
+              "canonical_field": "dataset.preregistered_splits.test.case_count",
+              "scope": "Specified dataset allocation in the registered design; not a separately verified final cohort",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official registered challenge protocol (preregistration, not final report)",
+              "url": "https://zenodo.org/records/10991145/files/Ischemic%20Stroke%20Lesion%20Segmentation%20Challenge%202024.pdf",
+              "supports": [
+                "data_access",
+                "data_usage_mode",
+                "dataset",
+                "evaluation",
+                "submission.evidence_stage",
+                "task_profile"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/62-design-2024.txt"
+            }
+          ],
+          "source_urls": "https://isles-24.grand-challenge.org/; https://isles-24.grand-challenge.org/#task; https://isles-24.grand-challenge.org/#registration; https://isles-24.grand-challenge.org/#outputs; https://isles-24.grand-challenge.org/#schedule; https://isles-24.grand-challenge.org/news-updates/; https://isles-24.grand-challenge.org/challenge/statistics/; https://isles-24.grand-challenge.org/#inputs; https://isles-24.grand-challenge.org/#background; https://isles-24.grand-challenge.org/challenge-rules/; https://isles-24.grand-challenge.org/isles-24/; https://isles-24.grand-challenge.org/#this-challenge-aims-to-segment-the-final-stroke-infarct-from-pre-interventional-acute-stroke-data; https://isles-24.grand-challenge.org/#final-post-treatment-infarct-segmentation-from-pre-treatment-acute-imaging-and-clinical-data; https://isles-24.grand-challenge.org/organizers/; https://isles-24.grand-challenge.org/#ischemic-stroke-lesion-segmentation-challenge-isles24; https://isles-24.grand-challenge.org/#_1; https://isles-24.grand-challenge.org/#clinical-decisions-regarding-the-treatment-of-ischemic-stroke-patients-depend-on-the-accurate-estimation-of-core-irreversibly-damaged-tissue-and-penumbra-salvageable-tissue-volumes-albers-et-al-2018-the-clinical-standard-method-for-estimating-perfusion-volumes-is-deconvolution-analysis-consisting-of-i-estimating-perfusion-maps-through-perfusion-ct-ctp-deconvolution-and-ii-thresholding-the-perfusion-maps-lin-et-al-2016-however-the-different-deconvolution-algorithms-their-technical-implementations-and-the-variable-thresholds-used-in-software-packages-significantly-impact-the-estimated-lesions-fahmi-et-al-2012-moreover-core-tissue-tends-to-expand-over-time-due-to-irreversible-damage-of-penumbral-tissue-with-infarct-growth-rates-being-patient-specific-and-dependent-on-diverse-factors-such-as-thrombus-location-and-collateral-circulation-understanding-the-cores-growth-rate-is-clinically-crucial-for-assessing-the-relevance-of-transferring-a-patient-to-a-comprehensive-stroke-center-based-on-transport-times-robben-et-al-2020-moreover-since-not-every-reperfusion-treatment-with-mechanical-thrombectomy-achieves-complete-reperfusion-predicting-infarct-growth-might-provide-interventional-radiologists-with-insights-into-the-potential-benefits-of-additional-reperfusion-attempts-therefore-anticipating-the-temporal-core-evolution-from-acute-imaging-data-is-key-for-clinical-decision-making; https://miccai.org/sig/sig-challenges/; https://zenodo.org/records/10991145/files/Ischemic%20Stroke%20Lesion%20Segmentation%20Challenge%202024.pdf"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

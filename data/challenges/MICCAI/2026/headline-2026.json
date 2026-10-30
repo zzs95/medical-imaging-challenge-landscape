@@ -1,0 +1,490 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "headline-2026",
+    "challenge_name": "HEADLINE: Benchmarking VLMs in Head CT Reporting",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": "2026-10-01",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "Noncontrast head CT"
+      ],
+      "body_region": [
+        "Brain",
+        "Skull"
+      ],
+      "organ_system": [
+        "Nervous system"
+      ],
+      "organs_or_structures": [
+        "Intracranial structures"
+      ],
+      "diseases": [
+        "Hemorrhage",
+        "Infarction",
+        "Trauma",
+        "Tumors"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Report Generation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Head CT report generation",
+          "task_family": "Report Generation",
+          "task_subtype": "Image-to-report generation",
+          "input": [
+            "Complete 3D CT study"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Structured free-text radiology report"
+          ],
+          "granularity": "study",
+          "clinical_goal": null
+        }
+      ],
+      "task_families": [
+        "Report generation"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Report generation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": true,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "Routine clinical emergency neuroradiology",
+      "routine_clinical_practice": true,
+      "anonymized": true,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": {
+          "lower_bound": 16000,
+          "raw_text": "over 16,000 training cases"
+        },
+        "validation_count": 500,
+        "test_count": 500
+      },
+      "modalities": null,
+      "data_components": [
+        "Full 3D noncontrast head CT with soft-tissue/bone reconstructions",
+        "Expert-validated radiologist reports"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": false,
+      "access_status": "registration, signed DUA and organizer approval",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": false,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Dataset restricted to challenge use; commercial use prohibited.",
+      "access_after_challenge": null,
+      "access_scope": "Dataset is explicitly not public; registered participants sign a Data Transfer and Usage Agreement, reviewed and approved before access."
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Public external datasets and pretrained models accessible to all participants allowed."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "BERTScore F1 (BiomedBERT)",
+            "METEOR",
+            "ROUGE-L",
+            "BLEU-4",
+            "Expert Clinical Utility Score"
+          ],
+          "ranking": "Automated score: BERTScore 70% plus auxiliary metrics 30%; final top-team score = 0.5×automated + 0.5×expert clinical utility."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null,
+        "max_processing_time_per_batch_minutes": 20,
+        "max_studies_per_batch": 5,
+        "ram_options_gb": [
+          16,
+          32
+        ],
+        "gpu_options": [
+          "NVIDIA T4 (16 GB)",
+          "NVIDIA A10G (24 GB)"
+        ]
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "validation_submissions_per_team": 3
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "method_description_required": true,
+      "method_description": "Six- to eight-page Springer LNCS short paper including references."
+    },
+    "participation_statistics": {
+      "registered_participants": 54,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Validation Phase",
+            "submission_count": 23
+          },
+          {
+            "official_phase_name": "Sanity Check",
+            "submission_count": 61
+          },
+          {
+            "official_phase_name": "Final Test Phase",
+            "submission_count": 14
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://headline26.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Validation is prediction-only; final test uses Docker. Automated screening advances five teams to clinical review on 50 test cases. Maximum 20 minutes is per batch, not per study.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://headline26.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/8-595897081895.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://headline26.grand-challenge.org/headline26/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/8-773cad73cd0d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://headline.ccibonn.ai/submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/8-8cd3099fc05a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://headline26.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/8-ab3410fd2449.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://headline.ccibonn.ai",
+          "supports": [
+            "challenge context",
+            "data_access.access_scope"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/8-ee04dee025a9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://headline26.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/8-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "evaluation: relative weights within auxiliary 30% and exact clinical score rubric require verification.",
+        "dataset: exact training size and patient count not disclosed by reviewed public pages."
+      ],
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/headline-2026.json",
+          "_collection/verification_20261003/literature_context/headline-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "data_access.access_scope": {
+          "source_url": "https://headline.ccibonn.ai",
+          "local_snapshot": "_collection/sources/8-ee04dee025a9.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official FAQ explicitly distinguishes a nonpublic dataset, participation registration, signed DUA and approval."
+        }
+      }
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "previous_task_families": [
+        "Report generation"
+      ],
+      "previous_emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_roles": {
+        "Report generation": "Declared task output"
+      },
+      "note_zh": "头部CT叙述性报告生成；文本质量评价目标不等同要求系统独立输出临床理由。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://headline26.grand-challenge.org/headline26/",
+          "local_source": "_collection/sources/8-773cad73cd0d.json",
+          "sha256": "686ad1a948c7c3c1d7f63390d270175811c839df702910e3e58fdd6e881e1d27"
+        },
+        {
+          "url": "https://headline.ccibonn.ai/submission/",
+          "local_source": "_collection/sources/8-8cd3099fc05a.json",
+          "sha256": "2aabf7b83da6d9839125310a00d077bb7ddb32409675863f76d604b9fd347f9b"
+        },
+        {
+          "url": "https://headline26.grand-challenge.org/",
+          "local_source": "_collection/sources/8-ab3410fd2449.json",
+          "sha256": "6133b85606eea7aa679bf4ba7d3ec3306b6b3bf81174e3a0ccc1e3a5b3330584"
+        },
+        {
+          "url": "https://headline.ccibonn.ai",
+          "local_source": "_collection/sources/8-ee04dee025a9.json",
+          "sha256": "228605fa7ea3550435444125e16c13856b46e796459c3503c094216a21a0eb5d"
+        },
+        {
+          "url": "https://headline26.grand-challenge.org/",
+          "local_source": "_collection/sources/8-overview.json",
+          "sha256": "6133b85606eea7aa679bf4ba7d3ec3306b6b3bf81174e3a0ccc1e3a5b3330584"
+        }
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 16000,
+              "unit": "cases",
+              "canonical_field": "dataset.population.train_count",
+              "scope": "Over 16,000 training cases",
+              "approximate": false,
+              "lower_bound": true
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [],
+          "source_urls": "https://headline26.grand-challenge.org/challenge/statistics/; https://headline26.grand-challenge.org/headline26/; https://headline.ccibonn.ai/submission/; https://headline26.grand-challenge.org/; https://headline.ccibonn.ai"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

@@ -1,0 +1,596 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "atlas-2023",
+    "challenge_name": "ATLAS 2023",
+    "full_name": "A tumor and liver automatic segmentation challenge",
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2023-R03",
+      "official_programme_row_numbers": null,
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "University of Burgundy / ImViA laboratory, Dijon, France",
+        "Institute of High Performance Computing (IHPC), A*STAR, Singapore",
+        "University hospital of Dijon / ImViA laboratory, Dijon, France",
+        "University of Burgundy / Centre Georges François Leclerc ImViA laboratory",
+        "University of Burgundy / Centre Georges François Leclerc / ImViA",
+        "University Hospital of Dijon, Dijon, France"
+      ],
+      "registered_authors": [
+        {
+          "name": "Félix Quinton",
+          "affiliation": "University of Burgundy / ImViA laboratory, Dijon, France"
+        },
+        {
+          "name": "Sarah Leclerc",
+          "affiliation": "University of Burgundy / ImViA laboratory, Dijon, France"
+        },
+        {
+          "name": "Benoît Presles",
+          "affiliation": "University of Burgundy / ImViA laboratory, Dijon, France"
+        },
+        {
+          "name": "Fabrice Meriaudeau",
+          "affiliation": "University of Burgundy / ImViA laboratory, Dijon, France"
+        },
+        {
+          "name": "Arnaud Boucher",
+          "affiliation": "University of Burgundy / ImViA laboratory, Dijon, France"
+        },
+        {
+          "name": "Dominique Ginhac",
+          "affiliation": "University of Burgundy / ImViA laboratory, Dijon, France"
+        },
+        {
+          "name": "Huazhu Fu",
+          "affiliation": "Institute of High Performance Computing (IHPC), A*STAR, Singapore"
+        },
+        {
+          "name": "Xinxing Xu",
+          "affiliation": "Institute of High Performance Computing (IHPC), A*STAR, Singapore"
+        },
+        {
+          "name": "Jean-Louis Alberini",
+          "affiliation": "University hospital of Dijon / ImViA laboratory, Dijon, France"
+        },
+        {
+          "name": "Romain Popoff,",
+          "affiliation": "University of Burgundy / Centre Georges François Leclerc ImViA laboratory"
+        },
+        {
+          "name": "Jean-Marc Vrigneaud",
+          "affiliation": "University of Burgundy / Centre Georges François Leclerc / ImViA"
+        },
+        {
+          "name": "Olivier Chevalier",
+          "affiliation": "University Hospital of Dijon, Dijon, France"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Liver",
+        "Liver tumors"
+      ],
+      "diseases": [
+        "Unresectable hepatocellular carcinoma"
+      ],
+      "clinical_context": "Scan field can extend to thorax; analytical target is liver, not a separate thoracic task."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "A tumor and liver automatic segmentation challenge",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7835369",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7835369",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7835369",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7835369",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7835369",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Organizer-run submission",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7835369",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7835369",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nSeveral metrics will be used to determine the ranking of the challenge, given two volumes A\nand B:\n\n\nDice per case:\nDICE(A,B) = (2|A intersection B|)/|A|+|B|)\n\n\nAverage Symmetric Surface Distance (ASD):\n\n\nASD(A,B) = (1/(|S(A)|+|S(B)|))\n* [sum_{s_A in S(A)} d(s_A, S(B)) + sum_{s_B in S(B))} d(s_B, s(A))]\n\n\nwith d(v,s) = min_{s_A in S(A)} ||v-s_A|| and S(A) the set of surface voxels of A;\n\n\n5 mm Surface Dice (SD):\n\n\nSD(A,B) = (card_5(A,B) + card_5(B,A)) with card_5(A,B) = card({s_A in S(A)/d(s_A, S(B)) < 5mm}) and card (X) the\ncardinal of the set X .\n\n\nMaximum Symmetric Surface Distance (MSD):\n\n\n\n\n\fA tumor and liver automatic segmentation challenge\n\nMSD(A,B) = max{max_{s_A in S(A)} d(s_A, S(B)), max_{s_B in S(B)} d(s_B, S(A)}\n\n\nRoot Mean Square Error (RMSE) on tumor burden estimation on the whole dataset:\n\n\nRMSE = sqrt[1/n * sum_{i=1}^n (Tb_Ai - Tb_Bi)^2]\n\n\nwith n the number of images and TbAi and TbBi the tumor burden of the ground truth and\nthe prediction of the ith image, respectively. The tumor burden is defined as follows:\n\n\nTb = VT / (VL + VT)\n\n\nwith VL the volume of healthy liver and VT the volume of the tumor.\n\n\nFor DICE, SD, ASD and MSD, the average value over the test dataset will be calculated. Each metric, except the\nRMSE on tumor burden estimation, will be calculated twice. The first time on the liver segmentation and the\nsecond time on the tumor segmentation. If for a given\nmetric there is an equality between two models, we favor the one with the lowest standard\ndeviation (if calculable) on the test dataset.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nGeometrical metrics are combined with volume estimations to link computer vision\naccuracy and clinical implications.\n\n\nDice scores are measures focusing on the overlap between two volumes. Those metrics allow to measure the\nsimilarity between the ground truth and the prediction of a model\n(per image for the dice per case and on the whole test dataset for the global dice). The SD tolerates errors close to\nthe ground truth but will penalize errors far from the ground truths\nsuch as missed secondary lesions, providing insights on such cases.\n\n\nASD and MSD are surface distance metrics providing information related to the maximum\nand average distances between the ground truth and prediction. Since HCC can take heterogenous forms, we are\nlooking for robust algorithms performing well on complicated\ncases. Metrics such as MSD seem perfectly suited to measure the performance on these cases.\n\n\nFinally, the tumor burden measurement provides information on the fraction of the liver\naffected by cancer.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nRank-then-aggregate voting system will be used over the different metrics. The winning\nsubmission will be the one with the best average ranking over all metrics.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\n\n\n\fA tumor and liver automatic segmentation challenge\n\nMissing predictions will have the worst score on all metrics.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nAll of the proposed metrics are complementary, supporting the idea that a method that\nperforms well overall is the most likely to find a clinical use."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Organizer-run submission",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "This challenge will take place before the conference. The participants are invited to submit their results through the dedicated website by uploading a docker container taking NIfTI images as input and providing as output the associated segmentation in NIfTI format. The evaluation metrics will be calculated automatically by the organizing team on the test dataset using the output NIfTI segmentation from the docker container and the ground truth images. The source code of the algorithm will not be directly requested. The submission will be done using docker as long as the website is open. Also, to be sure that we can handle every architecture, dockers will need to be configured to perform inference on cpu.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7835369",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2023,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7835369",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.7835369"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": null,
+      "registration": "https://doi.org/10.5281/zenodo.7835369",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": null
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.7835369",
+          "resolved_record_id": 7835370,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "ATLAS"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": false,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "2023注册协议明确数据完全公开、无需填写版权表；参赛注册与数据访问区分。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7835369",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7835369",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. This challenge will take place before the conference. The participants are invited to submit their results through the dedicated website by uploading a docker container taking NIfTI images as input and providing as output the associated segmentation in NIfTI format. The evaluation metrics will be calculated automatically by the organizing team on the test dataset using the output NIfTI segmentation from the docker container and the ground truth images. The source code of the algorithm will not be directly requested. The submission will be done using docker as long as the website is open. Also, to be sure that we can handle every architecture, dockers will need to be configured to perform inference on cpu. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. A docker container allowing participants to calculate their scores on the training/validation dataset will be provided. Each participant will be able to submit only twice their algorithms. Between the two submissions, the algorithm giving the best results on the test dataset will be the one selected."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7835369",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Releases A tumor and liver automatic segmentation challenge Mid-April: release of the training cases Mid-April: start of the registration process End-May: end of registration Early-July: end of the challenge Early-July: deadline for the submission of the paper Mid-September: results of the challenge during the conference at the REMIA workshop"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7835369",
+          "excerpt": "allenge by the organizing team. A histogram of the number of acquisitions per year of the train and test sets will be provided. d) Mention further important characteristics of the training, validation and test cases (e.g. class distribution in classification tasks chosen according to real-world distribution vs. equal class distribution) and justify the choice. The reality of clinical practice shows a strong imbalance bet"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.txt",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/atlas-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2023注册协议明确数据完全公开、无需填写版权表；参赛注册与数据访问区分。"
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 60,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 30,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "France"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Most data from Dijon; additional hospitals explicitly mentioned. France describes principal source, not exhaustive geography.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.7835369",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/task_sections.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/atlas-2023.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Liver",
+        "Liver tumors"
+      ],
+      "specific_diseases": [
+        "Unresectable hepatocellular carcinoma"
+      ],
+      "review_note": "Scan field can extend to thorax; analytical target is liver, not a separate thoracic task.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7835369"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/atlas-2023.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC SA.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.txt",
+            "url": ""
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/Atumorandliverautomaticsegmentationchallenge_04-14-2023_12-53-52.txt",
+          "url": ""
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2023/atlas-2023.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "France"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.7835369",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R03/task_sections.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/atlas-2023.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

@@ -1,0 +1,743 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cell-tracking-challenge-2024",
+    "challenge_name": "Cell Tracking Challenge 2024",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "ISBI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Microscopy"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Other"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Cells",
+        "Cell nuclei"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Tracking",
+      "secondary_task_families": [
+        "Segmentation"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Generalizable segmentation and tracking",
+          "task_family": "Tracking",
+          "task_subtype": null,
+          "input": [
+            "Time-lapse microscopy sequences"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Cell instance masks and tracks"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Generalizable segmentation only",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "Microscopy images"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Cell instance masks"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Generalizable cell linking",
+          "task_family": "Tracking",
+          "task_subtype": null,
+          "input": [
+            "Standardized cell instance segmentations over time"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Cell links and lineage graphs"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task4",
+          "official_name": "Dataset-specific cell linking",
+          "task_family": "Tracking",
+          "task_subtype": null,
+          "input": [
+            "Standardized cell instance segmentations over time"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Cell links and lineage graphs"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Cells",
+        "Cell nuclei"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Microscopy"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "2024 structured challenge description: data usage agreement; CTC dataset conditions of use. 2024设计文件明确：参赛相关使用无需额外同意；其他公开科研用途需组织者许可，商业用途需组织者及数据提供者许可；禁止克隆影像及标注，须引用来源。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": false,
+        "submission_artifact": "Segmentation/tracking result files via FTPS"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "SEG",
+            "TRA"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "DET",
+            "SEG"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "LNK",
+            "BIO"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "task4",
+          "metrics": [
+            "LNK",
+            "BIO"
+          ],
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "prediction file",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "submission_artifact": "Segmentation/tracking result files via FTPS",
+      "execution_mode": "Participant-run",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Scored submission artifact; additional reproducibility/publication materials recorded separately.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "user_supplied_review",
+        "summary": "主要评分物为预测结果；另交命令行可执行算法供组织者复核，不推断Docker。",
+        "evidence_ids": [
+          "E3"
+        ],
+        "source_urls": [
+          "https://celltrackingchallenge.net/"
+        ],
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+        "directly_retrieved_protocol_snapshots": [],
+        "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced."
+      },
+      "additional_materials": [
+        {
+          "artifact": "Command-line executable algorithm",
+          "purpose": "organizer rerun and result verification",
+          "execution_mode": "Organizer-run"
+        }
+      ],
+      "additional_materials_count_as_primary_scored_artifact": false
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://celltrackingchallenge.net/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "2024 is the seventh fixed-deadline ISBI edition. Current website results include subsequent continuous benchmark submissions; no current leaderboard count is assigned to the 2024 edition.",
+      "The current evaluation page defines OP_CTB = (SEG + TRA)/2, OP_CSB = (DET + SEG)/2 and OP_CLB = (LNK + BIO)/2. Edition-specific aggregation requires further verification.",
+      "2026-10-22 提交方式字段同步：主要评分物为预测结果；另交命令行可执行算法供组织者复核，不推断Docker。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 65,
+      "sources": [
+        {
+          "type": "official challenge source",
+          "url": "https://celltrackingchallenge.net/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/44ba88b098dfa4de.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official challenge source",
+          "url": "https://celltrackingchallenge.net/history/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/bffa6829e280c4c5.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated"
+          ]
+        },
+        {
+          "type": "official challenge source",
+          "url": "https://celltrackingchallenge.net/evaluation-methodology/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/9a7da60facfa96a0.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated"
+          ]
+        },
+        {
+          "type": "official conference program, browser extraction",
+          "url": "https://biomedicalimaging.org/2024/accepted-challenges-tutorials/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/isbi-2024-web.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation",
+            "task_profile",
+            "clinical_domain"
+          ]
+        },
+        {
+          "type": "user_supplied_review",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "source_urls": [
+            "https://celltrackingchallenge.net/"
+          ],
+          "supports": [
+            "主要评分物为预测结果；另交命令行可执行算法供组织者复核，不推断Docker。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/cell-tracking-challenge-2024.json",
+          "_collection/verification_20261003/literature_context/cell-tracking-challenge-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "user_supplied_review",
+          "summary": "主要评分物为预测结果；另交命令行可执行算法供组织者复核，不推断Docker。",
+          "evidence_ids": [
+            "E3"
+          ],
+          "source_urls": [
+            "https://celltrackingchallenge.net/"
+          ],
+          "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/ISBI/2024/cell-tracking-challenge-2024.json"
+        }
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "数据页明确所有训练、测试序列供任何人下载，测试仅隐藏参考标注；上传分割追踪结果，注册仅用于结果提交。"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "数据页明确所有训练、测试序列供任何人下载，测试仅隐藏参考标注；上传分割追踪结果，注册仅用于结果提交。"
+      },
+      "decision_history": [
+        "数据页明确所有训练、测试序列供任何人下载，测试仅隐藏参考标注；上传分割追踪结果，注册仅用于结果提交。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/44ba88b098dfa4de.json",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/0aed9ecfd15669b4.json",
+          "url": "https://celltrackingchallenge.net/datasets/"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/44ba88b098dfa4de.json",
+          "url": "https://celltrackingchallenge.net/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/cell-tracking-challenge-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "data-to-model"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CTC dataset conditions of use"
+      ],
+      "scope": "2024 structured challenge description: data usage agreement",
+      "agreement_required": null,
+      "summary_zh": "2024设计文件明确：参赛相关使用无需额外同意；其他公开科研用途需组织者许可，商业用途需组织者及数据提供者许可；禁止克隆影像及标注，须引用来源。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "2024 structured challenge description: data usage agreement",
+          "text": "2024设计文件明确：参赛相关使用无需额外同意；其他公开科研用途需组织者许可，商业用途需组织者及数据提供者许可；禁止克隆影像及标注，须引用来源。",
+          "text_type": "Reviewer paraphrase",
+          "source": {
+            "url": "https://zenodo.org/records/10687042/files/110-Cell%20Tracking%20Challenge%202024_2024-02-20T12-05-28.pdf",
+            "local_source": "_collection/legacy_license_followup_20261025/sources/280aff117b294f44.json",
+            "evidence_type": "Official source"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://celltrackingchallenge.net/",
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/44ba88b098dfa4de.json"
+        },
+        {
+          "url": "https://celltrackingchallenge.net/history/",
+          "local_source": "_collection/sources_other/bffa6829e280c4c5.json"
+        },
+        {
+          "url": "https://celltrackingchallenge.net/evaluation-methodology/",
+          "local_source": "_collection/sources_other/9a7da60facfa96a0.json"
+        },
+        {
+          "url": "https://celltrackingchallenge.net/datasets/",
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/0aed9ecfd15669b4.json"
+        },
+        {
+          "url": "https://zenodo.org/records/10687042/files/110-Cell%20Tracking%20Challenge%202024_2024-02-20T12-05-28.pdf",
+          "local_source": "_collection/legacy_license_followup_20261025/sources/280aff117b294f44.json",
+          "evidence_type": "Official source"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://celltrackingchallenge.net/datasets/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/0aed9ecfd15669b4.json",
+          "status": 200
+        },
+        {
+          "url": "https://celltrackingchallenge.net/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/44ba88b098dfa4de.json",
+          "status": 200
+        },
+        {
+          "url": "https://celltrackingchallenge.net/history/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/bffa6829e280c4c5.json",
+          "status": 200
+        },
+        {
+          "url": "https://celltrackingchallenge.net/evaluation-methodology/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/9a7da60facfa96a0.json",
+          "status": 200
+        },
+        {
+          "url": "https://celltrackingchallenge.net/2d-datasets/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/88cd7658868c96a5.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://celltrackingchallenge.net/3d-datasets/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/9145d2dd9157c04f.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://celltrackingchallenge.net/participation/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/81ff3464a9739132.json",
+          "status": 404,
+          "error": null
+        },
+        {
+          "url": "https://celltrackingchallenge.net/submission/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/dfbd57347188f6f0.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance.",
+      "evidence_basis": "Official rules, dataset metadata or organizer report",
+      "confidence": "High within stated data scope",
+      "previous_review": {
+        "review_date": "2026-10-25",
+        "review_cohort": "Previously reviewed 215",
+        "review_population": "Legacy 101 previously unestablished records",
+        "state": "Not established",
+        "terms_documented": false,
+        "detail_level": "Not established",
+        "licence_names": [],
+        "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+        "agreement_required": null,
+        "summary_zh": "官方数据与提交页面可访问，但未取得对应 2024 比赛数据的统一许可或清晰分数据集条款。",
+        "qualifications": [],
+        "scoped_terms": [],
+        "sources": [
+          {
+            "url": "https://celltrackingchallenge.net/",
+            "local_source": "_collection/sources_other/44ba88b098dfa4de.json"
+          },
+          {
+            "url": "https://celltrackingchallenge.net/history/",
+            "local_source": "_collection/sources_other/bffa6829e280c4c5.json"
+          },
+          {
+            "url": "https://celltrackingchallenge.net/evaluation-methodology/",
+            "local_source": "_collection/sources_other/9a7da60facfa96a0.json"
+          },
+          {
+            "url": "https://celltrackingchallenge.net/datasets/",
+            "local_source": "_collection/access_flow_full_audit_20261024/sources/0aed9ecfd15669b4.json"
+          },
+          {
+            "url": "https://celltrackingchallenge.net/",
+            "local_source": "_collection/access_flow_full_audit_20261024/sources/44ba88b098dfa4de.json"
+          }
+        ],
+        "substantive_terms_documented": false,
+        "search_attempts": [
+          {
+            "url": "https://celltrackingchallenge.net/datasets/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/0aed9ecfd15669b4.json",
+            "status": 200
+          },
+          {
+            "url": "https://celltrackingchallenge.net/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/44ba88b098dfa4de.json",
+            "status": 200
+          },
+          {
+            "url": "https://celltrackingchallenge.net/history/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/bffa6829e280c4c5.json",
+            "status": 200
+          },
+          {
+            "url": "https://celltrackingchallenge.net/evaluation-methodology/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/9a7da60facfa96a0.json",
+            "status": 200
+          },
+          {
+            "url": "https://celltrackingchallenge.net/2d-datasets/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/88cd7658868c96a5.json",
+            "status": 200,
+            "error": null
+          },
+          {
+            "url": "https://celltrackingchallenge.net/3d-datasets/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/9145d2dd9157c04f.json",
+            "status": 200,
+            "error": null
+          },
+          {
+            "url": "https://celltrackingchallenge.net/participation/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/81ff3464a9739132.json",
+            "status": 404,
+            "error": null
+          },
+          {
+            "url": "https://celltrackingchallenge.net/submission/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/dfbd57347188f6f0.json",
+            "status": 200,
+            "error": null
+          }
+        ],
+        "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+      }
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Other"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "细胞/细胞核分割与追踪，真实和计算机生成的显微序列，无赛事层面的疾病诊断目标。",
+      "sources": [
+        {
+          "url": "https://celltrackingchallenge.net/",
+          "local_source": "_collection/sources_other/44ba88b098dfa4de.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "细胞/细胞核分割与追踪，真实和计算机生成的显微序列，无赛事层面的疾病诊断目标。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/ISBI/2024/cell-tracking-challenge-2024.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02"
+  ]
+}

@@ -1,0 +1,901 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cmrseg-2026",
+    "challenge_name": "Universal Multi-Sequence, Multi-Center and Multi-View CMR Segmentation and Quantification Challenge",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Heart"
+      ],
+      "organ_system": [
+        "Cardiovascular"
+      ],
+      "organs_or_structures": [
+        "Cardiac structures",
+        "Myocardial scar"
+      ],
+      "diseases": [
+        "Myocardial scar"
+      ],
+      "clinical_context": null,
+      "disease_evidence_scope": "Registered cardiac MRI tasks explicitly annotate and quantify myocardial scar; myocardial infarction and cardiomyopathy mentioned as applications are not asserted as confirmed cohort diagnoses.",
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Other",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Cine Multi-Sequence Segmentation & Wall Motion Abnormality Analysis",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": [
+            "Multi-sequence cine cardiac MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Cardiac segmentations",
+            "Wall motion abnormality predictions"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "LGE Multi-Sequence Scar Segmentation & Quantitative Analysis",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": [
+            "Late gadolinium enhancement cardiac MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Myocardial scar segmentation",
+            "Quantitative scar analysis"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ],
+      "related_task_families": [
+        "Segmentation",
+        "Classification",
+        "Quantification"
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Cardiac structures",
+        "Myocardial scar"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "MRI"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "preregistered_data_license": "CC BY",
+      "review_status": "Reviewed 2026-10-24; round 3",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "Declared competition training protocol",
+          "category": "Individual authorization",
+          "access_steps": [
+            "Affiliation and intended use",
+            "Manual approval by dataset authors"
+          ],
+          "manual_review": true
+        },
+        {
+          "scope": "Current repository API, 2026-10-24",
+          "category": "No gate enabled in current metadata",
+          "access_steps": [
+            "gated=false; differs from data-card protocol"
+          ],
+          "manual_review": false
+        }
+      ]
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design.",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": null,
+      "platform": "Codabench",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Hausdorff Distance (HD)",
+            "Average Symmetric Distance (ASD)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Hausdorff Distance (HD)",
+            "Average Symmetric Distance (ASD)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19728181",
+      "platform_evidence_stage": "Participant-reported final execution",
+      "platform_scope": "Competition15533; independently retrieved participant repository, platform backend not accessed",
+      "platform_url": "https://www.codabench.org/competitions/15533/",
+      "evaluation_execution": "Organiser-side container inference; participant-reported",
+      "validation_evaluated": true,
+      "final_test_evaluated": true,
+      "final_test_evidence_basis": "Participant-reported preliminary hidden-test score, not official final ranking",
+      "official_final_ranking": "Not independently verified",
+      "phases": [
+        {
+          "phase": "Validation",
+          "submission_format": null,
+          "evaluation_status": "Participant-reported challenge validation scores"
+        },
+        {
+          "phase": "Final hidden test",
+          "submission_format": "Single offline Docker container",
+          "platform": "Codabench",
+          "competition_id": 15533,
+          "inference_executor": "Organiser-side",
+          "execution_evidence": "Participant repository reports preliminary scores returned by organisers"
+        }
+      ],
+      "evaluated_task_scope": [
+        {
+          "task_id": "task1",
+          "description": "Cine segmentation and ejection-fraction quantification",
+          "scope": "Participant-reported validation and hidden-test evaluation"
+        },
+        {
+          "task_id": "task2",
+          "description": "LGE segmentation and scar-mass quantification",
+          "scope": "Participant-reported validation and hidden-test evaluation"
+        }
+      ]
+    },
+    "submission": {
+      "submission_type": "Docker container (final test); validation submission format not independently verified",
+      "platform": "Codabench",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "Participant-reported final submission and preliminary hidden-test scores",
+      "platform_url": "https://www.codabench.org/competitions/15533/",
+      "phases": [
+        {
+          "phase": "Validation",
+          "submission_format": null,
+          "evaluation_status": "Participant-reported challenge validation scores"
+        },
+        {
+          "phase": "Final hidden test",
+          "submission_format": "Single offline Docker container",
+          "platform": "Codabench",
+          "competition_id": 15533,
+          "inference_executor": "Organiser-side",
+          "execution_evidence": "Participant repository reports preliminary scores returned by organisers"
+        }
+      ],
+      "scoring_submission_review": {
+        "basis": "2026-10-25 participant repository identifies final offline Docker container and Codabench15533; validation format remains unverified.",
+        "source_urls": [
+          "https://github.com/harshitAgr/cmr_release",
+          "https://papers.miccai.org/miccai-2026-sat/CMRSeg_010.html",
+          "https://www.codabench.org/competitions/15533/"
+        ]
+      }
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "participant_papers": [
+        {
+          "title": "View-Specialized Hybrid Segmentation for Multi-View Cardiac MRI: Combining nnU-Net, CineMA, and Scar-Elastic Refinement",
+          "authors": [
+            "Weichu Zeng",
+            "Dashun Zheng",
+            "Mingye Zou",
+            "Mingyuan Meng"
+          ],
+          "year": 2026,
+          "paper_id": "CMRSeg_010",
+          "status": "Accepted; camera-ready full text publicly available",
+          "venue": "MICCAI2026 Satellite Events / MWM2026",
+          "url": "https://papers.miccai.org/miccai-2026-sat/CMRSeg_010.html",
+          "full_text": "https://papers.miccai.org/miccai-2026-sat/paper/CMRSeg_010.pdf",
+          "openreview": "https://openreview.net/forum?id=4lqLRaUTPV",
+          "openreview_decision": "Accept (user-reported; decision page not retrieved in this review)",
+          "doi": null
+        }
+      ]
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://mwm2026.github.io/cmr-multi",
+      "grand_challenge": null,
+      "platform": "https://www.codabench.org/competitions/15533/",
+      "dataset": "https://huggingface.co/datasets/TaipingQu/CMR-MULTI",
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "Missing-field evidence review on 2026-10-03: Edition-specific registered design answer (not the form's examples): Submission method: Algorithm container submission (type 2) on Grand Challenge. Participants are required to package their trained models and inference codes into a Docker container that complies with the platform’s specifications for CMR image data input and output.Link to submission instructions: https://www.grand-challenge.org/challenges/",
+      "Missing-field evidence review on 2026-10-03: Explicit submission artifact in the edition's registered-design answer: Submission method: Algorithm container submission (type 2) on Grand Challenge. Participants are required to package their trained models and inference codes into a Docker container that complies with the platform’s specifications for CMR image data input and output.Link to submission instructions: https://www.grand-challenge.org/challenges/",
+      "2026-10-25: registered-design Grand Challenge platform is superseded by participant-reported Codabench15533 final execution. Original task/design information retained; evaluated Cine/EF and LGE/scar-mass scope recorded separately. Validation scores, preliminary final-test scores and official final rankings are distinct."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 18,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19728181",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+          "supports": [
+            "clinical_domain",
+            "clinical_domain.disease_evidence_scope",
+            "clinical_domain.diseases",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://mwm2026.github.io/cmr-multi",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/cmrseg-2026.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-25",
+      "field_evidence": {
+        "dataset.multi_center": {
+          "source_url": "https://zenodo.org/records/19728181",
+          "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "dataset.center_type": {
+          "source_url": "https://zenodo.org/records/19728181",
+          "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "evaluation.platform": {
+          "source_url": "https://github.com/harshitAgr/cmr_release",
+          "local_snapshot": "_collection/cmrseg_results_20261025/sources/8bee078c7717c088.json",
+          "reviewed_on": "2026-10-25",
+          "basis": "Participant-reported final offline container, Codabench15533 and organiser preliminary hidden-test scores; official complete ranking unverified."
+        },
+        "submission.platform": {
+          "source_url": "https://github.com/harshitAgr/cmr_release",
+          "local_snapshot": "_collection/cmrseg_results_20261025/sources/8bee078c7717c088.json",
+          "reviewed_on": "2026-10-25",
+          "basis": "Participant-reported final offline container, Codabench15533 and organiser preliminary hidden-test scores; official complete ranking unverified."
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://github.com/harshitAgr/cmr_release",
+          "local_snapshot": "_collection/cmrseg_results_20261025/sources/8bee078c7717c088.json",
+          "reviewed_on": "2026-10-25",
+          "basis": "Participant-reported final offline container, Codabench15533 and organiser preliminary hidden-test scores; official complete ranking unverified."
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://github.com/harshitAgr/cmr_release",
+          "local_snapshot": "_collection/cmrseg_results_20261025/sources/8bee078c7717c088.json",
+          "reviewed_on": "2026-10-25",
+          "basis": "Participant-reported final offline container, Codabench15533 and organiser preliminary hidden-test scores; official complete ranking unverified."
+        },
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/19728181",
+          "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19728181",
+          "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/19728181",
+          "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/19728181",
+          "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/19728181",
+          "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://github.com/harshitAgr/cmr_release",
+          "local_snapshot": "_collection/cmrseg_results_20261025/sources/8bee078c7717c088.json",
+          "reviewed_on": "2026-10-25",
+          "basis": "Participant-reported final offline container, Codabench15533 and organiser preliminary hidden-test scores; official complete ranking unverified."
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://github.com/harshitAgr/cmr_release",
+          "local_snapshot": "_collection/cmrseg_results_20261025/sources/8bee078c7717c088.json",
+          "reviewed_on": "2026-10-25",
+          "basis": "Participant-reported final offline container, Codabench15533 and organiser preliminary hidden-test scores; official complete ranking unverified."
+        },
+        "clinical_domain.diseases": {
+          "source_url": "https://zenodo.org/records/19728181",
+          "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered cardiac MRI tasks explicitly annotate and quantify myocardial scar; myocardial infarction and cardiomyopathy mentioned as applications are not asserted as confirmed cohort diagnoses."
+        },
+        "clinical_domain.disease_evidence_scope": {
+          "source_url": "https://zenodo.org/records/19728181",
+          "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered cardiac MRI tasks explicitly annotate and quantify myocardial scar; myocardial infarction and cardiomyopathy mentioned as applications are not asserted as confirmed cohort diagnoses."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://mwm2026.github.io/cmr-multi",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/cmrseg-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://mwm2026.github.io/cmr-multi",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/cmrseg-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://mwm2026.github.io/cmr-multi",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/cmrseg-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "evaluation.final_test_evaluated": {
+          "source_url": "https://github.com/harshitAgr/cmr_release",
+          "local_snapshot": "_collection/cmrseg_results_20261025/sources/8bee078c7717c088.json",
+          "reviewed_on": "2026-10-25",
+          "basis": "Participant-reported final offline container, Codabench15533 and organiser preliminary hidden-test scores; official complete ranking unverified."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.disease_evidence_scope",
+          "clinical_domain.diseases",
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/cmrseg-2026.json",
+          "_collection/verification_20261003/literature_context/cmrseg-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "field_evidence_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "records": {
+            "evaluation.platform": {
+              "source_url": "https://zenodo.org/records/19728181",
+              "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+              "reviewed_on": "2026-10-03",
+              "basis": "Edition-specific registered design answer (not the form's examples): Submission method: Algorithm container submission (type 2) on Grand Challenge. Participants are required to package their trained models and inference codes into a Docker container that complies with the platform’s specifications for CMR image data input and output.Link to submission instructions: https://www.grand-challenge.org/challenges/"
+            },
+            "evaluation.platform_evidence_stage": {
+              "source_url": "https://zenodo.org/records/19728181",
+              "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+              "reviewed_on": "2026-10-03",
+              "basis": "Edition-specific registered design answer (not the form's examples): Submission method: Algorithm container submission (type 2) on Grand Challenge. Participants are required to package their trained models and inference codes into a Docker container that complies with the platform’s specifications for CMR image data input and output.Link to submission instructions: https://www.grand-challenge.org/challenges/"
+            },
+            "evaluation.platform_scope": {
+              "source_url": "https://zenodo.org/records/19728181",
+              "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+              "reviewed_on": "2026-10-03",
+              "basis": "Edition-specific registered design answer (not the form's examples): Submission method: Algorithm container submission (type 2) on Grand Challenge. Participants are required to package their trained models and inference codes into a Docker container that complies with the platform’s specifications for CMR image data input and output.Link to submission instructions: https://www.grand-challenge.org/challenges/"
+            },
+            "submission.submission_type": {
+              "source_url": "https://zenodo.org/records/19728181",
+              "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+              "reviewed_on": "2026-10-03",
+              "basis": "Explicit submission artifact in the edition's registered-design answer: Submission method: Algorithm container submission (type 2) on Grand Challenge. Participants are required to package their trained models and inference codes into a Docker container that complies with the platform’s specifications for CMR image data input and output.Link to submission instructions: https://www.grand-challenge.org/challenges/"
+            },
+            "submission.evidence_stage": {
+              "source_url": "https://zenodo.org/records/19728181",
+              "local_snapshot": "_collection/sources_other/protocol-19728181.txt",
+              "reviewed_on": "2026-10-03",
+              "basis": "Explicit submission artifact in the edition's registered-design answer: Submission method: Algorithm container submission (type 2) on Grand Challenge. Participants are required to package their trained models and inference codes into a Docker container that complies with the platform’s specifications for CMR image data input and output.Link to submission instructions: https://www.grand-challenge.org/challenges/"
+            }
+          }
+        }
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "官方数据卡明文要求填写机构和用途并由作者人工批准，按声明协议编码；当前HF接口gated=false，与卡片不一致，不能将该设置倒推为比赛全过程开放。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "Declared competition training protocol",
+            "category": "Individual authorization",
+            "access_steps": [
+              "Affiliation and intended use",
+              "Manual approval by dataset authors"
+            ],
+            "manual_review": true
+          },
+          {
+            "scope": "Current repository API, 2026-10-24",
+            "category": "No gate enabled in current metadata",
+            "access_steps": [
+              "gated=false; differs from data-card protocol"
+            ],
+            "manual_review": false
+          }
+        ],
+        "evidence_basis": "Explicit data-card protocol checked; contradictory current API configuration retained",
+        "confidence": "High for declared rule; current implementation differs",
+        "source_urls": [
+          "https://huggingface.co/datasets/TaipingQu/CMR-MULTI",
+          "https://huggingface.co/api/datasets/TaipingQu/CMR-MULTI"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-24 round 3: 官方数据卡明文要求填写机构和用途并由作者人工批准，按声明协议编码；当前HF接口gated=false，与卡片不一致，不能将该设置倒推为比赛全过程开放。",
+        "CMRSeg final test now supported by retrieved participant preliminary-score report; access classification remains the declared manual-approval policy."
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/cmrseg-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://huggingface.co/datasets/TaipingQu/CMR-MULTI",
+          "local_source": "_collection/access_backfill_round3_20261024/sources/03b0fa0f2679f5dc.json",
+          "review_date": "2026-10-24",
+          "section": "Round 3 development access; task and temporal scope retained"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/TaipingQu/CMR-MULTI",
+          "local_source": "_collection/access_backfill_round3_20261024/sources/03b20964d7cff65b.json",
+          "review_date": "2026-10-24",
+          "section": "Round 3 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        },
+        {
+          "url": "https://papers.miccai.org/miccai-2026-sat/CMRSeg_010.html",
+          "local_source": "_collection/cmrseg_results_20261025/sources/8db472c967f59bca.json",
+          "review_date": "2026-10-25",
+          "section": "MICCAI camera-ready paper and validation scores"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/harshitAgr/cmr_release/main/README.md",
+          "local_source": "_collection/cmrseg_results_20261025/sources/8bee078c7717c088.json",
+          "review_date": "2026-10-25",
+          "section": "Participant final offline Docker, Codabench15533, preliminary hidden-test scores"
+        },
+        {
+          "url": "https://huggingface.co/datasets/TaipingQu/CMR-MULTI",
+          "local_source": "_collection/cmrseg_results_20261025/sources/03b0fa0f2679f5dc.json",
+          "review_date": "2026-10-25",
+          "section": "Official declared data-access policy"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/cmrseg_results_20261025/user_confirmation.json",
+          "review_date": "2026-10-25",
+          "section": "User supplied review; independent retrieval limitations retained"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "protocol_history": [
+      {
+        "recorded_on": "2026-10-25",
+        "scope": "Superseded registered-design platform; retain originally declared task names and metrics as design provenance",
+        "evaluation": {
+          "hidden_test_set": null,
+          "online_evaluation": null,
+          "platform": "Grand Challenge",
+          "tasks": [
+            {
+              "task_id": "task1",
+              "metrics": [
+                "Dice Similarity Coefficient (DSC)",
+                "Hausdorff Distance (HD)",
+                "Average Symmetric Distance (ASD)"
+              ],
+              "ranking": null,
+              "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+              "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+            },
+            {
+              "task_id": "task2",
+              "metrics": [
+                "Dice Similarity Coefficient (DSC)",
+                "Hausdorff Distance (HD)",
+                "Average Symmetric Distance (ASD)"
+              ],
+              "ranking": null,
+              "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+              "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+            }
+          ],
+          "cross_task_rule": null,
+          "design_document": "10.5281/zenodo.19728181",
+          "platform_evidence_stage": "registered_design",
+          "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+        },
+        "submission": {
+          "submission_type": "Docker container",
+          "platform": "Grand Challenge",
+          "runtime_limits": {
+            "max_processing_time_per_case_minutes": null,
+            "max_ram_gb": null,
+            "reserved_ram_gb": null,
+            "gpu": null,
+            "gpu_vram_gb": null
+          },
+          "submission_limits": {
+            "sanity_check_successful_submissions_per_day": null,
+            "final_submissions_per_team": null,
+            "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+          },
+          "task_outputs": null,
+          "evidence_stage": "registered_design"
+        }
+      }
+    ],
+    "result_evidence_review": {
+      "review_date": "2026-10-25",
+      "status": "Validation and participant-reported final hidden-test scoring documented",
+      "validation": {
+        "paper_id": "CMRSeg_010",
+        "authors": [
+          "Weichu Zeng",
+          "Dashun Zheng",
+          "Mingye Zou",
+          "Mingyuan Meng"
+        ],
+        "source": "https://papers.miccai.org/miccai-2026-sat/CMRSeg_010.html",
+        "scores": {
+          "overall": 0.7342,
+          "task1_cine": 0.703,
+          "task2_lge": 0.7655,
+          "cine_DSC": 0.899,
+          "EF_PCC": 0.975,
+          "LGE_DSC": 0.767,
+          "scar_mass_vPCC": 0.927
+        },
+        "scope": "Validation only"
+      },
+      "final_test": {
+        "team": "Aiatella",
+        "username": "hars25",
+        "source": "https://github.com/harshitAgr/cmr_release",
+        "scores": {
+          "overall": 0.66,
+          "task1_cine": 0.7,
+          "task2_lge": 0.62,
+          "cine_DSC": 0.91,
+          "cine_LVEF_PCC": 0.92,
+          "LGE_DSC": 0.72,
+          "scar_mass_vPCC": 0.61
+        },
+        "scope": "Organisers preliminary hidden-test scores as reported by participant; not official final ranking"
+      },
+      "official_final_ranking": "Not independently verified",
+      "source_urls": [
+        "https://papers.miccai.org/miccai-2026-sat/CMRSeg_010.html",
+        "https://github.com/harshitAgr/cmr_release",
+        "https://www.codabench.org/competitions/15533/",
+        "https://openreview.net/forum?id=4lqLRaUTPV"
+      ],
+      "access_conclusion": "Individual authorization — declared policy; current downloadable-file permissions and historical enforcement not independently verified"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Department of Radiology, Beijing Anzhen Hospital, Capital Medical University",
+              "url": "https://zenodo.org/records/19728181",
+              "snapshot": "_collection/sources_other/protocol-19728181.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nDepartment of Radiology, Beijing Anzhen Hospital, Capital Medical University",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Department of cardiovascular surgery, The first Affiliated Hospital of Jinan University, University of Auckland, Department of Radiology, Beijing Anzhen Hospital, Capital Medical University",
+              "url": "https://zenodo.org/records/19728181",
+              "snapshot": "_collection/sources_other/protocol-19728181.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nDepartment of cardiovascular surgery, The first Affiliated Hospital of Jinan University, University of Auckland,\nDepartment of Radiology, Beijing Anzhen Hospital, Capital Medical University",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

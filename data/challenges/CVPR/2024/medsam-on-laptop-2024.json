@@ -1,0 +1,677 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "medsam-on-laptop-2024",
+    "challenge_name": "MedSAM on Laptop 2024: Segment Anything in Medical Images on Laptop",
+    "full_name": "MedSAM on Laptop 2024: Segment Anything in Medical Images on Laptop",
+    "year": 2024,
+    "event": {
+      "conference": "CVPR 2024 - Foundation Models for Medical Vision Workshop",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2024-06-17",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "Foundation Models for Medical Vision",
+        "relationship": "Host workshop for the MedSAM-on-Laptop competition.",
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": [
+        "University of Toronto",
+        "University Health Network",
+        "Vector Institute",
+        "University of California, Santa Cruz"
+      ],
+      "international": true
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "MRI",
+        "PET",
+        "Ultrasound",
+        "X-ray",
+        "OCT",
+        "Endoscopy",
+        "Fundus",
+        "Microscopy"
+      ],
+      "submodality": null,
+      "body_region": null,
+      "organ_system": null,
+      "organs_or_structures": null,
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Bounding-box-prompted medical image segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "promptable segmentation",
+          "input": [
+            "Medical image or volume",
+            "Target bounding box"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Segmentation mask"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "granularity_by_input": [
+            "pixel-level",
+            "voxel-level"
+          ]
+        }
+      ],
+      "learning_paradigms": [
+        "Foundation models",
+        "Promptable segmentation"
+      ],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Segmentation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": true,
+      "center_count": null,
+      "institutions_description": "The final testing dataset was contributed by 24 institutions worldwide.",
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": {
+          "value": 1809644,
+          "unit": "image-mask pairs",
+          "approximate": false,
+          "lower_bound": false
+        },
+        "validation_count": null,
+        "test_count": {
+          "value": 4414,
+          "unit": "cases",
+          "approximate": false,
+          "lower_bound": false
+        }
+      },
+      "modalities": [
+        "CT",
+        "MRI",
+        "PET",
+        "Ultrasound",
+        "X-ray",
+        "OCT",
+        "Endoscopy",
+        "Fundus",
+        "Microscopy"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "contributing_institution_count": 24,
+      "test_image_mask_pairs": {
+        "value": 124004,
+        "unit": "image-mask pairs",
+        "approximate": false,
+        "lower_bound": false
+      },
+      "modality_count_observations": [
+        {
+          "scope": "original platform dataset description",
+          "value": 11
+        },
+        {
+          "scope": "paper training description",
+          "value": 10
+        },
+        {
+          "scope": "final evaluation summary",
+          "value": 9
+        }
+      ]
+    },
+    "data_access": {
+      "is_public": false,
+      "access_status": "registration-and-approval-required",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": false,
+      "license_or_terms": "Licenses vary across the curated public source datasets; some prohibit redistribution. The challenge requires the approved dataset list rather than unrestricted use of all public data.",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Only the curated approved public dataset/model list may be used; unlisted external resources are not unrestricted."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Codabench validation; organizer-run CPU Docker test",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient",
+            "Normalized Surface Dice",
+            "Runtime"
+          ],
+          "ranking": "Rank each algorithm for each modality and metric (DSC, NSD and runtime), then average those ranks. The 23 ranked algorithms include the baseline and 22 submitted algorithms."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Validation predictions; final CPU-only Docker container",
+      "platform": "Codabench and organizer email",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": 8,
+        "reserved_ram_gb": null,
+        "gpu": "CPU-only; no GPU",
+        "gpu_vram_gb": null,
+        "cpu": "Intel Xeon W-2133"
+      },
+      "submission_limits": {
+        "final_successful_submissions_per_track": 1,
+        "max_team_members": 6
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": null
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": "2026-10-03",
+      "statistics_status": "current platform snapshot",
+      "notes": [
+        "Participant accounts are not teams. Cumulative platform counts are not treated as edition-specific final participation."
+      ],
+      "participation_observations": [
+        {
+          "value": 200,
+          "unit": "individuals",
+          "lower_bound": true,
+          "scope": "paper-reported participation"
+        },
+        {
+          "value": 61,
+          "unit": "data contributors",
+          "scope": "testing-data contribution"
+        }
+      ],
+      "edition_test_algorithm_submissions": 22,
+      "platform_snapshot": {
+        "participant_accounts": 257,
+        "submission_count": 2290,
+        "scope": "Cumulative platform activity including post-challenge phases."
+      }
+    },
+    "links": {
+      "official": "https://link.springer.com/book/10.1007/978-3-031-81854-7",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": "https://github.com/bowang-lab/MedSAM/tree/LiteMedSAM",
+      "challenge_paper": "https://arxiv.org/abs/2412.16085"
+    },
+    "notes": [
+      "The platform proposes additional modalities and data contributions; finalized evaluation modality coverage and counts follow the organizer paper. Institution counts are not substituted for clinical center counts.",
+      "The separate scribble challenge is mentioned in a platform FAQ but is not silently added to this bounding-box benchmark."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "last_updated": "2026-10-03",
+      "collection_date_definition": "Date of web and literature metadata collection, not medical-image acquisition.",
+      "source_list": "challenge_list_other_platforms_22_26_v4.json",
+      "source_list_index": 24,
+      "source_list_index_base": 1,
+      "collection_status": "partially_verified",
+      "sources": [
+        {
+          "type": "Official organizer source",
+          "url": "https://www.codabench.org/api/competitions/1847/?format=api",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/69c3a6ed772057ba.json",
+          "supports": [
+            "data_access",
+            "submission",
+            "evaluation",
+            "participation_statistics.platform_snapshot",
+            "organizers"
+          ],
+          "snapshot_sha256": "21340759b943351faedee4cb8246a0116ea02c8468ce0184582851ae238de9c2"
+        },
+        {
+          "type": "Organizer challenge paper",
+          "url": "https://arxiv.org/html/2412.16085v1",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/64e984f6734c65eb.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "evaluation",
+            "participation_statistics.edition_test_algorithm_submissions"
+          ],
+          "snapshot_sha256": "af4f641aea777461fc34f4ac33af9fbe924287f4ab845a2551617112bfe05a40"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://fmv-cvpr24workshop.github.io/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/215587aa05de70b4.json",
+          "supports": [
+            "event.conference",
+            "organizers"
+          ],
+          "snapshot_sha256": "1607b787f3305f042ca17f1eee0d07168e41b9a295a3d4596533b71f92b33723"
+        }
+      ],
+      "unresolved_fields": [
+        "schedule.final_original_competition_dates",
+        "dataset.population.patient_count",
+        "dataset.center_count",
+        "dataset.collection_period.start_year",
+        "data_access.license_or_terms",
+        "participation_statistics.registered_teams"
+      ],
+      "verification_policy": "Only edition-specific official evidence populates facts; unknown values remain null."
+    },
+    "record_level": "challenge_edition",
+    "scope_status": "core_medical_or_biomedical_imaging",
+    "count_in_core_medical_imaging_review": true,
+    "count_in_edition_statistics": true,
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_task_families": [
+        "Segmentation"
+      ],
+      "previous_emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_roles": {
+        "Segmentation": "Declared task output"
+      },
+      "note_zh": "组织者明确研究模型适配及受限执行；图像分割为输出，提示框为输入，不另计定位。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://www.codabench.org/api/competitions/1847/?format=api",
+          "local_source": "_collection/v4_20261003/sources/69c3a6ed772057ba.json",
+          "sha256": "21340759b943351faedee4cb8246a0116ea02c8468ce0184582851ae238de9c2"
+        },
+        {
+          "url": "https://arxiv.org/html/2412.16085v1",
+          "local_source": "_collection/v4_20261003/sources/64e984f6734c65eb.json",
+          "sha256": "af4f641aea777461fc34f4ac33af9fbe924287f4ab845a2551617112bfe05a40"
+        },
+        {
+          "url": "https://fmv-cvpr24workshop.github.io/",
+          "local_source": "_collection/v4_20261003/sources/215587aa05de70b4.json",
+          "sha256": "1607b787f3305f042ca17f1eee0d07168e41b9a295a3d4596533b71f92b33723"
+        }
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Not established",
+          "value": [],
+          "note": "已核对当届平台数据页、组织者论文及基线仓库：可确认广泛多部位数据，但已读取正文未提供可统一抽取的完整部位表；允许使用的外部数据清单不等同实际竞赛数据。"
+        },
+        "disease": {
+          "state": "Not established",
+          "value": [],
+          "note": "Previous disease coding retained; not reclassified in this audit"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.codabench.org/api/competitions/1847/?format=api",
+          "local_source": "_collection/v4_20261003/sources/69c3a6ed772057ba.json"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2412.16085",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/76741b6a2b2d58b7.json"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/bowang-lab/MedSAM/LiteMedSAM/README.md",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/369fc7564c552361.json"
+        }
+      ],
+      "note_zh": "已核对当届平台数据页、组织者论文及基线仓库：可确认广泛多部位数据，但已读取正文未提供可统一抽取的完整部位表；允许使用的外部数据清单不等同实际竞赛数据。",
+      "anatomical_scope": "Named anatomy from edition-specific materials",
+      "remaining_detail": "需组织者补充表1–2或当届实际数据—部位清单；不从图示自行补齐完整范围。"
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "CT",
+        "Endoscopy",
+        "Fundus",
+        "MRI",
+        "Microscopy",
+        "OCT",
+        "PET",
+        "Ultrasound",
+        "X-ray"
+      ],
+      "harmonized_modalities": [
+        "CT",
+        "Dermoscopy",
+        "Endoscopy",
+        "Fundus",
+        "MRI",
+        "Microscopy",
+        "OCT",
+        "PET",
+        "Ultrasound",
+        "X-ray"
+      ],
+      "video_format_documented": false,
+      "note": "2024 Dataset tab explicitly lists dermoscopy; mammography remains grouped with X-ray.",
+      "sources": [
+        {
+          "url": "https://www.codabench.org/api/competitions/1847/?format=api",
+          "local_source": "_collection/v4_20261003/sources/69c3a6ed772057ba.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "CVPR/2024/medsam-on-laptop-2024.json",
+              "source_field": "dataset",
+              "value": {
+                "source_type": null,
+                "routine_clinical_practice": null,
+                "anonymized": null,
+                "ethical_approval": null,
+                "center_type": null,
+                "multi_center": true,
+                "international": true,
+                "center_count": null,
+                "institutions_description": "The final testing dataset was contributed by 24 institutions worldwide.",
+                "population": {
+                  "patient_count": null,
+                  "study_count": null,
+                  "scan_count": {
+                    "value": null,
+                    "approximate": null,
+                    "raw_text": null
+                  },
+                  "train_count": {
+                    "value": 1809644,
+                    "unit": "image-mask pairs",
+                    "approximate": false,
+                    "lower_bound": false
+                  },
+                  "validation_count": null,
+                  "test_count": {
+                    "value": 4414,
+                    "unit": "cases",
+                    "approximate": false,
+                    "lower_bound": false
+                  }
+                },
+                "modalities": [
+                  "CT",
+                  "MRI",
+                  "PET",
+                  "Ultrasound",
+                  "X-ray",
+                  "OCT",
+                  "Endoscopy",
+                  "Fundus",
+                  "Microscopy"
+                ],
+                "data_components": null,
+                "collection_period": {
+                  "start_year": null,
+                  "end_year": null
+                },
+                "contributing_institution_count": 24,
+                "test_image_mask_pairs": {
+                  "value": 124004,
+                  "unit": "image-mask pairs",
+                  "approximate": false,
+                  "lower_bound": false
+                },
+                "modality_count_observations": [
+                  {
+                    "scope": "original platform dataset description",
+                    "value": 11
+                  },
+                  {
+                    "scope": "paper training description",
+                    "value": 10
+                  },
+                  {
+                    "scope": "final evaluation summary",
+                    "value": 9
+                  }
+                ]
+              },
+              "sources": [
+                {
+                  "type": "Official organizer source",
+                  "url": "https://www.codabench.org/api/competitions/1847/?format=api",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/v4_20261003/sources/69c3a6ed772057ba.json",
+                  "supports": [
+                    "data_access",
+                    "submission",
+                    "evaluation",
+                    "participation_statistics.platform_snapshot",
+                    "organizers"
+                  ],
+                  "snapshot_sha256": "21340759b943351faedee4cb8246a0116ea02c8468ce0184582851ae238de9c2"
+                },
+                {
+                  "type": "Organizer challenge paper",
+                  "url": "https://arxiv.org/html/2412.16085v1",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/v4_20261003/sources/64e984f6734c65eb.json",
+                  "supports": [
+                    "task_profile",
+                    "dataset",
+                    "evaluation",
+                    "participation_statistics.edition_test_algorithm_submissions"
+                  ],
+                  "snapshot_sha256": "af4f641aea777461fc34f4ac33af9fbe924287f4ab845a2551617112bfe05a40"
+                },
+                {
+                  "type": "Official organizer source",
+                  "url": "https://fmv-cvpr24workshop.github.io/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/v4_20261003/sources/215587aa05de70b4.json",
+                  "supports": [
+                    "event.conference",
+                    "organizers"
+                  ],
+                  "snapshot_sha256": "1607b787f3305f042ca17f1eee0d07168e41b9a295a3d4596533b71f92b33723"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "20 top validation teams submitting testing algorithms; subset of 22 algorithm submissions.",
+              "url": "https://arxiv.org/html/2412.16085v1",
+              "snapshot": "_collection/v4_20261003/sources/64e984f6734c65eb.json",
+              "scope": "top validation teams submitting testing algorithms; subset of 22 algorithm submissions",
+              "value": {
+                "value": 20,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "we received 22 algorithm submissions during the testing phase where 20 algorithms were from the top 20 teams on the validation leaderboard. Most of the top-performing teams employed a SAM-like promptable segmentation model, including an image encoder to extract features from in",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    },
+    "record_field_review": {
+      "fields": {
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer challenge report",
+              "source_path": "latex_sourcev2/data/paper_followup_20261027/sources/medsam.txt",
+              "url": "https://arxiv.org/abs/2412.16085v1",
+              "section": "Figure 1b/caption; Discussion; Methods: Deployment",
+              "value": {
+                "released_resources": "Top-ten technical details and code",
+                "post_challenge_activity": "Performance booster and reproducibility phase",
+                "software_integration": "Two leading models integrated into 3D Slicer"
+              },
+              "scope": "Organizer-reported post-challenge activities and software resources; does not assert all test data are public."
+            }
+          ],
+          "source_urls": "https://arxiv.org/abs/2412.16085v1",
+          "basis": "The report explicitly documents post-event code release, further evaluation activities and implementation reuse."
+        }
+      },
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation, supplemented by targeted organizer-paper and official retrospective-source review"
+    },
+    "literature_followups": [
+      {
+        "review_date": "2026-10-27",
+        "audit_path": "latex_sourcev2/data/paper_followup_20261027",
+        "fields": [
+          "post_challenge_resources"
+        ]
+      }
+    ]
+  }
+}

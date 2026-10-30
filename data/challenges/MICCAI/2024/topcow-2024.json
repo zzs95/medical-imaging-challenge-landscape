@@ -1,0 +1,637 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "topcow-2024",
+    "challenge_name": "TopCoW 2024 Challenge",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "MRI"
+      ],
+      "submodality": [
+        "CTA",
+        "TOF-MRA"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Cerebrovascular"
+      ],
+      "organs_or_structures": [
+        "Circle of Willis"
+      ],
+      "diseases": [
+        "Ischemic stroke",
+        "Transient ischemic attack",
+        "Intracerebral hemorrhage",
+        "Cerebral sinus vein thrombosis",
+        "Stroke mimics"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Detection",
+        "Classification"
+      ],
+      "tasks": [
+        {
+          "task_id": "segmentation",
+          "official_name": "CoW multiclass vessel segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "CTA or MRA"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Anatomical vessel mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "detection",
+          "official_name": "CoW ROI object detection",
+          "task_family": "Detection",
+          "task_subtype": "3D bounding box detection",
+          "input": [
+            "CTA or MRA"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "One CoW bounding box"
+          ],
+          "granularity": "volume-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "classification",
+          "official_name": "CoW graph classification",
+          "task_family": "Classification",
+          "task_subtype": "multi-label graph edge classification",
+          "input": [
+            "CTA or MRA"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Anterior and posterior binary edge lists"
+          ],
+          "granularity": "volume-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": true,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": true,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT",
+        "MRI"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "patient_count": 125,
+          "image_count": 250
+        },
+        "validation": {
+          "patient_count": 5,
+          "image_count": 10
+        },
+        "test": {
+          "patient_count": 70,
+          "image_count": 140
+        }
+      },
+      "paired_modalities": true
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Open use with attribution; commercial use requires data-owner permission.",
+      "access_after_challenge": null,
+      "access_scope": "training/development data; not a claim that hidden test data are public"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Public datasets, private in-house data and modified challenge training data allowed with disclosure."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "segmentation",
+          "metrics": [
+            "Class-average Dice",
+            "Binary clDice",
+            "Class-average Betti-0 error",
+            "Class-average HD95",
+            "Group-2 component F1",
+            "Variant-balanced graph accuracy",
+            "Variant-balanced topology match rate"
+          ],
+          "ranking": "Seven equally weighted metrics; independent CTA/MRA tracks."
+        },
+        {
+          "task_id": "detection",
+          "metrics": [
+            "Boundary IoU",
+            "IoU"
+          ],
+          "ranking": "Independent CTA/MRA tracks."
+        },
+        {
+          "task_id": "classification",
+          "metrics": [
+            "Variant-balanced accuracy"
+          ],
+          "ranking": "Evaluate anterior and posterior edge lists independently in CTA/MRA tracks."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "final_submissions_per_track_per_task": 1,
+        "distinct_extra_algorithms": "Organizer approval required."
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "final_submission_deadline": "2024-10-02",
+      "challenge_event": "2024-10-06"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 225,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Validation-CTA-Task-2-Box",
+            "submission_count": 19
+          },
+          {
+            "official_phase_name": "Validation-CTA-Task-3-Edg",
+            "submission_count": 35
+          },
+          {
+            "official_phase_name": "Validation-MRA-Task-2-Box",
+            "submission_count": 26
+          },
+          {
+            "official_phase_name": "Validation-MRA-Task-3-Edg",
+            "submission_count": 39
+          },
+          {
+            "official_phase_name": "FinalTest-CTA-Task-2-Box",
+            "submission_count": 9
+          },
+          {
+            "official_phase_name": "FinalTest-CTA-Task-3-Edg",
+            "submission_count": 9
+          },
+          {
+            "official_phase_name": "FinalTest-MRA-Task-2-Box",
+            "submission_count": 8
+          },
+          {
+            "official_phase_name": "FinalTest-MRA-Task-3-Edg",
+            "submission_count": 9
+          },
+          {
+            "official_phase_name": "Validation-CTA-Task-1-Seg",
+            "submission_count": 78
+          },
+          {
+            "official_phase_name": "FinalTest-CTA-Task-1-Seg",
+            "submission_count": 14
+          },
+          {
+            "official_phase_name": "Validation-MRA-Task-1-Seg",
+            "submission_count": 86
+          },
+          {
+            "official_phase_name": "FinalTest-MRA-Task-1-Seg",
+            "submission_count": 22
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://topcow24.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Three tasks each have two modality tracks. Additional in-house multicenter test data described without counts; those counts remain null."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://topcow24.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/57-09926748f08a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topcow24.grand-challenge.org/2-tracks-3-tasks/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/57-16d1ea4bffca.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topcow24.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/57-6f0d5060ea5d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topcow24.grand-challenge.org/participation-rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "evaluation",
+            "evaluation.platform",
+            "publication",
+            "submission",
+            "submission.platform"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/57-7e6a9d147c42.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topcow24.grand-challenge.org/tutorials/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/57-8e1aa482245b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topcow24.grand-challenge.org/data/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "dataset",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/57-912b488a5007.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topcow24.grand-challenge.org/miccai-event-oct-6-program/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/57-9c2d80451648.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topcow24.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/57-a01f12ef439d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topcow24.grand-challenge.org/topcow24/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/57-bbd237e5d839.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topcow24.grand-challenge.org/assessment/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/57-d5c1b4b81732.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topcow24.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/57-overview.json"
+        },
+        {
+          "type": "official conference registered-challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "supports": [
+            "event",
+            "year"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify final case/metric rank aggregation and additional multicenter test cohorts from updated organizer report."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://topcow24.grand-challenge.org/participation-rules/",
+          "local_snapshot": "_collection/sources/57-7e6a9d147c42.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'Validation CTA Task-1 Segmentation', 'url': 'https://topcow24.grand-challenge.org/evaluation/validation-cta-task-1-seg/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "submission.platform": {
+          "source_url": "https://topcow24.grand-challenge.org/participation-rules/",
+          "local_snapshot": "_collection/sources/57-7e6a9d147c42.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'Validation CTA Task-1 Segmentation', 'url': 'https://topcow24.grand-challenge.org/evaluation/validation-cta-task-1-seg/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "data_access.access_status": {
+          "source_url": "https://topcow24.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/57-912b488a5007.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://topcow24.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/57-912b488a5007.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "dataset.multi_center": {
+          "source_url": "https://topcow24.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/57-912b488a5007.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2024 dataset description adds in-house multicenter tests; exact center count is not reported."
+        },
+        "dataset.center_type": {
+          "source_url": "https://topcow24.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/57-912b488a5007.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2024 dataset description adds in-house multicenter tests; exact center count is not reported."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/topcow-2024.json",
+          "_collection/verification_20261003/literature_context/topcow-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cerebrovascular",
+            "Other"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Ischemic stroke",
+        "Transient ischemic attack",
+        "Intracerebral hemorrhage",
+        "Cerebral sinus vein thrombosis",
+        "Stroke mimics"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "当届官方数据页明确卒中中心的疾病队列；血管分割任务不变，卒中模拟疾病的具体诊断仍不确定。",
+      "sources": [
+        {
+          "url": "https://topcow24.grand-challenge.org/data/",
+          "local_source": "_collection/disease_followup_20261025/sources/topcow24.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "当届官方数据页明确卒中中心的疾病队列；血管分割任务不变，卒中模拟疾病的具体诊断仍不确定。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2024/topcow-2024.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

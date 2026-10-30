@@ -1,0 +1,679 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "selma3d-2024",
+    "challenge_name": "Self-supervised learning for 3D light-sheet microscopy image segmentation",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Microscopy"
+      ],
+      "submodality": [
+        "3D light-sheet fluorescence microscopy"
+      ],
+      "body_region": [
+        "Human brain",
+        "Mouse brain"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "Neural-activity cells",
+        "Blood vessels",
+        "Cell nuclei",
+        "Alzheimer plaques",
+        "Microglia"
+      ],
+      "diseases": [
+        "Alzheimer's disease"
+      ],
+      "clinical_context": null,
+      "disease_evidence_scope": "The 2024 dataset page explicitly includes Alzheimer's disease plaques among training targets; this is one microscopy component, not a claim that all specimens have this disease."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "dot",
+          "official_name": "Dot-like biological structure segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "3D LSM patch"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Structure mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "tree",
+          "official_name": "Tree-like biological structure segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "3D LSM patch"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Topology-preserving structure mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Microscopy"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "unannotated_pretraining": {
+          "neural_activity_brain_count": 18,
+          "vessel_brain_count": 9,
+          "nucleus_subregion_count": 4,
+          "plaque_brain_count": 4
+        },
+        "annotated_finetuning": {
+          "neural_activity_patch_count": 19,
+          "vessel_patch_count": 24,
+          "nucleus_patch_count": 12,
+          "plaque_patch_count": 34
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC",
+      "access_after_challenge": null,
+      "access_scope": "training/development data; not a claim that hidden test data are public"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": null,
+        "policy": "Only provided unannotated pretraining and annotated finetuning data. Manual labeling of validation data prohibited."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "dot",
+          "metrics": [
+            "Volumetric Dice",
+            "Dimension-0 Betti matching error"
+          ],
+          "ranking": "Average relative metric ranks across biological structures."
+        },
+        {
+          "task_id": "tree",
+          "metrics": [
+            "Volumetric Dice",
+            "Dimension-0 Betti matching error",
+            "Dimension-1 Betti matching error",
+            "clDice"
+          ],
+          "ranking": "Average relative metric ranks across biological structures."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "preliminary_submissions": 16,
+        "final_submissions": 1
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_data_release": "2024-06-09",
+      "final_submission_deadline": "2024-09-30"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "grand_challenge": "https://selma3d.grand-challenge.org/selma3d/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Dot/tree entries describe structure-specific evaluations, not independently declared submission tracks."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/selma3d/#2024-0609-news-the-training-set-has-been-released-please-visit-the-dataset-page-for-more-information",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-02367aa42513.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/timeline-2/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-08dbab30672a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/selma3d/#20240707-news-the-link-to-the-validation-set-is-updated-please-download-the-validation-set-using-the-new-link",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-150bf3cc2a3c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/task-description/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-1c4f7377948e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-513d49887a70.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/selma3d/#background",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-59e80c80c446.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-5db62a909cf0.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/selma3d/#20240701-news-the-validation-set-has-been-released-please-visit-the-dataset-page-for-more-information",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-820c4e8902d0.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/test/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-831fafb3ef4c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/selma3d/#20240707-news-the-submission-system-and-leaderboard-for-the-validation-set-will-open-later-than-planned-for-more-details-please-visit-the-timeline-page-we-apologize-for-any-inconvenience",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-96a623d218b7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-b844922483cb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/selma3d/#objective",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-c52c4080e7e6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/selma3d/#self-supervised-learning-for-3d-light-sheet-microscopy-image-segmentation",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-ccb55a70cf2e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/selma3d/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-dfef78cbd670.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/miccai-event/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-eb0b0b4fe507.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/data/",
+          "supports": [
+            "clinical_domain.disease_evidence_scope",
+            "clinical_domain.diseases",
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "dataset",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-f96188da8f69.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d.grand-challenge.org/selma3d/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/56-overview.json"
+        },
+        {
+          "type": "official conference registered-challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "supports": [
+            "event",
+            "year"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify final validation/test patch counts and per-case runtime limits."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://selma3d.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/56-f96188da8f69.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://selma3d.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/56-f96188da8f69.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "clinical_domain.diseases": {
+          "source_url": "https://selma3d.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/56-f96188da8f69.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "The 2024 dataset page explicitly includes Alzheimer's disease plaques among training targets; this is one microscopy component, not a claim that all specimens have this disease."
+        },
+        "clinical_domain.disease_evidence_scope": {
+          "source_url": "https://selma3d.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/56-f96188da8f69.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "The 2024 dataset page explicitly includes Alzheimer's disease plaques among training targets; this is one microscopy component, not a claim that all specimens have this disease."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.disease_evidence_scope",
+          "clinical_domain.diseases",
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/selma3d-2024.json",
+          "_collection/verification_20261003/literature_context/selma3d-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_emerging_objectives": [],
+      "note_zh": "组织者以大规模无标注LSM预训练、少量标注微调及跨生物结构泛化为核心；分割是下游输出，补记FM表征目标。",
+      "sources": [
+        {
+          "url": "https://selma3d.grand-challenge.org/selma3d/#2024-0609-news-the-training-set-has-been-released-please-visit-the-dataset-page-for-more-information",
+          "local_source": "_collection/sources/56-02367aa42513.json",
+          "sha256": "fd0c5a5d277c4ffe487e289b04f3b9146a057734a546e8a16676901f1460640e"
+        }
+      ],
+      "scope": "Reverse screening of 288 previously unlabelled editions",
+      "previous_task_families": [
+        "Segmentation"
+      ],
+      "task_roles": {
+        "Segmentation": "Declared task output retained from existing coding"
+      },
+      "foundation_model_basis": "自监督预训练与跨结构适配",
+      "text_output_rule": "Narrative outputs, VQA, finite labels, prompts and tool actions are distinguished"
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_objective_basis": "Reverse screening of 288 previously unlabelled editions, 2026-10-25; see task_objective_review"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "annotated_finetuning / neural_activity_patch_count",
+              "value": 19,
+              "unit": "patches",
+              "canonical_field": "dataset.splits.annotated_finetuning.neural_activity_patch_count",
+              "scope": "Separate annotated fine-tuning subsets",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "annotated_finetuning / vessel_patch_count",
+              "value": 24,
+              "unit": "patches",
+              "canonical_field": "dataset.splits.annotated_finetuning.vessel_patch_count",
+              "scope": "Separate annotated fine-tuning subsets",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "annotated_finetuning / nucleus_patch_count",
+              "value": 12,
+              "unit": "patches",
+              "canonical_field": "dataset.splits.annotated_finetuning.nucleus_patch_count",
+              "scope": "Separate annotated fine-tuning subsets",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "annotated_finetuning / plaque_patch_count",
+              "value": 34,
+              "unit": "patches",
+              "canonical_field": "dataset.splits.annotated_finetuning.plaque_patch_count",
+              "scope": "Separate annotated fine-tuning subsets",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://selma3d.grand-challenge.org/selma3d/#2024-0609-news-the-training-set-has-been-released-please-visit-the-dataset-page-for-more-information",
+              "supports": [
+                "dataset",
+                "labels_and_targets",
+                "data_access"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/56-02367aa42513.json"
+            },
+            {
+              "type": "official challenge page",
+              "url": "https://selma3d.grand-challenge.org/selma3d/#20240701-news-the-validation-set-has-been-released-please-visit-the-dataset-page-for-more-information",
+              "supports": [
+                "dataset",
+                "labels_and_targets",
+                "data_access"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/56-820c4e8902d0.json"
+            },
+            {
+              "type": "official challenge page",
+              "url": "https://selma3d.grand-challenge.org/data/",
+              "supports": [
+                "clinical_domain.disease_evidence_scope",
+                "clinical_domain.diseases",
+                "data_access",
+                "data_access.access_scope",
+                "data_access.access_status",
+                "dataset",
+                "labels_and_targets"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/56-f96188da8f69.json"
+            }
+          ],
+          "source_urls": "https://selma3d.grand-challenge.org/selma3d/#2024-0609-news-the-training-set-has-been-released-please-visit-the-dataset-page-for-more-information; https://selma3d.grand-challenge.org/timeline-2/; https://selma3d.grand-challenge.org/selma3d/#20240707-news-the-link-to-the-validation-set-is-updated-please-download-the-validation-set-using-the-new-link; https://selma3d.grand-challenge.org/task-description/; https://selma3d.grand-challenge.org/organizers/; https://selma3d.grand-challenge.org/selma3d/#background; https://selma3d.grand-challenge.org/rules/; https://selma3d.grand-challenge.org/selma3d/#20240701-news-the-validation-set-has-been-released-please-visit-the-dataset-page-for-more-information; https://selma3d.grand-challenge.org/test/; https://selma3d.grand-challenge.org/selma3d/#20240707-news-the-submission-system-and-leaderboard-for-the-validation-set-will-open-later-than-planned-for-more-details-please-visit-the-timeline-page-we-apologize-for-any-inconvenience; https://selma3d.grand-challenge.org/; https://selma3d.grand-challenge.org/selma3d/#objective; https://selma3d.grand-challenge.org/selma3d/#self-supervised-learning-for-3d-light-sheet-microscopy-image-segmentation; https://selma3d.grand-challenge.org/selma3d/; https://selma3d.grand-challenge.org/miccai-event/; https://selma3d.grand-challenge.org/data/; https://miccai.org/sig/sig-challenges/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

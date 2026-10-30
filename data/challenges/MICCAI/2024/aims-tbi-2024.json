@@ -1,0 +1,569 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "aims-tbi-2024",
+    "challenge_name": "AIMS TBI 2024",
+    "full_name": "AIMS TBI – Automated Identification of Moderate-Severe Traumatic Brain Injury Lesions",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R04",
+      "official_programme_row_numbers": "5",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "University of Utah",
+        "University of Virginia",
+        "Deakin University"
+      ],
+      "registered_authors": [
+        {
+          "name": "Dennis, Emily",
+          "affiliation": "University of Utah"
+        },
+        {
+          "name": "Tustison, Nick",
+          "affiliation": "University of Virginia"
+        },
+        {
+          "name": "Deutscher, Evelyn",
+          "affiliation": "Deakin University"
+        },
+        {
+          "name": "Wilde, Elisabeth",
+          "affiliation": "University of Utah"
+        },
+        {
+          "name": "Caeyenberghs, Karen",
+          "affiliation": "Deakin University"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Traumatic brain lesions"
+      ],
+      "diseases": [
+        "Moderate-severe traumatic brain injury"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Automated MRI lesion segmentation using T1-weighted MRI scans in moderate-severe traumatic brain injury",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990744",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/Traumatic Brain Injury Lesion Segmentation.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990744",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/Traumatic Brain Injury Lesion Segmentation.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990744",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/Traumatic Brain Injury Lesion Segmentation.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND. 当届提案明确列出 CC BY-NC-ND；未标明版本时不自行补写版本。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990744",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/Traumatic Brain Injury Lesion Segmentation.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990744",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/Traumatic Brain Injury Lesion Segmentation.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Grand Challenge",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990744",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/Traumatic Brain Injury Lesion Segmentation.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990744",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/Traumatic Brain Injury Lesion Segmentation.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\n- Dice similarity coefficient - DSC (voxelwise) = 2TP/ (2TP + FN + FP)\n- Absolute volume difference - AVD (voxelwise) = volume annotated - volume rater\n- Absolute lesion count difference - Count (lesion-wise) = Total predicted - total rater\n\n\n\n\f                                      Traumatic Brain Injury Lesion Segmentation\n\n\n\n- Detection rate - Detection (lesion-wise) = 2TP/ (2TP + FN + FP)\n\n\nTP=true positive, FN=false negative, FP=false positive\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe metrics chosen were selected to assess both detection accuracy and segmentation accuracy, with Dice widely\nused in medical segmentation challenges and tasks.\nLesion size varies considerably across the dataset as is characteristic of TBI. For an algorithm to be broadly useful,\nit needs to identify lesions of all sizes. For this reason, we are using the additional metrics of lesion count\ndifference and detection rate, as DSC will be biased towards larger lesions. DSC will be calculated both by subject\nand by lesion cluster. Combining this with the number of lesions and lesion volume, we will have metrics\nconcerning the performance of the algorithms in identifying and segmenting lesions of all sizes.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThe goal is to identify the algorithm that generates the most accurate lesion segmentation and the metrics\nselected will assess detection performance and segmentation accuracy. Similar ranking schemes have been used\nin previous medical imaging segmentation challenges.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nUp to 10% missing data will be accepted with scores calculated across remaining data. Beyond 10% missing data,\nthe scores for missing cases will be incorporated into calculations.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nWe will compute average DSC, AVD, Count, and Detection across cases. The groups will receive a rank of 1\nthrough N (number of teams participating) for each of the four metrics with rank 1 for DSC and detection given to\nthe team with the highest values and rank 1 for AVD and count given to the team with the lowest values. These\nfour ranks will be summed and the team with the smallest sum will rank first and on down."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Containerized algorithm",
+      "platform": "Grand Challenge",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Algorithm container submission (type 2) on Grand Challenge.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990744",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/Traumatic Brain Injury Lesion Segmentation.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990744",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/Traumatic Brain Injury Lesion Segmentation.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10990744"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://aims-tbi.grand-challenge.org/",
+      "registration": "https://doi.org/10.5281/zenodo.10990744",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10990744",
+          "resolved_record_id": 10990745,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/Traumatic Brain Injury Lesion Segmentation.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/Traumatic Brain Injury Lesion Segmentation.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://aims-tbi.grand-challenge.org/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/bb1fc81bcb687fa7.json",
+          "http_status": 403,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "AIMS TBI"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "The schedule requires teams to coordinate data-use agreements with the University of Utah before training-data release."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990744",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990744",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Algorithm container submission (type 2) on Grand Challenge. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990744",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results - March 4: Teams interested in participating may start to coordinate data use agreements (DUA) with the University of Utah - April 1: Training data will be released when the challenge website opens - May 15: Validation data will be released - June 30: Validation phase closes - July 1: Final model submission opens - August 1: Deadline for challenge papers - Oct 6/10: Final results announced during the MICCAI 2024 meeting"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990744",
+          "excerpt": ""
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 400,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 100,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 300,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "12 cohorts stated; acquisition institutions listed, country labels not explicit in extracted source.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10990744",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://aims-tbi.grand-challenge.org/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/bb1fc81bcb687fa7.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/aims-tbi-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Trauma"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Traumatic brain lesions"
+      ],
+      "specific_diseases": [
+        "Moderate-severe traumatic brain injury"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990744"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/aims-tbi-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-ND"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-ND；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY-NC-ND",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10990744"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990744"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Baylor College of Medicine, University of California Los Angeles, Pennsylvania State University, Kennedy Krieger Institute, Loma Linda University, Nationwide Children's Hospital, Murdoch Children's Research Institute, Deakin University, University of Texas Houston, Kessler Foundation, VA Palo Alto, Icahn School of Medicine at Mt. Sinai, and the University of Oslo.",
+              "url": "https://doi.org/10.5281/zenodo.10990744",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R04/Traumatic Brain Injury Lesion Segmentation.pdf",
+              "scope": "Acquisition answer in the edition-specific protocol. Partial task/source scope retained; proposed sources are not treated as confirmed final acquisitions.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nBaylor College of Medicine, University of California Los Angeles, Pennsylvania State University, Kennedy Krieger\nInstitute, Loma Linda University, Nationwide Children's Hospital, Murdoch Children's Research Institute, Deakin\nUniversity, University of Texas Houston, Kessler Foundation, VA Palo Alto, Icahn School of Medicine at Mt. Sinai,\nand the University of Oslo.",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

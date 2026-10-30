@@ -1,0 +1,719 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "toothfairy3-2025",
+    "challenge_name": "ToothFairy3: Multi-Class Segmentation in CBCT Volumes",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": null,
+      "challenge_event_date": "2025-09-27",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "ODIN 2025",
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CBCT"
+      ],
+      "submodality": [
+        "Dental cone-beam CT"
+      ],
+      "body_region": [
+        "Maxillofacial region"
+      ],
+      "organ_system": [
+        "Dental / oral system"
+      ],
+      "organs_or_structures": [
+        "Teeth",
+        "Pulp cavities",
+        "Mandible",
+        "Inferior alveolar canals",
+        "Incisive nerve",
+        "Lingual foramen"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Fast multi-class segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "Semantic segmentation",
+          "input": [
+            "CBCT volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "77-class anatomical segmentation"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Interactive IAC segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "Interactive segmentation",
+          "input": [
+            "CBCT volume",
+            "Up to five interactive clicks"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Left and right inferior alveolar canal segmentation"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": 50
+      },
+      "modalities": null,
+      "data_components": [
+        "0.3 mm isotropic CBCT NIfTI volumes in HU",
+        "77-class training segmentations"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "sanity_check": "Four training cases; not a separate validation cohort.",
+        "test": "50 hidden cases per final evaluation phase."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "registration-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": false,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA (exact version not verified)",
+      "access_after_challenge": "Official dataset page states that the test set remains private even after the challenge; training continues under its stated license.",
+      "access_scope": "Training dataset download explicitly requires sign-up; test set remains private after the challenge."
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Class-wise DSC",
+            "Class-wise HD95",
+            "Inference time",
+            "GPU memory (tie-break)"
+          ],
+          "ranking": "Rank 154 class metrics (77 DSC + 77 HD95), add inference-time rank with weight 77, divide sum by 231; memory is a tie-break."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Final-click DSC",
+            "Final-click HD95",
+            "Click-DSC AUC",
+            "Click-HD95 AUC",
+            "Inference time",
+            "GPU memory (tie-break)"
+          ],
+          "ranking": "Eight ranks (four metrics × two IACs) plus inference-time rank, averaged equally; five clicks. GPU memory is a tie-break."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "sanity_check_submissions_per_team_per_week": 2,
+        "final_submissions_per_team_per_task": 3
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "final_submission_deadline": "2025-08-24"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 238,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Task 1 - Multi-class Segmentation: Debugging Phase",
+            "submission_count": 133
+          },
+          {
+            "official_phase_name": "Task 2  - IAC Interactive Segmentation: Debugging Phase",
+            "submission_count": 24
+          },
+          {
+            "official_phase_name": "Task 1 -  Multi-class Segmentation: Test Phase",
+            "submission_count": 89
+          },
+          {
+            "official_phase_name": "Task 2 -  IAC Interactive Segmentation: Test Phase",
+            "submission_count": 14
+          },
+          {
+            "official_phase_name": "Task 1 - Multi-class Segmentation: Post Challenge Phase",
+            "submission_count": 17
+          },
+          {
+            "official_phase_name": "Task 2 - IAC Interactive Segmentation: Post Challenge Phase",
+            "submission_count": 1
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://toothfairy3.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Task 1 official ranking includes organizer-measured inference time; the live Grand Challenge leaderboard omits this time term. Last final submission is used. Winners must release code and a report."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://toothfairy3.grand-challenge.org/challenge-winners/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/29-2b198fcadf96.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://toothfairy3.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/29-3050c2b9932d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://toothfairy3.grand-challenge.org/faq/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/29-37d7e9f06ae2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://toothfairy3.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/29-8d5c3563e42c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://toothfairy3.grand-challenge.org/important-dates/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/29-99233178c803.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://toothfairy3.grand-challenge.org/dataset/",
+          "supports": [
+            "data_access",
+            "data_access.access_after_challenge",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "dataset",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/29-c252cfe70030.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://toothfairy3.grand-challenge.org/toothfairy3/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/29-cb5759f553cc.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://toothfairy3.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/29-cbaadbfaf8ff.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://toothfairy3.grand-challenge.org/how-to-submit/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/29-f1c783d53224.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://toothfairy3.grand-challenge.org/ranking-prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/29-faea11d3ef3b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://toothfairy3.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/29-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset: full training size and complete 77-label dictionary require further verification.",
+        "submission: actual resource limits and external-data policy not yet verified."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://toothfairy3.grand-challenge.org/dataset/",
+          "local_snapshot": "_collection/sources/29-c252cfe70030.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official dataset page explicitly distinguishes public-licensed training with required download sign-up from permanently private testing."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://toothfairy3.grand-challenge.org/dataset/",
+          "local_snapshot": "_collection/sources/29-c252cfe70030.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official dataset page explicitly distinguishes public-licensed training with required download sign-up from permanently private testing."
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://toothfairy3.grand-challenge.org/dataset/",
+          "local_snapshot": "_collection/sources/29-c252cfe70030.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official dataset page explicitly distinguishes public-licensed training with required download sign-up from permanently private testing."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_after_challenge",
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/toothfairy3-2025.json",
+          "_collection/verification_20261003/literature_context/toothfairy3-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_emerging_objectives": [],
+      "note_zh": "组织者明确通过IAC点击交互赛道鼓励prompt-based foundation models；补记FM设计目标。点击是分割输入，不是自主工具调用，不新增Agent或VLM。",
+      "sources": [
+        {
+          "url": "https://toothfairy3.grand-challenge.org/",
+          "local_source": "_collection/sources/29-3050c2b9932d.json",
+          "sha256": "30601098faa305cba89c4190f9a7d3c5552ef48188b3c5c7d1a32f10d7a413c8"
+        }
+      ],
+      "scope": "Reverse screening of 288 previously unlabelled editions",
+      "previous_task_families": [
+        "Segmentation"
+      ],
+      "task_roles": {
+        "Segmentation": "Declared task output retained from existing coding"
+      },
+      "foundation_model_basis": "提示式基础模型",
+      "text_output_rule": "Narrative outputs, VQA, finite labels, prompts and tool actions are distinguished"
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_objective_basis": "Reverse screening of 288 previously unlabelled editions, 2026-10-25; see task_objective_review"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2025/toothfairy3-2025.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Official dataset page states that the test set remains private even after the challenge; training continues under its stated license.",
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://toothfairy3.grand-challenge.org/challenge-winners/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/29-2b198fcadf96.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://toothfairy3.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/29-3050c2b9932d.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://toothfairy3.grand-challenge.org/faq/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/29-37d7e9f06ae2.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://toothfairy3.grand-challenge.org/organizers/",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/29-8d5c3563e42c.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://toothfairy3.grand-challenge.org/important-dates/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/29-99233178c803.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://toothfairy3.grand-challenge.org/dataset/",
+                  "supports": [
+                    "data_access",
+                    "data_access.access_after_challenge",
+                    "data_access.access_scope",
+                    "data_access.access_status",
+                    "dataset",
+                    "labels_and_targets"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/29-c252cfe70030.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://toothfairy3.grand-challenge.org/toothfairy3/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/29-cb5759f553cc.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://toothfairy3.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/29-cbaadbfaf8ff.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://toothfairy3.grand-challenge.org/how-to-submit/",
+                  "supports": [
+                    "submission",
+                    "data_usage_mode"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/29-f1c783d53224.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://toothfairy3.grand-challenge.org/ranking-prizes/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/29-faea11d3ef3b.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://toothfairy3.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/29-overview.json"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            },
+            {
+              "kind": "Observed post-challenge evaluation activity",
+              "summary": "Positive submissions recorded in explicitly named post-challenge or long-term evaluation phases.",
+              "url": "https://toothfairy3.grand-challenge.org/challenge/statistics/",
+              "snapshot": "_collection/sources/29-cbaadbfaf8ff.json",
+              "scope": "Evidence that the service was used after the competitive phase; cumulative counts do not identify teams or guarantee current acceptance.",
+              "value": [
+                {
+                  "official_phase_name": "Task 1 - Multi-class Segmentation: Debugging Phase",
+                  "submission_count": 133
+                },
+                {
+                  "official_phase_name": "Task 2  - IAC Interactive Segmentation: Debugging Phase",
+                  "submission_count": 24
+                },
+                {
+                  "official_phase_name": "Task 1 -  Multi-class Segmentation: Test Phase",
+                  "submission_count": 89
+                },
+                {
+                  "official_phase_name": "Task 2 -  IAC Interactive Segmentation: Test Phase",
+                  "submission_count": 14
+                },
+                {
+                  "official_phase_name": "Task 1 - Multi-class Segmentation: Post Challenge Phase",
+                  "submission_count": 17
+                },
+                {
+                  "official_phase_name": "Task 2 - IAC Interactive Segmentation: Post Challenge Phase",
+                  "submission_count": 1
+                }
+              ],
+              "excerpt": "",
+              "snapshot_date": "2026-10-02"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "final test per phase",
+              "value": 50,
+              "unit": "cases",
+              "canonical_field": "dataset.split_details.test",
+              "scope": "Per-phase count, not summed across final phases",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://toothfairy3.grand-challenge.org/dataset/",
+              "supports": [
+                "data_access",
+                "data_access.access_after_challenge",
+                "data_access.access_scope",
+                "data_access.access_status",
+                "dataset",
+                "labels_and_targets"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/29-c252cfe70030.json"
+            }
+          ],
+          "source_urls": "https://toothfairy3.grand-challenge.org/challenge-winners/; https://toothfairy3.grand-challenge.org/; https://toothfairy3.grand-challenge.org/faq/; https://toothfairy3.grand-challenge.org/organizers/; https://toothfairy3.grand-challenge.org/important-dates/; https://toothfairy3.grand-challenge.org/dataset/; https://toothfairy3.grand-challenge.org/toothfairy3/; https://toothfairy3.grand-challenge.org/challenge/statistics/; https://toothfairy3.grand-challenge.org/how-to-submit/; https://toothfairy3.grand-challenge.org/ranking-prizes/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

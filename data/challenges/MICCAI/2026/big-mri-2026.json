@@ -1,0 +1,605 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "big-mri-2026",
+    "challenge_name": "Breast Imaging Group MRI Challenge",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Breast"
+      ],
+      "organ_system": [
+        "Breast"
+      ],
+      "organs_or_structures": [
+        "Breast"
+      ],
+      "diseases": [
+        "Breast cancer"
+      ],
+      "clinical_context": null,
+      "disease_evidence_scope": "Registered 2026 tasks predict 2- and 5-year incident breast cancer risk; the screening cohort is not assumed to consist entirely of diagnosed cancer patients.",
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Outcome Prediction",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Image-Based Risk Prediction",
+          "task_family": "Outcome Prediction",
+          "task_subtype": null,
+          "input": [
+            "Breast MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Absolute 2-year and 5-year incident breast cancer risk"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Multimodal Risk Prediction",
+          "task_family": "Outcome Prediction",
+          "task_subtype": null,
+          "input": [
+            "Breast MRI",
+            "Clinical information"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Absolute 2-year and 5-year incident breast cancer risk"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Breast"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": true,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "MRI"
+      ],
+      "data_components": [
+        "Breast MRI in NIfTI format",
+        "De-identified clinical table"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "population_description": "Very high-risk breast MRI screening cohort"
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "preregistered_data_license": "CC BY-NC-SA",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "paradigm": "hybrid",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Area under curve (AUC)",
+            "Harrell’s concordance index (C-index)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Area under curve (AUC)",
+            "Harrell’s concordance index (C-index)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19732927"
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://big-radboudumc.github.io/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "The current homepage schedules data release for October 12, 2026 and warns that dates may change. Public data availability is not asserted before that release.",
+      "2026-10-22: 12月6日仍为计划最终提交节点并可能调整；后续先核对日程，再查实际评价和结果。",
+      "2026-10-22: 11月2日至16日开发、11月16日至12月6日验证、12月6日提交均为可调整日程；未确认实际最终评价。",
+      "2026-10-22 最新人工分析裁定（替代旧完成待查要求）：BIG-MRI 2026：按用户明确判定，依据挑战计划视为2026年完成并纳入2026范围；解除完成状态待查项。依据为计划基础上的人工分析裁定，未声称截至审查日已独立核验最终结果。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 2,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://big-radboudumc.github.io/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/47a0ea6978453b1f.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19732927",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19732927.txt",
+          "supports": [
+            "clinical_domain",
+            "clinical_domain.disease_evidence_scope",
+            "clinical_domain.diseases",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://big-radboudumc.github.io/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/big-mri-2026.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://big-radboudumc.github.io/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_47a0ea697845_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "12月6日仍为计划最终提交节点并可能调整；后续先核对日程，再查实际评价和结果。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://big-radboudumc.github.io/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_47a0ea697845_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "11月2日至16日开发、11月16日至12月6日验证、12月6日提交均为可调整日程；未确认实际最终评价。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "dataset.multi_center": {
+          "source_url": "https://zenodo.org/records/19732927",
+          "local_snapshot": "_collection/sources_other/protocol-19732927.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "dataset.center_type": {
+          "source_url": "https://zenodo.org/records/19732927",
+          "local_snapshot": "_collection/sources_other/protocol-19732927.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/19732927",
+          "local_snapshot": "_collection/sources_other/protocol-19732927.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Submissions will be made via Docker container. Details about the structure, submission guidelines or any necessary templates will be provided. Participants must also submit a manuscript (approximately 4–6 pages) describing their method, including all pre-processing, curation, pre-training, and any use of external data, along with the training and evaluation results. The top 3 teams will additionally be required to share their complete code with the challenge organizers to ensure reproducibility "
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19732927",
+          "local_snapshot": "_collection/sources_other/protocol-19732927.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Submissions will be made via Docker container. Details about the structure, submission guidelines or any necessary templates will be provided. Participants must also submit a manuscript (approximately 4–6 pages) describing their method, including all pre-processing, curation, pre-training, and any use of external data, along with the training and evaluation results. The top 3 teams will additionally be required to share their complete code with the challenge organizers to ensure reproducibility "
+        },
+        "clinical_domain.diseases": {
+          "source_url": "https://zenodo.org/records/19732927",
+          "local_snapshot": "_collection/sources_other/protocol-19732927.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered 2026 tasks predict 2- and 5-year incident breast cancer risk; the screening cohort is not assumed to consist entirely of diagnosed cancer patients."
+        },
+        "clinical_domain.disease_evidence_scope": {
+          "source_url": "https://zenodo.org/records/19732927",
+          "local_snapshot": "_collection/sources_other/protocol-19732927.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered 2026 tasks predict 2- and 5-year incident breast cancer risk; the screening cohort is not assumed to consist entirely of diagnosed cancer patients."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://big-radboudumc.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/big-mri-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://big-radboudumc.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/big-mri-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://big-radboudumc.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/big-mri-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.disease_evidence_scope",
+          "clinical_domain.diseases",
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "submission.evidence_stage",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/big-mri-2026.json",
+          "_collection/verification_20261003/literature_context/big-mri-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "12月6日仍为计划最终提交节点并可能调整；后续先核对日程，再查实际评价和结果。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "scheduled_after_review_date",
+            "evidence_state": "searched_not_established",
+            "evidence_ids": [],
+            "reason": "Updated official timeline places final submissions on December 6, 2026, after the review date; completed final assessment cannot yet be inferred."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2026/big-mri-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "11月2日至16日开发、11月16日至12月6日验证、12月6日提交均为可调整日程；未确认实际最终评价。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2026/big-mri-2026.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "BIG-MRI 2026：按用户明确判定，依据挑战计划视为2026年完成并纳入2026范围；解除完成状态待查项。依据为计划基础上的人工分析裁定，未声称截至审查日已独立核验最终结果。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/clear_big_plan_decisions_20261022_152203/MICCAI/2026/big-mri-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-24",
+      "final_assessment_status": "confirmed",
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "BIG-MRI 2026：按用户明确判定，依据挑战计划视为2026年完成并纳入2026范围；解除完成状态待查项。依据为计划基础上的人工分析裁定，未声称截至审查日已独立核验最终结果。",
+        "basis_type": "user_adjudication_based_on_challenge_plan",
+        "user_instruction": "CLEAR-EC 2026 BIG-MRI 2026 按照挑战计划可以视为26年完成",
+        "propagation_status": "Canonical JSON, audit, current triage CSV/Excel, decisions and reports updated; manuscript and aggregate statistics not regenerated."
+      },
+      "remaining_questions": [],
+      "programme_status": "completed_for_analysis_by_user_plan_decision",
+      "completion_adjudication": {
+        "decision_id": "big-mri-2026_plan_based_completion_20261022",
+        "date": "2026-10-22",
+        "authorized_by": "user",
+        "instruction": "CLEAR-EC 2026 BIG-MRI 2026 按照挑战计划可以视为26年完成",
+        "analysis_id": "big-mri-2026",
+        "analysis_year": 2026,
+        "include_in_2026_scope": true,
+        "completion_for_analysis": "accepted_as_completed_in_2026",
+        "basis_type": "user_adjudication_based_on_challenge_plan",
+        "independently_verified_final_completion": false,
+        "qualification": "Analytical year-end treatment based on user instruction; not retrospective evidence of final completion as of October 22. Dated schedule and actual scoring evidence retained separately."
+      },
+      "basis": "Human confirmation of competition completion on 2026-10-24",
+      "qualification": "Analytical year-end treatment based on user instruction; not retrospective evidence of final completion as of October 22. Dated schedule and actual scoring evidence retained separately.",
+      "optional_documentary_limitations": [
+        "Updated official timeline places final submissions on December 6, 2026, after the review date; completed final assessment cannot yet be inferred."
+      ],
+      "documentary_final_assessment_status_before_adjudication": "not_established",
+      "counting_note": "Count as completed in the 2026 analysis by explicit user plan-based adjudication; do not label as independently verified final competition outcome."
+    },
+    "current_completion_adjudication": {
+      "date": "2026-10-24",
+      "status": "completed",
+      "basis": "Human confirmation",
+      "statement": "User explicitly confirms that the 2026 competitions have been held; supersedes the earlier plan-based inclusion decision.",
+      "source": "User instruction in this conversation",
+      "public_final_scores_independently_verified": false
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "官网明确参赛者下载训练数据并本地训练，仅提交最终算法在Grand Challenge盲测。"
+      },
+      "decision_history": [
+        "官网明确参赛者下载训练数据并本地训练，仅提交最终算法在Grand Challenge盲测。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/47a0ea6978453b1f.json",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/sources_other/protocol-19732927.txt",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_47a0ea697845_20261022.json",
+          "url": "https://big-radboudumc.github.io/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_47a0ea697845_20261022.json",
+          "url": "https://big-radboudumc.github.io/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/big-mri-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Training and test set are from RUMC. An additional test set is provided by NKI. Page 12 of 29 Biomedical Image Analysis ChallengeS (BIAS) Initiative BIG-MRI: Breast Imaging Group MRI Challenge",
+              "url": "https://zenodo.org/records/19732927",
+              "snapshot": "_collection/sources_other/protocol-19732927.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nTraining and test set are from RUMC. An additional test set is provided by NKI.\n\n\n                                                     Page 12 of 29                 Biomedical Image Analysis ChallengeS (BIAS) Initiative\n\f                                     BIG-MRI: Breast Imaging Group MRI Challenge",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

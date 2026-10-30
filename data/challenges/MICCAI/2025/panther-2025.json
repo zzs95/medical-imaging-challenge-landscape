@@ -1,0 +1,562 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "panther-2025",
+    "challenge_name": "PANTHER Challenge",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": [
+        "T1 contrast-enhanced arterial",
+        "T2 MR-Linac"
+      ],
+      "body_region": [
+        "Pancreas"
+      ],
+      "organ_system": [
+        "Digestive system"
+      ],
+      "organs_or_structures": [
+        "Pancreatic tumor"
+      ],
+      "diseases": [
+        "Pancreatic ductal adenocarcinoma"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Diagnostic MRI tumor segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "Semantic segmentation",
+          "input": [
+            "T1 contrast-enhanced arterial MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Binary segmentation mask"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "MR-Linac tumor segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "Semantic segmentation",
+          "input": [
+            "T2 MR-Linac MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Binary segmentation mask"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": 2,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "Diagnostic T1 arterial contrast-enhanced MRI",
+        "Additional unannotated MRI sequences",
+        "T2-weighted MR-Linac images",
+        "Pancreas and tumor training labels"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "task1": {
+          "train_annotated": 92,
+          "train_unannotated": 367,
+          "development": 5,
+          "test": 30
+        },
+        "task2": {
+          "train_annotated": 50,
+          "development": 4,
+          "test": 30
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": false,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC 4.0",
+      "access_after_challenge": null,
+      "access_scope": "training/development data; not a claim that hidden test data are public"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Prize-eligible external datasets/models must have permissive licenses and be published within three months of development deadline; use must be disclosed. Private data only for non-prize benchmarking."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "DSC",
+            "Surface Dice (5 mm)",
+            "MASD",
+            "HD95",
+            "Tumor-burden RMSE"
+          ],
+          "ranking": "Average each metric across cases, rank teams for each metric, average metric ranks."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "DSC",
+            "Surface Dice (5 mm)",
+            "MASD",
+            "HD95",
+            "Tumor-burden RMSE"
+          ],
+          "ranking": "Average each metric across cases, rank teams for each metric, average metric ranks."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 327,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Open Development Phase Task 1",
+            "submission_count": 229
+          },
+          {
+            "official_phase_name": "Open Development Phase Task 2",
+            "submission_count": 104
+          },
+          {
+            "official_phase_name": "Closed Testing Phase Task 1",
+            "submission_count": 18
+          },
+          {
+            "official_phase_name": "Closed Testing Phase Task 2",
+            "submission_count": 13
+          },
+          {
+            "official_phase_name": "Post-challenge Testing Phase Task 1",
+            "submission_count": 11
+          },
+          {
+            "official_phase_name": "Post-challenge Testing Phase Task 2",
+            "submission_count": 0
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://panther.grand-challenge.org/",
+      "dataset": "https://zenodo.org/records/15192302",
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Only binary tumor masks are expected at evaluation. Pancreas labels are auxiliary training information despite a metric description mentioning pancreas."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://panther.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-16b766ab0d8c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panther.grand-challenge.org/algorithm-submissions/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-1cbd3a709f02.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panther.grand-challenge.org/tasks-evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-24b257c36ef3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panther.grand-challenge.org/overview-goals/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-3abfc0aa30da.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panther.grand-challenge.org/challenge-outcomes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-43a7d70d4efd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panther.grand-challenge.org/dataset-imging-labels/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_access.is_public",
+            "data_access.public_download",
+            "dataset",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-44f71084717c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panther.grand-challenge.org/phases-rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-879371e3cbd0.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panther.grand-challenge.org/background-on-mri-and-mr-linac-imaging-for-pancreatic-cancer/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-8aab8528764d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panther.grand-challenge.org/miccai-2025-workshop/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-9259155d048a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panther.grand-challenge.org/announcements-news/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-a60055cd5e31.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panther.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-e26564ebc5f4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panther.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-e52f12ac96d3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panther.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/38-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "submission: Task 2 maximum inference time is mentioned without a verified numeric value.",
+        "evaluation: confirm tumor-only implementation against inconsistent pancreas mention."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://panther.grand-challenge.org/dataset-imging-labels/",
+          "local_snapshot": "_collection/sources/38-44f71084717c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.is_public": {
+          "source_url": "https://panther.grand-challenge.org/dataset-imging-labels/",
+          "local_snapshot": "_collection/sources/38-44f71084717c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.public_download": {
+          "source_url": "https://panther.grand-challenge.org/dataset-imging-labels/",
+          "local_snapshot": "_collection/sources/38-44f71084717c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://panther.grand-challenge.org/dataset-imging-labels/",
+          "local_snapshot": "_collection/sources/38-44f71084717c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_access.is_public",
+          "data_access.public_download"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/panther-2025.json",
+          "_collection/verification_20261003/literature_context/panther-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Observed post-challenge evaluation activity",
+              "summary": "Positive submissions recorded in explicitly named post-challenge or long-term evaluation phases.",
+              "url": "https://panther.grand-challenge.org/challenge/statistics/",
+              "snapshot": "_collection/sources/38-16b766ab0d8c.json",
+              "scope": "Evidence that the service was used after the competitive phase; cumulative counts do not identify teams or guarantee current acceptance.",
+              "value": [
+                {
+                  "official_phase_name": "Open Development Phase Task 1",
+                  "submission_count": 229
+                },
+                {
+                  "official_phase_name": "Open Development Phase Task 2",
+                  "submission_count": 104
+                },
+                {
+                  "official_phase_name": "Closed Testing Phase Task 1",
+                  "submission_count": 18
+                },
+                {
+                  "official_phase_name": "Closed Testing Phase Task 2",
+                  "submission_count": 13
+                },
+                {
+                  "official_phase_name": "Post-challenge Testing Phase Task 1",
+                  "submission_count": 11
+                },
+                {
+                  "official_phase_name": "Post-challenge Testing Phase Task 2",
+                  "submission_count": 0
+                }
+              ],
+              "excerpt": "",
+              "snapshot_date": "2026-10-02"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

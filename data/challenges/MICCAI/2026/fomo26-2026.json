@@ -1,0 +1,924 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "fomo26-2026",
+    "challenge_name": "Foundation Model Challenge for Brain MRI.",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "Brain"
+      ],
+      "diseases": [
+        "Brain infarction",
+        "Meningioma",
+        "Trigeminal neuralgia",
+        "Polymicrogyria"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [
+        "Segmentation",
+        "Quantification",
+        "Representation Learning",
+        "Quality Assessment"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Infarct Classification",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Meningioma Segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Brain Age Estimation",
+          "task_family": "Quantification",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task4",
+          "official_name": "Trigeminal Neuralgia Segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task5",
+          "official_name": "Polymicrogyria Classification",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task6",
+          "official_name": "Linear Probing",
+          "task_family": "Representation Learning",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task7",
+          "official_name": "Bias and Fairness",
+          "task_family": "Quality Assessment",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ],
+      "task_families": [
+        "Classification",
+        "Quantification / measurement",
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "Quantification / measurement": "Declared task output",
+        "Segmentation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Brain"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "pretraining_scan_count": 306207
+      },
+      "modalities": [
+        "MRI"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "pretraining_dataset": "FOMO300K",
+      "center_scope": "Challenge-cohort collection described in the cited source; registered-design cohorts remain planned scope."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": "Pretraining data planned to remain available after the deadline; downstream tests are distinct.",
+      "preregistered_data_license": "Custom data usage agreement",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null,
+        "separate_tracks": {
+          "Methods": "Official FOMO300K pretraining dataset",
+          "Open": "Additional public or private data and custom pipelines permitted"
+        }
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design.",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Synapse",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "AUROC"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Normal Surface Distance (NSD)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Absolute Error (AE)",
+            "Correlation Coefficient"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 3 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task4",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Normal Surface Distance (NSD)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 4 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task5",
+          "metrics": [
+            "AUROC"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 5 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task6",
+          "metrics": [
+            "OvR F1-score",
+            "OvR AUROC"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 6 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task7",
+          "metrics": [
+            "Group disparity in macro-averaged OvR F1-score",
+            "Group disparity in macro-averaged OvR AUROC",
+            "Fairness Score"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 7 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19714192",
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Synapse",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://fomo26.github.io/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 24,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://fomo26.github.io/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/6308c0873206ec54.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19714192",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "supports": [
+            "clinical_domain",
+            "data_access.access_after_challenge",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "dataset.center_scope",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://fomo26.github.io/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/fomo26-2026.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "data_access.access_after_challenge": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit post-challenge statement; protocol statements remain qualified as planned."
+        },
+        "evaluation.platform": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container on the Synapse platform. Submission instructions will be available at https://fomo26.github.io, including example code and example Docker containers. The submission is subject to a runtime limit of 120 seconds per case on a compute node with an 80GB VRAM H100 GPU and 32 CPUs. FOMO26: Foundation Model Challenge for Brain MRI"
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container on the Synapse platform. Submission instructions will be available at https://fomo26.github.io, including example code and example Docker containers. The submission is subject to a runtime limit of 120 seconds per case on a compute node with an 80GB VRAM H100 GPU and 32 CPUs. FOMO26: Foundation Model Challenge for Brain MRI"
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container on the Synapse platform. Submission instructions will be available at https://fomo26.github.io, including example code and example Docker containers. The submission is subject to a runtime limit of 120 seconds per case on a compute node with an 80GB VRAM H100 GPU and 32 CPUs. FOMO26: Foundation Model Challenge for Brain MRI"
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container on the Synapse platform. Submission instructions will be available at https://fomo26.github.io, including example code and example Docker containers. The submission is subject to a runtime limit of 120 seconds per case on a compute node with an 80GB VRAM H100 GPU and 32 CPUs. FOMO26: Foundation Model Challenge for Brain MRI"
+        },
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "dataset.multi_center": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered downstream cohorts span multiple hospitals in Denmark for evaluation and India for finetuning; pretraining data are a separate collection."
+        },
+        "dataset.center_type": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered downstream cohorts span multiple hospitals in Denmark for evaluation and India for finetuning; pretraining data are a separate collection."
+        },
+        "dataset.center_scope": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered downstream cohorts span multiple hospitals in Denmark for evaluation and India for finetuning; pretraining data are a separate collection."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Docker container on the Synapse platform. Submission instructions will be available at https://fomo26.github.io, including example code and example Docker containers. The submission is subject to a runtime limit of 120 seconds per case on a compute node with an 80GB VRAM H100 GPU and 32 CPUs. FOMO26: Foundation Model Challenge for Brain MRI"
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19714192",
+          "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Docker container on the Synapse platform. Submission instructions will be available at https://fomo26.github.io, including example code and example Docker containers. The submission is subject to a runtime limit of 120 seconds per case on a compute node with an 80GB VRAM H100 GPU and 32 CPUs. FOMO26: Foundation Model Challenge for Brain MRI"
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://fomo26.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/fomo26-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://fomo26.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/fomo26-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://fomo26.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/fomo26-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_after_challenge",
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "dataset.center_scope",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/fomo26-2026.json",
+          "_collection/verification_20261003/literature_context/fomo26-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "2026官网明确报名后获得预训练和微调数据访问。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026官网明确报名后获得预训练和微调数据访问。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/c1651adb40012cad.json",
+          "url": "https://fomo26.github.io/#rules"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/fomo26-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid",
+      "task_families": [
+        "Classification",
+        "Quantification / measurement",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "Quantification / measurement",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "Quantification / measurement",
+        "Segmentation"
+      ],
+      "previous_emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "Quantification / measurement": "Declared task output",
+        "Segmentation": "Declared task output"
+      },
+      "note_zh": "七项下游任务包含分类、分割、脑龄回归及线性探测/公平性；线性探测沿用分类输出，公平性不重复建立任务家族。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://fomo26.github.io/",
+          "local_source": "_collection/sources_other/6308c0873206ec54.json",
+          "sha256": "11e72b04422900ab2533399c780fd40ab03f5ab25cdd52639f76a8c36ccc891c"
+        },
+        {
+          "url": "https://zenodo.org/records/19714192",
+          "local_source": "_collection/sources_other/protocol-19714192.txt",
+          "sha256": "24cb0fac6054103a846140d018477ee1a7fd04aa5da66062548c10592b10b686"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cerebrovascular",
+            "Congenital / developmental",
+            "Other"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Brain infarction",
+        "Meningioma",
+        "Trigeminal neuralgia",
+        "Polymicrogyria"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "2026方案单独列出梗死、脑膜瘤、三叉神经痛及多小脑回任务，不能只沿用2025三任务范围。",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/19714192",
+          "local_source": "_collection/sources_other/protocol-19714192.txt"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "2026方案单独列出梗死、脑膜瘤、三叉神经痛及多小脑回任务，不能只沿用2025三任务范围。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2026/fomo26-2026.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Pretrain provided by the organizers: a highly heterogeneous dataset of brain MRI scans, aggregated from 920 sources from [1]. Finetune dataset: Bodyscan Diagnostics, Indore, India. The dataset contains data from multiple hospitals related to Bodyscan Diagnostics and has been provided by the Copenhagen-based startup Cerebriu. Validation and test datasets: Rigshospitalet, Copenhagen; Bispebjerg & Frederiksberg Hospital, Copenhagen; Nordsjællands Hospital, Hillerød; Bornholms Hospital, Rønne; Amager & Hvidovre Hospital, Copenhagen; Herlev & Gentofte Hospital, Copenhagen; Region Sjællands Sygehusvæsen. All hospitals are located in The Capital Region of Page 13 of 82 Biomedical Image Analysis ChallengeS (BIAS) Initiative FOMO26: Foundation Model Challenge for Brain MRI Denmark and part of Region Sjælland. The datasets of finetuning and validation are taken from different source distributions in order to gauge the generalization abilities of the pretrained models under domain shift, while harmonizing the MRI sequence types and labeling protocols. [1] Munk*, A., Cerri*, S., Ambsdorf, J., Machnio, J., Llambias, S. N., Nersesjan, V., ... & Nielsen, M. (2025). A large-scale heterogeneous 3D magnetic resonance brain imaging dataset for self-supervised learning. arXiv preprint arXiv:2506.14432",
+              "url": "https://zenodo.org/records/19714192",
+              "snapshot": "_collection/sources_other/protocol-19714192.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nPretrain provided by the organizers: a highly heterogeneous dataset of brain MRI scans, aggregated from 920\nsources from [1].\nFinetune dataset: Bodyscan Diagnostics, Indore, India. The dataset contains data from multiple hospitals related\nto Bodyscan Diagnostics and has been provided by the Copenhagen-based startup Cerebriu.\nValidation and test datasets: Rigshospitalet, Copenhagen; Bispebjerg & Frederiksberg Hospital, Copenhagen;\nNordsjællands Hospital, Hillerød; Bornholms Hospital, Rønne; Amager & Hvidovre Hospital, Copenhagen; Herlev &\nGentofte Hospital, Copenhagen; Region Sjællands Sygehusvæsen. All hospitals are located in The Capital Region of\n\n\n                                                     Page 13 of 82                 Biomedical Image Analysis ChallengeS (BIAS) Initiative\n\f                                  FOMO26: Foundation Model Challenge for Brain MRI\n\nDenmark and part of Region Sjælland.\n\n\nThe datasets of finetuning and validation are taken from different source distributions in order to gauge the\ngeneralization abilities of the pretrained models under domain shift, while harmonizing the MRI sequence types\nand labeling protocols.\n\n\n[1] Munk*, A., Cerri*, S., Ambsdorf, J., Machnio, J., Llambias, S. N., Nersesjan, V., ... & Nielsen, M. (2025). A\nlarge-scale heterogeneous 3D magnetic resonance brain imaging dataset for self-supervised learning. arXiv\npreprint arXiv:2506.14432",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Page 35 of 82 Biomedical Image Analysis ChallengeS (BIAS) Initiative FOMO26: Foundation Model Challenge for Brain MRI Finetune dataset: Massachusetts General Hospital, a subset from MGH Wild [1]. For other datasets, see Task 1. [1] Juan E. Iglesias et al. ,SynthSR: A public AI tool to turn heterogeneous clinical brain scans into high-resolution T1-weighted images for 3D morphometry. Sci.Adv.9, eadd3607(2023). DOI:10.1126/sciadv.add3607.",
+              "url": "https://zenodo.org/records/19714192",
+              "snapshot": "_collection/sources_other/protocol-19714192.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\n\n\n\n                                                         Page 35 of 82             Biomedical Image Analysis ChallengeS (BIAS) Initiative\n\f                                  FOMO26: Foundation Model Challenge for Brain MRI\n\nFinetune dataset: Massachusetts General Hospital, a subset from MGH Wild [1]. For other datasets, see Task 1.\n\n\n[1] Juan E. Iglesias et al. ,SynthSR: A public AI tool to turn heterogeneous clinical brain scans into high-resolution\nT1-weighted images for 3D morphometry. Sci.Adv.9, eadd3607(2023). DOI:10.1126/sciadv.add3607.",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Pretrain dataset: same as Task 1. Finetuning dataset: See [1] Validation and Testing dataset: Data was acquired in routine clinical practice and retrospectively collected from multiple hospitals in the Eastern Region of Denmark, within the BrainDrugs initiative WP5 (https://braindrugs.nru.dk/). [1] https://ruor.uottawa.ca/items/298d789f-e390-43c7-a657-a823701b18b6",
+              "url": "https://zenodo.org/records/19714192",
+              "snapshot": "_collection/sources_other/protocol-19714192.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nPretrain dataset: same as Task 1.\nFinetuning dataset: See [1]\nValidation and Testing dataset: Data was acquired in routine clinical practice and retrospectively collected from\nmultiple hospitals in the Eastern Region of Denmark, within the BrainDrugs initiative WP5\n(https://braindrugs.nru.dk/).\n\n\n[1] https://ruor.uottawa.ca/items/298d789f-e390-43c7-a657-a823701b18b6",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2026/fomo26-2026.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Pretraining data planned to remain available after the deadline; downstream tests are distinct.",
+              "sources": [
+                {
+                  "type": "official conference program",
+                  "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+                  "supports": [
+                    "challenge identity",
+                    "event affiliation"
+                  ]
+                },
+                {
+                  "type": "official challenge website",
+                  "url": "https://fomo26.github.io/",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/6308c0873206ec54.json",
+                  "supports": [
+                    "challenge context",
+                    "task_profile",
+                    "clinical_domain",
+                    "homepage fields where stated"
+                  ]
+                },
+                {
+                  "type": "official preregistered challenge design",
+                  "url": "https://zenodo.org/records/19714192",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+                  "supports": [
+                    "clinical_domain",
+                    "data_access.access_after_challenge",
+                    "data_usage_mode.evidence_stage",
+                    "data_usage_mode.interpretation",
+                    "data_usage_mode.overall_paradigm",
+                    "data_usage_mode.testing.paradigm",
+                    "data_usage_mode.training.paradigm",
+                    "dataset.center_scope",
+                    "dataset.center_type",
+                    "dataset.multi_center",
+                    "evaluation.platform",
+                    "evaluation.platform_evidence_stage",
+                    "evaluation.platform_scope",
+                    "preregistered evaluation design",
+                    "submission.evidence_stage",
+                    "submission.platform",
+                    "submission.submission_type",
+                    "task_profile"
+                  ]
+                },
+                {
+                  "type": "review-derived anatomical classification of source-recorded targets",
+                  "url": "https://fomo26.github.io/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/clinical_mapping/fomo26-2026.json",
+                  "supports": [
+                    "clinical_domain.organ_system",
+                    "clinical_domain.organ_system_basis",
+                    "clinical_domain.organ_system_coding_scope"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "pretraining",
+              "value": 306207,
+              "unit": "scans",
+              "canonical_field": "dataset.population.pretraining_scan_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official preregistered challenge design",
+              "url": "https://zenodo.org/records/19714192",
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources_other/protocol-19714192.txt",
+              "supports": [
+                "clinical_domain",
+                "data_access.access_after_challenge",
+                "data_usage_mode.evidence_stage",
+                "data_usage_mode.interpretation",
+                "data_usage_mode.overall_paradigm",
+                "data_usage_mode.testing.paradigm",
+                "data_usage_mode.training.paradigm",
+                "dataset.center_scope",
+                "dataset.center_type",
+                "dataset.multi_center",
+                "evaluation.platform",
+                "evaluation.platform_evidence_stage",
+                "evaluation.platform_scope",
+                "preregistered evaluation design",
+                "submission.evidence_stage",
+                "submission.platform",
+                "submission.submission_type",
+                "task_profile"
+              ]
+            }
+          ],
+          "source_urls": "https://conferences.miccai.org/2026/en/challenges.asp; https://fomo26.github.io/; https://zenodo.org/records/19714192"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

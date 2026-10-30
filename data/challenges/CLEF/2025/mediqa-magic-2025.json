@@ -1,0 +1,568 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "mediqa-magic-2025",
+    "challenge_name": "MEDIQA-MAGIC 2025",
+    "full_name": "MEDIQA-MAGIC 2025",
+    "year": 2025,
+    "event": {
+      "conference": "CLEF 2025",
+      "event_type": "shared_task",
+      "parent_event": "ImageCLEFmedical"
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Dermatology photography"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Skin"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Dermatological lesions"
+      ],
+      "diseases": [
+        "Dermatological complaints and lesions"
+      ],
+      "clinical_context": "Consumer dermatology images and symptom questions; no subtype is inferred from illustrative examples."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "task_families": [
+        "Segmentation",
+        "VQA / multimodal QA"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Region-of-interest segmentation",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "source_url": "https://www.imageclef.org/2025/medical/mediqa"
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Clinical visual question answering",
+          "task_family": "VQA / multimodal QA",
+          "task_families": [
+            "VQA / multimodal QA"
+          ],
+          "source_url": "https://www.imageclef.org/2025/medical/mediqa"
+        }
+      ],
+      "task_role_scope": {
+        "Segmentation": "Declared task output",
+        "VQA / multimodal QA": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": true,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "Dermatology photography"
+      ],
+      "population": null,
+      "source_reference": "https://www.imageclef.org/2025/medical/mediqa",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Ambiguous",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "AI4MediaBench",
+      "metrics": null,
+      "source_reference": "https://www.imageclef.org/2025/medical/mediqa",
+      "execution_note": "Service and artifact descriptions do not by themselves establish execution location or automation."
+    },
+    "submission": {
+      "submission_type": "ZIP containing data_cvqa_sys.json and masks_preds TIFF masks",
+      "platform": "AI4MediaBench",
+      "source_reference": "https://www.imageclef.org/2025/medical/mediqa",
+      "runtime_limits": null
+    },
+    "schedule": {
+      "edition_year": 2025,
+      "source_reference": "https://www.imageclef.org/2025/medical/mediqa"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://www.imageclef.org/2025/medical/mediqa",
+      "supporting_sources": [
+        "https://www.imageclef.org/2025/medical"
+      ]
+    },
+    "notes": [
+      "2025 tasks differ from 2024: segmentation plus closed-answer clinical VQA."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.imageclef.org/2025/medical/mediqa",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/99fca617bd902e87.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.imageclef.org/2025/medical",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/d4ffa67f6b7acdb7.json",
+          "http_status": 200
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields"
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py"
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Account registration",
+      "data_model_flow": "data-to-model",
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "record_relationships": {
+      "analytical_unit": "named_subchallenge_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": null,
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "The edition-specific ImageCLEF instructions link data distribution to account registration, the mandatory terms form and task enrollment. An additional individual approval requirement is not explicit in the reviewed edition instructions."
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "ImageCLEFmed MEDIQA-MAGIC | ImageCLEF / LifeCLEF -  Multimedia Retrieval in CLEF",
+          "local_source": "_collection/other_venues_audit_20261024/sources/99fca617bd902e87.json",
+          "url": "https://www.imageclef.org/2025/medical/mediqa",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home › ImageCLEF 2025 › ImageCLEFmedical ImageCLEFmed MEDIQA-MAGIC Motivation The rapid development of telecommunication technologies, the increased demands for healthcare services, and recent pandemic needs, have accelerated the adoption of remote clinical diagnosi [...] ct details. Evaluation Code is given here: https://github.com/wyim/ImageCLEF-MAGIC-2025 Participant registration Please refer to the general ImageCLEF registration instructions Preliminary Schedule 10.01.2025 : Registration opens 10.02.2025 : Release of the training & validation sets of the Segmentation subtask 10.03.2025 : Release of the training & validation sets of the VQA subtask 25.04.2025 : Registration closes 28.04.2025 : Release of the test sets 09.05.2025 : Run submission deadline 16.05.2025 : Release of the processed results by the task organizers 30.05.2025 : Submission of participant papers [CEUR-WS] 27.06.2025 : Notification of acceptance 07.07.2025 : Camera ready copy of participant papers"
+        },
+        {
+          "section": "ImageCLEFmedical | ImageCLEF / LifeCLEF -  Multimedia Retrieval in CLEF",
+          "local_source": "_collection/other_venues_audit_20261024/sources/d4ffa67f6b7acdb7.json",
+          "url": "https://www.imageclef.org/2025/medical",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home › ImageCLEF 2025 ImageCLEFmedical ImageCLEF has included medical tasks every year since 2004. Since 2019 we focus each of the medical tasks to one specific problem but combine them as a single task with several subtasks. Our hope is that this approach helps inf"
+        },
+        {
+          "section": "Official edition data/registration instructions",
+          "local_source": "_collection/access_flow_review_20261024/sources/d340c67ec2fd4176.json",
+          "url": "https://www.imageclef.org/2025#registration",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home ImageCLEF 2025 Tweets by @imageclef Motivation Given the successful ImageCLEF 2003-2024 benchmarking campaigns, ImageCLEF 2025 edition ( https://www.imageclef.org/ , https://www.facebook.com/imageclef , https://twitter.com/imageclef ) will continue to evaluate  [...] ing, classification and retrieval of multimodal data, with its main objective residing in providing access to large collections of multimodal data for multiple usage scenarios and domains. Considering the experience of the last editions, ImageCLEF 2025 will continue approaching a diversity of applications, namely medical, social media and Internet, and recommending, giving to the participants the opport [...] https://ceur-ws.org/Vol-3740/ ). Selected contributions among the participants, will be invited for publication in the following year in the Springer Lecture Notes in Computer Science (LNCS) together with the annual lab overviews (e.g., 2024 https://link.springer.com/book/10.1007/978-3-031-71908-0 ). The target audience for ImageCLEF 2025 is mainly expected to be from the multimodal data annotation and  [...] ing task webpage for specific dates. A (tentative) global schedule can be found below: 20.12.2025 : registration opens for all ImageCLEF tasks 25.04.2025 : registration closes for all ImageCLEF tasks 24.01.2025 : development data release starts (depends on the task) 14.03.2025 : test data release starts (depends on the task) 10.05.2025 : deadline for submitting the participants runs (depends on the task) 17.05.2025 : release of the processed results by the task organizers (depends on the task) 30.05.2025 : deadline for submission of working notes papers by the participants 27.06.2025 : noti [...] d workshops on a broad range of challenges in the fields of multilingual and multimodal information access evaluation, and a set of benchmarking activities carried in various labs designed to test different aspects of mono and cross-language information retrieval systems. More details about the conference can be found here . Also there is more information about the CLEF Initiative . Programme of ImageCL [...] ncept Detection and Interpretable Caption Generation\" - Hendrik Damm/Tabea M. G. Pakull Participant registration ImageCLEF is an evaluation lab and starting from this edition it will be managed by the ImageCLEF team through the AI4Media benchmarking platform (based on Codalab). The main features of the platform are: online registration system, end-user agreement submission, data distribution, a leaderboard system as well as interaction with participants, reducing the administrative overhead. The platform is now up for participants' registration. https://ai4media-bench.aimultimedialab.ro/competitions/public/ Please note that the registration is a two-step process. In order to participate in an ImageCLEF task, you must first accept its specific terms and conditions, which are listed on the 'Get Started -> Terms' tab of the tasks hosted on the AI4MediaBench platform. The registration form is mandatory. Within the form, you have the option to choose one or more ImageCLEF tasks from the provided list. Once the form is completed, your application will be applicable to all selected tasks hosted on AI4MediaBench. After completing the form, you must apply to the tasks you have selected in the terms and conditions via the 'Participate' tab of the tasks. Please do not register separately on the official CLEF 2025 registration page. Registrations on the AI4Media Bench Platform will automatically be transmitted to CLEF. In case the sub(task) is not present on the AI4Media Bench Platform, please contact the task responsibles (listed on the bottom of each task page). The Tasks ImageCLEF 2025 proposes 4 main tasks: (9th edition) ImageCLEFmedic"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 300,
+              "unit": "instances",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 56,
+              "unit": "instances",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 100,
+              "unit": "instances",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Not applicable",
+          "value": null
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Ambiguous",
+          "value": {
+            "value": 6,
+            "unit": "submitting teams",
+            "comparable": false,
+            "details": "Text reports6 submitting teams but Table1 lists7; retain discrepancy."
+          }
+        }
+      },
+      "review_note": "Each query averages3 images; do not multiply into exact image count. Team number internally inconsistent.",
+      "sources": [
+        {
+          "url": "https://www.imageclef.org/2025/medical/mediqa",
+          "local_source": "_collection/other_venues_audit_20261024/sources/99fca617bd902e87.json"
+        },
+        {
+          "url": "https://www.imageclef.org/2025/medical",
+          "local_source": "_collection/other_venues_audit_20261024/sources/d4ffa67f6b7acdb7.json"
+        },
+        {
+          "url": "https://ceur-ws.org/Vol-4038/paper_172.pdf",
+          "local_source": "_collection/resource_audit_20261025/online/8e1b04d0500fa6a0.txt"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/mediqa-magic-2025.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Skin"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Dermatological lesions"
+      ],
+      "specific_diseases": [
+        "Dermatological complaints and lesions"
+      ],
+      "review_note": "Consumer dermatology images and symptom questions; no subtype is inferred from illustrative examples.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/99fca617bd902e87.json",
+          "url": "https://www.imageclef.org/2025/medical/mediqa"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/d4ffa67f6b7acdb7.json",
+          "url": "https://www.imageclef.org/2025/medical"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/8e1b04d0500fa6a0.txt",
+          "url": "https://ceur-ws.org/Vol-4038/paper_172.pdf"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/mediqa-magic-2025.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Segmentation",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "previous_task_families": [
+        "Segmentation",
+        "VQA / multimodal QA"
+      ],
+      "previous_emerging_objectives": [
+        "VLM"
+      ],
+      "task_roles": {
+        "Segmentation": "Declared task output",
+        "VQA / multimodal QA": "Declared task output"
+      },
+      "note_zh": "皮损分割与封闭式问答两类；多选问答不再重复编码普通分类。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://www.imageclef.org/2025/medical/mediqa",
+          "local_source": "_collection/other_venues_audit_20261024/sources/99fca617bd902e87.json",
+          "sha256": "729d6dda0892213ecc86f1700f197f47f70b807410e73e0e6307e46d241b61c9"
+        },
+        {
+          "url": "https://www.imageclef.org/2025/medical",
+          "local_source": "_collection/other_venues_audit_20261024/sources/d4ffa67f6b7acdb7.json",
+          "sha256": "4f6220c9833ccc85899e35b624f937b5f444dff76521c78b832bac8f1c2526dd"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Ambiguous",
+      "terms_documented": false,
+      "detail_level": "Task-specific agreement unresolved",
+      "licence_names": [],
+      "scope": "Competition data",
+      "agreement_required": null,
+      "summary_zh": "2025 官方注册说明要求接受任务 Get Started → Terms 条款、填写注册表并在 Participate 申请。条款接受流程已明确，但本任务独立 EUA 签署要求及完整数据许可仍未取得。 官方任务页禁止在训练或推理时使用 DermaVQA 2024 的答案；此为竞赛协议限制，不代替再分发许可。",
+      "qualifications": [
+        "本轮分开记录协议要求、全文可读性、数据适用范围与再利用条款；有条款线索不等于已取得全部数据权利。"
+      ],
+      "scoped_terms": [
+        {
+          "scope": "2025 task registration",
+          "text": "先接受任务条款、完成必填注册表，再申请参加；通用流程不证明每个任务均另签独立 EUA。",
+          "source": {
+            "local_source": "_collection/data_license_audit_20261025/sources/2454fb3b1a820d79.json",
+            "url": "https://www.imageclef.org/2025"
+          }
+        },
+        {
+          "scope": "Training/inference protocol",
+          "text": "不得使用 DermaVQA 2024 的答案进行训练或推理；这一竞赛约束不证明商业或再分发权限。",
+          "source": {
+            "url": "https://www.imageclef.org/2025/medical/mediqa",
+            "local_source": "_collection/data_license_followup_20261025/sources/99fca617bd902e87.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/2454fb3b1a820d79.json",
+          "url": "https://www.imageclef.org/2025"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/99fca617bd902e87.json",
+          "url": "https://www.imageclef.org/2025/medical/mediqa"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/d4ffa67f6b7acdb7.json",
+          "url": "https://www.imageclef.org/2025/medical"
+        },
+        {
+          "local_source": "_collection/access_flow_review_20261024/sources/d340c67ec2fd4176.json",
+          "url": "https://www.imageclef.org/2025#registration"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/8e1b04d0500fa6a0.txt",
+          "url": "https://ceur-ws.org/Vol-4038/paper_172.pdf"
+        },
+        {
+          "url": "https://www.imageclef.org/2025/medical/mediqa",
+          "local_source": "_collection/data_license_followup_20261025/sources/99fca617bd902e87.json"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability.",
+      "agreement_full_text_verified": "Not verified",
+      "dataset_scope_verified": "Not verified for complete licence terms",
+      "reuse_terms_verified": "Not verified",
+      "followup_review": "data_license_followup_20261025"
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Dermatology photography"
+      ],
+      "harmonized_modalities": [
+        "Clinical photography"
+      ],
+      "video_format_documented": false,
+      "note": "Explicit synonym/group mapping; preserve original clinical_domain labels.",
+      "sources": [
+        {
+          "url": "https://www.imageclef.org/2025/medical/mediqa",
+          "local_source": "_collection/other_venues_audit_20261024/sources/99fca617bd902e87.json"
+        },
+        {
+          "url": "https://www.imageclef.org/2025/medical",
+          "local_source": "_collection/other_venues_audit_20261024/sources/d4ffa67f6b7acdb7.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Ambiguous",
+          "prior_narrow_state": "Ambiguous",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

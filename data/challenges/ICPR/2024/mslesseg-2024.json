@@ -1,0 +1,502 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "mslesseg-2024",
+    "challenge_name": "MSLesSeg 2024",
+    "full_name": "MSLesSeg 2024",
+    "year": 2024,
+    "event": {
+      "conference": "ICPR 2024",
+      "event_type": "conference_challenge",
+      "parent_event": null
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "White matter lesions"
+      ],
+      "diseases": [
+        "Multiple sclerosis"
+      ],
+      "clinical_context": "Inflammatory/demyelinating disease; family does not imply infection."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Multiple sclerosis lesion segmentation",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "source_url": "https://iplab.dmi.unict.it/mfs/ms-les-seg/"
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "population": null,
+      "source_reference": "https://iplab.dmi.unict.it/mfs/ms-les-seg/",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY 4.0. 2024 官方赛事页面明确声明数据集及标注采用 CC BY 4.0；保留其声明性质。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": null,
+      "metrics": [
+        {
+          "name": "Dice"
+        }
+      ],
+      "source_reference": "https://iplab.dmi.unict.it/mfs/ms-les-seg/",
+      "execution_note": "Organizer scoring of masks; no evidence of Grand Challenge, CodaLab or container execution.",
+      "model_executor": "Participants",
+      "scoring_executor": "Organizers"
+    },
+    "submission": {
+      "submission_type": "Predicted segmentation masks with method PDF",
+      "platform": "Email to organizers with downloadable repository link",
+      "source_reference": "https://iplab.dmi.unict.it/mfs/ms-les-seg/",
+      "runtime_limits": null,
+      "submission_contact": "alessia.rondinella@phd.unict.it",
+      "primary_artifacts": [
+        "NIfTI prediction masks"
+      ],
+      "additional_materials": [
+        {
+          "artifact": "Method PDF in DESC/",
+          "purpose": "Method description"
+        }
+      ],
+      "format_by_task_or_phase": [
+        {
+          "archive": "TEAMNAME.zip",
+          "prediction_pattern": "MASKS/Px_PRED.nii.gz",
+          "method_description": "PDF in DESC/",
+          "delivery": "Email containing downloadable repository link"
+        }
+      ],
+      "execution": "Participants run segmentation inference; organizers score submitted masks. DICE_EVAL is supplied for consistency checks.",
+      "portal_review_source": "_collection/portal_classification_review_20261024/user_review.txt",
+      "additional_artifacts": [
+        {
+          "artifact": "Method PDF in DESC/",
+          "purpose": "Method description"
+        }
+      ]
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "source_reference": "https://iplab.dmi.unict.it/mfs/ms-les-seg/"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://iplab.dmi.unict.it/mfs/ms-les-seg/",
+      "supporting_sources": [
+        "https://iapr.org/docs/newsletters/2024-Vol-46-No-4.pdf",
+        "https://arxiv.org/abs/2410.07924"
+      ]
+    },
+    "notes": [
+      "Official ICPR 2024 competition; the later MSLesSeg dataset publication does not create a new edition."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://iplab.dmi.unict.it/mfs/ms-les-seg/",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/9fc97658c8273efd.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://iapr.org/docs/newsletters/2024-Vol-46-No-4.pdf",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/icpr2024_official_list.pdf",
+          "http_status": null
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://arxiv.org/abs/2410.07924",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/27e419475a32e015.json",
+          "http_status": 200
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields"
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py",
+      "portal_classification_review": {
+        "date": "2026-10-24",
+        "local_review": "_collection/portal_classification_review_20261024/user_review.txt",
+        "basis": "Human-supplied source-linked review; organizer BraTS reply and ICPR programme also checked directly."
+      }
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Account registration",
+      "data_model_flow": "data-to-model"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": "Organizer methods-and-results paper",
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "Registered teams receive training and test download links by email and access a private participant area; no additional approval criterion is stated."
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "MSLesSeg 2024",
+          "local_source": "_collection/other_venues_audit_20261024/sources/9fc97658c8273efd.json",
+          "url": "https://iplab.dmi.unict.it/mfs/ms-les-seg/",
+          "excerpt": "@gmail.com (UOC Neurologia, Azienda Ospedaliera Cannizzaro, Catania, Italy) Important dates List of registered teams Team Name Organization/Institution 1 MSUniCaTeam Dept of Mathematics and Computer Science, University of Cagliari 2 SJTU_SEIEE_2-426Lab Department of Automation, Shanghai Jiao Tong University, Shanghai, China 3 LST Laboratory of Imaging Technologies, Faculty of Electrical Engineering, Unive [...] Data Science Lab UOC - Universitat Oberta de Catalunya An email with a proper link for training set download will be sent to each teams Training-set structure Px (patient) Tx (timpoint) Px_Tx_T1.nii.gz (T1-weighted) Px_Tx_T2.nii.gz (T2-weighted) Px_Tx_FLAIR.nii.gz (FLAIR) Px_Tx_MASK.nii.gz (Ground-Truth segmentation mask) A link will be sent to the team email with a proper link for test set download Test-set structure Px (patient) Px_T1.nii.gz (T1-weighted) Px_T2.nii.gz (T2-weighted) Px_FLAIR.nii.gz (FLAIR) To ensure the Dice score is calculated correctly please use the following script DICE_EVAL . All the instructions on how to use it are described inside the README file. Upon completion of the challenge, participants are required to submit their results via email (from the registered email address) to the main contact (alessia.rondinella@phd.unict.it). The submission email should include a link to a repository with the following modality: Subject: MSLesSeg Challenge Results TEAMNAME The repository must contain a zip file to download named TEAMNAME.zip The zip file must be organized as follow: Directory DESC containing a PDF file with a brief summary of the segmentation approach used (1-2 pages) Directory MASKS containing a list of files named Px_PRED.nii.gz. 3D masks must have the same spatial resolutions (182,218,182) and ori [...] rength of our initiative lies in the substantial number of patients and annotated scans, surpassing publicly available datasets traditionally used for MS lesion segmentation. Furthermore, our dataset is distinctively advantageous as it is representative of real-world scenarios, featuring authentic MS patients, and is acquired \"in everyday practice\", reflecting a heterogeneous acquisition environment wit [...] ation of MS lesions for an input MRI data series (T1-w, T2-w and FLAIR) not seen by the model under training. It is planned to provide a competition website/platform that will be used for the duration of the competition, which will remain active thereafter. The platform will contain a private area for participants; in this area participants can download the training/validation/test set, upload 1-2 page summary describing the methodology and results (segmentation masks obtained on the test set). In this competition, only fully automatic methods allowed. All methods may provide an automatic segmentation of the MS lesions. The data used in the training phase is limited to that provided by the challenge in order to compare methods in the same environment, so no additional data are allowed. Since this is the first challenge, it is not possible to estimate the exact number of participants. Given the recent interest in the context of multiple sclerosis lesion segmentation, we are c [...] rticipant which upload the 1-2 page summary and at least one result file. All results will be shown publicly on the competition website, which will be updated during the open training round and announced on the final round phases of the closed test round of the task. Dataset The dataset will be public. All the details about the dataset are available on the site used for the challenge. The dataset contains MRI scans of patients acquired at different timepoints and labelled scans and has received the approval of the ethics committee of the hospitals where the scans were acquired. The dataset and t [...] -processing on the MRIs: the original DICOM file was anonymised and converted to Nifti. It was then registered with the standard MNI-152 template. Finally, skull-stripping was performed, in order to extract only the brain tissue. All the annotations were produced after the registration of MRI with MNI-152 template from the FLAIR sequences, where the lesions appear hyperintense relative to the white matter. T1- and T2-weighted scans were used to confirm the presence of the lesions. Evaluation Participants will develop their methods using the training/validation dataset provided in the first phase. At the end of the first phase, they will evaluate the results of their method on the provided test set, which will be released in the second phase. Subsequently, participants will have to submit the results obtained on the test set (the predicted segmentation masks) and produce a 1-2 page summary describing their proposed method. The submission instruction will be available after the approval of the competition. Participa [...] ct delineation is critical. The Dice score value is between 0 and 1, where 0 means that there is no agreement between the predicted mask and the ground-truth mask, while a value of 1 means that the predicted mask and the ground-truth mask are completely overlapping. Specifically, we will calculate the Dice score for each segmentation mask generated by their proposed method (one mask for each data series in"
+        },
+        {
+          "section": "[2410.07924] ICPR 2024 Competition on Multiple Sclerosis Lesion Segmentation -- Methods and Results",
+          "local_source": "_collection/other_venues_audit_20261024/sources/27e419475a32e015.json",
+          "url": "https://arxiv.org/abs/2410.07924",
+          "excerpt": "m: Alessia Rondinella [ view email ] [v1] Thu, 10 Oct 2024 13:49:47 UTC (3,137 KB) Full-text links: Access Paper: View a PDF of the paper titled ICPR 2024 Competition on Multiple Sclerosis Lesion Segmentation -- Methods and Results, by Alessia Rondinella and 7 other authors View PDF HTML (experimental) TeX Source view license Current browse context: eess.IV < prev | next > new | recent | 2024-10 Change "
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "source",
+              "value": 90,
+              "unit": "patients",
+              "scope": "Longitudinal MRI cohort",
+              "approximate": true,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "Italy"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Multiple hospitals in Catania; 1–5 time points per patient. Registered team list not actual submitted team count.",
+      "sources": [
+        {
+          "url": "https://iplab.dmi.unict.it/mfs/ms-les-seg/",
+          "local_source": "_collection/other_venues_audit_20261024/sources/9fc97658c8273efd.json"
+        },
+        {
+          "url": "https://iapr.org/docs/newsletters/2024-Vol-46-No-4.pdf",
+          "local_source": "_collection/other_venues_audit_20261024/icpr2024_official_list.txt"
+        },
+        {
+          "url": "https://arxiv.org/abs/2410.07924",
+          "local_source": "_collection/other_venues_audit_20261024/sources/27e419475a32e015.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/mslesseg-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Inflammatory / infectious"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "White matter lesions"
+      ],
+      "specific_diseases": [
+        "Multiple sclerosis"
+      ],
+      "review_note": "Inflammatory/demyelinating disease; family does not imply infection.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/9fc97658c8273efd.json",
+          "url": "https://iplab.dmi.unict.it/mfs/ms-les-seg/"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/icpr2024_official_list.txt",
+          "url": "https://iapr.org/docs/newsletters/2024-Vol-46-No-4.pdf"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/27e419475a32e015.json",
+          "url": "https://arxiv.org/abs/2410.07924"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/mslesseg-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY 4.0"
+      ],
+      "scope": "Competition data",
+      "agreement_required": null,
+      "summary_zh": "2024 官方赛事页面明确声明数据集及标注采用 CC BY 4.0；保留其声明性质。",
+      "qualifications": [],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/9fc97658c8273efd.json",
+          "url": "https://iplab.dmi.unict.it/mfs/ms-les-seg/"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "ICPR/2024/mslesseg-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "Italy"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://iplab.dmi.unict.it/mfs/ms-les-seg/",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/9fc97658c8273efd.json"
+                },
+                {
+                  "url": "https://iapr.org/docs/newsletters/2024-Vol-46-No-4.pdf",
+                  "local_source": "_collection/other_venues_audit_20261024/icpr2024_official_list.txt"
+                },
+                {
+                  "url": "https://arxiv.org/abs/2410.07924",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/27e419475a32e015.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/mslesseg-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

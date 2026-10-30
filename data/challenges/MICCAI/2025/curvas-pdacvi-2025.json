@@ -1,0 +1,542 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "curvas-pdacvi-2025",
+    "challenge_name": "CURVAS-Pancreatic Adenocarcinoma Vascular Invasion",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "Abdominal CT"
+      ],
+      "body_region": [
+        "Pancreas"
+      ],
+      "organ_system": [
+        "Digestive system"
+      ],
+      "organs_or_structures": [
+        "PDAC",
+        "Portal vein",
+        "Superior mesenteric vein",
+        "Superior mesenteric artery",
+        "Celiac trunk",
+        "Aorta"
+      ],
+      "diseases": [
+        "Pancreatic ductal adenocarcinoma"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Probabilistic PDAC segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "Probabilistic segmentation",
+          "input": [
+            "CT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Binary PDAC mask and probability map"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": 125,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 40,
+        "validation_count": 5,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "CT",
+        "Five independent PDAC annotations",
+        "STAPLE consensus",
+        "Five vascular-structure labels"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "planned_test_cases": 80,
+        "final_test_cases": null,
+        "note": "Some planned test cases discarded; final retained count not verified."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY 4.0. 官方 Zenodo 数据记录明确 CC BY 4.0；仅适用于该发布数据集。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; targeted access backfill",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Training set only; validation/test access not inferred",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Public multi-rater datasets allowed. PANORAMA training batches 1–3 prohibited; only batch 4 allowed."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Classic DSC against STAPLE consensus",
+            "Thresholding DSC",
+            "Mean five-rater ECE",
+            "Volume CRPS",
+            "Vascular-invasion Wasserstein distance (five vessels)"
+          ],
+          "ranking": "Mean of the individual metric rankings; invasion distributions evaluated over axial, sagittal and coronal planes."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": [
+        {
+          "task_id": "task1",
+          "content": "Binary PDAC mask and probabilistic PDAC map"
+        }
+      ]
+    },
+    "schedule": {
+      "final_submission_deadline": "2025-09-03",
+      "deadline_timezone": "CEST"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 62,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Sanity Check Phase",
+            "submission_count": 125
+          },
+          {
+            "official_phase_name": "Validation Phase",
+            "submission_count": 55
+          },
+          {
+            "official_phase_name": "Testing Phase",
+            "submission_count": 32
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://curvas-pdacvi.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Vascular structures are supplied for invasion evaluation; teams are not required to predict vascular masks. Ignore the copied CURVAS2024 winners footer when assigning this 2025 edition."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://curvas-pdacvi.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/34-17b910257080.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas-pdacvi.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/34-1c7d8c4024ac.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas-pdacvi.grand-challenge.org/curvas-pdacvi/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/34-41496a245e8d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas-pdacvi.grand-challenge.org/dataset/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/34-48e526d92937.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas-pdacvi.grand-challenge.org/metrics-evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/34-529eaefbe563.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas-pdacvi.grand-challenge.org/miccai-2025/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/34-7b1ab2b7215c.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://curvas-pdacvi.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/34-b07579a7ff9d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas-pdacvi.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/34-ea4ffff57f4b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas-pdacvi.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/34-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "evaluation.thresholding_DSC: prose says thresholds 0.1–0.8 but six values; verify evaluator code.",
+        "dataset: reduced final test size and training-data license not verified."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/curvas-pdacvi-2025.json",
+          "_collection/verification_20261003/literature_context/curvas-pdacvi-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "当届数据页链接2025年6月公开的Zenodo训练数据；仅训练部分按公开下载编码，验证／测试访问另列。官网与数据卡的部分样本数量有差异，本次不据此修改数据规模。",
+        "scope": "Training set only; validation/test access not inferred",
+        "evidence_basis": "Primary protocol / dataset metadata checked on 2026-10-24; no medical images downloaded",
+        "source_urls": [
+          "https://curvas-pdacvi.grand-challenge.org/dataset/",
+          "https://zenodo.org/records/15720085"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-24 access backfill: 当届数据页链接2025年6月公开的Zenodo训练数据；仅训练部分按公开下载编码，验证／测试访问另列。官网与数据卡的部分样本数量有差异，本次不据此修改数据规模。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/curvas-pdacvi-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://curvas-pdacvi.grand-challenge.org/dataset/",
+          "local_source": "_collection/access_backfill_20261024/sources/48e526d929377c66.json",
+          "review_date": "2026-10-24",
+          "section": "Development-data access; edition and phase scope retained"
+        },
+        {
+          "url": "https://zenodo.org/records/15720085",
+          "local_source": "_collection/access_backfill_20261024/sources/794ea58694f5643d.json",
+          "review_date": "2026-10-24",
+          "section": "Development-data access; edition and phase scope retained"
+        },
+        {
+          "local_source": "_collection/access_backfill_20261024/user_evidence.txt",
+          "url": "",
+          "section": "User-supplied follow-up; classification checked against the linked primary sources"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY 4.0"
+      ],
+      "scope": "Explicitly identified competition rules or named source data; not all components implied",
+      "agreement_required": null,
+      "summary_zh": "官方 Zenodo 数据记录明确 CC BY 4.0；仅适用于该发布数据集。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "85 Resource type Dataset Publisher Zenodo Conference Medical Image Computer and Computer Assisted Intervention (MICCAI) , 23-27 September 2025 Rights License Creative Commons Attribution 4.0 International The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited. Read more Citation Export Technical metadata Created June 23, 2025 Modified November 7, 2025 Jump up About About Policies Infrastructure Principles Projects Roadmap Contact Blog Blog Support Help FAQ Developers REST API OAI-PMH Contribute GitHub Donate Funded by Powered by CERN Data Centre & Inve",
+          "source": {
+            "url": "https://zenodo.org/records/15720085",
+            "local_source": "_collection/access_backfill_20261024/sources/794ea58694f5643d.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": " Assisted Intervention (MICCAI) , 23-27 September 2025 Rights License Creative Commons Attribution 4.0 International The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited. Read more Citation Export Technical metadata Created June 23, 2025 Modified November 7, 2025 Jump up About About Policies Infrastructure Principles Projects Roadmap Contact Blog Blog Support Help FAQ Developers REST API OAI-PMH Contribute GitHub Donate Funded by Powered by CERN Data Centre & InvenioRDM Status Privacy policy Cookie policy Terms of Use This site uses cookies. Find out",
+          "source": {
+            "url": "https://zenodo.org/records/15720085",
+            "local_source": "_collection/access_backfill_20261024/sources/794ea58694f5643d.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "er 2025 Rights License Creative Commons Attribution 4.0 International The Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited. Read more Citation Export Technical metadata Created June 23, 2025 Modified November 7, 2025 Jump up About About Policies Infrastructure Principles Projects Roadmap Contact Blog Blog Support Help FAQ Developers REST API OAI-PMH Contribute GitHub Donate Funded by Powered by CERN Data Centre & InvenioRDM Status Privacy policy Cookie policy Terms of Use This site uses cookies. Find out more on how we use cookies Accept all cookies ",
+          "source": {
+            "url": "https://zenodo.org/records/15720085",
+            "local_source": "_collection/access_backfill_20261024/sources/794ea58694f5643d.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15720085",
+          "local_source": "_collection/access_backfill_20261024/sources/794ea58694f5643d.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "topaneu-2026",
+    "challenge_name": "TopAneu 2026",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": "2026-09-27",
+      "location": {
+        "city": "Strasbourg",
+        "country": "France",
+        "venue": "Strasbourg Convention Center",
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CTA",
+        "MRA"
+      ],
+      "submodality": [
+        "Brain angiography"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Cerebrovascular system"
+      ],
+      "organs_or_structures": [
+        "Intracranial aneurysms"
+      ],
+      "diseases": [
+        "Intracranial aneurysm"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [
+        "Segmentation"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Vessel-specific classification",
+          "task_family": "Classification",
+          "task_subtype": "Classification",
+          "input": [
+            "CTA or MRA"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "List of aneurysm location-label integers"
+          ],
+          "granularity": "3D scan",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Vessel-specific segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "Multi-class aneurysm segmentation",
+          "input": [
+            "CTA or MRA"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "MHA uint8 mask with values 0–52"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "Retrospective clinical angiographic cohort",
+      "routine_clinical_practice": true,
+      "anonymized": true,
+      "ethical_approval": true,
+      "center_type": null,
+      "multi_center": true,
+      "international": true,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 415,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "3D CTA/MRA",
+        "52-class location masks and lists",
+        "Aneurysm type masks",
+        "Silver-standard 36-class vessel masks (training auxiliary)"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "train_unique_patients": 408,
+        "count_unit": "415 scans from 408 patients; training includes four center-ID groups.",
+        "batch1": {
+          "MRA_center2": 40,
+          "CTA_center4": 58
+        },
+        "batch2": {
+          "MRA_center1": 199,
+          "CTA_center2": 47,
+          "CTA_center4": 4,
+          "MRA_public_center5": 68
+        },
+        "test": "Center-3 UMC Utrecht reserved for test; final size not verified."
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": true,
+      "commercial_use_allowed_without_permission": false,
+      "commercial_permission_required": true,
+      "redistribution_allowed": null,
+      "license_or_terms": "Open noncommercial use with source attribution; commercial use requires data-owner permission (Swiss open-data terms).",
+      "access_after_challenge": null,
+      "access_scope": "Released SwitchDrive training data under Swiss open-use terms: attribution and permission for commercial use; hidden test data excluded"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "External data permitted with disclosure. Teams invited to the manuscript must additionally provide a model trained on TopAneu-only data for fair comparison."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Precision",
+            "Recall",
+            "F1",
+            "Matthews correlation coefficient"
+          ],
+          "ranking": "Accumulate TP/TN/FP/FN across images for each vessel-location class; compute class metrics and macro-average ignoring NaNs. Repository ranking section specifies mean rank across class-averaged metrics."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Precision",
+            "Recall",
+            "F1",
+            "Matthews correlation coefficient",
+            "DSC",
+            "HD95",
+            "Volumetric similarity"
+          ],
+          "ranking": "Classification counts from class-presence lists accumulated over cases. Segmentation metrics averaged across images per class, then classes, ignoring NaNs. Mean metric rank determines leaderboard."
+        }
+      ],
+      "cross_task_rule": "Task 2 masks automatically converted to location lists and scored on Task 1 leaderboard."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": 12,
+        "max_ram_gb": 32,
+        "reserved_ram_gb": 1,
+        "gpu": "NVIDIA T4",
+        "gpu_vram_gb": 16
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": 2,
+        "final_submissions_per_team": 1,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "batch1_training_release": "2026-06-15",
+      "full_training_release": "2026-07-31",
+      "final_phase_start": "2026-09-11",
+      "final_submission_deadline": "2026-09-21",
+      "deadline_timezone": "CEST 23:59"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 428,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Task 1: preliminary docker evaluation (sanity check)",
+            "submission_count": 89
+          },
+          {
+            "official_phase_name": "Task 2: preliminary docker evaluation (sanity check)",
+            "submission_count": 248
+          },
+          {
+            "official_phase_name": "Task 1: final test phase",
+            "submission_count": 18
+          },
+          {
+            "official_phase_name": "Task 2: final test phase",
+            "submission_count": 51
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://topaneu-26.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Reviewed current sources independently of the example template. 52 vessel-specific aneurysm location labels plus background; M1 early-bifurcation class added in batch 2. Approximately 850 on homepage is cohort-level, not released training size.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://topaneu-26.grand-challenge.org/data/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_access.is_public",
+            "dataset",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/11-008f097081ea.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topaneu-26.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/11-30d84f16c0b2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topaneu-26.grand-challenge.org/topaneu-26/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/11-3313e776db9f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://raw.githubusercontent.com/Bangulli/TopAneu-26/main/eval/task1/README.md",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/11-5b442ae7ba86.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://topaneu-26.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/11-6c28bff8c413.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topaneu-26.grand-challenge.org/participation/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/11-6c9e8f213c32.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topaneu-26.grand-challenge.org/tutorials/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/11-81ea6854b0fb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topaneu-26.grand-challenge.org/miccai-event-program/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/11-aab0af8b2102.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topaneu-26.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/11-e0e0192e76aa.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topaneu-26.grand-challenge.org/topaneu-switch-manuscript-submission-challenge-track/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/11-e1daa37e72be.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://raw.githubusercontent.com/Bangulli/TopAneu-26/main/eval/task2/README.md",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/11-f850cd0dcf5c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topaneu-26.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/11-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "evaluation.task1: README method aggregates detection counts, but ranking paragraph says image-first averaging; confirm final ranking implementation. Current official repository explicitly includes F1, absent from example template.",
+        "dataset: final hidden test count not verified."
+      ],
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_access.is_public"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/topaneu-2026.json",
+          "_collection/verification_20261003/literature_context/topaneu-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://topaneu-26.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/11-008f097081ea.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition source explicitly releases training data with usage terms, without inferring that hidden tests are public."
+        },
+        "data_access.is_public": {
+          "source_url": "https://topaneu-26.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/11-008f097081ea.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition source explicitly releases training data with usage terms, without inferring that hidden tests are public."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://topaneu-26.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/11-008f097081ea.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition source explicitly releases training data with usage terms, without inferring that hidden tests are public."
+        }
+      }
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2026/topaneu-2026.json",
+              "source_field": "dataset",
+              "value": {
+                "source_type": "Retrospective clinical angiographic cohort",
+                "routine_clinical_practice": true,
+                "anonymized": true,
+                "ethical_approval": true,
+                "center_type": null,
+                "multi_center": true,
+                "international": true,
+                "center_count": null,
+                "institutions_description": null,
+                "population": {
+                  "patient_count": null,
+                  "study_count": null,
+                  "scan_count": {
+                    "value": null,
+                    "approximate": null,
+                    "raw_text": null
+                  },
+                  "train_count": 415,
+                  "validation_count": null,
+                  "test_count": null
+                },
+                "modalities": null,
+                "data_components": [
+                  "3D CTA/MRA",
+                  "52-class location masks and lists",
+                  "Aneurysm type masks",
+                  "Silver-standard 36-class vessel masks (training auxiliary)"
+                ],
+                "collection_period": {
+                  "start_year": null,
+                  "end_year": null
+                },
+                "split_details": {
+                  "train_unique_patients": 408,
+                  "count_unit": "415 scans from 408 patients; training includes four center-ID groups.",
+                  "batch1": {
+                    "MRA_center2": 40,
+                    "CTA_center4": 58
+                  },
+                  "batch2": {
+                    "MRA_center1": 199,
+                    "CTA_center2": 47,
+                    "CTA_center4": 4,
+                    "MRA_public_center5": 68
+                  },
+                  "test": "Center-3 UMC Utrecht reserved for test; final size not verified."
+                }
+              },
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://topaneu-26.grand-challenge.org/data/",
+                  "supports": [
+                    "data_access",
+                    "data_access.access_scope",
+                    "data_access.access_status",
+                    "data_access.is_public",
+                    "dataset",
+                    "labels_and_targets"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/11-008f097081ea.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://topaneu-26.grand-challenge.org/organizers/",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/11-30d84f16c0b2.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://topaneu-26.grand-challenge.org/topaneu-26/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/11-3313e776db9f.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://raw.githubusercontent.com/Bangulli/TopAneu-26/main/eval/task1/README.md",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/11-5b442ae7ba86.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://topaneu-26.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/11-6c28bff8c413.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://topaneu-26.grand-challenge.org/participation/",
+                  "supports": [
+                    "data_access",
+                    "data_usage_mode",
+                    "submission",
+                    "evaluation",
+                    "publication"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/11-6c9e8f213c32.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://topaneu-26.grand-challenge.org/tutorials/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/11-81ea6854b0fb.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://topaneu-26.grand-challenge.org/miccai-event-program/",
+                  "supports": [
+                    "year",
+                    "schedule",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/11-aab0af8b2102.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://topaneu-26.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/11-e0e0192e76aa.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://topaneu-26.grand-challenge.org/topaneu-switch-manuscript-submission-challenge-track/",
+                  "supports": [
+                    "submission",
+                    "data_usage_mode"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/11-e1daa37e72be.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://raw.githubusercontent.com/Bangulli/TopAneu-26/main/eval/task2/README.md",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/11-f850cd0dcf5c.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://topaneu-26.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/11-overview.json"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 415,
+              "unit": "scans",
+              "canonical_field": "dataset.population.train_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "training",
+              "value": 408,
+              "unit": "patients",
+              "canonical_field": "dataset.split_details.train_unique_patients",
+              "scope": "Unique patients underlying the 415 scans",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://topaneu-26.grand-challenge.org/data/",
+              "supports": [
+                "data_access",
+                "data_access.access_scope",
+                "data_access.access_status",
+                "data_access.is_public",
+                "dataset",
+                "labels_and_targets"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/11-008f097081ea.json"
+            }
+          ],
+          "source_urls": "https://topaneu-26.grand-challenge.org/data/; https://topaneu-26.grand-challenge.org/organizers/; https://topaneu-26.grand-challenge.org/topaneu-26/; https://raw.githubusercontent.com/Bangulli/TopAneu-26/main/eval/task1/README.md; https://topaneu-26.grand-challenge.org/challenge/statistics/; https://topaneu-26.grand-challenge.org/participation/; https://topaneu-26.grand-challenge.org/tutorials/; https://topaneu-26.grand-challenge.org/miccai-event-program/; https://topaneu-26.grand-challenge.org/; https://topaneu-26.grand-challenge.org/topaneu-switch-manuscript-submission-challenge-track/; https://raw.githubusercontent.com/Bangulli/TopAneu-26/main/eval/task2/README.md"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

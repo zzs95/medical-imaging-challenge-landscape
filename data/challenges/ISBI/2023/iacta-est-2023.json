@@ -1,0 +1,536 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "iacta-est-2023",
+    "challenge_name": "IACTA-EST",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "ISBI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "CTA"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Neurovascular"
+      ],
+      "organs_or_structures": [
+        "Cerebral large vessels",
+        "Reperfusion outcome"
+      ],
+      "diseases": [
+        "Acute ischemic stroke",
+        "Large vessel occlusion"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [
+        "Outcome Prediction"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "LVO Detection",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "Acute stroke CTA"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "LVO probability"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Brain Reperfusion Prediction",
+          "task_family": "Outcome Prediction",
+          "task_subtype": null,
+          "input": [
+            "CTA",
+            "Clinical variables"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Successful first-pass reperfusion prediction"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Cerebral large vessels",
+        "Reperfusion outcome"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND 4.0; non-commercial scientific use.",
+      "access_after_challenge": null,
+      "review_status": "Human-confirmed 2026-10-25",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition-specific competition data access",
+      "access_by_scope": [
+        {
+          "scope": "2023 training/evaluation",
+          "category": "Individual authorization",
+          "access_steps": [
+            "Team registration",
+            "Manual approval and team activation",
+            "Access password-protected data archive"
+          ],
+          "manual_review": true
+        }
+      ]
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": false,
+        "submission_artifact": "CSV"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Organizer-run",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Area under curve (AUC)",
+            "Average precision score (mAP)"
+          ],
+          "ranking": "Final score = 0.5 × AUC + 0.5 × mAP."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Area under curve (AUC)",
+            "Average precision score (mAP)"
+          ],
+          "ranking": "Final score = 0.5 × AUC + 0.5 × mAP."
+        }
+      ],
+      "cross_task_rule": null,
+      "execution_operator": "Organizer-run",
+      "execution_mode": "Organizer scores submitted prediction files",
+      "workflow_evidence": {
+        "date": "2026-10-22",
+        "basis_type": "user_confirmed_submission_and_evaluation_workflow",
+        "summary": "IACTA-EST 2023：在线提交CSV预测结果，由组织者计算评价。 依据为2026-10-22用户人工核查反馈。",
+        "independently_verified_in_this_update": false,
+        "qualification": "Human review supplied by user; no new public source independently retrieved. Submission portal, submitted artifact and scoring operator recorded separately; no physical server or automation inferred."
+      }
+    },
+    "submission": {
+      "submission_type": "prediction file",
+      "platform": "Online submission portal (vendor unspecified)",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "submission_format": "CSV",
+      "evaluation_operator": "Organizer-run",
+      "workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "user_confirmed_submission_and_evaluation_workflow",
+        "summary": "IACTA-EST 2023：在线提交CSV预测结果，由组织者计算评价。 依据为2026-10-22用户人工核查反馈。",
+        "independently_verified_in_this_update": false,
+        "qualification": "Human review supplied by user; no new public source independently retrieved. Submission portal, submitted artifact and scoring operator recorded separately; no physical server or automation inferred."
+      }
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://lgiancauth.github.io/iacta-est-2023/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "2026-10-22 最新提交/评价流程人工核查：IACTA-EST 2023：在线提交CSV预测结果，由组织者计算评价。 依据为2026-10-22用户人工核查反馈。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 73,
+      "sources": [
+        {
+          "type": "official challenge source",
+          "url": "https://lgiancauth.github.io/iacta-est-2023/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/1f7aaccd4fad6ab4.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official conference program, browser extraction",
+          "url": "https://biomedicalimaging.org/2023/challenges/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/isbi-conference-web.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation",
+            "task_profile",
+            "clinical_domain"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://lgiancauth.github.io/iacta-est-2023/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/iacta-est-2023.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/iacta-est-2023.json",
+          "_collection/verification_20261003/literature_context/iacta-est-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "field_evidence": {
+        "clinical_domain.organ_system": {
+          "source_url": "https://lgiancauth.github.io/iacta-est-2023/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/iacta-est-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://lgiancauth.github.io/iacta-est-2023/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/iacta-est-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://lgiancauth.github.io/iacta-est-2023/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/iacta-est-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "user_confirmed_submission_and_evaluation_workflow",
+          "summary": "IACTA-EST 2023：在线提交CSV预测结果，由组织者计算评价。 依据为2026-10-22用户人工核查反馈。",
+          "independently_verified_in_this_update": false,
+          "qualification": "Human review supplied by user; no new public source independently retrieved. Submission portal, submitted artifact and scoring operator recorded separately; no physical server or automation inferred.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/four_submission_hosts_20261022_152726/ISBI/2023/iacta-est-2023.json"
+        }
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "2026-10-25人工确认：团队注册和激活后获取受密码保护的数据包；用户确认激活门槛涉及人工审批。",
+        "scope": "Edition-specific competition data access",
+        "access_by_scope": [
+          {
+            "scope": "2023 training/evaluation",
+            "category": "Individual authorization",
+            "access_steps": [
+              "Team registration",
+              "Manual approval and team activation",
+              "Access password-protected data archive"
+            ],
+            "manual_review": true
+          }
+        ],
+        "evidence_basis": "Explicit user confirmation of manual authorization; prior public workflow evidence retained, no new independent web verification",
+        "confidence": "Human-confirmed",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "训练/验证数据第一阶段发布，测试数据第二阶段发布；参赛者CSV预测由组织者评分。"
+      },
+      "decision_history": [
+        "训练/验证数据第一阶段发布，测试数据第二阶段发布；参赛者CSV预测由组织者评分。",
+        "2026-10-24 round 3: 当届Data Information说明注册、团队激活后下载加密ZIP；激活是否需要人工审核未明确。",
+        "2026-10-25人工确认：团队注册和激活后获取受密码保护的数据包；用户确认激活门槛涉及人工审批。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/1f7aaccd4fad6ab4.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/iacta-est-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_manual_20261025/user_confirmation.json",
+          "review_date": "2026-10-25",
+          "section": "Explicit human confirmation of manual approval for this edition"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        },
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Ambiguous",
+            "state": "Ambiguous",
+            "rationale": "当届Data Information说明注册、团队激活后下载加密ZIP；激活是否需要人工审核未明确。",
+            "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+            "access_by_scope": [
+              {
+                "scope": "2023 training/evaluation",
+                "category": "Activation mechanism unresolved",
+                "access_steps": [
+                  "Team registration",
+                  "Account/team activation",
+                  "Leaderboard/submission page download",
+                  "Password-protected ZIP"
+                ],
+                "manual_review": null
+              }
+            ],
+            "evidence_basis": "User-supplied edition-specific Data Information review",
+            "confidence": "Partial",
+            "source_urls": []
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "data-to-model"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02"
+  ]
+}

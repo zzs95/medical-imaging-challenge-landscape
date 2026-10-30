@@ -1,0 +1,470 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "imed-2026",
+    "challenge_name": "iMED 2026",
+    "full_name": "iMED 2026",
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "parent_event": "EndoVis 2026"
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Abdomen",
+        "Animal tissue specimens"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Abdominal organs",
+        "Ex-vivo organs",
+        "Human cadaveric and porcine anatomy"
+      ],
+      "diseases": [],
+      "clinical_context": "Mixed human-cadaver and porcine/ex-vivo surgical scenes; no live-patient disease cohort is asserted."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "task_families": [
+        "Pose estimation",
+        "Synthesis"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Relative camera pose estimation",
+          "task_family": "Pose estimation",
+          "task_families": [
+            "Pose estimation"
+          ],
+          "source_url": "https://imed-challenge.github.io/"
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Novel view synthesis",
+          "task_family": "Synthesis",
+          "task_families": [
+            "Synthesis"
+          ],
+          "source_url": "https://imed-challenge.github.io/"
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": false,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": true,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "Endoscopy"
+      ],
+      "population": null,
+      "source_reference": "https://imed-challenge.github.io/",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY. iMED 对应 EndoVis 2026 Task 6，声明 CC BY。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse",
+      "metrics": null,
+      "source_reference": "https://imed-challenge.github.io/",
+      "execution_note": "Service and artifact descriptions do not by themselves establish execution location or automation."
+    },
+    "submission": {
+      "submission_type": "Docker image submission",
+      "platform": "Synapse",
+      "source_reference": "https://imed-challenge.github.io/",
+      "runtime_limits": null
+    },
+    "schedule": {
+      "edition_year": 2026,
+      "source_reference": "https://imed-challenge.github.io/"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://imed-challenge.github.io/",
+      "supporting_sources": []
+    },
+    "notes": [
+      "Discovered while following a mutable CVPR-linked workshop site. The current challenge explicitly belongs to MICCAI/EndoVis 2026. Previously named only inside the excluded umbrella, with no retained child record."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://imed-challenge.github.io/",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/92dff59c2b2e18b2.json",
+          "http_status": 200
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields"
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py"
+    },
+    "review_coding": {
+      "task_families": [
+        "Pose estimation",
+        "Synthesis"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "record_relationships": {
+      "analytical_unit": "child_challenge_edition",
+      "parent_challenge_id": "endovis-2026",
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": null,
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "The official participation page describes Synapse registration, acceptance of the data agreement and dataset download; signed rules are separately emailed. Individual access adjudication is not specified."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "iMED Challenge 2026",
+          "local_source": "_collection/other_venues_audit_20261024/sources/92dff59c2b2e18b2.json",
+          "url": "https://imed-challenge.github.io/",
+          "excerpt": "int using a train-on-one-endoscope, test-on-another protocol. 20 sequences Key Dates April 15, 2026 Registration opens and training dataset released on Synapse. May 15, 2026 Starter Docker containers and baseline submission templates released on Synapse. June 30, 2026 Public validation leaderboard opens. August 15, 2026 Team registration deadline. Team attribution and registration confirmation details TBA. September 1, 2026 Final Docker image submission deadline for full challenge solutions. September 8, 2026 Structured methods report / write-up due. Report submission format TBA. September 27, 2026 Challenge Day at MICCAI 2026 / EndoVis, Strasbourg, France. Organizers Name Institution Sierra Bonilla University College London John "
+        },
+        {
+          "section": "Official edition data/registration instructions",
+          "local_source": "_collection/access_flow_review_20261024/sources/8e80be2e45a4ce80.json",
+          "url": "https://imed-challenge.github.io/data.html",
+          "excerpt": "data. The challenge benchmarks two task-specific subsets derived from this broader release. Dataset Access The full iMED dataset will be officially released through the UCL Research Data Repository (UCL RDR) when the paper is published. The subsets for the iMED Challenge are released on the Synapse platform and can be accessed once initial registration is completed and the dataset agreement is signed. Task-specific subsets Task Cases Reference data / protocol Main purpose iMED PE 61 train / 19 test ArUco marker-based reference poses with markers inpainted in the released frames Relative pose estimation under moving-camera, deformable scenes iMED NVS 20 sequences Train on Endoscope 2 s"
+        },
+        {
+          "section": "Official edition data/registration instructions",
+          "local_source": "_collection/access_flow_review_20261024/sources/3cf4d5b7c16a2bd4.json",
+          "url": "https://imed-challenge.github.io/participation.html",
+          "excerpt": "Participation - iMED Challenge 2026 Participation Registration and submissions Contact Organizers Registration Synapse Participation This page collects the practical information participants need most: where to register, what to submit, and the main dates for the challenge workflow. How to Participate Register on the Synapse challenge page and accept the Data Usage Agreement (EndoVis rules) ; every person on the team should sign. Download the filtered iMED dataset associated with your task and familiarize yourself with the data format and baseline implementations (links on the Getting Started page). Develop your method. You may use publicly available external data for pretraining or co-training, but private/non-public clinical data is not permitted. Validate by submitting to the public validation leaderboard (opens June 30, 2026). Submit your final Docker container by September 1, 2026 . Task 1 containers must implement get_pose() ; Task 2 containers must implement new_view() . Submit a structured methods report by September 8, 2026 . Report submission format TBA. Synapse registration link. Official URL: https://www.synapse.org/Synapse:syn74277461/wiki/639538 Use this page for registration and challenge updates. Downloading the data You can download the data manually under the Files tab on Synapse. Alternatively, you can download programmatically: import synapseutils import synapseclient email = \"user@email.edu\" # Your email address in the Synapse account authToken = \"123456789\" # add your authentication local_folder = \"./sample_data\" # Your local folder for the downloaded data syn = synapseclient.Synapse() syn.login(authToken=authToken) files = synapseutils.syncFromSynapse(syn, 'syn74277461', path=local_folder) Signed rules requirement After registering on Synapse, each participant must email one signed copy of the EndoVis rules form (one signed form per person) to the primary organizer, Sierra Bonilla, at sierra.bonilla.21@ucl.ac.uk . Download the form here: EndoVis Rules PDF . Participant timeline April 15, 2026 Registration opens and training dataset released on Synapse. May 15, 2026 Starter Docker containers and baseline submission templates released on Synapse. June 30, 2026 Public validation leaderboard opens. August 15, 2026 Team registration deadline. Team attribution and registration confirmation details TBA. September 1, 2026 Final Docker image submission deadline for full challenge solutions. September 8, 2026 Structured methods report / write-up due. Report submission format TBA. September 27, 2026 Challenge Day at MICCAI 2026 / EndoVis, Strasbourg, France. Checklist before submission 1. Register your team Create a team entry on Synapse, accept the Data Usage Agreement, and make sure your contact email is correct. 2. Validate your Docker image Test your container with the official loader and submit to the public validation leaderboard once it opens. 3. Document external data use List all external datasets, pretrained checkpoints, and additional supervision sources in the method report. 4. Email your signed rules form Each participant must email one signed copy of the EndoVis rules form to the primary organ [...]  any external data or pretrained models used. Report submission format TBA. FAQ Can we use external public datasets? Yes. The current policy allows publicly available datasets and pretrained networks, provided they are clearly documented and legally accessible. Can we use private hospital data? No. Private clinical data and non-public institutional datasets are not permitted. Will there be a public validation phase? Yes. A public validation phase will provide official scripts, baseline code, and intermediate submissions before final evaluation. Will code need to be open-sourced? Open-sourcing is encouraged but not required. Teams must submit executable Docker containers to the organizers. Contact For questions about registration, submissions, or participation, contact Sierra Bonilla . Additional official support channels will be listed here once available."
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 78,
+              "unit": "cases",
+              "scope": "Pose estimation",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 21,
+              "unit": "cases",
+              "scope": "Pose estimation",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 6,
+              "unit": "cases",
+              "scope": "Pose estimation",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 84,
+              "unit": "cases",
+              "scope": "Novel-view synthesis",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 23,
+              "unit": "cases",
+              "scope": "Novel-view synthesis",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 6,
+              "unit": "cases",
+              "scope": "Novel-view synthesis",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Single center"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Task6 of EndoVis2026; one Intuitive clinical lab with porcine and human cadaver models.",
+      "sources": [
+        {
+          "url": "https://imed-challenge.github.io/",
+          "local_source": "_collection/other_venues_audit_20261024/sources/92dff59c2b2e18b2.json"
+        },
+        {
+          "local_source": "_collection/sources_other/protocol-19697093.txt",
+          "url": "https://zenodo.org/records/19697093"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/imed-2026.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen",
+            "Animal tissue specimens"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Abdominal organs",
+        "Ex-vivo organs",
+        "Human cadaveric and porcine anatomy"
+      ],
+      "specific_diseases": [],
+      "review_note": "Mixed human-cadaver and porcine/ex-vivo surgical scenes; no live-patient disease cohort is asserted.",
+      "sources": [
+        {
+          "local_source": "_collection/clinical_audit_20261025/imed-2026_task.txt",
+          "url": "https://zenodo.org/records/19697093",
+          "section": "Task6"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/imed-2026.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "iMED 对应 EndoVis 2026 Task 6，声明 CC BY。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY (Attribution)",
+          "source": {
+            "local_source": "_collection/sources_other/protocol-19697093.txt",
+            "url": "https://zenodo.org/records/19697093"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/protocol-19697093.txt",
+          "url": "https://zenodo.org/records/19697093"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

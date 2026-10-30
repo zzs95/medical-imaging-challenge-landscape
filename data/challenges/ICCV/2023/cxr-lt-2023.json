@@ -1,0 +1,517 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cxr-lt-2023",
+    "challenge_name": "CXR-LT 2023",
+    "full_name": "CXR-LT 2023",
+    "year": 2023,
+    "event": {
+      "conference": "ICCV 2023",
+      "event_type": "conference_challenge",
+      "parent_event": null
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "X-ray"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Chest"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Lungs",
+        "Pleura",
+        "Cardiac silhouette",
+        "Thoracic bones"
+      ],
+      "diseases": [
+        "Thoracic radiographic findings including pneumonia, cardiomegaly and fractures"
+      ],
+      "clinical_context": "The 2024 registered protocol explicitly reproduces the 26 labels of the 2023 edition; generic mass/nodule labels are not treated as proven cancer."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "task_families": [
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Long-tailed multi-label chest radiograph classification",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "source_url": "https://physionet.org/content/cxr-lt-iccv-workshop-cvamd/1.0.0/"
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "X-ray"
+      ],
+      "population": null,
+      "source_reference": "https://physionet.org/content/cxr-lt-iccv-workshop-cvamd/1.0.0/",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "PhysioNet Credentialed Health Data License 1.5.0; PhysioNet Credentialed Health Data Use Agreement 1.5.0. MIMIC-CXR 数据受 PhysioNet credentialed-data 协议约束；当届获取流程要求认证与相应培训/协议。不将平台下载权限视为可再分发许可。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "CodaLab",
+      "metrics": null,
+      "source_reference": "https://physionet.org/content/cxr-lt-iccv-workshop-cvamd/1.0.0/",
+      "execution_note": "Service and artifact descriptions do not by themselves establish execution location or automation."
+    },
+    "submission": {
+      "submission_type": "Prediction CSV with required code attachment",
+      "platform": "CodaLab",
+      "source_reference": "https://codalab.lisn.upsaclay.fr/competitions/12599",
+      "runtime_limits": null,
+      "primary_artifacts": [
+        "Prediction CSV"
+      ],
+      "additional_artifacts": [
+        {
+          "artifact": "code/ directory",
+          "contents": "All training and inference code",
+          "role": "Required attachment; not evidence of organizer model re-execution for scoring"
+        }
+      ],
+      "execution": "Participants generate predictions; submitted prediction values are scored. Code attachment alone does not establish platform execution of that code.",
+      "format_by_task_or_phase": [
+        {
+          "archive": ".zip",
+          "contents": [
+            "prediction .csv",
+            "code/"
+          ],
+          "prediction_values_per_image": 26,
+          "columns": "Follow edition sample submission"
+        }
+      ],
+      "format_limitations": [],
+      "source_urls": [
+        "https://codalab.lisn.upsaclay.fr/competitions/12599"
+      ],
+      "evidence_basis": "Human-supplied review of edition-specific organizer documentation",
+      "review_date": "2026-10-24",
+      "submission_evidence_status": "Primary artifact identified by human review; format-specific limitations retained",
+      "review_source": "_collection/submission22_review_20261024/user_review.txt",
+      "additional_materials": [
+        {
+          "artifact": "code/ directory",
+          "contents": "All training and inference code",
+          "role": "Required attachment; not evidence of organizer model re-execution for scoring"
+        }
+      ]
+    },
+    "schedule": {
+      "edition_year": 2023,
+      "source_reference": "https://physionet.org/content/cxr-lt-iccv-workshop-cvamd/1.0.0/"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://physionet.org/content/cxr-lt-iccv-workshop-cvamd/1.0.0/",
+      "supporting_sources": [
+        "https://physionet.org/news/post/418/",
+        "https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/html/Kim_CheXFusion_Effective_Fusion_of_Multi-View_Features_Using_Transformers_for_Long-Tailed_ICCVW_2023_paper.html"
+      ]
+    },
+    "notes": [
+      "Associated with ICCV 2023 CVAMD. NLP-derived labels alone do not make the submitted task vision-language. CXR-LT 2024 is already in the MICCAI gap-fill; CXR-LT 2026 already exists at ISBI."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://physionet.org/content/cxr-lt-iccv-workshop-cvamd/1.0.0/",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/3ff87747ac242ca5.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://physionet.org/news/post/418/",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/32bb1bc3e751808a.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/html/Kim_CheXFusion_Effective_Fusion_of_Multi-View_Features_Using_Transformers_for_Long-Tailed_ICCVW_2023_paper.html",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/4227dbb52d034aac.json",
+          "http_status": 200
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://codalab.lisn.upsaclay.fr/competitions/12599",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields"
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py",
+      "submission_human_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/submission22_review_20261024/user_review.txt",
+        "basis": "Human-supplied review of edition-specific organizer documentation",
+        "scope": "Submission artifact, format and executor; source assertions supplied by human review, not a new independent audit of all linked pages."
+      }
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "data-to-model"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": "Official CVF participant paper reports first place",
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "Access requires acceptable proof of MIMIC-CXR credentialing and its data-use agreement."
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "CXR-LT: Multi-Label Long-Tailed Classification on Chest X-Rays v1.0.0",
+          "local_source": "_collection/other_venues_audit_20261024/sources/3ff87747ac242ca5.json",
+          "url": "https://physionet.org/content/cxr-lt-iccv-workshop-cvamd/1.0.0/",
+          "excerpt": "Challenge Credentialed Access CXR-LT: Multi-Label Long-Tailed Classification on Chest X-Rays Gregory Holste , Song Wang , Ajay Jaiswal , Yuzhe Yang , Mingquan Lin , Yifan Peng , Atlas Wang Published June 12, 2023 · Version 1.0.0 View latest This is not the latest version. Click here for the latest version. × Announcing CXR-LT,  [...] ference on Computer Vision (ICCV) 2023 . Participants will be invited to submit their solutions for publication presentation at CVAMD 2023 and publication in the ICCV 2023 workshop proceedings. The challenge uses an expanded version of MIMIC-CXR-JPG v2.0.0 , a large benchmark dataset for automated thorax disease classification. Each CXR study in the dataset was labeled with 12 newly added disease findings extracted from the associated radiology  [...] 23: Development Phase begins. Participants can begin making submissions and tracking results on the public leaderboard. 07/14/2023: Testing Phase begins. Unlabeled test data will be released to registered participants. The leaderboard will be kept private for this phase. 07/17/2023: Competition ends. Participants are invited to submit their solutions as 8-page papers to ICCV CVAMD 2023! 07/28/2023: ICCV CVAMD 2023 submission deadline. (Competition participants may receive an extension if needed.)  [...] 360-026-00096-z}, doi = {10.1038/s44360-026-00096-z}, abstract = {Twenty-five years after its first public repository was established, the PhysioNet resource for biomedical and clinical data has enabled tens of thousands of research papers. Further efforts are ongoing to advance secure data sharing, community engagement and scalable research infrastructure.}, number = {8}, journal = {Nature Health}, aut [...] 360-026-00096-z}, doi = {10.1038/s44360-026-00096-z}, abstract = {Twenty-five years after its first public repository was established, the PhysioNet resource for biomedical and clinical data has enabled tens of thousands of research papers. Further efforts are ongoing to advance secure data sharing, community engagement and scalable research infrastructure.}, number = {8}, journal = {Nature Health}, aut [...]  we will invite participants to submit their solutions for potential presentation at CVAMD 2023 and publication in the ICCV 2023 workshop proceedings. We intend to accept 5-6 papers for publication and select 3 of the accepted papers for oral presentation at CVAMD in Paris. Participation This shared task will be conducted on CodaLab [15]. Participants must have credentialed access to MIMIC-CXR-JPG v2.0.0 [10,11] (more details in the \"Data Description\" section) and register for the competition on CodaLab. Tentative timeline 05/01/2023: Development Phase begins. Participants can begin making submissions and tracking results on the public leaderboard. 07/14/2023: Testing Phase begins. Unlabeled test data will be released to registered participants. The leaderboard will be kept private for this phase. 07/17/2023: Competition ends. Participants are invited to submit their solutions as 8-page papers to ICCV CVAMD 2023! 07/28/2023: ICCV CVAMD 2023 submission deadline. (Competition participants may receive an extension if needed.)  [...] mage IDs and metadata can be found in development.csv . Alternatively, these files are available to registered participants on CodaLab [15] under \"Participate\" -> \"Files\". Test set image IDs and metadata ( test.csv ) will be released when the testing phase begins on 07/14/2023. Evaluation Participants will upload image-level predictions on the provided test sets for evaluation. Since this is a multi-label classification problem with severe imbalance, the primary evaluation metric will be mean Average Precision (mAP) (i.e., \"ma [...] ion.csv or on CodaLab [15] under \"Participate\" -> \"Files\". A sample submission for the test phase ( test_sample_submission.csv ) will be released when the testing phase begins on 07/14/2023. Reproducible code is required for this challenge, so all final submissions must contain all necessary code for preprocessing, training, inference, etc . See instructions below for how to successfully submit on CodaLab. Submission file structure All Coda [...] erates labels from free-text radiology reports in MIMIC-CXR, a de-identified dataset that we gained access to through a PhysioNet Credentialed Health Data Use Agreement (v1.5.0). Acknowledgements We thank our steering committee for their support of this project: Leo Anthony Celi, Zhiyong Lu, George Shih, and Ronald Summers. Conflicts of Interest The authors have no conflicts of interest to declare. References Zhou SK, Greenspan H, Davatzikos C, Duncan JS, Van Ginn [...] nbaum NR, Lungren MP, Deng CY, Peng Y, Lu Z, Mark RG, Berkowitz SJ, Horng S. MIMIC-CXR-JPG, a large publicly available database of labeled chest radiographs. arXiv preprint arXiv:1901.07042. 2019 Jan 21. PhysioNet. MIMIC-CXR-JPG - chest radiographs with structured labels [Internet]. Available from: https://physionet.org/content/mimic-cxr-jpg/2.0.0/. Moukheiber D, Mahindre S, Moukheiber L, Moukheiber M,  [...] with structured labels v2.0.0 Please cite them when using this project. Share Email LinkedIn Reddit Access Access Policy Only credentialed users who sign the DUA can access the files. License PhysioNet Credentialed Health Data License 1.5.0 Data Use Agreement PhysioNet Credentialed Health Data Use Agreement 1.5.0 Required training CITI Data or Specimens Only Research Discovery DOI (v1.0.0) 10.13026/721s-vs37 DOI (latest) 10.13026/5mbq-9k80 Website https://codalab.lisn.upsaclay.fr/competitions/12599 Project Views Current Version 78 All Versions 450 View Details Corresponding Author You must be logged i [...] . Versions 1.0.0 June 12, 2023 1.1.0 Sept. 28, 2023 2.0.0 March 19, 2025 Files This is a restricted-access resource. To access the files, you must fulfill all of the following requirements: be a credentialed user complete required training: CITI Data or Specimens Only Research You may submit your training here . sign the data use agreement for the project"
+        },
+        {
+          "section": "Announcing CXR-LT, a competition for long-tailed disease classification on chest X-rays",
+          "local_source": "_collection/other_venues_audit_20261024/sources/32bb1bc3e751808a.json",
+          "url": "https://physionet.org/news/post/418/",
+          "excerpt": "ference on Computer Vision (ICCV) 2023 . Participants will be invited to submit their solutions for publication presentation at CVAMD 2023 and publication in the ICCV 2023 workshop proceedings. The challenge uses an expanded version of MIMIC-CXR-JPG v2.0.0 , a large benchmark dataset for automated thorax disease classification. Each CXR study in the dataset was labeled with 12 newly added disease findings extracted from the associated radiology  [...] 23: Development Phase begins. Participants can begin making submissions and tracking results on the public leaderboard. 07/14/2023: Testing Phase begins. Unlabeled test data will be released to registered participants. The leaderboard will be kept private for this phase. 07/17/2023: Competition ends. Participants are invited to submit their solutions as 8-page papers to ICCV CVAMD 2023! 07/28/2023: ICCV CVAMD 2023 submission deadline. (Competition participants may receive an extension if needed.) "
+        },
+        {
+          "section": "ICCV 2023 Open Access Repository",
+          "local_source": "_collection/other_venues_audit_20261024/sources/4227dbb52d034aac.json",
+          "url": "https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/html/Kim_CheXFusion_Effective_Fusion_of_Multi-View_Features_Using_Transformers_for_Long-Tailed_ICCVW_2023_paper.html",
+          "excerpt": "ICCV 2023 Open Access Repository ICCV 2023 open access These ICCV 2023 workshop papers are the Open Access versions, provided by the Computer Vision Foundation. Except for the watermark, they are identical to the accepted versions; the final published version of the proceedings is available on IEEE Xplore. This material is presented to ensure timely dissemination of scholarly and technical work. Copyrig [...] ring multi-view settings, class imbalance, and label co-occurrence in medical image classification. Public code is available at https://github. com/dongkyuk/CXR-LT-public-solution. Related Material [ pdf ] [ bibtex ] @InProceedings{Kim_2023_ICCV, author = {Kim, Dongkyun}, title = {CheXFusion: Effective Fusion of Multi-View Features Using Transformers for Long-Tailed Chest X-Ray Classification}, booktitle = {Proceedings of the IEEE/CVF International Conference on Com"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "source",
+              "value": 377110,
+              "unit": "images",
+              "scope": "MIMIC-CXR-JPG-derived CXR-LT dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Single center"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Source corpus quantity, not training size; acquisition information requires dataset source follow-up.",
+      "sources": [
+        {
+          "url": "https://physionet.org/content/cxr-lt-iccv-workshop-cvamd/1.0.0/",
+          "local_source": "_collection/other_venues_audit_20261024/sources/3ff87747ac242ca5.json"
+        },
+        {
+          "url": "https://physionet.org/news/post/418/",
+          "local_source": "_collection/other_venues_audit_20261024/sources/32bb1bc3e751808a.json"
+        },
+        {
+          "url": "https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/html/Kim_CheXFusion_Effective_Fusion_of_Multi-View_Features_Using_Transformers_for_Long-Tailed_ICCVW_2023_paper.html",
+          "local_source": "_collection/other_venues_audit_20261024/sources/4227dbb52d034aac.json"
+        },
+        {
+          "url": "https://physionet.org/content/mimic-cxr/2.0.0/",
+          "local_source": "_collection/resource_audit_20261025/online/88c2c13b28959937.txt"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/cxr-lt-2023.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Chest"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Inflammatory / infectious",
+            "Cardiovascular",
+            "Trauma",
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Lungs",
+        "Pleura",
+        "Cardiac silhouette",
+        "Thoracic bones"
+      ],
+      "specific_diseases": [
+        "Thoracic radiographic findings including pneumonia, cardiomegaly and fractures"
+      ],
+      "review_note": "The 2024 registered protocol explicitly reproduces the 26 labels of the 2023 edition; generic mass/nodule labels are not treated as proven cancer.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/3ff87747ac242ca5.json",
+          "url": "https://physionet.org/content/cxr-lt-iccv-workshop-cvamd/1.0.0/"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/32bb1bc3e751808a.json",
+          "url": "https://physionet.org/news/post/418/"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/4227dbb52d034aac.json",
+          "url": "https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/html/Kim_CheXFusion_Effective_Fusion_of_Multi-View_Features_Using_Transformers_for_Long-Tailed_ICCVW_2023_paper.html"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/88c2c13b28959937.txt",
+          "url": "https://physionet.org/content/mimic-cxr/2.0.0/"
+        },
+        {
+          "local_source": "_collection/clinical_audit_20261025/cxrlt2023_labels_retrospective.txt",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "section": "CXR-LT2024 Task2 explicitly identifies the 2023 label set"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/cxr-lt-2023.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "PhysioNet Credentialed Health Data License 1.5.0",
+        "PhysioNet Credentialed Health Data Use Agreement 1.5.0"
+      ],
+      "scope": "Competition data",
+      "agreement_required": true,
+      "summary_zh": "MIMIC-CXR 数据受 PhysioNet credentialed-data 协议约束；当届获取流程要求认证与相应培训/协议。不将平台下载权限视为可再分发许可。",
+      "qualifications": [],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/3ff87747ac242ca5.json",
+          "url": "https://physionet.org/content/cxr-lt-iccv-workshop-cvamd/1.0.0/"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/88c2c13b28959937.txt",
+          "url": "https://physionet.org/content/mimic-cxr/2.0.0/"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

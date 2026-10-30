@@ -1,0 +1,1346 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "fetus-2026",
+    "challenge_name": "FETUS 2026: Fetal HearT UltraSound Segmentation and Diagnosis Challenge",
+    "full_name": "FETUS 2026: Fetal HearT UltraSound Segmentation and Diagnosis Challenge",
+    "year": 2026,
+    "event": {
+      "conference": "ISBI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2026-04-11",
+      "location": {
+        "city": "London",
+        "country": "United Kingdom",
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Ultrasound"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Heart"
+      ],
+      "organ_system": [
+        "Cardiovascular"
+      ],
+      "organs_or_structures": [
+        "Fetal heart"
+      ],
+      "diseases": [
+        "Congenital heart disease"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": null,
+      "organ_system_coding_scope": null
+    },
+    "task_profile": {
+      "primary_task_family": null,
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Fetal cardiac ultrasound view segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "fetal echocardiography"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "cardiac structure masks"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Fetal cardiac multi-label classification",
+          "task_family": "Classification",
+          "task_subtype": "multi-label classification",
+          "input": [
+            "fetal echocardiography"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "seven-dimensional binary label vector"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        }
+      ],
+      "related_task_families": [
+        "Segmentation",
+        "Classification"
+      ],
+      "program_declared_tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Fetal cardiac ultrasound view segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "fetal echocardiography"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "cardiac structure masks"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Fetal heart biometric sizing",
+          "task_family": "Measurement",
+          "task_subtype": null,
+          "input": [
+            "fetal echocardiography"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "biometric measurements"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        }
+      ],
+      "coding_note": "Current tasks follow the organizer baseline and final-submission template: masks plus seven binary labels. The earlier conference program describes sizing; its tasks are retained separately for provenance, not counted as an additional implemented measurement task."
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null,
+      "submission_label_specification": {
+        "mask": {
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "uint8",
+          "values": "0–14; 14 anatomical structures plus background"
+        },
+        "label": {
+          "shape": [
+            7
+          ],
+          "dtype": "uint8",
+          "values": "binary",
+          "class_names": null
+        },
+        "views": [
+          "4CH",
+          "LVOT",
+          "RVOT",
+          "3VT"
+        ],
+        "source_urls": [
+          "https://raw.githubusercontent.com/Cola-shao/FETUS-Challenge-ISBI2026/d07a2ed799e261c5124d1c57fb86177d1f61a58b/README.md",
+          "https://raw.githubusercontent.com/Cola-shao/Docker_template/a455707402af63f4a954e81240a3d1b46b343b90/README.md"
+        ]
+      }
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Ultrasound"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Participant-reported DUA and non-sharing requirement; official agreement unavailable; DUA requirement reported by participant. 参赛团队仓库明确称比赛要求签署DUA且数据不得分享；仓库排除影像及标注。",
+      "access_after_challenge": null,
+      "access_scope": "Competition-time training/development data",
+      "review_status": "Human-confirmed 2026-10-25",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_by_scope": [
+        {
+          "scope": "Training/development",
+          "category": "Account registration",
+          "access_steps": [
+            "Register",
+            "Download development data"
+          ],
+          "manual_review": null
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": true,
+        "submission_artifact": [
+          "Docker container"
+        ]
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "validation": {
+        "paradigm": "data-to-model",
+        "submission_artifact": [
+          "prediction file"
+        ],
+        "server_side_inference": false
+      },
+      "evidence_scope": "Documented submission protocol; actual server execution has not been independently audited.",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Challenge-specific submission portal; underlying infrastructure not independently verified",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Normalized Surface Dice (NSD)"
+          ],
+          "ranking": "Equal DSC and NSD weights; aggregated across 14 structures and four views."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Macro F1-score"
+          ],
+          "ranking": "Mean F1-score across classes."
+        }
+      ],
+      "cross_task_rule": "Final score: 40% segmentation + 40% classification + 20% processing time; validation excludes processing time and has maximum 80 points.",
+      "phase_scoring": {
+        "validation": {
+          "metrics": [
+            "DSC",
+            "NSD",
+            "Macro F1-score"
+          ],
+          "maximum_points": 80,
+          "runtime_included": false,
+          "immediate_automated_scoring_verified": false
+        },
+        "final_test": {
+          "segmentation_weight": 0.4,
+          "classification_weight": 0.4,
+          "processing_time_weight": 0.2,
+          "time_normalization": "Documented as min–max normalization with upper/lower thresholds; numerical thresholds not specified in the reviewed README.",
+          "ranking_responsibility": "Organizers",
+          "automated_container_execution": "Documented protocol; actual operation not independently audited"
+        }
+      }
+    },
+    "submission": {
+      "submission_type": [
+        "prediction file",
+        "Docker container"
+      ],
+      "platform": "Challenge-specific submission portal; underlying infrastructure not independently verified",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": [
+        {
+          "task_id": "task1",
+          "format": "HDF5",
+          "key": "mask",
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "uint8"
+        },
+        {
+          "task_id": "task2",
+          "format": "HDF5",
+          "key": "label",
+          "shape": [
+            7
+          ],
+          "dtype": "uint8"
+        }
+      ],
+      "portal_url": "http://119.29.231.17:9000/login",
+      "phases": [
+        {
+          "phase": "validation",
+          "submission_type": "prediction file",
+          "submission_entry": "Validation (File Upload)",
+          "format": ".h5 files packaged as .tar.gz",
+          "execution_mode": "local prediction upload",
+          "model_executed_by_evaluation_system": false,
+          "scoring_automatically_triggered": null,
+          "runtime_scored": false
+        },
+        {
+          "phase": "final_test",
+          "submission_type": "Docker container",
+          "submission_entry": "Test (Docker Link)",
+          "submitted_artifact": "Docker image reference/URL; image contains inference code, weights and dependencies",
+          "execution_mode": "server-side container execution",
+          "automated_image_retrieval_and_execution_documented": true,
+          "operational_execution_independently_verified": false,
+          "runtime_scored": true,
+          "server_architecture": "linux/amd64"
+        }
+      ],
+      "platform_qualification": "Portal URL is explicitly linked by the official Docker template; the backend was not independently inspected. Docker Hub is an image registry, not the evaluation host. No third-party platform identity is established.",
+      "editorial_phase_source_review": {
+        "reviewed_on": "2026-10-22",
+        "phases": [
+          {
+            "phase": "validation",
+            "artifact": "Per-case .h5 predictions packaged as .tar.gz",
+            "delivery": "Challenge registration/submission portal; infrastructure not independently identified",
+            "source_url": "https://github.com/Cola-shao/FETUS-Challenge-ISBI2026",
+            "source_section": "Section 7"
+          },
+          {
+            "phase": "final test",
+            "artifact": "Docker image reference; fixed input/output interface",
+            "delivery": "Test (Docker Link) on challenge submission portal",
+            "source_url": "https://github.com/Cola-shao/Docker_template",
+            "source_section": "Docker submission instructions"
+          }
+        ]
+      }
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "published_participant_papers": true,
+      "verified_published_participant_paper_count": 5,
+      "verified_participant_papers": [
+        {
+          "title": "A View-Specific Dual-Task Framework for Fetal Heart Ultrasound Analysis",
+          "authors": [
+            {
+              "given": "Zejun",
+              "family": "Fu"
+            },
+            {
+              "given": "Hongshun",
+              "family": "Ling"
+            },
+            {
+              "given": "Jinjing",
+              "family": "Wu"
+            },
+            {
+              "given": "Li",
+              "family": "Zhang"
+            }
+          ],
+          "doi": "10.1109/isbi61048.2026.11515901",
+          "url": "https://doi.org/10.1109/isbi61048.2026.11515901",
+          "year": 2026,
+          "proceedings": "2026 IEEE 23rd International Symposium on Biomedical Imaging (ISBI)",
+          "pages": "1-4",
+          "publication_status": "published_conference_paper",
+          "program_paper_id": "1571263078",
+          "relationship": "participant paper in official FETUS session",
+          "evidence_ids": [
+            "E8",
+            "E7"
+          ],
+          "final_test_results_verified_by_this_metadata_check": false
+        },
+        {
+          "title": "Semi-Supervised Learning for Congenital Heart Disease Prediction in Fetal Echocardiography",
+          "authors": [
+            {
+              "given": "Haoyu",
+              "family": "Wu"
+            },
+            {
+              "given": "Yujie",
+              "family": "Sun"
+            },
+            {
+              "given": "Zexuan",
+              "family": "Fan"
+            },
+            {
+              "given": "Xiaowu",
+              "family": "Sun"
+            }
+          ],
+          "doi": "10.1109/isbi61048.2026.11515567",
+          "url": "https://doi.org/10.1109/isbi61048.2026.11515567",
+          "year": 2026,
+          "proceedings": "2026 IEEE 23rd International Symposium on Biomedical Imaging (ISBI)",
+          "pages": "1-4",
+          "publication_status": "published_conference_paper",
+          "program_paper_id": "1571263630",
+          "relationship": "participant paper in official FETUS session",
+          "evidence_ids": [
+            "E9",
+            "E7"
+          ],
+          "final_test_results_verified_by_this_metadata_check": false
+        },
+        {
+          "title": "Dual Agreement Consistency Learning with Foundation Models for Semi-Supervised Fetal Heart Ultrasound Segmentation and Diagnosis",
+          "authors": [
+            {
+              "given": "Fangyijie",
+              "family": "Wang"
+            },
+            {
+              "given": "Guénolé",
+              "family": "Silvestre"
+            },
+            {
+              "given": "Kathleen M.",
+              "family": "Curran"
+            }
+          ],
+          "doi": "10.1109/isbi61048.2026.11515399",
+          "url": "https://doi.org/10.1109/isbi61048.2026.11515399",
+          "year": 2026,
+          "proceedings": "2026 IEEE 23rd International Symposium on Biomedical Imaging (ISBI)",
+          "pages": "1-4",
+          "publication_status": "published_conference_paper",
+          "program_paper_id": "1571263685",
+          "relationship": "participant paper in official FETUS session",
+          "evidence_ids": [
+            "E10",
+            "E7"
+          ],
+          "final_test_results_verified_by_this_metadata_check": false
+        },
+        {
+          "title": "View-Guided Multi-Task Learning for Fetal Cardiac Segmentation and CHD Classification",
+          "authors": [
+            {
+              "given": "Yingyu",
+              "family": "Yang"
+            },
+            {
+              "given": "Qianye",
+              "family": "Yang"
+            },
+            {
+              "given": "Can",
+              "family": "Peng"
+            },
+            {
+              "given": "Yuyuan",
+              "family": "Liu"
+            },
+            {
+              "given": "J. Alison",
+              "family": "Noble"
+            }
+          ],
+          "doi": "10.1109/isbi61048.2026.11515858",
+          "url": "https://doi.org/10.1109/isbi61048.2026.11515858",
+          "year": 2026,
+          "proceedings": "2026 IEEE 23rd International Symposium on Biomedical Imaging (ISBI)",
+          "pages": "01-05",
+          "publication_status": "published_conference_paper",
+          "program_paper_id": "1571263885",
+          "relationship": "participant paper in official FETUS session",
+          "evidence_ids": [
+            "E11",
+            "E7"
+          ],
+          "final_test_results_verified_by_this_metadata_check": false
+        },
+        {
+          "title": "Dual-Domain Hierarchical Adversarial Learning for Semi-Supervised Multi-View Fetal Cardiac Ultrasound Segmentation and Disease Classification",
+          "authors": [
+            {
+              "given": "Kerong",
+              "family": "Zhou"
+            }
+          ],
+          "doi": "10.1109/isbi61048.2026.11515560",
+          "url": "https://doi.org/10.1109/isbi61048.2026.11515560",
+          "year": 2026,
+          "proceedings": "2026 IEEE 23rd International Symposium on Biomedical Imaging (ISBI)",
+          "pages": "1-5",
+          "publication_status": "published_conference_paper",
+          "program_paper_id": "1571263804",
+          "relationship": "participant paper in official FETUS session",
+          "evidence_ids": [
+            "E12",
+            "E7"
+          ],
+          "final_test_results_verified_by_this_metadata_check": false
+        }
+      ],
+      "related_preprints": [
+        {
+          "title": "Synergistic Foundation Models for Semi-Supervised Fetal Cardiac Ultrasound Analysis: SAM-Med2D Boundary Refinement and DINOv3 Semantic Enhancement",
+          "authors": [
+            "Tonghao Zhuang",
+            "Shanglong Hu",
+            "Yongsheng Luo",
+            "Zhiqi Zhang",
+            "Yu Li"
+          ],
+          "arxiv_id": "2605.19799",
+          "url": "https://arxiv.org/abs/2605.19799",
+          "first_submitted": "2026-05-19",
+          "publication_status": "public_preprint_author_reports_challenge_acceptance",
+          "program_paper_id": "1571263848",
+          "ieee_proceedings_doi_status": "not_verified",
+          "evidence_ids": [
+            "E13",
+            "E7"
+          ],
+          "counting_note": "Same work as official program entry; do not count as an additional presentation or as a verified IEEE DOI paper."
+        }
+      ],
+      "organizer_overview_results_paper_status": "not_verified",
+      "reviewed_on": "2026-10-22",
+      "qualification": "Five selected participant publications verified, not an exhaustive publication census. Participant papers and scheduled talks do not by themselves establish final assessment or an organizer results report.",
+      "conference_program": {
+        "source_url": "https://confcats-event-sessions.s3.us-east-1.amazonaws.com/isbi26/uploads/ISBI_2026_Program_v11b.pdf",
+        "source_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_program_20261022.json",
+        "session_date": "2026-04-11",
+        "session_time_as_printed": "16:30–18:00",
+        "room": "15",
+        "chair": "Xin Yang, Shenzhen University",
+        "title_as_printed": "FETUS 2026: Fetal HearT UltraSound Segmentation and Sizing Challenge",
+        "program_pages": [
+          193,
+          194,
+          195
+        ],
+        "listed_presentation_count": 15,
+        "program_paper_ids": [
+          "1571263078",
+          "1571263630",
+          "1571263685",
+          "1571263750",
+          "1571263790",
+          "1571263804",
+          "1571263847",
+          "1571263848",
+          "1571263853",
+          "1571263856",
+          "1571263880",
+          "1571263885",
+          "1571263901",
+          "1571263929",
+          "1571263933"
+        ],
+        "evidence_ids": [
+          "E7"
+        ],
+        "qualification": "Official program documents scheduled session and 15 listed presentations; not a retrospective attendance record, 15 independently verified publications, 15 teams or 15 successful final submissions."
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://biomedicalimaging.org/2026/challenges/",
+      "grand_challenge": null,
+      "platform": "http://119.29.231.17:9000/login",
+      "dataset": null,
+      "github": "https://github.com/Cola-shao/FETUS-Challenge-ISBI2026",
+      "challenge_paper": null,
+      "docker_template": "https://github.com/Cola-shao/Docker_template"
+    },
+    "notes": [
+      "Edition is listed in the ISBI 2026 official challenge program; distinct from MICCAI 2026 FoundUS and earlier series editions.",
+      "2026-10-22: Official organizer repositories resolve submission format and the segmentation/diagnosis task description. Conference-program sizing terminology is preserved as historical source wording. Protocol evidence does not by itself establish completed final assessment.",
+      "2026-10-22: 新增方法仓库不足以确认最终测试/名次；保留分阶段提交协议，最终完成仍待补证。",
+      "2026-10-22: 已有论文明确报告竞赛排行榜评分：DSC 79.99%、NSD 61.62%、F1 41.20%、综合分56.00；最终阶段/运行时间评分及正式名次未明确，不升级最终完成。",
+      "2026-10-22: FETUS 2026：已核实5篇IEEE ISBI 2026正式参赛论文DOI及1篇相关arXiv预印本；官方日程4月11日专场列15篇报告。15为日程报告数，不等于15篇已核实出版论文或15支参赛队。已有参赛论文排行榜评分证据，最终阶段归属仍未明确；组织者综合结果论文尚未核实。",
+      "2026-10-22 最新人工完成确认（替代旧完成待查状态）：FETUS 2026：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-20",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date of documentary extraction, not image acquisition or challenge completion.",
+      "last_verified": "2026-10-22",
+      "source_list": "ISBI 2026 official challenge program addendum",
+      "source_index": 6,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://biomedicalimaging.org/2026/challenges/",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "edition identity",
+            "conference affiliation",
+            "task scope"
+          ],
+          "basis": "ISBI 2026 lists this edition in its challenge session."
+        },
+        {
+          "type": "organizer timeline",
+          "url": "https://cola-shao.github.io/timeline/",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "2026 challenge phases",
+            "planned results announcement"
+          ],
+          "basis": "The site schedules testing in February and results by March 2026; no dated final result is visible there."
+        },
+        {
+          "type": "participant methods paper",
+          "url": "https://arxiv.org/abs/2605.19799",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "reported segmentation and CHD classification task",
+            "participant leaderboard claim"
+          ],
+          "basis": "Participant paper uses a different task description; it is not substituted for organizer final results."
+        },
+        {
+          "type": "official organizer repository README",
+          "url": "https://raw.githubusercontent.com/Cola-shao/FETUS-Challenge-ISBI2026/d07a2ed799e261c5124d1c57fb86177d1f61a58b/README.md",
+          "commit": "d07a2ed799e261c5124d1c57fb86177d1f61a58b",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_fetus-challenge-isbi2026_20261022.json",
+          "supports": [
+            "phase-specific submission protocol",
+            "task outputs",
+            "evaluation rules"
+          ]
+        },
+        {
+          "type": "official organizer repository README",
+          "url": "https://raw.githubusercontent.com/Cola-shao/Docker_template/a455707402af63f4a954e81240a3d1b46b343b90/README.md",
+          "commit": "a455707402af63f4a954e81240a3d1b46b343b90",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_docker_template_20261022.json",
+          "supports": [
+            "phase-specific submission protocol",
+            "task outputs",
+            "evaluation rules"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://github.com/hwu918945-alt/isbi-2026-FETUS-Semi-Seg-CHDClassification",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_d34050388506_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "新增方法仓库不足以确认最终测试/名次；保留分阶段提交协议，最终完成仍待补证。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://arxiv.org/pdf/2605.19799",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_f19a7ad27a35_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "已有论文明确报告竞赛排行榜评分：DSC 79.99%、NSD 61.62%、F1 41.20%、综合分56.00；最终阶段/运行时间评分及正式名次未明确，不升级最终完成。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        },
+        {
+          "type": "official conference program",
+          "url": "https://confcats-event-sessions.s3.us-east-1.amazonaws.com/isbi26/uploads/ISBI_2026_Program_v11b.pdf",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_program_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Official ISBI 2026 program pp.193–195 lists 15 FETUS presentations in the April 11, 16:30–18:00 session; this is a program count, not a publication or participant count."
+          ]
+        },
+        {
+          "type": "publisher-deposited DOI metadata",
+          "url": "https://api.crossref.org/works/10.1109/ISBI61048.2026.11515901",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_doi_11515901_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Publisher-deposited Crossref metadata verifies an IEEE ISBI 2026 proceedings article; title also appears in the official FETUS session. Publication metadata does not establish final-test scoring."
+          ]
+        },
+        {
+          "type": "publisher-deposited DOI metadata",
+          "url": "https://api.crossref.org/works/10.1109/ISBI61048.2026.11515567",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_doi_11515567_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Publisher-deposited Crossref metadata verifies an IEEE ISBI 2026 proceedings article; title also appears in the official FETUS session. Publication metadata does not establish final-test scoring."
+          ]
+        },
+        {
+          "type": "publisher-deposited DOI metadata",
+          "url": "https://api.crossref.org/works/10.1109/ISBI61048.2026.11515399",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_doi_11515399_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Publisher-deposited Crossref metadata verifies an IEEE ISBI 2026 proceedings article; title also appears in the official FETUS session. Publication metadata does not establish final-test scoring."
+          ]
+        },
+        {
+          "type": "publisher-deposited DOI metadata",
+          "url": "https://api.crossref.org/works/10.1109/ISBI61048.2026.11515858",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_doi_11515858_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Publisher-deposited Crossref metadata verifies an IEEE ISBI 2026 proceedings article; title also appears in the official FETUS session. Publication metadata does not establish final-test scoring."
+          ]
+        },
+        {
+          "type": "publisher-deposited DOI metadata",
+          "url": "https://api.crossref.org/works/10.1109/ISBI61048.2026.11515560",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_doi_11515560_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Publisher-deposited Crossref metadata verifies an IEEE ISBI 2026 proceedings article; title also appears in the official FETUS session. Publication metadata does not establish final-test scoring."
+          ]
+        },
+        {
+          "type": "author preprint metadata",
+          "url": "https://arxiv.org/abs/2605.19799",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_preprint_metadata_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "arXiv metadata identifies the Zhuang et al. FETUS accepted paper, submitted May 19 2026; it matches program entry 1571263848. Its reported leaderboard scores have no verified final-phase attribution."
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Completed final evaluation/results are not established by the submission repositories alone",
+        "Dataset quantities and centers",
+        "Underlying submission-platform infrastructure and actual execution logs",
+        "Validation automatic scoring trigger and final time-normalization threshold values"
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "event.conference": {
+          "source_url": "https://biomedicalimaging.org/2026/challenges/",
+          "reviewed_on": "2026-10-20",
+          "basis": "Named in the ISBI 2026 official challenge program."
+        },
+        "assessment_evidence.status": {
+          "source_url": "https://cola-shao.github.io/timeline/",
+          "reviewed_on": "2026-10-20",
+          "basis": "Official program and organizer timeline establish a 2026 edition and planned completion, but a final ranking/result was not verified."
+        },
+        "task_profile": {
+          "source_urls": [
+            "https://raw.githubusercontent.com/Cola-shao/FETUS-Challenge-ISBI2026/d07a2ed799e261c5124d1c57fb86177d1f61a58b/README.md",
+            "https://raw.githubusercontent.com/Cola-shao/Docker_template/a455707402af63f4a954e81240a3d1b46b343b90/README.md"
+          ],
+          "reviewed_on": "2026-10-22",
+          "basis": "Official baseline and final Docker submission instructions; protocol-level evidence."
+        },
+        "submission": {
+          "source_urls": [
+            "https://raw.githubusercontent.com/Cola-shao/FETUS-Challenge-ISBI2026/d07a2ed799e261c5124d1c57fb86177d1f61a58b/README.md",
+            "https://raw.githubusercontent.com/Cola-shao/Docker_template/a455707402af63f4a954e81240a3d1b46b343b90/README.md"
+          ],
+          "reviewed_on": "2026-10-22",
+          "basis": "Official baseline and final Docker submission instructions; protocol-level evidence."
+        },
+        "evaluation": {
+          "source_urls": [
+            "https://raw.githubusercontent.com/Cola-shao/FETUS-Challenge-ISBI2026/d07a2ed799e261c5124d1c57fb86177d1f61a58b/README.md",
+            "https://raw.githubusercontent.com/Cola-shao/Docker_template/a455707402af63f4a954e81240a3d1b46b343b90/README.md"
+          ],
+          "reviewed_on": "2026-10-22",
+          "basis": "Official baseline and final Docker submission instructions; protocol-level evidence."
+        },
+        "data_usage_mode": {
+          "source_urls": [
+            "https://raw.githubusercontent.com/Cola-shao/FETUS-Challenge-ISBI2026/d07a2ed799e261c5124d1c57fb86177d1f61a58b/README.md",
+            "https://raw.githubusercontent.com/Cola-shao/Docker_template/a455707402af63f4a954e81240a3d1b46b343b90/README.md"
+          ],
+          "reviewed_on": "2026-10-22",
+          "basis": "Official baseline and final Docker submission instructions; protocol-level evidence."
+        }
+      },
+      "revision_history": [
+        {
+          "date": "2026-10-22",
+          "reason": "Official repository submission protocol resolves the earlier task and submission uncertainty.",
+          "previous_challenge_name": "FETUS 2026: Fetal HearT UltraSound Segmentation and Sizing Challenge",
+          "previous_task_profile": {
+            "primary_task_family": null,
+            "secondary_task_families": null,
+            "tasks": [
+              {
+                "task_id": "task1",
+                "official_name": "Fetal cardiac ultrasound view segmentation",
+                "task_family": "Segmentation",
+                "task_subtype": "semantic segmentation",
+                "input": [
+                  "fetal echocardiography"
+                ],
+                "optional_training_input": null,
+                "output": [
+                  "cardiac structure masks"
+                ],
+                "granularity": "pixel-level",
+                "clinical_goal": null
+              },
+              {
+                "task_id": "task2",
+                "official_name": "Fetal heart biometric sizing",
+                "task_family": "Measurement",
+                "task_subtype": null,
+                "input": [
+                  "fetal echocardiography"
+                ],
+                "optional_training_input": null,
+                "output": [
+                  "biometric measurements"
+                ],
+                "granularity": "image-level",
+                "clinical_goal": null
+              }
+            ],
+            "related_task_families": [
+              "Segmentation",
+              "Measurement"
+            ]
+          },
+          "previous_submission": {
+            "submission_type": null,
+            "platform": null,
+            "runtime_limits": {
+              "max_processing_time_per_case_minutes": null,
+              "max_ram_gb": null,
+              "reserved_ram_gb": null,
+              "gpu": null,
+              "gpu_vram_gb": null
+            },
+            "submission_limits": {
+              "sanity_check_successful_submissions_per_day": null,
+              "final_submissions_per_team": null,
+              "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+            },
+            "task_outputs": null
+          },
+          "previous_evaluation": {
+            "hidden_test_set": null,
+            "online_evaluation": null,
+            "platform": null,
+            "tasks": [
+              {
+                "task_id": "task1",
+                "metrics": null,
+                "ranking": null
+              },
+              {
+                "task_id": "task2",
+                "metrics": null,
+                "ranking": null
+              }
+            ],
+            "cross_task_rule": null
+          }
+        }
+      ],
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "新增方法仓库不足以确认最终测试/名次；保留分阶段提交协议，最终完成仍待补证。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "undetermined",
+            "evidence_state": "protocol_documented_results_not_verified",
+            "evidence_ids": [],
+            "reason": "Official repositories establish the submission and scoring protocol, not a completed final evaluation or final ranking. This protocol review does not adjudicate the separate participant result claim."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/ISBI/2026/fetus-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "已有论文明确报告竞赛排行榜评分：DSC 79.99%、NSD 61.62%、F1 41.20%、综合分56.00；最终阶段/运行时间评分及正式名次未明确，不升级最终完成。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/ISBI/2026/fetus-2026.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "FETUS 2026：已核实5篇IEEE ISBI 2026正式参赛论文DOI及1篇相关arXiv预印本；官方日程4月11日专场列15篇报告。15为日程报告数，不等于15篇已核实出版论文或15支参赛队。已有参赛论文排行榜评分证据，最终阶段归属仍未明确；组织者综合结果论文尚未核实。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/fetus_publications_20261022_150945/ISBI/2026/fetus-2026.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "FETUS 2026：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/four_human_confirmations_20261022_152301/ISBI/2026/fetus-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "evidence_source_url": "https://cola-shao.github.io/timeline/",
+      "basis": "FETUS 2026：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+      "qualification": "Explicit human confirmation of actual completion, distinct from plan-based adjudications. Previous documentary evidence and limitations retained; no new public results were independently verified in this update.",
+      "protocol_review": {
+        "date": "2026-10-22",
+        "status": "documented",
+        "source_urls": [
+          "https://raw.githubusercontent.com/Cola-shao/FETUS-Challenge-ISBI2026/d07a2ed799e261c5124d1c57fb86177d1f61a58b/README.md",
+          "https://raw.githubusercontent.com/Cola-shao/Docker_template/a455707402af63f4a954e81240a3d1b46b343b90/README.md"
+        ],
+        "qualification": "Submission and scoring protocols verified; final rankings and actual execution not independently verified by this check."
+      },
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "FETUS 2026：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+        "basis_type": "explicit_user_confirmation",
+        "user_instruction": "BodyMaps 2024、FETUS 2026、MOOD 2025、PUFISEG 2025 都已经完成",
+        "propagation_status": "Canonical JSON, audit, current triage CSV/Excel, decisions and reports synchronized; manuscript and aggregate statistics not regenerated."
+      },
+      "remaining_questions": [],
+      "any_executed_assessment_status": "confirmed",
+      "participant_leaderboard_result": {
+        "executed_competition_assessment": "confirmed_by_participant_leaderboard_report",
+        "phase": "not established",
+        "metrics": {
+          "DSC_percent": 79.99,
+          "NSD_percent": 61.62,
+          "F1_percent": 41.2,
+          "overall_score": 56.0
+        },
+        "final_test_status": "not_established",
+        "runtime_score_included": "not_established",
+        "rank": null
+      },
+      "event_state": "completed",
+      "completion_basis": "explicit_user_confirmation",
+      "completion_adjudication": {
+        "decision_id": "fetus-2026_human_completion_20261022",
+        "date": "2026-10-22",
+        "authorized_by": "user",
+        "instruction": "BodyMaps 2024、FETUS 2026、MOOD 2025、PUFISEG 2025 都已经完成",
+        "analysis_id": "fetus-2026",
+        "edition_year": 2026,
+        "completion_status": "confirmed",
+        "basis_type": "explicit_user_confirmation",
+        "exact_completion_date": null,
+        "independently_verified_final_completion_by_this_update": false,
+        "qualification": "Explicit human confirmation of actual completion, distinct from plan-based adjudications. Previous documentary evidence and limitations retained; no new public results were independently verified in this update."
+      },
+      "optional_documentary_limitations": [
+        "Identify whether the published leaderboard scores belong to final test or validation; runtime contribution and official final rank not established.",
+        "Underlying backend/validation scoring trigger remain unverified, separate from executed scoring evidence.",
+        "Organizer overview/results publication not verified; this publication gap alone is not a requirement for confirming final assessment when other final-result evidence is available."
+      ],
+      "documentary_final_assessment_status_before_human_confirmation": "not_established"
+    },
+    "name_variants": [
+      {
+        "name": "FETUS 2026: Fetal HearT UltraSound Segmentation and Sizing Challenge",
+        "source": "https://biomedicalimaging.org/2026/challenges/",
+        "scope": "Conference program wording"
+      },
+      {
+        "name": "FETUS 2026: Fetal HearT UltraSound Segmentation and Diagnosis Challenge",
+        "source": "https://raw.githubusercontent.com/Cola-shao/Docker_template/a455707402af63f4a954e81240a3d1b46b343b90/README.md",
+        "scope": "Official final-submission template"
+      }
+    ],
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。",
+        "scope": "Competition-time training/development data",
+        "access_by_scope": [
+          {
+            "scope": "Training/development",
+            "category": "Account registration",
+            "access_steps": [
+              "Register",
+              "Download development data"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "Human confirmation supplied by user; no new independent web verification",
+        "confidence": "Human-confirmed",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-25: 2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/fetus-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_registration_20261025/user_confirmation.json",
+          "review_date": "2026-10-25",
+          "section": "User-confirmed registration/download; scope limited to pending editions"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Agreement requirement only",
+      "licence_names": [],
+      "scope": "Participant-reported DUA and non-sharing requirement; official agreement unavailable",
+      "agreement_required": true,
+      "summary_zh": "参赛团队仓库明确称比赛要求签署DUA且数据不得分享；仓库排除影像及标注。",
+      "qualifications": [
+        "仅计参赛者直接报告的协议要求，未取得组织者完整DUA，不与官方许可全文赋同等证据等级。"
+      ],
+      "scoped_terms": [
+        {
+          "scope": "Participant-reported DUA and non-sharing requirement; official agreement unavailable",
+          "text": "参赛团队仓库明确称比赛要求签署DUA且数据不得分享；仓库排除影像及标注。",
+          "text_type": "Reviewer paraphrase",
+          "source": {
+            "url": "https://github.com/hwu918945-alt/isbi-2026-FETUS-Semi-Seg-CHDClassification",
+            "local_source": "_collection/legacy_license_followup_20261025/sources/d34050388506e424.json",
+            "evidence_type": "Participant report"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/Cola-shao/FETUS-Challenge-ISBI2026/d07a2ed799e261c5124d1c57fb86177d1f61a58b/README.md",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_fetus-challenge-isbi2026_20261022.json"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/Cola-shao/Docker_template/a455707402af63f4a954e81240a3d1b46b343b90/README.md",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_docker_template_20261022.json"
+        },
+        {
+          "url": "https://github.com/hwu918945-alt/isbi-2026-FETUS-Semi-Seg-CHDClassification",
+          "local_source": "_collection/legacy_license_followup_20261025/sources/d34050388506e424.json",
+          "evidence_type": "Participant report"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2605.19799",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_f19a7ad27a35_20261022.json"
+        },
+        {
+          "url": "https://arxiv.org/abs/2605.19799",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_preprint_metadata_20261022.json"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "search_attempts": [
+        {
+          "url": "https://cola-shao.github.io/timeline/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/5e963e38f441e61b.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/Cola-shao/Docker_template",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/794bcb5ab9059bed.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/Cola-shao/FETUS-Challenge-ISBI2026",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/835b5d13e79f3506.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/hwu918945-alt/isbi-2026-FETUS-Semi-Seg-CHDClassification",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/d34050388506e424.json",
+          "status": 200
+        },
+        {
+          "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1e460fb35d79919e.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/Cola-shao/FETUS-Challenge-ISBI2026#MIT-1-ov-file",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/558cd41abf565bee.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/Cola-shao/FETUS-Challenge-ISBI2026/blob/main/LICENSE",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/293bc43838615986.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/hwu918945-alt/isbi-2026-FETUS-Semi-Seg-CHDClassification#MIT-1-ov-file",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/63b410e162171880.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/hwu918945-alt/isbi-2026-FETUS-Semi-Seg-CHDClassification/blob/main/LICENSE",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/d4cbb2a750c1acf9.json",
+          "status": 200
+        },
+        {
+          "url": "http://119.29.231.17:90/rules.html",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/cc6e97b38b7a6f2f.json",
+          "status": null
+        },
+        {
+          "url": "https://github.com/hwu918945-alt/isbi-2026-FETUS-Semi-Seg-CHDClassification/blob/main/prepare/dinov3/LICENSE.md",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/3c74be7f1f8ffa53.json",
+          "status": 200
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance.",
+      "evidence_basis": "Participant report",
+      "confidence": "Moderate; official full terms unavailable",
+      "previous_review": {
+        "review_date": "2026-10-25",
+        "review_cohort": "Previously reviewed 215",
+        "review_population": "Legacy 101 previously unestablished records",
+        "state": "Not established",
+        "terms_documented": false,
+        "detail_level": "Not established",
+        "licence_names": [],
+        "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+        "agreement_required": null,
+        "summary_zh": "官方基线、模板及参赛材料未取得可复核数据许可；不把模型/代码许可当作数据许可。",
+        "qualifications": [],
+        "scoped_terms": [],
+        "sources": [
+          {
+            "url": "https://raw.githubusercontent.com/Cola-shao/FETUS-Challenge-ISBI2026/d07a2ed799e261c5124d1c57fb86177d1f61a58b/README.md",
+            "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_fetus-challenge-isbi2026_20261022.json"
+          },
+          {
+            "url": "https://raw.githubusercontent.com/Cola-shao/Docker_template/a455707402af63f4a954e81240a3d1b46b343b90/README.md",
+            "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_docker_template_20261022.json"
+          },
+          {
+            "url": "https://github.com/hwu918945-alt/isbi-2026-FETUS-Semi-Seg-CHDClassification",
+            "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_d34050388506_20261022.json"
+          },
+          {
+            "url": "https://arxiv.org/pdf/2605.19799",
+            "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_f19a7ad27a35_20261022.json"
+          },
+          {
+            "url": "https://arxiv.org/abs/2605.19799",
+            "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/fetus_preprint_metadata_20261022.json"
+          }
+        ],
+        "substantive_terms_documented": false,
+        "search_attempts": [
+          {
+            "url": "https://cola-shao.github.io/timeline/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/5e963e38f441e61b.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/Cola-shao/Docker_template",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/794bcb5ab9059bed.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/Cola-shao/FETUS-Challenge-ISBI2026",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/835b5d13e79f3506.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/hwu918945-alt/isbi-2026-FETUS-Semi-Seg-CHDClassification",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/d34050388506e424.json",
+            "status": 200
+          },
+          {
+            "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/1e460fb35d79919e.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/Cola-shao/FETUS-Challenge-ISBI2026#MIT-1-ov-file",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/558cd41abf565bee.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/Cola-shao/FETUS-Challenge-ISBI2026/blob/main/LICENSE",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/293bc43838615986.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/hwu918945-alt/isbi-2026-FETUS-Semi-Seg-CHDClassification#MIT-1-ov-file",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/63b410e162171880.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/hwu918945-alt/isbi-2026-FETUS-Semi-Seg-CHDClassification/blob/main/LICENSE",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/d4cbb2a750c1acf9.json",
+            "status": 200
+          },
+          {
+            "url": "http://119.29.231.17:90/rules.html",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/cc6e97b38b7a6f2f.json",
+            "status": null
+          },
+          {
+            "url": "https://github.com/hwu918945-alt/isbi-2026-FETUS-Semi-Seg-CHDClassification/blob/main/prepare/dinov3/LICENSE.md",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/3c74be7f1f8ffa53.json",
+            "status": 200
+          }
+        ],
+        "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+      }
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  }
+}

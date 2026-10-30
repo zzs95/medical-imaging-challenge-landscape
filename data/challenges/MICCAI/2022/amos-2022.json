@@ -1,0 +1,514 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "amos-2022",
+    "challenge_name": "Multi-Modality Abdominal Multi-Organ Segmentation Challenge 2022",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2022-09-18",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Abdomen",
+        "Pelvis"
+      ],
+      "organ_system": [
+        "Multisystem"
+      ],
+      "organs_or_structures": [
+        "Spleen",
+        "Right kidney",
+        "Left kidney",
+        "Gallbladder",
+        "Esophagus",
+        "Liver",
+        "Stomach",
+        "Aorta",
+        "Inferior vena cava",
+        "Pancreas",
+        "Right adrenal gland",
+        "Left adrenal gland",
+        "Duodenum",
+        "Bladder",
+        "Prostate/uterus"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Abdominal organ segmentation (CT only)",
+          "task_family": "Segmentation",
+          "task_subtype": "multi-class segmentation",
+          "input": [
+            "CT volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "15-organ segmentation"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Abdominal organ segmentation (CT & MRI)",
+          "task_family": "Segmentation",
+          "task_subtype": "multi-class segmentation",
+          "input": [
+            "CT or MRI volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "15-organ segmentation"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": "Abdominal and pelvic organs",
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": "15 organ labels, including combined prostate/uterus class.",
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": 2,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": 600,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "case_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "modality_counts": {
+        "CT_cases": 500,
+        "MRI_scans": 100
+      },
+      "validation_prediction_counts": {
+        "task1": 100,
+        "task2": 120
+      },
+      "splits_by_modality": {
+        "CT": {
+          "train_scans": 200,
+          "validation_scans": 100,
+          "test_scans": 200
+        },
+        "MRI": {
+          "train_scans": 40,
+          "validation_scans": 20,
+          "test_scans": 40
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Official released dataset: CC BY 4.0.",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": null,
+        "policy": "No additional data or medical pretrained models; general ImageNet pretraining acceptable."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "normalized surface dice (NSD)"
+          ],
+          "ranking": "Test: average over labels, rank per case and metric, then aggregate ranks."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "normalized surface dice (NSD)"
+          ],
+          "ranking": "Test: average over labels, rank per case and metric, then aggregate ranks."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "validation_submissions_per_day": 3
+      },
+      "task_outputs": null,
+      "validation_submission_type": "NIfTI predictions in ZIP"
+    },
+    "schedule": {
+      "final_submission_deadline": "2022-07-22"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 3304,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "AMOS CT Regular Evaluation (Test)",
+            "submission_count": 757
+          },
+          {
+            "official_phase_name": "AMOS CT&MRI Regular Evaluation (Test)",
+            "submission_count": 102
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://amos22.grand-challenge.org/",
+      "dataset": "https://zenodo.org/records/7262581",
+      "github": null,
+      "challenge_paper": "https://arxiv.org/abs/2206.08023"
+    },
+    "notes": [
+      "Task 2 adds 100 MRI scans to 500 CT cases; counts are recorded by modality. Updated homepage July 22 Docker deadline supersedes older July 20 wording on evaluation page."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://amos22.grand-challenge.org/Evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/116-10ff850f8cc2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://amos22.grand-challenge.org/Rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/116-a046052b9bcf.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://amos22.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "evaluation.platform",
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/116-d9b13c95c6fb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://amos22.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/116-overview.json"
+        },
+        {
+          "type": "official organizer publication",
+          "url": "https://arxiv.org/pdf/2206.08023",
+          "local_snapshot": "_collection/sources/116-results.pdf",
+          "retrieved_on": "2026-10-02",
+          "supports": [
+            "dataset",
+            "dataset.center_count",
+            "dataset.center_type",
+            "dataset.multi_center"
+          ]
+        },
+        {
+          "type": "official dataset repository",
+          "url": "https://zenodo.org/records/7262581",
+          "local_snapshot": "_collection/sources/116-56b89b4d73a4.json",
+          "retrieved_on": "2026-10-02",
+          "supports": [
+            "dataset",
+            "data_access"
+          ]
+        }
+      ],
+      "collection_status": "verified",
+      "unresolved_fields": [],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://amos22.grand-challenge.org/challenge/statistics/",
+          "local_snapshot": "_collection/sources/116-d9b13c95c6fb.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official organizer report, submission instructions or native platform submission statistics establishes the challenge evaluation service; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "dataset.multi_center": {
+          "source_url": "https://arxiv.org/pdf/2206.08023",
+          "local_snapshot": "_collection/sources/116-results.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "AMOS organizer paper explicitly reports two medical centers and eight scanners; scanners are not centers."
+        },
+        "dataset.center_type": {
+          "source_url": "https://arxiv.org/pdf/2206.08023",
+          "local_snapshot": "_collection/sources/116-results.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "AMOS organizer paper explicitly reports two medical centers and eight scanners; scanners are not centers."
+        },
+        "dataset.center_count": {
+          "source_url": "https://arxiv.org/pdf/2206.08023",
+          "local_snapshot": "_collection/sources/116-results.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "AMOS organizer paper explicitly reports two medical centers and eight scanners; scanners are not centers."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "dataset.center_count",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "submission.platform",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/amos-2022.json",
+          "_collection/verification_20261003/literature_context/amos-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "The AMOS cohort came from Longgang District Central Hospital and Longgang District People’s Hospital, Shenzhen, China.",
+              "url": "https://papers.neurips.cc/paper_files/paper/2022/file/ee604e1bedbd069d9fc9328b7b9584be-Paper-Datasets_and_Benchmarks.pdf",
+              "snapshot": "latex_sourcev2/data/resource_information_update_20261027/sources/b9b846b645c00a.json",
+              "scope": "Organizer dataset report; acquisition hospitals.",
+              "value": null,
+              "excerpt": "e Chinese University of Hong Kong (Shenzhen)\n                         3\n                            Longgang Central Hospital of Shenzhen, China\n                          4\n                            Longgang People Hospital of Shenzhen, China\n\n\n\n                                                Abstract\n\n            Despite the considerable progress in automatic abdominal multi-organ segmenta-\n            tion from CT/MRI scans in recent years, a comprehensive evaluation of the models’\n            capabilities is hampered by the lack of a large-scale benchmark from diverse clini-\n            cal scenarios. Constraint by the high cost of collecting and labeling 3D medical\n            data, most of the deep learning models to date are driven by datasets with a limited\n            number of organs of interest or samples, which still limits the power of modern deep\n            models and makes it difficult to provide a fully comprehensive and fair estimate\n            of various methods. To mitigate the limitations, we present AMOS, a large-scale,\n            diverse, clinical dataset for abdominal organ segmentation. AMOS provides 500\n            CT and 100 MRI scans collected from multi-center, multi-vendor, multi-modality,\n            multi-phase, multi-disease patients, each with",
+              "snapshot_date": "2026-10-27"
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Observed persistent data resource",
+              "summary": "Edition-linked dataset files and download links remained listed in a repository snapshot after the competition year.",
+              "url": "https://zenodo.org/records/7262581",
+              "snapshot": "_collection/sources/116-56b89b4d73a4.json",
+              "scope": "File listing establishes continuing resource provision at the snapshot; authenticated download experience and unrestricted reuse are separate.",
+              "value": null,
+              "excerpt": "Files\namos22.zip\nFiles\n(24.2 GB)\nName\nSize\namos22.zip\nmd5:67717b2a483ac0744c89c3016b7aaef7\n24.2 GB\nPreview\nDownload\nlabeled_data_meta_0000_0599.csv\nmd5:524fdc33d32ca06b37ae4b5ff4ddf5f4\n35.2 kB\nPreview\nDownload\n39K\nViews\n25K\nDownloads\nShow more details\nAll versions\nThis version\nViews\nTotal views\n38,714\n22,532\nDownloads\nTotal downloads\n24,971\n13,535\nData volume\nTotal data volume\n2.7 PB\n931.5 TB\nMore info on how stats are collected....\nVersions\nExternal resources\nIndexed in\nOpenAIRE\nCommunities\nDetails\nDOI\nDOI Badge\nDOI\n10.5281/zenodo.7262581\nMarkdown\n[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7262581.svg)](https://doi.org/10.5281/zenodo.7262581)\nreStructuredText\n.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.7262581.svg\n  :target: https://doi.org/10.5281/zenodo.7262581\nHTML\n<a href=\"https://doi.org/10.5281/zenodo.7262581\"><img src=\"https://zenodo.org/badge/DOI/10.5281/zenodo.7262581.svg\" alt=\"DOI\"></a>\nImage URL\nhttps://zenodo.org/badge/DOI/10.5281/zenodo.7262581.svg\nTarget URL\nhttps://doi.org/10.5281/zenodo.7262581\nResource type\nDataset\nPublisher\nZenodo\nRights\nLicense\nCreative Commons Attribution 4.0 International\nThe Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited.\nRead more\nCitation\nExport\nTechnical metadata\nCreated\nOctober 29, 2022\nModified\nOctober 26, 2025\nJump up",
+              "snapshot_date": "2026-10-02"
+            },
+            {
+              "kind": "Observed continuation statement",
+              "summary": "Dated 2022-10-10 update reports release of train, validation and test images and continuing test submission.",
+              "url": "https://amos22.grand-challenge.org/Home/",
+              "snapshot": "latex_sourcev2/data/resource_information_update_20261027/sources/f4df95bb4403e8.json",
+              "scope": "Post-competition images exclude hidden ground-truth labels; later repository file listing corroborates persistence.",
+              "value": null,
+              "excerpt": "rt generation and medical visual question answering,\n  please check the link for more information! [2022.10.10] The whole set of AMOS (train set, validation set, and\n  test data (wo gt label)) has been released on the zenodo platform,\n  please check\n  the zenodo . You can submit your test set performance\n  via the submission entry. [2022.09.10] The event schedules of AMOS in MICCAI22 have been\n  released, please\n  see here . [2022.08.21] The final ranking results are\n  available here . Cheers everyone! [2022.07.19] We have placed a suggested limitation on the model run\n  time, see the forum , we have extended the submission deadline by\n  two days (7.22 AOE) to reduce disruption to the teams. Sorry for the\n  inconvenience. [2022.06.27] The deadline for the first stage is extended to 7.17.\n  Besides, the latex template is provided in the instruction . [2022.06.27] The guidance on docker submission has been provided,\n  please see\n  the instruction . [2022.05.10] The first stage of validation is now Opening, please\n  see this for more details. [2022.05.06] Due to technical problems, the opening of the first\n  phase of validation will be delayed until the 10th. [2022.05.06] We offer additional cash awards. please see the Cash\n  award . [2022.05.01] The dataset is now available for dow",
+              "snapshot_date": "2026-10-27"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "15 final-submitting teams; retrospective AMOS-MM2024 proposal.",
+              "url": "https://doi.org/10.5281/zenodo.10992154",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf",
+              "scope": "final-submitting teams; retrospective AMOS-MM2024 proposal",
+              "value": {
+                "value": 15,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "2 attracted over 1,000 team registrations, but limited by the subsequent two-stage validation, only 15 teams completed their final submissions. For AMOS-MM we have decided to move away from an offline validation design and expect 20-30 teams to complete their final submissions.",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Organizer/platform-side inference",
+          "final_stage": "Designated final scored evaluation stage",
+          "evidence_scope": "Specified protocol",
+          "coding_basis": "Edition-level source rereading, 2026-10-27",
+          "evidence_path": "_collection/sources/116-a046052b9bcf.json",
+          "evidence_excerpt": "For the testing phase, only the last run submitted docker container is officially counted to compute results.",
+          "rationale": "The official rules describe online container evaluation and identify which test-phase run determines results; classification uses the test-phase execution instruction, not the platform name alone.",
+          "source_urls": "https://amos22.grand-challenge.org/Evaluation/; https://amos22.grand-challenge.org/Rules/; https://amos22.grand-challenge.org/challenge/statistics/; https://amos22.grand-challenge.org/; https://arxiv.org/pdf/2206.08023; https://zenodo.org/records/7262581; https://arxiv.org/abs/2206.08023",
+          "completed_execution_claim": "Not inferred from this classification",
+          "review_date": "2026-10-27"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

@@ -1,0 +1,470 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "apis-2023",
+    "challenge_name": "APIS",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "ISBI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "MRI"
+      ],
+      "submodality": [
+        "NCCT",
+        "ADC"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "Ischemic stroke lesions"
+      ],
+      "diseases": [
+        "Ischemic stroke"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Ischemic stroke segmentation on onset NCCT",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "Non-contrast brain CT"
+          ],
+          "optional_training_input": [
+            "Paired ADC images with expert lesion annotations"
+          ],
+          "output": [
+            "Lesion segmentation mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Ischemic stroke lesions"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": {
+          "value": 60,
+          "unit": "paired CT-ADC studies"
+        },
+        "validation_count": null,
+        "test_count": null,
+        "held_out_count": {
+          "value": 40,
+          "unit": "studies",
+          "raw_text": "testing stage: 40 studies used as validation"
+        }
+      },
+      "modalities": [
+        "CT",
+        "MRI"
+      ],
+      "data_components": [
+        "Paired NCCT and ADC images",
+        "Expert lesion delineations"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY 4.0 with the official Data Usage Policy.",
+      "access_after_challenge": null,
+      "access_scope": "training data access as stated in the cited edition source",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": true,
+        "submission_artifact": "Docker image"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "submission_artifact": "Docker image",
+      "execution_mode": "Organizer-run",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Scored submission artifact; additional reproducibility/publication materials recorded separately.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "existing_structured_fields_and_audit",
+        "summary": "已有审查记录明确组织者Docker执行。",
+        "evidence_ids": [
+          "E3"
+        ],
+        "source_urls": [],
+        "user_material": null,
+        "directly_retrieved_protocol_snapshots": [],
+        "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced."
+      }
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://bivl2ab.uis.edu.co/challenges/apis",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "2026-10-22 提交方式字段同步：已有审查记录明确组织者Docker执行。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 75,
+      "sources": [
+        {
+          "type": "official challenge source",
+          "url": "https://bivl2ab.uis.edu.co/challenges/apis",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/36ec7246d973a64c.json",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "dataset or rules where stated",
+            "homepage fields where stated",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "official conference program, browser extraction",
+          "url": "https://biomedicalimaging.org/2023/challenges/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/isbi-conference-web.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation",
+            "task_profile",
+            "clinical_domain"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://bivl2ab.uis.edu.co/challenges/apis",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/apis-2023.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "existing_structured_fields_and_audit",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/ISBI/2023/apis-2023.json",
+          "source_urls": [],
+          "supports": [
+            "已有审查记录明确组织者Docker执行。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://bivl2ab.uis.edu.co/challenges/apis",
+          "local_snapshot": "_collection/sources_other/36ec7246d973a64c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://bivl2ab.uis.edu.co/challenges/apis",
+          "local_snapshot": "_collection/sources_other/36ec7246d973a64c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://bivl2ab.uis.edu.co/challenges/apis",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/apis-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://bivl2ab.uis.edu.co/challenges/apis",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/apis-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://bivl2ab.uis.edu.co/challenges/apis",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/apis-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/apis-2023.json",
+          "_collection/verification_20261003/literature_context/apis-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "existing_structured_fields_and_audit",
+          "summary": "已有审查记录明确组织者Docker执行。",
+          "evidence_ids": [
+            "E3"
+          ],
+          "source_urls": [],
+          "user_material": null,
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/ISBI/2023/apis-2023.json"
+        }
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "60例CT/ADC训练数据提供下载；40例用于组织者Docker测试。"
+      },
+      "decision_history": [
+        "60例CT/ADC训练数据提供下载；40例用于组织者Docker测试。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/36ec7246d973a64c.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/apis-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02"
+  ]
+}

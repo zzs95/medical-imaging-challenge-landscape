@@ -1,0 +1,562 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "surgt-2022",
+    "challenge_name": "SurgT: Surgical Tracking",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "EndoVis 2022",
+        "relationship": "Parent challenge event",
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy",
+        "Video"
+      ],
+      "submodality": [
+        "Stereo endoscopic video"
+      ],
+      "body_region": [
+        "Heart",
+        "Kidney",
+        "Animal tissue specimens",
+        "Surgical field"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Surgical tissue regions"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Tracking",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Surgical tissue tracking",
+          "task_family": "Tracking",
+          "task_subtype": "bounding-box tracking",
+          "input": [
+            "Stereo endoscopic video",
+            "Initial bounding box"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Tracked tissue bounding boxes"
+          ],
+          "granularity": "video-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Manual keypoint annotation, checked by another annotator; difficult frames excluded.",
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "case_count": 20,
+        "video_count": 157
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "case_count": 12,
+          "video_count": 125
+        },
+        "validation": {
+          "case_count": 3,
+          "video_count": 12
+        },
+        "test": {
+          "case_count": 5,
+          "video_count": 20
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Not established",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": null,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Public non-surgical labeled data permitted; private data, manual surgical annotations, other EndoVis data and Hamlyn endoscopic data prohibited."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Expected Average Overlap (EAO)"
+          ],
+          "ranking": "Rank by EAO."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 1,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "final_submission_deadline": "2022-09-01",
+      "test_data_public_release": "2022-09-23"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 440,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://surgt.grand-challenge.org/",
+      "dataset": null,
+      "github": "https://github.com/Cartucho/SurgT_benchmarking",
+      "challenge_paper": "https://arxiv.org/abs/2302.03022"
+    },
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://surgt.grand-challenge.org/Rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/122-1b6ae8656ede.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgt.grand-challenge.org/challenge-description/",
+          "supports": [
+            "task_profile",
+            "event",
+            "year",
+            "dataset"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/122-5ce1d77af22c.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://surgt.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/122-a31e01e78e06.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgt.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/122-overview.json"
+        },
+        {
+          "type": "official organizer publication",
+          "url": "https://arxiv.org/pdf/2302.03022",
+          "local_snapshot": "_collection/sources/122-results.pdf",
+          "retrieved_on": "2026-10-02",
+          "supports": [
+            "dataset",
+            "evaluation"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset license/current download terms require verification; included cases are not assumed to be unique human patients."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.body_region",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/surgt-2022.json",
+          "_collection/verification_20261003/literature_context/surgt-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "record_relationships": {
+      "parent_challenge_id": "endovis-2022",
+      "analytical_unit": "child_challenge_edition"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "SurgT官方基准仓库运行脚本即可自动下载开发数据；与参赛Docker递交流程分开。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "SurgT官方基准仓库运行脚本即可自动下载开发数据；与参赛Docker递交流程分开。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/2cabfe0dec5d3661.json",
+          "url": "https://github.com/Cartucho/SurgT_benchmarking"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/1b6ae8656ede8858.json",
+          "url": "https://surgt.grand-challenge.org/Rules/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/surgt-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Heart",
+            "Kidney",
+            "Animal tissue specimens",
+            "Surgical field"
+          ],
+          "note": "官方结果报告明确包含人类冠脉手术、部分肾切除及猪组织/腹腔手术；人体心脏/肾与动物样本分开，手术视野作为操作场景。"
+        },
+        "disease": {
+          "state": "Not established",
+          "value": [],
+          "note": "Previous disease coding retained; not reclassified in this audit"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://discovery.ucl.ac.uk/10183379/1/2302.03022.pdf",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/13e2470717d91f2a.json"
+        }
+      ],
+      "note_zh": "官方结果报告明确包含人类冠脉手术、部分肾切除及猪组织/腹腔手术；人体心脏/肾与动物样本分开，手术视野作为操作场景。",
+      "anatomical_scope": "Human heart and kidney, animal specimens and surgical context",
+      "remaining_detail": ""
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Endoscopy",
+        "Video"
+      ],
+      "harmonized_modalities": [
+        "Endoscopy"
+      ],
+      "video_format_documented": true,
+      "note": "Video retained as data-format attribute, not an acquisition modality.",
+      "sources": [
+        {
+          "url": "https://surgt.grand-challenge.org/Rules/",
+          "local_source": "_collection/sources/122-1b6ae8656ede.json"
+        },
+        {
+          "url": "https://surgt.grand-challenge.org/challenge-description/",
+          "local_source": "_collection/sources/122-5ce1d77af22c.json"
+        },
+        {
+          "url": "https://surgt.grand-challenge.org/",
+          "local_source": "_collection/sources/122-overview.json"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Not established",
+      "terms_documented": false,
+      "detail_level": "Not established",
+      "licence_names": [],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "已读当届规则、比赛介绍及报告；代码 Apache 2.0 不代表比赛影像数据许可。",
+      "qualifications": [],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "url": "https://surgt.grand-challenge.org/Rules/",
+          "local_source": "_collection/sources/122-1b6ae8656ede.json"
+        },
+        {
+          "url": "https://surgt.grand-challenge.org/challenge-description/",
+          "local_source": "_collection/sources/122-5ce1d77af22c.json"
+        },
+        {
+          "url": "https://surgt.grand-challenge.org/challenge/statistics/",
+          "local_source": "_collection/sources/122-a31e01e78e06.json"
+        },
+        {
+          "url": "https://surgt.grand-challenge.org/",
+          "local_source": "_collection/sources/122-overview.json"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2302.03022",
+          "local_source": "_collection/sources/122-results.pdf"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "search_attempts": [
+        {
+          "url": "https://surgt.grand-challenge.org/Rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1b6ae8656ede8858.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/Cartucho/SurgT_benchmarking",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/2cabfe0dec5d3661.json",
+          "status": 200
+        },
+        {
+          "url": "https://surgt.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/b8dea77a66886cf8.json",
+          "status": 200
+        },
+        {
+          "url": "https://discovery.ucl.ac.uk/10183379/1/2302.03022.pdf",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/13e2470717d91f2a.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/Cartucho/SurgT_benchmarking#Apache-2.0-1-ov-file",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/2ba43ee83f4e7080.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/Cartucho/SurgT_benchmarking/blob/main/LICENSE",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/f703494f4a03d7c4.json",
+          "status": 200
+        },
+        {
+          "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1e460fb35d79919e.json",
+          "status": 200
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "5 competition teams; two additional post-challenge teams separately reported.",
+              "url": "https://arxiv.org/pdf/2302.03022",
+              "snapshot": "_collection/sources/122-results.pdf",
+              "scope": "competition teams; two additional post-challenge teams separately reported",
+              "value": {
+                "value": 5,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "r soft-tissue tracking. The challenge The authors declare that they have no known compet- attracted 5 teams, with 2 further post-challenge team sub- ing financial interests or personal relationships that could missions. Our study shows that in both 2D and 3D scenar- have appea",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

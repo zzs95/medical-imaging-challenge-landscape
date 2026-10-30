@@ -1,0 +1,598 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "kits-2023",
+    "challenge_name": "KiTS23 2023",
+    "full_name": "2023 Kidney and Kidney Tumor Segmentation Challenge",
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2023-R01",
+      "official_programme_row_numbers": "1",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "University of Minnesota",
+        "German Cancer Research Center",
+        "Cleveland Clinic"
+      ],
+      "registered_authors": [
+        {
+          "name": "Nicholas Heller",
+          "affiliation": "University of Minnesota"
+        },
+        {
+          "name": "Fabian Isensee",
+          "affiliation": "German Cancer Research Center"
+        },
+        {
+          "name": "Resha Tejpau",
+          "affiliation": "University of Minnesota"
+        },
+        {
+          "name": "Andrew Wood",
+          "affiliation": "Cleveland Clinic"
+        },
+        {
+          "name": "Nikolaos Papanikolopoulos",
+          "affiliation": "University of Minnesota"
+        },
+        {
+          "name": "Christopher Weight",
+          "affiliation": "University of Minnesota"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Kidneys",
+        "Renal tumors",
+        "Renal cysts"
+      ],
+      "diseases": [
+        "Renal tumors suspicious for malignancy",
+        "Renal cysts"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Segmentation",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7840133",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/2023KidneyandKidneyTumorSegmentationChallenge_04-18-2023_11-24-54.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7840133",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/2023KidneyandKidneyTumorSegmentationChallenge_04-18-2023_11-24-54.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "CT"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7840133",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/2023KidneyandKidneyTumorSegmentationChallenge_04-18-2023_11-24-54.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. CC BY-NC-SA；允许学术和工业团队训练不等于允许商业分发，原始及修改数据的商业分发被禁止。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7840133",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/2023KidneyandKidneyTumorSegmentationChallenge_04-18-2023_11-24-54.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7840133",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/2023KidneyandKidneyTumorSegmentationChallenge_04-18-2023_11-24-54.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "CodaLab",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7840133",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/2023KidneyandKidneyTumorSegmentationChallenge_04-18-2023_11-24-54.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7840133",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/2023KidneyandKidneyTumorSegmentationChallenge_04-18-2023_11-24-54.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nTwo metrics will be used:\n- Volumetric Dice\n- Surface Dice\n\n\nWe have, from the annotation process used in KiTS21, collected three annotations for each region of interest for\nthe first 400 cases of our dataset. Based on these, we devised a strategy to dynamically determine a suitable\ntolerance for each class on each case. We did this by finding the mean of the 95th percentile of the surface\ndistance of any two annotations of a single instance within each class. For KiTS23 we have decided to simply use\n\n\n\n\f2023 Kidney and Kidney Tumor Segmentation Challenge\n\nthe median of these KiTS21 tolerances for each class.\n\n\nWhere each metric is computed for each of the following evaluation classes:\n- Union(Kidney, Tumor, Cyst)\n- Union(Tumor, Cyst)\n- Tumor\n\n\nThese metrics are determined per volume and then averaged.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nOur two chosen metrics act together in complementary ways. Volumetric Dice does a nice job of capturing how\nwell the model allocated the 'bulk' of its predictions, whereas Surface Dice then measures how well the surface of\neach ROI matches up with what was predicted, rightly penalizing cases in which small ROIs were missed entirely.\n\n\nThis combination of metrics was employed for KiTS21 and seemed to work quite well.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nThe final performance rank will be obtained by computing each metric's average across all regions across all cases,\nand then performing a rank-then-aggregate operation by averaging each team's relative leaderboard position\nbetween these two metrics. In cases where there is a tie, the Tumor Volumetric Dice will be used as a tiebreaker.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nMissing test case predictions will be assigned the lowest possible value (0.0) for each metric.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThe rank-then-aggregate paradigm is a simple and elegant way to use two metrics in combination without having\nto worry too much about their relative scales such that one might unexpectedly dominate the other when\naveraging them together, for example. Tumor Volumetric Dice is a suitable tiebreaker because Volumetric Dice\nremains the most commonly-used segmentation metric, and Tumor is the most clinically-import region of interest\nfor this challenge."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Prediction NIfTI files in ZIP",
+      "platform": "CodaLab",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "During the one week submission period, teams will request a 48 hour window at the beginning of which, an automated email will send them a link to download the test set images. They are required to then submit their predictions to CodaLab before the end of that 48 hour window. Otherwise they will be disqualified. The predictions will take the form of a zip archive of Nifti files of the same shape as the original images, with predicted segmentations represented in the form of integer values (1 for kidney, 2 for tumor, 3 for cyst). We understand the push for challenges to ask teams for containers, but after having tried this in 2021, a large number of participants experienced difficulty getting their containers to run within the allotted time and memory limit. We recognize that this is, in large part, our fault, since we apparently did not communicate these computational requirements to teams clearly enough or with enough emphasis. However, it speaks to the fact that teams would have modified their approaches had they known about the limitations, and computational efficiency is not what KiTS is meant to be about. KiTS aims to identify the best approach for automatic kidney tumor segmentation regardless of computational complexity. The concern that teams will cheat by intervening manually in their algorithm's predictions is nontrivial. However, by restricting teams to have the data for only 48 hours prior to their predictions being due, their time window for doing so is very limited. As the people annotating the data, we know very well that 48 hours is not nearly enough time to manually produce high-quality labels for our test set. As a further measure to prevent cheating in this way, after the leaderboard is published, each of the top 5 teams will be asked to produce a Docker container which faithfully reproduces the predictions that were submitted to the leaderboard. We plan to run submitted Docker containers on a P3.2xlarge EC2 instance with a single V100 GPU, and we will require that it takes no more than 2.5 hr per case. We feel that this hybrid approach strikes a balance between the administrative and infrastructure costs associated with algorithm submission and the risk of cheating associated with prediction submission. There is some risk that teams might share data between them within the submission window. In order to mitigate it, we will require that each team produce the following in order to receive a copy of the data: A complete manuscript, with the exception of final results A final list of contributors, including their ORCID A signed document in which they promise to abide by the terms of use which include a clause prohibiting data sharing It is our belief that it is unlikely for a team to go to all of the work to produce a manuscript, but then provide an unfair advantage to one of their competitors. Asking for author identifiers helps to ensure that the same team is not registering for multiple time windows under the guise of different teams. Finally, at the end of the day, some level of trust is still required (as is the case in evaluating virtually all research results). To this end, we will require teams to sign our terms of use and we will trust that they will not violate them. On top of all of this, we will also restrict the submission period to a single week, rather than two weeks as originally 2023 Kidney and Kidney Tumor Segmentation Challenge proposed. This will mitigate the impact of data sharing if it ultimately were to occur.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7840133",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/2023KidneyandKidneyTumorSegmentationChallenge_04-18-2023_11-24-54.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [
+        {
+          "artifact": "Docker container",
+          "purpose": "Top-five verification after prediction-based ranking"
+        }
+      ],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2023,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7840133",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/2023KidneyandKidneyTumorSegmentationChallenge_04-18-2023_11-24-54.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.7840133"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://kits-challenge.org/",
+      "registration": "https://doi.org/10.5281/zenodo.7840133",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2023/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.7840133",
+          "resolved_record_id": 7840134,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/2023KidneyandKidneyTumorSegmentationChallenge_04-18-2023_11-24-54.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/2023KidneyandKidneyTumorSegmentationChallenge_04-18-2023_11-24-54.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://kits-challenge.org/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/8d1c11e542234155.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "KiTS23"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Public download",
+      "data_model_flow": "data-to-model"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "The edition website links publicly downloadable GitHub segmentations and image-fetch instructions. The website login is for annotation personnel, not the public training-data download."
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840133",
+          "excerpt": "rcial purposes. These are the terms under which our institution has allowed us to release this data publicly."
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840133",
+          "excerpt": "ink to the submission instructions. 2023 Kidney and Kidney Tumor Segmentation Challenge Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. During the one week submission period, teams will request a 48 hour window at the beginning of which, an automated email will send them a link to download the test set images. They are required to then submit their predictions to CodaLab before the end of that 48 hour window. Otherwise they will be disqualified. The predictions will take the form of a zip archive of Nifti files of the same shape as the original images, with predicted segmentations re [...] ues (1 for kidney, 2 for tumor, 3 for cyst). We understand the push for challenges to ask teams for containers, but after having tried this in 2021, a large number of participants experienced difficulty getting their containers to run within the allotted time and memory limit. We recognize that this is, in large part, our fault, since we apparently did not communicate these computational requirements to teams clearly enough or with enough emphasis. However, it speaks to the fact that teams would have modified their appro [...] in this way, after the leaderboard is published, each of the top 5 teams will be asked to produce a Docker container which faithfully reproduces the predictions that were submitted to the leaderboard. We plan to run submitted Docker containers on a P3.2xlarge EC2 instance with a single V100 GPU, and we will require that it takes no more than 2.5 hr per case. We feel that this hybrid approach strikes a balance between the administrative and infrastructure costs associated with algorithm submission and the risk of cheating associated with [...] o one of their competitors. Asking for author identifiers helps to ensure that the same team is not registering for multiple time windows under the guise of different teams. Finally, at the end of the day, some level of trust is still required (as is the case in evaluating virtually all research results). To this end, we will require teams to sign our terms of use and we will trust that they will not viol"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840133",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results March 15: Training Set Release July 7: Registration and Manuscript Deadline July 14 - July 28: Inference and Submission Period July 31: Results Announcement (All dates 2023)"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840133",
+          "excerpt": " up to the participants to decide how they would like to perform model validation using the pool of training cases made available to them. c) Explain why a total number of cases and the specific proportion of training, validation and test cases was chosen. The train - test split in case numbers represents a roughly 80% - 20% split. This is primarily due to the fact that we have chosen not to reuse any prior challenge test"
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/8d1c11e542234155.json",
+          "url": "https://kits-challenge.org/",
+          "excerpt": "for pedicting treatment outcomes. For nearly half a decade, KiTS has maintained and expanded upon a publicly-available, multi-institutional cohort of hundreds of segmented CT scans showing kidney tumors, along with comprehensive anonymized clinical information about each case [ 4 ]. This dataset has not only served as a high-quality benchmark for 3D semantic segmentation methods [ 5 , 6 ], but also as a [...] rple, the tumor is shown in green, and the cyst is shown in blue. Timeline All dates 2023. April 14 Training Dataset Release July 14 Deadline for Short Paper July 21 - 28 Submissions Accepted July 31 Results Announced October 8 Satellite Event at MICCAI 2023 How to Participate + Download the data We are using a GitHub repository to manage version control for the dataset. The segmentations are stored on GitHub directly, but the imaging must be fetched from separate servers by following the instructions on the repository's README.md . The image and segmentation data are available und [...]  to be a commercial use. We therefore allow (and encourage) teams from the industry to participate. Access via GitHub + Create your model The task is to develop a model which can predict high-quality segmentations for kidneys, kidney tumors, and kidney cysts. The training data consists of several hundred examples on which models can be trained and validated. An explanation for how teams will be evaluate [...] ddition to the official training set in order to construct their models, however, that data must be publicly available as of April 14, 2023. The same applies to pretrained weights -- they must have been publicly available before the initial KiTS23 dataset was released on April 14. This is to prevent unfair advantages for teams that may have amassed large private datasets. All external data use must be described in detail in each team's accompanying paper (described in the following section). Wondering wh [...] t? Several teams that competed in previous KiTS Challenges have made the code for their submissions publicly available. A (not comprehensive) list is given below. MIC-DKFZ/nnUNet srg9000/kits21_spatial_channel_attention marcjour303/KITS21 jchen42703/kits19-cnn nitsaick/kits19-challenge xperience-ai/kits19 jcausey-astate/ai_campus_kits19 junqiangchen/KiTS19-Challege You might also benefit from reading th [...] hoose a timepoint during the one-week submission window when you'd like to receive the test imaging download link. After receiving it, you must then return your predictions by replying with an attachment within 24 hours. Predictions should be submitted as a tar file containing a single .nii.gz file for each test case received. The files should be named exactly the same as the test cases they correspond to [...] If all files look good, it will print Ready for submission :) . Submit Form + Submit your algorithm container (top-5 only) The MICCAI community has recently seen a strong push towards challenges that require algorithm submission rather than prediction submission in order to ensure that participants are not manually intervening in their algorithm's predictions. We at KiTS take scientific integrity very seri [...] e the reproducibility of challenge results. That said, we worry that requring all teams to submit a container will discourage submissions which might make use of highly novel or computationally expensive approaches which might be difficult to containerize in such a way that they will run on our servers in a limited amount of time. Therefore, we have decided to require only the top-5 teams who will be coauthoring the challenge report to provide a containerized version of their algorithm for us to independently verify its performance. In doing so, these teams retain full ownership of the intellectual property associated with their approach, and unless other explicit permission is given, we will destroy their containers promtly after verification. This process will be coordinated with teams individually after the results are announced. + Attend the satellite event at MICCAI 2023! (optional) The KiTS23 challenge is run in conjunction with the 2023 MICCAI Conference in Vancouver, Canada. All participants who made a [...] iTS21, we have decided to perform our image annotations on a web-based platform in full view of the public. We hope that this will encourage participants to scrutinize this process and dataset in greater detail, and perhaps reproduce something similar for their own work. The process for KiTS23 is very similar to what was described for KiTS21 . The primary difference is that we have decided to skip the \" [...] isions as needed A baseline nnU-Net model is trained for this segmentation task, and cases with low agreement between the labels and cross-validation predictions are further reviewed by experts as needed Our postprocessing script uses thresholds and fairly simple heuristic-based geometric algorithms. Its source code is available on the KiTS23 GitHub repository under /kits23/annotation/postprocessing.py . F [...] edure can be found at /kits23/evaluation/ . The winning team will be awarded $5,000 USD after their containerized solution has been verified Organizers This project is a collaboration between the University of Minnesota Robotics Institute (MnRI) , the Helmholtz Imaging at the German Cancer Research Center (DKFZ), and the Cleveland Clinic's Urologic Cancer Program . Nicholas Heller ✉ (MnRI) Andrew Wood (Cle [...] . Climb 4 Kidney Cancer National Cancer Institute Contact Us For problems with the website or image download, please submit an issue on GitHub For general discussion, please post on the Discourse forum For everything else, please email Nicholas Heller at helle246@umn.edu Main Conference"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 495,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 118,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Documented and classifiable",
+          "value": "Publicly released data may not be redistributed commercially in original or modified form."
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "More than 70 acquisition institutions; one surgical treatment center is not single-center acquisition.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.7840133",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html"
+        },
+        {
+          "url": "https://kits-challenge.org/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/8d1c11e542234155.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/kits-2023.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer",
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Kidneys",
+        "Renal tumors",
+        "Renal cysts"
+      ],
+      "specific_diseases": [
+        "Renal tumors suspicious for malignancy",
+        "Renal cysts"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840133"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/kits-2023.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "CC BY-NC-SA；允许学术和工业团队训练不等于允许商业分发，原始及修改数据的商业分发被禁止。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC SA. Additional comments: Teams from academia AND the industry are encouraged to obtain and train models using 2023 Kidney and Kidney Tumor Segmentation Challenge this dataset, but this data is not to be redistributed in its original or modified forms for commercial purposes. These are the terms under which our institution has allowed us to release this data publicly.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.7840133"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7840133"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2023/kits-2023.json",
+              "source_field": "resource_characteristics_review.fields.post_challenge",
+              "value": "Publicly released data may not be redistributed commercially in original or modified form.",
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.7840133",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R01/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html"
+                },
+                {
+                  "url": "https://kits-challenge.org/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/8d1c11e542234155.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/kits-2023.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

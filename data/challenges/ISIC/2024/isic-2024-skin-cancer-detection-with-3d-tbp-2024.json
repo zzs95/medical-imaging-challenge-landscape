@@ -1,0 +1,568 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "isic-2024-skin-cancer-detection-with-3d-tbp-2024",
+    "challenge_name": "ISIC 2024 - Skin Cancer Detection with 3D-TBP",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "workshop_associated_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "Ninth ISIC Skin Image Analysis Workshop",
+        "relationship": "Competition recap and optional winner presentations at MICCAI 2024",
+        "proceedings": null
+      },
+      "series": "ISIC"
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Dermatology photography"
+      ],
+      "submodality": [
+        "3D total-body photography lesion crops"
+      ],
+      "body_region": [
+        "Skin"
+      ],
+      "organ_system": [
+        "Dermatologic"
+      ],
+      "organs_or_structures": [
+        "Skin lesions"
+      ],
+      "diseases": [
+        "Skin cancer"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Malignant versus benign-to-intermediate lesion classification",
+          "task_family": "Classification",
+          "task_subtype": "binary classification",
+          "input": [
+            "2D lesion crops from 3D total-body photography"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Malignancy probability"
+          ],
+          "granularity": "lesion-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Skin lesions"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Dermatology photography"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": false,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Competition data are available for competition participation, non-commercial academic research and education under the official Kaggle rules.",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-25; access completion",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_by_scope": []
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": true,
+        "submission_artifact": "Kaggle Notebook"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Kaggle",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Notebook-based execution",
+      "platform": "Kaggle",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "submission_artifact": "Kaggle Notebook",
+      "execution_mode": "Platform-run",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Scored submission artifact; additional reproducibility/publication materials recorded separately.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "user_supplied_review",
+        "summary": "Notebook在Kaggle执行，生成submission.csv；每张图像恶性概率。",
+        "evidence_ids": [
+          "E2"
+        ],
+        "source_urls": [
+          "https://www.kaggle.com/competitions/isic-2024-challenge"
+        ],
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+        "directly_retrieved_protocol_snapshots": [],
+        "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced."
+      },
+      "generated_output": {
+        "filename": "submission.csv",
+        "columns": [
+          "isic_id",
+          "target"
+        ]
+      }
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://www.kaggle.com/competitions/isic-2024-challenge",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "The data-collection README describes AUC, but does not verify the final Kaggle competition-specific partial-AUC formula. Final scoring remains null until verified. ISIC is a challenge series, not an asserted conference affiliation.",
+      "2026-10-22 提交方式字段同步：Notebook在Kaggle执行，生成submission.csv；每张图像恶性概率。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 89,
+      "sources": [
+        {
+          "type": "official challenge source",
+          "url": "https://challenge.isic-archive.com/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/ddbd47d9142d8c17.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated"
+          ]
+        },
+        {
+          "type": "official challenge source",
+          "url": "https://raw.githubusercontent.com/ISIC-Research/2024-challenge-dataset/main/README.md",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/1b549444f94a5ed5.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated"
+          ]
+        },
+        {
+          "type": "official competition rules, search-indexed extraction",
+          "url": "https://www.kaggle.com/competitions/isic-2024-challenge/rules",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/sources_other/kaggle-evaluation-details-web.json",
+          "supports": [
+            "data_access",
+            "evaluation.platform",
+            "submission.platform"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://www.kaggle.com/competitions/isic-2024-challenge",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/isic-2024-skin-cancer-detection-with-3d-tbp-2024.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "user_supplied_review",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "source_urls": [
+            "https://www.kaggle.com/competitions/isic-2024-challenge"
+          ],
+          "supports": [
+            "Notebook在Kaggle执行，生成submission.csv；每张图像恶性概率。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://www.kaggle.com/competitions/isic-2024-challenge/rules",
+          "local_snapshot": "_collection/sources_other/kaggle-evaluation-details-web.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official Kaggle competition endpoint: https://www.kaggle.com/competitions/isic-2024-challenge/rules; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "submission.platform": {
+          "source_url": "https://www.kaggle.com/competitions/isic-2024-challenge/rules",
+          "local_snapshot": "_collection/sources_other/kaggle-evaluation-details-web.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official Kaggle competition endpoint: https://www.kaggle.com/competitions/isic-2024-challenge/rules; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://www.kaggle.com/competitions/isic-2024-challenge",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/isic-2024-skin-cancer-detection-with-3d-tbp-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://www.kaggle.com/competitions/isic-2024-challenge",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/isic-2024-skin-cancer-detection-with-3d-tbp-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://www.kaggle.com/competitions/isic-2024-challenge",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/isic-2024-skin-cancer-detection-with-3d-tbp-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "evaluation.platform",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/isic-2024-skin-cancer-detection-with-3d-tbp-2024.json",
+          "_collection/verification_20261003/literature_context/isic-2024-skin-cancer-detection-with-3d-tbp-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "user_supplied_review",
+          "summary": "Notebook在Kaggle执行，生成submission.csv；每张图像恶性概率。",
+          "evidence_ids": [
+            "E2"
+          ],
+          "source_urls": [
+            "https://www.kaggle.com/competitions/isic-2024-challenge"
+          ],
+          "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/ISIC/2024/isic-2024-skin-cancer-detection-with-3d-tbp-2024.json"
+        }
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "当届记录指定 Kaggle competition 数据入口；Kaggle 官方下载规则要求账号加入赛事并接受规则。按明确的平台下载流程归为注册访问，未进行登录下载或假定额外人工审核。",
+        "evidence_basis": "Official edition sources and explicit access procedures; temporal/platform qualifications retained",
+        "review_date": "2026-10-25",
+        "source_urls": [
+          "https://www.kaggle.com/docs/competitions?source=post_page---------------------------"
+        ],
+        "access_by_scope": [],
+        "confidence": "Documented procedure; source and temporal qualifications retained"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "已有人审核的当届规则确认训练数据提供参赛者，正式Kaggle Notebook由平台执行；CSV为运行输出，并非参赛者直接上传测试预测的完整流程。"
+      },
+      "decision_history": [
+        "已有人审核的当届规则确认训练数据提供参赛者，正式Kaggle Notebook由平台执行；CSV为运行输出，并非参赛者直接上传测试预测的完整流程。",
+        "2026-10-25 access completion: 当届记录指定 Kaggle competition 数据入口；Kaggle 官方下载规则要求账号加入赛事并接受规则。按明确的平台下载流程归为注册访问，未进行登录下载或假定额外人工审核。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/sources_other/kaggle-evaluation-details-web.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/isic-2024-skin-cancer-detection-with-3d-tbp-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/kaggle_download_policy.json",
+          "url": "https://www.kaggle.com/docs/competitions?source=post_page---------------------------",
+          "section": "Development access follow-up 2026-10-25"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Account registration",
+        "rationale": "当届记录指定 Kaggle competition 数据入口；Kaggle 官方下载规则要求账号加入赛事并接受规则。按明确的平台下载流程归为注册访问，未进行登录下载或假定额外人工审核。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/237b6c245aea32d4.json",
+          "_collection/access_completion_20261025/sources/889cb23c26033f4b.json",
+          "_collection/access_completion_20261025/sources/kaggle_download_policy.json",
+          "_collection/access_completion_20261025/sources/325c48de501c75eb.json"
+        ]
+      }
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "conference_affiliation_review": {
+      "review_date": "2026-10-25",
+      "previous_analysis_conference": "Unknown",
+      "analysis_conference": "MICCAI",
+      "primary_conference": "MICCAI 2024",
+      "organizing_arrangement": "Conference-workshop associated competition",
+      "primary_relationship": "Workshop-associated",
+      "related_events": [
+        {
+          "venue": "MICCAI",
+          "year": 2024,
+          "relationship": "ISIC workshop association with competition recap and invited winner presentations",
+          "count_as_primary": true
+        }
+      ],
+      "note_zh": "补为MICCAI2024工作坊关联：竞赛规则邀请获奖团队作可选报告，ISIC工作坊正式日程列出该届竞赛专门介绍。统计为MICCAI-associated，不声称它是MICCAI主挑战赛名单项目或MICCAI直接主办。",
+      "sources": [
+        {
+          "url": "https://workshop.isic-archive.com/2024/",
+          "local_source": "_collection/conference_audit_20261025/sources/9a9564c96ada0a8.json",
+          "sha256": "0c7d7ac7551813402ffe7241868be435e91498b6b1d4e5abf4c72b26373e6ffe"
+        },
+        {
+          "url": "https://www.kaggle.com/competitions/isic-2024-challenge/rules",
+          "retrieval_method": "Web search tool, competition-specific winner obligations; HTTP request returned a JavaScript shell",
+          "supports": "Optional winner presentation at ISIC workshop, MICCAI 2024"
+        }
+      ]
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Dermatology photography"
+      ],
+      "harmonized_modalities": [
+        "Clinical photography"
+      ],
+      "video_format_documented": false,
+      "note": "Explicit synonym/group mapping; preserve original clinical_domain labels.",
+      "sources": [
+        {
+          "url": "https://challenge.isic-archive.com/",
+          "local_source": "_collection/sources_other/ddbd47d9142d8c17.json"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/ISIC-Research/2024-challenge-dataset/main/README.md",
+          "local_source": "_collection/sources_other/1b549444f94a5ed5.json"
+        },
+        {
+          "url": "https://www.kaggle.com/competitions/isic-2024-challenge/rules",
+          "local_source": "_collection/sources_other/kaggle-evaluation-details-web.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02"
+  ]
+}

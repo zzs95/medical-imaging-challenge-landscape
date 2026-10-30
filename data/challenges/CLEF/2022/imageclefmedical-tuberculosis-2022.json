@@ -1,0 +1,613 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "imageclefmedical-tuberculosis-2022",
+    "challenge_name": "ImageCLEFmedical Tuberculosis 2022",
+    "full_name": "ImageCLEFmedical Tuberculosis 2022",
+    "year": 2022,
+    "event": {
+      "conference": "CLEF 2022",
+      "event_type": "shared_task",
+      "parent_event": "ImageCLEFmedical"
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Chest"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Lungs",
+        "Tuberculous caverns"
+      ],
+      "diseases": [
+        "Pulmonary tuberculosis"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "task_families": [
+        "Detection",
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Caverns detection",
+          "task_family": "Detection",
+          "task_families": [
+            "Detection"
+          ],
+          "source_url": "https://www.imageclef.org/2022/medical/tuberculosis"
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Caverns report (cavern characteristics)",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "source_url": "https://www.imageclef.org/2022/medical/tuberculosis"
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": true,
+      "classification": true,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "CT"
+      ],
+      "population": null,
+      "source_reference": "https://www.imageclef.org/2022/medical/tuberculosis",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Task-specific End-User Agreement (requirement documented). 2022 官方注册规则明确：每个任务分别填写、签署并上传 EUA，经组织者批准后才视为注册成功。任务级签署与批准要求已确认；完整当届协议正文及再利用权限仍未取得。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "AIcrowd",
+      "metrics": null,
+      "source_reference": "https://www.imageclef.org/2022/medical/tuberculosis",
+      "execution_note": "Service and artifact descriptions do not by themselves establish execution location or automation."
+    },
+    "submission": {
+      "submission_type": "Prediction plain-text files",
+      "platform": "AIcrowd",
+      "source_reference": "https://www.aicrowd.com/challenges/imageclef-2022-tuberculosis-caverns-detection",
+      "runtime_limits": null,
+      "primary_artifacts": [
+        "Bounding-box coordinates",
+        "Cavern-feature probabilities"
+      ],
+      "additional_artifacts": [],
+      "execution": "Participants infer locally; AIcrowd evaluates submitted predictions.",
+      "format_by_task_or_phase": [
+        {
+          "task": "Caverns Detection",
+          "format": "plain text",
+          "header": false,
+          "delimiter": ",",
+          "columns": [
+            "Filename",
+            "X1",
+            "Y1",
+            "Z1",
+            "X2",
+            "Y2",
+            "Z2"
+          ],
+          "row_unit": "one bounding box"
+        },
+        {
+          "task": "Caverns Report",
+          "format": "plain text",
+          "header": false,
+          "delimiter": ",",
+          "columns": [
+            "Filename",
+            "thick_walls_probability",
+            "calcification_probability",
+            "foci_around_probability"
+          ],
+          "probability_range": [
+            0,
+            1
+          ]
+        }
+      ],
+      "format_limitations": [],
+      "source_urls": [
+        "https://www.aicrowd.com/challenges/imageclef-2022-tuberculosis-caverns-detection",
+        "https://www.aicrowd.com/challenges/imageclef-2022-tuberculosis-caverns-report"
+      ],
+      "evidence_basis": "Human-supplied review of edition-specific organizer documentation",
+      "review_date": "2026-10-24",
+      "submission_evidence_status": "Primary artifact identified by human review; format-specific limitations retained",
+      "review_source": "_collection/submission22_review_20261024/user_review.txt",
+      "additional_materials": [],
+      "independent_source_check": {
+        "url": "https://www.aicrowd.com/challenges/imageclef-2022-tuberculosis-caverns-report",
+        "checked_on": "2026-10-24",
+        "finding": "Official final instructions specify three probabilities: thick walls, calcifications and foci around the cavern; headerless comma-delimited plain text."
+      }
+    },
+    "schedule": {
+      "edition_year": 2022,
+      "source_reference": "https://www.imageclef.org/2022/medical/tuberculosis"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://www.imageclef.org/2022/medical/tuberculosis",
+      "supporting_sources": [
+        "https://www.imageclef.org/2022/medical"
+      ]
+    },
+    "notes": [
+      "The first task detects cavern regions; the second predicts three binary cavern characteristics in the final AIcrowd instructions. The word report does not imply free-text report generation."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.imageclef.org/2022/medical/tuberculosis",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/b2c47cac50f0c097.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.imageclef.org/2022/medical",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/9f80ab2d97027641.json",
+          "http_status": 200
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://www.aicrowd.com/challenges/imageclef-2022-tuberculosis-caverns-detection",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://www.aicrowd.com/challenges/imageclef-2022-tuberculosis-caverns-report",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields"
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py",
+      "submission_human_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/submission22_review_20261024/user_review.txt",
+        "basis": "Human-supplied review of edition-specific organizer documentation",
+        "scope": "Submission artifact, format and executor; source assertions supplied by human review, not a new independent audit of all linked pages."
+      }
+    },
+    "review_coding": {
+      "task_families": [
+        "Detection",
+        "Classification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "data-to-model"
+    },
+    "record_relationships": {
+      "analytical_unit": "named_subchallenge_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": null,
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "The edition-specific ImageCLEF registration instructions require organizer validation of the submitted agreement/form before dataset/task access is granted."
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "ImageCLEFmed Tuberculosis | ImageCLEF / LifeCLEF -  Multimedia Retrieval in CLEF",
+          "local_source": "_collection/other_venues_audit_20261024/sources/b2c47cac50f0c097.json",
+          "url": "https://www.imageclef.org/2022/medical/tuberculosis",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home › ImageCLEF 2022 › ImageCLEFmedical ImageCLEFmed Tuberculosis Motivation Welcome to the 6th edition of the Tuberculosis Task! Tuberculosis (TB) is a bacterial infection caused by a germ called Mycobacterium tuberculosis. About 130 years after its discovery, the [...] vailable on AICrowd: Caverns Detection , Caverns Report (updating) Preliminary schedule 15.11.2021: registration opens for all ImageCLEF tasks 06.02.2022: expected development data release for both subtasks 14.03.2022: test data release starts (depends on the task) 06.05.2022: deadline for submitting the participants runs (depends on the task) 13.05.2022: release of the processed results by the task organizers (depends on the task) 27.05.2022: deadline for submission of working notes papers by the participants 13.06.2022: notifica [...]  CT images we provide two versions of automatically extracted masks of the lungs. These data can be downloaded together with the patients CT images. The description of the first version of segmentation can be found here . The description of the second version of segmentation can be found here . The first version of segmentation provides more accurate masks, but it tends to miss large abnormal regions of l"
+        },
+        {
+          "section": "ImageCLEFmedical | ImageCLEF / LifeCLEF -  Multimedia Retrieval in CLEF",
+          "local_source": "_collection/other_venues_audit_20261024/sources/9f80ab2d97027641.json",
+          "url": "https://www.imageclef.org/2022/medical",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home › ImageCLEF 2022 ImageCLEFmedical ImageCLEF has include medical tasks every year since 2004. Since 2019 we focus each of the medical tasks to one specific problem but combine them as a single task with several subtasks. Our hopes are that this informs research "
+        },
+        {
+          "section": "Official edition data/registration instructions",
+          "local_source": "_collection/access_flow_review_20261024/sources/202a87751bd12aec.json",
+          "url": "https://www.imageclef.org/2022#registration",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home ImageCLEF 2022 Tweets by @imageclef Sponsors Motivation ImageCLEF 2022 is an evaluation campaign that is being organized as part of the CLEF initiative labs. The campaign offers several research tasks that welcome participation from teams around the world. The  [...] kshop Proceedings (CEUR-WS.org). Selected contributions among the participants, will be invited for publication in the following year in the Springer Lecture Notes in Computer Science (LNCS) together with the annual lab overviews. For the 2022 edition, ImageCLEF organizes 4 main tasks with a global objective of promoting the evaluation of technologies for annotation, indexing and retrieval of visual data with the aim of providing information access to large collections of images in various usage scenarios and application domains: medical, nature, Internet and social media. Target communities involve (but are not limited to): information retrieval (e.g., text, vision, audio, multimedia, social media, sensor data), machine learning, deep learni [...] ing task webpage for specific dates. A (tentative) global schedule can be found below: 15.11.2021 : registration opens for all ImageCLEF tasks 17.01.2022 : development data release starts (depends on the task) 14.03.2022 : test data release starts (depends on the task) 06.05.2022 : deadline for submitting the participants runs (depends on the task) 13.05.2022 : release of the processed results by the task organizers (depends on the task) 27.05.2022 : deadline for submission of working notes papers by the participants 13.06.2022 : noti [...] d workshops on a broad range of challenges in the fields of multilingual and multimodal information access evaluation, and a set of benchmarking activities carried in various labs designed to test different aspects of mono and cross-language information retrieval systems. More details about the conference can be found here . Also there is more information about the Clef Initiative . Programme of ImageCL [...] al Caption Tasks 2022”, Mohammad Mahdi Javid , Iran University of Science and Technology, Islamic Republic of Iran (physical) “CSIRO at the ImageCLEFmed 2022 Tuberculosis Caverns Detection Challenge: A 2D and 3D Deep Learning Detection Network Approach”, Hang Min , Australian e-Health Research Centre, Commonwealth Scientific and Industrial Research Organisation, Australia (physical) “Caverns Detection a [...] versity of Bucharest, Romania (virtual) “ImageCLEF 2022 final remarks and discussions“, Participant registration Each participant has to register on ( https://www.aicrowd.com ) with username, email and password. A representative team name should be used as username. In order to be compliant with the CLEF requirements, participants also have to fill in the following additional fields on their profile: First name Last name Affiliation Address City Country Participants now have to access the 'Resources tab' on the challenge page, where they find a download link to the task's End User Agreement (EUA). At the same place they will also be able to upload a filled in and signed EUA. Participants have to fill in and submit one EUA for each ImageCLEF task they want to participate in. An ImageCLEF participant is considered as registered for a task as soon as he/she has uploaded a valid EUA that was approved by an ImageCLEF organizer (examples of how the EUAs for the medical task should be filled in can be found here: Caption 2019 EUA example , Tuberculosis 2019 EUA example and VQA 2019 EUA example ). Registrations are handled on a per-task basis. This means if a task has multiple challenges (subtasks), a participant can automatically access the data of all challenges in that task because there is one common dataset per task. We do not separate datasets on a per-challenge basis. PS: You do not have to remember all of the steps mentioned above as you will be given instructions on what to do as soon as you try to access a challenge's 'Resouces' tab. The Tasks ImageCLEF 2022 proposes 4 main tasks: ImageCLEFaware : The images available on social networks can be exploited in ways users are unaware of when initially shared, including situations that have serious consequences for the users’ real lives. The task address"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 559,
+              "unit": "cases",
+              "scope": "Cavern detection",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 140,
+              "unit": "cases",
+              "scope": "Cavern detection",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 60,
+              "unit": "cases",
+              "scope": "Cavern reporting",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 16,
+              "unit": "cases",
+              "scope": "Cavern reporting",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Not established",
+          "value": null
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Documented and classifiable",
+          "value": {
+            "value": 6,
+            "unit": "submitting teams",
+            "comparable": true,
+            "details": ""
+          }
+        }
+      },
+      "review_note": "Each CT corresponds to one unique patient. Six groups submitted successful runs across two tasks, four per task with two overlapping.",
+      "sources": [
+        {
+          "url": "https://www.imageclef.org/2022/medical/tuberculosis",
+          "local_source": "_collection/other_venues_audit_20261024/sources/b2c47cac50f0c097.json"
+        },
+        {
+          "url": "https://www.imageclef.org/2022/medical",
+          "local_source": "_collection/other_venues_audit_20261024/sources/9f80ab2d97027641.json"
+        },
+        {
+          "url": "https://ceur-ws.org/Vol-3180/paper-96.pdf",
+          "local_source": "_collection/resource_audit_20261025/online/0c3b88be4cb48166.txt"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/imageclefmedical-tuberculosis-2022.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Chest"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Inflammatory / infectious"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Lungs",
+        "Tuberculous caverns"
+      ],
+      "specific_diseases": [
+        "Pulmonary tuberculosis"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/b2c47cac50f0c097.json",
+          "url": "https://www.imageclef.org/2022/medical/tuberculosis"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/9f80ab2d97027641.json",
+          "url": "https://www.imageclef.org/2022/medical"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/0c3b88be4cb48166.txt",
+          "url": "https://ceur-ws.org/Vol-3180/paper-96.pdf"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/imageclefmedical-tuberculosis-2022.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Agreement requirement only",
+      "licence_names": [
+        "Task-specific End-User Agreement (requirement documented)"
+      ],
+      "scope": "Competition data",
+      "agreement_required": true,
+      "summary_zh": "2022 官方注册规则明确：每个任务分别填写、签署并上传 EUA，经组织者批准后才视为注册成功。任务级签署与批准要求已确认；完整当届协议正文及再利用权限仍未取得。",
+      "qualifications": [
+        "本轮分开记录协议要求、全文可读性、数据适用范围与再利用条款；有条款线索不等于已取得全部数据权利。"
+      ],
+      "scoped_terms": [
+        {
+          "scope": "2022 per-task registration",
+          "text": "Task-specific signed EUA and organizer approval explicitly required; full 2022 agreement terms unavailable.",
+          "source": {
+            "local_source": "_collection/data_license_audit_20261025/sources/5378174b7f242b91.json",
+            "url": "https://www.imageclef.org/2022"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/5378174b7f242b91.json",
+          "url": "https://www.imageclef.org/2022"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/b2c47cac50f0c097.json",
+          "url": "https://www.imageclef.org/2022/medical/tuberculosis"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/9f80ab2d97027641.json",
+          "url": "https://www.imageclef.org/2022/medical"
+        },
+        {
+          "local_source": "_collection/access_flow_review_20261024/sources/202a87751bd12aec.json",
+          "url": "https://www.imageclef.org/2022#registration"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/0c3b88be4cb48166.txt",
+          "url": "https://ceur-ws.org/Vol-3180/paper-96.pdf"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability.",
+      "agreement_full_text_verified": "Not verified",
+      "dataset_scope_verified": "Not verified for complete licence terms",
+      "reuse_terms_verified": "Not verified",
+      "followup_review": "data_license_followup_20261025"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "CLEF/2022/imageclefmedical-tuberculosis-2022.json",
+              "source_field": "resource_characteristics_review.fields.active_teams",
+              "value": {
+                "value": 6,
+                "unit": "submitting teams",
+                "comparable": true,
+                "details": ""
+              },
+              "sources": [
+                {
+                  "url": "https://www.imageclef.org/2022/medical/tuberculosis",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/b2c47cac50f0c097.json"
+                },
+                {
+                  "url": "https://www.imageclef.org/2022/medical",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/9f80ab2d97027641.json"
+                },
+                {
+                  "url": "https://ceur-ws.org/Vol-3180/paper-96.pdf",
+                  "local_source": "_collection/resource_audit_20261025/online/0c3b88be4cb48166.txt"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/imageclefmedical-tuberculosis-2022.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

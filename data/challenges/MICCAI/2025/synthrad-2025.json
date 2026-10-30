@@ -1,0 +1,701 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "synthrad-2025",
+    "challenge_name": "SynthRAD2025",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI",
+        "CBCT",
+        "CT"
+      ],
+      "submodality": [
+        "Radiotherapy-planning imaging"
+      ],
+      "body_region": [
+        "Head and neck",
+        "Thorax",
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Synthetic CT"
+      ],
+      "diseases": [
+        "Cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Image Synthesis",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "MRI-to-synthetic CT",
+          "task_family": "Image Synthesis",
+          "task_subtype": "Cross-modality synthesis",
+          "input": [
+            "MRI",
+            "Body mask"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Synthetic CT in HU"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "CBCT-to-synthetic CT",
+          "task_family": "Image Synthesis",
+          "task_subtype": "Cross-modality synthesis",
+          "input": [
+            "CBCT",
+            "Body mask"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Synthetic CT in HU"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-national",
+      "multi_center": true,
+      "international": null,
+      "center_count": 5,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "Paired MRI and CT",
+        "Paired CBCT and CT",
+        "Body masks"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "MRI_CT_pairs": "Approximately 900 (homepage design count).",
+        "CBCT_CT_pairs": "Approximately 1500 (homepage design count).",
+        "per_center_anatomy": "Around 65/10/25 training/validation/test pairs; not a confirmed exact final split."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Center-dependent: centers A/B/C/E described as CC-BY(-NC)4.0; center D has challenge-only limited-use license. Do not assign one blanket license.",
+      "access_after_challenge": "Center D downloads are deactivated and data must be deleted after the challenge; other centers follow their CC BY-NC license.",
+      "access_scope": "mixed-center training/development collection; terms differ by center",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "MAE",
+            "PSNR",
+            "MS-SSIM",
+            "Multiclass Dice",
+            "HD95",
+            "Photon target-dose MAE",
+            "Photon DVH difference",
+            "Photon gamma pass rate (2%/2 mm)",
+            "Proton target-dose MAE",
+            "Proton DVH difference",
+            "Proton gamma pass rate (2%/2 mm)"
+          ],
+          "ranking": "Final ranking section specifies RankThenMean over eleven metric ranks after averaging each metric over patients (median may replace mean for outliers). Dose metrics omitted during validation. Photon dosimetry resolves ties, followed by proton dosimetry. Must exceed the water baseline in at least one image-similarity metric."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "MAE",
+            "PSNR",
+            "MS-SSIM",
+            "Multiclass Dice",
+            "HD95",
+            "Photon target-dose MAE",
+            "Photon DVH difference",
+            "Photon gamma pass rate (2%/2 mm)",
+            "Proton target-dose MAE",
+            "Proton DVH difference",
+            "Proton gamma pass rate (2%/2 mm)"
+          ],
+          "ranking": "Final ranking section specifies RankThenMean over eleven metric ranks after averaging each metric over patients (median may replace mean for outliers). Dose metrics omitted during validation. Photon dosimetry resolves ties, followed by proton dosimetry. Must exceed the water baseline in at least one image-similarity metric."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": 32,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": 16,
+        "cpu_cores": 8
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 934,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Validation Task 1 - MRI",
+            "submission_count": 248
+          },
+          {
+            "official_phase_name": "Validation Task 2 - CBCT",
+            "submission_count": 137
+          },
+          {
+            "official_phase_name": "Preliminary test Task1 - MRI",
+            "submission_count": 116
+          },
+          {
+            "official_phase_name": "Preliminary test Task2 - CBCT",
+            "submission_count": 49
+          },
+          {
+            "official_phase_name": "Test Task 1 - MRI",
+            "submission_count": 15
+          },
+          {
+            "official_phase_name": "Test Task 2 - CBCT",
+            "submission_count": 15
+          },
+          {
+            "official_phase_name": "Post-challenge Task 1 - MRI",
+            "submission_count": 41
+          },
+          {
+            "official_phase_name": "Post-challenge Task 2 - CBCT",
+            "submission_count": 21
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://synthrad2025.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": "https://doi.org/10.1002/mp.17981"
+    },
+    "notes": [
+      "Validation uses prediction images; final test uses Docker containers. Reference CT is deformably aligned for evaluation. Geometric segmentation and radiotherapy dose are evaluation components, not additional participant tasks. Current homepage has inconsistent workshop-date wording.",
+      "Gamma evaluated in regions receiving >10% of prescription; dose MAE evaluated in regions receiving at least 90% of reference dose. Reference website has contradictory group-weight and eleven-metric ranking descriptions."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2025.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/45-03c23c6d7091.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2025.grand-challenge.org/synthrad2025/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/45-488ca23a4973.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2025.grand-challenge.org/submissions/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/45-898cdb28def2.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://synthrad2025.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/45-b0354c3761bd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2025.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/45-ce2d6b8a5db8.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2025.grand-challenge.org/metrics-ranking/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/45-eda0c73b6d89.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2025.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/45-fca41aefb3f4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2025.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/45-overview.json"
+        },
+        {
+          "type": "official organizer challenge or dataset paper",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12264395/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12264395.json",
+          "title": "SynthRAD2025 Grand Challenge dataset: Generating synthetic CTs for radiotherapy from head to abdomen",
+          "supports": [
+            "dataset.center_type",
+            "data_access.access_status",
+            "data_access.access_scope",
+            "data_access.access_after_challenge",
+            "links.challenge_paper"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset: exact final split sizes need the dataset/challenge report.",
+        "evaluation: overview says four equally weighted metric groups, but final ranking section says average of eleven metric ranks; actual grouping weights require organizer/evaluator confirmation.",
+        "data_usage_mode: full external-data rule and per-center license variants need clarification."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "dataset.center_type": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12264395/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12264395.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2025 dataset paper explicitly reports five source centers and incompatible component reuse terms; do not label the whole collection fully open."
+        },
+        "data_access.access_status": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12264395/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12264395.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2025 dataset paper explicitly reports five source centers and incompatible component reuse terms; do not label the whole collection fully open."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12264395/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12264395.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2025 dataset paper explicitly reports five source centers and incompatible component reuse terms; do not label the whole collection fully open."
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12264395/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12264395.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2025 dataset paper explicitly reports five source centers and incompatible component reuse terms; do not label the whole collection fully open."
+        },
+        "links.challenge_paper": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12264395/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12264395.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2025 dataset paper explicitly reports five source centers and incompatible component reuse terms; do not label the whole collection fully open."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_after_challenge",
+          "data_access.access_scope",
+          "data_access.access_status",
+          "dataset.center_type",
+          "links.challenge_paper"
+        ],
+        "remaining_core_fields": [
+          "clinical_domain.organ_system"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/synthrad-2025.json",
+          "_collection/verification_20261003/literature_context/synthrad-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "官方数据页的搜索索引保留了2025训练Zenodo直接下载及中心D下载即接受条款的规则；中心D赛后删除要求单列，不等同个人审批。直接访问本次返回403。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "官方数据页的搜索索引保留了2025训练Zenodo直接下载及中心D下载即接受条款的规则；中心D赛后删除要求单列，不等同个人审批。直接访问本次返回403。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/synthrad2025_data_indexed.json",
+          "url": "https://synthrad2025.grand-challenge.org/data/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/synthrad-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2025/synthrad-2025.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Center D downloads are deactivated and data must be deleted after the challenge; other centers follow their CC BY-NC license.",
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2025.grand-challenge.org/rules/",
+                  "supports": [
+                    "data_access",
+                    "data_usage_mode",
+                    "submission",
+                    "evaluation",
+                    "publication"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/45-03c23c6d7091.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2025.grand-challenge.org/synthrad2025/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/45-488ca23a4973.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2025.grand-challenge.org/submissions/",
+                  "supports": [
+                    "submission",
+                    "data_usage_mode"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/45-898cdb28def2.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://synthrad2025.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/45-b0354c3761bd.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2025.grand-challenge.org/organizers/",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/45-ce2d6b8a5db8.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2025.grand-challenge.org/metrics-ranking/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/45-eda0c73b6d89.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2025.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/45-fca41aefb3f4.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2025.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/45-overview.json"
+                },
+                {
+                  "type": "official organizer challenge or dataset paper",
+                  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12264395/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/papers/PMC12264395.json",
+                  "title": "SynthRAD2025 Grand Challenge dataset: Generating synthetic CTs for radiotherapy from head to abdomen",
+                  "supports": [
+                    "dataset.center_type",
+                    "data_access.access_status",
+                    "data_access.access_scope",
+                    "data_access.access_after_challenge",
+                    "links.challenge_paper"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            },
+            {
+              "kind": "Observed post-challenge evaluation activity",
+              "summary": "Positive submissions recorded in explicitly named post-challenge or long-term evaluation phases.",
+              "url": "https://synthrad2025.grand-challenge.org/challenge/statistics/",
+              "snapshot": "_collection/sources/45-b0354c3761bd.json",
+              "scope": "Evidence that the service was used after the competitive phase; cumulative counts do not identify teams or guarantee current acceptance.",
+              "value": [
+                {
+                  "official_phase_name": "Validation Task 1 - MRI",
+                  "submission_count": 248
+                },
+                {
+                  "official_phase_name": "Validation Task 2 - CBCT",
+                  "submission_count": 137
+                },
+                {
+                  "official_phase_name": "Preliminary test Task1 - MRI",
+                  "submission_count": 116
+                },
+                {
+                  "official_phase_name": "Preliminary test Task2 - CBCT",
+                  "submission_count": 49
+                },
+                {
+                  "official_phase_name": "Test Task 1 - MRI",
+                  "submission_count": 15
+                },
+                {
+                  "official_phase_name": "Test Task 2 - CBCT",
+                  "submission_count": 15
+                },
+                {
+                  "official_phase_name": "Post-challenge Task 1 - MRI",
+                  "submission_count": 41
+                },
+                {
+                  "official_phase_name": "Post-challenge Task 2 - CBCT",
+                  "submission_count": 21
+                }
+              ],
+              "excerpt": "",
+              "snapshot_date": "2026-10-02"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

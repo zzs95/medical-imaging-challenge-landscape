@@ -1,0 +1,852 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "flare-2024",
+    "challenge_name": "FLARE 2024",
+    "full_name": "Fast, Low-resource, Accurace, and Robust Organ and Pan-cancer Segmentation",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R19",
+      "official_programme_row_numbers": "48",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "University of Toronto, University Health Network, Vector Institute"
+      ],
+      "registered_authors": [
+        {
+          "name": "Ma, Jun",
+          "affiliation": "University of Toronto, University Health Network, Vector Institute"
+        },
+        {
+          "name": "Wang, Bo",
+          "affiliation": "University of Toronto, University Health Network, Vector Institute"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Whole body",
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Pan-cancer lesions across body regions",
+        "Abdominal organs"
+      ],
+      "diseases": [
+        "Multiple cancers"
+      ],
+      "clinical_context": "Whole-body pan-cancer track and separate abdominal-organ tracks. Whole body is not expanded into all regions by inference."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Pan-cancer segmentation in CT scans",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10979405",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Abdominal CT Organ Segmentation on Laptop",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10979405",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+            "registered_task_index": 2
+          }
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Unsupervised domain adaptation for Abdomen organ segmentation in MRI",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10979405",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+            "registered_task_index": 3
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10979405",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "CT",
+        "MRI"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10979405",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10979405",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf"
+      },
+      "review_status": "Human-confirmed 2026-10-25",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Competition-time training/development data",
+      "access_by_scope": [
+        {
+          "scope": "Training/development",
+          "category": "Account registration",
+          "access_steps": [
+            "Register",
+            "Download development data"
+          ],
+          "manual_review": null
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10979405",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "CodaLab",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10979405",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10979405",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nSegmentation accuracy metrics: Dice Similarity Coefficient (DSC) and Normalized Surface Distance (NSD).\nSegmentation efficiency metrics: Running time and GPU memory consumption (area under GPU memory-time\ncurve).\n\n\nAll metrics will be used to compute the ranking. We give GPU memory consumption a 4GB tolerance, GPU\nMemory = max(0, Real GPU Memory-4096MB) because all the previous top teams (i.e., FLARE21-23) can achieve\nstate-of-the-art segmentation accuracy within this tolerance. We also give running time a tolerance (the running\ntime of the winning solution in FLARE 2023) because it satisfies the typical clinical requirements and the code has\nbeen publicly available.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe metrics are complementary. Specifically, DSC and NSD are used to measure the region error and boundary\nerror, respectively.\nRunning time and area under GPU memory-time curve are used to measure the inference speed and GPU\nconsumption, respectively.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThe main benefit of this ranking scheme is that it can aggregate the metrics with different dimensions. A similar\nranking scheme was also employed in the MICCAI BraTS Challenge 2017-2023 and FLARE 2021-2023.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nMissing results on test cases will result in the ranks being set to the maximum (the number of teams). Specifically,\nmissing results will get a zero value for DSC, NSD and the equivalent worst value for running time, and area under\nGPU memory-time curve.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\n\n\n\n\n\f                    Fast, Low-resource, Accurace, and Robust Organ and Pan-cancer Segmentation\n\nFollowing the recommendation in ChallengeR, the ranking scheme includes the following three steps:\nStep 1. For each testing case, we compute the four metrics;\n\n\nStep 2. Rank participants for each of the 500 testing cases and each metric; Thus, each participant will have 2000\n(500x4) rankings.\n\n\nStep 3. Average all these rankings."
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10979405",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+            "registered_task_index": 2
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10979405",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+            "registered_task_index": 2
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nSegmentation accuracy metrics: Dice Similarity Coefficient (DSC) and Normalized Surface Distance (NSD).\nSegmentation efficiency metrics: Running time.\nWe give running time a tolerance (the running time of the winning solution in FLARE 2022) because it satisfies the\ntypical clinical requirements and the code has been publicly available.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe metrics are complementary. Specifically, DSC and NSD are used to measure the region error and boundary\nerror, respectively.\nRunning time is used to measure the inference speed.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThe main benefit of this ranking scheme is that it can aggregate the metrics with different dimensions. A similar\nranking scheme was also employed in the MICCAI BraTS Challenge 2017-2023 and FLARE 2021-2023.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\n\n\n\n\n\f                    Fast, Low-resource, Accurace, and Robust Organ and Pan-cancer Segmentation\n\nMissing results on test cases will result in the ranks being set to the maximum (the number of teams). Specifically,\nmissing results will get a zero value for DSC, NSD, and the equivalent worst value for running time.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nFollowing the recommendation in ChallengeR, the ranking scheme includes the following three steps:\nStep 1. For each testing case, we compute the three metrics;\n\n\nStep 2. Rank participants for each of the 300 testing cases and each metric; Thus, each participant will have 900\n(300x3) rankings.\n\n\nStep 3. Average all these rankings."
+        },
+        {
+          "task_id": "task3",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10979405",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+            "registered_task_index": 3
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10979405",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+            "registered_task_index": 3
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nSegmentation accuracy metrics: Dice Similarity Coefficient (DSC) and Normalized Surface Distance (NSD).\nSegmentation efficiency metrics: Running time and GPU memory consumption (area under GPU memory-time\ncurve).\n\n\n\n\f                    Fast, Low-resource, Accurace, and Robust Organ and Pan-cancer Segmentation\n\n\n\n\nAll metrics will be used to compute the ranking. We give GPU memory consumption a 4GB tolerance, GPU\nMemory = max(0, Real GPU Memory-4096MB) because all the previous top teams (i.e., FLARE21-23) can achieve\nstate-of-the-art segmentation accuracy within this tolerance. We also give running time a tolerance (the running\ntime of the winning solution in FLARE 2022) because it satisfies the typical clinical requirements and the code has\nbeen publicly available.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe metrics are complementary. Specifically, DSC and NSD are used to measure the region error and boundary\nerror, respectively.\nRunning time and area under GPU memory-time curve are used to measure the inference speed and GPU\nconsumption, respectively.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThe main benefit of this ranking scheme is that it can aggregate the metrics with different dimensions. A similar\nranking scheme was also employed in the MICCAI BraTS Challenge 2017-2023 and FLARE 2021-2023.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nMissing results on test cases will result in the ranks being set to the maximum (the number of teams). Specifically,\nmissing results will get a zero value for DSC, NSD and the equivalent worst value for running time, and area under\nGPU memory-time curve.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nFollowing the recommendation in ChallengeR, the ranking scheme includes the following three steps:\nStep 1. For each testing case, we compute the four metrics;\n\n\nStep 2. Rank participants for each of the 300 testing cases and each metric; Thus, each participant will have 1200\n(300x4) rankings.\n\n\nStep 3. Average all these rankings."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "CodaLab",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Docker containers",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10979405",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "protocol_description": "Docker containers",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10979405",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+            "registered_task_index": 2
+          }
+        },
+        {
+          "task_id": "task3",
+          "protocol_description": "Docker containers",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10979405",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+            "registered_task_index": 3
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10979405",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10979405"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://www.codabench.org/competitions/2319/",
+      "registration": "https://doi.org/10.5281/zenodo.10979405",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "resolved_record_id": 10979406,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://www.codabench.org/competitions/2319/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/b2b895a95e6e5858.json",
+          "http_status": null,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "FLARE"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。",
+        "scope": "Competition-time training/development data",
+        "access_by_scope": [
+          {
+            "scope": "Training/development",
+            "category": "Account registration",
+            "access_steps": [
+              "Register",
+              "Download development data"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "Human confirmation supplied by user; no new independent web verification",
+        "confidence": "Human-confirmed",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker containers b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. We will provide a validation "
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results 15 March 2023 (12:00 AM EST): Launch challenge registration and release training and validation data. Docker submission of validation set opening. 15 April 2023 (12:00 AM EST): Deadline for the first validation submission. 15 May 2023 (12:00 AM EST): Deadline for the second validation submission. 15 June 2023 (12:00 AM EST): Deadline for the third validation submission. Fast, Low-resource, Accurace, and R [...]  Pan-cancer Segmentation 15 July 2023 (12:00 AM EST): Deadline for the third validation submission. Docker and short paper submission of the testing set opening. 15 August 2023 (12:00 AM EST): Deadline for the testing submission. 10 September 2023 (12:00 AM EST): Invite top teams to prepare presentations and participate in the MICCAI2023 Satellite Event. 6/10 October 2023: Announce final result"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "excerpt": "unlabeled cases It should be noted that none of the labels in the validation set and testing set is publicly available, and all the testing cases are from new centers that did not appear in the training set. Moreover, we are discussing potential collaboration with new data contributors. The testing set could be expanded based on the availability of new datasets. c) Explain why a total number of cases and the specific proportion of training, validation and test cases was chosen. The data is provided based on the current availability. The challenge uses a partial-label learning task setting where only the primary tumor is labeled in each CT scan. This setting is in line with real practice because each medical department mainly focuses on one specific cancer type. In FLARE 2022-2023, the top t [...]  according to real-world distribution vs. equal class distribution) and justify the choice. All the testing cases will be hidden from participants and the Docker container will be used for submission. Importantly, none of the labels is publicly available in the testing set."
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker containers b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. We will provide a validation "
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results 15 March 2023 (12:00 AM EST): Launch challenge registration and release training and validation data. Docker submission of validation set opening. 15 April 2023 (12:00 AM EST): Deadline for the first validation submission. 15 May 2023 (12:00 AM EST): Deadline for the second validation submission. 15 June 2023 (12:00 AM EST): Deadline for the third validation submission. 15 July 2023 (12:00 AM EST): Deadline for the third validation submission. Docker and short paper submission of the testing set opening. Fast, Low-resource, Accurace, and Robust Organ and Pan-cancer Segmentation 15 August 2023 (12:00 AM EST): Deadline for the testing submission. 10 September 2023 (12:00 AM EST): Invite top teams to prepare presentations and participate in the MI"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "excerpt": "son to the FLARE 2022 top solutions, we used the same training set in this task. Since the original testing set images have been publicly available, we provided a new testing set of 300 cases for this task. d) Mention further important characteristics of the training, validation and test cases (e.g. class distribution in classification tasks chosen according to real-world distribution vs. equal class distribution) and justify the choice. All the testing cases will be hidden from participants and the Docker container will be used for submission. Importantly, none of the labels is publicly available in the testing set."
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker containers b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. We will provide a validation "
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results 15 March 2023 (12:00 AM EST): Launch challenge registration and release training and validation data. Docker submission of validation set opening. 15 April 2023 (12:00 AM EST): Deadline for the first validation submission. Fast, Low-resource, Accurace, and Robust Organ and Pan-cancer Segmentation 15 May 2023 (12:00 AM EST): Deadline for the second validation submission. 15 June 2023 (12:00 AM EST): Deadli [...] d validation submission. 15 July 2023 (12:00 AM EST): Deadline for the third validation submission. Docker and short paper submission of the testing set opening. 15 August 2023 (12:00 AM EST): Deadline for the testing submission. 10 September 2023 (12:00 AM EST): Invite top teams to prepare presentations and participate in the MICCAI2023 Satellite Event. 6/10 October 2023: Announce final result"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "excerpt": "s an unsupervised domain adaptation task, all the images in the source domain can be used for model training. For the target domain, we provide 100 and 300 new cases for validation and testing, respectively, where the number of cases is enough to draw statistically significant conclusions. d) Mention further important characteristics of the training, validation and test cases (e.g. class distribution in classification tasks chosen according to real-world distribution vs. equal class distribution) and justify the choice. All the testing cases will be hidden from participants and the Docker container will be used for submission. Importantly, none of the labels is publicly available in the testing set."
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/flare-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_registration_20261025/user_confirmation.json",
+          "review_date": "2026-10-25",
+          "section": "User-confirmed registration/download; scope limited to pending editions"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-25: 2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 10000,
+              "unit": "cases",
+              "scope": "Pan-cancer",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 100,
+              "unit": "cases",
+              "scope": "Pan-cancer",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 500,
+              "unit": "cases",
+              "scope": "Pan-cancer",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 2050,
+              "unit": "cases",
+              "scope": "Organ on laptop",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 250,
+              "unit": "cases",
+              "scope": "Organ on laptop",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 300,
+              "unit": "cases",
+              "scope": "Organ on laptop",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 2300,
+              "unit": "scans",
+              "scope": "UDA CT",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 1000,
+              "unit": "scans",
+              "scope": "UDA MRI",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 100,
+              "unit": "scans",
+              "scope": "UDA MRI",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 300,
+              "unit": "scans",
+              "scope": "UDA MRI",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "Brazil",
+              "United States",
+              "China"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Explicit countries only; many other named centers not geocoded here. Multiple tasks reuse data; quantities not additive.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10979405",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/flare-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Whole body",
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Pan-cancer lesions across body regions",
+        "Abdominal organs"
+      ],
+      "specific_diseases": [
+        "Multiple cancers"
+      ],
+      "review_note": "Whole-body pan-cancer track and separate abdominal-organ tracks. Whole body is not expanded into all regions by inference.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/flare-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY-NC-SA",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10979405"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10979405"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/flare-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "Brazil",
+                  "United States",
+                  "China"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10979405",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/flare-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Open call (challenge opens for new submissions after conference deadline)",
+              "url": "https://doi.org/10.5281/zenodo.10979405",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R19/Fast, Low-resource, Accurace, and Robust Organ and.pdf",
+              "scope": "Edition-specific lifecycle answer: open-call continuation or a stated future release. Policy/plan coverage only, not evidence that continuing evaluation actually ran.",
+              "value": null,
+              "excerpt": "continued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time event). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some modifications (repeated event). Examples: • One-time event with fixed conference submission deadline • Open call (challenge opens for new submissions after conference deadline) • Repeated event with annual fixed conference submission deadline Open call (challenge opens for new submissions after conference deadline) ",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

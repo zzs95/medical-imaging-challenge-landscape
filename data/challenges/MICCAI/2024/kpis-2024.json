@@ -1,0 +1,658 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "kpis-2024",
+    "challenge_name": "KPIs 2024",
+    "full_name": "Kidney Pathology Image Segmentation (KPIs) Challenge 2024: Structured description of the challenge design",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R25",
+      "official_programme_row_numbers": "25",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Department of Computer Science, School of Engineering, Vanderbilt University, Nashville, USA",
+        "Department of Pathology, Microbiology and Immunology, Vanderbilt University Medical Center, Nashville, USA",
+        "Department of Biostatistics, Vanderbilt University Medical Center, Nashville, USA",
+        "Department of Electrical and Computer Engineering, School of Engineering, Vanderbilt University, Nashville, USA",
+        "NVIDIA Corp, Bethesda, USA"
+      ],
+      "registered_authors": [
+        {
+          "name": "Huo, Yuankai",
+          "affiliation": "Department of Computer Science, School of Engineering, Vanderbilt University, Nashville, USA"
+        },
+        {
+          "name": "Yang, Haichun",
+          "affiliation": "Department of Pathology, Microbiology and Immunology, Vanderbilt University Medical Center, Nashville, USA"
+        },
+        {
+          "name": "Yin, Mengmeng",
+          "affiliation": "Department of Pathology, Microbiology and Immunology, Vanderbilt University Medical Center, Nashville, USA"
+        },
+        {
+          "name": "Zhao, Shilin",
+          "affiliation": "Department of Biostatistics, Vanderbilt University Medical Center, Nashville, USA"
+        },
+        {
+          "name": "Wang, Yu",
+          "affiliation": "Department of Biostatistics, Vanderbilt University Medical Center, Nashville, USA"
+        },
+        {
+          "name": "Deng, Ruining",
+          "affiliation": "Department of Computer Science, School of Engineering, Vanderbilt University, Nashville, USA"
+        },
+        {
+          "name": "Xiong, Juming",
+          "affiliation": "Department of Electrical and Computer Engineering, School of Engineering, Vanderbilt University, Nashville, USA"
+        },
+        {
+          "name": "Tang, Yucheng",
+          "affiliation": "NVIDIA Corp, Bethesda, USA"
+        },
+        {
+          "name": "Landman, Bennett A",
+          "affiliation": "Department of Electrical and Computer Engineering, School of Engineering, Vanderbilt University, Nashville, USA"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "Pathology"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Mouse kidney"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Glomeruli in murine kidney sections"
+      ],
+      "diseases": [
+        "Chronic kidney disease models",
+        "Diabetic nephropathy models",
+        "Induced glomerular injury"
+      ],
+      "clinical_context": "Actual cohort is experimental mice; human CKD is the intended clinical application."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Diseased glomeruli segmentation",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990461",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/Kidney Pathology Image Segmentation Challenge 2024.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990461",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/Kidney Pathology Image Segmentation Challenge 2024.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Pathology"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990461",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/Kidney Pathology Image Segmentation Challenge 2024.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990461",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/Kidney Pathology Image Segmentation Challenge 2024.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990461",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/Kidney Pathology Image Segmentation Challenge 2024.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Grand Challenge",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990461",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/Kidney Pathology Image Segmentation Challenge 2024.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990461",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/Kidney Pathology Image Segmentation Challenge 2024.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nDice Similarity Coefficient (DSC), F1 score\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nWe selected the Dice Similarity Coefficient (DSC) as our main validation metric due to several key factors. Its\nsimplicity makes it easy to understand and implement, while its popularity ensures widespread acceptance and\nfamiliarity within the community. Additionally, DSC is known for its stability in ranking, providing consistent and\nreliable comparisons between different methods. Most importantly, it is an effective tool for evaluating the\naccuracy of predictions, making it a suitable choice for our validation purposes. F1 is a supplementary metric to\nmeasure the performance at the instance level.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThe ranking method we're using is a standard approach, one that has been successfully implemented in previous\nchallenges with positive outcomes. We are confident that this scheme is both transparent and fair to all\nparticipants, ensuring an equitable and clear evaluation process.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nAny submission that is not complete will not be evaluated and will not count as a valid validation submission.\nDuring the final testing phase, predictions for the test set will be generated locally using the Docker containers\nprovided by each team. As a result, we anticipate no missing results in the test set submissions.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nFor the evaluation process, we will calculate both the mean and standard deviation for each label's Dice Similarity\nCoefficient (DSC). The team with the highest DSC value will achieve the top rank. These metrics will be computed\nacross all test cases, and the overall performance of each participating team will be determined by averaging their\nmetrics. Teams will then be ranked according to these average metrics to establish their standings in the\ncompetition."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Algorithms will be accepted as Docker containers according to the technical requirements of https://grand-challenge.org. In the testing phase, since the test dataset cannot be released, participants are required to provide their algorithms in the form of a Docker container. This container should be submitted to our designated Docker repository. Access to this repository will be granted following approval. This approach is chosen to ensure a more comprehensive evaluation of the algorithm's reproducibility in different environments, thereby confirming its robustness and reliability in practical applications.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990461",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/Kidney Pathology Image Segmentation Challenge 2024.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990461",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/Kidney Pathology Image Segmentation Challenge 2024.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10990461"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://sites.google.com/view/kpis2024",
+      "registration": "https://doi.org/10.5281/zenodo.10990461",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10990461",
+          "resolved_record_id": 10990462,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/Kidney Pathology Image Segmentation Challenge 2024.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/Kidney Pathology Image Segmentation Challenge 2024.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://sites.google.com/view/kpis2024",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/f4583317e360994b.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "KPIs"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "2024 Synapse项目列明数据下载两步：注册Synapse账号，下载数据。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990461",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990461",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Algorithms will be accepted as Docker containers according to the technical requirements of https://grand-challenge.org. In the testing phase, since the test dataset cannot be released, participants are required to provide their algorithms in the form of a Docker container. This container should be submitted to our designated Docker repository. Access to this repository will be granted following approval. This approach is chosen to ensure a more comprehensive evaluation of the algorithm's reproducibility in different environments, thereby confirming its robustness and reliability in practical applications. b) Provide information on the possibili [...] ds. When it comes to the testing phase, the rules differ slightly. Only the final submission of the Docker container by Kidney Pathology Image Segmentation Challenge 2024 each participant will be considered for official evaluation. This last submitted version will be the one used to calculate the competition results."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990461",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Expected Website Opens: March 28, 2024 Expected Training Set Released: March 30, 2024 Expected Validation Set Released: May 1, 2024 Expected Model Submission Deadline: Aug 1, 2024 Expected Announcement of the Winner and Speaker Invitation: Sep 15, 2024 (Subject to change depending on MICCAI 2024 Deadlines)"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990461",
+          "excerpt": ""
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/f4583317e360994b.json",
+          "url": "https://sites.google.com/view/kpis2024",
+          "excerpt": "Is2024 Search this site Embedded Files Skip to main content Skip to navigation 👋 Join KPIs 2024 and Download Data! MICCAI 2024 Kidney Pathology Image segmentation ( KPIs ) Challenge Please cite the following paper when using KPIs challenge data Deng R, Yao T, Tang Y, et al. KPIs 2024 Challenge: Advancing Glomerular Segmentation from Patch-to Slide-Level[J]. arXiv preprint arXiv:2502.07288, 2025. [link] All training, validation, and testing data have been released! [ Download Link ] This workshop is proudly sponsored by NVIDIA , whose generous support has made this event possible. We greatly appreciate their commitment to advancing technology and fostering innovation in our community. Thank you, NVIDIA, for your continued partnership and dedication! Important Updates: Octobe r 10 th, 2024: The test data has been released! September 1 9 th, 2024: The challenge leaderboard is updated! We now have two leaderboards for Task2 : Segmentation Leaderboard – Ranking based on both Dice and F1 scores. Detection Leaderboard – Ranking based on F1 score only. September 1 5 th, 2024: Paper submission policy has been updated. The [...] ion phase ended. July 1 8 th, 2024: The final testing submission portal is open. Please submit your Docker before 08/01/2024, 11:59 PM PST. For details please find KPIs 2024https://sites.google.com/view/kpis2024/evaluation July 11th, 2024: Please cite the following paper if you use the KPIs challenge data in your publication. [link of the paper] Yucheng Tang, Yufan He, Vishwesh Nath, Pengfei Guo, Ruining Deng, Tianyuan Yao, Quan Liu, Can Cui, Mengmeng Yin, Ziyue Xu, Holger Roth, Daguang Xu, Haichun Yang, Yuankai Huo \"HoloHisto: End-to-end Gigapixel WSI Segmentation with 4K Resolution Sequential Tokenization.\" arXi [...] ch could affect the training and evaluation process. Please see the details in the Data section and download the updated Data v1.1 to ensure accurate model development and evaluation. Join and Obtain Data from https://www.synapse.org/kpis24 April 1 : The training data is Released! May 1: The validation data is Released! Aug 1 : The testing phase will start! Sep 15: Announce of Winner 🎉 Oct 10: The MOVI workshop&KPIs challenge in MICCAI Example Docker for Training and Validation is Released! Chronic kidney disease (CKD) poses a significant health risk, causing more deaths annually than breast and prostate cancer combined. Impacting over 10% of the worldwide population, it affects upwards of 800 million individuals. Kidney biopsy, encompassing both open and percutaneous methods, is th [...] ting these techniques. A major hurdle has been the scarcity of large-scale disease data in existing public datasets for kidney pathology segmentation, as they predominantly comprise samples from normal patients. This is mainly because the tissue samples from humans are typically obtained through needle biopsies, yielding only small tissue samples. Consequently, there's a pressing need to release extensi"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/d2d2f4b8e077f577.json",
+          "url": "https://www.synapse.org/Synapse:syn54077668/files/"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/fb5ea14fb3fbc990.json",
+          "url": "https://www.synapse.org/Synapse:syn54077668/wiki/626475",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn54077668/wiki/626475"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/kpis-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2024 Synapse项目列明数据下载两步：注册Synapse账号，下载数据。"
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 12000,
+              "unit": "patches",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 2000,
+              "unit": "patches",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 6000,
+              "unit": "patches",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "source",
+              "value": 60,
+              "unit": "whole-slide images",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "United States"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Single center"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "20000 patches derive from 60 slides, not independent patients.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10990461",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://sites.google.com/view/kpis2024",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/f4583317e360994b.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/kpis-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Mouse kidney"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Glomeruli in murine kidney sections"
+      ],
+      "specific_diseases": [
+        "Chronic kidney disease models",
+        "Diabetic nephropathy models",
+        "Induced glomerular injury"
+      ],
+      "review_note": "Actual cohort is experimental mice; human CKD is the intended clinical application.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990461"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/kpis-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC SA",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10990461"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990461"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/kpis-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "United States"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10990461",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://sites.google.com/view/kpis2024",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/f4583317e360994b.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/kpis-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "This contest is designed to be an open call challenge.",
+              "url": "https://doi.org/10.5281/zenodo.10990461",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R25/Kidney Pathology Image Segmentation Challenge 2024.pdf",
+              "scope": "Edition-specific lifecycle answer: open-call continuation or a stated future release. Policy/plan coverage only, not evidence that continuing evaluation actually ran.",
+              "value": null,
+              "excerpt": "continued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time event). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some modifications (repeated event). Examples: • One-time event with fixed conference submission deadline • Open call (challenge opens for new submissions after conference deadline) • Repeated event with annual fixed conference submission deadline This contest is designed to be an open call challenge. ",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

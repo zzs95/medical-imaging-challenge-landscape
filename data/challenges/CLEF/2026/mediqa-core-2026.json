@@ -1,0 +1,774 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "mediqa-core-2026",
+    "challenge_name": "MEDIQA-CORE 2026",
+    "full_name": "MEDIQA-CORE 2026",
+    "year": 2026,
+    "event": {
+      "conference": "CLEF 2026",
+      "event_type": "shared_task",
+      "parent_event": "ImageCLEFmedical"
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI",
+        "Pathology",
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain",
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Brain tumor tissue",
+        "Abdominal organs"
+      ],
+      "diseases": [
+        "Brain glioma and other brain tumors"
+      ],
+      "clinical_context": "Task1 brain tumor classification; Task2 abdominal report discrepancy. Disease labels supported by Task1; no invented abdominal diagnosis."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "task_families": [
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Brain tumor subtype classification",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "source_url": "https://www.imageclef.org/2026/medical/mediqa-core"
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Radiology report discrepancy assessment",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "source_url": "https://www.imageclef.org/2026/medical/mediqa-core"
+        }
+      ],
+      "task_role_scope": {
+        "Classification": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "MRI",
+        "Pathology",
+        "CT"
+      ],
+      "population": null,
+      "source_reference": "https://www.imageclef.org/2026/medical/mediqa-core",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "University of Washington Data Use Agreement. 已从官方注册表 Exhibit A 所链地址取得两个任务 UW DUA 全文。用途限协议授权范围，其他用途需另签书面 DUA；向第三方提供数据须符合授权条件，终止后原则上返还或销毁。Task 1 期限至 2026-12-31，Task 2 至 2027-12-31；这是官方发布条款，不是逐队签署执行情况的证明。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "AI4MediaBench",
+      "metrics": null,
+      "source_reference": "https://www.imageclef.org/2026/medical/mediqa-core",
+      "execution_note": "Service and artifact descriptions do not by themselves establish execution location or automation."
+    },
+    "submission": {
+      "submission_type": "Prediction CSV files",
+      "platform": "AI4MediaBench",
+      "source_reference": "https://ai4media-bench.aimultimedialab.ro/competitions/6/",
+      "runtime_limits": null,
+      "primary_artifacts": [
+        "Task 1 diagnostic predictions",
+        "Task 2 edit-assessment predictions"
+      ],
+      "additional_artifacts": [],
+      "execution": "Participants generate predictions; evaluation scores the submitted tables.",
+      "format_by_task_or_phase": [
+        {
+          "task": "Task 1",
+          "archive": ".zip",
+          "sole_file": "predictions.csv",
+          "columns": [
+            "subject_id",
+            "level1_pred",
+            "lgghgg_pred",
+            "who_grade_pred"
+          ]
+        },
+        {
+          "task": "Task 2",
+          "format": "CSV",
+          "example_filename": "example_submission.csv",
+          "columns": [
+            "edit_id",
+            "agreement_pred",
+            "severity_pred",
+            "edit_type_pred"
+          ]
+        }
+      ],
+      "format_limitations": [
+        "Task 2 mandatory filename and outer packaging not established; example_submission.csv is only a sample filename."
+      ],
+      "source_urls": [
+        "https://ai4media-bench.aimultimedialab.ro/competitions/6/",
+        "https://ai4media-bench.aimultimedialab.ro/competitions/7/",
+        "https://github.com/KurtLabUW/CoreBT"
+      ],
+      "evidence_basis": "Human-supplied review of edition-specific organizer documentation",
+      "review_date": "2026-10-24",
+      "submission_evidence_status": "Primary artifact identified by human review; format-specific limitations retained",
+      "review_source": "_collection/submission22_review_20261024/user_review.txt",
+      "additional_materials": []
+    },
+    "schedule": {
+      "edition_year": 2026,
+      "source_reference": "https://www.imageclef.org/2026/medical/mediqa-core"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://www.imageclef.org/2026/medical/mediqa-core",
+      "supporting_sources": [
+        "https://www.imageclef.org/2026/medical"
+      ]
+    },
+    "notes": [
+      "Task 2 uses abdominal CT, preliminary reports and candidate edits, and assesses agreement, severity and discrepancy type. It is image-grounded report review, not report generation. Reasoning language alone is not a requested rationale output. EasyChair on this page is for working-notes papers, not scoring submissions."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.imageclef.org/2026/medical/mediqa-core",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/717d417fd22c8a36.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.imageclef.org/2026/medical",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json",
+          "http_status": 200
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://ai4media-bench.aimultimedialab.ro/competitions/6/",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://ai4media-bench.aimultimedialab.ro/competitions/7/",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://github.com/KurtLabUW/CoreBT",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields",
+        "Task 2 mandatory filename and outer packaging not established; example_submission.csv is only a sample filename."
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py",
+      "submission_human_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/submission22_review_20261024/user_review.txt",
+        "basis": "Human-supplied review of edition-specific organizer documentation",
+        "scope": "Submission artifact, format and executor; source assertions supplied by human review, not a new independent audit of all linked pages."
+      }
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "data-to-model",
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "record_relationships": {
+      "analytical_unit": "named_subchallenge_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": "Official page links task-specific result spreadsheets",
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "The edition-specific ImageCLEF registration instructions require organizer validation of the submitted agreement/form before dataset/task access is granted."
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "ImageCLEFmed MEDIQA-CORE | ImageCLEF / LifeCLEF -  Multimedia Retrieval in CLEF",
+          "local_source": "_collection/other_venues_audit_20261024/sources/717d417fd22c8a36.json",
+          "url": "https://www.imageclef.org/2026/medical/mediqa-core",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home › ImageCLEF 2026 › ImageCLEFmedical ImageCLEFmed MEDIQA-CORE Welcome to the first edition of the MEDIQA-CORE challenge! Motivation We propose MEDIQA-CORE: Multimodal Reasoning & Reconciliation in Radiology, a new challenge designed to advance clinical AI system [...] sis accuracy and clinical report alignment using multimodal data. Preliminary Schedule 28.01.2026 : Registration opens 21.03.2026 : Registration closes 27.03.2026 : Release of the development set 23.04.2026 : Release of the test sets 07.05.2026 : Run submission deadline 12.05.2026 : Release of the processed results by the task organizers 28.05.2026 : Submission of participant papers [CEUR-WS] 30.06.2026 : Notification of acceptance 06.07.20 [...] rt edits The goal is to develop models that evaluate each proposed edit by: Determining image-level agreement between the edit and the CT findings Assessing the clinical severity of the discrepancy Classifying the discrepancy type (correction, addition, or clarification) This task emphasizes fine-grained clinical reasoning and image–text alignment during the report review stage. Models must reason jointly  [...] sources and reconciling inconsistent reports are essential for safe and effective care. Participant registration Please refer to the general ImageCLEF registration instructions Note: Registration for MEDIQA-CORE may take a few days to be accepted, as the forms have to be verified. Task 1 Results MEDIQA-CORE-Task 1: https://docs.google.com/spreadsheets/d/1mNvA-01T8rtZYxsfubg_peqa6ClK9WnQnidvE5VtCsA/edit?usp=sharing Task 2 Results MEDIQA-CORE-Task 2: https://docs.google.com/spreadsheets/d/1nI"
+        },
+        {
+          "section": "ImageCLEFmedical | ImageCLEF / LifeCLEF -  Multimedia Retrieval in CLEF",
+          "local_source": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json",
+          "url": "https://www.imageclef.org/2026/medical",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home › ImageCLEF 2026 ImageCLEFmedical ImageCLEF has included medical tasks every year since 2004. Since 2019 we focus each of the medical tasks to one specific problem but combine them as a single task with several subtasks. Our hope is that this approach helps inf"
+        },
+        {
+          "section": "Official edition data/registration instructions",
+          "local_source": "_collection/access_flow_review_20261024/sources/88ddf557ccfb9930.json",
+          "url": "https://www.imageclef.org/2026#registration",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home ImageCLEF 2026 Tweets by @imageclef News Registration for all ImageCLEF tasks started! Motivation ImageCLEF 2026 is organized as part of the CLEF Initiative Labs. The target audience for ImageCLEF 2026 is mainly expected to be from the multimodal data annotation and retrieval community, from fields such as computer vision, image information retrieval  [...] ing task webpage for specific dates. A (tentative) global schedule can be found below: 26.01.2026 : Registration opens for all ImageCLEF tasks 02.02.2026 : Development dataset released (depends on task) 09.03.2026 : Test dataset released (depends on task) 23.04.2026 : Registration closes for all ImageCLEF tasks 07.05.2026 : Deadline for submitting participant runs 14.05.2026 : Release of the processed results by the task organizers (depends on task) 28.05.2026 : Submission of participant papers [CEUR-WS] 30.06.2026 : Notification of acceptance 21.09.2026 : CLEF 2026 , Jena,  [...] d workshops on a broad range of challenges in the fields of multilingual and multimodal information access evaluation, and a set of benchmarking activities carried in various labs designed to test different aspects of mono and cross-language information retrieval systems. More details about the conference can be found here . Also there is more information about the CLEF Initiative . Programme of ImageCL [...] eration A. Gentili , Latent Vector Identification via Regression and Bipartite Matching Participant registration ImageCLEF is an evaluation lab and starting from this edition it will be managed by the ImageCLEF team through the AI4Media benchmarking platform (based on Codalab). The main features of the platform are: online registration system, end-user agreement submission, data distribution, a leaderboard system as well as interaction with participants, reducing the administrative overhead. The platform is now up for participants' registration. https://ai4media-bench.aimultimedialab.ro/competitions/public/ Instructions for registration: Create an account on the AI4MediaBench benchmarking platform . Complete the Terms and Conditions form, available on any task page under 'Get Started → Terms' . This form is mandatory. Within the form, you may select one or more ImageCLEF tasks from the provided list. Once submitted, your applicati [...] rresponding task pages. After the form is validated, you will receive a confirmation email and gain access to all tasks you have registered for. Please do not register separately on the official CLEF 2026 registration page. Registrations on the AI4Media Bench Platform will automatically be transmitted to CLEF. In case the sub(task) is not present on the AI4Media Bench Platform, please contact the task responsibles (listed on the bottom of each task page). The Tasks ImageCLEF 2025 proposes 5 main tasks: (10th edition) ImageCLEFmedi"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 183,
+              "unit": "cases",
+              "scope": "Brain tumor",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 42,
+              "unit": "cases",
+              "scope": "Brain tumor",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test 1",
+              "value": 36,
+              "unit": "cases",
+              "scope": "Brain tumor",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test 2",
+              "value": 18,
+              "unit": "cases",
+              "scope": "Brain tumor",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 20,
+              "unit": "exams",
+              "scope": "RADAR",
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 30,
+              "unit": "exams",
+              "scope": "RADAR",
+              "lower_bound": false
+            },
+            {
+              "split": "source",
+              "value": 319,
+              "unit": "volumes",
+              "scope": "RADAR",
+              "lower_bound": false
+            },
+            {
+              "split": "source",
+              "value": 45838,
+              "unit": "slices",
+              "scope": "RADAR",
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "United States"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Documented and classifiable",
+          "value": "Task2 report explicitly directs users to RADAR for access requests after competition."
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Two CORE task papers report task-specific cohorts/team counts; do not add teams without deduplicating identities across tasks.",
+      "sources": [
+        {
+          "url": "https://www.imageclef.org/2026/medical/mediqa-core",
+          "local_source": "_collection/other_venues_audit_20261024/sources/717d417fd22c8a36.json"
+        },
+        {
+          "url": "https://www.imageclef.org/2026/medical",
+          "local_source": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json"
+        },
+        {
+          "url": "https://ceur-ws.org/Vol-4283/paper232.pdf",
+          "local_source": "_collection/resource_audit_20261025/online/8667a94619c46ca3.txt"
+        },
+        {
+          "url": "https://ceur-ws.org/Vol-4283/paper233.pdf",
+          "local_source": "_collection/resource_audit_20261025/online/76f7dd12e0bb1b53.txt"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/mediqa-core-2026.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain",
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer",
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Brain tumor tissue",
+        "Abdominal organs"
+      ],
+      "specific_diseases": [
+        "Brain glioma and other brain tumors"
+      ],
+      "review_note": "Task1 brain tumor classification; Task2 abdominal report discrepancy. Disease labels supported by Task1; no invented abdominal diagnosis.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/717d417fd22c8a36.json",
+          "url": "https://www.imageclef.org/2026/medical/mediqa-core"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json",
+          "url": "https://www.imageclef.org/2026/medical"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/8667a94619c46ca3.txt",
+          "url": "https://ceur-ws.org/Vol-4283/paper232.pdf"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/76f7dd12e0bb1b53.txt",
+          "url": "https://ceur-ws.org/Vol-4283/paper233.pdf"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/mediqa-core-2026.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "previous_task_families": [
+        "Classification"
+      ],
+      "previous_emerging_objectives": [
+        "VLM"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output"
+      },
+      "note_zh": "诊断分类和报告编辑的同意程度、严重度、类型分类；报告为输入，不是生成输出。没有单独要求临床理由。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://www.imageclef.org/2026/medical/mediqa-core",
+          "local_source": "_collection/other_venues_audit_20261024/sources/717d417fd22c8a36.json",
+          "sha256": "42662aca459cb059c5768a3c96d4482e9311a1db79a760e09e7b6e859869997c"
+        },
+        {
+          "url": "https://www.imageclef.org/2026/medical",
+          "local_source": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json",
+          "sha256": "c5d5188f6333772cbed4333c1e03c9b2bed54b6dd1694075dcb2d04c7d2249fa"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "University of Washington Data Use Agreement"
+      ],
+      "scope": "CoRe-BT and RADAR full datasets",
+      "agreement_required": true,
+      "summary_zh": "已从官方注册表 Exhibit A 所链地址取得两个任务 UW DUA 全文。用途限协议授权范围，其他用途需另签书面 DUA；向第三方提供数据须符合授权条件，终止后原则上返还或销毁。Task 1 期限至 2026-12-31，Task 2 至 2027-12-31；这是官方发布条款，不是逐队签署执行情况的证明。",
+      "qualifications": [
+        "本轮分开记录协议要求、全文可读性、数据适用范围与再利用条款；有条款线索不等于已取得全部数据权利。",
+        "官方提供的协议文本已核实；不认定每位参赛者均已签署、不以模板证明实际销毁；Task 2 的协议期限不是赛事年份。仓库 this work 的 CC BY 4.0 不替代医学数据 DUA。"
+      ],
+      "scoped_terms": [
+        {
+          "scope": "Official Exhibit A: task-specific authorization",
+          "text": "Exhibit A 将 Task 1 Tumor Typing Correction、Task 2 Report Discrepancy Summarization 分别链接至对应 UW PDF，要求根据所参加任务签署上传。",
+          "source": {
+            "url": "https://support.aimultimedialab.ro/imageclef/index.html",
+            "local_source": "_collection/data_license_followup_20261025/sources/e8f11d995e8739ab.json"
+          }
+        },
+        {
+          "scope": "Task 1: brain MRI, pathology images and associated reports",
+          "text": "用途限第 I 节授权目的；第 3.1、3.6 条限制向第三方提供数据，其他用途须另签 DUA，代理方须与 UW 签署同等限制协议。第 3.8 条要求来源致谢并保留 UW 发表前审阅权。第 3.10 条要求到期/提前终止时返还或销毁、不留副本；无法实施时须通知 UW，并仍受所述用途及法律要求限制。",
+          "source": {
+            "url": "https://drive.google.com/uc?export=download&id=1Ui9rROvVUiH2r-sVlG4ee4BWpZYT-nzB",
+            "local_source": "_collection/data_license_followup_20261025/sources/a0cba1f40ad5271c.pdf"
+          },
+          "end_date": "2026-12-31",
+          "agreement_effective_date": "Date of last signature",
+          "document_status": "Official published DUA text; participant execution not checked"
+        },
+        {
+          "scope": "Task 2: 50 de-identified abdominal CT examinations and reports",
+          "text": "用途限第 I 节授权目的；第 3.1、3.6 条限制向第三方提供数据，其他用途须另签 DUA，代理方须与 UW 签署同等限制协议。第 3.8 条要求来源致谢并保留 UW 发表前审阅权。第 3.10 条要求到期/提前终止时返还或销毁、不留副本；无法实施时须通知 UW，并仍受所述用途及法律要求限制。",
+          "source": {
+            "url": "https://drive.google.com/uc?export=download&id=1irtU8PenuHv5h6sY6hBEmiToSMribAmp",
+            "local_source": "_collection/data_license_followup_20261025/sources/d6d70b91371cd219.pdf"
+          },
+          "end_date": "2027-12-31",
+          "agreement_effective_date": "Date of last signature",
+          "document_status": "Official published DUA text; participant execution not checked"
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/717d417fd22c8a36.json",
+          "url": "https://www.imageclef.org/2026/medical/mediqa-core"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json",
+          "url": "https://www.imageclef.org/2026/medical"
+        },
+        {
+          "local_source": "_collection/access_flow_review_20261024/sources/88ddf557ccfb9930.json",
+          "url": "https://www.imageclef.org/2026#registration"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/8667a94619c46ca3.txt",
+          "url": "https://ceur-ws.org/Vol-4283/paper232.pdf"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/76f7dd12e0bb1b53.txt",
+          "url": "https://ceur-ws.org/Vol-4283/paper233.pdf"
+        },
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/3545ebb80a5bbbf9.json",
+          "url": "https://github.com/KurtLabUW/CoreBT"
+        },
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/1ffe4b1ee78974a5.json",
+          "url": "https://github.com/GeraldSun/RADAR"
+        },
+        {
+          "url": "https://support.aimultimedialab.ro/imageclef/index.html",
+          "local_source": "_collection/data_license_followup_20261025/sources/e8f11d995e8739ab.json"
+        },
+        {
+          "url": "https://drive.google.com/uc?export=download&id=1Ui9rROvVUiH2r-sVlG4ee4BWpZYT-nzB",
+          "local_source": "_collection/data_license_followup_20261025/sources/a0cba1f40ad5271c.pdf"
+        },
+        {
+          "url": "https://drive.google.com/uc?export=download&id=1Ui9rROvVUiH2r-sVlG4ee4BWpZYT-nzB",
+          "local_source": "_collection/data_license_followup_20261025/sources/a0cba1f40ad5271c.json"
+        },
+        {
+          "url": "https://drive.google.com/uc?export=download&id=1irtU8PenuHv5h6sY6hBEmiToSMribAmp",
+          "local_source": "_collection/data_license_followup_20261025/sources/d6d70b91371cd219.pdf"
+        },
+        {
+          "url": "https://drive.google.com/uc?export=download&id=1irtU8PenuHv5h6sY6hBEmiToSMribAmp",
+          "local_source": "_collection/data_license_followup_20261025/sources/d6d70b91371cd219.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability.",
+      "agreement_full_text_verified": "Verified: both official UW task-specific DUA PDFs",
+      "dataset_scope_verified": "Verified: Task 1 and Task 2 identified by official Exhibit A",
+      "reuse_terms_verified": "Verified: purpose limitation, transfer restrictions and end-of-term handling",
+      "followup_review": "data_license_followup_20261025"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "CLEF/2026/mediqa-core-2026.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "United States"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://www.imageclef.org/2026/medical/mediqa-core",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/717d417fd22c8a36.json"
+                },
+                {
+                  "url": "https://www.imageclef.org/2026/medical",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json"
+                },
+                {
+                  "url": "https://ceur-ws.org/Vol-4283/paper232.pdf",
+                  "local_source": "_collection/resource_audit_20261025/online/8667a94619c46ca3.txt"
+                },
+                {
+                  "url": "https://ceur-ws.org/Vol-4283/paper233.pdf",
+                  "local_source": "_collection/resource_audit_20261025/online/76f7dd12e0bb1b53.txt"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/mediqa-core-2026.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "CLEF/2026/mediqa-core-2026.json",
+              "source_field": "resource_characteristics_review.fields.post_challenge",
+              "value": "Task2 report explicitly directs users to RADAR for access requests after competition.",
+              "sources": [
+                {
+                  "url": "https://www.imageclef.org/2026/medical/mediqa-core",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/717d417fd22c8a36.json"
+                },
+                {
+                  "url": "https://www.imageclef.org/2026/medical",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json"
+                },
+                {
+                  "url": "https://ceur-ws.org/Vol-4283/paper232.pdf",
+                  "local_source": "_collection/resource_audit_20261025/online/8667a94619c46ca3.txt"
+                },
+                {
+                  "url": "https://ceur-ws.org/Vol-4283/paper233.pdf",
+                  "local_source": "_collection/resource_audit_20261025/online/76f7dd12e0bb1b53.txt"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/mediqa-core-2026.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

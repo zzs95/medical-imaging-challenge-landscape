@@ -1,0 +1,519 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cl-detection-2023",
+    "challenge_name": "CL-Detection 2023",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": [
+        "National Taiwan University of Science and Technology",
+        "Shenzhen University"
+      ],
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "X-ray"
+      ],
+      "submodality": [
+        "Lateral cephalogram"
+      ],
+      "body_region": [
+        "Head"
+      ],
+      "organ_system": [
+        "Dental"
+      ],
+      "organs_or_structures": [
+        "38 craniofacial landmarks"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Localization",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Cephalometric Landmark Detection",
+          "task_family": "Localization",
+          "task_subtype": "landmark detection",
+          "input": [
+            "Lateral X-ray image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "38 landmark coordinates"
+          ],
+          "granularity": "landmark-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": true,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": 3,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "image_count": 600
+      },
+      "modalities": [
+        "X-ray"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": null,
+        "policy": "Only challenge data; ISBI 2014/2015 and PKU cephalogram pretrained models prohibited."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Mean Radial Error (MRE)",
+            "Success Detection Rate at 2.0 mm"
+          ],
+          "ranking": "Both metrics contribute to ranking."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_data_release": "2023-05-01",
+      "final_submission_deadline": "2023-08-16",
+      "challenge_event": "2023-10-08"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 348,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Validation",
+            "submission_count": 120
+          },
+          {
+            "official_phase_name": "Testing",
+            "submission_count": 93
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://cl-detection2023.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://cl-detection2023.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/81-3786736d3ffc.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://cl-detection2023.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/81-3cea7ef2122d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://cl-detection2023.grand-challenge.org/cl-detection2023/",
+          "supports": [
+            "challenge context",
+            "evaluation.platform",
+            "submission.platform"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/81-4b7685d5941b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://cl-detection2023.grand-challenge.org/miccai-workshop/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/81-783ae28a4c19.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://cl-detection2023.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/81-8d8045d1b3eb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://cl-detection2023.grand-challenge.org/participants/registration/create/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/81-9dea25fe4718.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://cl-detection2023.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/81-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Exact split counts and detailed license/resources require verification; training page requires access."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://cl-detection2023.grand-challenge.org/cl-detection2023/",
+          "local_snapshot": "_collection/sources/81-4b7685d5941b.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'Submit', 'url': 'https://cl-detection2023.grand-challenge.org/evaluation/submissions/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "submission.platform": {
+          "source_url": "https://cl-detection2023.grand-challenge.org/cl-detection2023/",
+          "local_snapshot": "_collection/sources/81-4b7685d5941b.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'Submit', 'url': 'https://cl-detection2023.grand-challenge.org/evaluation/submissions/'}; reviewed for the named edition, not inferred from directory presence alone."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "evaluation.platform",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "data_usage_mode.overall_paradigm",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/cl-detection-2023.json",
+          "_collection/verification_20261003/literature_context/cl-detection-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "训练集经协议后下载；隐藏测试采用容器运行。"
+      },
+      "decision_history": [
+        "训练集经协议后下载；隐藏测试采用容器运行。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/81-3cea7ef2122d.json",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/sources/81-4b7685d5941b.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/cl-detection-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Organizer/platform-side inference",
+          "final_stage": "Final scored test phase",
+          "evidence_scope": "Reported execution",
+          "coding_basis": "Challenge report and edition-specific instructions; paper follow-up 2026-10-27",
+          "evidence_path": "latex_sourcev2/data/paper_followup_20261027/sources/cl_detection.txt",
+          "evidence_excerpt": "Final test Docker execution and common evaluation configuration are described in sections III-C/D and IV.",
+          "rationale": "The report links successful container execution to the final leaderboard; classification does not rely on the Grand Challenge name alone.",
+          "source_urls": "https://arxiv.org/html/2409.15834v1",
+          "completed_execution_claim": "Reported execution",
+          "review_date": "2026-10-27",
+          "source_section": "III-A; III-C/D; IV"
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer challenge report",
+              "source_path": "latex_sourcev2/data/paper_followup_20261027/sources/cl_detection.txt",
+              "url": "https://arxiv.org/html/2409.15834v1",
+              "section": "III-B; Table I",
+              "value": {
+                "named_site": "Shenzhen University General Hospital",
+                "country": "China"
+              },
+              "scope": "Acquisition location for the Shenzhen subset only; not assigned to the complete three-source dataset."
+            }
+          ],
+          "source_urls": "https://arxiv.org/html/2409.15834v1",
+          "basis": "The named collection hospital is a data-source statement, not an author-affiliation inference."
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer challenge report",
+              "source_path": "latex_sourcev2/data/paper_followup_20261027/sources/cl_detection.txt",
+              "url": "https://arxiv.org/html/2409.15834v1",
+              "section": "Abstract; III-A",
+              "value": {
+                "dataset_and_submission_service": "Continued availability after MICCAI 2023 stated"
+              },
+              "scope": "Organizer continuing-availability statement; no authenticated download or live execution test."
+            }
+          ],
+          "source_urls": "https://arxiv.org/html/2409.15834v1",
+          "basis": "The report explicitly states that the dataset and submission system remain available after the initial evaluation."
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer challenge report",
+              "source_path": "latex_sourcev2/data/paper_followup_20261027/sources/cl_detection.txt",
+              "url": "https://arxiv.org/html/2409.15834v1",
+              "section": "Figure 4; IV",
+              "value": {
+                "validation_teams": 46,
+                "successful_test_teams": 37,
+                "additional_failed_test_teams": 6
+              },
+              "scope": "Phase-specific team counts. Successful and failed test attempts retained separately; registrations and 77 qualified results are not team totals."
+            }
+          ],
+          "source_urls": "https://arxiv.org/html/2409.15834v1",
+          "basis": "The challenge report provides actual validation and final-submission participation."
+        }
+      },
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation, supplemented by targeted organizer-paper and official retrospective-source review"
+    },
+    "literature_followups": [
+      {
+        "review_date": "2026-10-27",
+        "audit_path": "latex_sourcev2/data/paper_followup_20261027",
+        "fields": [
+          "final_inference",
+          "geography",
+          "post_challenge_resources",
+          "reported_participation"
+        ]
+      }
+    ]
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

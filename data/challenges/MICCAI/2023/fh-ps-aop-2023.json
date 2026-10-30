@@ -1,0 +1,499 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "fh-ps-aop-2023",
+    "challenge_name": "FH-PS-AOP Challenge",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Ultrasound"
+      ],
+      "submodality": [
+        "Transperineal ultrasound"
+      ],
+      "body_region": [
+        "Pelvis"
+      ],
+      "organ_system": [
+        "Obstetric"
+      ],
+      "organs_or_structures": [
+        "Fetal head",
+        "Pubic symphysis"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Regression"
+      ],
+      "tasks": [
+        {
+          "task_id": "segmentation",
+          "official_name": "Fetal head and pubic symphysis segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "Ultrasound image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Fetal head and pubic symphysis label mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "aop",
+          "official_name": "Angle of progression estimation",
+          "task_family": "Regression",
+          "task_subtype": "angle measurement",
+          "input": [
+            "Ultrasound image",
+            "Predicted FH/PS masks"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Angle of progression"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": "0 background; 1 pubic symphysis; 2 fetal head",
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Ultrasound"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "public_train": {
+          "image_count": 4000
+        },
+        "preliminary_test": {
+          "case_count": 401
+        },
+        "final_test": {
+          "case_count": 700
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Training repository 10.5281/zenodo.7851339: CC BY 4.0; full-data access after challenge requires agreement.",
+      "access_after_challenge": null,
+      "access_scope": "Public 2023 training split on Zenodo 7851339; later whole-cohort access may use separate terms"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Prize entrants must release external data/models under permissive license within three months of preliminary deadline; institutional benchmarking rules differ."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "segmentation",
+          "metrics": [
+            "Dice",
+            "Hausdorff distance",
+            "Mean Surface Distance"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "aop",
+          "metrics": [
+            "Angle of progression difference (delta AoP)"
+          ],
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": 5,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 2,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "preliminary_submissions_per_week": 1
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_data_release": "2023-01-05",
+      "final_submission_deadline": "2023-09-20"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 234,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Phase one",
+            "submission_count": 179
+          },
+          {
+            "official_phase_name": "Phase two",
+            "submission_count": 25
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://ps-fh-aop-2023.grand-challenge.org/",
+      "dataset": "https://zenodo.org/records/7851339",
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Homepage legacy prose calls training Set1 401 images while current dataset and TL;DR report 4000 training images; 401 is retained only as preliminary test count. Homepage final phase allows 2 submissions whereas older rules state weekly limit.",
+      "Zenodo record 7845676 licenses the challenge design document, not the training data; dataset terms are taken from record 7851339."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://ps-fh-aop-2023.grand-challenge.org/get-started/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/99-1041be00b3f5.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://ps-fh-aop-2023.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/99-3e0c5fbf0864.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ps-fh-aop-2023.grand-challenge.org/organizers-sponsors/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/99-68628d5747b3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ps-fh-aop-2023.grand-challenge.org/participation-rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "evaluation",
+            "evaluation.platform",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/99-706fd8aa7e7c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ps-fh-aop-2023.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/99-d21cd8080dcd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ps-fh-aop-2023.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/99-overview.json"
+        },
+        {
+          "type": "official conference challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json",
+          "supports": [
+            "event.conference"
+          ],
+          "retrieved_on": "2026-10-02"
+        },
+        {
+          "type": "official dataset repository",
+          "url": "https://zenodo.org/records/7851339",
+          "local_snapshot": "_collection/sources/99-b98778252eb7.json",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "dataset",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Ranking refers to two metrics although evaluation lists three segmentation metrics plus AoP difference; verify final evaluated/ranked metric set."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://ps-fh-aop-2023.grand-challenge.org/participation-rules/",
+          "local_snapshot": "_collection/sources/99-706fd8aa7e7c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "executed on the grand-challenge.org platform and its performance is; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "data_access.access_status": {
+          "source_url": "https://zenodo.org/records/7851339",
+          "local_snapshot": "_collection/sources/99-b98778252eb7.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official dataset/rules evidence explicitly establishes released training data and dataset license."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://zenodo.org/records/7851339",
+          "local_snapshot": "_collection/sources/99-b98778252eb7.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official dataset/rules evidence explicitly establishes released training data and dataset license."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status",
+          "evaluation.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/fh-ps-aop-2023.json",
+          "_collection/verification_20261003/literature_context/fh-ps-aop-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Pelvis"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "产程胎头位置及进展角的生理测量，未设置疾病诊断标签；分娩监测不等同疾病。",
+      "sources": [
+        {
+          "url": "https://ps-fh-aop-2023.grand-challenge.org/",
+          "local_source": "_collection/sources/99-b98778252eb7.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "产程胎头位置及进展角的生理测量，未设置疾病诊断标签；分娩监测不等同疾病。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2023/fh-ps-aop-2023.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Observed persistent data resource",
+              "summary": "Edition-linked dataset files and download links remained listed in a repository snapshot after the competition year.",
+              "url": "https://zenodo.org/records/7851339",
+              "snapshot": "_collection/sources/99-b98778252eb7.json",
+              "scope": "File listing establishes continuing resource provision at the snapshot; authenticated download experience and unrestricted reuse are separate.",
+              "value": null,
+              "excerpt": "Files\nPubic Symphysis-Fetal Head Segmentation and Angle of Progression.zip\nFiles\n(362.9 MB)\nName\nSize\nPubic Symphysis-Fetal Head Segmentation and Angle of Progression.zip\nmd5:46d44052dfaa6ea095dfc0c1d0a9870c\n362.9 MB\nPreview\nDownload\n6K\nViews\n946\nDownloads\nShow more details\nAll versions\nThis version\nViews\nTotal views\n5,823\n3,455\nDownloads\nTotal downloads\n946\n941\nData volume\nTotal data volume\n715.4 GB\n713.5 GB\nMore info on how stats are collected....\nVersions\nExternal resources\nIndexed in\nOpenAIRE\nCommunities\nKeywords and subjects\nKeywords\nAngle of progression; Transperineal ultrasound image; Pubic symphysis; Fetal head; Image segmentation\nDetails\nDOI\nDOI Badge\nDOI\n10.5281/zenodo.7851339\nMarkdown\n[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7851339.svg)](https://doi.org/10.5281/zenodo.7851339)\nreStructuredText\n.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.7851339.svg\n  :target: https://doi.org/10.5281/zenodo.7851339\nHTML\n<a href=\"https://doi.org/10.5281/zenodo.7851339\"><img src=\"https://zenodo.org/badge/DOI/10.5281/zenodo.7851339.svg\" alt=\"DOI\"></a>\nImage URL\nhttps://zenodo.org/badge/DOI/10.5281/zenodo.7851339.svg\nTarget URL\nhttps://doi.org/10.5281/zenodo.7851339\nResource type\nDataset\nPublisher\nZenodo\nRights\nLicense\nCreative Commons Attribution 4.0 International\nThe Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited.\nRead more\nCitation\nExport\nTechnical metadata\nCreated\nApril 21, 2023\nModified\nMarch 22, 2024\nJump up",
+              "snapshot_date": "2026-10-02"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

@@ -1,0 +1,558 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cholectriplet-2022",
+    "challenge_name": "cholectriplet 2022",
+    "full_name": "CholecTriplet2022 - Surgical Action Triplet Detection and Localization",
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "parent_event": "Endoscopic Vision Challenge",
+      "official_registration_id": "MICCAI-2022-R13"
+    },
+    "organizers": {
+      "institutions": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362287",
+        "section": "Organizers",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+        "registered_task_index": 2
+      }
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "body_region": [
+        "Abdomen"
+      ],
+      "organs_or_structures": [
+        "Gallbladder",
+        "Surgical instruments"
+      ],
+      "diseases": [],
+      "clinical_context": "Cholecystectomy videos; indication not specified. Do not infer cholecystitis from surgery alone."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "secondary_task_families": [
+        "Detection",
+        "Localization"
+      ],
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Localization"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "CholecTriplet2022 - Surgical Action Triplet Detection and Localization",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification",
+            "Detection",
+            "Localization"
+          ],
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362287",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362287",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+        "registered_task_index": 2
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Endoscopy"
+      ],
+      "population": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362287",
+        "section": "Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+        "registered_task_index": 2
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362287",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+        "registered_task_index": 2
+      },
+      "access_status": "Individual authorization",
+      "review_status": "Reviewed 2026-10-24; targeted access backfill",
+      "public_download": false,
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Competition-time data access after registration and signed terms",
+      "license_or_terms": "Challenge-only use; CC BY-NC (proposed later release). 比赛期间数据仅用于竞赛提交；赛后发布及可能采用 CC BY-NC 属计划，不认定已开放。",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {},
+      "testing": {},
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nAction triplet detection will be assessed by mean average precision (mAP). Three inter-linked subtasks will be\nassessed as follows:\n\n\n(1) Triplet Recognition: Correct triplet ID classification is accessed by mean AP under precision-recall curve, as\ndone in the previous CholecTriplet2021 challenge.\n(2) Instrument Localization: Correct bounding box localization of the instrument performing the action is\naccessed by detection mean AP. A detection is assigned a true positive (TP) if the degree of overlap between a\npredicted bounding box and the ground truth exceeds a certain threshold and the instrument ID is correct.\n(3) Triplet Detection: Correct pairing of the box-triplet. This metric will assess the correctness of the associated\naction triplet to every localized instrument. Here, a prediction is considered as TP if the predicted triplet ID is\ncorrect, assigned to the right instrument involved in the tool-tissue interaction, which must be localized at a\nminimum IoU with the ground-truth bounding box. Here, It is important to note that the bounding box detection\nwould be evaluated with the triplet association ID, not the tool/organ ID. This means that the ID of a box over the\nsame instrument-target can change based on the interaction between the two.\nThese three sub-tasks are considered as a single challenge: a complete submission must produce the three outputs\nin a single docker run to be considered for evaluation.\nFor the primary evaluation, the AP metric will be computed at a threshold of 0.5.\nFirst, per category AP is computed over all frames in a video,\nThe video AP is obtained by averaging the category APs across all the test videos,\nAnd final mAP is obtained as the overall average of the video category AP.\nAdditionally, we will assess the triplet recognition AP for the individual components as a secondary metric.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe mAP combines both precision and recall and is more useful than accuracy given uneven class distribution. The\nprecision score gives a balanced confidence for the reliance of the algorithm in surgical procedure.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nThe performance metrics (triplet detection mAP [recognition, localization, ecognition + localization]) produces a\n\n\n\fEndoscopic Vision Challenge 2022\n\nscalar value which will be used to rank the model performance specifically in descending order for each subtask.\nIn the case of a tile:\nFor recognition: we would evaluate the recognition mAP of the components of the triplets namely: instrument-\nverb, instrument-target, instrument, verb, and target, in that order.\nFor localization: we would increasingly evaluate at higher IoU threshold until a decider is obtained.\n\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nOnly full submissions for the task will be considered.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThe ranking of the metrics is based on the clinical relevance and task difficulty.",
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362287",
+            "section": "Metric(s); Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ]
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "The participating team will submit a docker container with their codes that will be benchmarked internally by the organizers on the unseen test data. A valid docker submission is one that jointly produces outputs for the three sub-tasks. Submission instructions and a template docker in the required submission format with specific input/output protocol will be provided on the link: https://cholectriplet2022.grand-challenge.org/submission",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362287",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ],
+      "submission_evidence_status": "Task-specific registered EndoVis protocol"
+    },
+    "schedule": {
+      "edition_year": 2022,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362287",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+        "registered_task_index": 2
+      }
+    },
+    "publication": {
+      "registration_doi": "10.5281/zenodo.6362287"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "active_teams": null,
+      "teams_with_submission": null
+    },
+    "links": {
+      "registration": "https://doi.org/10.5281/zenodo.6362287",
+      "official_website": "https://endovis.grand-challenge.org/"
+    },
+    "notes": [
+      "Task-specific information is taken from the registered EndoVis protocol, not from unrelated child challenges."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "miccai_gapfill_20261024",
+      "sources": [
+        {
+          "type": "Official registered EndoVis protocol",
+          "url": "https://doi.org/10.5281/zenodo.6362287",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+          "supports": [
+            "year",
+            "parent-child relation",
+            "task design",
+            "submission and evaluation protocol"
+          ],
+          "registered_task_indices": [
+            2
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ]
+    },
+    "record_relationships": {
+      "analytical_unit": "child_challenge_edition",
+      "parent_challenge_id": "endovis-2022",
+      "child_challenge_ids": []
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Localization"
+      ],
+      "emerging_objectives": [],
+      "basis": "Registered sub-challenge design",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Sub-challenge explicitly named in registered EndoVis protocol",
+      "completion_status": "Not independently recoded in this gap-fill"
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Named EndoVis child challenge; parent is not additionally counted."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "2022年Join Competition页明确要求签署条款并注册，约两个工作日审批后才可访问数据及受限页面。",
+        "scope": "Competition-time data access after registration and signed terms",
+        "evidence_basis": "Primary protocol / dataset metadata checked on 2026-10-24; no medical images downloaded",
+        "source_urls": [
+          "https://cholectriplet2022.grand-challenge.org/join/"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362287",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362287",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. The participating team will submit a docker container with their codes that will be benchmarked internally by the organizers on the unseen test data. A valid docker submission is one that jointly produces outputs for the three sub-tasks. Submission instructions and a template docker in the required submission format with specific input/output protocol will be provided on the link: https://cholectriplet2022.grand-challenge.org/submission b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, m [...] ase, participants would conduct self-evaluation on the validation data for sanity check using their docker image. The docker image would not be submitted to the challenge organizers at the validation stage. Formats and guides for self-validation will be provided to the participants at the link: https://cholectriplet2022.grand-challenge.org/validation Participants will be required to submit the output of their successful validated docker for confirmation that their development method follows the submission guideline. During the final submission stage, the participants will submit their final docker for evaluation. Only the last submission for each team before the deadline will be evaluated for the challenge ranking."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362287",
+          "excerpt": "include Endoscopic Vision Challenge 2022 • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results April 1st: Release of first training dataset and the script for the evaluation metrics May 1st: Launch of slack interaction forum and colab code blog Jun 1st: Release of docker submission template Jun 15th: Self-validation phase for testing docker containers Jul 1st: Submission of self-validation report deadline Jul 15th: Release of second training dataset Sep 1st: Docker, Presentation & Report Submission deadline (11:59pm GMT) Sep 18th/22th: Challenge Day"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362287",
+          "excerpt": "nnotation case. Both training and testing cases are annotated with the same parameter. However, the test test will provide bounding box labels over the surgical instruments for spatial detection evaluation. b) State the total number of training, validation and test cases. 45 training videos and 5 test videos. We provide the cases as videos because participants may want to also exploit the temporal information. On average, a video contains 2.08K frames. Participants can split the training videos into training and validation sets on their own volition. c) Explain why a total number of cases and the specific proport [...] ate while maintaining a large enough training set. The test cases are chosen from videos not in the public domain. d) Mention further important characteristics of the training, validation and test cases (e.g. class distribution in classification tasks chosen according to real-world distribution vs. equal class distribution) and justify the choice. The distribution of classes in the data is the real-worl"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/cholectriplet-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://cholectriplet2022.grand-challenge.org/join/",
+          "local_source": "_collection/access_backfill_20261024/sources/4afc6d5690290231.json",
+          "review_date": "2026-10-24",
+          "section": "Development-data access; edition and phase scope retained"
+        },
+        {
+          "local_source": "_collection/access_backfill_20261024/user_evidence.txt",
+          "url": "",
+          "section": "User-supplied follow-up; classification checked against the linked primary sources"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-24 access backfill: 2022年Join Competition页明确要求签署条款并注册，约两个工作日审批后才可访问数据及受限页面。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "现有CholecT50公开仓库与后续发布不能单独确定2022比赛时的申请步骤。"
+          }
+        }
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 45,
+              "unit": "videos",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "testing",
+              "value": 5,
+              "unit": "videos",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "France"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Single-center"
+        },
+        "post_challenge": {
+          "state": "Documented and classifiable",
+          "value": "Planned post-challenge CC BY-NC release"
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.6362287",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/cholectriplet-2022.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Not established",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Gallbladder",
+        "Surgical instruments"
+      ],
+      "specific_diseases": [],
+      "review_note": "Cholecystectomy videos; indication not specified. Do not infer cholecystitis from surgery alone.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362287"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/cholectriplet-2022.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "Challenge-only use",
+        "CC BY-NC (proposed later release)"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "比赛期间数据仅用于竞赛提交；赛后发布及可能采用 CC BY-NC 属计划，不认定已开放。",
+      "qualifications": [
+        "Competition-time restrictions and proposed later release kept separate; later release not verified here."
+      ],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC. Additional comments: During the course of the challenge, the data may only be used to prepare challenge submissions, no other uses are permitted. Once the data has been published after the challenge, it will be released, most likely under CC BY-NC.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.6362287"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362287"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2022/cholectriplet-2022.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "France"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.6362287",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/cholectriplet-2022.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2022/cholectriplet-2022.json",
+              "source_field": "resource_characteristics_review.fields.post_challenge",
+              "value": "Planned post-challenge CC BY-NC release",
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.6362287",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/cholectriplet-2022.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Organizer/platform-side inference",
+          "final_stage": "Final scored test phase",
+          "evidence_scope": "Reported execution",
+          "coding_basis": "Challenge report and edition-specific instructions; paper follow-up 2026-10-27",
+          "evidence_path": "latex_sourcev2/data/paper_followup_20261027/sources/cholectriplet.txt",
+          "evidence_excerpt": "Section 3.5 describes uploaded containers run against private CholecT5; section 3.4 distinguishes the organizer evaluation server from local self-validation.",
+          "rationale": "Final private-test execution is centrally conducted after DockerHub delivery; participant self-validation is not final inference.",
+          "source_urls": "https://arxiv.org/abs/2302.06294v2",
+          "completed_execution_claim": "Reported execution",
+          "review_date": "2026-10-27",
+          "source_section": "3.4; 3.5"
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer challenge report",
+              "source_path": "latex_sourcev2/data/paper_followup_20261027/sources/cholectriplet.txt",
+              "url": "https://arxiv.org/abs/2302.06294v2",
+              "section": "3.6",
+              "value": {
+                "teams_progressing_beyond_validation": 11
+              },
+              "scope": "Eleven teams reaching final participation, not the 32 registered teams; preserve the authors' status definition."
+            }
+          ],
+          "source_urls": "https://arxiv.org/abs/2302.06294v2",
+          "basis": "The report explicitly distinguishes final participants from registrations."
+        }
+      },
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation, supplemented by targeted organizer-paper and official retrospective-source review"
+    },
+    "literature_followups": [
+      {
+        "review_date": "2026-10-27",
+        "audit_path": "latex_sourcev2/data/paper_followup_20261027",
+        "fields": [
+          "final_inference",
+          "reported_participation"
+        ]
+      }
+    ]
+  },
+  "common_note_ids": [
+    "CN07"
+  ]
+}

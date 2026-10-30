@@ -1,0 +1,683 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "echorisk-2026",
+    "challenge_name": "AI for Cardiac Function Estimation, Assessment & Early Prediction of Therapy-Induced Cardiotoxicity from Echocardiography",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Ultrasound"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Heart"
+      ],
+      "organ_system": [
+        "Cardiovascular"
+      ],
+      "organs_or_structures": [
+        "Left ventricle"
+      ],
+      "diseases": [
+        "Therapy-induced cardiotoxicity",
+        "Breast cancer"
+      ],
+      "clinical_context": null,
+      "disease_evidence_scope": "Registered 2026 design specifies cardiotoxicity assessment/prediction in breast cancer patients; cancer is the treatment-cohort condition, not an echocardiographic tumor target.",
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Quantification",
+      "secondary_task_families": [
+        "Classification",
+        "Outcome Prediction"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Automated Estimation of Cardiac Functional Parameters and Biomarkers from Echocardiography",
+          "task_family": "Quantification",
+          "task_subtype": null,
+          "input": [
+            "Echocardiography"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "LVEF and ventricular volume estimates"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Automated Assessment of Left Ventricular Dysfunction from Longitudinal Echocardiography",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "Echocardiography"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Left ventricular dysfunction prediction"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Early Prediction of Therapy-Induced Cardiotoxicity from Baseline Echocardiography",
+          "task_family": "Outcome Prediction",
+          "task_subtype": null,
+          "input": [
+            "Baseline echocardiography",
+            "Clinical and biometric information"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Future therapy-induced cardiotoxicity prediction"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Left ventricle"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "prospective clinical cohort",
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": 422,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "echocardiogram_count": 2159
+      },
+      "modalities": [
+        "Ultrasound"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "source_dataset": "EU Horizon 2020 CARDIOCARE project; five prospective timepoints"
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "preregistered_data_license": "CC BY-NC-SA",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design.",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Synapse",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Mean Absolute Error (MAE)",
+            "Root Mean Squared Error (RMSE)",
+            "Coefficient of determination (R²)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "AUC-ROC",
+            "Accuracy",
+            "Precision",
+            "Recall",
+            "F1-Score",
+            "Specificity"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "AUC-ROC"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 3 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19727929",
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Synapse",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://echorisk-miccai.github.io/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "2026-10-22: 官网确认全部提交已完成隐藏测试评价；DHlab公布第二名。完整分任务排名及获奖任务归属仍未核实。",
+      "2026-10-22: 官网确认隐藏测试评价完成，官方分任务排名仍在核验；DHlab第二名的任务归属待补。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 4,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://echorisk-miccai.github.io/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/4ee7069138f938df.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19727929",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "supports": [
+            "clinical_domain",
+            "clinical_domain.disease_evidence_scope",
+            "clinical_domain.diseases",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://echorisk-miccai.github.io/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/echorisk-2026.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://echorisk-miccai.github.io/results.html",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_c70a2b4666ec_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "官网确认全部提交已完成隐藏测试评价；DHlab公布第二名。完整分任务排名及获奖任务归属仍未核实。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://digitalheartlab.com/news/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_web_review_42a359b7bb9f_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Indexed institutional news read through web search; direct HTTP returned empty text",
+          "source_accessible": true,
+          "supports": [
+            "官网确认全部提交已完成隐藏测试评价；DHlab公布第二名。完整分任务排名及获奖任务归属仍未核实。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://echorisk-miccai.github.io/results.html",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_c70a2b4666ec_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "官网确认隐藏测试评价完成，官方分任务排名仍在核验；DHlab第二名的任务归属待补。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Submissions will be accepted in the form of Docker containers via the Synapse platform. Detailed submission instructions and technical requirements will be provided at the time of the official challenge announcement. All submissions are evaluated automatically on the challenge server. During the development phase, submissions are evaluated on the validation set with visible ground truth labels and publicly displayed metrics. During the final evaluation phase, submitted containers are executed on the hidden test set, and no test performance metrics are visible until official results are announced."
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Submissions will be accepted in the form of Docker containers via the Synapse platform. Detailed submission instructions and technical requirements will be provided at the time of the official challenge announcement. All submissions are evaluated automatically on the challenge server. During the development phase, submissions are evaluated on the validation set with visible ground truth labels and publicly displayed metrics. During the final evaluation phase, submitted containers are executed on the hidden test set, and no test performance metrics are visible until official results are announced."
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Submissions will be accepted in the form of Docker containers via the Synapse platform. Detailed submission instructions and technical requirements will be provided at the time of the official challenge announcement. All submissions are evaluated automatically on the challenge server. During the development phase, submissions are evaluated on the validation set with visible ground truth labels and publicly displayed metrics. During the final evaluation phase, submitted containers are executed on the hidden test set, and no test performance metrics are visible until official results are announced."
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Submissions will be accepted in the form of Docker containers via the Synapse platform. Detailed submission instructions and technical requirements will be provided at the time of the official challenge announcement. All submissions are evaluated automatically on the challenge server. During the development phase, submissions are evaluated on the validation set with visible ground truth labels and publicly displayed metrics. During the final evaluation phase, submitted containers are executed on the hidden test set, and no test performance metrics are visible until official results are announced."
+        },
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Submissions will be accepted in the form of Docker containers via the Synapse platform. Detailed submission instructions and technical requirements will be provided at the time of the official challenge announcement. All submissions are evaluated automatically on the challenge server. During the development phase, submissions are evaluated on the validation set with visible ground truth labels and publicly displayed metrics. During the final evaluation phase, submitted containers are executed on"
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Submissions will be accepted in the form of Docker containers via the Synapse platform. Detailed submission instructions and technical requirements will be provided at the time of the official challenge announcement. All submissions are evaluated automatically on the challenge server. During the development phase, submissions are evaluated on the validation set with visible ground truth labels and publicly displayed metrics. During the final evaluation phase, submitted containers are executed on"
+        },
+        "clinical_domain.diseases": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered 2026 design specifies cardiotoxicity assessment/prediction in breast cancer patients; cancer is the treatment-cohort condition, not an echocardiographic tumor target."
+        },
+        "clinical_domain.disease_evidence_scope": {
+          "source_url": "https://zenodo.org/records/19727929",
+          "local_snapshot": "_collection/sources_other/protocol-19727929.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered 2026 design specifies cardiotoxicity assessment/prediction in breast cancer patients; cancer is the treatment-cohort condition, not an echocardiographic tumor target."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://echorisk-miccai.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/echorisk-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://echorisk-miccai.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/echorisk-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://echorisk-miccai.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/echorisk-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.disease_evidence_scope",
+          "clinical_domain.diseases",
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/echorisk-2026.json",
+          "_collection/verification_20261003/literature_context/echorisk-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "官网确认全部提交已完成隐藏测试评价；DHlab公布第二名。完整分任务排名及获奖任务归属仍未核实。",
+          "previous_assessment": {
+            "value": "confirmed",
+            "event_state": "completed",
+            "evidence_state": "documented",
+            "evidence_ids": [
+              "E1"
+            ],
+            "reason": "Organizer explicitly confirms completed hidden-test execution; verification/publication of final order remains pending."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2026/echorisk-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "官网确认隐藏测试评价完成，官方分任务排名仍在核验；DHlab第二名的任务归属待补。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2026/echorisk-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "官网确认隐藏测试评价完成，官方分任务排名仍在核验；DHlab第二名的任务归属待补。",
+        "source_urls": [
+          "https://echorisk-miccai.github.io/results.html"
+        ],
+        "evidence_ids": [
+          "E5"
+        ],
+        "details": {},
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_round2_user_20261022.txt",
+        "propagation_status": "Original JSON, audit, current CSV/Excel/reports updated; manuscript/figures/frozen release not regenerated."
+      },
+      "award_evidence": {
+        "hidden_test_assessment": "organizer confirms completed",
+        "award_rank": 2,
+        "participants": [
+          "Xiaoxian Zhang",
+          "Minghai Shi"
+        ],
+        "award_task": null,
+        "full_rankings": "organizer says being verified"
+      },
+      "remaining_questions": [
+        "Full official per-task rankings and task assignment of the institutional second-place award remain unverified."
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "EchoRisk2026当届Synapse说明明确组织者审核并批准用户组请求，再发送解压密码。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "EchoRisk2026当届Synapse说明明确组织者审核并批准用户组请求，再发送解压密码。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/f663d6beea09272e.json",
+          "url": "https://www.synapse.org/Synapse:syn72001386/wiki/639504",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn72001386/wiki/639504"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/0d59e2fd3893e2a6.json",
+          "url": "https://www.synapse.org/Synapse:syn72001386/wiki/639501",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn72001386/wiki/639501"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/echorisk-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "The challenge dataset was collected across multiple clinical sites to ensure diversity, robustness, and generalizability. Participating institutions include: (i) Istituto Europeo di Oncologia (IEO), Italy; (ii) Bank of Cyprus Oncology Centre (BOCOC), Cyprus; (iii) Karolinska University Hospital / Karolinska Institutet (KSBC), Sweden; (iv) National and Kapodistrian University of Athens (NKUA), Greece; (v) University Hospital of Ioannina (UOI), Greece; and (vi) Institute of Oncology Ljubljana (IOL), Slovenia.",
+              "url": "https://zenodo.org/records/19727929",
+              "snapshot": "_collection/sources_other/protocol-19727929.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nThe challenge dataset was collected across multiple clinical sites to ensure diversity, robustness, and\ngeneralizability. Participating institutions include: (i) Istituto Europeo di Oncologia (IEO), Italy; (ii) Bank of Cyprus\nOncology Centre (BOCOC), Cyprus; (iii) Karolinska University Hospital / Karolinska Institutet (KSBC), Sweden; (iv)\nNational and Kapodistrian University of Athens (NKUA), Greece; (v) University Hospital of Ioannina (UOI), Greece;\nand (vi) Institute of Oncology Ljubljana (IOL), Slovenia.",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

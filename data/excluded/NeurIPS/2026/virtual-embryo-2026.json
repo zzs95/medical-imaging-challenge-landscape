@@ -1,0 +1,411 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "virtual-embryo-2026",
+    "challenge_name": "Virtual Embryo Challenge: Generative Modeling of Embryogenesis Across Space, Scale and Time",
+    "full_name": "Virtual Embryo Challenge: Generative Modeling of Embryogenesis Across Space, Scale and Time",
+    "year": 2026,
+    "event": {
+      "conference": "NeurIPS 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2026-12-11",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": null,
+      "submodality": null,
+      "body_region": null,
+      "organ_system": null,
+      "organs_or_structures": [
+        "Embryo",
+        "Developing heart"
+      ],
+      "diseases": null,
+      "clinical_context": "Computational developmental biology and spatial/single-cell transcriptomics; excluded from the imaging-task analytical scope.",
+      "organ_system_basis": null,
+      "organ_system_coding_scope": null
+    },
+    "task_profile": {
+      "primary_task_family": null,
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Temporal gene-expression distribution prediction",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": [
+            "single-cell RNA profiles from earlier stages"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "future-stage cell-expression distribution"
+          ],
+          "granularity": "cell-population",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Spatial-temporal multiscale prediction",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": [
+            "earlier-stage 3D MERFISH-derived cell locations and gene expression"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "future-stage gene expression and 3D cell locations"
+          ],
+          "granularity": "cell and tissue",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Mutant perturbation prediction",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": [
+            "wild-type development and one observed perturbation in 3D MERFISH data"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "held-out mutant cell expression and 3D locations"
+          ],
+          "granularity": "cell and tissue",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "cell_count": {
+          "value": 1000000,
+          "approximate": true,
+          "relation": "approximately",
+          "raw_text": "roughly a million cells",
+          "unit": "cells across eleven developmental time points"
+        }
+      },
+      "modalities": null,
+      "data_components": [
+        "Single-cell RNA profiles for Task 1",
+        "Serial-section 3D MERFISH-derived spatial transcriptomics for Tasks 2 and 3"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "upstream_acquisition_note": "Tasks 2–3 use processed MERFISH-derived spatial transcriptomic coordinates and expression; no raw-image task is established. Previously coded Microscopy described upstream acquisition, not the competition input modality."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "registration-required",
+      "public_download": null,
+      "hosting": "Organizer competition portal",
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Research/educational use; publication or presentation using unpublished competition data requires data-generator approval",
+      "access_after_challenge": null,
+      "access_scope": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": "AnnData predictions with gene-expression matrices and, for spatial tasks, 3D coordinates"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Organizer validation and test leaderboards",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task3",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Predicted AnnData files; agent-designed track additionally requires design trajectory evidence",
+      "platform": "Organizer competition portal",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": [
+        "future cell expression",
+        "3D cell locations",
+        "mutant perturbation response"
+      ]
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://virtualembryo.ai/challenge",
+      "grand_challenge": null,
+      "platform": "https://virtualembryo.ai/challenge",
+      "dataset": "https://virtualembryo.ai/challenge/data",
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Do not use December 2026 scheduled awards as evidence of completed final evaluation on the October 20 documentary review date.",
+      "2026-10-22 canonical synchronization: old eligible review_coding superseded and archived; canonical imaging/edition inclusion flags set false; contradictory historical inclusion notes moved to history."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-20",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Documentary extraction date, not competition completion date.",
+      "last_verified": "2026-10-20",
+      "source_list": "2026 computer-vision-related conference challenge audit",
+      "source_index": null,
+      "sources": [
+        {
+          "type": "official NeurIPS competition announcement",
+          "url": "https://blog.neurips.cc/2026/07/28/neurips-2026-competitions-announced/",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "accepted competition",
+            "edition year"
+          ],
+          "basis": "The Virtual Embryo Challenge is one of the 16 accepted NeurIPS 2026 competitions."
+        },
+        {
+          "type": "organizer edition site",
+          "url": "https://virtualembryo.ai/challenge",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "three tasks",
+            "two design tracks",
+            "timeline"
+          ],
+          "basis": "The organizer schedules final submissions for December 2, evaluation for December 4, and winner announcement for December 11, 2026."
+        },
+        {
+          "type": "organizer data and task documentation",
+          "url": "https://virtualembryo.ai/challenge/data",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "MERFISH imaging-derived representation",
+            "submission fields",
+            "data scale"
+          ],
+          "basis": "Tasks 2 and 3 use 3D locations from serial-section MERFISH microscopy, alongside expression profiles; Task 1 is RNA-only."
+        },
+        {
+          "type": "organizer competition rules",
+          "url": "https://virtualembryo.ai/challenge/rules",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "competition conditions"
+          ],
+          "basis": "Human-designed and agent-designed method tracks are compared on common hidden tests."
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Final test execution and winners after December 2026",
+        "Exact number of active teams",
+        "Whether the manuscript's modality harmonization should count 3D MERFISH as microscopy when raw pixels are not submitted"
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "event.conference": {
+          "source_url": "https://virtualembryo.ai/challenge",
+          "reviewed_on": "2026-10-20",
+          "basis": "Official conference or workshop identifies this 2026 edition."
+        },
+        "assessment_evidence.status": {
+          "source_url": "https://virtualembryo.ai/challenge",
+          "reviewed_on": "2026-10-20",
+          "basis": "As of 2026-10-20 the final test phase and December winner announcement are scheduled for future dates; validation scores do not establish final assessment."
+        }
+      },
+      "targeted_review_history": [
+        {
+          "date": "2026-10-21",
+          "scope": "Eligibility resolved following user query; excluded on task-based scope, upstream imaging retained in notes.",
+          "source_url": "https://virtualembryo.ai/challenge",
+          "previous_record_backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/virtual_embryo_scope_20261021_162007/canonical.json"
+        },
+        {
+          "date": "2026-10-22",
+          "action": "Propagate already authorized review decisions into original challenge JSON",
+          "changes": [
+            "old eligible review_coding superseded and archived",
+            "canonical imaging/edition inclusion flags set false",
+            "contradictory historical inclusion notes moved to history"
+          ],
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/virtual-embryo-2026.json",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/canonical_decisions_sync_20261022_013012/NeurIPS/2026/virtual-embryo-2026.json",
+          "new_external_search": false,
+          "aggregate_rebuilt": false
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-20",
+      "final_assessment_status": "not_established_from_reviewed_sources",
+      "evidence_source_url": "https://virtualembryo.ai/challenge",
+      "basis": "As of 2026-10-20 the final test phase and December winner announcement are scheduled for future dates; validation scores do not establish final assessment.",
+      "qualification": "Review of publicly available documents only; no algorithm was independently rerun."
+    },
+    "review_coding": {
+      "imaging_eligibility": "excluded_outside_imaging_task_scope",
+      "basis": "Competition inputs/targets are single-cell expression profiles, processed spatial transcriptomic coordinates, future expression distributions and genetic perturbation responses. Under this review’s task-based imaging scope, upstream MERFISH imaging origin alone does not establish an image-analysis objective.",
+      "supersedes": "Previous imaging-derived boundary inclusion; user-reviewed task-based exclusion on 2026-10-21."
+    },
+    "eligibility_review": {
+      "value": "exclude_outside_imaging_scope",
+      "decision_date": "2026-10-21",
+      "reason": "Competition inputs/targets are single-cell expression profiles, processed spatial transcriptomic coordinates, future expression distributions and genetic perturbation responses. Under this review’s task-based imaging scope, upstream MERFISH imaging origin alone does not establish an image-analysis objective.",
+      "evidence_ids": [
+        "E1"
+      ],
+      "source_url": "https://virtualembryo.ai/challenge",
+      "scope_qualification": "Some source data are imaging-derived. Exclusion is a review-scope decision, not a claim that spatial transcriptomics has no imaging component.",
+      "aggregate_application_status": "Exclusion recorded in original JSON and review queue; manuscript and aggregate denominator not yet rebuilt.",
+      "include_in_primary_analysis": false
+    },
+    "previous_review_coding": {
+      "imaging_eligibility": "eligible_image_derived_representation",
+      "imaging_scope": "Only Tasks 2 and 3 are imaging-derived; Task 1 is RNA-only.",
+      "tool_mediated_clinical_workflow": "not_coded",
+      "basis": "MERFISH sections are imaged and reconstructed into 3D spatial coordinates central to two assessed tasks; the agent track concerns method design, not clinical tool use."
+    },
+    "previous_scope_notes": [
+      "Boundary inclusion under Supplementary Methods SM1: multimodal editions are eligible when imaging or an image-derived representation is integral to at least one assessed task.",
+      "The Task 1 RNA-only subtask is retained within the edition but is not independently counted as an imaging challenge.",
+      "The human-designed and agent-designed tracks use the same three tasks; count one 2026 edition, not two tracks."
+    ],
+    "count_in_core_medical_imaging_review": false,
+    "count_in_edition_statistics": false
+  }
+}

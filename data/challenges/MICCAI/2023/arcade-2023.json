@@ -1,0 +1,598 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "arcade-2023",
+    "challenge_name": "ARCADE-MICCAI2023",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "X-ray"
+      ],
+      "submodality": [
+        "Coronary angiography"
+      ],
+      "body_region": [
+        "Chest"
+      ],
+      "organ_system": [
+        "Cardiovascular"
+      ],
+      "organs_or_structures": [
+        "Coronary artery segments",
+        "Stenotic plaques"
+      ],
+      "diseases": [
+        "Coronary artery disease"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "arteries",
+          "official_name": "Coronary artery segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "instance segmentation",
+          "input": [
+            "Coronary angiography image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Syntax Score vessel segment masks"
+          ],
+          "granularity": "instance-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "stenosis",
+          "official_name": "Stenosis detection (segmentation)",
+          "task_family": "Segmentation",
+          "task_subtype": "instance segmentation",
+          "input": [
+            "Coronary angiography image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Stenosis region masks"
+          ],
+          "granularity": "instance-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "X-ray"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits_by_task": {
+        "arteries": {
+          "train_images": 1000,
+          "validation_images": 200,
+          "test_images": 300
+        },
+        "stenosis": {
+          "train_images": 1000,
+          "validation_images": 200,
+          "test_images": 300
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 官方规则/数据准入页明确列 CC BY-NC-SA。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "arteries",
+          "metrics": [
+            "Mean image-wise F1 score"
+          ],
+          "ranking": "Inference time breaks ties within 0.1%; image runtime exceeding limit receives F1=0."
+        },
+        {
+          "task_id": "stenosis",
+          "metrics": [
+            "Mean image-wise F1 score"
+          ],
+          "ranking": "Inference time breaks ties within 0.1%; image runtime exceeding limit receives F1=0."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": 30,
+        "reserved_ram_gb": null,
+        "gpu": "NVIDIA T4",
+        "gpu_vram_gb": 16,
+        "max_processing_time_per_image_seconds": 5,
+        "cpu_count": 8
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_data_release": "2023-05-29",
+      "final_submission_deadline": "2023-09-19",
+      "challenge_event": "2023-10-12"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 445,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Phase_1_Segmentation_Detection",
+            "submission_count": 393
+          },
+          {
+            "official_phase_name": "Phase_1_Stenosis_Detection",
+            "submission_count": 180
+          },
+          {
+            "official_phase_name": "Preliminary Phase Segmentation Detection Algorithm Submission",
+            "submission_count": 116
+          },
+          {
+            "official_phase_name": "Preliminary Phase Stenosis Detection Algorithm Submission",
+            "submission_count": 62
+          },
+          {
+            "official_phase_name": "Final Phase Segmentation Detection Algorithm Submission",
+            "submission_count": 42
+          },
+          {
+            "official_phase_name": "Final Phase Stenosis Detection Algorithm Submission",
+            "submission_count": 34
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://arcade.grand-challenge.org/",
+      "dataset": null,
+      "github": "https://github.com/cmctec/ARCADE",
+      "challenge_paper": null
+    },
+    "notes": [
+      "Per-task image counts are not assumed to be distinct patients or non-overlapping image sets."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://arcade.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/90-35ba42ed4f34.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://arcade.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/90-5b46f1287854.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://arcade.grand-challenge.org/tasks/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/90-66d723b2e65e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://arcade.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/90-9465eac89c30.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://arcade.grand-challenge.org/paper-submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/90-d04d044b7683.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://arcade.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/90-da567193c193.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://arcade.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/90-e14438bf3ff3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://arcade.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/90-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify dataset license and external-data policy."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/arcade-2023.json",
+          "_collection/verification_20261003/literature_context/arcade-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "当届注册页明确组织者调查并批准参与请求后提供数据。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "当届注册页明确组织者调查并批准参与请求后提供数据。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/a8297655a2ed343c.json",
+          "url": "https://arcade.grand-challenge.org/registration/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/arcade-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Explicitly identified competition rules or named source data; not all components implied",
+      "agreement_required": null,
+      "summary_zh": "官方规则/数据准入页明确列 CC BY-NC-SA。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "ssion Results Organizers Email organizers Participation policies: ¶ 1. For participation in this challenge you should read and follow CC BY-NC-SA license 2. Only semi-automatic methods are allowed (fully deployable with Docker container with minimum human interaction required) 3. Additionally to challenge dataset, participants may use publicly available pre-trained models with indication of it and its source, however external private and public data is prohibited to be used. 4. Performance results and summaries of all teams will be published on results page. Top 3 teams should make their code publicly available. Other than top 3 team",
+          "source": {
+            "url": "https://arcade.grand-challenge.org/rules/",
+            "local_source": "_collection/sources/90-e14438bf3ff3.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "ter your team on https://arcade.grand-challenge.org/teams/ In order to get access to ARCADE challenge dataset you should carefully follow CC BY-NC-SA license and register your team on grand-challenge.org After investigation by organizers your participation request will be approved and you will be provided with data from date that indicated in timeline page.",
+          "source": {
+            "url": "https://arcade.grand-challenge.org/registration/",
+            "local_source": "_collection/access_flow_full_audit_20261024/sources/a8297655a2ed343c.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://arcade.grand-challenge.org/rules/",
+          "local_source": "_collection/sources/90-e14438bf3ff3.json"
+        },
+        {
+          "url": "https://arcade.grand-challenge.org/registration/",
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/a8297655a2ed343c.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "arteries / train_images",
+              "value": 1000,
+              "unit": "images",
+              "canonical_field": "dataset.splits_by_task.arteries.train_images",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "arteries / validation_images",
+              "value": 200,
+              "unit": "images",
+              "canonical_field": "dataset.splits_by_task.arteries.validation_images",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "arteries / test_images",
+              "value": 300,
+              "unit": "images",
+              "canonical_field": "dataset.splits_by_task.arteries.test_images",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "stenosis / train_images",
+              "value": 1000,
+              "unit": "images",
+              "canonical_field": "dataset.splits_by_task.stenosis.train_images",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "stenosis / validation_images",
+              "value": 200,
+              "unit": "images",
+              "canonical_field": "dataset.splits_by_task.stenosis.validation_images",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "stenosis / test_images",
+              "value": 300,
+              "unit": "images",
+              "canonical_field": "dataset.splits_by_task.stenosis.test_images",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [],
+          "source_urls": "https://arcade.grand-challenge.org/challenge/statistics/; https://arcade.grand-challenge.org/timeline/; https://arcade.grand-challenge.org/tasks/; https://arcade.grand-challenge.org/organizers/; https://arcade.grand-challenge.org/paper-submission/; https://arcade.grand-challenge.org/; https://arcade.grand-challenge.org/rules/; https://github.com/cmctec/ARCADE"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

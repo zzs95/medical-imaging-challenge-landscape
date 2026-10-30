@@ -1,0 +1,693 @@
+{
+  "schema_info": {
+    "schema_name": "Medical Imaging Challenge Survey Schema",
+    "schema_version": "1.2",
+    "language": "English",
+    "purpose": "Standardized collection of recent medical imaging challenge metadata, including event affiliation, task theme, anatomy, labels, dataset accessibility, data-use paradigm, evaluation, participation statistics, and provenance."
+  },
+  "filling_rules": {
+    "general_rules": {
+      "rules": [
+        "Use only information that can be verified from official challenge pages, official papers, official repositories, official dataset pages, or official conference/workshop pages.",
+        "Use null when a field cannot be verified. Do not guess or infer missing factual details.",
+        "Do not use empty strings, 'unknown', 'N/A', or '-' for missing factual values; use null instead.",
+        "Use true/false only when the corresponding fact is explicitly supported. Otherwise use null.",
+        "For array fields: use [] only when the absence of that category is confirmed; use null when the information was not found or could not be verified.",
+        "A single challenge may contain multiple tasks. Record every official task separately under task_profile.tasks.",
+        "Do not force a challenge into a single task category when it is inherently multi-task.",
+        "Use ISO date format YYYY-MM-DD whenever a complete date is available.",
+        "Keep patient_count, study_count, scan_count, image_count, and case_count separate. Never substitute one for another.",
+        "If the source uses an approximate number such as '~850 scans', preserve both the normalized numeric value and the original text.",
+        "Preserve provenance for important fields so the record can be audited later."
+      ]
+    },
+    "event": {
+      "rules": [
+        "Set conference only when the challenge is officially associated with that conference.",
+        "If a workshop is optional or independent from the challenge, record that relationship explicitly.",
+        "Do not infer the conference from timing alone."
+      ],
+      "candidate_labels": {
+        "event_type": [
+          "conference_challenge",
+          "workshop_challenge",
+          "standalone_challenge",
+          "benchmark",
+          "shared_task",
+          "hackathon"
+        ],
+        "conference": [
+          "MICCAI",
+          "RSNA",
+          "ISBI",
+          "MIDL",
+          "SPIE Medical Imaging",
+          "CVPR",
+          "ICCV",
+          "ECCV",
+          "NeurIPS",
+          "AAAI",
+          "Other"
+        ]
+      }
+    },
+    "clinical_domain": {
+      "rules": [
+        "Use standardized broad labels whenever possible.",
+        "Use modality for the main imaging technology and submodality for protocol-specific or acquisition-specific variants.",
+        "Use body_region for coarse anatomical location, organ_system for system-level grouping, and organs_or_structures for the actual anatomical targets.",
+        "Only include diseases or abnormalities that are directly targeted by the challenge."
+      ],
+      "candidate_labels": {
+        "modality": [
+          "CT",
+          "MRI",
+          "PET",
+          "SPECT",
+          "X-ray",
+          "Ultrasound",
+          "Pathology",
+          "Microscopy",
+          "Endoscopy",
+          "Fundus",
+          "OCT",
+          "Dermatology photography",
+          "Photography",
+          "Video",
+          "ECG",
+          "EEG",
+          "fNIRS",
+          "Clinical text",
+          "Tabular clinical data",
+          "Other"
+        ],
+        "submodality": [
+          "NCCT",
+          "CTA",
+          "CTP",
+          "HRCT",
+          "Low-dose CT",
+          "Contrast-enhanced CT",
+          "Cone-beam CT",
+          "T1 MRI",
+          "T1ce MRI",
+          "T2 MRI",
+          "FLAIR",
+          "DWI",
+          "ADC",
+          "SWI",
+          "MRA",
+          "MRV",
+          "Dynamic contrast MRI",
+          "FDG-PET",
+          "PSMA-PET",
+          "PET/CT",
+          "PET/MRI",
+          "Doppler ultrasound",
+          "B-mode ultrasound",
+          "Whole-slide image",
+          "H&E pathology",
+          "Immunohistochemistry",
+          "Fluorescence microscopy",
+          "Bright-field microscopy",
+          "Other"
+        ],
+        "body_region": [
+          "Head",
+          "Brain",
+          "Head and Neck",
+          "Chest",
+          "Thorax",
+          "Heart",
+          "Abdomen",
+          "Pelvis",
+          "Spine",
+          "Upper extremity",
+          "Lower extremity",
+          "Musculoskeletal",
+          "Whole body",
+          "Eye",
+          "Skin",
+          "Oral and maxillofacial",
+          "Breast",
+          "Other"
+        ],
+        "organ_system": [
+          "Central nervous system",
+          "Neurovascular",
+          "Cardiovascular",
+          "Respiratory",
+          "Gastrointestinal",
+          "Hepatobiliary",
+          "Genitourinary",
+          "Musculoskeletal",
+          "Endocrine",
+          "Lymphatic",
+          "Reproductive",
+          "Hematologic",
+          "Ophthalmic",
+          "Dermatologic",
+          "Dental",
+          "Multisystem",
+          "Other"
+        ],
+        "disease_category": [
+          "Neoplasm",
+          "Vascular disease",
+          "Stroke",
+          "Aneurysm",
+          "Hemorrhage",
+          "Infection",
+          "Inflammation",
+          "Trauma",
+          "Degenerative disease",
+          "Congenital abnormality",
+          "Metabolic disease",
+          "Cardiovascular disease",
+          "Pulmonary disease",
+          "Neurological disease",
+          "Other"
+        ]
+      }
+    },
+    "task_profile": {
+      "rules": [
+        "Record each official task as a separate object.",
+        "primary_task_family is intended for high-level statistics only.",
+        "secondary_task_families may contain multiple labels.",
+        "Use the most specific task subtype available while keeping task_family standardized."
+      ],
+      "candidate_labels": {
+        "task_family": [
+          "Segmentation",
+          "Detection",
+          "Classification",
+          "Localization",
+          "Registration",
+          "Reconstruction",
+          "Synthesis",
+          "Enhancement",
+          "Super-resolution",
+          "Denoising",
+          "Dehazing",
+          "Tracking",
+          "Measurement",
+          "Quantification",
+          "Prognosis",
+          "Outcome Prediction",
+          "Survival Prediction",
+          "Report Generation",
+          "Captioning",
+          "Visual Question Answering",
+          "Retrieval",
+          "Clinical Reasoning",
+          "Agent",
+          "Domain Generalization",
+          "Self-Supervised Learning",
+          "Representation Learning",
+          "Quality Assessment",
+          "Anomaly Detection",
+          "Other"
+        ],
+        "task_subtype": [
+          "binary classification",
+          "multi-class classification",
+          "multi-label classification",
+          "ordinal classification",
+          "semantic segmentation",
+          "instance segmentation",
+          "panoptic segmentation",
+          "multi-class segmentation",
+          "binary segmentation",
+          "lesion detection",
+          "object detection",
+          "keypoint detection",
+          "landmark localization",
+          "3D localization",
+          "image registration",
+          "deformable registration",
+          "rigid registration",
+          "image-to-image translation",
+          "image reconstruction",
+          "free-text generation",
+          "structured report generation",
+          "multi-turn reasoning",
+          "tool-using agent",
+          "Other"
+        ],
+        "granularity": [
+          "voxel-level",
+          "pixel-level",
+          "instance-level",
+          "lesion-level",
+          "structure-level",
+          "slice-level",
+          "frame-level",
+          "study-level",
+          "patient-level",
+          "report-level",
+          "video-level",
+          "sequence-level"
+        ],
+        "input_type": [
+          "2D image",
+          "3D volume",
+          "4D image",
+          "video",
+          "whole-slide image",
+          "clinical text",
+          "tabular data",
+          "multimodal image set",
+          "image + text",
+          "image + clinical metadata",
+          "Other"
+        ],
+        "output_type": [
+          "class label",
+          "multi-label vector",
+          "bounding box",
+          "point coordinate",
+          "segmentation mask",
+          "probability map",
+          "continuous score",
+          "survival estimate",
+          "free-text report",
+          "structured report",
+          "retrieved item",
+          "registered image",
+          "reconstructed image",
+          "enhanced image",
+          "trajectory",
+          "Other"
+        ]
+      }
+    },
+    "labels_and_targets": {
+      "rules": [
+        "Separate disease labels, anatomical labels, location labels, segmentation masks, measurements, and text targets.",
+        "If only a class count is stated, do not reconstruct or invent the full class-name list.",
+        "If mask values include background, state that explicitly.",
+        "Record whether labels are manual, expert-consensus, weakly supervised, algorithmically generated, or silver-standard."
+      ],
+      "candidate_labels": {
+        "label_type": [
+          "binary label",
+          "multi-class label",
+          "multi-label label",
+          "ordinal label",
+          "anatomical location label",
+          "disease label",
+          "severity label",
+          "stage label",
+          "bounding box",
+          "point annotation",
+          "voxel mask",
+          "pixel mask",
+          "instance mask",
+          "free text",
+          "structured text",
+          "continuous measurement",
+          "time-to-event target",
+          "Other"
+        ],
+        "annotation_level": [
+          "voxel-level",
+          "pixel-level",
+          "instance-level",
+          "lesion-level",
+          "structure-level",
+          "slice-level",
+          "study-level",
+          "patient-level",
+          "report-level"
+        ],
+        "annotation_source": [
+          "single expert",
+          "multiple experts",
+          "expert consensus",
+          "radiologist",
+          "pathologist",
+          "clinician",
+          "technician",
+          "crowdsourced",
+          "clinical report derived",
+          "algorithm generated",
+          "silver-standard",
+          "weak label",
+          "Other"
+        ]
+      }
+    },
+    "dataset": {
+      "rules": [
+        "Record source type and center structure independently.",
+        "Do not infer the number of centers from the number of organizing institutions.",
+        "Keep patient, study, scan, image, slide, and video counts separate.",
+        "Do not infer split sizes from percentages unless the official source explicitly gives enough information.",
+        "Use approximate=true when the source gives an approximate dataset size."
+      ],
+      "candidate_labels": {
+        "source_type": [
+          "retrospective clinical cohort",
+          "prospective clinical cohort",
+          "clinical trial cohort",
+          "public dataset aggregation",
+          "research cohort",
+          "synthetic dataset",
+          "phantom dataset",
+          "simulation dataset",
+          "mixed"
+        ],
+        "center_type": [
+          "single-center",
+          "multi-center",
+          "multi-national",
+          "multi-institutional",
+          "mixed-source"
+        ],
+        "population_type": [
+          "adult",
+          "pediatric",
+          "mixed adult and pediatric",
+          "animal",
+          "phantom",
+          "simulation",
+          "Other"
+        ],
+        "data_component": [
+          "2D images",
+          "3D volumes",
+          "4D imaging",
+          "video",
+          "whole-slide images",
+          "segmentation masks",
+          "bounding boxes",
+          "landmarks",
+          "clinical reports",
+          "structured labels",
+          "clinical metadata",
+          "demographics",
+          "laboratory values",
+          "outcomes",
+          "survival data",
+          "radiomics",
+          "Other"
+        ]
+      }
+    },
+    "data_access": {
+      "rules": [
+        "is_public should reflect whether external researchers can obtain the dataset, not merely whether the challenge description is public.",
+        "A dataset may be public but still subject to terms of use.",
+        "If registration, DUA, institutional approval, or challenge participation is required, record those separately.",
+        "Do not assume redistribution is allowed unless explicitly stated."
+      ],
+      "candidate_labels": {
+        "access_status": [
+          "fully-public",
+          "public-with-terms",
+          "registration-required",
+          "agreement-required",
+          "institutional-approval-required",
+          "challenge-only",
+          "restricted",
+          "closed",
+          "temporarily-unavailable"
+        ],
+        "agreement_type": [
+          "none",
+          "terms of use",
+          "data use agreement",
+          "data transfer agreement",
+          "data transfer and usage agreement",
+          "institutional agreement",
+          "research use agreement",
+          "Other"
+        ],
+        "license_family": [
+          "CC BY",
+          "CC BY-NC",
+          "CC BY-SA",
+          "CC0",
+          "Open Data Commons",
+          "Custom research license",
+          "Challenge-specific terms",
+          "No explicit license",
+          "Other"
+        ]
+      }
+    },
+    "data_usage_mode": {
+      "rules": [
+        "Use data-to-model when participants download data and train/test locally.",
+        "Use model-to-data when participants submit an algorithm/container that is executed on hidden data.",
+        "Use hybrid when downloadable training data is combined with server-side hidden test evaluation.",
+        "Record external-data and pretrained-model policies separately."
+      ],
+      "candidate_labels": {
+        "paradigm": [
+          "data-to-model",
+          "model-to-data",
+          "hybrid"
+        ],
+        "test_data_visibility": [
+          "fully visible",
+          "images visible labels hidden",
+          "hidden",
+          "partially visible"
+        ],
+        "submission_artifact": [
+          "prediction file",
+          "CSV",
+          "JSON",
+          "NIfTI",
+          "MHA",
+          "DICOM",
+          "Docker container",
+          "Singularity container",
+          "code repository",
+          "model checkpoint",
+          "API endpoint",
+          "Other"
+        ],
+        "external_data_policy": [
+          "allowed",
+          "allowed-with-disclosure",
+          "restricted",
+          "not allowed",
+          "separate-track",
+          "not specified"
+        ],
+        "pretrained_model_policy": [
+          "allowed",
+          "allowed-with-disclosure",
+          "restricted",
+          "not allowed",
+          "not specified"
+        ]
+      }
+    },
+    "evaluation": {
+      "rules": [
+        "Record metrics per task whenever possible.",
+        "Keep official metric names unchanged.",
+        "Separate case-level evaluation, class-level aggregation, and final ranking rules.",
+        "Do not infer leaderboard ranking formulas from metric lists alone."
+      ],
+      "candidate_labels": {
+        "evaluation_level": [
+          "voxel-level",
+          "pixel-level",
+          "lesion-level",
+          "instance-level",
+          "structure-level",
+          "study-level",
+          "patient-level",
+          "report-level",
+          "video-level"
+        ],
+        "common_metrics": [
+          "Dice",
+          "IoU",
+          "HD95",
+          "Hausdorff Distance",
+          "ASSD",
+          "Sensitivity",
+          "Specificity",
+          "Precision",
+          "Recall",
+          "F1",
+          "MCC",
+          "Accuracy",
+          "AUROC",
+          "AUPRC",
+          "mAP",
+          "Average Precision",
+          "Volumetric Similarity",
+          "MAE",
+          "MSE",
+          "RMSE",
+          "PSNR",
+          "SSIM",
+          "TRE",
+          "BLEU",
+          "ROUGE",
+          "METEOR",
+          "BERTScore",
+          "CIDEr",
+          "Clinical efficacy metric",
+          "Calibration error",
+          "C-index",
+          "Other"
+        ],
+        "ranking_method": [
+          "single metric",
+          "mean of metrics",
+          "weighted metric sum",
+          "rank aggregation",
+          "Pareto ranking",
+          "task-specific composite score",
+          "Other"
+        ]
+      }
+    },
+    "submission": {
+      "rules": [
+        "Record both the submission format and the execution environment.",
+        "Only record hardware/runtime constraints that are explicitly stated.",
+        "Keep sanity-check submissions separate from final-test submissions."
+      ],
+      "candidate_labels": {
+        "execution_mode": [
+          "local prediction upload",
+          "server-side container execution",
+          "cloud notebook execution",
+          "API evaluation",
+          "manual organizer execution",
+          "Other"
+        ],
+        "compute_hardware": [
+          "CPU-only",
+          "NVIDIA T4",
+          "NVIDIA V100",
+          "NVIDIA A100",
+          "NVIDIA H100",
+          "Other GPU",
+          "Not specified"
+        ]
+      }
+    },
+    "methodological_category": {
+      "rules": [
+        "These are high-level methodological tags for later trend analysis.",
+        "Set a tag to true only when it is directly relevant to the challenge design, not merely because a participant could use such a method."
+      ],
+      "candidate_labels": [
+        "supervised_learning",
+        "self_supervised_learning",
+        "weakly_supervised_learning",
+        "semi_supervised_learning",
+        "multimodal",
+        "vision_language",
+        "generative",
+        "foundation_model",
+        "agentic",
+        "domain_generalization",
+        "federated_learning",
+        "continual_learning",
+        "uncertainty_estimation",
+        "calibration",
+        "few_shot",
+        "zero_shot"
+      ]
+    },
+    "publication": {
+      "rules": [
+        "Distinguish the official challenge paper from optional participant papers.",
+        "Record the venue only when it is explicitly stated."
+      ],
+      "candidate_labels": {
+        "publication_type": [
+          "challenge overview paper",
+          "challenge results paper",
+          "workshop paper",
+          "conference proceedings paper",
+          "journal paper",
+          "dataset paper",
+          "no publication identified"
+        ]
+      }
+    },
+    "provenance": {
+      "rules": [
+        "Each source should include source type, URL, and the fields or claims it supports.",
+        "Prefer official challenge pages over secondary summaries.",
+        "Use last_verified to track when the record was last checked."
+      ],
+      "candidate_labels": {
+        "source_type": [
+          "official challenge page",
+          "official participation page",
+          "official rules page",
+          "official dataset page",
+          "official GitHub repository",
+          "official conference page",
+          "official workshop page",
+          "challenge paper",
+          "dataset paper",
+          "organizer publication",
+          "Other"
+        ]
+      }
+    },
+    "participation_statistics": {
+      "rules": [
+        "Use statistics from the official Grand Challenge statistics page whenever available.",
+        "registered_participants refers to users who joined the challenge on the platform and must not be interpreted as the number of teams.",
+        "Do not infer registered_teams from registered_participants.",
+        "Do not infer active_teams from submission counts unless the official source explicitly reports team-level activity.",
+        "Do not infer final_teams from final_test_submissions unless the challenge explicitly enforces one valid final submission per team and duplicate submissions are not possible.",
+        "Keep sanity-check, validation, development, preliminary-test, and final-test submissions separate.",
+        "If a challenge has multiple tasks, record submission statistics separately for each task whenever possible.",
+        "If the Grand Challenge directory summary differs from the task-specific statistics page, prefer the task-specific official statistics and optionally preserve the directory-level summary in a separate field.",
+        "Participation statistics may change while a challenge is active; always record statistics_snapshot_date.",
+        "For completed challenges, prefer the final official statistics page or the official challenge-results paper when available.",
+        "Use null for any participation statistic that is not explicitly reported."
+      ],
+      "candidate_labels": {
+        "participation_metric": [
+          "registered_participants",
+          "registered_teams",
+          "active_participants",
+          "active_teams",
+          "participants_with_submission",
+          "teams_with_submission",
+          "qualified_teams",
+          "finalist_teams",
+          "total_submissions",
+          "sanity_check_submissions",
+          "validation_submissions",
+          "development_submissions",
+          "preliminary_test_submissions",
+          "final_test_submissions",
+          "post_challenge_submissions"
+        ],
+        "submission_phase": [
+          "training",
+          "validation",
+          "sanity_check",
+          "development",
+          "preliminary_test",
+          "final_test",
+          "post_challenge"
+        ],
+        "statistics_source_priority": [
+          "official challenge statistics page",
+          "official challenge results paper",
+          "official leaderboard",
+          "official challenge directory summary"
+        ]
+      }
+    }
+  }
+}

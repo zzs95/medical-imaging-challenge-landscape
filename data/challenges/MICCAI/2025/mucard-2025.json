@@ -1,0 +1,799 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "mucard-2025",
+    "challenge_name": "Multi Camera Robust Diagnosis of Fundus Diseases",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Fundus"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Eye"
+      ],
+      "organ_system": [
+        "Ophthalmic"
+      ],
+      "organs_or_structures": [
+        "Retina",
+        "Optic nerve head"
+      ],
+      "diseases": [
+        "Glaucoma",
+        "Diabetic retinopathy"
+      ],
+      "clinical_context": null,
+      "disease_evidence_scope": "Both conditions are explicitly named in the two classification tasks of the 2025 registered design, not just in general motivation.",
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Classification of Glaucoma and Diabetic Retinopathy for Unseen Fundus Cameras",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "Color fundus images from unseen cameras"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Glaucoma and referable diabetic retinopathy predictions"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Classification of Glaucoma and Diabetic Retinopathy with Few-Shot Test Time Adaptation",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "Color fundus images",
+            "Limited target-domain adaptation data"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Glaucoma and referable diabetic retinopathy predictions"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Retina",
+        "Optic nerve head"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Fundus"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "center_scope": "Challenge-cohort collection described in the cited source; registered-design cohorts remain planned scope."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Not established",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY. 当届数据使用条款列 CC BY。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; round 3",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "CodaLab",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "AUROC",
+            "AUPRC"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "AUROC",
+            "AUPRC"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.15091204",
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Code and model weights",
+      "platform": "CodaLab",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {
+      "documented_competition_period": {
+        "start": "2025-06-30",
+        "end": "2025-08-23",
+        "source_url": "https://gsl.lab.asu.edu/wp-content/uploads/sites/117/2025/10/miccai-2025-1024x724.png"
+      },
+      "award_certificate_date": "2025-09-25"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://mucard.mediwhale.net/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "2026-10-22: Public award outcomes confirm the 2025 fundus edition. First/second-place awards remain unassigned to tasks; no full leaderboard, quantitative final scores or participation totals are inferred. Earlier cardiac-MRI search descriptions are excluded.",
+      "2026-10-22: 维持赛事获奖已确认；两个获奖记录仍未对应具体任务，零样本与少样本测试时适配各自最终结果仍待补。",
+      "2026-10-22: 第一/第二名仍无Task 1/Task 2明确对应，不外推两项均完成；保留既有获奖证据。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-22",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 48,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/40cba6887cd7753d.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://mucard.mediwhale.net/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/471dac43b1243d80.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/15091204",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-15091204.txt",
+          "supports": [
+            "clinical_domain",
+            "clinical_domain.disease_evidence_scope",
+            "clinical_domain.diseases",
+            "dataset.center_scope",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://mucard.mediwhale.net/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/mucard-2025.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "institutional award announcement",
+          "url": "https://gsl.lab.asu.edu/our-team-won-an-award-in-the-miccai-mucard-2025/",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/mucard_asu_award_20261022.json",
+          "supports": [
+            "ASU first-place announcement; exact fundus competition identity"
+          ]
+        },
+        {
+          "type": "organizer award certificate",
+          "url": "https://gsl.lab.asu.edu/wp-content/uploads/sites/117/2025/10/miccai-2025-1024x724.png",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/mucard_certificate_review_20261022.json",
+          "supports": [
+            "Visually verified first place, institutions, event period and certificate date; task unspecified"
+          ]
+        },
+        {
+          "type": "institutional award announcement (indexed text)",
+          "url": "https://media.statler.wvu.edu/news/2025/10/28/october-2025-statler-circuit-department-digest-and-awards",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/mucard_wvu_award_20261022.json",
+          "supports": [
+            "Second place; full page inaccessible, official-domain indexed report recovered"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://gsl.lab.asu.edu/our-team-won-an-award-in-the-miccai-mucard-2025/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_45185df9277e_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Access failed/empty; user-supplied documentary review retained",
+          "source_accessible": false,
+          "supports": [
+            "维持赛事获奖已确认；两个获奖记录仍未对应具体任务，零样本与少样本测试时适配各自最终结果仍待补。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://gsl.lab.asu.edu/our-team-won-an-award-in-the-miccai-mucard-2025/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_45185df9277e_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "第一/第二名仍无Task 1/Task 2明确对应，不外推两项均完成；保留既有获奖证据。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Task attribution of first- and second-place awards",
+        "Task-specific final rankings and quantitative test scores",
+        "Complete CodaLab final leaderboard",
+        "Dataset/access details and comparable participation statistics where null"
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://zenodo.org/records/15091204",
+          "local_snapshot": "_collection/sources_other/protocol-15091204.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Participants will add their training models and image preprocessing methods to the model.py provided by the organizers and submit it along with the model weights to CodaLab. We encourage the use of MONAI and recommend submitting the code in the form of a MONAI bundle whenever possible to enhance reusability."
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/15091204",
+          "local_snapshot": "_collection/sources_other/protocol-15091204.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Participants will add their training models and image preprocessing methods to the model.py provided by the organizers and submit it along with the model weights to CodaLab. We encourage the use of MONAI and recommend submitting the code in the form of a MONAI bundle whenever possible to enhance reusability."
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/15091204",
+          "local_snapshot": "_collection/sources_other/protocol-15091204.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Participants will add their training models and image preprocessing methods to the model.py provided by the organizers and submit it along with the model weights to CodaLab. We encourage the use of MONAI and recommend submitting the code in the form of a MONAI bundle whenever possible to enhance reusability."
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/15091204",
+          "local_snapshot": "_collection/sources_other/protocol-15091204.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Participants will add their training models and image preprocessing methods to the model.py provided by the organizers and submit it along with the model weights to CodaLab. We encourage the use of MONAI and recommend submitting the code in the form of a MONAI bundle whenever possible to enhance reusability."
+        },
+        "dataset.multi_center": {
+          "source_url": "https://zenodo.org/records/15091204",
+          "local_snapshot": "_collection/sources_other/protocol-15091204.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered challenge cohort collected from primary-care centers and hospitals in South Korea and Cambodia."
+        },
+        "dataset.center_type": {
+          "source_url": "https://zenodo.org/records/15091204",
+          "local_snapshot": "_collection/sources_other/protocol-15091204.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered challenge cohort collected from primary-care centers and hospitals in South Korea and Cambodia."
+        },
+        "dataset.center_scope": {
+          "source_url": "https://zenodo.org/records/15091204",
+          "local_snapshot": "_collection/sources_other/protocol-15091204.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered challenge cohort collected from primary-care centers and hospitals in South Korea and Cambodia."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/15091204",
+          "local_snapshot": "_collection/sources_other/protocol-15091204.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Participants will add their training models and image preprocessing methods to the model.py provided by the organizers and submit it along with the model weights to CodaLab. We encourage the use of MONAI and recommend submitting the code in the form of a MONAI bundle whenever possible to enhance reusability."
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/15091204",
+          "local_snapshot": "_collection/sources_other/protocol-15091204.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Participants will add their training models and image preprocessing methods to the model.py provided by the organizers and submit it along with the model weights to CodaLab. We encourage the use of MONAI and recommend submitting the code in the form of a MONAI bundle whenever possible to enhance reusability."
+        },
+        "clinical_domain.diseases": {
+          "source_url": "https://zenodo.org/records/15091204",
+          "local_snapshot": "_collection/sources_other/protocol-15091204.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Both conditions are explicitly named in the two classification tasks of the 2025 registered design, not just in general motivation."
+        },
+        "clinical_domain.disease_evidence_scope": {
+          "source_url": "https://zenodo.org/records/15091204",
+          "local_snapshot": "_collection/sources_other/protocol-15091204.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Both conditions are explicitly named in the two classification tasks of the 2025 registered design, not just in general motivation."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://mucard.mediwhale.net/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/mucard-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://mucard.mediwhale.net/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/mucard-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://mucard.mediwhale.net/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/mucard-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "assessment_evidence": {
+          "source_urls": [
+            "https://gsl.lab.asu.edu/our-team-won-an-award-in-the-miccai-mucard-2025/",
+            "https://gsl.lab.asu.edu/wp-content/uploads/sites/117/2025/10/miccai-2025-1024x724.png",
+            "https://media.statler.wvu.edu/news/2025/10/28/october-2025-statler-circuit-department-digest-and-awards"
+          ],
+          "reviewed_on": "2026-10-22",
+          "basis": "Award outcomes confirm the edition; task attribution and complete rankings not verified."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.disease_evidence_scope",
+          "clinical_domain.diseases",
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "dataset.center_scope",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "data_usage_mode.overall_paradigm",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/mucard-2025.json",
+          "_collection/verification_20261003/literature_context/mucard-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "revision_history": [
+        {
+          "date": "2026-10-22",
+          "reason": "Award evidence accepted for edition-level completion; identity mismatch resolved by certificate, not by personal-page wording."
+        }
+      ],
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "维持赛事获奖已确认；两个获奖记录仍未对应具体任务，零样本与少样本测试时适配各自最终结果仍待补。",
+          "previous_assessment": {
+            "value": "confirmed",
+            "event_state": "completed",
+            "evidence_state": "publicly_documented_award_outcomes",
+            "evidence_ids": [
+              "E2",
+              "E3",
+              "E4"
+            ],
+            "reason": "ASU-published organizer certificate explicitly records first place in the 2025 fundus MuCaRD competition; WVU official-domain indexed news independently reports second place. Awards are not assigned to individual tasks."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2025/mucard-2025.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "第一/第二名仍无Task 1/Task 2明确对应，不外推两项均完成；保留既有获奖证据。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2025/mucard-2025.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "evidence_type": "publicly documented award outcomes",
+      "evidence_source_url": "https://gsl.lab.asu.edu/wp-content/uploads/sites/117/2025/10/miccai-2025-1024x724.png",
+      "basis": "ASU-published organizer certificate explicitly records first place in the 2025 fundus MuCaRD competition; WVU official-domain indexed news independently reports second place.",
+      "scope": "Edition-level competitive outcome; awards cannot be assigned to Task 1, Task 2, or an aggregate ranking from these sources.",
+      "award_outcomes": [
+        {
+          "rank": 1,
+          "institutions": [
+            "Arizona State University",
+            "Clemson University",
+            "LinkedIn Corporation"
+          ],
+          "task_id": null,
+          "evidence_type": "organizer-issued certificate published by participating institution",
+          "source_urls": [
+            "https://gsl.lab.asu.edu/our-team-won-an-award-in-the-miccai-mucard-2025/",
+            "https://gsl.lab.asu.edu/wp-content/uploads/sites/117/2025/10/miccai-2025-1024x724.png"
+          ],
+          "certificate_date": "2025-09-25",
+          "independently_inspected": true
+        },
+        {
+          "rank": 2,
+          "institution": "West Virginia University",
+          "members": [
+            "Ahsan Habib Akash",
+            "Rizwan Ahamed",
+            "Prashnna Gyawali"
+          ],
+          "task_id": null,
+          "evidence_type": "institutional announcement",
+          "source_url": "https://media.statler.wvu.edu/news/2025/10/28/october-2025-statler-circuit-department-digest-and-awards",
+          "publication_date": "2025-10-28",
+          "retrieval_scope": "Official-domain indexed text; full page returned 403"
+        }
+      ],
+      "task_specific_final_results": [
+        {
+          "task_id": "task1",
+          "status": "not_independently_verified",
+          "reason": "Available awards do not identify a task."
+        },
+        {
+          "task_id": "task2",
+          "status": "not_independently_verified",
+          "reason": "Available awards do not identify a task."
+        }
+      ],
+      "complete_codalab_final_leaderboard_verified": false,
+      "quantitative_final_test_scores_verified": false,
+      "participant_hidden_test_paper_verified": false,
+      "qualification": "Documentary review only; no algorithm rerun or external quality certification.",
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "第一/第二名仍无Task 1/Task 2明确对应，不外推两项均完成；保留既有获奖证据。",
+        "source_urls": [
+          "https://gsl.lab.asu.edu/our-team-won-an-award-in-the-miccai-mucard-2025/"
+        ],
+        "evidence_ids": [
+          "E6"
+        ],
+        "details": {},
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_round2_user_20261022.txt",
+        "propagation_status": "Original JSON, audit, current CSV/Excel/reports updated; manuscript/figures/frozen release not regenerated."
+      },
+      "remaining_questions": [
+        "Which task each award belongs to; no assignment inferred.",
+        "Task-specific final rankings and quantitative scores have not been independently verified."
+      ]
+    },
+    "identity_review": {
+      "reviewed_on": "2026-10-22",
+      "status": "resolved",
+      "verified_modality": "Color fundus photography",
+      "verified_challenge_name": "Multi Camera Robust Diagnosis of Fundus Diseases",
+      "basis": "Organizer certificate and institutional award announcements identify the fundus competition.",
+      "excluded_description": "Multi-Sequence Cardiac MRI Segmentation",
+      "qualification": "Earlier cardiac-MRI search hit is not used for modality, tasks or result coding. Its attribution to a specific personal-page typo is user-reported, not independently rechecked here."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Not established",
+        "state": "Not established",
+        "rationale": "当届AI-READI/Mediwhale数据源及训练发布时间已知，下载权限授予方式仍未明确。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [],
+        "evidence_basis": "User-supplied round 3 source and temporal-scope review; no new access classification asserted",
+        "confidence": "Partial",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "训练数据发布供本地开发；隐藏测试提交CodaLab代码及模型。"
+      },
+      "decision_history": [
+        "训练数据发布供本地开发；隐藏测试提交CodaLab代码及模型。",
+        "2026-10-24 round 3: 当届AI-READI/Mediwhale数据源及训练发布时间已知，下载权限授予方式仍未明确。",
+        "2026-10-25 access completion: 已知 AI-READI 与 Mediwhale 资源，尚缺覆盖全部开发数据的统一或分源准入说明。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/471dac43b1243d80.json",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/sources_other/protocol-15091204.txt",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/mucard-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Not established",
+        "rationale": "已知 AI-READI 与 Mediwhale 资源，尚缺覆盖全部开发数据的统一或分源准入说明。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/471dac43b1243d80.json",
+          "_collection/access_completion_20261025/sources/c3a4d6a95e34f595.json",
+          "_collection/access_completion_20261025/sources/c81bf8bd96b2837c.json",
+          "_collection/access_completion_20261025/sources/00d0162299036df4.json"
+        ]
+      }
+    },
+    "review_coding": {
+      "development_access": "Not established",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届数据使用条款列 CC BY。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "CC BY (Attribution)",
+          "source": {
+            "url": "https://zenodo.org/records/15091204",
+            "local_source": "_collection/sources_other/protocol-15091204.txt"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15091204",
+          "local_source": "_collection/sources_other/protocol-15091204.txt"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "The data for the AI-READI (AI Ready and Equitable Atlas for Diabetes Insights) project was acquired from three major sites across the United States, involving the recruitment of 4,000 participants. These centers ensure a balanced representation across disease severity, race/ethnicity, and gender, thereby enhancing the dataset’s generalizability and equity. Additionally, the Mediwhale dataset comprises retinal images obtained from multiple local clinics and large hospitals in East Asia, including South Korea and Cambodia. Due to Mediwhale's anonymization and data export policies, the dataset sources are limited to South Korea and Cambodia within the East Asian region.",
+              "url": "https://zenodo.org/records/15091204",
+              "snapshot": "_collection/sources_other/protocol-15091204.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nThe data for the AI-READI (AI Ready and Equitable Atlas for Diabetes Insights) project was acquired from three\nmajor sites across the United States, involving the recruitment of 4,000 participants. These centers ensure a\nbalanced representation across disease severity, race/ethnicity, and gender, thereby enhancing the dataset’s\ngeneralizability and equity.\nAdditionally, the Mediwhale dataset comprises retinal images obtained from multiple local clinics and large\nhospitals in East Asia, including South Korea and Cambodia. Due to Mediwhale's anonymization and data export\npolicies, the dataset sources are limited to South Korea and Cambodia within the East Asian region.",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

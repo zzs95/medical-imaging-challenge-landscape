@@ -1,0 +1,650 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "odelia-2025",
+    "challenge_name": "ODELIA BREAST MRI Challenge 2025",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": null,
+      "challenge_event_date": "2025-09-23",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "Deep-Breath 2025",
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": [
+        "T2-weighted",
+        "Dynamic contrast-enhanced"
+      ],
+      "body_region": [
+        "Breast"
+      ],
+      "organ_system": [
+        "Breast"
+      ],
+      "organs_or_structures": [
+        "Breast lesions"
+      ],
+      "diseases": [
+        "Breast cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Per-breast lesion classification",
+          "task_family": "Classification",
+          "task_subtype": "Classification",
+          "input": [
+            "T2 and DCE MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "No lesion / benign lesion / malignant lesion"
+          ],
+          "granularity": "breast",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": true,
+      "center_count": 6,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": 500,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": 50
+      },
+      "modalities": null,
+      "data_components": [
+        "T2-weighted MRI",
+        "DCE MRI: one precontrast and two to seven postcontrast phases",
+        "Per-breast no/benign/malignant labels"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "note": "500 is the homepage dataset size; whether it includes test cases requires dataset-card verification."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC 4.0; ODELIA custom data-use conditions. 官方数据卡列 CC BY-NC 4.0，并声明非商业研究及禁止再分发等额外条件；两者并列记录，不自行消解条款关系。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; targeted access backfill",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "ODELIA Challenge 2025 development dataset; repository access policy at review date",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "AUC",
+            "Specificity at 90% sensitivity",
+            "Sensitivity at 90% specificity"
+          ],
+          "ranking": "Average raw ranks of three metrics; highest AUC resolves ties."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": 5,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": "NVIDIA T4",
+        "gpu_vram_gb": 16
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 1,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "pre_evaluation_submissions": 3
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_release": "2025-06-03",
+      "pre_evaluation_deadline": "2025-07-24",
+      "final_submission_deadline": "2025-07-31",
+      "results_announcement": "2025-08-15"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 151,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Pre-evaluation test run",
+            "submission_count": 60
+          },
+          {
+            "official_phase_name": "Final evaluation",
+            "submission_count": 22
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://odelia2025.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Predict each breast independently. Malignant takes precedence when both malignant and benign lesions are present. Offline fully automated inference; successful pre-evaluation and approximately three-page abstract required for final submission."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://odelia2025.grand-challenge.org/odelia2025/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/36-1a125d5a6aa0.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odelia2025.grand-challenge.org/odelia-breast-mri-challenge-2025-winners/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/36-33b235cb4fe3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odelia2025.grand-challenge.org/output-format/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/36-3b35305df6b5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odelia2025.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/36-8ffc7ad91ea9.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://odelia2025.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/36-acce9dc57558.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odelia2025.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/36-c5d35cc0e6d4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odelia2025.grand-challenge.org/organizing-team/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/36-fc2d9a58d0bb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odelia2025.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/36-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "evaluation: exact positive-class/binary reduction of three-class output needs verification.",
+        "dataset: training size and license require Hugging Face dataset-card verification."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/odelia-2025.json",
+          "_collection/verification_20261003/literature_context/odelia-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "官方Hugging Face数据集需要账号接受条款，公开元数据gated=auto，属于自动授权而非人工审批。",
+        "scope": "ODELIA Challenge 2025 development dataset; repository access policy at review date",
+        "evidence_basis": "Primary protocol / dataset metadata checked on 2026-10-24; no medical images downloaded",
+        "source_urls": [
+          "https://huggingface.co/datasets/ODELIA-AI/ODELIA-Challenge-2025",
+          "https://huggingface.co/api/datasets/ODELIA-AI/ODELIA-Challenge-2025"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-24 access backfill: 官方Hugging Face数据集需要账号接受条款，公开元数据gated=auto，属于自动授权而非人工审批。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/odelia-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://huggingface.co/datasets/ODELIA-AI/ODELIA-Challenge-2025",
+          "local_source": "_collection/access_backfill_20261024/sources/e2013fa90fd3fd1b.json",
+          "review_date": "2026-10-24",
+          "section": "Development-data access; edition and phase scope retained"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/ODELIA-AI/ODELIA-Challenge-2025",
+          "local_source": "_collection/access_backfill_20261024/sources/5c6533a167b5fd1d.json",
+          "review_date": "2026-10-24",
+          "section": "Development-data access; edition and phase scope retained"
+        },
+        {
+          "local_source": "_collection/access_backfill_20261024/user_evidence.txt",
+          "url": "",
+          "section": "User-supplied follow-up; classification checked against the linked primary sources"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC 4.0",
+        "ODELIA custom data-use conditions"
+      ],
+      "scope": "Explicitly identified competition rules or named source data; not all components implied",
+      "agreement_required": null,
+      "summary_zh": "官方数据卡列 CC BY-NC 4.0，并声明非商业研究及禁止再分发等额外条件；两者并列记录，不自行消解条款关系。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "xt Formats: parquet Languages: English Size: 1K - 10K ArXiv: arxiv: 2506.00474 Tags: MRI Breast Cancer Medical 3D Libraries: Datasets Dask Polars + 1 License: cc-by-nc-4.0 Dataset card Data Studio Files Files and versions xet Community 1 You need to agree to share your Hugging Face information to access this dataset This repository is publicly accessible, but you have to accept the conditions to access its files and content . 🛡️ Data Usage Agreement By accessing and using the dataset, you agree to the following terms and conditions: Purpose of Use This dataset is provided solely for research and educational purposes . Any commercial use is strictly ",
+          "source": {
+            "url": "https://huggingface.co/datasets/ODELIA-AI/ODELIA-Challenge-2025",
+            "local_source": "_collection/access_backfill_20261024/sources/e2013fa90fd3fd1b.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "fied. Compliance with Regulations You agree to comply with all applicable data protection regulations such as HIPAA , GDPR , or local equivalents. No Redistribution You shall not share, redistribute, or publish the dataset in full or in part without explicit consent from the dataset authors. Attribution Any published work or presentation using this dataset must cite the original source as specified in the dataset documentation. Indemnity You agree to hold harmless and indemnify the dataset providers from and against any claims arising from your use of the dataset. Revocation of Access The dataset creators reserve the right to revoke access to the datase",
+          "source": {
+            "url": "https://huggingface.co/datasets/ODELIA-AI/ODELIA-Challenge-2025",
+            "local_source": "_collection/access_backfill_20261024/sources/e2013fa90fd3fd1b.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "u agree to comply with all applicable data protection regulations such as HIPAA , GDPR , or local equivalents. No Redistribution You shall not share, redistribute, or publish the dataset in full or in part without explicit consent from the dataset authors. Attribution Any published work or presentation using this dataset must cite the original source as specified in the dataset documentation. Indemnity You agree to hold harmless and indemnify the dataset providers from and against any claims arising from your use of the dataset. Revocation of Access The dataset creators reserve the right to revoke access to the dataset at any time, for any reason, inclu",
+          "source": {
+            "url": "https://huggingface.co/datasets/ODELIA-AI/ODELIA-Challenge-2025",
+            "local_source": "_collection/access_backfill_20261024/sources/e2013fa90fd3fd1b.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "astModified\":\"2025-10-19T16:27:28.000Z\",\"private\":false,\"gated\":\"auto\",\"disabled\":false,\"tags\":[\"task_categories:image-classification\",\"language:en\",\"license:cc-by-nc-4.0\",\"size_categories:1K<n<10K\",\"format:parquet\",\"modality:tabular\",\"modality:text\",\"library:datasets\",\"library:dask\",\"library:polars\",\"library:mlcroissant\",\"arxiv:2506.00474\",\"region:us\",\"MRI\",\"Breast\",\"Cancer\",\"Medical\",\"3D\"],\"description\":\"\\n\\t\\n\\t\\t\\n\\t\\n\\t\\n\\t\\tODELIA Challenge Dataset\\n\\t\\n\\nThis dataset is part of the ODELIA project, a European Horizon initiative focused on developing privacy-preserving, AI-driven diagnostic tools using swarm learning.\\nThe dataset provided here",
+          "source": {
+            "url": "https://huggingface.co/api/datasets/ODELIA-AI/ODELIA-Challenge-2025",
+            "local_source": "_collection/access_backfill_20261024/sources/5c6533a167b5fd1d.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/ODELIA-AI/ODELIA-Challenge-2025",
+          "local_source": "_collection/access_backfill_20261024/sources/e2013fa90fd3fd1b.json"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/ODELIA-AI/ODELIA-Challenge-2025",
+          "local_source": "_collection/access_backfill_20261024/sources/5c6533a167b5fd1d.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2025/odelia-2025.json",
+              "source_field": "dataset",
+              "value": {
+                "source_type": null,
+                "routine_clinical_practice": null,
+                "anonymized": null,
+                "ethical_approval": null,
+                "center_type": null,
+                "multi_center": true,
+                "international": true,
+                "center_count": 6,
+                "institutions_description": null,
+                "population": {
+                  "patient_count": null,
+                  "study_count": 500,
+                  "scan_count": {
+                    "value": null,
+                    "approximate": null,
+                    "raw_text": null
+                  },
+                  "train_count": null,
+                  "validation_count": null,
+                  "test_count": 50
+                },
+                "modalities": null,
+                "data_components": [
+                  "T2-weighted MRI",
+                  "DCE MRI: one precontrast and two to seven postcontrast phases",
+                  "Per-breast no/benign/malignant labels"
+                ],
+                "collection_period": {
+                  "start_year": null,
+                  "end_year": null
+                },
+                "split_details": {
+                  "note": "500 is the homepage dataset size; whether it includes test cases requires dataset-card verification."
+                }
+              },
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://odelia2025.grand-challenge.org/odelia2025/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/36-1a125d5a6aa0.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://odelia2025.grand-challenge.org/odelia-breast-mri-challenge-2025-winners/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/36-33b235cb4fe3.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://odelia2025.grand-challenge.org/output-format/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/36-3b35305df6b5.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://odelia2025.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/36-8ffc7ad91ea9.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://odelia2025.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/36-acce9dc57558.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://odelia2025.grand-challenge.org/rules/",
+                  "supports": [
+                    "data_access",
+                    "data_usage_mode",
+                    "submission",
+                    "evaluation",
+                    "publication"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/36-c5d35cc0e6d4.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://odelia2025.grand-challenge.org/organizing-team/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/36-fc2d9a58d0bb.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://odelia2025.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/36-overview.json"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

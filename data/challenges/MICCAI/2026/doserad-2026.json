@@ -1,0 +1,604 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "doserad-2026",
+    "challenge_name": "Real-time dose calculation in radiotherapy",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": "2026-10-01",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "MRI"
+      ],
+      "submodality": [
+        "Planning CT",
+        "0.35T bSSFP MR-Linac"
+      ],
+      "body_region": [
+        "Thorax",
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Dose distribution",
+        "Treatment target",
+        "Organs at risk"
+      ],
+      "diseases": [
+        "Cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Regression",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Photon dose on CT",
+          "task_family": "Regression",
+          "task_subtype": "Physics-based dose calculation",
+          "input": [
+            "CT",
+            "Beam delivery parameters"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "3D beam-specific radiation dose in Gy"
+          ],
+          "granularity": "beam / 3D grid",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Photon dose on MRI",
+          "task_family": "Regression",
+          "task_subtype": "Physics-based dose calculation",
+          "input": [
+            "MRI",
+            "Beam delivery parameters"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "3D beam-specific radiation dose in Gy"
+          ],
+          "granularity": "beam / 3D grid",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Proton dose on CT",
+          "task_family": "Regression",
+          "task_subtype": "Physics-based dose calculation",
+          "input": [
+            "CT",
+            "Beam delivery parameters"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "3D beam-specific radiation dose in Gy"
+          ],
+          "granularity": "beam / 3D grid",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task4",
+          "official_name": "Proton dose on MRI",
+          "task_family": "Regression",
+          "task_subtype": "Physics-based dose calculation",
+          "input": [
+            "MRI",
+            "Beam delivery parameters"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "3D beam-specific radiation dose in Gy"
+          ],
+          "granularity": "beam / 3D grid",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": 122,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 75,
+        "validation_count": null,
+        "test_count": 40
+      },
+      "modalities": [
+        "CT",
+        "MRI"
+      ],
+      "data_components": [
+        "Paired registered planning CT and 0.35T bSSFP MRI",
+        "Beam configuration JSON",
+        "Geant4 Monte Carlo dose maps"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "training_abdominal_patients": 36,
+        "training_thoracic_patients": 39,
+        "additional_external_test_patients": 7,
+        "training_photon_segments": 40500,
+        "training_proton_beamlets": 81000
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": false,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC 4.0",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Additional data and pretrained weights must have been publicly available before April 10, 2026, and disclosed. Private data/weights prohibited."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Masked normalized beam MAE",
+            "Normalized IDD RMS distance",
+            "Stratified plan MAE",
+            "Local 3D gamma pass rate (1%/1 mm)",
+            "DVH score",
+            "Representative-case runtime"
+          ],
+          "ranking": "Beam metrics averaged over beams then patients; plan metrics averaged over patients. Rank five accuracy metrics and representative runtime; runtime gets double weight. Mean rank lower is better. Ties: runtime, plan MAE, DVH score."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Masked normalized beam MAE",
+            "Normalized IDD RMS distance",
+            "Stratified plan MAE",
+            "Local 3D gamma pass rate (1%/1 mm)",
+            "DVH score",
+            "Representative-case runtime"
+          ],
+          "ranking": "Beam metrics averaged over beams then patients; plan metrics averaged over patients. Rank five accuracy metrics and representative runtime; runtime gets double weight. Mean rank lower is better. Ties: runtime, plan MAE, DVH score."
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Masked normalized beam MAE",
+            "Normalized IDD RMS distance",
+            "Stratified plan MAE",
+            "Local 3D gamma pass rate (1%/1 mm)",
+            "DVH score",
+            "Representative-case runtime"
+          ],
+          "ranking": "Beam metrics averaged over beams then patients; plan metrics averaged over patients. Rank five accuracy metrics and representative runtime; runtime gets double weight. Mean rank lower is better. Ties: runtime, plan MAE, DVH score."
+        },
+        {
+          "task_id": "task4",
+          "metrics": [
+            "Masked normalized beam MAE",
+            "Normalized IDD RMS distance",
+            "Stratified plan MAE",
+            "Local 3D gamma pass rate (1%/1 mm)",
+            "DVH score",
+            "Representative-case runtime"
+          ],
+          "ranking": "Beam metrics averaged over beams then patients; plan metrics averaged over patients. Rank five accuracy metrics and representative runtime; runtime gets double weight. Mean rank lower is better. Ties: runtime, plan MAE, DVH score."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": "NVIDIA A10G",
+        "gpu_vram_gb": 24
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "preliminary_submissions_per_task": 10,
+        "final_submissions_per_task": 2
+      },
+      "task_outputs": [
+        {
+          "content": "One beam-specific 3D dose map per photon control point or proton beamlet, resampled to common reference grid."
+        }
+      ]
+    },
+    "schedule": {
+      "training_release": "2026-04-10",
+      "preliminary_phase_start": "2026-07-24",
+      "final_phase_start": "2026-08-01",
+      "final_submission_deadline": "2026-08-31"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 281,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary test - Photon dose on CT",
+            "submission_count": 218
+          },
+          {
+            "official_phase_name": "Preliminary test - Photon dose on MR",
+            "submission_count": 94
+          },
+          {
+            "official_phase_name": "Preliminary test - Proton dose on CT",
+            "submission_count": 157
+          },
+          {
+            "official_phase_name": "Preliminary test - Proton dose on MR",
+            "submission_count": 67
+          },
+          {
+            "official_phase_name": "Final test - Photon dose on CT",
+            "submission_count": 22
+          },
+          {
+            "official_phase_name": "Final test - Photon dose on MR",
+            "submission_count": 12
+          },
+          {
+            "official_phase_name": "Final test - Proton dose on CT",
+            "submission_count": 15
+          },
+          {
+            "official_phase_name": "Final test - Proton dose on MR",
+            "submission_count": 13
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://doserad2026.grand-challenge.org/",
+      "dataset": "https://doi.org/10.5281/zenodo.19347848",
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Full-plan evaluation is assembled by organizers from individual submitted dose maps; no additional full-plan output required. Efficiency metric is fitted representative-case time, not raw test run time. Exclude algorithms above 500 seconds (proton) or 181 seconds (photon).",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://doserad2026.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/20-234ab352af8e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://doserad2026.grand-challenge.org/final-submission-requirements/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/20-3d95035b39fc.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://doserad2026.grand-challenge.org/awards/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/20-3e8cdc7d3ae2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://doserad2026.grand-challenge.org/timeline-and-rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/20-485bbf874d77.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://doserad2026.grand-challenge.org/tasks-and-getting-started/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/20-582157a437fc.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://doserad2026.grand-challenge.org/metrics-and-ranking/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/20-71efdb8fe49c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://doserad2026.grand-challenge.org/data/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/20-7e8488a06784.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://doserad2026.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/20-8f83ed681a87.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://doserad2026.grand-challenge.org/submission-instructions/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/20-b4b4a214be51.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://doserad2026.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/20-dbdff8f12197.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://doserad2026.grand-challenge.org/doserad2026/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/20-e0396a32f13c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://doserad2026.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/20-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset: wording says test data remain hidden for five years but also says release March 2030; preserve uncertainty on release timing.",
+        "evaluation: final estimator configuration and accuracy/rank normalization require code verification."
+      ],
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.organ_system"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/doserad-2026.json",
+          "_collection/verification_20261003/literature_context/doserad-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "DoseRAD2026官方数据页提供公开Zenodo19347848下载入口。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "DoseRAD2026官方数据页提供公开Zenodo19347848下载入口。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/7e8488a067840818.json",
+          "url": "https://doserad2026.grand-challenge.org/data/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/doserad-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

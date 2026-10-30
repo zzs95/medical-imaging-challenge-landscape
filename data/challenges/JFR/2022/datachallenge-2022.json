@@ -1,0 +1,555 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "datachallenge-2022",
+    "challenge_name": "SFR/JFR Data Challenge 2022",
+    "full_name": "SFR/JFR Data Challenge 2022",
+    "year": 2022,
+    "event": {
+      "conference": "JFR 2022",
+      "event_type": "conference_challenge",
+      "parent_event": null
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Chest",
+        "Heart"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Pulmonary arteries",
+        "Right and left ventricles"
+      ],
+      "diseases": [
+        "Pulmonary embolism"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "task_families": [
+        "Classification",
+        "Quantification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Pulmonary embolism diagnosis",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "source_url": "https://www.radiologie.fr/presse/dossier-presse-des-jfr-2022"
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Right/left ventricular diameter ratio",
+          "task_family": "Quantification",
+          "task_families": [
+            "Quantification"
+          ],
+          "source_url": "https://www.radiologie.fr/presse/dossier-presse-des-jfr-2022"
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Pulmonary vascular obstruction index",
+          "task_family": "Quantification",
+          "task_families": [
+            "Quantification"
+          ],
+          "source_url": "https://www.radiologie.fr/presse/dossier-presse-des-jfr-2022"
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "CT"
+      ],
+      "population": null,
+      "source_reference": "https://www.radiologie.fr/presse/dossier-presse-des-jfr-2022",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Challenge-specific signed data-use charter. 组织者论文明确：每位团队成员须签署数据使用章程，数据限本届挑战使用；未取得完整章程，其他权限不推断。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": null,
+      "metrics": null,
+      "source_reference": "https://www.radiologie.fr/presse/dossier-presse-des-jfr-2022",
+      "execution_note": "Organizer scoring of uploaded predictions; Nextcloud is the delivery service. Scoring software and automatic trigger not established.",
+      "model_executor": "Participants",
+      "scoring_executor": "Organizers",
+      "scoring_software": null,
+      "automatic_scoring_trigger": null
+    },
+    "submission": {
+      "submission_type": "Prediction/result files",
+      "platform": "Nextcloud (HDS-certified platform)",
+      "source_reference": "https://hal.science/hal-04271272/document",
+      "runtime_limits": null,
+      "primary_artifacts": [
+        "Test-set predictions"
+      ],
+      "additional_artifacts": [],
+      "execution": "Participants perform inference, upload prediction results to Nextcloud/HDS, and organizers score the results.",
+      "format_by_task_or_phase": [],
+      "format_limitations": [
+        "Final extension, header and compression format not established. The paper describes a four-column annotation CSV, not a verified submission format.",
+        "Exact Nextcloud submission URL not disclosed.",
+        "Scoring software name and automatic scoring trigger not specified."
+      ],
+      "source_urls": [
+        "https://hal.science/hal-04271272/document"
+      ],
+      "evidence_basis": "Explicit human confirmation that the 2022 submission/execution mechanism matches 2023",
+      "review_date": "2026-10-24",
+      "submission_evidence_status": "Confirmed by human review",
+      "review_source": "_collection/jfr2023_protocol_review_20261024/jfr2022_confirmation.txt",
+      "additional_materials": [],
+      "portal_review_source": "_collection/jfr2023_protocol_review_20261024/jfr2022_confirmation.txt"
+    },
+    "schedule": {
+      "edition_year": 2022,
+      "source_reference": "https://www.radiologie.fr/presse/dossier-presse-des-jfr-2022"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://www.radiologie.fr/presse/dossier-presse-des-jfr-2022",
+      "supporting_sources": [
+        "https://hal.science/hal-04271272/document",
+        "https://www.sciencedirect.com/science/article/abs/pii/S2211568423001183"
+      ]
+    },
+    "notes": [
+      "Three tasks, one 2022 edition. Unrelated to the later excluded hypoperfusion DataChallenge 2024."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.radiologie.fr/presse/dossier-presse-des-jfr-2022",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/059544ea6b56b006.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://hal.science/hal-04271272/document",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sfr2022_results.pdf",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S2211568423001183",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/72a921a5dbbe0dfa.json",
+          "http_status": 403
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields",
+        "Final extension, header and compression format not established. The paper describes a four-column annotation CSV, not a verified submission format.",
+        "Exact Nextcloud submission URL not disclosed.",
+        "Scoring software name and automatic scoring trigger not specified."
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py",
+      "submission_human_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/jfr2023_protocol_review_20261024/jfr2022_confirmation.txt",
+        "basis": "Explicit user confirmation",
+        "scope": "Submission platform and model/scoring executor; edition-specific outputs, metrics and dates retained."
+      },
+      "portal_classification_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/jfr2023_protocol_review_20261024/jfr2022_confirmation.txt",
+        "basis": "Explicit user confirmation",
+        "scope": "Submission platform and model/scoring executor; edition-specific outputs, metrics and dates retained."
+      }
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification",
+        "Quantification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Account registration",
+      "data_model_flow": "data-to-model"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": "Organizer retrospective paper documents evaluation and results",
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "The 2022 organizer report states that team registration and signed data-use charters precede platform access."
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "Dossier de presse des JFR 2022 | SFR",
+          "local_source": "_collection/other_venues_audit_20261024/sources/059544ea6b56b006.json",
+          "url": "https://www.radiologie.fr/presse/dossier-presse-des-jfr-2022",
+          "excerpt": "ication des actes en radiologie interventionnelle Congrès et formations RI Bourses et Prix Revues & Publications Revues & Publications 2025 - Imagerie de la prostate et des organes génitaux de l’homme 2025 - Imagerie des urgences abdominales 2025 - Les pionniers de la Radiologie dans le monde 2024 - Pioneers in Radiology Worldwide Musée de la Radiologie Site patients Agenda"
+        },
+        {
+          "section": "ScienceDirect",
+          "local_source": "_collection/other_venues_audit_20261024/sources/72a921a5dbbe0dfa.json",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S2211568423001183",
+          "excerpt": ""
+        },
+        {
+          "section": "Organizer results paper: data distribution",
+          "local_source": "_collection/other_venues_audit_20261024/sfr2022_results.txt",
+          "url": "https://hal.science/hal-04271272/document",
+          "excerpt": "4271272 https://hal.science/hal-04271272v1 Submitted on 1 Oct 2025 HAL is a multi-disciplinary open access archive L’archive ouverte pluridisciplinaire HAL, est des- for the deposit and dissemination of scientific re- tinée au dépôt et à la diffusion de documents scien- search documents, whether they are published or not. tifiques de niveau recherche, publiés ou non, émanant The documents may come from  [...] esearch des établissements d’enseignement et de recherche institutions in France or abroad, or from public or pri- français ou étrangers, des laboratoires publics ou vate research centers. privés. Distributed under a Creative Commons CC BY-NC 4.0 - Attribution - Non-commercial use - International License Version of Record: https://www.sciencedirect.com/science/article/pii/S2211568423001183 Manuscript_3f36e74a1aa105e9fa96cb2f769801d7 Detection and quantifica [...]  48 participants including data scientists, researchers, radiologists and engineering students were registered for participation. The metrics chosen for evaluation included areas under receiver operating characteristic curves, specificity and sensitivity for the classification task, and the coefficient of determination r2 for the regression tasks. The winning team achieved an overall score of 0.784. Concl [...] rties of the medical data, where only the organizing team and the person that included the data had access to the CT examinations. These were uploaded in the DICOM format, and the annotations were given in a comma-separated values text file containing four columns for: (i), patient ID; (ii), presence of PE; (iii), RV/LV diameter ratio; and (iv), Qanadli’s score. The organizing team verified the validity [...] on process was officially closed on September 15, 2022. 2.4 Team gathering and challenge phase Each registered team was required to include at least one radiologist, one data scientist, and one engineering or PhD student. The teams could be formed by members of any company, startup-size or larger, a university or a research lab. To register for the challenge, team leaders were asked to fill a form indicating the composition of their team, contact information and affiliations. Each member of each team was required to sign a charter for the use of data in the data challenge. Once all the charters were signed by all the team members, an access to the platform was given to the team. Data was provided in three batches, the first two for training and the last one for evaluation. The teams were allowed to use external datasets to help in model training. The rules for the evaluation were sent prior to the competition, as well as the instructi [...] mber 5, 2022 to prepare the algorithms for learning. The second dataset (n = 580) was available for download on October 7, 2022, two days prior to the beginning of the competition. For the last dataset (n = 378), the participants were given access to password encrypted scans on October 8, 2022, and the decryption key was provided at 10 am on October 9, 2022, the day of the competition. The last batch did not contain any annotations and was used only for inference by the participating teams. The data from each center were uniformly distribute [...] ) criteria for Authorship. Funding This work did not receive any grant from funding agencies in the public, commercial, or not-for-profit sectors. Disclosure of interest The authors declare that they have no known competing financial or personal relationships that could be viewed as influencing the work reported in this paper. References [1] Konstantinides SV, Meyer G, Becattini C, Bueno H, Geersing G-J"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 310,
+              "unit": "CT examinations",
+              "scope": "First batch",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "training",
+              "value": 580,
+              "unit": "CT examinations",
+              "scope": "Second batch",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "testing",
+              "value": 378,
+              "unit": "CT examinations",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "France"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multi-center"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": {
+            "value": 7,
+            "unit": "participating teams",
+            "scope": "Reported2022 competition teams",
+            "comparable": false
+          }
+        }
+      },
+      "review_note": "Retrospective report states16French centers,7teams48people. Team count retained but not assumed same as valid submitting teams.",
+      "sources": [
+        {
+          "url": "https://www.radiologie.fr/presse/dossier-presse-des-jfr-2022",
+          "local_source": "_collection/other_venues_audit_20261024/sources/059544ea6b56b006.json"
+        },
+        {
+          "url": "https://hal.science/hal-04271272/document",
+          "local_source": "_collection/other_venues_audit_20261024/sfr2022_results.txt"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S2211568423001183",
+          "local_source": "_collection/other_venues_audit_20261024/sources/72a921a5dbbe0dfa.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/datachallenge-2022.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Chest",
+            "Heart"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cardiovascular"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Pulmonary arteries",
+        "Right and left ventricles"
+      ],
+      "specific_diseases": [
+        "Pulmonary embolism"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/059544ea6b56b006.json",
+          "url": "https://www.radiologie.fr/presse/dossier-presse-des-jfr-2022"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sfr2022_results.txt",
+          "url": "https://hal.science/hal-04271272/document"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/72a921a5dbbe0dfa.json",
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S2211568423001183"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/datachallenge-2022.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "Challenge-specific signed data-use charter"
+      ],
+      "scope": "Competition data",
+      "agreement_required": true,
+      "summary_zh": "组织者论文明确：每位团队成员须签署数据使用章程，数据限本届挑战使用；未取得完整章程，其他权限不推断。",
+      "qualifications": [],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sfr2022_results.txt",
+          "url": "https://hal.science/hal-04271272/document"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "JFR/2022/datachallenge-2022.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "France"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://www.radiologie.fr/presse/dossier-presse-des-jfr-2022",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/059544ea6b56b006.json"
+                },
+                {
+                  "url": "https://hal.science/hal-04271272/document",
+                  "local_source": "_collection/other_venues_audit_20261024/sfr2022_results.txt"
+                },
+                {
+                  "url": "https://www.sciencedirect.com/science/article/abs/pii/S2211568423001183",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/72a921a5dbbe0dfa.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/datachallenge-2022.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

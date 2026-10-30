@@ -1,0 +1,632 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "parse-2022",
+    "challenge_name": "Parse2022",
+    "full_name": "Pulmonary Artery Segmentation Chanllege 2022",
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2022-R31",
+      "official_programme_row_numbers": "12",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Perceptual Computing Research Center, The School of Computer Science and Technology, Harbin Institute of Technology, Harbin 150001, China",
+        "Heilongjiang Tuomeng Technology Co., Ltd. of Image Science and Technology, Northeast Forestry University, Harbin 150040, China",
+        "The School of Computer Science and Technology, Harbin Institute of Technology, Harbin 150001, China",
+        "Harbin Medical University, Harbin, China",
+        "the Department of Radiology, The Fourth Hospital of Harbin Medical University, Harbin, China",
+        "Northeast Forestry University, Harbin 150040, China"
+      ],
+      "registered_authors": [
+        {
+          "name": "Kuanquan Wang",
+          "affiliation": "Perceptual Computing Research Center, The School of Computer Science and Technology, Harbin Institute of Technology, Harbin 150001, China"
+        },
+        {
+          "name": "Zhaowen Qiu",
+          "affiliation": "Heilongjiang Tuomeng Technology Co., Ltd. of Image Science and Technology, Northeast Forestry University, Harbin 150040, China"
+        },
+        {
+          "name": "Wei Wang",
+          "affiliation": "The School of Computer Science and Technology, Harbin Institute of Technology, Harbin 150001, China"
+        },
+        {
+          "name": "Tao Song",
+          "affiliation": "Harbin Medical University, Harbin, China"
+        },
+        {
+          "name": "Shaodong Cao",
+          "affiliation": "the Department of Radiology, The Fourth Hospital of Harbin Medical University, Harbin, China"
+        },
+        {
+          "name": "Yi Zhao",
+          "affiliation": "Harbin Medical University, Harbin, China"
+        },
+        {
+          "name": "Jun Liu",
+          "affiliation": "Perceptual Computing Research Center, The School of Computer Science and Technology, Harbin Institute of Technology, Harbin 150001, China"
+        },
+        {
+          "name": "Yingte He",
+          "affiliation": "Perceptual Computing Research Center, The School of Computer Science and Technology, Harbin Institute of Technology, Harbin 150001, China"
+        },
+        {
+          "name": "Shaowei Gan",
+          "affiliation": "Northeast Forestry University, Harbin 150040, China"
+        },
+        {
+          "name": "Xinjie Liang",
+          "affiliation": "Perceptual Computing Research Center, The School of Computer Science and Technology, Harbin Institute of Technology, Harbin 150001, China"
+        },
+        {
+          "name": "Mingwang Xu",
+          "affiliation": "Perceptual Computing Research Center, The School of Computer Science and Technology, Harbin Institute of Technology, Harbin 150001, China"
+        },
+        {
+          "name": "Ziyu Guo",
+          "affiliation": "Northeast Forestry University, Harbin 150040, China"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Chest"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Pulmonary arteries"
+      ],
+      "diseases": [],
+      "clinical_context": "Anatomical pulmonary-artery segmentation; thoracic surgical-planning motivation does not establish a disease cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Pulmonary Artery Segmentation",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361905",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/PulmonaryArterySegmentationChallenge2022_03-16-2022_10-24-34.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6361905",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/PulmonaryArterySegmentationChallenge2022_03-16-2022_10-24-34.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "CT"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6361905",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/PulmonaryArterySegmentationChallenge2022_03-16-2022_10-24-34.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND. CC BY-NC-ND；另有签署数据使用协议要求。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6361905",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/PulmonaryArterySegmentationChallenge2022_03-16-2022_10-24-34.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6361905",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/PulmonaryArterySegmentationChallenge2022_03-16-2022_10-24-34.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Grand Challenge / Huawei Cloud",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361905",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/PulmonaryArterySegmentationChallenge2022_03-16-2022_10-24-34.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361905",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/PulmonaryArterySegmentationChallenge2022_03-16-2022_10-24-34.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\na) Multi-level Dice Similarity Coefficient (Dice)\nb) Multi-level 95% Hausdorff distance (HD95)\nc) Running time\nd) Maximum used memory\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nWe graded the pulmonary artery blood vessels into multiple levels according to the radius of blood vessels, and\nevaluated the accuracy of trunk and branch respectively. The segmentation performance is evaluated in four\naspects following:\n1) Multi-level Dice Similarity Coefficient (Dice): Dice is used to evaluate the area-based overlap index.\n2) Multi-level 95% Hausdorff distance (HD95): HD95 is used to evaluate the coincidence of the surface for stability\nand is sensitive to outliers.\n3) Running time: Low time-consumption is preferred for good algorithm.\n4) Maximum used memory: Low memory-consuming indicates the good application potential in more widely\nused computing platform.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nThe ranking scheme includes the following steps:\n1) Calculate the Dice, HD95, Maximum used memory, and Running time for all cases.\n2) Rank the Dice, HD95, Maximum used memory, and Running time separately.\n3) Average these rankings.\n4) Tie if the rankings are equal.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nReport errors and teams need to help participant to complete the missing results in the first time.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThis ranking scheme is developed to take four important metrics into account. It provides a balanced scheme to\njudge whether the method can achieve accurate segmentation with lower runtime and memory simultaneously."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Prediction files (validation); Docker container (final)",
+      "platform": "Grand Challenge / Huawei Cloud",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Docker container on the Huawei Cloud platform. Link to submission instructions: https://parse2022.grand- challenge.org/",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361905",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/PulmonaryArterySegmentationChallenge2022_03-16-2022_10-24-34.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2022,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6361905",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/PulmonaryArterySegmentationChallenge2022_03-16-2022_10-24-34.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.6361905"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://parse2022.grand-challenge.org/",
+      "registration": "https://doi.org/10.5281/zenodo.6361905",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.6361905",
+          "resolved_record_id": 6361906,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/PulmonaryArterySegmentationChallenge2022_03-16-2022_10-24-34.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/PulmonaryArterySegmentationChallenge2022_03-16-2022_10-24-34.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://parse2022.grand-challenge.org/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/ef4898b4b4661216.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "Parse2022"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "Participants email the signed agreement to the organizers to receive the data link."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361905",
+          "excerpt": "Artery Segmentation Challenge 2022 CC BY NC ND. Additional comments: Teams should sign a data usage agreement before downloading data."
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361905",
+          "excerpt": "ide a link to the submission instructions. Pulmonary Artery Segmentation Challenge 2022 Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker container on the Huawei Cloud platform. Link to submission instructions: https://parse2022.grand- challenge.org/ b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, a"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361905",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Registration: March 28 (11:59PM GMT), 2022 Dataset release: April 6 (11:59PM GMT), 2022 Opened validation leaderboard submission: July 15 (11:59PM GMT), 2022 Challenge leaderboard submission: July 20 (11:59PM GMT), 2022 Submission deadline: July 30 (11:59PM GMT), 2022 Winner and invitation speakers: September 1"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361905",
+          "excerpt": ""
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/ef4898b4b4661216.json",
+          "url": "https://parse2022.grand-challenge.org/",
+          "excerpt": "org/10.1038/s41467-025-56505-6 [NEWS] 2025/09/20 All training and validation datasets have now been publicly released and are freely available. Please refer to the Datasets section for access. [NEWS] 2023/02/01 For future researchers, the training and validation sets are open and available. Remember to send the signed document to PARSE2022@hotmail.com for participation. Only after the agreement is received will we the dataset download link be emailed. [NEWS] 2022/07/19 Extended the evaluation phase to July 31st. You can submit your validation results on the submission page until July 31st. And you can submit your docker and paper from July 20th to August 7th. [NEWS] 2022/07/15 Validation dataset release. We have sent the data download link via email. If you didn't receive the email, please let us know as soon as possible! ¶ [NEWS] 2022/04/06 Training dataset release. [NEWS] 2022/03/28-Parse challenge 2022 is now open for registration ! Remember to send the signed document to PARSE2022@hotmail.com for participation. ¶ About ¶ It is of significant clinical interest to study pulmonary artery structures in the field of medical image analysis. One prerequisite step is to segment pulmonary artery structures from CT with high accuracy [...] ology, automated segmentation of pulmonary artery topology is a challenging task. Besides, the open accessible large-scale CT data with well labeled pulmonary artery are scarce (The large variations of the topological structures from different patients make the annotation an extremely challenging process). The lack of well labeled pulmonary artery hinders the development of automatic pulmonary artery se [...] munication. Task ¶ Participants are required to segment artery in 3D pulmonary CT image. Schedule ¶ Registration: March 28 (11:59PM GMT), 2022 Training dataset release: April 6 (11:59PM GMT), 2022 Validation dataset release, open validation leaderboard submission: July 15 (11:59PM GMT), 2022 Deadline for the validation leaderboard submission: July 20 (11:59PM GMT), 2022 Opening docker and short paper submission for testing dataset: July 20 July 31 (11:59PM GMT), 2022 Deadline for docker and short paper submission: July 30 August 7 (11:59PM GMT), 2022 Winner and invitation speakers: September 18 (11:59PM GMT), 2022 Registration ¶ Individuals or team members interested in participating in this challenge should carefully study the challenge rules and follow the instructions to join challenge. *Please note that by participating in this challenge you are agreeing to all its rules and policies. Award ¶ Successful participation"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 100,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 30,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "testing",
+              "value": 70,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "China"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Single-center"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.6361905",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html"
+        },
+        {
+          "url": "https://parse2022.grand-challenge.org/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/ef4898b4b4661216.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/parse-2022.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Chest"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Pulmonary arteries"
+      ],
+      "specific_diseases": [],
+      "review_note": "Anatomical pulmonary-artery segmentation; thoracic surgical-planning motivation does not establish a disease cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361905"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/parse-2022.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-ND"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": true,
+      "summary_zh": "CC BY-NC-ND；另有签署数据使用协议要求。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "Pulmonary Artery Segmentation Challenge 2022 CC BY NC ND. Additional comments: Teams should sign a data usage agreement before downloading data.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.6361905"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361905"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2022/parse-2022.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "China"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.6361905",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html"
+                },
+                {
+                  "url": "https://parse2022.grand-challenge.org/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/ef4898b4b4661216.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/parse-2022.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Open call challenge.",
+              "url": "https://doi.org/10.5281/zenodo.6361905",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R31/PulmonaryArterySegmentationChallenge2022_03-16-2022_10-24-34.pdf",
+              "scope": "Edition-specific lifecycle answer: open-call continuation or a stated future release. Policy/plan coverage only, not evidence that continuing evaluation actually ran.",
+              "value": null,
+              "excerpt": "continued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time event). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some modifications (repeated event). Examples: • One-time event with fixed conference submission deadline • Open call (challenge opens for new submissions after conference deadline) • Repeated event with annual fixed conference submission deadline Open call challenge. ",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

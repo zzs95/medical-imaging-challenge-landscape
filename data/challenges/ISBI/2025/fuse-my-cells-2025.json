@@ -1,0 +1,793 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "fuse-my-cells-2025",
+    "challenge_name": "Fuse My Cells: From Single View to Fused Multiview Lightsheet Imaging",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "ISBI 2025",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Microscopy"
+      ],
+      "submodality": [
+        "Light-sheet fluorescence microscopy"
+      ],
+      "body_region": [
+        "Cell specimens"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Nuclei",
+        "Cell membranes"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Image Restoration",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Single-view to fused multiview reconstruction",
+          "task_family": "Image Restoration",
+          "task_subtype": "Denoising / reconstruction",
+          "input": [
+            "Single 3D light-sheet view"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Predicted fused 3D image"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "Paired single-view and fused-multiview 3D light-sheet microscopy",
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": 32
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "database_size": "More than 400 paired 3D images (database total, not exact training split).",
+        "preliminary_test": 3
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": true,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY (version not verified)",
+      "access_after_challenge": "Official rules state data will remain public; this is a continuing-public-access statement, not proof that hidden evaluation data are released.",
+      "access_scope": "training/development data; not a claim that hidden test data are public"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "External data/models for prize eligibility must be permissively licensed, disclosed and shared on forum by March 1, 2025."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Normalized SSIM (nuclei)",
+            "Normalized SSIM (membranes)",
+            "Normalized Cellpose IoU (nuclei)",
+            "Normalized Cellpose IoU (membranes)"
+          ],
+          "ranking": "Mean of four individual metric ranks. nSSIM=(prediction−reference)/(1−reference); normalized IoU=(prediction−reference)/(best−reference)."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null,
+        "average_processing_time_minutes": 10
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 136,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": 6,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Test",
+            "submission_count": 70
+          },
+          {
+            "official_phase_name": "Evaluation",
+            "submission_count": 14
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://fusemycells.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Predict the fused target from one view; teams are not supplied multiple inference views to register. Results page reports 32 final test images and six participating teams."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://fusemycells.grand-challenge.org/results/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/44-04aa9b103ee9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://fusemycells.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/44-0c082ea0e2e6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://fusemycells.grand-challenge.org/rules-policies/",
+          "supports": [
+            "data_access",
+            "data_access.access_after_challenge",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_access.is_public",
+            "data_access.public_download",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/44-2bc399bb3b0c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://fusemycells.grand-challenge.org/evaluation-metrics/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/44-4293b57ffea9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://fusemycells.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/44-4f34ab0540e2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://fusemycells.grand-challenge.org/france-bioimaging/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/44-616e025ff383.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://fusemycells.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/44-7d012548daa2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://fusemycells.grand-challenge.org/fusemycells/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/44-889020bf15c0.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://fusemycells.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/44-b1dbc49fb068.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://fusemycells.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/44-d54fddc2b4b5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://fusemycells.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/44-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset: exact training split and detailed access instructions behind restricted page.",
+        "schedule: timeline is image-only; final deadline extension needs cached official forum evidence."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://fusemycells.grand-challenge.org/rules-policies/",
+          "local_snapshot": "_collection/sources/44-2bc399bb3b0c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.is_public": {
+          "source_url": "https://fusemycells.grand-challenge.org/rules-policies/",
+          "local_snapshot": "_collection/sources/44-2bc399bb3b0c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.public_download": {
+          "source_url": "https://fusemycells.grand-challenge.org/rules-policies/",
+          "local_snapshot": "_collection/sources/44-2bc399bb3b0c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://fusemycells.grand-challenge.org/rules-policies/",
+          "local_snapshot": "_collection/sources/44-2bc399bb3b0c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://fusemycells.grand-challenge.org/rules-policies/",
+          "local_snapshot": "_collection/sources/44-2bc399bb3b0c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit edition-source post-challenge policy reviewed; planned releases, continuing public access, controlled requests and required deletion are kept distinct."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_after_challenge",
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_access.is_public",
+          "data_access.public_download"
+        ],
+        "remaining_core_fields": [
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/fuse-my-cells-2025.json",
+          "_collection/verification_20261003/literature_context/fuse-my-cells-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cell specimens"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "基础生物显微图像的多视图融合/分辨率增强；未定义疾病模型或诊断目标。",
+      "sources": [
+        {
+          "url": "https://fusemycells.grand-challenge.org/",
+          "local_source": "_collection/sources/44-0c082ea0e2e6.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "基础生物显微图像的多视图融合/分辨率增强；未定义疾病模型或诊断目标。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/ISBI/2025/fuse-my-cells-2025.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "ISBI/2025/fuse-my-cells-2025.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Official rules state data will remain public; this is a continuing-public-access statement, not proof that hidden evaluation data are released.",
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/results/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-04aa9b103ee9.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-0c082ea0e2e6.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/rules-policies/",
+                  "supports": [
+                    "data_access",
+                    "data_access.access_after_challenge",
+                    "data_access.access_scope",
+                    "data_access.access_status",
+                    "data_access.is_public",
+                    "data_access.public_download",
+                    "data_usage_mode",
+                    "evaluation",
+                    "publication",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-2bc399bb3b0c.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/evaluation-metrics/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-4293b57ffea9.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/prizes/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-4f34ab0540e2.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/france-bioimaging/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-616e025ff383.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/timeline/",
+                  "supports": [
+                    "year",
+                    "schedule",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-7d012548daa2.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/fusemycells/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-889020bf15c0.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://fusemycells.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-b1dbc49fb068.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/organizers/",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-d54fddc2b4b5.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-overview.json"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "ISBI/2025/fuse-my-cells-2025.json",
+              "source_field": "participation_statistics",
+              "value": {
+                "registered_participants": 136,
+                "registered_teams": null,
+                "active_participants": null,
+                "active_teams": null,
+                "participants_with_submission": null,
+                "teams_with_submission": 6,
+                "qualified_teams": null,
+                "finalist_teams": null,
+                "submissions": {
+                  "directory_summary_submissions": null,
+                  "total_submissions": null,
+                  "by_task": null,
+                  "by_phase": [
+                    {
+                      "official_phase_name": "Test",
+                      "submission_count": 70
+                    },
+                    {
+                      "official_phase_name": "Evaluation",
+                      "submission_count": 14
+                    }
+                  ]
+                },
+                "statistics_snapshot_date": "2026-10-02",
+                "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+                "notes": [
+                  "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+                ]
+              },
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/results/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-04aa9b103ee9.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-0c082ea0e2e6.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/rules-policies/",
+                  "supports": [
+                    "data_access",
+                    "data_access.access_after_challenge",
+                    "data_access.access_scope",
+                    "data_access.access_status",
+                    "data_access.is_public",
+                    "data_access.public_download",
+                    "data_usage_mode",
+                    "evaluation",
+                    "publication",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-2bc399bb3b0c.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/evaluation-metrics/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-4293b57ffea9.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/prizes/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-4f34ab0540e2.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/france-bioimaging/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-616e025ff383.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/timeline/",
+                  "supports": [
+                    "year",
+                    "schedule",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-7d012548daa2.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/fusemycells/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-889020bf15c0.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://fusemycells.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-b1dbc49fb068.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/organizers/",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-d54fddc2b4b5.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://fusemycells.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/44-overview.json"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "database",
+              "value": 400,
+              "unit": "3D image pairs",
+              "canonical_field": "dataset.split_details.database_size",
+              "scope": "Database total, not a training split; more than 400 pairs",
+              "approximate": false,
+              "lower_bound": true
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [],
+          "source_urls": "https://fusemycells.grand-challenge.org/results/; https://fusemycells.grand-challenge.org/; https://fusemycells.grand-challenge.org/rules-policies/; https://fusemycells.grand-challenge.org/evaluation-metrics/; https://fusemycells.grand-challenge.org/prizes/; https://fusemycells.grand-challenge.org/france-bioimaging/; https://fusemycells.grand-challenge.org/timeline/; https://fusemycells.grand-challenge.org/fusemycells/; https://fusemycells.grand-challenge.org/challenge/statistics/; https://fusemycells.grand-challenge.org/organizers/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

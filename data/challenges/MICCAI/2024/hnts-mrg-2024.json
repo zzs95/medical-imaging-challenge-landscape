@@ -1,0 +1,772 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "hnts-mrg-2024",
+    "challenge_name": "Head and Neck Tumor Segmentation for MR-Guided Applications",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "virtual_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": [
+        "T2-weighted MRI",
+        "Fat-suppressed and non-fat-suppressed"
+      ],
+      "body_region": [
+        "Head and neck"
+      ],
+      "organ_system": [
+        "Oncology"
+      ],
+      "organs_or_structures": [
+        "GTVp",
+        "GTVn"
+      ],
+      "diseases": [
+        "Head and neck cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "pre_rt",
+          "official_name": "Pre-RT tumor segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "Pre-RT T2 MRI only"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "GTVp/GTVn mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "mid_rt",
+          "official_name": "Mid-RT tumor segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "Mid-RT T2 MRI",
+            "Original pre-RT MRI and mask",
+            "Registered pre-RT MRI and mask"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Mid-RT GTVp/GTVn mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": "0 background; 1 GTVp; 2 GTVn.",
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Three to four physicians per structure; STAPLE consensus, experienced radiation-oncology review.",
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "single-center",
+      "multi_center": false,
+      "international": null,
+      "center_count": 1,
+      "institutions_description": "All study data collected at the University of Texas MD Anderson Cancer Center.",
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "MRI"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "patient_count": 150
+        },
+        "test": {
+          "patient_count": 50
+        },
+        "development": {
+          "patient_count": 2,
+          "overlaps_training": false
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Training: CC BY-NC 4.0.",
+      "access_after_challenge": null,
+      "access_scope": "training data; internal 50-patient final test",
+      "license_review_status": "resolved_against_repository",
+      "license_conflict": "Existing challenge-design terms record CC BY-NC 4.0; the organizer overview says the 150-patient training release uses CC BY 4.0. Resolve against the actual release's repository metadata before interpreting commercial-use permission.",
+      "license_review_resolution": "Official Zenodo training release 11199559 specifies cc-by-nc-4.0. Retain the original CC BY-NC 4.0 coding; the organizer paper's CC BY 4.0 statement disagrees with the actual release metadata. No commercial-use permission inferred."
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Only public external data and public pretrained weights for prize/final-ranking eligibility."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "pre_rt",
+          "metrics": [
+            "Aggregated Dice GTVp",
+            "Aggregated Dice GTVn",
+            "Mean aggregated Dice"
+          ],
+          "ranking": "Mean of GTVp and GTVn aggregated Dice; tasks ranked separately."
+        },
+        {
+          "task_id": "mid_rt",
+          "metrics": [
+            "Aggregated Dice GTVp",
+            "Aggregated Dice GTVn",
+            "Mean aggregated Dice"
+          ],
+          "ranking": "Mean of GTVp and GTVn aggregated Dice; tasks ranked separately."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "preliminary_valid_submissions_per_task": 5,
+        "final_valid_submissions_per_task": 1
+      },
+      "task_outputs": null,
+      "container_size_recommendation_gb": 10,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {
+      "training_data_release": "2024-06-14",
+      "final_submission_deadline": "2024-09-18",
+      "challenge_event": "2024-10-17"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "proceedings": "Springer LNCS HNTS-MRG 2024 post-proceedings"
+    },
+    "participation_statistics": {
+      "registered_participants": 110,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary Development Phase Task 1 (pre-RT segmentation)",
+            "submission_count": 75
+          },
+          {
+            "official_phase_name": "Final Test Phase Task 1 (pre-RT segmentation)",
+            "submission_count": 27
+          },
+          {
+            "official_phase_name": "Preliminary Development Phase Task 2 (mid-RT segmentation)",
+            "submission_count": 54
+          },
+          {
+            "official_phase_name": "Final Test Task 2 (mid-RT segmentation)",
+            "submission_count": 19
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://hntsmrg24.grand-challenge.org/",
+      "dataset": "https://zenodo.org/records/11199559",
+      "github": "https://github.com/kwahid/HNTSMRG_2024",
+      "challenge_paper": "https://doi.org/10.1007/978-3-031-83274-1_1"
+    },
+    "notes": [
+      "Listed under MICCAI 2024 in the official registered-challenge directory (legacy acronym HNS-MRG 2023 there); actual event held virtually on October 17, 2024.",
+      "Registered protocol is preregistration evidence; later official website updates take priority. Planned counts are explicitly labeled and not assumed to equal the final released cohort."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/",
+          "supports": [
+            "challenge context",
+            "evaluation.platform"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-0ad0406307bb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/#head-and-neck-tumor-segmentation-for-mr-guided-applications-hnts-mrg-2024",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-1e85b5b5feb6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/#references",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-5dfb397ecc5d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/#quick-summary",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-5f64149f62b5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/live-virtual-event/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-68f8275750c4.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://hntsmrg24.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-6e8bb06b9959.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/participation-policies/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-706f3a16cc55.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/overview/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-77d6c5d55a36.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/submission-instructions/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-7a1c0cf53972.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/previous-similar-challenges/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-7b7822557362.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/organizers-information/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-8b9cf1d3fb14.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/#post-challenge-details",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-90ab87757915.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/funding-sources/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-a055fdb87db0.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/tasks-and-evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-a1eda4bef77a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/#challenge-proceedings",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-c1289021f52a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/#general-background",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-cfc5f903c8ed.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/paper-submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-e48a40706950.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/#important-updates-and-news",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-e672a1eb5e57.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/dataset/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-ec1449ad79fa.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-f868c9399ab8.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-fe5e4c64ae95.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hntsmrg24.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-overview.json"
+        },
+        {
+          "type": "official conference registered-challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "supports": [
+            "event",
+            "year"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json"
+        },
+        {
+          "type": "official registered challenge protocol (preregistration, not final report)",
+          "url": "https://zenodo.org/records/10991385/files/Head%20and%20Neck%20Tumor%20Segmentation%20for%20MRI-Guided%20Ap.pdf",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "dataset",
+            "evaluation",
+            "submission.evidence_stage",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/69-design-2024.txt"
+        },
+        {
+          "type": "official organizer challenge or dataset paper",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925392/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC11925392.json",
+          "title": "Overview of the Head and Neck Tumor Segmentation for Magnetic Resonance Guided Applications (HNTS-MRG) 2024 Challenge",
+          "supports": [
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_access.license_conflict",
+            "data_access.license_review_status",
+            "dataset.center_type",
+            "dataset.institutions_description",
+            "dataset.multi_center",
+            "links.challenge_paper",
+            "submission.platform"
+          ]
+        },
+        {
+          "type": "official data-repository metadata",
+          "url": "https://zenodo.org/api/records/11199559",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/web/hntsmrg_repository.json",
+          "supports": [
+            "data_access.license_review_status",
+            "data_access.license_review_resolution"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify hard inference time/memory limits; container size under 10 GB is recommended rather than mandatory."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://hntsmrg24.grand-challenge.org/",
+          "local_snapshot": "_collection/sources/69-0ad0406307bb.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'Top 3 teams for pre-RT (Task 1)', 'url': 'https://hntsmrg24.grand-challenge.org/evaluation/final-test-phase-task-1-pre-rt-segmentation/leaderboard/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "dataset.multi_center": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925392/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC11925392.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2024 organizer report explicitly states a single data institution, public CC BY training release and internal container evaluation; do not count author affiliations as centers."
+        },
+        "dataset.center_type": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925392/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC11925392.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2024 organizer report explicitly states a single data institution, public CC BY training release and internal container evaluation; do not count author affiliations as centers."
+        },
+        "dataset.institutions_description": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925392/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC11925392.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2024 organizer report explicitly states a single data institution, public CC BY training release and internal container evaluation; do not count author affiliations as centers."
+        },
+        "data_access.access_status": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925392/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC11925392.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2024 organizer report explicitly states a single data institution, public CC BY training release and internal container evaluation; do not count author affiliations as centers."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925392/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC11925392.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2024 organizer report explicitly states a single data institution, public CC BY training release and internal container evaluation; do not count author affiliations as centers."
+        },
+        "submission.platform": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925392/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC11925392.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2024 organizer report explicitly states a single data institution, public CC BY training release and internal container evaluation; do not count author affiliations as centers."
+        },
+        "links.challenge_paper": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925392/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC11925392.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2024 organizer report explicitly states a single data institution, public CC BY training release and internal container evaluation; do not count author affiliations as centers."
+        },
+        "data_access.license_review_status": {
+          "source_url": "https://zenodo.org/api/records/11199559",
+          "local_snapshot": "_collection/verification_20261003/web/hntsmrg_repository.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Actual training-dataset repository metadata resolves the competing license statements in favor of CC BY-NC 4.0; original dataset license remains unchanged."
+        },
+        "data_access.license_conflict": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925392/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC11925392.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Two primary sources give incompatible training-data license variants; original value retained and conflict explicitly recorded."
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/10991385/files/Head%20and%20Neck%20Tumor%20Segmentation%20for%20MRI-Guided%20Ap.pdf",
+          "local_snapshot": "_collection/sources/69-design-2024.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Head and Neck Tumor Segmentation for MRI-Guided Applications Challenge Teams taking part in the challenge are required to submit their segmentation results through the grand-challenge.org platform. They will be required to package their algorithms in a docker container that will be run through an evaluation container created by the organizers that will apply their method to the private test data. Participants will only ever have access to the training data; test data will not be made publicly av"
+        },
+        "data_access.license_review_resolution": {
+          "source_url": "https://zenodo.org/api/records/11199559",
+          "local_snapshot": "_collection/verification_20261003/web/hntsmrg_repository.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Actual training-dataset repository metadata resolves the competing license statements in favor of CC BY-NC 4.0; original dataset license remains unchanged."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_access.license_conflict",
+          "data_access.license_review_resolution",
+          "data_access.license_review_status",
+          "dataset.center_type",
+          "dataset.institutions_description",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "links.challenge_paper",
+          "submission.evidence_stage",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/hnts-mrg-2024.json",
+          "_collection/verification_20261003/literature_context/hnts-mrg-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "The University of Texas MD Anderson Cancer Center.",
+              "url": "https://zenodo.org/records/10991385/files/Head%20and%20Neck%20Tumor%20Segmentation%20for%20MRI-Guided%20Ap.pdf",
+              "snapshot": "_collection/sources/69-design-2024.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nThe University of Texas MD Anderson Cancer Center.",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "All study data collected at the University of Texas MD Anderson Cancer Center.",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925392/",
+              "snapshot": "_collection/verification_20261003/papers/PMC11925392.json",
+              "scope": "Explicit acquisition-institution or region description; partial scope retained.",
+              "value": "All study data collected at the University of Texas MD Anderson Cancer Center.",
+              "excerpt": "",
+              "snapshot_date": "2026-10-03",
+              "source_path": "MICCAI/2024/hnts-mrg-2024.json",
+              "source_field": "dataset.institutions_description"
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Observed persistent data resource",
+              "summary": "Edition-linked dataset files and download links remained listed in a repository snapshot after the competition year.",
+              "url": "https://zenodo.org/api/records/11199559",
+              "snapshot": "_collection/verification_20261003/web/hntsmrg_repository.json",
+              "scope": "File listing establishes continuing resource provision at the snapshot; authenticated download experience and unrestricted reuse are separate.",
+              "value": null,
+              "excerpt": "{\"created\": \"2024-06-15T02:31:55.597131+00:00\", \"modified\": \"2024-06-21T08:48:29.124901+00:00\", \"id\": 11199559, \"conceptrecid\": \"11199558\", \"doi\": \"10.5281/zenodo.11199559\", \"conceptdoi\": \"10.5281/zenodo.11199558\", \"doi_url\": \"https://doi.org/10.5281/zenodo.11199559\", \"metadata\": {\"title\": \"Training Dataset for HNTSMRG 2024 Challenge\", \"doi\": \"10.5281/zenodo.11199559\", \"publication_date\": \"2024-05-15\", \"description\": \"<h1>Training Dataset for HNTSMRG 2024 Challenge</h1>\\n<h2>&nbsp;</h2>\\n<h2>Overview</h2>\\n<p>This repository houses the publicly available training dataset for the&nbsp;<a href=\\\"https://hntsmrg24.grand-challenge.org/\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">Head and Neck Tumor Segmentation for MR-Guided Applications (HNTSMRG) 2024 Challenge</a>.</p>\\n<p>Patient cohorts correspond to patients with histologically proven head and neck cancer who underwent radiotherapy (RT) at The University of Texas MD Anderson Cancer Center. The cancer types are predominately oropharyngeal cancer or cancer of unknown primary. Images include a pre-RT T2w MRI scan (1-3 weeks before start of RT) and a mid-RT T2w MRI scan (2-4 weeks intra-RT) for each patient. Segmentation masks of primary gross tumor volumes (<em>abbreviated GTVp</em>) and involved metastatic lymph nodes (<em>abbreviated GTVn</em>) are provided for each image (<a href=\\\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1283110/\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">derived from multi-observer STAPLE consensus</a>).</p>\\n<p>HNTSMRG 2024 is split into 2 tasks:</p>\\n<ul>\\n<li><strong>Task 1</strong>: Segmentation of tumor volumes (GTVp and GTVn) on <strong>pre-RT MRI</strong>.</li>\\n<li><strong>Task 2</strong>: Segmentation of tumor volumes (GTVp and GTVn) on <strong>mid-RT MRI</strong>.</li>\\n</ul>\\n<p>The same patient cases will be used for the training and test sets of both tasks of this challenge. Therefore, we are releasing a single training dataset that can be used to construct solutions for either segmentation task. <u>The test data provided (via Docker containers), however, will be different for the two tasks.</u>&nbsp;Please consult the <a href=\\\"https://hntsmrg24.grand-challenge.org/dataset/\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\">challenge website for more details</a>.</p>\\n<p>&nbsp;</p>\\n<h2>Data Details&nbsp;</h2>\\n<ul>\\n<li>DICOM files (images and structure files) have been converted to NIfTI format (<em>.nii.gz</em>) for ease of use by participants via <a href=\\\"https://pubmed.ncbi.nlm.nih.gov/336",
+              "snapshot_date": "2026-10-03"
+            },
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "One-time event with a fixed submission deadline. To ensure lasting accessibility and reference, the results of the challenge leaderboard will be permanently displayed online for public viewing.",
+              "url": "https://zenodo.org/records/10991385/files/Head%20and%20Neck%20Tumor%20Segmentation%20for%20MRI-Guided%20Ap.pdf",
+              "snapshot": "_collection/sources/69-design-2024.txt",
+              "scope": "Organizer specifies continued evaluation or persistent results; implemented availability is not inferred from this plan.",
+              "value": null,
+              "excerpt": "erson.org\n\nLife cycle type\n\nDefine the intended submission cycle of the challenge. Include information on whether/how the challenge will be\ncontinued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time\nevent). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some\nmodifications (repeated event).\n\n\nExamples:\n\n  • One-time event with fixed conference submission deadline\n\n  • Open call (challenge opens for new submissions after conference deadline)\n\n  • Repeated event with annual fixed conference submission deadline\n\nOne-time event with a fixed submission deadline. To ensure lasting accessibility and reference, the results of the\nchallenge leaderboard will be permanently displayed online for public viewing.\n\nChallenge venue and platform\n\na) Report the event (e.g. conference) that is associated with the challenge (if any).\n\nMICCAI 2024 (current submission).",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "19 eligible unique teams across tasks.",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11925392/",
+              "snapshot": "_collection/verification_20261003/papers/PMC11925392.json",
+              "scope": "eligible unique teams across tasks",
+              "value": {
+                "value": 19,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "n the preliminary development phase, 15 in the final test phase). After accounting for eligibility, 19 unique teams were identified. The geographical distribution of initial registrants is shown in Fig. 8A , while the distribution of final eligible participants is shown in Fig. 8B . T",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

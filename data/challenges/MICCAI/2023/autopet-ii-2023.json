@@ -1,0 +1,466 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "autopet-ii-2023",
+    "challenge_name": "autoPET-II",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "PET"
+      ],
+      "submodality": [
+        "FDG-PET/CT"
+      ],
+      "body_region": [
+        "Whole body"
+      ],
+      "organ_system": [
+        "Multisystem"
+      ],
+      "organs_or_structures": [
+        "FDG-avid tumor lesions"
+      ],
+      "diseases": [
+        "Melanoma",
+        "Lymphoma",
+        "Lung cancer"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "FDG-avid lesion segmentation with domain generalization",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "PET volume",
+            "CT volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Binary lesion mask in PET space"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT",
+        "PET"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "study_count": 1014,
+          "patient_count": 900
+        },
+        "preliminary_test": {
+          "study_count": 5
+        },
+        "final_test": {
+          "study_count": 200
+        }
+      },
+      "test_composition": "One quarter from seen training distribution, three quarters from different sources/settings."
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Training: CC BY-NC.",
+      "access_after_challenge": null,
+      "access_scope": "training/development data; not a claim that hidden test data are public"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": null,
+        "policy": "All publicly available data or networks allowed."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Foreground Dice",
+            "False positive volume",
+            "False negative volume"
+          ],
+          "ranking": "Dice rank weight 0.5, false-positive and false-negative volume ranks weight 0.25 each; Dice breaks ties. Additional robustness and expert novelty awards are separate."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 2,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 414,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Challenge Preliminary Test Set",
+            "submission_count": 218
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://autopet-ii.grand-challenge.org/",
+      "dataset": null,
+      "github": "https://github.com/lab-midas/autoPET",
+      "challenge_paper": null
+    },
+    "notes": [
+      "Dataset describes 200 test studies whereas evaluation page says 200 patients; preserve study unit for split without assuming patient equality. One algorithm competes in all award categories."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-ii.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/94-34f7b28ec975.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-ii.grand-challenge.org/dataset/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/94-7b114b9d6ac0.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-ii.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/94-a35c7995b2cd.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://autopet-ii.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/94-a85c2dcfdea8.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-ii.grand-challenge.org/challenge-publication/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/94-af76a8df7e6c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-ii.grand-challenge.org/eval/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/94-c92af5a9a89a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-ii.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/94-f9fdbcb2e758.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-ii.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/94-overview.json"
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://autopet-ii.grand-challenge.org/rules/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/autopet-ii-2023.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify test patient/study wording and final runtime limits from organizer paper."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://autopet-ii.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/94-34f7b28ec975.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://autopet-ii.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/94-34f7b28ec975.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://autopet-ii.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/autopet-ii-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://autopet-ii.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/autopet-ii-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://autopet-ii.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/autopet-ii-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/autopet-ii-2023.json",
+          "_collection/verification_20261003/literature_context/autopet-ii-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "17 teams submitted 27 successful algorithms in the final phase.",
+              "url": "https://publikationen.bibliothek.kit.edu/1000191445/177574894",
+              "snapshot": "latex_sourcev2/data/resource_information_update_20261027/sources/765b4e1a926912.json",
+              "scope": "autoPET2 / 2023; not registrations or algorithm count.",
+              "value": {
+                "value": 17,
+                "unit": "final-submitting teams"
+              },
+              "excerpt": "the upper bound of the challenge performance. This does          218 algorithms. In the ﬁnal phase, 17 teams submitted 27 success-\nnot reﬂect a true theoretic bound but instead provides an indication of       ful algorithms, and the highest-performing submission from each\nthe maximum performance achievable for each case given the avail-             team was used to determine the ﬁnal leaderboard. One team\nable submissions, thereby offering insight into dataset noise and case        (Blackbean) submitted 4 algorithms, 7 teams (zstih, agaldran,\ndifﬁculty.                                                                    cv:hci, anissa218, Y. Chen-PET-MiLab, IMIT-RJH, and ahnssu)\n\n\n                                                                                              AUTOPET2 CHALLENGE            \u000f        Dexl et al.        483\n\fsubmitted 2 algorithms, and the remaining 9 teams submitted just            Team Isensee achieved the most stable FPV (9,848.7539 mL),\n1 algorithm. The ranking is based on all submissions.                       whereas the reference model (baseline) placed eighth, with particu-\n   Most teams used 3-dimensional U-Net architecture (13/17),                lar weakness in FPV stability (76,533.4919 mL, rank 8). The best\nwith alternatives including SegRes",
+              "snapshot_date": "2026-10-27"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

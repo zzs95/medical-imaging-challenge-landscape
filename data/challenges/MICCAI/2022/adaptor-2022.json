@@ -1,0 +1,612 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "adaptor-2022",
+    "challenge_name": "AdaptOR 2022",
+    "full_name": "Deep Image Generation Model Challenge in Surgery 2022",
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2022-R10",
+      "official_programme_row_numbers": "35",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "University Hospital Heidelberg",
+        "Technical University Darmstadt"
+      ],
+      "registered_authors": [
+        {
+          "name": "Sandy Engelhardt",
+          "affiliation": "University Hospital Heidelberg"
+        },
+        {
+          "name": "Anirban Mukhopadhyay",
+          "affiliation": "Technical University Darmstadt"
+        },
+        {
+          "name": "Raffaele De Simone",
+          "affiliation": "University Hospital Heidelberg"
+        },
+        {
+          "name": "Lalith Sharan",
+          "affiliation": "University Hospital Heidelberg"
+        },
+        {
+          "name": "Halvar Kelm",
+          "affiliation": "University Hospital Heidelberg"
+        },
+        {
+          "name": "Henry Krumb",
+          "affiliation": "Technical University Darmstadt"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Heart"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Mitral valve"
+      ],
+      "diseases": [
+        "Mitral insufficiency"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Synthesis",
+      "secondary_task_families": [],
+      "task_families": [
+        "Synthesis"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Novel View Synthesis in Stereoendoscopy",
+          "task_family": "Synthesis",
+          "task_families": [
+            "Synthesis"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362268",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/DeepImageGenerationModelChallengeinSurgery2022_03-16-2022_10-29-46.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": true,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362268",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/DeepImageGenerationModelChallengeinSurgery2022_03-16-2022_10-29-46.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Endoscopy"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362268",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/DeepImageGenerationModelChallengeinSurgery2022_03-16-2022_10-29-46.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 比赛期间限挑战用途，不得转交第三方或用于其他发表/商业用途；赛后非商业开放是计划。CC BY-NC-SA 名称与比赛期间附加限制分别保留。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362268",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/DeepImageGenerationModelChallengeinSurgery2022_03-16-2022_10-29-46.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362268",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/DeepImageGenerationModelChallengeinSurgery2022_03-16-2022_10-29-46.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362268",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/DeepImageGenerationModelChallengeinSurgery2022_03-16-2022_10-29-46.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362268",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/DeepImageGenerationModelChallengeinSurgery2022_03-16-2022_10-29-46.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nThe metric used for evaluation is a combination of local distance-based metric (L1) and a perceptual metric\n(SSIM).\n\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nA combination of local and perceptual metrics have been found to be a more reliable indicator of image similarity\nthan only one of the metrics [4]. Local metrics such as L1 assume independence of pixels and ignore local context.\nUsing SSIM metrics take into account the neighbourhood information of a pixel, but have issues at image\nboundaries unlike the local image metrics.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nThe evaluation is performed on the intra-operative test dataset using weighted L1 and SSIM.\nIn case the metrics are tied between two teams, the time stamp of the submission will be used for the ranking, and\nthe earlier submission will have a higher ranking.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nIn the case where no predictions are provided, the similarity between the target image and a zero image is lower\ncompared to when a prediction is provided. Similarly, the local metric determined by L1 yields a higher error\ncompared to when no predictions are provided.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nBoth metrics are commonly used for novel view synthesis."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Synapse",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "The challenge cohort splits into two sets: 1) data acquired during simulating mitral valve repair on a surgical simulator (\"Sim-Domain“), 2) intraoperative endoscopic data from mitral valve repair (\"Intraop-Domain\"). For the purpose of result verification and to encourage reproducibility and transparency, the submissions are evaluated with a docker container in the Synapse platform. More specifically: When run a predefined command on unseen input data from the left camera of the intraoperative domain, the model should output the image for the corresponding right camera of the stereo-view. We encourage participants to provide their code open source. The URL should be added in the half-page description and in the potential LNCS submission. Participants agree that the challenge organizers are allowed to use their submitted docker containers to run further meta-analysis.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362268",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/DeepImageGenerationModelChallengeinSurgery2022_03-16-2022_10-29-46.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2022,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362268",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/DeepImageGenerationModelChallengeinSurgery2022_03-16-2022_10-29-46.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.6362268"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://adaptor2022.github.io/",
+      "registration": "https://doi.org/10.5281/zenodo.6362268",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.6362268",
+          "resolved_record_id": 6362269,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/DeepImageGenerationModelChallengeinSurgery2022_03-16-2022_10-29-46.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/DeepImageGenerationModelChallengeinSurgery2022_03-16-2022_10-29-46.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://adaptor2022.github.io/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/7ab81ca828ae821f.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "AdaptOR 2022"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Synthesis"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "Signed data-access form and Synapse username are emailed to organizers; they check the document and grant data access."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362268",
+          "excerpt": "ShareAlike) • CC BY-NC-ND (Attribution-NonCommercial-NoDerivs) CC BY NC SA. Additional comments: By registering in the challenge, each team agrees (1) to use the data provided only in the scope of the challenge and (2) to neither pass it on to a third party nor to use it for any additional publication or for commercial use. After the challenge, the data will be made publicy available for non-commercial use."
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362268",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. The challenge cohort splits into two sets: 1) data acquired during simulating mitral valve repair on a surgical simulator (\"Sim-Domain“) [...] erification and to encourage reproducibility and transparency, the submissions are evaluated with a docker container in the Synapse platform. More specifically: When run a predefined command on unseen input data from the left camera of the intraoperative domain, the model should output the image for the corresponding right camera of the stereo-view. We encourage participants to provide their code open source. The [...] NCS submission. Participants agree that the challenge organizers are allowed to use their submitted docker containers to run further meta-analysis. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. [...] ore, violation to the following rules will lead to disqualification: - Each team is only allowed to register once and all submissions must be done from the same account. - A single participant is only allowed to be part of one team. Deep Image Generation Model Challenge in Surgery 2022"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362268",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results • release date of the training cases: 15th April 2022 • registration period: 15th April 2022 – 30th June 2022 • platform testing: 01st July 2022 – 01st August 2022 • submission of docker container: 15th July 2022 – 15th August 2022 • LNCS paper submission date: Depending on the timeline of the workshop • associated workshop days: either 17th September 2022 or 23th September 2022 • release date of the results: date of the workshop"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362268",
+          "excerpt": " and in scenes with only few changes, every 240th frame was extracted. b) State the total number of training, validation and test cases. We do not release an explicit validation data set. Participants can split the training data accordingly during the training phase. The current estimate of the training data in both the domains, and the test data is given below. Training surgical simulator domain: 1600 stereo frames from 12 simulations with an averag"
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/7ab81ca828ae821f.json",
+          "url": "https://adaptor2022.github.io/",
+          "excerpt": "ges of the left and right camera switched. This issue has now been fixed on synapse. Please run the download_files.py script on synapse again - this will download and replace only the changed files onto your system. News April 15th, 2022 - The AdaptOR challenge 2022 is now open! Please follow our steps for registration , and also check out details about the submission . April 1st, 2022 - The AdaptOR challenge will be associated to the DGM4MICCAI workshop 2022! March 13th, 2022 - The 2nd Edition of the AdaptOR challenge will be held in conjunction with MICCAI 2022! Timeline Next upcoming important dates: July 01st [...] 7 ], the AdaptOR Challenge 2022 proposes a task of novel view synthesis for endoscopic data. During training, the participants are provided the left and the right stereo camera images, and the test time task is to predict the corresponding image for a given image from the left camera. This would serve the purposes of facilitating 3D perception when only 2D data is available and of providing relevant information for depth reconstructi [...] training data and no models pre-trained on other datasets are allowed. Each team is only allowed to register once and all submissions must be done from the same account. A single participant is only allowed to be part of one team. The participants agree to participate in a challenge publication that will be planned by the organisers once a sufficient number of submissions are received. Prizes Details about potential prizes will be announced in the future. Certificates will be provided for the top 3 performing teams. Potential Future Plans Our goal is to extend the dataset with additi"
+        },
+        {
+          "section": "Official edition data/registration instructions",
+          "local_source": "_collection/access_flow_review_20261024/sources/7e55af19a3c4cf62.json",
+          "url": "https://adaptor2022.github.io/registration/",
+          "excerpt": "Steps to register for AdaptOR 2022 | AdaptOR2022 Tweets by AdaptOR2022 Steps to register for AdaptOR 2022 Steps to register for AdaptOR 2022 | AdaptOR2022 Create an account on Synapse , if you do not have one already. Please fill out the data access agreement form and send it along with your Synapse username, to the following email addresses: adaptor.challenge@gmail.com; sandy.engelhardt@med.uni-heidelberg.de; lalithnag.sharangururaj@med.uni-heidelberg.de . Register on the Synapse platform of the AdaptOR challenge, where all the data is hosted and docker submission will be done. We will check the signed document, accept your registration and grant you access to the data."
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 1600,
+              "unit": "stereo frames",
+              "scope": "Simulator domain",
+              "approximate": true,
+              "lower_bound": false
+            },
+            {
+              "split": "training",
+              "value": 6200,
+              "unit": "stereo frames",
+              "scope": "Intraoperative domain",
+              "approximate": true,
+              "lower_bound": false
+            },
+            {
+              "split": "testing",
+              "value": 450,
+              "unit": "stereo frames",
+              "scope": "Intraoperative domain",
+              "approximate": true,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Single-center"
+        },
+        "post_challenge": {
+          "state": "Documented and classifiable",
+          "value": "Planned public non-commercial release after challenge"
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "One acquisition institution explicitly named; location not inferred from manufacturer address.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.6362268",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html"
+        },
+        {
+          "url": "https://adaptor2022.github.io/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/7ab81ca828ae821f.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/adaptor-2022.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Heart"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cardiovascular"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Mitral valve"
+      ],
+      "specific_diseases": [
+        "Mitral insufficiency"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362268"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/adaptor-2022.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "比赛期间限挑战用途，不得转交第三方或用于其他发表/商业用途；赛后非商业开放是计划。CC BY-NC-SA 名称与比赛期间附加限制分别保留。",
+      "qualifications": [
+        "Competition-time restrictions and proposed later release kept separate; later release not verified here."
+      ],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC SA. Additional comments: By registering in the challenge, each team agrees (1) to use the data provided only in the scope of the challenge and (2) to neither pass it on to a third party nor to use it for any additional publication or for commercial use. After the challenge, the data will be made publicy available for non-commercial use.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.6362268"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362268"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "The data was acquired at University Hospital Heidelberg (in MIC training lab and operating rooms).",
+              "url": "https://doi.org/10.5281/zenodo.6362268",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/DeepImageGenerationModelChallengeinSurgery2022_03-16-2022_10-29-46.pdf",
+              "scope": "Acquisition answer in the edition-specific protocol. Partial task/source scope retained; proposed sources are not treated as confirmed final acquisitions.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nThe data was acquired at University Hospital Heidelberg (in MIC training lab and operating rooms).",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2022/adaptor-2022.json",
+              "source_field": "resource_characteristics_review.fields.post_challenge",
+              "value": "Planned public non-commercial release after challenge",
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.6362268",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R10/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html"
+                },
+                {
+                  "url": "https://adaptor2022.github.io/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/7ab81ca828ae821f.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/adaptor-2022.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

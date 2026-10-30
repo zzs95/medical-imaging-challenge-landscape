@@ -1,0 +1,736 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "topbrain-v2-2026",
+    "challenge_name": "TopBrain Segmentation Challenge Version 2",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CTA",
+        "MRA"
+      ],
+      "submodality": [
+        "Brain angiography"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Cerebrovascular system"
+      ],
+      "organs_or_structures": [
+        "Brain vessels"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Joint TA36 vessel segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "Semantic segmentation",
+          "input": [
+            "CTA or MRA"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "36-class vessel segmentation"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        }
+      ],
+      "evaluation_tracks": [
+        {
+          "track_id": "ta36",
+          "name": "Special TA36 track jointly organised with TopAneu",
+          "phases": [
+            "Validation-TA36-Seg",
+            "FinalTest-TA36-Seg"
+          ],
+          "label_count": 36,
+          "label_scope": "34 common CTA/MRA arterial labels plus two infraclinoid vessel classes; excludes ECA.",
+          "source_url": "https://topbrain2026.grand-challenge.org/",
+          "final_assessment_status": "confirmed",
+          "result_source": "https://topbrain2026.grand-challenge.org/evaluation/finaltest-ta36-seg/leaderboard/"
+        },
+        {
+          "track_id": "topbrainv2",
+          "name": "TopBrainV2 segmentation evaluation",
+          "phases": [
+            "Validation-TopBrainV2-Seg",
+            "FinalTest-TopBrainV2-Seg"
+          ],
+          "scope": "Broader V2 vascular programme; official homepage places vein/stenosis activities in October–December 2026. Detailed later tasks are not reconstructed here.",
+          "final_assessment_status": "pending",
+          "scheduled_opening": {
+            "phase": "FinalTest-TopBrainV2-Seg",
+            "status_as_of_review": "scheduled_not_yet_open",
+            "planned_opening_date": "2026-12-11",
+            "planned_opening_time_displayed": "23:00",
+            "timezone": null,
+            "source_url": "https://grand-challenge.org/challenges/?page=1&series=3",
+            "verified_on": "2026-10-22",
+            "qualification": "Platform-displayed opening time; timezone unverified. Opening date is not an assessment-completion date and does not guarantee completion by December 31."
+          },
+          "source_url": "https://topbrain2026.grand-challenge.org/"
+        }
+      ],
+      "track_relationship": {
+        "separate_phases_and_leaderboards": true,
+        "ta36_is_only_a_validation_stage_of_v2": false,
+        "combined_final_ranking_rule": null,
+        "independent_award_structure": null,
+        "basis": "Official homepage names a special TA36 track and lists separate phase/leaderboard entries. No combined-score rule established.",
+        "source_url": "https://topbrain2026.grand-challenge.org/",
+        "counting_note": "Retain a single TopBrain v2 2026 edition; do not add a new edition for each evaluation phase."
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "CTA or MRA",
+        "TopAneu 36-class gold-standard vessel labels"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "TA36": "36 common anatomical artery classes, including two infraclinoid vessel classes; excludes ECA classes.",
+        "note": "Do not copy the 2025 train/test counts into this edition."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Custom Swiss open-data terms. 列出开放使用、注明来源、商业用途须取得数据所有者许可；第二任务沿用同一条款。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Class-average DSC",
+            "Class-average clDice",
+            "Connected-component count error",
+            "Class-average HD95",
+            "Invalid-neighbor count error",
+            "Side-road vessel F1",
+            "Foreground contamination ratio",
+            "Foreground contamination source count",
+            "Undersegmentation ratio",
+            "Undersegmented-class count",
+            "Background contamination voxel count",
+            "Background contamination source count"
+          ],
+          "ranking": "Assessment lists twelve equally weighted metrics; exact final aggregation requires evaluator confirmation."
+        }
+      ],
+      "cross_task_rule": null,
+      "track_note": "Current assessment describes one segmentation track shared by CT/MR. TA36 is the special joint track with TopAneu; vein/stenosis activities are announced for October–December."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "vein_stenosis_activity_period": "2026-10/2026-12",
+      "topbrainv2_final_test": {
+        "phase": "FinalTest-TopBrainV2-Seg",
+        "status_as_of_review": "scheduled_not_yet_open",
+        "planned_opening_date": "2026-12-11",
+        "planned_opening_time_displayed": "23:00",
+        "timezone": null,
+        "source_url": "https://grand-challenge.org/challenges/?page=1&series=3",
+        "verified_on": "2026-10-22",
+        "qualification": "Platform-displayed opening time; timezone unverified. Opening date is not an assessment-completion date and does not guarantee completion by December 31."
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 166,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Validation-TA36-Seg",
+            "submission_count": 42
+          },
+          {
+            "official_phase_name": "FinalTest-TA36-Seg",
+            "submission_count": 16
+          },
+          {
+            "official_phase_name": "Validation-TopBrainV2-Seg",
+            "submission_count": 0
+          },
+          {
+            "official_phase_name": "FinalTest-TopBrainV2-Seg",
+            "submission_count": 0
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://topbrain2026.grand-challenge.org/",
+      "dataset": "https://zenodo.org/records/21972006",
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Homepage last updated September 20, 2026. TA36 labels and organizer-baseline Docker are separate releases; baseline source https://zenodo.org/records/21959166. Detailed vein/stenosis task definitions are not available on the reviewed pages.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date.",
+      "2026-10-22: TA36 is an official joint special track with TopAneu, not merely a validation phase of TopBrainV2. Actual TA36 final assessment remains confirmed. Full TopBrainV2 final evaluation is pending, with submissions scheduled to open 2026-12-11 at displayed 23:00 (timezone unverified). Do not classify this planned phase as an unpublished completed assessment.",
+      "2026-10-22: 已完成TA36与TopBrainV2分开；V2最终测试计划12月11日开放，精确结束日期及年底范围仍待核验。",
+      "2026-10-22: TA36已完成与V2年底计划分开；V2精确结束时间仍未核实，平台23:00时间不自行推断时区。",
+      "2026-10-22 最新人工分析裁定（替代旧年底范围待查要求）：TopBrain V2：按用户明确判定，依据挑战计划视为2026年完成并纳入2026范围；解除年底结束日期的人工待查项。该判断属于基于计划的人工分析裁定，不等于已取得V2最终结果。TA36既有实际评价证据保持不变。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-22",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://topbrain2026.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/2-0032154329fc.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topbrain2026.grand-challenge.org/topbrain2026/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/2-0a537dce988b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topbrain2026.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/2-89181e92492e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topbrain2026.grand-challenge.org/assessment/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/2-a7a6c39a2a17.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topbrain2026.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/2-overview.json"
+        },
+        {
+          "type": "official organizer/platform source",
+          "url": "https://topbrain2026.grand-challenge.org/",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/topbrain26_home_20261022.json",
+          "supports": [
+            "Special TA36 relationship, separate phases and October–December later activities"
+          ]
+        },
+        {
+          "type": "official organizer/platform source",
+          "url": "https://grand-challenge.org/challenges/?page=1&series=3",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/topbrain26_schedule_20261022.json",
+          "supports": [
+            "FinalTest-TopBrainV2-Seg opening December 11, 2026 at displayed 23:00"
+          ]
+        },
+        {
+          "type": "official organizer/platform source",
+          "url": "https://zenodo.org/records/21959166",
+          "retrieved_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/topbrain26_dockers_20261022.json",
+          "supports": [
+            "2025 winners versus 2026 TA36 organizer baseline; exclusion of cross-year result evidence"
+          ]
+        },
+        {
+          "type": "user-supplied documentary review",
+          "reviewed_on": "2026-10-22",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/topbrain26_user_review_20261022.txt",
+          "supports": [
+            "Phase-specific interpretation and cross-year exclusions"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://grand-challenge.org/challenges/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_5b548b1911f0_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "已完成TA36与TopBrainV2分开；V2最终测试计划12月11日开放，精确结束日期及年底范围仍待核验。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://grand-challenge.org/challenges/?page=1&submit=Apply+Filters",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_0562b2ea1f40_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "TA36已完成与V2年底计划分开；V2精确结束时间仍未核实，平台23:00时间不自行推断时区。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "TopBrainV2 final results await scheduled phase; recheck after opening if continuing the audit",
+        "Combined ranking/award procedure across TA36 and V2 not documented",
+        "Detailed later vein/stenosis task definitions, current V2 splits/license and case/rank aggregation remain unverified"
+      ],
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/topbrain-v2-2026.json",
+          "_collection/verification_20261003/literature_context/topbrain-v2-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "revision_history": [
+        {
+          "date": "2026-10-22",
+          "previous_schedule": {
+            "vein_stenosis_activity_period": "2026-10/2026-12"
+          },
+          "reason": "Official directory specifies future TopBrainV2 final opening date; retained TA36 final scores do not imply full programme completion."
+        }
+      ],
+      "field_evidence": {
+        "schedule.topbrainv2_final_test": {
+          "source_url": "https://grand-challenge.org/challenges/?page=1&series=3",
+          "reviewed_on": "2026-10-22",
+          "basis": "Explicit future submission opening, not inferred from an empty leaderboard."
+        },
+        "assessment_evidence": {
+          "source_urls": [
+            "https://topbrain2026.grand-challenge.org/evaluation/finaltest-ta36-seg/leaderboard/",
+            "https://grand-challenge.org/challenges/?page=1&series=3"
+          ],
+          "reviewed_on": "2026-10-22",
+          "basis": "Retained TA36 assessment plus scheduled V2 final phase; whole programme not completed."
+        }
+      },
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "已完成TA36与TopBrainV2分开；V2最终测试计划12月11日开放，精确结束日期及年底范围仍待核验。",
+          "previous_assessment": {
+            "value": "confirmed",
+            "event_state": "partially_completed",
+            "evidence_state": "documented_assessment_with_pending_phase",
+            "evidence_ids": [
+              "E1",
+              "E3",
+              "E4"
+            ],
+            "reason": "Retained September 2026 TA36 final-test participant scores establish executed competitive assessment. TopBrainV2 final submissions are scheduled to open December 11, 2026. The full challenge programme is not complete.",
+            "full_challenge_programme_completed": false
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2026/topbrain-v2-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "TA36已完成与V2年底计划分开；V2精确结束时间仍未核实，平台23:00时间不自行推断时区。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2026/topbrain-v2-2026.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "TopBrain V2：按用户明确判定，依据挑战计划视为2026年完成并纳入2026范围；解除年底结束日期的人工待查项。该判断属于基于计划的人工分析裁定，不等于已取得V2最终结果。TA36既有实际评价证据保持不变。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/topbrain_plan_decision_20261022_151955/MICCAI/2026/topbrain-v2-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-24",
+      "final_assessment_status": "confirmed",
+      "edition_level_actual_assessment": true,
+      "full_challenge_programme_completed": true,
+      "programme_status": "completed_for_analysis_by_user_plan_decision",
+      "basis": "Human confirmation of competition completion on 2026-10-24",
+      "evidence_source_url": "https://topbrain2026.grand-challenge.org/evaluation/finaltest-ta36-seg/leaderboard/",
+      "ta36_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/board_a2323d0df0a681.json",
+      "ta36_snapshot_date": "2026-10-21",
+      "topbrainv2_final_assessment_status": "accepted_completed_for_analysis_by_user_plan_decision",
+      "topbrainv2_final_phase": {
+        "phase": "FinalTest-TopBrainV2-Seg",
+        "status_as_of_review": "scheduled_not_yet_open",
+        "planned_opening_date": "2026-12-11",
+        "planned_opening_time_displayed": "23:00",
+        "timezone": null,
+        "source_url": "https://grand-challenge.org/challenges/?page=1&series=3",
+        "verified_on": "2026-10-22",
+        "qualification": "Platform-displayed opening time; timezone unverified. Opening date is not an assessment-completion date and does not guarantee completion by December 31."
+      },
+      "topbrainv2_quantitative_final_results_verified": false,
+      "qualification": "Year-end analytical treatment based on user decision, not retrospective proof of V2 completion as of October 22. No final scores or exact closing date inferred.",
+      "excluded_cross_year_evidence": [
+        {
+          "url": "https://zenodo.org/records/21959166",
+          "reason": "Organizer archive explicitly separates winning 2025 ARG/KDH/UZH containers from the 2026 TopAneu TA36 organizer baseline. Neither is evidence of completed 2026 TopBrainV2 final evaluation."
+        },
+        {
+          "url": "https://www.medrxiv.org/content/10.64898/2026.05.28.26354312v1",
+          "reason": "2026-published summary is associated with the prior TopBrain competition in the organizer archive; not used as 2026 V2 final-result evidence.",
+          "verification_scope": "Cross-year exclusion supported by organizer archive and user review; full manuscript not independently reread in this check."
+        }
+      ],
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "TopBrain V2：按用户明确判定，依据挑战计划视为2026年完成并纳入2026范围；解除年底结束日期的人工待查项。该判断属于基于计划的人工分析裁定，不等于已取得V2最终结果。TA36既有实际评价证据保持不变。",
+        "basis_type": "user_adjudication_based_on_challenge_plan",
+        "user_instruction": "TopBrain V2按照挑战计划可以视为26年完成。",
+        "propagation_status": "Canonical JSON, audit, current triage CSV/Excel, decisions and reports updated; manuscript and aggregate statistics not regenerated."
+      },
+      "remaining_questions": [],
+      "completion_adjudication": {
+        "decision_id": "topbrain_v2_2026_plan_based_completion",
+        "date": "2026-10-22",
+        "authorized_by": "user",
+        "instruction": "TopBrain V2按照挑战计划可以视为26年完成。",
+        "analysis_year": 2026,
+        "include_in_2026_scope": true,
+        "completion_for_analysis": "accepted_as_completed_in_2026",
+        "basis_type": "user_adjudication_based_on_challenge_plan",
+        "independently_verified_v2_final_completion": false,
+        "qualification": "Year-end analytical treatment based on user decision, not retrospective proof of V2 completion as of October 22. No final scores or exact closing date inferred."
+      },
+      "optional_documentary_limitations": [
+        "TopBrainV2 results pending future opening; not a current reporting failure.",
+        "Combined ranking and award rules not documented; do not infer from metric definitions."
+      ]
+    },
+    "current_completion_adjudication": {
+      "date": "2026-10-24",
+      "status": "completed",
+      "basis": "Human confirmation",
+      "statement": "User explicitly confirms that the 2026 competitions have been held; supersedes the earlier plan-based inclusion decision.",
+      "source": "User instruction in this conversation",
+      "public_final_scores_independently_verified": false
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "TopBrainV2官方页面提供2026训练数据的公开Zenodo21972006入口。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "TopBrainV2官方页面提供2026训练数据的公开Zenodo21972006入口。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/89181e92492e96f1.json",
+          "url": "https://topbrain2026.grand-challenge.org/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/topbrain-v2-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "Custom Swiss open-data terms"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "列出开放使用、注明来源、商业用途须取得数据所有者许可；第二任务沿用同一条款。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "Open use. Must provide the source. Use for commercial purposes requires permission of the data owner. (see https://opendata.swiss/en/terms-of-use)",
+          "source": {
+            "url": "https://zenodo.org/api/records/19707577/files/339-TopBrain_Segmentation_Challenge_for_Whole_Brain_Vessel_Anatomy_2026-04-22T16-37-16.pdf/content",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/4f845aaac3b27af8.json"
+          }
+        },
+        {
+          "scope": "Edition-specific data-use section 2",
+          "text": "Same as Task 1",
+          "source": {
+            "url": "https://zenodo.org/api/records/19707577/files/339-TopBrain_Segmentation_Challenge_for_Whole_Brain_Vessel_Anatomy_2026-04-22T16-37-16.pdf/content",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/4f845aaac3b27af8.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/19707577/files/339-TopBrain_Segmentation_Challenge_for_Whole_Brain_Vessel_Anatomy_2026-04-22T16-37-16.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/4f845aaac3b27af8.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://zenodo.org/api/records/21959166",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/bdf4f6bcceec5ce5.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/api/records/21972006",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/07f6d0fed2c42945.json",
+          "status": 200
+        },
+        {
+          "url": "https://grand-challenge.org/challenges/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/5b548b1911f01e33.json",
+          "status": 200
+        },
+        {
+          "url": "https://topbrain2026.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/89181e92492e96f1.json",
+          "status": 200
+        },
+        {
+          "url": "https://topbrain2026.grand-challenge.org/assessment/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/a7a6c39a2a173f9a.json",
+          "status": 200
+        },
+        {
+          "url": "https://topbrain2026.grand-challenge.org/topbrain2026/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/0a537dce988b0710.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/api/records/19707577/files/339-TopBrain_Segmentation_Challenge_for_Whole_Brain_Vessel_Anatomy_2026-04-22T16-37-16.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/4f845aaac3b27af8.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

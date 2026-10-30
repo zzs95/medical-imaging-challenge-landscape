@@ -1,0 +1,1154 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "autopet-v-2026",
+    "challenge_name": "autoPET V - Automated Lesion Segmentation in Whole-Body PET/CT",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "PET",
+        "CT"
+      ],
+      "submodality": [
+        "FDG PET/CT",
+        "PSMA PET/CT"
+      ],
+      "body_region": [
+        "Whole body"
+      ],
+      "organ_system": [
+        "Multisystem"
+      ],
+      "organs_or_structures": [
+        "Tumor lesions"
+      ],
+      "diseases": [
+        "Melanoma",
+        "Lymphoma",
+        "Lung cancer",
+        "Prostate cancer"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Interactive whole-body PET/CT lesion segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "Interactive segmentation",
+          "input": [
+            "PET",
+            "CT",
+            "Corrective scribbles"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Updated lesion mask at each interaction step"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 1611,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "Whole-body PET/CT",
+        "Tumor masks",
+        "Corrective scribbles"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "training_FDG_studies": 1014,
+        "training_PSMA_studies": 597,
+        "note": "Studies, not a sum of unique patients; final test size not verified."
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": false,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC 4.0 (official training-data rule)",
+      "access_after_challenge": null,
+      "access_scope": "training/development data; not a claim that hidden test data are public"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "AUC-Dice over interactions",
+            "AUC detection-matching metric (DMM)",
+            "Final DSC (descriptive)",
+            "Final DMM (descriptive)",
+            "FPV (descriptive)",
+            "FNV (descriptive)"
+          ],
+          "ranking": "Average AUC metrics over test cases, rank each metric, average ranks with equal 50% weights; evaluate simulated and expert interaction settings separately."
+        }
+      ],
+      "cross_task_rule": "One submitted method is evaluated under simulated and clinician-driven interaction regimes; both award categories are automatic."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": true,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "participant_preprints": [
+        {
+          "title": "Three-Phase Scribble-Adaptive Curriculum Learning for autoPETV Grand Challenge",
+          "authors": [
+            "Libo Zhang",
+            "Yue Ning"
+          ],
+          "arxiv_id": "2608.22096",
+          "first_posted": "2026-08-22",
+          "reviewed_version": "v2 (2026-09-27)",
+          "status": "public participant preprint",
+          "evaluation_scope": "five-fold cross-validation",
+          "reported_metrics": {
+            "AUC_Dice": 3.836,
+            "AUC_DMM": 3.869
+          },
+          "url": "https://arxiv.org/abs/2608.22096",
+          "evidence_id": "E6"
+        },
+        {
+          "title": "Anatomy-Aware Promptable Segmentation with Online Interactive Training for AUTOPET V",
+          "authors": [
+            "Pablo Lozano-Jimenez",
+            "Sergio Romero-Tapiador",
+            "Ruben Tolosana"
+          ],
+          "arxiv_id": "2608.28461",
+          "first_posted": "2026-08-28",
+          "reviewed_version": "v1",
+          "status": "public participant preprint",
+          "evaluation_scope": "four-fold cross-validation",
+          "reported_metrics": {},
+          "url": "https://arxiv.org/abs/2608.28461",
+          "evidence_id": "E7"
+        },
+        {
+          "title": "Pretrained, Curriculum-Tuned, and Ensembled: A Tracer-Aware Interactive Segmentation Pipeline for AutoPET V",
+          "authors": [
+            "Xinglong Liang",
+            "Chunyao Lu",
+            "Tianyu Zhang",
+            "Jiaju Huang",
+            "Tao Tan",
+            "Yunchao Yin",
+            "Lishan Cai"
+          ],
+          "arxiv_id": "2608.30844",
+          "first_posted": "2026-08-31",
+          "reviewed_version": "v1",
+          "status": "public participant preprint",
+          "evaluation_scope": "quantitative results/ablations/final-test results pending",
+          "reported_metrics": {},
+          "url": "https://arxiv.org/abs/2608.30844",
+          "evidence_id": "E8"
+        },
+        {
+          "title": "BS: Take the Hint — Interactive Multitracer PET/CT Lesion Segmentation with a Scribble-Conditioned ResEnc U-Net",
+          "authors": [
+            "Marven Sherif",
+            "Amgad Elmasry",
+            "Youssef Ghazal",
+            "Ayman Elghotni"
+          ],
+          "arxiv_id": "2609.01554",
+          "first_posted": "2026-09-01",
+          "reviewed_version": "v1",
+          "status": "public participant preprint",
+          "evaluation_scope": "five-fold validation",
+          "reported_metrics": {
+            "Dice_without_scribbles": 0.554,
+            "Dice_after_five_corrections": 0.751
+          },
+          "url": "https://arxiv.org/abs/2609.01554",
+          "evidence_id": "E9"
+        }
+      ],
+      "organizer_results_paper_status": "planned; publication not established in reviewed sources",
+      "publication_evidence_source": "https://autopet-v.grand-challenge.org/challenge-publication/",
+      "invitation_timeline_note": {
+        "status": "planned",
+        "description": "Organizer timeline includes November publication invitations; see retained source for exact wording.",
+        "source_url": "https://autopet-v.grand-challenge.org/timeline/"
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 267,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary Test Set",
+            "submission_count": 241
+          },
+          {
+            "official_phase_name": "Final Test Set",
+            "submission_count": 22
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://autopet-v.grand-challenge.org/",
+      "dataset": null,
+      "github": "https://github.com/lab-midas/autoPETV",
+      "challenge_paper": null
+    },
+    "notes": [
+      "2026 uses corrective scribbles targeting false positives/negatives. Do not copy the 2025 eleven-click protocol or 2025 longitudinal CT task. Dataset-page residual references to clicks conflict with the current scribble task.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date.",
+      "2026-10-22: 仍待补：第五届官方榜页仍称将在MICCAI公布；本地实验不等于第五届最终结果。",
+      "2026-10-22: 保留用户核查：平台completed标记与初步测试Dice 0.853649不是正式最终结果；最终成绩/获奖仍未核实。",
+      "2026-10-22: autoPET V 2026：官方第五届网页的动态最终榜单已独立核实，模拟交互与临床医生交互两类别均有最终排名；最终评价确认。参赛预印本的交叉验证数值与最终结果分开，组织者总结论文尚未核实发表。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-v.grand-challenge.org/evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-27c3dd64bb65.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-v.grand-challenge.org/datasets/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-294486f6b8ba.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-v.grand-challenge.org/autopet-v/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-42d0a79908b5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-v.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_access.is_public",
+            "data_access.public_download",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-6816ee3fb358.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-v.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-7e142d2c0038.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-v.grand-challenge.org/task/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-8587f10b6614.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-v.grand-challenge.org/",
+          "supports": [
+            "challenge context",
+            "dataset.center_type",
+            "dataset.multi_center"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-9b57d464d7ca.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-v.grand-challenge.org/past-challenges/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-a8d22b049e0e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-v.grand-challenge.org/challenge-publication/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-ba8564e571ec.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-v.grand-challenge.org/organization/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-d3456f38bc63.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-v.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-d8d1bb5aabb1.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://autopet-v.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-ff6167aedfd7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://autopet-v.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/4-overview.json"
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://autopet-v.grand-challenge.org/evaluation/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/autopet-v-2026.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://autopet-v.grand-challenge.org/leaderboard/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_609bf67da735_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "仍待补：第五届官方榜页仍称将在MICCAI公布；本地实验不等于第五届最终结果。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://grand-challenge.org/challenges/?page=1&submit=Apply+Filters&task_types=1",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_9a886c3bb7d5_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "保留用户核查：平台completed标记与初步测试Dice 0.853649不是正式最终结果；最终成绩/获奖仍未核实。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        },
+        {
+          "type": "official final leaderboard",
+          "url": "https://www.autopet.org/autopetv.html",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/autopetv_final_boards_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Official dynamically rendered autoPET V final category rankings directly recovered. Both simulated and clinician-driven interaction have final ranked teams."
+          ]
+        },
+        {
+          "type": "publication or timetable evidence",
+          "url": "https://autopet-v.grand-challenge.org/challenge-publication/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/autopetv_publication_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Organizer publication policy requires participant preprints and plans a joint post-challenge journal analysis; this is not an already published retrospective report."
+          ]
+        },
+        {
+          "type": "publication or timetable evidence",
+          "url": "https://arxiv.org/abs/2608.22096",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/autopetv_22096_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Participant preprint: five-fold cross-validation AUC-Dice 3.836, AUC-DMM 3.869, not final-test scores."
+          ]
+        },
+        {
+          "type": "publication or timetable evidence",
+          "url": "https://arxiv.org/abs/2608.28461",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/autopetv_28461_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Participant preprint: four-fold cross-validation and interactive-training experiments."
+          ]
+        },
+        {
+          "type": "publication or timetable evidence",
+          "url": "https://arxiv.org/html/2608.30844v1",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/autopetv_30844_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Participant preprint v1 leaves quantitative results, ablations and final-test scores pending."
+          ]
+        },
+        {
+          "type": "publication or timetable evidence",
+          "url": "https://arxiv.org/abs/2609.01554",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/autopetv_01554_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Participant preprint: five-fold validation Dice 0.554 before and 0.751 after five corrections; not final-test scores."
+          ]
+        },
+        {
+          "type": "publication or timetable evidence",
+          "url": "https://autopet-v.grand-challenge.org/timeline/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/autopetv_timeline_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Official timeline retained as a publication-plan source; no completion inferred from elapsed dates."
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset: final test size and number of scribble interactions not fully verified.",
+        "submission: resource limits and external-data policy require further verification."
+      ],
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://autopet-v.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/4-6816ee3fb358.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.is_public": {
+          "source_url": "https://autopet-v.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/4-6816ee3fb358.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.public_download": {
+          "source_url": "https://autopet-v.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/4-6816ee3fb358.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://autopet-v.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/4-6816ee3fb358.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "dataset.multi_center": {
+          "source_url": "https://autopet-v.grand-challenge.org/",
+          "local_snapshot": "_collection/sources/4-9b57d464d7ca.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition description explicitly identifies a harmonized multicenter test cohort."
+        },
+        "dataset.center_type": {
+          "source_url": "https://autopet-v.grand-challenge.org/",
+          "local_snapshot": "_collection/sources/4-9b57d464d7ca.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition description explicitly identifies a harmonized multicenter test cohort."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://autopet-v.grand-challenge.org/evaluation/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/autopet-v-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://autopet-v.grand-challenge.org/evaluation/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/autopet-v-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://autopet-v.grand-challenge.org/evaluation/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/autopet-v-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "last_updated": "2026-10-22",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_access.is_public",
+          "data_access.public_download",
+          "dataset.center_type",
+          "dataset.multi_center"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/autopet-v-2026.json",
+          "_collection/verification_20261003/literature_context/autopet-v-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "仍待补：第五届官方榜页仍称将在MICCAI公布；本地实验不等于第五届最终结果。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "undetermined",
+            "evidence_state": "searched_not_established",
+            "evidence_ids": [],
+            "reason": "Official page and final-test table inspected; final table has zero public rows. Previous autoPET I–IV retrospective results cannot confirm autoPET V."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2026/autopet-v-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "保留用户核查：平台completed标记与初步测试Dice 0.853649不是正式最终结果；最终成绩/获奖仍未核实。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2026/autopet-v-2026.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "autoPET V 2026：官方第五届网页的动态最终榜单已独立核实，模拟交互与临床医生交互两类别均有最终排名；最终评价确认。参赛预印本的交叉验证数值与最终结果分开，组织者总结论文尚未核实发表。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/autopetv_final_20261022_143054/MICCAI/2026/autopet-v-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "autoPET V 2026：官方第五届网页的动态最终榜单已独立核实，模拟交互与临床医生交互两类别均有最终排名；最终评价确认。参赛预印本的交叉验证数值与最终结果分开，组织者总结论文尚未核实发表。",
+        "source_urls": [
+          "https://www.autopet.org/autopetv.html",
+          "https://autopet-v.grand-challenge.org/challenge-publication/"
+        ],
+        "evidence_ids": [
+          "E4",
+          "E5",
+          "E6",
+          "E7",
+          "E8",
+          "E9",
+          "E10"
+        ],
+        "propagation_status": "Original/audit/current CSV/Excel/reports synchronized; manuscript, figures and aggregate release not regenerated."
+      },
+      "remaining_questions": [
+        "Nonblocking publication follow-up: organizer comprehensive journal report not yet verified as published. Final assessment is confirmed and no longer awaiting this report."
+      ],
+      "event_state": "completed",
+      "evidence_type": "official_final_leaderboard",
+      "basis": "autoPET V 2026：官方第五届网页的动态最终榜单已独立核实，模拟交互与临床医生交互两类别均有最终排名；最终评价确认。参赛预印本的交叉验证数值与最终结果分开，组织者总结论文尚未核实发表。",
+      "public_final_results_independently_verified": true,
+      "organizer_final_category_rankings_independently_verified": true,
+      "final_category_results": {
+        "simulated_interaction": {
+          "rows": [
+            [
+              "LiboZhang",
+              1,
+              1,
+              "0.68 (1.0)",
+              "0.65 (1.0)"
+            ],
+            [
+              "CYX_AI",
+              2,
+              4,
+              "0.62 (6.0)",
+              "0.60 (2.0)"
+            ],
+            [
+              "UAM_team",
+              3,
+              4.5,
+              "0.64 (4.0)",
+              "0.59 (5.0)"
+            ],
+            [
+              "FightTumor",
+              3,
+              4.5,
+              "0.65 (2.0)",
+              "0.59 (7.0)"
+            ],
+            [
+              "BIRTH_Lab",
+              5,
+              5.5,
+              "0.62 (7.0)",
+              "0.59 (4.0)"
+            ],
+            [
+              "Marchmello01",
+              5,
+              5.5,
+              "0.62 (5.0)",
+              "0.59 (6.0)"
+            ],
+            [
+              "shoheyhey53",
+              5,
+              5.5,
+              "0.65 (3.0)",
+              "0.57 (8.0)"
+            ],
+            [
+              "MEDAI",
+              8,
+              9,
+              "0.54 (15.0)",
+              "0.59 (3.0)"
+            ],
+            [
+              "Volyagers",
+              9,
+              10,
+              "0.61 (8.0)",
+              "0.55 (12.0)"
+            ],
+            [
+              "ybwang",
+              10,
+              11,
+              "0.60 (11.0)",
+              "0.56 (11.0)"
+            ],
+            [
+              "interseg",
+              10,
+              11,
+              "0.61 (9.0)",
+              "0.54 (13.0)"
+            ],
+            [
+              "BS",
+              12,
+              11.5,
+              "0.57 (14.0)",
+              "0.57 (9.0)"
+            ],
+            [
+              "sparames",
+              12,
+              11.5,
+              "0.57 (13.0)",
+              "0.56 (10.0)"
+            ],
+            [
+              "miscusi",
+              14,
+              12.5,
+              "0.60 (10.0)",
+              "0.50 (15.0)"
+            ],
+            [
+              "baseline",
+              15,
+              13,
+              "0.59 (12.0)",
+              "0.53 (14.0)"
+            ],
+            [
+              "rogerking",
+              15,
+              13,
+              "0.59 (12.0)",
+              "0.53 (14.0)"
+            ],
+            [
+              "25plqki",
+              15,
+              13,
+              "0.59 (12.0)",
+              "0.53 (14.0)"
+            ],
+            [
+              "NUCLEUS",
+              15,
+              13,
+              "0.59 (12.0)",
+              "0.53 (14.0)"
+            ],
+            [
+              "lailong",
+              15,
+              13,
+              "0.59 (12.0)",
+              "0.53 (14.0)"
+            ],
+            [
+              "Blue Jerboa",
+              20,
+              16,
+              "0.13 (16.0)",
+              "0.07 (16.0)"
+            ]
+          ],
+          "column_order": [
+            "team_key",
+            "rank",
+            "mean_position",
+            "Dice_AUC_display",
+            "F1_AUC_display"
+          ],
+          "qualification": "Retained exactly as embedded in official rendering script; includes baseline and tied/default rows. Not a verified unique/active-team count. Display headings are preserved; do not silently equate AUC normalization with cross-validation paper values."
+        },
+        "clinician_driven_interaction": {
+          "rows": [
+            [
+              "Marchmello01",
+              1,
+              8,
+              0.65,
+              0.64,
+              0.57,
+              0.62
+            ],
+            [
+              "LiboZhang",
+              1,
+              8,
+              0.64,
+              0.64,
+              0.6,
+              0.63
+            ],
+            [
+              "FightTumor",
+              3,
+              12,
+              0.67,
+              0.67,
+              0.55,
+              0.59
+            ],
+            [
+              "BIRTH_Lab",
+              4,
+              14,
+              0.64,
+              0.64,
+              0.56,
+              0.62
+            ],
+            [
+              "CYX_AI",
+              5,
+              18,
+              0.64,
+              0.63,
+              0.55,
+              0.61
+            ],
+            [
+              "sparames",
+              6,
+              30,
+              0.59,
+              0.59,
+              0.52,
+              0.58
+            ],
+            [
+              "ybwang",
+              7,
+              32,
+              0.58,
+              0.61,
+              0.54,
+              0.56
+            ],
+            [
+              "MEDAI",
+              7,
+              35,
+              0.59,
+              0.6,
+              0.51,
+              0.57
+            ],
+            [
+              "miscusi",
+              7,
+              35,
+              0.62,
+              0.57,
+              0.49,
+              0.58
+            ],
+            [
+              "UAM_team",
+              10,
+              35,
+              0.59,
+              0.63,
+              0.5,
+              0.53
+            ],
+            [
+              "interseg",
+              11,
+              43,
+              0.51,
+              0.58,
+              0.52,
+              0.54
+            ],
+            [
+              "BS",
+              12,
+              44,
+              0.58,
+              0.52,
+              0.49,
+              0.55
+            ],
+            [
+              "Volyagers",
+              13,
+              50,
+              0.54,
+              0.54,
+              0.49,
+              0.53
+            ],
+            [
+              "baseline",
+              14,
+              56,
+              0.44,
+              0.37,
+              0.38,
+              0.36
+            ],
+            [
+              "rogerking",
+              14,
+              56,
+              0.44,
+              0.37,
+              0.38,
+              0.36
+            ],
+            [
+              "25plqki",
+              14,
+              56,
+              0.44,
+              0.37,
+              0.38,
+              0.36
+            ],
+            [
+              "NUCLEUS",
+              14,
+              56,
+              0.44,
+              0.37,
+              0.38,
+              0.36
+            ],
+            [
+              "lailong",
+              14,
+              56,
+              0.44,
+              0.37,
+              0.38,
+              0.36
+            ],
+            [
+              "Blue Jerboa",
+              19,
+              60,
+              0.1,
+              0.05,
+              0.11,
+              0.11
+            ],
+            [
+              "shoheyhey53",
+              20,
+              "Exceeded Time Limit",
+              "-",
+              "-",
+              "-",
+              "-"
+            ]
+          ],
+          "column_order": [
+            "team_key",
+            "rank",
+            "mean_position",
+            "Dice_AUC_reader1",
+            "Dice_AUC_reader2",
+            "F1_AUC_reader1",
+            "F1_AUC_reader2"
+          ],
+          "qualification": "Retained exactly as embedded in official rendering script; includes baseline and tied/default rows. Not a verified unique/active-team count. Display headings are preserved; do not silently equate AUC normalization with cross-validation paper values."
+        }
+      },
+      "scope": "Interactive lesion segmentation in simulated and clinician-driven interaction regimes. These are not automatically tool-agent or foundation-model objectives."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 1611,
+              "unit": "studies",
+              "canonical_field": "dataset.population.train_count",
+              "scope": "1014 FDG and 597 PSMA studies; not a unique-patient count",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://autopet-v.grand-challenge.org/datasets/",
+              "supports": [
+                "dataset",
+                "labels_and_targets",
+                "data_access"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/4-294486f6b8ba.json"
+            },
+            {
+              "type": "official challenge page",
+              "url": "https://autopet-v.grand-challenge.org/",
+              "supports": [
+                "challenge context",
+                "dataset.center_type",
+                "dataset.multi_center"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/4-9b57d464d7ca.json"
+            }
+          ],
+          "source_urls": "https://autopet-v.grand-challenge.org/evaluation/; https://autopet-v.grand-challenge.org/datasets/; https://autopet-v.grand-challenge.org/autopet-v/; https://autopet-v.grand-challenge.org/rules/; https://autopet-v.grand-challenge.org/timeline/; https://autopet-v.grand-challenge.org/task/; https://autopet-v.grand-challenge.org/; https://autopet-v.grand-challenge.org/past-challenges/; https://autopet-v.grand-challenge.org/challenge-publication/; https://autopet-v.grand-challenge.org/organization/; https://autopet-v.grand-challenge.org/prizes/; https://autopet-v.grand-challenge.org/challenge/statistics/; https://autopet-v.grand-challenge.org/leaderboard/; https://grand-challenge.org/challenges/?page=1&submit=Apply+Filters&task_types=1; https://www.autopet.org/autopetv.html; https://arxiv.org/abs/2608.22096; https://arxiv.org/abs/2608.28461; https://arxiv.org/html/2608.30844v1; https://arxiv.org/abs/2609.01554; https://github.com/lab-midas/autoPETV"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

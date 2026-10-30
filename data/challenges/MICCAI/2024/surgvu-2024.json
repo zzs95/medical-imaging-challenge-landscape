@@ -1,0 +1,620 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "surgvu-2024",
+    "challenge_name": "Surgical Visual Understanding",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "EndoVis",
+        "relationship": "Challenge within MICCAI 2024 EndoVis",
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Surgical video"
+      ],
+      "submodality": [
+        "da Vinci endoscopic video"
+      ],
+      "body_region": [
+        "Surgical field"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Robotic surgical tools",
+        "Surgical steps"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Detection",
+      "secondary_task_families": [
+        "Classification"
+      ],
+      "tasks": [
+        {
+          "task_id": "tools",
+          "official_name": "Surgical tool classification and localization",
+          "task_family": "Detection",
+          "task_subtype": "weakly supervised bounding-box detection",
+          "input": [
+            "Endoscopic video"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Tool class and bounding boxes per frame"
+          ],
+          "granularity": "frame-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "steps",
+          "official_name": "Surgical step recognition",
+          "task_family": "Classification",
+          "task_subtype": "temporal step classification",
+          "input": [
+            "Endoscopic video"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Eight-class surgical step per frame"
+          ],
+          "granularity": "frame-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": true,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Noisy robot-installed-tool proxy labels; expert surgical task annotations.",
+      "tasks": [
+        {
+          "task_id": "tools",
+          "class_count": 12
+        },
+        {
+          "task_id": "steps",
+          "classes": [
+            "Suturing",
+            "Uterine Horn",
+            "Suspensory Ligaments",
+            "Rectal Artery/Vein",
+            "Skills Application",
+            "Range of Motion",
+            "Retraction and Collision Avoidance",
+            "Other"
+          ]
+        }
+      ],
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Surgical video"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "video_count": 280,
+          "session_count": 155,
+          "frame_count": {
+            "lower_bound_exclusive": 18000000,
+            "raw_text": ">18 million"
+          }
+        }
+      },
+      "training_fps": 60,
+      "evaluation_fps": 1,
+      "frame_dimensions": [
+        1280,
+        720
+      ]
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "agreement-and-approval-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "tools",
+          "metrics": [
+            "COCO mAP@[0.5:0.05:0.95]"
+          ],
+          "ranking": "Rank by COCO bounding-box mAP."
+        },
+        {
+          "task_id": "steps",
+          "metrics": [
+            "Mean weighted F1"
+          ],
+          "ranking": "Rank by weighted F1 across classes."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_data_release": "2024-05-06",
+      "final_submission_deadline": "2024-09-17",
+      "challenge_event": "2024-10-10"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 90,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Prelim Testing Phase - Category 2",
+            "submission_count": 160
+          },
+          {
+            "official_phase_name": "Prelim Testing Phase - Category 1",
+            "submission_count": 94
+          },
+          {
+            "official_phase_name": "Final Testing Phase - Category 1",
+            "submission_count": 32
+          },
+          {
+            "official_phase_name": "Final Testing Phase - Category 2",
+            "submission_count": 24
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://surgvu24.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Task page requires bounding boxes; key-point localization mentioned in introductory motivation is not added as an evaluated task."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-0da82ff61e33.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/results/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-20d47ec8cc13.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-3329ed5de8bc.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/getting-started/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-4d49df4b2fb7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/#news",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-6d9c28fce936.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/challenge-categories/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-7f928f88647a.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://surgvu24.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-80317654cc0c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/previous-challenges-resources/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-84deb5e9c556.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/organizing-committee/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-9ccb4afc0bcf.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/submission-instructions/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-b44b8a6932e4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/data-description/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-bace1402ac3a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/surgvu24/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-bdbb50fa8d78.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/#prizes",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-c11cdc31ed94.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/challenge-guidelines/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-dbacbd5f856b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/important-dates/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-de3fb4200d4b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/#surgvu-surgical-visual-understanding",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-e2ae18f4e09a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/evaluation-criteria/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-e5f7c02bc07f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/#overview",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-ebf93f67f9e6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/#this-challenge-has-ended-and-is-no-longer-accepting-applications-please-be-on-a-lookout-here-for-next-years-challenge-website",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-fbab02b198cd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu24.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/61-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify complete data agreement/license, test-set size, external-data restrictions and runtime limits."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.body_region",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/surgvu-2024.json",
+          "_collection/verification_20261003/literature_context/surgvu-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "record_relationships": {
+      "parent_challenge_id": "endovis-2024",
+      "analytical_unit": "child_challenge_edition"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Surgical field"
+          ],
+          "note": "2024官方数据说明明确达芬奇训练练习及步骤识别，按操作场景补录。"
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "sources": [
+        {
+          "url": "https://surgvu24.grand-challenge.org/data-description/",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/bace1402ac3a9e60.json"
+        },
+        {
+          "url": "https://surgvu24.grand-challenge.org/data-description/",
+          "local_source": "_collection/sources/61-bace1402ac3a.json"
+        }
+      ],
+      "note_zh": "2024官方数据说明明确达芬奇训练练习及步骤识别，按操作场景补录。",
+      "anatomical_scope": "Procedure context",
+      "remaining_detail": "",
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "当届数据说明为操作练习视频，识别器械和动作；无疾病目标。",
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "当届数据说明为操作练习视频，识别器械和动作；无疾病目标。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2024/surgvu-2024.json"
+        }
+      ]
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Surgical video"
+      ],
+      "harmonized_modalities": [
+        "Endoscopy"
+      ],
+      "video_format_documented": true,
+      "note": "Classified using documented acquisition context; video format retained.",
+      "sources": [
+        {
+          "url": "https://surgvu24.grand-challenge.org/data-description/",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/bace1402ac3a9e60.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

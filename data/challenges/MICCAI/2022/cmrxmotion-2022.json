@@ -1,0 +1,795 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cmrxmotion-2022",
+    "challenge_name": "CMRxMotion 2022",
+    "full_name": "Extreme Cardiac MRI Analysis Challenge under Respiratory Motion",
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2022-R14",
+      "official_programme_row_numbers": "3",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Digital Medical Research Center, School of Basic Medical Sciences, Fudan University, China",
+        "Human Phenome Institute, Fudan University, China",
+        "Department of Computing, Imperial College London, UK",
+        "School of Engineering, University of Edinburgh, UK",
+        "School of Engineering, University of Oxford, UK",
+        "Institute of Science and Technology for Brain-inspired Intelligence, Fudan University, China",
+        "Department of Radiology, Zhongshan Hospital Affiliated to Fudan University, China"
+      ],
+      "registered_authors": [
+        {
+          "name": "Shuo Wang",
+          "affiliation": "Digital Medical Research Center, School of Basic Medical Sciences, Fudan University, China"
+        },
+        {
+          "name": "Xinrong Chen",
+          "affiliation": "Digital Medical Research Center, School of Basic Medical Sciences, Fudan University, China"
+        },
+        {
+          "name": "Chengyan Wang",
+          "affiliation": "Human Phenome Institute, Fudan University, China"
+        },
+        {
+          "name": "Xutong Kuang",
+          "affiliation": "Human Phenome Institute, Fudan University, China"
+        },
+        {
+          "name": "Wenjia Bai",
+          "affiliation": "Department of Computing, Imperial College London, UK"
+        },
+        {
+          "name": "Chen Chen",
+          "affiliation": "Department of Computing, Imperial College London, UK"
+        },
+        {
+          "name": "Chengliang Dai",
+          "affiliation": "Department of Computing, Imperial College London, UK"
+        },
+        {
+          "name": "Chen Qin",
+          "affiliation": "School of Engineering, University of Edinburgh, UK"
+        },
+        {
+          "name": "Yuanhan Mo",
+          "affiliation": "School of Engineering, University of Oxford, UK"
+        },
+        {
+          "name": "He Wang",
+          "affiliation": "Institute of Science and Technology for Brain-inspired Intelligence, Fudan University, China"
+        },
+        {
+          "name": "Zhang Shi",
+          "affiliation": "Department of Radiology, Zhongshan Hospital Affiliated to Fudan University, China"
+        },
+        {
+          "name": "Chenchen Dai",
+          "affiliation": "Department of Radiology, Zhongshan Hospital Affiliated to Fudan University, China"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Heart"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Cardiac chambers",
+        "Myocardium"
+      ],
+      "diseases": [],
+      "clinical_context": "Respiratory-motion experiments on healthy volunteers; motion artifacts are not a cardiac disease."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "secondary_task_families": [
+        "Segmentation"
+      ],
+      "task_families": [
+        "Quality Assessment",
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Quality control of respiratory motion corrupted CMR images",
+          "task_family": "Quality Assessment",
+          "task_families": [
+            "Quality Assessment"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362257",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "official_name": "CMR image segmentation with realistic respiratory motion",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362257",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362257",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362257",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND. 当届提案明确列出 CC BY-NC-ND；未标明版本时不自行补写版本。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362257",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362257",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362257",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362257",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nWe use Average Precision (AP) implemented in sckit (https://scikit-\nlearn.org/stable/modules/generated/sklearn.metrics.average_precision_score.html).\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nAP is suggested to be more robust to AUC with regard to class imbalance. Although we expect the class\ndistribution to be balanced (around 1:1), we used AP considering that the non-diagnostic images occur much less\nfrequently in clinical practice. We will also compare other metrics (e.g., accuracy and AUC) and present them on\nthe leaderboard (not for the final ranking).",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nFor each case in the validation and test set, participating teams should submit a score in the interval [0-1], where 0\nis the lowest score indicating the non-diagnostic quality and 1 is the highest score indicating the diagnostic quality.\nScores above and below the interval [0-1] will be clamped. We calculate the AP between the submission and the\n\n\n\fExtreme Cardiac MRI Analysis Challenge under Respiratory Motion\n\nground-truth labels provided by the radiologist.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nParticipating teams are required to submit docker containers and process all the cases in the test set. For the cases\nwithout valid output, we will assign it to 1, i.e., the diagnostic quality in default.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nAP is a commonly used metric and validated in previous challenges."
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362257",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf",
+            "registered_task_index": 2
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362257",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf",
+            "registered_task_index": 2
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nWe use both Dice score and 95% Hausdorff distance.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe Dice score gives a measure of volume overlap, while the Hausdorff distance gives a performance measure in\ndistance.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nBoth the Dice scores and Hausorff distances are used to compute the rankings. For each case, we will compute the\n3 Dice scores and 3 95% Hausdorff distance measures between the ground truth and the submitted segmentations\nof LV, MYO and RV, respectively. We follow the ranking algorithms in BraTS challenges. For X number of cases\nincluded in the test set, each participant have X*6 rankings. The final ranking score is the average of all these\nrankings normalised by the number of teams. It is noted that images with non-diagnostic quality are excluded\nfrom the evaluation of segmentation performance.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\n\n\n\fExtreme Cardiac MRI Analysis Challenge under Respiratory Motion\n\nParticipating teams are required to submit docker containers and process all the cases in the test set. For the cases\nwithout valid output, we set the ranks for the corresponding metrics to the maximum.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThe ranking scheme alleviates the influence of a single case and provides more robust ranking results."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Synapse",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Docker container on the Synapse platform. Link to submission instructions is under construction.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362257",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "protocol_description": "Docker container on the Synapse platform. Link to submission instructions is under construction.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362257",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2022,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362257",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.6362257"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "http://cmr.miccai.cloud/",
+      "registration": "https://doi.org/10.5281/zenodo.6362257",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.6362257",
+          "resolved_record_id": 6362258,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "http://cmr.miccai.cloud/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/325a3c3200a7060e.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "CMRxMotion"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Quality Assessment",
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "更具体的当届Synapse参与说明明确先把数据协议发给组织者审核，故从简略协议所称注册访问细化为个人授权。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362257",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362257",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker container on the Synapse platform. Link to submission instructions is under construction. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is [...] to rank challenge results. Before the final submission on the test set, participants can test their docker containers on the validation dataset to avoid submission errors."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362257",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results [Apr 1, 2022] website opens for registration [May 1, 2022] release training cases (images and quality labels) [July 1, 2022] release validation cases (images), submission system opens [Aug 15, 2022] registration deadline, submission system opens for test set [Sept 5, 2022] docker submission deadline [Sept 22, 2022] release final results"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362257",
+          "excerpt": "cases (120 cases) in the extreme cardiac cohort are allocated to the training and validation cohort accessible by participating teams and the remaining 50% cases (120 cases) are allocated to the test set. The training set provides enough samples of CMR scans with different respiratory motion levels and their quality label. 20 cases (5 volunteers, 5*4) are allocated to the validation cohort to help participating teams validate their models and avoid code errors for the final submission. d) Mention further important characte"
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362257",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362257",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker container on the Synapse platform. Link to submission instructions is under construction. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is [...] to rank challenge results. Before the final submission on the test set, participants can test their docker containers on the validation dataset to avoid submission errors."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362257",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results [Apr 1, 2022] website opens for registration [May 1, 2022] release training cases (images and quality labels) [July 1, 2022] release validation cases (images), submission system opens [Aug 15, 2022] registration deadline, submission system opens for test set [Sept 5, 2022] docker submission deadline [Sept 22, 2022] release final results"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362257",
+          "excerpt": "cases (120 cases) in the extreme cardiac cohort are allocated to the training and validation cohort accessible by participating teams and the rest 50% cases (120 cases) are allocated to the test set. The training set provides enough samples of CMR scans with different respiratory motion levels and their ground-truth segmentation. 20 cases (5 volunteers, 5*4) are allocated to the validation cohort to help participating teams validate their models and avoid code errors for the final submission. d) Mention further import"
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/325a3c3200a7060e.json",
+          "url": "http://cmr.miccai.cloud/",
+          "excerpt": "022 Key dates 15-Apr website opens 31-May release training data 15-Jul paper submission 5 September docker submission 18-Sep workshop 15 October proceeding-ready Welcome to the Extreme Cardiac MRI Analysis Challenge under Respiratory Motion (CMRxMotion) . This a medical image analysis challenge officially registered in MICCAI 2022 and is part of the 13th Statistical Atlases and Computational Modelling of the Heart (STACOM) workshop. Papers The CMRxMotion challenge accepted 14 papers , all presented during STACOM 2022; the full recap is available in the challenge summary . Motivation The CMR imaging quality i [...] reme cardiac MRI analysis challenge under respiratory motion (CMRxMotion Challenge), to establish a public benchmark dataset to assess the effects of respiratory motion on CMR imaging quality and examine the robustness of automated segmentation models. CMR acquisition design We attacked the standard operating procedure (SOP) by re-designing the participant’s behaviours during acquisition. For 40 healthy [...] tlined below. All deadlines are in London time (UTC/GMT +0:00). Date Event 15-Apr Website opens for registration 31-May Release training cases (image, quality label, and segmentation) 01-Jul Release validation cases (image) 06-Jul Validation data evaluating system opens (leaderboard and submission) 15-Jul Deadline for STACOM placeholder paper submission 15-Aug Registration deadline; submission system opens for test set 05-Sep Docker submission deadline 18-Sep Release final results at STACOM workshop Workshop Schedule Session Team Attendance Start Time End Time Opening remarks CMRxMotion Organizers Online 13:30 13:45 Task 1 & 2 Oral 056 OpenGTN In person 13:45 14:00 Task 2 Oral 043 Tewodros In person 14:00 14:10 Task 1 Oral 045"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.txt",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/7838f44fed968293.json",
+          "url": "http://cmr.miccai.cloud/datasets/"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/b0acaeba9a5c42c8.json",
+          "url": "https://www.synapse.org/Synapse:syn32407769/wiki/618243",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn32407769/wiki/618243"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/cmrxmotion-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2022注册协议明确训练、验证数据供已注册队伍下载。",
+        "更具体的当届Synapse参与说明明确先把数据协议发给组织者审核，故从简略协议所称注册访问细化为个人授权。"
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 100,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 20,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "testing",
+              "value": 120,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "China"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Single-center"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Shared cases across quality and segmentation tasks;25/5/30 volunteers distinct from case counts.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.6362257",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html"
+        },
+        {
+          "url": "http://cmr.miccai.cloud/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/325a3c3200a7060e.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/cmrxmotion-2022.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Heart"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Cardiac chambers",
+        "Myocardium"
+      ],
+      "specific_diseases": [],
+      "review_note": "Respiratory-motion experiments on healthy volunteers; motion artifacts are not a cardiac disease.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362257"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362257"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/cmrxmotion-2022.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-ND"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-ND；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC ND.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.txt",
+            "url": ""
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/ExtremeCardiacMRIAnalysisChallengeunderRespiratoryMotion_03-16-2022_10-20-41.txt",
+          "url": ""
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2022/cmrxmotion-2022.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "China"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.6362257",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R14/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html"
+                },
+                {
+                  "url": "http://cmr.miccai.cloud/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/325a3c3200a7060e.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/cmrxmotion-2022.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Organizer/platform-side inference",
+          "final_stage": "Final scored test phase",
+          "evidence_scope": "Reported execution",
+          "coding_basis": "Edition-specific organizer paper / final submission guide, reread 2026-10-27",
+          "evidence_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/cmrxmotion.txt",
+          "evidence_excerpt": "Final offline evaluation executed submitted Docker algorithms in a standardized, isolated GPU environment.",
+          "rationale": "Final offline evaluation executed submitted Docker algorithms in a standardized, isolated GPU environment.",
+          "source_urls": "https://arxiv.org/abs/2507.19165",
+          "completed_execution_claim": "Reported execution",
+          "review_date": "2026-10-27",
+          "source_section": "5.2; 6"
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer paper or official resource",
+              "source_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/cmrxmotion.txt",
+              "url": "https://arxiv.org/abs/2507.19165",
+              "section": "Dataset availability",
+              "value": {
+                "resources": "Data and annotations remain publicly accessible after the challenge"
+              },
+              "scope": "Post-event availability statement in the 2025 report; not a current authenticated download test."
+            }
+          ],
+          "source_urls": "https://arxiv.org/abs/2507.19165",
+          "basis": "Post-event availability statement in the 2025 report; not a current authenticated download test."
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer paper or official resource",
+              "source_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/cmrxmotion.txt",
+              "url": "https://arxiv.org/abs/2507.19165",
+              "section": "6",
+              "value": {
+                "final_IQA_teams": 10,
+                "final_RCS_teams": 13
+              },
+              "scope": "Task-specific submitted-team counts; overlapping teams are not summed into 23 independent teams."
+            }
+          ],
+          "source_urls": "https://arxiv.org/abs/2507.19165",
+          "basis": "Task-specific submitted-team counts; overlapping teams are not summed into 23 independent teams."
+        }
+      },
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation with targeted organizer-paper follow-up"
+    },
+    "literature_followups": [
+      {
+        "review_date": "2026-10-27",
+        "audit_path": "latex_sourcev2/data/paper_followup_round2_20261027",
+        "fields": [
+          "final_inference",
+          "post_challenge_resources",
+          "reported_participation"
+        ]
+      }
+    ]
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

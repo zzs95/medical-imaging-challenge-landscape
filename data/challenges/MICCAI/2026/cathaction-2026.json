@@ -1,0 +1,697 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cathaction-2026",
+    "challenge_name": "Endovascular Intervention Tool Segmentation and Collision Detection",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "X-ray",
+        "Video"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Other"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Catheter",
+        "Guidewire",
+        "Vessel wall"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Detection"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "TASK 1: Catheter and Guidewire Segmentation in Endovascular Intervention",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "Endovascular intervention X-ray fluoroscopy"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Catheter and guidewire segmentation masks"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "TASK 2: Collision Detection in Endovascular Intervention",
+          "task_family": "Detection",
+          "task_subtype": null,
+          "input": [
+            "Endovascular intervention X-ray fluoroscopy"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Collision detections"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": true,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Catheter",
+        "Guidewire",
+        "Vessel wall"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "frame_count": {
+          "value": 600000,
+          "approximate": true,
+          "raw_text": "over 600,000 frames"
+        }
+      },
+      "modalities": [
+        "X-ray",
+        "Video"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "population_description": "Silicon phantoms, animals and human procedures"
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "preregistered_data_license": "CC BY-NC-SA",
+      "review_status": "Human-confirmed 2026-10-25",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Competition-time training/development data",
+      "access_by_scope": [
+        {
+          "scope": "Training/development",
+          "category": "Account registration",
+          "access_steps": [
+            "Register",
+            "Download development data"
+          ],
+          "manual_review": null
+        }
+      ]
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design.",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Jaccard Index (IoU)",
+            "Mean Intersection over Union (mIoU)",
+            "Pixel-wise Accuracy"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Average Precision (AP)",
+            "Mean Average Precision (mAP)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19707496"
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "execution_mode": "server-side container execution",
+      "required_artifacts": [
+        "Docker container",
+        "Methodology report"
+      ],
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://endomiccai.github.io/cathation/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "2026-10-22: 已确认：DHlab机构公告公布CATHACTION冠军；工具分割/碰撞检测分项名次未明确。",
+      "2026-10-22: 冠军结果保留，工具分割/碰撞检测及综合排名口径未进一步明确。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 17,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://endomiccai.github.io/cathation/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/dd6a9c75d0e53c60.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19707496",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19707496.txt",
+          "supports": [
+            "clinical_domain",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://digitalheartlab.com/news/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_web_review_42a359b7bb9f_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Indexed institutional news read through web search; direct HTTP returned empty text",
+          "source_accessible": true,
+          "supports": [
+            "已确认：DHlab机构公告公布CATHACTION冠军；工具分割/碰撞检测分项名次未明确。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://digitalheartlab.com/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_43425f3f4c37_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "冠军结果保留，工具分割/碰撞检测及综合排名口径未进一步明确。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/19707496",
+          "local_snapshot": "_collection/sources_other/protocol-19707496.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19707496",
+          "local_snapshot": "_collection/sources_other/protocol-19707496.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/19707496",
+          "local_snapshot": "_collection/sources_other/protocol-19707496.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/19707496",
+          "local_snapshot": "_collection/sources_other/protocol-19707496.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/19707496",
+          "local_snapshot": "_collection/sources_other/protocol-19707496.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/19707496",
+          "local_snapshot": "_collection/sources_other/protocol-19707496.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Submissions will be handled through an online evaluation platform (e.g., Grand Challenge or Synapse). Participants will submit their algorithms as Docker containers that generate predictions on the hidden test set. Each submission must include: - a Docker container implementing the inference pipeline - a result file in the predefined format - a short description of the method Detailed submission instructions, including container requirements, data input/output structure, and evaluation workflow,"
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19707496",
+          "local_snapshot": "_collection/sources_other/protocol-19707496.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Submissions will be handled through an online evaluation platform (e.g., Grand Challenge or Synapse). Participants will submit their algorithms as Docker containers that generate predictions on the hidden test set. Each submission must include: - a Docker container implementing the inference pipeline - a result file in the predefined format - a short description of the method Detailed submission instructions, including container requirements, data input/output structure, and evaluation workflow,"
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "submission.evidence_stage",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/cathaction-2026.json",
+          "_collection/verification_20261003/literature_context/cathaction-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "已确认：DHlab机构公告公布CATHACTION冠军；工具分割/碰撞检测分项名次未明确。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "undetermined",
+            "evidence_state": "searched_not_established",
+            "evidence_ids": [],
+            "reason": "Official page defines submission and prospective notification dates, but no named final result or retrospective completion statement found."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2026/cathaction-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "冠军结果保留，工具分割/碰撞检测及综合排名口径未进一步明确。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2026/cathaction-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "scope": "Edition award; tool segmentation and collision detection not separately assigned",
+      "basis": "已确认：DHlab机构公告公布CATHACTION冠军；工具分割/碰撞检测分项名次未明确。",
+      "evidence_type": "published_competition_result_or_award",
+      "evidence_sources": [
+        "https://digitalheartlab.com/news/"
+      ],
+      "organizer_full_rankings_independently_verified": false,
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "冠军结果保留，工具分割/碰撞检测及综合排名口径未进一步明确。",
+        "source_urls": [
+          "https://digitalheartlab.com/"
+        ],
+        "evidence_ids": [
+          "E3"
+        ],
+        "details": {},
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_round2_user_20261022.txt",
+        "propagation_status": "Original JSON, audit, current CSV/Excel/reports updated; manuscript/figures/frozen release not regenerated."
+      },
+      "remaining_questions": [
+        "Obtain separate tool-segmentation and collision-detection final scores if task-level completion is required."
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。",
+        "scope": "Competition-time training/development data",
+        "access_by_scope": [
+          {
+            "scope": "Training/development",
+            "category": "Account registration",
+            "access_steps": [
+              "Register",
+              "Download development data"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "Human confirmation supplied by user; no new independent web verification",
+        "confidence": "Human-confirmed",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-24 round 2: 申请表和许可已知，逐人审批未证实。",
+        "2026-10-25: 2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/cathaction-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round2_20261024/user_review_summary.json",
+          "section": "User-supplied round 2 findings, summarized; independent checks stated separately"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_registration_20261025/user_confirmation.json",
+          "review_date": "2026-10-25",
+          "section": "User-confirmed registration/download; scope limited to pending editions"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "2",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "表格和许可要求明确，但未明确填表后自动开放还是需组织者审批。"
+          }
+        },
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "申请表和许可已知，逐人审批未证实。",
+            "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+            "access_by_scope": [],
+            "evidence_basis": "User-supplied round 2 unresolved-issue summary; no new classification asserted",
+            "confidence": "Partial",
+            "source_urls": []
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid",
+      "task_families": [
+        "Detection",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_objective_basis": "Reverse screening of 288 previously unlabelled editions, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "task_families": [
+        "Detection",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_emerging_objectives": [],
+      "note_zh": "当届摘要明确鼓励跨域、联合学习及foundation-style representations，创新性说明提出可迁移的基础模型式表征研究；按设计目标补记FM。不是从参赛者网络推断，也不标为Agent。",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/19707496",
+          "local_source": "_collection/sources_other/protocol-19707496.txt",
+          "sha256": "009256a7d34524a2c8de2e984ebe3a321c885b09dffc39aa2e1be8588e2b7c6a"
+        }
+      ],
+      "scope": "Reverse screening of 288 previously unlabelled editions",
+      "previous_task_families": [
+        "Detection",
+        "Segmentation"
+      ],
+      "task_roles": {
+        "Detection": "Declared task output retained from existing coding",
+        "Segmentation": "Declared task output retained from existing coding"
+      },
+      "foundation_model_basis": "组织者声明的基础模型式表征目标",
+      "text_output_rule": "Narrative outputs, VQA, finite labels, prompts and tool actions are distinguished"
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Video",
+        "X-ray"
+      ],
+      "harmonized_modalities": [
+        "X-ray"
+      ],
+      "video_format_documented": true,
+      "note": "Video retained as data-format attribute, not an acquisition modality.",
+      "sources": [
+        {
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "local_source": "_collection/sources_other/eecea60a02acc8f1.json"
+        },
+        {
+          "url": "https://endomiccai.github.io/cathation/",
+          "local_source": "_collection/sources_other/dd6a9c75d0e53c60.json"
+        },
+        {
+          "url": "https://zenodo.org/records/19707496",
+          "local_source": "_collection/sources_other/protocol-19707496.txt"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "dataset",
+              "value": 600000,
+              "unit": "frames",
+              "canonical_field": "dataset.population.frame_count",
+              "scope": "Over 600,000 frames; phantom, animal and human procedures",
+              "approximate": false,
+              "lower_bound": true
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [],
+          "source_urls": "https://conferences.miccai.org/2026/en/challenges.asp; https://endomiccai.github.io/cathation/; https://zenodo.org/records/19707496; https://digitalheartlab.com/news/; https://digitalheartlab.com/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

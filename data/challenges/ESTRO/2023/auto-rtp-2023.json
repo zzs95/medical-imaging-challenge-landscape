@@ -1,0 +1,541 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "auto-rtp-2023",
+    "challenge_name": "Fully Automated Radiotherapy Treatment Planning Challenge",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "ESTRO Physics Workshop 2023",
+      "event_type": "workshop_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": "Turin",
+        "country": "Italy",
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "ESTRO Physics Workshop 2023: AI for the fully automated radiotherapy treatment chain",
+        "relationship": "Hosting workshop",
+        "proceedings": null,
+        "start_date": "2023-10-13",
+        "end_date": "2023-10-14"
+      },
+      "verification_note": {
+        "organization": "ESTRO",
+        "event": "ESTRO Physics Workshop 2023",
+        "track": "AI for the fully automated radiotherapy treatment chain",
+        "date": "2023-10-13/2023-10-14",
+        "location": "Turin, Italy",
+        "source_url": "https://www.estro.org/Workshops/2023-Physics-Workshop-Science-in-Development/AI-for-the-fully-automated-radiotherapy-treatment",
+        "verification_basis": "Official ESTRO page inspected in preceding conversation; original canonical record already identifies ESTRO Physics Workshop."
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "Radiotherapy simulation CT"
+      ],
+      "body_region": [
+        "Pelvis"
+      ],
+      "organ_system": [
+        "Genitourinary"
+      ],
+      "organs_or_structures": [
+        "Prostate",
+        "Pelvic lymph nodes",
+        "Organs-at-risk"
+      ],
+      "diseases": [
+        "Prostate cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Treatment Planning",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Fully automated radiotherapy treatment planning",
+          "task_family": "Treatment Planning",
+          "task_subtype": "contouring and plan generation",
+          "input": [
+            "Simulation CT",
+            "Machine-readable treatment intent/prescription"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "DICOM RTSTRUCT",
+            "DICOM RTPLAN",
+            "DICOM RTDOSE"
+          ],
+          "granularity": "patient-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": 10,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "training_data_provided": false
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Not applicable",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Data use restricted to challenge and related publications.",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; targeted access backfill",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "No organizer-provided training dataset; technical example cases excluded"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": false
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": null,
+        "submission_artifact": "DICOM contours, plan and dose"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Plan Quality Measure (PQM)"
+          ],
+          "ranking": "Mean PQM across cases; target objectives scaled to 50 and OAR constraints scaled to 50, total 100."
+        }
+      ],
+      "cross_task_rule": null,
+      "completion_evidence": {
+        "value": "confirmed",
+        "event_state": "completed",
+        "evidence_state": "documented",
+        "evidence_ids": [
+          "E1",
+          "E2"
+        ],
+        "reason": "Organizer main report confirms final-contest assessment; supplementary E adds observed clinical assessment scores. Supplementary B alone is a scoring proposal, not completion evidence."
+      },
+      "scoring_execution_environment": {
+        "value": null,
+        "evidence_state": "not established",
+        "note": "Do not infer organizer-local or Grand Challenge backend execution from participant treatment-planning software."
+      },
+      "protocol_evidence_note": "Supplementary B proposes normalized PQM out of 100 with equal target/OAR weight and mean across cases; actual execution must be interpreted with the main report. Supplementary E reports case-level clinical assessments."
+    },
+    "submission": {
+      "submission_type": "DICOM RTSTRUCT/RTPLAN/RTDOSE",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "mechanism": "prediction / result file upload"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 165,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Data format confirmation",
+            "submission_count": 134
+          },
+          {
+            "official_phase_name": "Web Contest",
+            "submission_count": 28
+          },
+          {
+            "official_phase_name": "Onsite event",
+            "submission_count": 8
+          },
+          {
+            "official_phase_name": "Planning only",
+            "submission_count": 10
+          },
+          {
+            "official_phase_name": "Always open",
+            "submission_count": 14
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ],
+      "supplementary_method_entries": {
+        "participant_method_entries": 13,
+        "unit": "numbered Participant Methods entries in Supplementary D",
+        "unique_people": null,
+        "unique_teams": null,
+        "note": "Not automatically 13 unique people, institutions, or final qualified teams; phase coverage and team deduplication not established."
+      }
+    },
+    "links": {
+      "grand_challenge": "https://auto-rtp.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Manual transfer between subsystems permitted with disclosure; no manual contour/plan editing or checking. Primary scoring uses submitted dose with consensus reference contours; no new dose calculation during scoring. Continuous/planning-only follow-up phases are distinct from original 2023 event."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://auto-rtp.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/98-0da8d6f7e122.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://auto-rtp.grand-challenge.org/competition-scoring/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/98-499ae722c449.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://auto-rtp.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/98-589e26018386.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://auto-rtp.grand-challenge.org/auto-rtp/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/98-917578f10805.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://auto-rtp.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/98-cccdd5a63a7d.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://auto-rtp.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/98-d6d429d34796.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://auto-rtp.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/98-e73a00f388cd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://auto-rtp.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/98-overview.json"
+        },
+        {
+          "type": "user-provided publisher supplementary document",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0167814024034911",
+          "local_file": "ESTRO/2023/1-s2.0-S0167814024034911-mmc1.docx",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/auto_rtp_supplement_mmc1_local_20261021.json",
+          "reviewed_on": "2026-10-21",
+          "supports": [
+            "submission.platform",
+            "submission.submission_type",
+            "evaluation.completion_evidence",
+            "participation_statistics.supplementary_method_entries"
+          ],
+          "locations": "Supplementary C; D Participants 8, 11, 13; E",
+          "limits": "Submission platform established; scoring execution environment not established. Thirteen numbered method descriptions do not establish unique people or final teams."
+        }
+      ],
+      "collection_status": "verified",
+      "unresolved_fields": [],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/auto-rtp-2023.json",
+          "_collection/verification_20261003/literature_context/auto-rtp-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-21",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-21",
+          "scope": "User requested writing preceding documentary findings into the original challenge JSON",
+          "fields_updated": [
+            "submission.platform",
+            "submission.mechanism",
+            "evaluation.completion_evidence",
+            "evaluation.scoring_execution_environment",
+            "event",
+            "participation_statistics.supplementary_method_entries"
+          ],
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/auto-rtp-2023.json",
+          "previous_sha256": "dd1968d39c92f685a1ca1168b06fe8e763f1da72d9aee50f26de70ad6e4f8447",
+          "previous_record_backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/canonical_followup_20261021_154948/ESTRO/2023/auto-rtp-2023.json",
+          "qualification": "Targeted documentary review; pending conference relationships remain unverified. No independent human double coding asserted. Aggregate outputs not rebuilt."
+        }
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Not applicable",
+        "state": "Not applicable",
+        "rationale": "官方明确不提供训练数据；示例病例用于输入输出及提交检查，不将其视为训练集。训练数据准入记为不适用，现有数据／模型流向编码保持不变。",
+        "scope": "No organizer-provided training dataset; technical example cases excluded",
+        "evidence_basis": "Primary protocol / dataset metadata checked on 2026-10-24; no medical images downloaded",
+        "source_urls": [
+          "https://auto-rtp.grand-challenge.org/"
+        ]
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "赛事提供开发示例及测试CT；参赛者自行运行规划流程并上传放疗计划结果。"
+      },
+      "decision_history": [
+        "赛事提供开发示例及测试CT；参赛者自行运行规划流程并上传放疗计划结果。",
+        "2026-10-24 access backfill: 官方明确不提供训练数据；示例病例用于输入输出及提交检查，不将其视为训练集。训练数据准入记为不适用，现有数据／模型流向编码保持不变。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/98-0da8d6f7e122.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/auto_rtp_supplement_mmc1_local_20261021.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/auto-rtp-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://auto-rtp.grand-challenge.org/",
+          "local_source": "_collection/access_backfill_20261024/sources/589e260183865196.json",
+          "review_date": "2026-10-24",
+          "section": "Development-data access; edition and phase scope retained"
+        },
+        {
+          "local_source": "_collection/access_backfill_20261024/user_evidence.txt",
+          "url": "",
+          "section": "User-supplied follow-up; classification checked against the linked primary sources"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Not applicable",
+      "data_model_flow": "data-to-model"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

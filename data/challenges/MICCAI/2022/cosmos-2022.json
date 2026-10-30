@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cosmos-2022",
+    "challenge_name": "Carotid Vessel Wall Segmentation and Atherosclerosis Diagnosis",
+    "full_name": "CarOtid vessel wall SegMentation and atherosclerOsis diagnosiS (COSMOS 2022)",
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2022-09-18",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      },
+      "additional_affiliations": [
+        "SMRA 2022"
+      ]
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": [
+        "Black-blood vessel wall MRI",
+        "3D VISTA"
+      ],
+      "body_region": [
+        "Head and Neck"
+      ],
+      "organ_system": [
+        "Cardiovascular"
+      ],
+      "organs_or_structures": [
+        "Carotid vessel wall",
+        "Carotid lumen"
+      ],
+      "diseases": [
+        "Atherosclerosis"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Classification"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Carotid vessel wall segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "contour segmentation",
+          "input": [
+            "3D VISTA MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Lumen and outer-wall contours"
+          ],
+          "granularity": "structure-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Atherosclerotic lesion diagnosis",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "3D VISTA MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Lesion diagnosis"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Homepage initially restricts data to the challenge; later announcement allows scientific publications for final submitters citing the challenge.",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": false,
+        "submission_artifact": "Prediction file"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "prediction file",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "submission_artifact": "Prediction file",
+      "execution_mode": "Participant-run",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Scored submission artifact; additional reproducibility/publication materials recorded separately.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "existing_structured_fields_and_audit",
+        "summary": "已有testing.submission_artifact明确预测文件。",
+        "evidence_ids": [
+          "E2"
+        ],
+        "source_urls": [],
+        "user_material": null,
+        "directly_retrieved_protocol_snapshots": [],
+        "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced."
+      }
+    },
+    "schedule": {
+      "training_data_release": "2022-04-25",
+      "test_data_release": "2022-07-16",
+      "final_submission_deadline": "2022-07-31"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 650,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Validation",
+            "submission_count": 341
+          },
+          {
+            "official_phase_name": "Final Evaluation",
+            "submission_count": 112
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://vessel-wall-segmentation-2022.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "The dedicated timeline retains July 22; the dated July 16/27 homepage announcements extend the final deadline to July 31. Secondary SMRA presentation also documented. The accessible overview does not establish separate leaderboard structure for diagnosis.",
+      "2026-10-22 提交方式字段同步：已有testing.submission_artifact明确预测文件。"
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://vessel-wall-segmentation-2022.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/113-0493484d2b32.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://vessel-wall-segmentation-2022.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/113-1eda52554edd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://vessel-wall-segmentation-2022.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/113-overview.json"
+        },
+        {
+          "type": "existing_structured_fields_and_audit",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/MICCAI/2022/cosmos-2022.json",
+          "source_urls": [],
+          "supports": [
+            "已有testing.submission_artifact明确预测文件。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset, evaluation and submission pages require access; confirm official task decomposition and metrics"
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/cosmos-2022.json",
+          "_collection/verification_20261003/literature_context/cosmos-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "existing_structured_fields_and_audit",
+          "summary": "已有testing.submission_artifact明确预测文件。",
+          "evidence_ids": [
+            "E2"
+          ],
+          "source_urls": [],
+          "user_material": null,
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/MICCAI/2022/cosmos-2022.json"
+        }
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "当届主页要求注册队伍并加入比赛后取得数据页下载链接；训练和测试图像均发布，提交预测。"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "当届主页要求注册队伍并加入比赛后取得数据页下载链接；训练和测试图像均发布，提交预测。"
+      },
+      "decision_history": [
+        "当届主页要求注册队伍并加入比赛后取得数据页下载链接；训练和测试图像均发布，提交预测。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/113-1eda52554edd.json",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/sources/113-overview.json",
+          "url": "https://vessel-wall-segmentation-2022.grand-challenge.org/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/cosmos-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "data-to-model"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

@@ -1,0 +1,657 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "crossmoda-2023",
+    "challenge_name": "crossMoDa 2023",
+    "full_name": "Cross-Modality Domain Adaptation for Medical Image Segmentation",
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2023-R12",
+      "official_programme_row_numbers": "8",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "King's College London, School of Biomedical Engineering & Imaging Sciences, London, UK",
+        "Harvard Medical School, Brigham and Women's Hospital, Boston, USA",
+        "King's College Hospital, Department of Neurosurgery, & King's College London, School of Biomedical Engineering & Imaging Sciences, London, UK",
+        "Elisabeth-TweeSteden Hospital, Tilburg, Netherlands",
+        "NVIDIA",
+        "University of Pennsylvania, Center for Biomedical Image Computing and Analytics, Philadelphia, USA"
+      ],
+      "registered_authors": [
+        {
+          "name": "Navodini Wijethilake",
+          "affiliation": "King's College London, School of Biomedical Engineering & Imaging Sciences, London, UK"
+        },
+        {
+          "name": "Reuben Dorent",
+          "affiliation": "Harvard Medical School, Brigham and Women's Hospital, Boston, USA"
+        },
+        {
+          "name": "Marina Ivory",
+          "affiliation": "King's College London, School of Biomedical Engineering & Imaging Sciences, London, UK"
+        },
+        {
+          "name": "Aaron Kujawa",
+          "affiliation": "King's College London, School of Biomedical Engineering & Imaging Sciences, London, UK"
+        },
+        {
+          "name": "Jonathan Shapey",
+          "affiliation": "King's College Hospital, Department of Neurosurgery, & King's College London, School of Biomedical Engineering & Imaging Sciences, London, UK"
+        },
+        {
+          "name": "Stefan Cornelissen",
+          "affiliation": "Elisabeth-TweeSteden Hospital, Tilburg, Netherlands"
+        },
+        {
+          "name": "Patrick Langenhuizen",
+          "affiliation": "Elisabeth-TweeSteden Hospital, Tilburg, Netherlands"
+        },
+        {
+          "name": "Samuel Joutard",
+          "affiliation": "King's College London, School of Biomedical Engineering & Imaging Sciences, London, UK"
+        },
+        {
+          "name": "Nicola Rieke",
+          "affiliation": "NVIDIA"
+        },
+        {
+          "name": "Spyridon Bakas",
+          "affiliation": "University of Pennsylvania, Center for Biomedical Image Computing and Analytics, Philadelphia, USA"
+        },
+        {
+          "name": "Tom Vercauteren",
+          "affiliation": "King's College London, School of Biomedical Engineering & Imaging Sciences, London, UK"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Vestibular schwannoma",
+        "Cochlea"
+      ],
+      "diseases": [
+        "Vestibular schwannoma"
+      ],
+      "clinical_context": "Benign vestibular tumor; same Other family as crossMoDa2022, not relabelled as cancer."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "crossMoDa",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7842454",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/Cross-ModalityDomainAdaptationforMedicalImageSegmentation_04-18-2023_04-48-50.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7842454",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/Cross-ModalityDomainAdaptationforMedicalImageSegmentation_04-18-2023_04-48-50.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7842454",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/Cross-ModalityDomainAdaptationforMedicalImageSegmentation_04-18-2023_04-48-50.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA 4.0. 当届明确 CC BY-NC-SA 4.0。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7842454",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/Cross-ModalityDomainAdaptationforMedicalImageSegmentation_04-18-2023_04-48-50.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7842454",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/Cross-ModalityDomainAdaptationforMedicalImageSegmentation_04-18-2023_04-48-50.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Grand Challenge / Synapse (registered alternatives)",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7842454",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/Cross-ModalityDomainAdaptationforMedicalImageSegmentation_04-18-2023_04-48-50.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7842454",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/Cross-ModalityDomainAdaptationforMedicalImageSegmentation_04-18-2023_04-48-50.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nDice Similarity Coefficient (DSC)\nAverage symmetric surface distance (ASSD)\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nAs in previous CrossMoDA editions, The metrics (DSC, ASSD) were chosen because of their simplicity, their\npopularity, their rank stability and their ability to assess the accuracy of the predictions [10]. Moreover, these two\nmetrics associated with the proposed ranking scheme have been shown to lead to excellent ranking stability on\nthis segmentation task [22].",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\n- We will apply the ranking methods described in the BraTS challenge. Participating teams are ranked for each\ntesting subjects, for each evaluated region (i.e., intra- and extra-meatal VS components and cochlea), and for each\nmeasure (i.e., DSC , ASSD, ASSD for the intra-/extra-meatal boundary).\n- The final ranking score for each team is then calculated by firstly averaging across all these individual rankings for\neach patient (i.e., Cumulative Rank), and then\naveraging these cumulative ranks across all patients for each participating team.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\n- All the predictions for the test set will be locally performed using the teams' docker containers. No missing results\nis thus expected on the test set.\n- Concerning the validation set, all the predictions must be present in the submission zip file. Incomplete\nsubmissions won't be evaluated and counted as a validation submission.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThis ranking scheme is standard and has been adopted in other challenge with satisfactory results, such as BraTS\n[11] and ISLES [12]."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Prediction files (validation); Docker container (final)",
+      "platform": "Grand Challenge / Synapse (registered alternatives)",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "The validation and test submission processes are different: - Validation leaderboard: the participating teams are required to submit their predictions as a single compressed zip file via the grand-challenge.org interface. The tree directory structure will be described once the challenge is online. - Test leaderboard: the participating teams are required to submit a short paper describing their method and a Docker container. Instructions will be given based on the previous edition example: https://github.com/CrossMoDA/docker_submission This choice is a trade-off between reducing the participant workload and limiting the risk of cheating for the final ranking.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7842454",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/Cross-ModalityDomainAdaptationforMedicalImageSegmentation_04-18-2023_04-48-50.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2023,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7842454",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/Cross-ModalityDomainAdaptationforMedicalImageSegmentation_04-18-2023_04-48-50.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.7842454"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://crossmoda-challenge.ml/",
+      "registration": "https://doi.org/10.5281/zenodo.7842454",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2023/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.7842454",
+          "resolved_record_id": 7842455,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/Cross-ModalityDomainAdaptationforMedicalImageSegmentation_04-18-2023_04-48-50.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/Cross-ModalityDomainAdaptationforMedicalImageSegmentation_04-18-2023_04-48-50.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://crossmoda-challenge.ml/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/d499f3887808b216.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "crossMoDa"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "CrossMoDA23注册后另填数据访问申请，收到授予训练访问的确认邮件。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7842454",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7842454",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. The validation and test submission processes are different: - Validation leaderboard: the participating teams are required to submit the [...] erboard: the participating teams are required to submit a short paper describing their method and a Docker container. Instructions will be given based on the previous edition example: https://github.com/CrossMoDA/docker_submission This choice is a trade-off between reducing the participant workload and limiting the risk of cheating for the final ranking. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow [...] llowed. We plan to reproduce the scheme used last year. Specifically, the participants will have to containerize their proposed method and submit the predictions on the validation set using this Docker. To test the quality of the predictions performed on the local challenge machine, predictions on the validation set will be computed and compared with the ones obtained using participants' machines. Cross-Modality Domain Adaptation for Medical Image Segmentation"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7842454",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Registration period: April 2023 Release date of the training set: April 2023 Release date of the validation set: May 2023 Start of the evaluation phase: July 2023 End of the evaluation phase: mid July 2023 (short description of the proposed technique, results on the validation set, technique for choosing the hyper-parameters)"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7842454",
+          "excerpt": "sub-regions (intra-/extra-meatal regions) and the cochlea. Note that participating teams won't have access to the target validation segmentations. - A target test case represents a T2 scan with manual segmentation of the tumour (vestibular schwannoma) including the sub-regions (intra-/extra-meatal regions) and the cochlea. Note that participating teams won't have access to the target test cases. b) State the total number of training, validation and test cases. - Source training scans o 258 ceT1 scans (London SC-GK: 105, UK MC-RC: 48, Tilburg SC-GK: 105) - Target training scans o 315 T2 scans (London SC-GK: 105, UK MC-RC: 105, Tilburg SC-GK: 105) - Target validatio [...] was chosen. 242 patient cases (single scan for each patient case) from the London SC-GK dataset are publicly available on The Cancer Imaging Archive (TCIA). To ensure that the test set be split in two sets: training (85%) and validation (15%). 282 scans from 151 patients from the UK MC-RC are included for the challenge. Due to the low availability of Contrast enhanced T1 in the UK MC-RC dataset, only 48 [...]  class distribution) and justify the choice. The training and validation data from London SC-GK are publicly available on TCIA (https://doi.org/10.7937/TCIA.9YTJ-5Q73). The training and validation data from Tilburg SCGK are publicly available on https://doi.org/10.5281/zenodo.6504722 with the London SCGK data. This especially means that the VS segmentations of the training and validation T2 scans could be found somewhere else. To minimise the chance that the participant teams cheat by using these labels: - The participant te [...] rameters. - The top 3 ranked teams will be required to submit their training and testing codes in a docker container for verification after the challenge submission deadline in order to ensure that the challenge rules have been respected. Note that: - The test data from London SC-GK and UK MC-RC won't be available on TCIA and will remain private. - Annotations for the T2 data from Tilburg will remain private. Cro"
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/d499f3887808b216.json",
+          "url": "https://crossmoda-challenge.ml/",
+          "excerpt": " been proposed, most of these techniques have been validated either on private datasets or on small publicly available datasets. Moreover, these datasets mostly address single-class problems. To tackle these limitations, the crossMoDA challenge introduced the first large and multi-class dataset for unsupervised cross-modality Domain Adaptation. Compared to the previous crossMoDA instance, which made use [...]  classical single-atlas based tools (e.g., SPM) Examples of cases that are not allowed: Multi-atlas registration based approaches in the target domain No additional annotations are allowed. Models can be adapted (trained) on the target domain (using the provided target training set) in an unsupervised way, i.e. without labels. The participant teams will be required to release their training and testing code a [...]  be signed. The top 3 ranked teams will be required to submit their training and testing codes in a docker container for verification after the challenge submission deadline in order to ensure that the challenge rules have been respected. Evaluation Classical semantic segmentation metrics, in this case, the Dice Score (DSC) and the Average Symmetric Surface Distance (ASSD), will be used to assess different aspect [...] Email Message Do not fill this field unless you are a bot: Send rdorent@bwh.harvard.edu Cite × Copy Download"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/bce8035a618fe144.json",
+          "url": "https://www.synapse.org/Synapse:syn51236108/wiki/621735",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn51236108/wiki/621735"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/c8250acafcb5a37e.json",
+          "url": "https://www.synapse.org/Synapse:syn51236108/wiki/621732",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn51236108/wiki/621732"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/crossmoda-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "CrossMoDA23注册后另填数据访问申请，收到授予训练访问的确认邮件。"
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 258,
+              "unit": "scans",
+              "scope": "Contrast-enhanced T1",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 315,
+              "unit": "scans",
+              "scope": "T2",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 96,
+              "unit": "scans",
+              "scope": "T2",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 371,
+              "unit": "scans",
+              "scope": "T2",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "United Kingdom",
+              "Netherlands"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "London/Tilburg centers and UK multicenter cohort; longitudinal scans not equivalent to patients.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.7842454",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html"
+        },
+        {
+          "url": "https://crossmoda-challenge.ml/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/d499f3887808b216.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/crossmoda-2023.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Vestibular schwannoma",
+        "Cochlea"
+      ],
+      "specific_diseases": [
+        "Vestibular schwannoma"
+      ],
+      "review_note": "Benign vestibular tumor; same Other family as crossMoDa2022, not relabelled as cancer.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7842454"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/crossmoda-2023.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA 4.0"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届明确 CC BY-NC-SA 4.0。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC SA. Additional comments: CC BY-NC-SA 4.0",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.7842454"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7842454"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2023/crossmoda-2023.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "United Kingdom",
+                  "Netherlands"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.7842454",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R12/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html"
+                },
+                {
+                  "url": "https://crossmoda-challenge.ml/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/d499f3887808b216.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/crossmoda-2023.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

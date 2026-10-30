@@ -1,0 +1,691 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "fmc-uia-2026",
+    "challenge_name": "Foundation Model Challenge for Ultrasound Image Analysis",
+    "full_name": "Foundation Model Challenge for Ultrasound Image Analysis",
+    "year": 2026,
+    "event": {
+      "conference": "ISBI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2026-04-11",
+      "location": {
+        "city": "London",
+        "country": "United Kingdom",
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Ultrasound"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain",
+        "Heart",
+        "Abdomen",
+        "Pelvis",
+        "Head and Neck",
+        "Spine",
+        "Extremities",
+        "Breast"
+      ],
+      "organ_system": null,
+      "organs_or_structures": null,
+      "diseases": [
+        "Tumor malignancy assessment; organ-specific labels incomplete"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": null,
+      "organ_system_coding_scope": null
+    },
+    "task_profile": {
+      "primary_task_family": null,
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Ultrasound segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "ultrasound images"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "segmentation masks"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Ultrasound classification",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "ultrasound images"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "class labels"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Ultrasound detection",
+          "task_family": "Detection",
+          "task_subtype": "object detection",
+          "input": [
+            "ultrasound images"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "detected objects"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task4",
+          "official_name": "Ultrasound keypoint regression",
+          "task_family": "Localization",
+          "task_subtype": "Keypoint localization",
+          "input": [
+            "ultrasound images"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Landmark coordinates (JSON)"
+          ],
+          "granularity": "point-level",
+          "clinical_goal": null
+        }
+      ],
+      "related_task_families": [
+        "Classification",
+        "Detection",
+        "Localization",
+        "Segmentation"
+      ],
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Localization",
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "Detection": "Declared task output",
+        "Localization": "Declared task output",
+        "Segmentation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": true,
+      "classification": true,
+      "localization": true,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "image_count": {
+          "value": 50000,
+          "approximate": true,
+          "relation": "greater_than",
+          "raw_text": "over 50,000 annotated ultrasound images"
+        }
+      },
+      "modalities": [
+        "Ultrasound"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "access_scope": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Not established",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": true,
+        "submission_artifact": "Docker image reference or TAR download link"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Codabench (validation); organizer-run final evaluation",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task3",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task4",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "submission_artifact": "Docker image reference or TAR download link",
+      "execution_mode": "Organizer-run",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Final-test scored artifact; validation is separately recorded.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "user_supplied_review",
+        "summary": "验证上传predictions.zip；最终交Docker Hub地址或Docker TAR链接，由组织者运行。",
+        "evidence_ids": [
+          "E2",
+          "E3"
+        ],
+        "source_urls": [
+          "https://github.com/lijiake2408/Foundation-Model-Challenge-for-Ultrasound-Image-Analysis"
+        ],
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+        "directly_retrieved_protocol_snapshots": [
+          "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission32_fmc_readme_20261022.json"
+        ],
+        "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced."
+      },
+      "validation_submission_type": "prediction file",
+      "validation_submission_artifact": "predictions.zip: classification/detection/regression JSON and Segmentation folder",
+      "reviewed_phase_submissions": [
+        {
+          "phase": "validation",
+          "submission_type": "prediction file",
+          "artifact": "predictions.zip: classification/detection/regression JSON and Segmentation folder",
+          "inference_execution": "Participant-run",
+          "scoring_service": "Codabench"
+        },
+        {
+          "phase": "final_test",
+          "submission_type": "Docker container",
+          "artifact": "Docker image reference or TAR download link",
+          "inference_execution": "Organizer-run"
+        }
+      ],
+      "editorial_phase_source_review": {
+        "reviewed_on": "2026-10-22",
+        "phases": [
+          {
+            "phase": "validation",
+            "artifact": "predictions.zip: segmentation images and classification/detection/regression JSON",
+            "delivery": "Codabench",
+            "source_url": "https://github.com/lijiake2408/Foundation-Model-Challenge-for-Ultrasound-Image-Analysis",
+            "source_section": "Step 5"
+          },
+          {
+            "phase": "final test",
+            "artifact": "Docker image",
+            "delivery": "Docker Hub image reference or cloud link to exported image, supplied to organizing committee",
+            "source_url": "https://github.com/lijiake2408/Foundation-Model-Challenge-for-Ultrasound-Image-Analysis",
+            "source_section": "Step 6"
+          }
+        ]
+      }
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://biomedicalimaging.org/2026/challenges/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Edition is listed in the ISBI 2026 official challenge program; distinct from MICCAI 2026 FoundUS and earlier series editions.",
+      "2026-10-22 提交方式字段同步：验证上传predictions.zip；最终交Docker Hub地址或Docker TAR链接，由组织者运行。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-20",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date of documentary extraction, not image acquisition or challenge completion.",
+      "last_verified": "2026-10-20",
+      "source_list": "ISBI 2026 official challenge program addendum",
+      "source_index": 1,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://biomedicalimaging.org/2026/challenges/",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "edition identity",
+            "conference affiliation",
+            "task scope"
+          ],
+          "basis": "ISBI 2026 lists this edition in its challenge session."
+        },
+        {
+          "type": "organizer-authored official baseline paper",
+          "url": "https://arxiv.org/abs/2602.01055",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "27 downstream subtasks",
+            "task families",
+            "shared model objective"
+          ],
+          "basis": "The baseline describes 27 subtasks across segmentation, classification, detection, and regression."
+        },
+        {
+          "type": "user_supplied_review",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "source_urls": [
+            "https://github.com/lijiake2408/Foundation-Model-Challenge-for-Ultrasound-Image-Analysis"
+          ],
+          "supports": [
+            "验证上传predictions.zip；最终交Docker Hub地址或Docker TAR链接，由组织者运行。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Organizer-level final rankings and exact phase-specific result mapping",
+        "Access pathway and post-challenge reuse terms",
+        "Comparable active-team count"
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "event.conference": {
+          "source_url": "https://biomedicalimaging.org/2026/challenges/",
+          "reviewed_on": "2026-10-20",
+          "basis": "Named in the ISBI 2026 official challenge program."
+        },
+        "assessment_evidence.status": {
+          "source_url": "https://biomedicalimaging.org/2026/challenges/",
+          "reviewed_on": "2026-10-20",
+          "basis": "The program defines the objective, and participant reports describe test results; a dated organizer final ranking was not established in the reviewed public sources."
+        }
+      },
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "user_supplied_review",
+          "summary": "验证上传predictions.zip；最终交Docker Hub地址或Docker TAR链接，由组织者运行。",
+          "evidence_ids": [
+            "E2",
+            "E3"
+          ],
+          "source_urls": [
+            "https://github.com/lijiake2408/Foundation-Model-Challenge-for-Ultrasound-Image-Analysis"
+          ],
+          "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "directly_retrieved_protocol_snapshots": [
+            "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission32_fmc_readme_20261022.json"
+          ],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/ISBI/2026/fmc-uia-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-20",
+      "final_assessment_status": "not_established_from_reviewed_sources",
+      "evidence_source_url": "https://biomedicalimaging.org/2026/challenges/",
+      "basis": "The program defines the objective, and participant reports describe test results; a dated organizer final ranking was not established in the reviewed public sources.",
+      "qualification": "Public-document evidence review only; conference date or planned deadline alone does not confirm a completed assessment."
+    },
+    "review_coding": {
+      "foundation_model_objective": "documented",
+      "foundation_model_objective_assessed": "not_established",
+      "basis": "The challenge and organizer baseline explicitly make transferable, shared ultrasound representations the objective; participant model choice is not substituted for objective-specific final evidence.",
+      "development_access": "Public download",
+      "data_model_flow": "hybrid",
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Localization",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "官方README直接提供训练数据下载；本地训练、最终Docker由组织者执行。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "官方README直接提供训练数据下载；本地训练、最终Docker由组织者执行。"
+      },
+      "decision_history": [
+        "官方README直接提供训练数据下载；本地训练、最终Docker由组织者执行。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission32_fmc_readme_20261022.json",
+          "url": "https://raw.githubusercontent.com/lijiake2408/Foundation-Model-Challenge-for-Ultrasound-Image-Analysis/main/README.md"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/fmc-uia-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Localization",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "Detection",
+        "Quantification / measurement",
+        "Segmentation"
+      ],
+      "previous_emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "Detection": "Declared task output",
+        "Localization": "Declared task output",
+        "Segmentation": "Declared task output"
+      },
+      "note_zh": "主办方基线明确 Regression 为 Keypoint localization，输出 JSON 坐标；将误记的生物测量改为定位。保留组织者共享超声基础模型目标。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2602.01055v1",
+          "local_source": "_collection/task_objective_audit_20261025/sources/fmc-uia-2026_eebe60ab40.txt",
+          "sha256": "0c9893d810c4fdf4087498a03af72a447ac6fe0a3a1f826dd1cc5665e4da1222"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/lijiake2408/Foundation-Model-Challenge-for-Ultrasound-Image-Analysis/main/README.md",
+          "local_source": "_collection/task_objective_audit_20261025/sources/fmc-uia-2026_8048f9edf8.txt",
+          "sha256": "e8d6b52e0b91b47b43a17c1861af9c7f105812e32a5f915bfa6eeb4cad3c971c"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain",
+            "Heart",
+            "Abdomen",
+            "Pelvis",
+            "Head and Neck",
+            "Spine",
+            "Extremities",
+            "Breast"
+          ],
+          "note": "官方基线报告明确胎头/心/腹、母体结构、甲状腺结节、子宫肌瘤、脊髓及股骨测量；官方输出协议有乳腺任务。按已点名子任务补录。"
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer"
+          ]
+        }
+      },
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2602.01055v1",
+          "local_source": "_collection/task_objective_audit_20261025/sources/fmc-uia-2026_eebe60ab40.txt"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/lijiake2408/Foundation-Model-Challenge-for-Ultrasound-Image-Analysis/main/README.md",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/8048f9edf8b511f9.json"
+        }
+      ],
+      "note_zh": "官方基线报告明确胎头/心/腹、母体结构、甲状腺结节、子宫肌瘤、脊髓及股骨测量；官方输出协议有乳腺任务。按已点名子任务补录。",
+      "anatomical_scope": "Named task anatomy in official baseline and protocol",
+      "remaining_detail": "",
+      "specific_diseases": [
+        "Tumor malignancy assessment; organ-specific labels incomplete"
+      ],
+      "disease_scope_note": "Declared malignancy-assessment target; organ-specific diagnostic inventory unresolved",
+      "disease_review_note": "官方任务说明明确肿瘤良恶性评价，可确认癌症相关目标；不从多器官超声范围猜测具体癌种。",
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "官方任务说明明确肿瘤良恶性评价，可确认癌症相关目标；不从多器官超声范围猜测具体癌种。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/ISBI/2026/fmc-uia-2026.json"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Not established",
+      "terms_documented": false,
+      "detail_level": "Not established",
+      "licence_names": [],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "官方挑战基线与论文未取得明确覆盖本届超声数据的数据使用许可。",
+      "qualifications": [],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/lijiake2408/Foundation-Model-Challenge-for-Ultrasound-Image-Analysis/main/README.md",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission32_fmc_readme_20261022.json"
+        },
+        {
+          "url": "https://arxiv.org/html/2602.01055v1",
+          "local_source": "_collection/task_objective_audit_20261025/sources/fmc-uia-2026_eebe60ab40.txt"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/lijiake2408/Foundation-Model-Challenge-for-Ultrasound-Image-Analysis/main/README.md",
+          "local_source": "_collection/task_objective_audit_20261025/sources/fmc-uia-2026_8048f9edf8.txt"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/lijiake2408/Foundation-Model-Challenge-for-Ultrasound-Image-Analysis/main/README.md",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/8048f9edf8b511f9.json"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "search_attempts": [
+        {
+          "url": "https://raw.githubusercontent.com/lijiake2408/Foundation-Model-Challenge-for-Ultrasound-Image-Analysis/main/README.md",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/8048f9edf8b511f9.json",
+          "status": 200
+        },
+        {
+          "url": "https://biomedicalimaging.org/2026/challenges/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/845b78185086f32b.json",
+          "status": 403
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  }
+}

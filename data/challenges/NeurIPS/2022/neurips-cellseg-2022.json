@@ -1,0 +1,493 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "neurips-cellseg-2022",
+    "challenge_name": "Cell Segmentation in Multi-modality Microscopy Images",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "NeurIPS 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2022-12-07",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Microscopy"
+      ],
+      "submodality": [
+        "Bright-field microscopy",
+        "Fluorescence microscopy",
+        "Phase-contrast microscopy",
+        "Differential interference contrast microscopy"
+      ],
+      "body_region": [
+        "Cell specimens"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Cells"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Weakly supervised multi-modality cell segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "instance segmentation",
+          "input": [
+            "Microscopy image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Cell instance mask"
+          ],
+          "granularity": "instance-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": "Cells",
+      "label_semantics": "Cell instance IDs",
+      "fine_grained_anatomy": null,
+      "official_description": "Limited labeled image patches and many unlabeled images.",
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND",
+      "access_after_challenge": "Rules state competition data will become publicly available and free for use after the competition; actual complete release is not independently confirmed here."
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Freely available external data/models must be posted by 2022-08-31; manual labeling of unlabeled images prohibited."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "F1 Score (threshold=0.5)",
+            "Running time"
+          ],
+          "ranking": "Rank teams per test image for both metrics, average all ranks, normalize by number of teams."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": 28,
+        "reserved_ram_gb": null,
+        "gpu": "NVIDIA RTX 2080 Ti",
+        "gpu_vram_gb": 10
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 1,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "challenge_launch": "2022-06-15",
+      "validation_start": "2022-07-15",
+      "test_submission_start": "2022-10-15",
+      "final_submission_deadline": "2022-11-02",
+      "challenge_event": "2022-12-07"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "proceedings": "PMLR Volume 212"
+    },
+    "participation_statistics": {
+      "registered_participants": 1220,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Testing",
+            "submission_count": 52
+          },
+          {
+            "official_phase_name": "Tuning Set",
+            "submission_count": 2364
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://neurips22-cellseg.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": "https://www.nature.com/articles/s41592-024-02233-6"
+    },
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://neurips22-cellseg.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/106-3c1dc6bab0f9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://neurips22-cellseg.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_access.access_after_challenge",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/106-895d605e1355.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://neurips22-cellseg.grand-challenge.org/dataset/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/106-9eead2d185f8.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://neurips22-cellseg.grand-challenge.org/metrics/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/106-9f8ff8ce196e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://neurips22-cellseg.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "evaluation.platform",
+            "submission.platform",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/106-overview.json"
+        }
+      ],
+      "collection_status": "verified",
+      "unresolved_fields": [],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://neurips22-cellseg.grand-challenge.org/",
+          "local_snapshot": "_collection/sources/106-overview.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': '', 'url': 'https://neurips22-cellseg.grand-challenge.org/evaluation/testing/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "submission.platform": {
+          "source_url": "https://neurips22-cellseg.grand-challenge.org/",
+          "local_snapshot": "_collection/sources/106-overview.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': '', 'url': 'https://neurips22-cellseg.grand-challenge.org/evaluation/testing/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://neurips22-cellseg.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/106-895d605e1355.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit edition-source post-challenge policy reviewed; planned releases, continuing public access, controlled requests and required deletion are kept distinct."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.body_region",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/neurips-cellseg-2022.json",
+          "_collection/verification_20261003/literature_context/neurips-cellseg-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cell specimens"
+          ],
+          "note": "细胞分割数据为多模态显微细胞标本；不据细胞形态推断人体器官。"
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "sources": [
+        {
+          "url": "https://neurips22-cellseg.grand-challenge.org/dataset/",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/9eead2d185f82fea.json"
+        },
+        {
+          "url": "https://neurips22-cellseg.grand-challenge.org/dataset/",
+          "local_source": "_collection/sources/106-9eead2d185f8.json"
+        }
+      ],
+      "note_zh": "细胞分割数据为多模态显微细胞标本；不据细胞形态推断人体器官。",
+      "anatomical_scope": "Specimen context; not a human organ",
+      "remaining_detail": "",
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "多来源细胞培养/组织显微图像的通用细胞分割，无明确疾病分类目标；不从细胞形态推断疾病。",
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "多来源细胞培养/组织显微图像的通用细胞分割，无明确疾病分类目标；不从细胞形态推断疾病。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/NeurIPS/2022/neurips-cellseg-2022.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "NeurIPS/2022/neurips-cellseg-2022.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Rules state competition data will become publicly available and free for use after the competition; actual complete release is not independently confirmed here.",
+              "sources": [
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://neurips22-cellseg.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/106-3c1dc6bab0f9.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://neurips22-cellseg.grand-challenge.org/rules/",
+                  "supports": [
+                    "data_access",
+                    "data_access.access_after_challenge",
+                    "data_usage_mode",
+                    "evaluation",
+                    "publication",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/106-895d605e1355.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://neurips22-cellseg.grand-challenge.org/dataset/",
+                  "supports": [
+                    "dataset",
+                    "labels_and_targets",
+                    "data_access"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/106-9eead2d185f8.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://neurips22-cellseg.grand-challenge.org/metrics/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/106-9f8ff8ce196e.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://neurips22-cellseg.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "evaluation.platform",
+                    "submission.platform",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/106-overview.json"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

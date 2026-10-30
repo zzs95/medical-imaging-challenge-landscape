@@ -1,0 +1,761 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "rnr-exm-2023",
+    "challenge_name": "Robust Non-rigid Registration Challenge for Expansion Microscopy",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "ISBI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Microscopy"
+      ],
+      "submodality": [
+        "Expansion fluorescence microscopy"
+      ],
+      "body_region": [
+        "Mouse cortex",
+        "Zebrafish brain",
+        "C. elegans whole organism"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "Nuclei",
+        "Blood vessels"
+      ],
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Registration",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "mouse",
+          "official_name": "mouse multi-round ExM registration",
+          "task_family": "Registration",
+          "task_subtype": "non-rigid deformable registration",
+          "input": [
+            "Fixed microscopy volume",
+            "Moving microscopy volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Dense deformation field"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "zebrafish",
+          "official_name": "zebrafish multi-round ExM registration",
+          "task_family": "Registration",
+          "task_subtype": "non-rigid deformable registration",
+          "input": [
+            "Fixed microscopy volume",
+            "Moving microscopy volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Dense deformation field"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "c_elegans",
+          "official_name": "c_elegans multi-round ExM registration",
+          "task_family": "Registration",
+          "task_subtype": "non-rigid deformable registration",
+          "input": [
+            "Fixed microscopy volume",
+            "Moving microscopy volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Dense deformation field"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": true,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "volume_pair_count": 24
+      },
+      "modalities": [
+        "Microscopy"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits_per_species": {
+        "train": {
+          "volume_pair_count": 4
+        },
+        "validation": {
+          "volume_pair_count": 1
+        },
+        "test": {
+          "volume_pair_count": 3
+        }
+      },
+      "voxel_spacing_micrometers": [
+        0.1625,
+        0.1625,
+        0.4
+      ]
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY 4.0. 训练、验证、测试数据记录均列 CC BY 4.0；保留各阶段与发布记录。",
+      "access_after_challenge": null,
+      "access_scope": "Training dataset now available through the linked public Zenodo record",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": null,
+        "submission_artifact": "ZIP of species-specific HDF5 deformation fields"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Cite additional datasets or pretrained models; no manual annotation of challenge data."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "mouse",
+          "metrics": [
+            "DSC",
+            "30th-percentile DSC",
+            "HD95",
+            "SDlogJ"
+          ],
+          "ranking": "Final species ranks combine significance ranks over all four metrics at full resolution; live leaderboard uses half-resolution DSC."
+        },
+        {
+          "task_id": "zebrafish",
+          "metrics": [
+            "DSC",
+            "30th-percentile DSC",
+            "HD95",
+            "SDlogJ"
+          ],
+          "ranking": "Final species ranks combine significance ranks over all four metrics at full resolution; live leaderboard uses half-resolution DSC."
+        },
+        {
+          "task_id": "c_elegans",
+          "metrics": [
+            "DSC",
+            "30th-percentile DSC",
+            "HD95",
+            "SDlogJ"
+          ],
+          "ranking": "Final species ranks combine significance ranks over all four metrics at full resolution; live leaderboard uses half-resolution DSC."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "ZIP of HDF5 deformation fields",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "submissions_per_day": 1
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_data_release": "2022-12-19",
+      "final_submission_deadline": "2023-03-15",
+      "challenge_event": "2023-04-18"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 210,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "C. elegans Test",
+            "submission_count": 67
+          },
+          {
+            "official_phase_name": "Zebrafish Test",
+            "submission_count": 44
+          },
+          {
+            "official_phase_name": "Mouse Test",
+            "submission_count": 53
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://rnr-exm.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://rnr-exm.grand-challenge.org/rnr-exm/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/96-00aa789aa6ee.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://rnr-exm.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/96-0ff6f1448a99.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rnr-exm.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/96-125200e7256c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rnr-exm.grand-challenge.org/assessment/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/96-21a11fe0e34f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rnr-exm.grand-challenge.org/data/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "dataset",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/96-4580b4ab0c84.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rnr-exm.grand-challenge.org/participants/registration/create/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/96-45d974704066.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rnr-exm.grand-challenge.org/isbi-2023-leaderboards/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/96-61f4a514c015.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rnr-exm.grand-challenge.org/submission-qa/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/96-678d702486bc.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rnr-exm.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/96-aa39c9c8cda2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rnr-exm.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/96-d1fc42ce3091.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rnr-exm.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/96-overview.json"
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://rnr-exm.grand-challenge.org/rnr-exm/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/rnr-exm-2023.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Exact dataset license requires verification."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://rnr-exm.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/96-4580b4ab0c84.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official page explicitly identifies a public training/pretraining release; detailed license/gates remain unverified and are not inferred."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://rnr-exm.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/96-4580b4ab0c84.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official page explicitly identifies a public training/pretraining release; detailed license/gates remain unverified and are not inferred."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://rnr-exm.grand-challenge.org/rnr-exm/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/rnr-exm-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://rnr-exm.grand-challenge.org/rnr-exm/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/rnr-exm-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://rnr-exm.grand-challenge.org/rnr-exm/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/rnr-exm-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/rnr-exm-2023.json",
+          "_collection/verification_20261003/literature_context/rnr-exm-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "训练、验证及测试影像公开，提交配准预测形变文件。"
+      },
+      "decision_history": [
+        "训练、验证及测试影像公开，提交配准预测形变文件。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/96-4580b4ab0c84.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/rnr-exm-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "data-to-model"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY 4.0"
+      ],
+      "scope": "Named public development/data release only; hidden evaluation rights not inferred",
+      "agreement_required": null,
+      "summary_zh": "训练、验证、测试数据记录均列 CC BY 4.0；保留各阶段与发布记录。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"RnR-ExM Training Dataset\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2022-12-19\", \"license\": {\"id\": \"cc-by-4.0\"}, \"description\": \"<p>This dataset was released as part of the 2023 ISBI challenge,&nbsp;<a href=\\\"https://rnr-exm.grand-challenge.org\\\">RnR-ExM</a>.&nbsp;The organizers thank Ruihan Zhang (MIT), Margaret Elizabeth Schroeder (MIT) and Chi Zhang (MIT) for contributing data to this competition.</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/7444100",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/eaa637a0e455ac3d.json"
+          }
+        },
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"RnR-Exm Validation Dataset\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2023-01-19\", \"license\": {\"id\": \"cc-by-4.0\"}, \"description\": \"<p>This dataset was released as part of the 2023 ISBI challenge, <a href=\\\"https://rnr-exm.grand-challenge.org/rnr-exm/\\\">RnR-ExM</a>.&nbsp;The organizers thank Ruihan Zhang (MIT), Margaret Elizabeth Schroeder (MIT) and Chi Zhang (MIT) for contributing data to this competition.</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/8418961",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/4cc5127ece615b1b.json"
+          }
+        },
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"RnR-ExM Test Dataset\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2023-02-08\", \"license\": {\"id\": \"cc-by-4.0\"}, \"description\": \"<p>This dataset was released as part of the 2023 ISBI challenge, <a href=\\\"https://rnr-exm.grand-challenge.org/rnr-exm/\\\">RnR-ExM</a>.&nbsp;The organizers thank Ruihan Zhang (MIT), Margaret Elizabeth Schroeder (MIT) and Chi Zhang (MIT) for contributing data to this competition.</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/8419002",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/a3422c09d16b72b3.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/7444100",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/eaa637a0e455ac3d.json"
+        },
+        {
+          "url": "https://zenodo.org/api/records/8418961",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/4cc5127ece615b1b.json"
+        },
+        {
+          "url": "https://zenodo.org/api/records/8419002",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/a3422c09d16b72b3.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://rnr-exm.grand-challenge.org/data/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/4580b4ab0c846e39.json",
+          "status": 200
+        },
+        {
+          "url": "https://rnr-exm.grand-challenge.org/rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/125200e7256cd445.json",
+          "status": 200
+        },
+        {
+          "url": "https://rnr-exm.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/d1fc42ce3091a9db.json",
+          "status": 200
+        },
+        {
+          "url": "https://rnr-exm.grand-challenge.org/rnr-exm/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/00aa789aa6eeb768.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/api/records/7444100",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/eaa637a0e455ac3d.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/8418961",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/4cc5127ece615b1b.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/8419002",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/a3422c09d16b72b3.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "C. elegans whole organism",
+            "Mouse cortex",
+            "Zebrafish brain"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "多轮扩增显微镜标本配准；鼠、斑马鱼、线虫标本及模拟变形没有特定疾病评价目标。",
+      "sources": [
+        {
+          "url": "https://rnr-exm.grand-challenge.org/data/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/4580b4ab0c846e39.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "多轮扩增显微镜标本配准；鼠、斑马鱼、线虫标本及模拟变形没有特定疾病评价目标。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/ISBI/2023/rnr-exm-2023.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "dataset",
+              "value": 24,
+              "unit": "volume pairs",
+              "canonical_field": "dataset.population.volume_pair_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://rnr-exm.grand-challenge.org/data/",
+              "supports": [
+                "data_access",
+                "data_access.access_scope",
+                "data_access.access_status",
+                "dataset",
+                "labels_and_targets"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/96-4580b4ab0c84.json"
+            }
+          ],
+          "source_urls": "https://rnr-exm.grand-challenge.org/rnr-exm/; https://rnr-exm.grand-challenge.org/challenge/statistics/; https://rnr-exm.grand-challenge.org/rules/; https://rnr-exm.grand-challenge.org/assessment/; https://rnr-exm.grand-challenge.org/data/; https://rnr-exm.grand-challenge.org/participants/registration/create/; https://rnr-exm.grand-challenge.org/isbi-2023-leaderboards/; https://rnr-exm.grand-challenge.org/submission-qa/; https://rnr-exm.grand-challenge.org/organizers/; https://rnr-exm.grand-challenge.org/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

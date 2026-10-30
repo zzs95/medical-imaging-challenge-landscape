@@ -1,0 +1,477 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "fedsurg-2024",
+    "challenge_name": "fedsurg 2024",
+    "full_name": "FedSurg: Federated Learning for Surgical Vision",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "parent_event": "Endoscopic Vision Challenge",
+      "official_registration_id": "MICCAI-2024-R16"
+    },
+    "organizers": {
+      "institutions": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Organizers",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 1
+      }
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "body_region": [
+        "Abdomen"
+      ],
+      "organs_or_structures": [
+        "Appendix"
+      ],
+      "diseases": [
+        "Appendicitis"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [],
+      "task_families": [
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "FedSurg: Federated Learning for Surgical Vision",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990991",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 1
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Endoscopy"
+      ],
+      "population": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 1
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 1
+      },
+      "access_status": "Individual authorization",
+      "review_status": "Reviewed 2026-10-24",
+      "public_download": false,
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_or_terms": "CC BY-NC-ND. CC BY-NC-ND，另明确禁止共享和商业用途。",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {},
+      "testing": {},
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n   • Example 1: Dice Similarity Coefficient (DSC)\n\n   • Example 2: Area under curve (AUC)\n\nF1-Score, Expected Cost (EC)\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\n- F1-Score: In multi-class classification tasks, the F1-score is commonly used as the primary evaluation metric due\nto its capability to balance precision and recall. This is important because avoiding classifying stages into the\nwrong stage and identifying all positive instances are crucial factors. The F1-score helps achieve this by calculating\nthe harmonic mean of precision and recall.\n- Expected Cost: It is essential to take ordinal monotonicity as well into account for this use case. That means that\nwe penalize bigger misclassification more in comparison to smaller misclassification.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThe decision to use these metrics and their associated ranks is justified by their ability to capture the key aspects\nof the problem domain. Additionally, the use of ranks allows for a fairer comparison between teams, as it takes\ninto account the relative performance of each team on each task.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nAs each team will have to submit a docker image for training and evaluation, only a full working submission will be\nconsidered.\n- If the docker container does not work on our infrastructure, we will inform the teams, and they have the chance\nto fix it.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\n- Task 1 (Generalization): The F1-Score and EC score will be computed for all test cases. We will then compute two\nranks, one for each metric. The task rank of each team will then be determined through its average rank.\n- Task 2 (Adaptation): The average and the lower percentile of the client’s F1-Scores and ECs will be calculated for\neach participant. By combining both scores, we are able to reflect worst case performance of algorithms and the\naverage performance on the dataset of each client. The task rank will be calculated based on the sum of the rank\nof each score.\n- For the combination of both challenge tasks, we will compute the average rank to decide the leader board.\n\n\n\n\n\f                                    Endoscopic Vision Challenge 2024 (EndoVis24)",
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990991",
+            "section": "Metric(s); Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "submission": {
+      "submission_type": "Docker container or Docker Compose with code",
+      "platform": "Synapse",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Submitting a Docker container, or alternatively a Docker Compose file with additional code, on the Synapse platform, with submission instructions to be provided at a later date (TBA).",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990991",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Task-specific registered EndoVis protocol"
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 1
+      }
+    },
+    "publication": {
+      "registration_doi": "10.5281/zenodo.10990991"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "active_teams": null,
+      "teams_with_submission": null
+    },
+    "links": {
+      "registration": "https://doi.org/10.5281/zenodo.10990991",
+      "official_website": "https://endovis.grand-challenge.org/"
+    },
+    "notes": [
+      "Task-specific information is taken from the registered EndoVis protocol, not from unrelated child challenges."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "miccai_gapfill_20261024",
+      "sources": [
+        {
+          "type": "Official registered EndoVis protocol",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+          "supports": [
+            "year",
+            "parent-child relation",
+            "task design",
+            "submission and evaluation protocol"
+          ],
+          "registered_task_indices": [
+            1
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ]
+    },
+    "record_relationships": {
+      "analytical_unit": "child_challenge_edition",
+      "parent_challenge_id": "endovis-2024",
+      "child_challenge_ids": []
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Registered sub-challenge design",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Sub-challenge explicitly named in registered EndoVis protocol",
+      "completion_status": "Not independently recoded in this gap-fill"
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Named EndoVis child challenge; parent is not additionally counted."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "FedSurg2024参与说明要求邮件发送签署的EndoVis数据规则后提供访问。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Submitting a Docker container, or alternatively a Docker Compose file with additional code, on the Synapse platform, with submission instructions to be provided at a later date (TBA). b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submissio"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period Endoscopic Vision Challenge 2024 (EndoVis24) • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Release of training data: 1st of May 2024 Intention to submit:1st of August 2024 Deadline for docker submission (optional short extension if limited participants): 14th of August 2024 Training phase: 15th of August 2024 Evaluation phase: Starting 30th of September 2024 Challenge Day: Day of Endovis 2024"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "excerpt": ""
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/dc427129070f8744.json",
+          "url": "https://www.synapse.org/Synapse:syn53137385/wiki/626515",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn53137385/wiki/626515"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/fedsurg-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "FedSurg2024参与说明要求邮件发送签署的EndoVis数据规则后提供访问。"
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "source planned",
+              "value": 200,
+              "unit": "videos",
+              "scope": "Expected total range",
+              "approximate": false,
+              "upper_value": 300,
+              "range": true,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "Germany"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Documented and classifiable",
+          "value": "Participants may not share challenge data or use it commercially."
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "200–300 videos expected total; currently20–30 per center. Range retained, no midpoint or final quantity inferred.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/fedsurg-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Inflammatory / infectious"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Appendix"
+      ],
+      "specific_diseases": [
+        "Appendicitis"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/fedsurg-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-ND"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "CC BY-NC-ND，另明确禁止共享和商业用途。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY-NC-ND: Data provided in the context of this challenge may not be shared by challenge participants and may not be used for commercial purposes.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10990991"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/fedsurg-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "Germany"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10990991",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/fedsurg-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/fedsurg-2024.json",
+              "source_field": "resource_characteristics_review.fields.post_challenge",
+              "value": "Participants may not share challenge data or use it commercially.",
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10990991",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/fedsurg-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN07"
+  ]
+}

@@ -1,0 +1,672 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "luna25-2025",
+    "challenge_name": "The LUNA25 Challenge",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "Low-dose chest CT"
+      ],
+      "body_region": [
+        "Lung"
+      ],
+      "organ_system": [
+        "Respiratory"
+      ],
+      "organs_or_structures": [
+        "Pulmonary nodules"
+      ],
+      "diseases": [
+        "Lung cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "malignancy",
+          "official_name": "Lung nodule malignancy risk estimation",
+          "task_family": "Classification",
+          "task_subtype": "lesion-level binary risk scoring",
+          "input": [
+            "Low-dose chest CT with nodule guidance"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Continuous malignancy score 0–100"
+          ],
+          "granularity": "lesion-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "test": {
+          "case_count": 468
+        },
+        "reader_study": {
+          "case_count": 300
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY 4.0 (images); CC BY-NC 4.0 (annotations). LUNA25 明确区分影像 CC BY 4.0 与标注 CC BY-NC 4.0，不合并为一个全赛事许可。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Prize entrants may use external data/pretrained models if permissively published within three months of development deadline. Non-prize institutional benchmarking can retain private resources with disclosure."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "malignancy",
+          "metrics": [
+            "AUROC"
+          ],
+          "ranking": "AUROC determines leaderboard rank; sensitivity/specificity operating points are supplementary."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": 5,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": "NVIDIA T4 by default; A10G upon justified request",
+        "gpu_vram_gb": 16
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "development_submissions_total": 15,
+        "development_submissions_per_week": 2
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_data_release": "2025-03-01",
+      "final_submission_deadline": "2025-07-31",
+      "challenge_event": "2025-09-22"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 1279,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Sanity Check",
+            "submission_count": 354
+          },
+          {
+            "official_phase_name": "Closed Testing Phase",
+            "submission_count": 27
+          },
+          {
+            "official_phase_name": "Open Development Phase",
+            "submission_count": 253
+          },
+          {
+            "official_phase_name": "Post Challenge Phase",
+            "submission_count": 1
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://luna25.grand-challenge.org/",
+      "dataset": "https://zenodo.org/records/14223624",
+      "github": "https://github.com/DIAGNijmegen/luna25-evaluation-public",
+      "challenge_paper": null
+    },
+    "notes": [
+      "AI competition and reader study are separate arms; no nodule-detection task inferred from clinical motivation. Workshop page September 22 date retained, although general timeline gives MICCAI September 23–27.",
+      "Source-list platform_year is 2024; the official challenge edition is 2025. The output directory follows the official edition."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/#the-luna25-challenge-and-reader-study",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-0666e89973ac.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/scientific-advisory-board/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-08a48d384b6f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/#clinical-problem",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-0de65ac67c37.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/ai-algorithm-submissions/",
+          "supports": [
+            "data_usage_mode",
+            "evaluation.platform",
+            "submission",
+            "submission.platform"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-1d00cfc0c5ca.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/miccai2025-workshop/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-1d5512b642be.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/#if-you-are-using-or-referring-to-any-of-the-resources-eg-dataset-source-code-repositories-ai-models-benchmarks-outcomes-associated-with-the-luna25-challenge-please-cite-one-of-the-following-as-reference",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-2f0658237076.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/ai-tasks-evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-2ffeea18fa7f.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://luna25.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-544ab42b3e2f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-5feda1909e2d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/ai-phases-rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-6d32c034787b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/#need-for-benchmarks",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-71103cf0f7e2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/#prizes",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-71533d409dd1.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-84c204a8a6a5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/announcements/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-8e44abe9dbd2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/overview-goals/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-9a0c7be5fd53.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/reader-study/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-c7fc3505f9fc.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/ai-challenge-rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-ee8b8e891816.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://luna25.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/70-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Restricted datasets page: verify train/development counts, licenses and detailed nodule input interface."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://luna25.grand-challenge.org/ai-algorithm-submissions/",
+          "local_snapshot": "_collection/sources/70-1d00cfc0c5ca.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'Submit', 'url': 'https://luna25.grand-challenge.org/evaluation/open-development-phase/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "submission.platform": {
+          "source_url": "https://luna25.grand-challenge.org/ai-algorithm-submissions/",
+          "local_snapshot": "_collection/sources/70-1d00cfc0c5ca.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'Submit', 'url': 'https://luna25.grand-challenge.org/evaluation/open-development-phase/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "evaluation.platform",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/luna25-2025.json",
+          "_collection/verification_20261003/literature_context/luna25-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "公开开发阶段明确创建账号、注册LUNA25后获取训练集下载。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "公开开发阶段明确创建账号、注册LUNA25后获取训练集下载。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/6d32c034787bf92e.json",
+          "url": "https://luna25.grand-challenge.org/ai-phases-rules/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/luna25-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY 4.0 (images)",
+        "CC BY-NC 4.0 (annotations)"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "LUNA25 明确区分影像 CC BY 4.0 与标注 CC BY-NC 4.0，不合并为一个全赛事许可。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "The LUNA25 training dataset consists of two separate datasets. One dataset contains the imaging data, which will be licensed under a CC-BY 4.0 license. The second dataset contains the annotation data, which will be licensed under a CC-BY-NC 4.0 license. This means that the nodule annotation data can be downloaded and shared for non-commercial purposes, provided that proper credit is given to the challenge. However, the annotation dataset cannot be used for commercial purposes.",
+          "source": {
+            "url": "https://zenodo.org/api/records/15094631/files/181-Benchmarking_of_Artificial_Intelligence_and_Radiologists_for_Lung_2025-03-21T14-06-01.pdf/content",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/9857b86ccdb11470.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/15094631/files/181-Benchmarking_of_Artificial_Intelligence_and_Radiologists_for_Lung_2025-03-21T14-06-01.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/9857b86ccdb11470.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://zenodo.org/api/records/14223624",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/920c95d2cd55c4fb.json",
+          "status": 200
+        },
+        {
+          "url": "https://luna25.grand-challenge.org/ai-phases-rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/6d32c034787bf92e.json",
+          "status": 200
+        },
+        {
+          "url": "https://luna25.grand-challenge.org/ai-challenge-rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/ee8b8e8918163b53.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/DIAGNijmegen/luna25-evaluation-public",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/4b1481756db317b9.json",
+          "status": 200
+        },
+        {
+          "url": "https://luna25.grand-challenge.org/#if-you-are-using-or-referring-to-any-of-the-resources-eg-dataset-source-code-repositories-ai-models-benchmarks-outcomes-associated-with-the-luna25-challenge-please-cite-one-of-the-following-as-reference",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/2f0658237076b48b.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/DIAGNijmegen/luna25-evaluation-public#Apache-2.0-1-ov-file",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/6a6aafadc4fabe6e.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/DIAGNijmegen/luna25-evaluation-public/blob/main/LICENSE",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/fe4adf9ccbe7db37.json",
+          "status": 200
+        },
+        {
+          "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1e460fb35d79919e.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/api/records/15094631/files/181-Benchmarking_of_Artificial_Intelligence_and_Radiologists_for_Lung_2025-03-21T14-06-01.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/9857b86ccdb11470.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Observed post-challenge evaluation activity",
+              "summary": "Positive submissions recorded in explicitly named post-challenge or long-term evaluation phases.",
+              "url": "https://luna25.grand-challenge.org/challenge/statistics/",
+              "snapshot": "_collection/sources/70-544ab42b3e2f.json",
+              "scope": "Evidence that the service was used after the competitive phase; cumulative counts do not identify teams or guarantee current acceptance.",
+              "value": [
+                {
+                  "official_phase_name": "Sanity Check",
+                  "submission_count": 354
+                },
+                {
+                  "official_phase_name": "Closed Testing Phase",
+                  "submission_count": 27
+                },
+                {
+                  "official_phase_name": "Open Development Phase",
+                  "submission_count": 253
+                },
+                {
+                  "official_phase_name": "Post Challenge Phase",
+                  "submission_count": 1
+                }
+              ],
+              "excerpt": "",
+              "snapshot_date": "2026-10-02"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

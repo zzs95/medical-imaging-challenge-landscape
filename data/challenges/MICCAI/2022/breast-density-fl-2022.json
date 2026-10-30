@@ -1,0 +1,545 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "breast-density-fl-2022",
+    "challenge_name": "Breast density FL 2022",
+    "full_name": "ACR-NCI-NVIDIA Breast density federated learning challenge",
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2022-R02",
+      "official_programme_row_numbers": "23",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "MGH/Harvard Medical School",
+        "NVIDIA",
+        "NCI",
+        "ACR"
+      ],
+      "registered_authors": [
+        {
+          "name": "Jayashree Kalpathy-Cramer",
+          "affiliation": "MGH/Harvard Medical School"
+        },
+        {
+          "name": "Holger Roth",
+          "affiliation": "NVIDIA"
+        },
+        {
+          "name": "Keyvan Farahani",
+          "affiliation": "NCI"
+        },
+        {
+          "name": "Laura Coombs",
+          "affiliation": "ACR"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "Mammography"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Breast"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Breast parenchyma"
+      ],
+      "diseases": [],
+      "clinical_context": "Breast-density estimation in a screening population; no cancer diagnosis target is inferred from mammography."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [],
+      "task_families": [
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Distributed learning of breast density",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362203",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/ACR-NCI-NVIDIABreastdensityfederatedlearningchallenge_03-16-2022_10-28-11.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362203",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/ACR-NCI-NVIDIABreastdensityfederatedlearningchallenge_03-16-2022_10-28-11.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Mammography"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362203",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/ACR-NCI-NVIDIABreastdensityfederatedlearningchallenge_03-16-2022_10-28-11.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Unavailable at snapshot",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Organizer-held data / custom competition-use conditions. 影像留在组织者端，参赛者仅通过容器访问；禁止使用先前持有的 DMIST 数据，允许披露的公共外部数据。没有给数据强行指定开放许可。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362203",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/ACR-NCI-NVIDIABreastdensityfederatedlearningchallenge_03-16-2022_10-28-11.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "model-to-data",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362203",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/ACR-NCI-NVIDIABreastdensityfederatedlearningchallenge_03-16-2022_10-28-11.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "MedICI / ACR AI-LAB",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362203",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/ACR-NCI-NVIDIABreastdensityfederatedlearningchallenge_03-16-2022_10-28-11.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362203",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/ACR-NCI-NVIDIABreastdensityfederatedlearningchallenge_03-16-2022_10-28-11.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nOverall kappa,\nkappa for each institution\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nKappa is commonly used to evaluate breast density algorithms to account.\ne.g. Lehman et al, 2018 (https://pubs.rsna.org/doi/10.1148/radiol.2018180694)\nChang et al, 2020\nhttps://pubmed.ncbi.nlm.nih.gov/32592660/",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nA first set of four ranks will be computed for all 4 tasks (overall kappa as well as Kappa for institutions 1,2 and 3 test\nsets).\n\n\nFurthermore, BI-RADS breast density grades can be ordered. i.e. if the density grades are 1,2,3,4, calling a 4 a 1\nshould be worse than calling 4 a 3. Therefore, we will also use a per-image distance metric, penalizing predictions\nmore that are further away from the truth. Again, this will be evaluated based on global and institutional test sets.\nWith the image-based metric, we will use the challengeR toolkit to do statistical ranking across these four tasks.\n\n\nFor simplicity, the final consensus ranking will be based on all eight tasks, equally-weighted, based on the mean\nranks using the Euclidean distance. See https://github.com/wiesenfa/challengeR for details.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nOur submission process provides error handling for missing and duplicate rows in the submission. Each case will\nbe machine-readable. Therefore, we expect each trained model to be able to produce a prediction for each case. If\n- for any reason - a case misses a prediction, we will assign a random prediction (1 of four classes) to be still able to\ncompute Kappa scores for all images. For the distance-based metric, the lowest distance (furthest away from the\ntruth) will be chosen.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThe goal is to have an algorithm that performs well on all institutions as well as the entire population."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "MedICI / ACR AI-LAB",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Docker submission on Medici platform. We will provide an example docker using MONAI and NVIDIA FLARE as a baseline benchmark but participants can use any framework. We will provide detailed instructions about the inputs and outputs necessary for the docker. The dataset for each phase will be set up at 3 VMs to simulate real life federated learning. The dataset in each VM will be substantially different in terms of image properties (data are non IID).",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362203",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/ACR-NCI-NVIDIABreastdensityfederatedlearningchallenge_03-16-2022_10-28-11.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2022,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362203",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/ACR-NCI-NVIDIABreastdensityfederatedlearningchallenge_03-16-2022_10-28-11.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.6362203"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://medici-codalab-main.eastus.cloudapp.azure.com/competitions/24",
+      "registration": "https://doi.org/10.5281/zenodo.6362203",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.6362203",
+          "resolved_record_id": 6362204,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/ACR-NCI-NVIDIABreastdensityfederatedlearningchallenge_03-16-2022_10-28-11.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/ACR-NCI-NVIDIABreastdensityfederatedlearningchallenge_03-16-2022_10-28-11.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://medici-codalab-main.eastus.cloudapp.azure.com/competitions/24",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/54bc19006bd57aad.json",
+          "http_status": null,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "Breast density FL"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Unavailable at snapshot",
+      "data_model_flow": "model-to-data"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Unavailable at snapshot",
+        "state": "Documented and classifiable",
+        "rationale": "Challenge-supplied raw data are not available to participants; training and evaluation interact with the data through submitted containers. Optional outside pretraining data do not change this arrangement."
+      },
+      "data_model_flow": {
+        "category": "model-to-data",
+        "state": "Documented and classifiable",
+        "rationale": "Challenge-supplied raw data are not available to participants; training and evaluation interact with the data through submitted containers. Optional outside pretraining data do not change this arrangement."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362203",
+          "excerpt": " are not available to the participants. They will be allowed to interact with the data only through docker containers. Additional comments: The DMIST dataset provided for training has been only available via request from ACR. We will note in the challenge rules that participants who might have requested access to DCR in the past, will not be allowed to use their copy of DMIST for any step of their training pipeline. We allow users to utilize public datasets for pretraining or submitted as part of their docker containers, e.g. for ACR-NCI-NVIDIA Breast density federated learning challenge regularization of the global model. The participants will be required to explain how they use any public data in their method description (similar to other challenges, e.g. COVID-19-20). The ultimate goal of the challenge is to find a good FL method for breast density classification. Therefore, we aim to compare different approaches to this overall goal rather than comparing particular aspects of a method. The utilization of publicly available data is not going to circumvent the constraints of the FL setting."
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362203",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker submission on Medici platform. We will provide an example docker using MONAI and NVIDIA FLARE as a baseline benchmark but participants can use any framework. We will provide detailed instructions about the inputs and outputs necessary for the docker. The dataset for each phase will be set up at 3 VMs to simulate real life federated learning. The dataset in each VM will be substantially different in terms of image properties (data are non IID). b) Provide information on the possibility for participating teams to evaluate their algorithms before"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362203",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results April 1, 2022: Challenge website is open June 1, 2022: Submissions open for training July 1, 2022: Submissions open for"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362203",
+          "excerpt": ""
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 60000,
+              "unit": "images",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 6500,
+              "unit": "images",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 40000,
+              "unit": "images",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Not established",
+          "value": null
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Three simulated federation clients do not establish three acquisition institutions. Case unit needs precise definition retained from protocol. Case explicitly defined as one mammogram; patient-level split. 33 clinical trials mentioned, not confirmed 33 acquisition centers.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.6362203",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/breast-density-fl-2022.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Breast"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Breast parenchyma"
+      ],
+      "specific_diseases": [],
+      "review_note": "Breast-density estimation in a screening population; no cancer diagnosis target is inferred from mammography.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362203"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/breast-density-fl-2022.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "Organizer-held data / custom competition-use conditions"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "影像留在组织者端，参赛者仅通过容器访问；禁止使用先前持有的 DMIST 数据，允许披露的公共外部数据。没有给数据强行指定开放许可。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "Data are not available to the participants. They will be allowed to interact with the data only through docker containers. Additional comments: The DMIST dataset provided for training has been only available via request from ACR. We will note in the challenge rules that participants who might have requested access to DCR in the past, will not be allowed to use their copy of DMIST for any step of their training pipeline. We allow users to utilize public datasets for pretraining or submitted as part of their docker containers, e.g. for ACR-NCI-NVIDIA Breast density federated learning challenge regularization of the global model. The participants will be required to explain how they use any public data in their method description (similar to other challenges, e.g. COVID-19-20). The ultimate goal of the challenge is to find a good FL method for breast density classification. Therefore, we aim to compare different approaches to this overall goal rather than comparing particular aspects of a method. The utilization of publicly available data is not going to circumvent the constraints of the FL setting.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.6362203"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R02/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362203"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

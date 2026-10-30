@@ -1,0 +1,736 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "synthrad-2023",
+    "challenge_name": "SynthRAD2023",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI",
+        "CT"
+      ],
+      "submodality": [
+        "CBCT",
+        "Synthetic CT"
+      ],
+      "body_region": [
+        "Brain",
+        "Pelvis"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": null,
+      "diseases": [
+        "Cancer treated with radiotherapy"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Synthesis",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "mri",
+          "official_name": "MRI-to-sCT generation",
+          "task_family": "Synthesis",
+          "task_subtype": "cross-modality synthesis",
+          "input": [
+            "MRI volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Synthetic CT volume"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "cbct",
+          "official_name": "CBCT-to-sCT generation",
+          "task_family": "Synthesis",
+          "task_subtype": "cross-modality synthesis",
+          "input": [
+            "CBCT volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Synthetic CT volume"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": true,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": 3,
+      "institutions_description": null,
+      "population": {
+        "patient_count": 1080,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "MRI",
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits_per_task_per_anatomy": {
+        "train": {
+          "patient_count": 180
+        },
+        "validation": {
+          "patient_count": 30
+        },
+        "test": {
+          "patient_count": 60
+        }
+      },
+      "task_anatomy_strata": [
+        "MRI brain",
+        "MRI pelvis",
+        "CBCT brain",
+        "CBCT pelvis"
+      ]
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Public challenge data: CC BY-NC.",
+      "access_after_challenge": "Rules plan validation data release after presentation of results; test data only after challenge closure, expected around 2028 with the date subject to change. This is a release policy, not confirmation of actual test download availability.",
+      "access_scope": "training/development data; not a claim that hidden test data are public"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": null,
+        "policy": "Only supplied challenge data; pretrained networks prohibited."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "mri",
+          "metrics": [
+            "MAE",
+            "PSNR",
+            "SSIM",
+            "Relative mean absolute dose difference (photon/proton)",
+            "DVH difference (photon/proton)",
+            "Gamma pass rate (photon/proton)"
+          ],
+          "ranking": "MeanThenRank: normalize and scale the nine case-aggregated metrics to 0–1 across teams, average normalized metrics, then rank. Must exceed the water baseline for all three image similarity metrics and satisfy the runtime limit."
+        },
+        {
+          "task_id": "cbct",
+          "metrics": [
+            "MAE",
+            "PSNR",
+            "SSIM",
+            "Relative mean absolute dose difference (photon/proton)",
+            "DVH difference (photon/proton)",
+            "Gamma pass rate (photon/proton)"
+          ],
+          "ranking": "MeanThenRank: normalize and scale the nine case-aggregated metrics to 0–1 across teams, average normalized metrics, then rank. Must exceed the water baseline for all three image similarity metrics and satisfy the runtime limit."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": 15,
+        "max_ram_gb": 32,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": 16,
+        "cpu_count": 8
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 2,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 1621,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Test Task 1 - MRI",
+            "submission_count": 31
+          },
+          {
+            "official_phase_name": "Test Task 2 - CBCT",
+            "submission_count": 29
+          },
+          {
+            "official_phase_name": "Validation Task 1 - MRI",
+            "submission_count": 342
+          },
+          {
+            "official_phase_name": "Validation Task 2 - CBCT",
+            "submission_count": 274
+          },
+          {
+            "official_phase_name": "Preliminary test Task1 - MRI",
+            "submission_count": 195
+          },
+          {
+            "official_phase_name": "Preliminary test Task 2 - CBCT",
+            "submission_count": 60
+          },
+          {
+            "official_phase_name": "Post-challenge Task 1 - MRI",
+            "submission_count": 32
+          },
+          {
+            "official_phase_name": "Post-challenge Task 2 - CBCT",
+            "submission_count": 19
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://synthrad2023.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": "https://arxiv.org/abs/2403.08447"
+    },
+    "notes": [
+      "Two tasks each cover brain and pelvis. Counts are per task/anatomy stratum, not 180 total training patients. Only last final submission counts."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2023.grand-challenge.org/submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/100-5682f6fa5e5c.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://synthrad2023.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/100-573eac697643.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2023.grand-challenge.org/SynthRAD2023/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/100-98b27b8f7f4c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2023.grand-challenge.org/Rules/",
+          "supports": [
+            "data_access",
+            "data_access.access_after_challenge",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/100-a2cf5b632c06.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2023.grand-challenge.org/Organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/100-d0b778fc353d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2023.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/100-fd4c11ef9d29.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://synthrad2023.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/100-overview.json"
+        },
+        {
+          "type": "official organizer publication",
+          "url": "https://arxiv.org/pdf/2403.08447",
+          "local_snapshot": "_collection/sources/100-results.pdf",
+          "supports": [
+            "dataset",
+            "evaluation",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02"
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://synthrad2023.grand-challenge.org/submission/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/synthrad-2023.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "verified",
+      "unresolved_fields": [],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://synthrad2023.grand-challenge.org/Rules/",
+          "local_snapshot": "_collection/sources/100-a2cf5b632c06.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://synthrad2023.grand-challenge.org/Rules/",
+          "local_snapshot": "_collection/sources/100-a2cf5b632c06.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://synthrad2023.grand-challenge.org/Rules/",
+          "local_snapshot": "_collection/sources/100-a2cf5b632c06.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit edition-source post-challenge policy reviewed; planned releases, continuing public access, controlled requests and required deletion are kept distinct."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://synthrad2023.grand-challenge.org/submission/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/synthrad-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://synthrad2023.grand-challenge.org/submission/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/synthrad-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://synthrad2023.grand-challenge.org/submission/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/synthrad-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_after_challenge",
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "evaluation.platform",
+          "submission.platform",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/synthrad-2023.json",
+          "_collection/verification_20261003/literature_context/synthrad-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain",
+            "Pelvis"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Cancer treated with radiotherapy"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "用于肿瘤患者放疗计划/剂量计算的合成CT，记录明确肿瘤临床范围，不猜具体癌种。",
+      "sources": [
+        {
+          "url": "https://synthrad2023.grand-challenge.org/SynthRAD2023/",
+          "local_source": "_collection/sources/100-98b27b8f7f4c.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "用于肿瘤患者放疗计划/剂量计算的合成CT，记录明确肿瘤临床范围，不猜具体癌种。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2023/synthrad-2023.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2023/synthrad-2023.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Rules plan validation data release after presentation of results; test data only after challenge closure, expected around 2028 with the date subject to change. This is a release policy, not confirmation of actual test download availability.",
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2023.grand-challenge.org/submission/",
+                  "supports": [
+                    "submission",
+                    "data_usage_mode"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/100-5682f6fa5e5c.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://synthrad2023.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/100-573eac697643.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2023.grand-challenge.org/SynthRAD2023/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/100-98b27b8f7f4c.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2023.grand-challenge.org/Rules/",
+                  "supports": [
+                    "data_access",
+                    "data_access.access_after_challenge",
+                    "data_access.access_scope",
+                    "data_access.access_status",
+                    "data_usage_mode",
+                    "evaluation",
+                    "publication",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/100-a2cf5b632c06.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2023.grand-challenge.org/Organizers/",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/100-d0b778fc353d.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2023.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/100-fd4c11ef9d29.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://synthrad2023.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/100-overview.json"
+                },
+                {
+                  "type": "official organizer publication",
+                  "url": "https://arxiv.org/pdf/2403.08447",
+                  "local_snapshot": "_collection/sources/100-results.pdf",
+                  "supports": [
+                    "dataset",
+                    "evaluation",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02"
+                },
+                {
+                  "type": "review-derived anatomical classification of source-recorded targets",
+                  "url": "https://synthrad2023.grand-challenge.org/submission/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/clinical_mapping/synthrad-2023.json",
+                  "supports": [
+                    "clinical_domain.organ_system",
+                    "clinical_domain.organ_system_basis",
+                    "clinical_domain.organ_system_coding_scope"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            },
+            {
+              "kind": "Observed post-challenge evaluation activity",
+              "summary": "Positive submissions recorded in explicitly named post-challenge or long-term evaluation phases.",
+              "url": "https://synthrad2023.grand-challenge.org/challenge/statistics/",
+              "snapshot": "_collection/sources/100-573eac697643.json",
+              "scope": "Evidence that the service was used after the competitive phase; cumulative counts do not identify teams or guarantee current acceptance.",
+              "value": [
+                {
+                  "official_phase_name": "Test Task 1 - MRI",
+                  "submission_count": 31
+                },
+                {
+                  "official_phase_name": "Test Task 2 - CBCT",
+                  "submission_count": 29
+                },
+                {
+                  "official_phase_name": "Validation Task 1 - MRI",
+                  "submission_count": 342
+                },
+                {
+                  "official_phase_name": "Validation Task 2 - CBCT",
+                  "submission_count": 274
+                },
+                {
+                  "official_phase_name": "Preliminary test Task1 - MRI",
+                  "submission_count": 195
+                },
+                {
+                  "official_phase_name": "Preliminary test Task 2 - CBCT",
+                  "submission_count": 60
+                },
+                {
+                  "official_phase_name": "Post-challenge Task 1 - MRI",
+                  "submission_count": 32
+                },
+                {
+                  "official_phase_name": "Post-challenge Task 2 - CBCT",
+                  "submission_count": 19
+                }
+              ],
+              "excerpt": "",
+              "snapshot_date": "2026-10-02"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "18 eligible task-1 teams.",
+              "url": "https://arxiv.org/pdf/2403.08447",
+              "snapshot": "_collection/sources/100-results.pdf",
+              "scope": "eligible task-1 teams",
+              "value": {
+                "value": 18,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "ing and quantitative results of Of all the teams that participated in both tasks, the challenge the 18 eligible teams for task 1 and 14 eligible teams for task winner, SMU-MedVision, was the only team to implement two 2, along with the two baseline algorithms. All eligible teams differe",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "14 eligible task-2 teams.",
+              "url": "https://arxiv.org/pdf/2403.08447",
+              "snapshot": "_collection/sources/100-results.pdf",
+              "scope": "eligible task-2 teams",
+              "value": {
+                "value": 14,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "f all the teams that participated in both tasks, the challenge the 18 eligible teams for task 1 and 14 eligible teams for task winner, SMU-MedVision, was the only team to implement two 2, along with the two baseline algorithms. All eligible teams different model architectures for each t",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

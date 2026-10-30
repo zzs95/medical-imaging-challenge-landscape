@@ -1,0 +1,409 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "acrobat-2022",
+    "challenge_name": "ACROBAT 2022",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      },
+      "year": 2022
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Pathology"
+      ],
+      "submodality": [
+        "H&E pathology",
+        "Immunohistochemistry"
+      ],
+      "body_region": [
+        "Breast"
+      ],
+      "organ_system": [
+        "Breast"
+      ],
+      "organs_or_structures": [
+        "Breast tissue sections"
+      ],
+      "diseases": [
+        "Breast cancer"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Registration",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Multi-stain breast tissue whole-slide registration",
+          "task_family": "Registration",
+          "task_subtype": "image registration",
+          "input": [
+            "Moving WSI",
+            "Target WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Transformed landmarks"
+          ],
+          "granularity": "structure-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": true,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": true,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 750,
+        "validation_count": 100,
+        "test_count": 300
+      },
+      "modalities": null,
+      "data_components": [
+        "H&E and IHC WSIs",
+        "Landmarks"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "test_description": "300 test cases, each with one H&E and one routine IHC whole-slide image; registered landmark prediction files submitted for evaluation."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND. 当届协议列 CC BY-NC-ND；数据限配准方法研发及评估，其他用途发表需组织者同意。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": false,
+        "submission_artifact": "Registered landmark prediction files"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge; organizer-run final evaluation",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Landmark registration error (micrometres)",
+            "Median of per-image-pair 90th-percentile landmark errors"
+          ],
+          "ranking": "Median of the per-image-pair 90th-percentile landmark errors; lower is better."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Prediction files (transformed landmarks)",
+      "platform": "Grand Challenge; organizer evaluation of submitted landmarks",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": [
+        "Transformed landmark coordinates"
+      ],
+      "additional_materials": [
+        "Link to a publicly available algorithm description"
+      ]
+    },
+    "schedule": {
+      "submission_start": null,
+      "final_submission_deadline": null
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null,
+      "statistics_status": null,
+      "notes": [
+        "Shared-platform cumulative counts are stored in the historical 2023 record and are not attributed to the 2022 edition."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://acrobat.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": "https://doi.org/10.1016/j.media.2024.103257"
+    },
+    "notes": [
+      "2022 edition retained alone after human review on 2026-10-24. Training/validation/test case counts: 750/100/300, as separately identified in the official overview."
+    ],
+    "provenance": {
+      "record_created": "2026-10-24",
+      "source_urls": [
+        "https://acrobat.grand-challenge.org/",
+        "https://acrobat.grand-challenge.org/challenge-ranking/"
+      ],
+      "source_snapshots": [
+        "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_4434395d1693ed.json",
+        "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_6119e57643f275.json"
+      ],
+      "legacy_candidate_id": "GC-123",
+      "supersedes_analytical_unit": "acrobat-2022-2023"
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-24",
+      "final_assessment_status": "confirmed",
+      "basis": "Official 2022 final-test ranking and organizer result publication.",
+      "audit_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/acrobat-2022.json"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "ACROBAT2022数据页提供SND和CSC直接下载训练WSI及标注；下载授权与参与注册分开。"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "ACROBAT2022数据页提供SND和CSC直接下载训练WSI及标注；下载授权与参与注册分开。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/c48ea7c0968fa2aa.json",
+          "url": "https://acrobat.grand-challenge.org/data/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/acrobat-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "data-to-model"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-ND"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届协议列 CC BY-NC-ND；数据限配准方法研发及评估，其他用途发表需组织者同意。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "CC BY NC ND. Additional comments: The data may be used during and after the challenge for the development and evaluation of WSI registration algorithms. For publications using the data set whose primary objective is not the evaluation of WSI registration algorithms, authors need to seek approval from the challenge organizers.",
+          "source": {
+            "url": "https://zenodo.org/api/records/6361806/files/AutomaticRegistrationofBreastCancerTissue_03-16-2022_10-29-18.pdf/content",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/decf57689219ed1e.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/6361806/files/AutomaticRegistrationofBreastCancerTissue_03-16-2022_10-29-18.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/decf57689219ed1e.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://acrobat.grand-challenge.org/data/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/c48ea7c0968fa2aa.json",
+          "status": 200
+        },
+        {
+          "url": "https://acrobat.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/4434395d1693edcd.json",
+          "status": 200
+        },
+        {
+          "url": "https://acrobat.grand-challenge.org/participation-rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/9738c9e62da5ec65.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/api/records/6361806/files/AutomaticRegistrationofBreastCancerTissue_03-16-2022_10-29-18.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/decf57689219ed1e.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "test",
+              "value": 300,
+              "unit": "cases",
+              "canonical_field": "dataset.test_description",
+              "scope": "Paired H&E/IHC test cases; not a unique-slide total",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [],
+          "source_urls": "https://acrobat.grand-challenge.org/; https://doi.org/10.1016/j.media.2024.103257"
+        }
+      }
+    }
+  }
+}

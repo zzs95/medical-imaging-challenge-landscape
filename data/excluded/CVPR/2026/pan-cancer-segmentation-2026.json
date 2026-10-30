@@ -1,0 +1,362 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "pan-cancer-segmentation-2026",
+    "challenge_name": "Foundation Models for Pan-cancer Segmentation",
+    "full_name": "Foundation Models for Pan-cancer Segmentation",
+    "year": 2026,
+    "event": {
+      "conference": "CVPR 2026 - Foundation Models for Medical Vision Workshop",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Whole body"
+      ],
+      "organ_system": null,
+      "organs_or_structures": null,
+      "diseases": [
+        "Cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Automatic whole-body pan-cancer segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "automatic segmentation",
+          "input": [
+            "3D CT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Tumor segmentation mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "RECIST-to-3D segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "annotation-prompted CPU segmentation",
+          "input": [
+            "3D CT",
+            "2D RECIST diameter annotation"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "3D tumor mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ],
+      "learning_paradigms": [
+        "Foundation models",
+        "Annotation-prompted segmentation"
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": {
+          "value": 10000,
+          "unit": "CT scans",
+          "approximate": false,
+          "lower_bound": true,
+          "raw_text": "10,000+ CT scans"
+        },
+        "validation_count": {
+          "value": 100,
+          "unit": "CT scans",
+          "approximate": false,
+          "lower_bound": false
+        },
+        "test_count": {
+          "value": 500,
+          "unit": "CT scans",
+          "approximate": false,
+          "lower_bound": false
+        }
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": [
+        "CT volumes",
+        "Partially annotated primary-lesion masks",
+        "Optional unlabeled/pseudo-labeled data",
+        "RECIST annotations for subtask 2"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": false,
+      "access_status": "registration-and-approval-required",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Public datasets and pretrained models are allowed with advance forum declaration; deadline inconsistencies remain unresolved."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Codabench and organizer Docker testing",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice",
+            "Normalized Surface Dice",
+            "Runtime",
+            "GPU memory-time integral"
+          ],
+          "ranking": "Average case-wise ranks across four metrics."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Dice",
+            "Normalized Surface Dice",
+            "Runtime"
+          ],
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container and methodology paper",
+      "platform": "Codabench and organizer email",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null,
+        "max_processing_time_per_case_seconds": 60
+      },
+      "submission_limits": {
+        "max_team_members": 6
+      },
+      "task_outputs": null,
+      "runtime_limits_by_task": [
+        {
+          "task_id": "task1",
+          "max_ram_gb": 28,
+          "gpu_required": true
+        },
+        {
+          "task_id": "task2",
+          "max_ram_gb": 8,
+          "cpu_only": true
+        }
+      ]
+    },
+    "schedule": {
+      "registration_start": "2026-04-01",
+      "registration_end": "2026-08-30",
+      "validation_start": "2026-04-20",
+      "validation_end": "2026-08-30",
+      "test_start": "2026-09-01",
+      "test_end": "2026-09-07",
+      "paper_submission_end": "2026-09-24"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": null
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": "2026-10-03",
+      "statistics_status": "current platform snapshot",
+      "notes": [
+        "Participant accounts are not teams. Cumulative platform counts are not treated as edition-specific final participation."
+      ],
+      "platform_snapshot": {
+        "participant_accounts": 190,
+        "submission_count": 389,
+        "scope": "Cumulative hosting-page activity; cross-conference FLARE track, not an independent edition count."
+      }
+    },
+    "links": {
+      "official": "https://www.codabench.org/competitions/7149/",
+      "grand_challenge": null,
+      "platform": "https://www.codabench.org/competitions/7149/",
+      "dataset": "https://huggingface.co/datasets/FLARE-MedFM/FLARE-Task1-Pancancer",
+      "github": null,
+      "challenge_paper": null,
+      "related_parent": "https://flare-medfm.github.io/"
+    },
+    "notes": [
+      "The CVPR workshop links this platform; its rules, data hosting and MICCAI OpenReview submission identify it as a FLARE task. The existing FLARE 2026 parent is preserved.",
+      "Published overview dates conflict with the current platform phase dates. The schedule here is the published overview schedule, not a claim that those deadlines were ultimately implemented.",
+      "External-resource declaration dates also differ between overview and terms; organizer confirmation is needed."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "last_updated": "2026-10-03",
+      "collection_date_definition": "Date of web and literature metadata collection, not medical-image acquisition.",
+      "source_list": "challenge_list_other_platforms_22_26_v4.json",
+      "source_list_index": 75,
+      "source_list_index_base": 1,
+      "collection_status": "partially_verified",
+      "sources": [
+        {
+          "type": "Official organizer source",
+          "url": "https://www.codabench.org/api/competitions/7149/?format=api",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/1f2f7eda4110fac2.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule",
+            "parent_challenge_id"
+          ],
+          "snapshot_sha256": "a2be69a8dc58b1b05921a4fe82779c7d1ba2e436742f3d12eed130655a4f4cc5"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://fmv-cvpr26workshop.github.io/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/0a836807274c47c8.json",
+          "supports": [
+            "event.conference"
+          ],
+          "snapshot_sha256": "2b6745b44403364b185c5298c97ba4ef2f28a22adcb8a6db2c56275f7a0e04ad"
+        }
+      ],
+      "unresolved_fields": [
+        "schedule.final_implemented_dates",
+        "data_usage_mode.external_data.declaration_deadline",
+        "dataset.population.patient_count",
+        "dataset.center_count",
+        "dataset.collection_period.start_year",
+        "data_access.license_or_terms",
+        "participation_statistics.registered_teams"
+      ],
+      "verification_policy": "Only edition-specific official evidence populates facts; unknown values remain null."
+    },
+    "record_level": "challenge_track",
+    "scope_status": "core_medical_imaging",
+    "count_in_core_medical_imaging_review": true,
+    "count_in_edition_statistics": false,
+    "parent_challenge_id": "flare-2026",
+    "related_conferences": [
+      "CVPR 2026",
+      "MICCAI 2026"
+    ]
+  }
+}

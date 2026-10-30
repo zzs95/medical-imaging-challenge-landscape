@@ -1,0 +1,685 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "bic-mac-2026",
+    "challenge_name": "Big Cross-Modal Attenuation Correction Challenge",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "PET",
+        "CT",
+        "MRI",
+        "X-ray"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Whole body"
+      ],
+      "organ_system": [
+        "Multisystem"
+      ],
+      "organs_or_structures": [
+        "Attenuation map"
+      ],
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Synthesis",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Pseudo-CT Attenuation Correction",
+          "task_family": "Synthesis",
+          "task_subtype": null,
+          "input": [
+            "Whole-body MRI",
+            "Non-attenuation-corrected FDG PET",
+            "2D topograms"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "3D pseudo-CT"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": true,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Attenuation map"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": {
+          "value": 75,
+          "unit": "cases"
+        },
+        "validation_count": {
+          "value": 4,
+          "unit": "cases"
+        },
+        "test_count": {
+          "value": 20,
+          "unit": "subjects"
+        },
+        "subject_count": 99
+      },
+      "modalities": [
+        "PET",
+        "CT",
+        "MRI",
+        "X-ray"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "population_description": "Age- and sex-balanced healthy volunteer cohort"
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "agreement-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": "An expanded 100-volunteer Multimodal-HC dataset is now publicly released under CC BY 4.0; distinguish it from the 99-volunteer original competition version.",
+      "preregistered_data_license": "Custom data usage agreement",
+      "access_scope": "Original challenge training version (75 training/4 validation subjects), with registered-team DUA; expanded post-challenge release has separate public terms.",
+      "versioned_access": [
+        {
+          "version": "Expanded Multimodal-HC release",
+          "subject_count": 100,
+          "access_status": "public-with-terms",
+          "license": "CC BY 4.0",
+          "url": "https://huggingface.co/datasets/DEPICT-RH/Multimodal-HC",
+          "reviewed_on": "2026-10-03"
+        }
+      ]
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design."
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": null,
+      "platform": "Codabench",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "CT μ-map MAE",
+            "Brain Outlier Score",
+            "Organ Bias (MARE %)",
+            "Whole-body SUV MAE"
+          ],
+          "ranking": "Average of the ranks across the four official final leaderboard metrics.",
+          "design_status": "Official homepage final leaderboard metrics; supersedes the five-metric registered design.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19731820",
+      "platform_scope": "Codabench hosts rules, validation submissions and leaderboards; final Docker containers are delivered to organizers by email."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Codabench / email",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "execution_mode": "server-side container execution",
+      "required_artifacts": [
+        "Docker container"
+      ],
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://bic-mac-challenge.github.io/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null,
+      "dataset_paper": "https://doi.org/10.1038/s41597-026-08157-4"
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "The final leaderboard uses four metrics; the preregistered design described five. The final homepage is used for the metric list.",
+      "The homepage reports 50+ registered teams. This is not entered as an exact team count."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 1,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://bic-mac-challenge.github.io/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/ee1587e0d27847b4.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19731820",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19731820.txt",
+          "supports": [
+            "clinical_domain",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_access.dua_required",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "official dataset repository or challenge page",
+          "url": "https://bic-mac-challenge.github.io/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/web/bicmac_home.json",
+          "supports": [
+            "evaluation.platform",
+            "submission.platform",
+            "evaluation.platform_scope",
+            "data_access.access_after_challenge"
+          ]
+        },
+        {
+          "type": "official dataset repository or challenge page",
+          "url": "https://huggingface.co/datasets/DEPICT-RH/Multimodal-HC/raw/main/README.md",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/web/bicmac_new_release.json",
+          "supports": [
+            "data_access.versioned_access",
+            "links.dataset_paper"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://bic-mac-challenge.github.io/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/bic-mac-2026.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/19731820",
+          "local_snapshot": "_collection/sources_other/protocol-19731820.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19731820",
+          "local_snapshot": "_collection/sources_other/protocol-19731820.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/19731820",
+          "local_snapshot": "_collection/sources_other/protocol-19731820.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "evaluation.platform": {
+          "source_url": "https://bic-mac-challenge.github.io/",
+          "local_snapshot": "_collection/verification_20261003/web/bicmac_home.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Current official page explicitly names the operational platform and an expanded public dataset version."
+        },
+        "submission.platform": {
+          "source_url": "https://bic-mac-challenge.github.io/",
+          "local_snapshot": "_collection/verification_20261003/web/bicmac_home.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Current official page explicitly names the operational platform and an expanded public dataset version."
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://bic-mac-challenge.github.io/",
+          "local_snapshot": "_collection/verification_20261003/web/bicmac_home.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Current official page explicitly names the operational platform and an expanded public dataset version."
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://bic-mac-challenge.github.io/",
+          "local_snapshot": "_collection/verification_20261003/web/bicmac_home.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Current official page explicitly names the operational platform and an expanded public dataset version."
+        },
+        "data_access.access_status": {
+          "source_url": "https://zenodo.org/records/19731820",
+          "local_snapshot": "_collection/sources_other/protocol-19731820.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered design explicitly requires signed DUA for original challenge-data downloads; the new 100-subject public release is tracked separately."
+        },
+        "data_access.dua_required": {
+          "source_url": "https://zenodo.org/records/19731820",
+          "local_snapshot": "_collection/sources_other/protocol-19731820.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered design explicitly requires signed DUA for original challenge-data downloads; the new 100-subject public release is tracked separately."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://zenodo.org/records/19731820",
+          "local_snapshot": "_collection/sources_other/protocol-19731820.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered design explicitly requires signed DUA for original challenge-data downloads; the new 100-subject public release is tracked separately."
+        },
+        "data_access.versioned_access": {
+          "source_url": "https://huggingface.co/datasets/DEPICT-RH/Multimodal-HC/raw/main/README.md",
+          "local_snapshot": "_collection/verification_20261003/web/bicmac_new_release.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer dataset card explicitly identifies a 100-volunteer expanded dataset and public download instructions; no replacement of original 99-subject competition counts."
+        },
+        "links.dataset_paper": {
+          "source_url": "https://huggingface.co/datasets/DEPICT-RH/Multimodal-HC/raw/main/README.md",
+          "local_snapshot": "_collection/verification_20261003/web/bicmac_new_release.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer dataset card explicitly identifies a 100-volunteer expanded dataset and public download instructions; no replacement of original 99-subject competition counts."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/19731820",
+          "local_snapshot": "_collection/sources_other/protocol-19731820.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/19731820",
+          "local_snapshot": "_collection/sources_other/protocol-19731820.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/19731820",
+          "local_snapshot": "_collection/sources_other/protocol-19731820.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Final evaluation submissions consist of a Docker container sent to the organizers via email. Detailed submission instructions, container validation procedures, and baseline examples are available on CodaBench https://www.codabench.org/competitions/12555/ and the GitHub project repository (https://github.com/bic-mac-challenge/challenge-codebase )."
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19731820",
+          "local_snapshot": "_collection/sources_other/protocol-19731820.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Final evaluation submissions consist of a Docker container sent to the organizers via email. Detailed submission instructions, container validation procedures, and baseline examples are available on CodaBench https://www.codabench.org/competitions/12555/ and the GitHub project repository (https://github.com/bic-mac-challenge/challenge-codebase )."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://bic-mac-challenge.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/bic-mac-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://bic-mac-challenge.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/bic-mac-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://bic-mac-challenge.github.io/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/bic-mac-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_after_challenge",
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_access.dua_required",
+          "data_access.versioned_access",
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "evaluation.platform",
+          "evaluation.platform_scope",
+          "links.dataset_paper",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/bic-mac-2026.json",
+          "_collection/verification_20261003/literature_context/bic-mac-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Whole body"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "方案明确健康、无症状参与者，临床显著异常者排除；不能因PET技术推断癌症队列。",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/19731820",
+          "local_source": "_collection/sources_other/protocol-19731820.txt"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "方案明确健康、无症状参与者，临床显著异常者排除；不能因PET技术推断癌症队列。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2026/bic-mac-2026.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "All data were acquired at the Department of Clinical Physiology and Nuclear Medicine and the Department of Radiotherapy, Rigshospitalet, University of Copenhagen, Copenhagen, Denmark.",
+              "url": "https://zenodo.org/records/19731820",
+              "snapshot": "_collection/sources_other/protocol-19731820.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nAll data were acquired at the Department of Clinical Physiology and Nuclear Medicine and the Department of\nRadiotherapy, Rigshospitalet, University of Copenhagen, Copenhagen, Denmark.",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2026/bic-mac-2026.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "An expanded 100-volunteer Multimodal-HC dataset is now publicly released under CC BY 4.0; distinguish it from the 99-volunteer original competition version.",
+              "sources": [
+                {
+                  "type": "official conference program",
+                  "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+                  "supports": [
+                    "challenge identity",
+                    "event affiliation"
+                  ]
+                },
+                {
+                  "type": "official challenge website",
+                  "url": "https://bic-mac-challenge.github.io/",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/ee1587e0d27847b4.json",
+                  "supports": [
+                    "challenge context",
+                    "task_profile",
+                    "clinical_domain",
+                    "homepage fields where stated"
+                  ]
+                },
+                {
+                  "type": "official preregistered challenge design",
+                  "url": "https://zenodo.org/records/19731820",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/protocol-19731820.txt",
+                  "supports": [
+                    "clinical_domain",
+                    "data_access.access_scope",
+                    "data_access.access_status",
+                    "data_access.dua_required",
+                    "data_usage_mode.evidence_stage",
+                    "data_usage_mode.interpretation",
+                    "data_usage_mode.overall_paradigm",
+                    "data_usage_mode.testing.paradigm",
+                    "data_usage_mode.training.paradigm",
+                    "preregistered evaluation design",
+                    "submission.evidence_stage",
+                    "submission.submission_type",
+                    "task_profile"
+                  ]
+                },
+                {
+                  "type": "official dataset repository or challenge page",
+                  "url": "https://bic-mac-challenge.github.io/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/web/bicmac_home.json",
+                  "supports": [
+                    "evaluation.platform",
+                    "submission.platform",
+                    "evaluation.platform_scope",
+                    "data_access.access_after_challenge"
+                  ]
+                },
+                {
+                  "type": "official dataset repository or challenge page",
+                  "url": "https://huggingface.co/datasets/DEPICT-RH/Multimodal-HC/raw/main/README.md",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/web/bicmac_new_release.json",
+                  "supports": [
+                    "data_access.versioned_access",
+                    "links.dataset_paper"
+                  ]
+                },
+                {
+                  "type": "review-derived anatomical classification of source-recorded targets",
+                  "url": "https://bic-mac-challenge.github.io/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/clinical_mapping/bic-mac-2026.json",
+                  "supports": [
+                    "clinical_domain.organ_system",
+                    "clinical_domain.organ_system_basis",
+                    "clinical_domain.organ_system_coding_scope"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

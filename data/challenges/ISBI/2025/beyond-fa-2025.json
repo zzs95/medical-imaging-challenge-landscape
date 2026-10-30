@@ -1,0 +1,838 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "beyond-fa-2025",
+    "challenge_name": "Beyond FA",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "ISBI 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2025-04-17",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      },
+      "conference_relationship_review": {
+        "current_inventory_year": 2025,
+        "conference_assignment": "ISBI 2025",
+        "primary_conference": "ISBI 2025",
+        "secondary_conference": "MIDL 2025",
+        "isbi_relationship": "official_challenge",
+        "midl_relationship": "organiser-documented challenge association; short-paper publication and planned challenge update",
+        "midl_formal_endorsement": null,
+        "midl_formal_endorsement_evidence": "not_independently_verified",
+        "midl_actual_results_session_presentation": null,
+        "status": "affiliation_resolved_with_qualified_secondary_association",
+        "unique_edition_count": 1,
+        "counting_rule": "Same 2025 Grand Challenge competition; neither MIDL association nor 2026 result publication creates a second edition.",
+        "evidence_urls": [
+          "https://biomedicalimaging.org/2025/challenges/",
+          "https://bfa.grand-challenge.org/timeline/",
+          "https://yehyunsuh.github.io/news/",
+          "https://openreview.net/pdf?id=KZXJDxQegd"
+        ],
+        "reviewed_on": "2026-10-22",
+        "note_zh": "ISBI 2025为正式主会议，MIDL 2025为组织者明确关联会议；未独立核实MIDL正式接纳/背书或实际结果报告环节。只计同一届一次。"
+      },
+      "secondary_conferences": [
+        {
+          "conference": "MIDL 2025",
+          "relationship": "organiser-documented challenge association; short-paper publication and planned challenge update",
+          "formal_endorsement": null
+        }
+      ]
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": [
+        "Diffusion-weighted MRI"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Nervous system"
+      ],
+      "organs_or_structures": [
+        "White matter"
+      ],
+      "diseases": [
+        "Alzheimer disease",
+        "Mild cognitive impairment"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Representation Learning",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "White-matter feature extraction",
+          "task_family": "Representation Learning",
+          "task_subtype": "Biomarker/feature extraction",
+          "input": [
+            "Single-shell diffusion MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "One feature vector per image"
+          ],
+          "granularity": "image",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "Single-shell diffusion MRI",
+        "Feature vectors extracted by participants"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "organizer_classifier_training": {
+          "images": 500,
+          "CN": 210,
+          "MCI": 210,
+          "AD": 80
+        },
+        "organizer_classifier_testing": {
+          "images": 100,
+          "CN": 34,
+          "MCI": 33,
+          "AD": 33
+        },
+        "participant_training": "Not prescribed; any diffusion-MRI dataset permitted.",
+        "debug": "MASIVar public cases; debug output scores are random."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Not applicable",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "训练数据由参赛者自行选择，不存在统一的指定训练集许可；组织者提供MASiVar调试样本及隐藏评估数据，其完整条款仍未明确。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; round 3",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "Participant-selected training",
+          "category": "Not applicable",
+          "access_steps": [
+            "Use any eligible diffusion MRI training data"
+          ],
+          "manual_review": null
+        },
+        {
+          "scope": "Phase 1 debugging examples",
+          "category": "Public download",
+          "access_steps": [
+            "Open MASiVar examples; not a prescribed training cohort"
+          ],
+          "manual_review": false
+        },
+        {
+          "scope": "Phase 2 training/test",
+          "category": "Held centrally",
+          "access_steps": [
+            "Organiser-side training and testing"
+          ],
+          "manual_review": null
+        }
+      ],
+      "license_review_status": "Not established",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Participants may choose any dataset containing diffusion MRI. Restrict b-values to a single shell around 1000 s/mm²."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Downstream cognitive-status accuracy (public evaluation example)"
+          ],
+          "ranking": "Organizer-trained shallow MLP. The public example uses accuracy for cognitive status; the original final leaderboard aggregation is not confirmed."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "debug_upload_attempts": 5,
+        "evaluation_uploads": 1
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "related_publications": [
+        {
+          "title": "Introducing Beyond FA: Crowdsourcing Imaging Biomarkers for Alzheimer’s Disease",
+          "first_author": "Elyssa M. McMaster",
+          "year": 2025,
+          "venue": "MIDL 2025 Short Papers",
+          "url": "https://openreview.net/pdf?id=KZXJDxQegd",
+          "role": "challenge introduction / protocol",
+          "qualification": "Conference paper does not independently establish formal challenge endorsement."
+        },
+        {
+          "title": "Contrastive learning and advanced bundle metrics outperform fractional anisotropy for Alzheimer's disease diffusion MRI prediction: findings from the Beyond FA challenge",
+          "first_author": "Elyssa McMaster",
+          "journal": "Journal of Medical Imaging (Bellingham)",
+          "year": 2026,
+          "volume": "13",
+          "issue": "5",
+          "article_number": "054003",
+          "issue_date": "2026-09",
+          "electronic_publication_date": "2026-10-15",
+          "doi": "10.1117/1.JMI.13.5.054003",
+          "pmid": "42889931",
+          "pmcid": "PMC13671859",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42889931/",
+          "role": "post-challenge results report",
+          "challenge_edition_year": 2025,
+          "review_scope": "Bibliographic record and abstract; detailed full-text data not extracted."
+        }
+      ]
+    },
+    "participation_statistics": {
+      "registered_participants": 84,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Phase 1: Trial Images",
+            "submission_count": 23
+          },
+          {
+            "official_phase_name": "Phase 2: Testing Age/Sex/Cognitive Status/Secret Variables",
+            "submission_count": 17
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://bfa.grand-challenge.org/",
+      "dataset": null,
+      "github": "https://github.com/MASILab/BeyondFA_eval",
+      "challenge_paper": "https://doi.org/10.1117/1.JMI.13.5.054003"
+    },
+    "notes": [
+      "Teams submit feature-extraction algorithms. Organizers train/test a shallow MLP on hidden data; the 500-image classifier-training set is not a public participant training split. July 1 MIDL update deadline is separate from ISBI challenge hosting.",
+      "2026-10-22: ISBI 2025 official challenge and organizer-documented MIDL 2025 association refer to one competition. MIDL formal endorsement and actual results-session presentation remain unverified. The JMI result report appeared electronically on 2026-10-15 (issue dated 2026-09); this is not a new 2026 challenge."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-22",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://bfa.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/43-18bd6dc90115.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://bfa.grand-challenge.org/bfa/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/43-282abb88a770.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://raw.githubusercontent.com/MASILab/BeyondFA_eval/main/eval/bfa_dev/utils/trainer.py",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/43-61e60c0e1d51.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://github.com/MASILab/BeyondFA_eval",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/43-ac20b0ca9322.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://bfa.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/43-af60c8acd214.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://raw.githubusercontent.com/MASILab/BeyondFA_eval/main/eval/bfa_dev/train.py",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/43-b1493692fa64.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://bfa.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/43-e591a1572591.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://bfa.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/43-feb78f0a853e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://bfa.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/43-overview.json"
+        },
+        {
+          "type": "official program, organizer statement or primary publication",
+          "url": "https://biomedicalimaging.org/2025/challenges/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bfa_isbi_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "ISBI official program: Challenge 5 Beyond FA; April 17 2025, 15:00–16:30."
+          ]
+        },
+        {
+          "type": "official program, organizer statement or primary publication",
+          "url": "https://bfa.grand-challenge.org/timeline/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bfa_timeline_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Organizer timeline: July 1 2025 deadline for inclusion in the MIDL 2025 challenge update; planned update, not proof of actual presentation."
+          ]
+        },
+        {
+          "type": "official program, organizer statement or primary publication",
+          "url": "https://yehyunsuh.github.io/news/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bfa_organizer_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Organizer news dated March 21 2025 explicitly links the same Beyond FA challenge with ISBI 2025 and MIDL 2025."
+          ]
+        },
+        {
+          "type": "official program, organizer statement or primary publication",
+          "url": "https://openreview.net/pdf?id=KZXJDxQegd",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bfa_shortpaper_web_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "MIDL 2025 short-paper publication; does not independently prove MIDL Challenge Board endorsement."
+          ]
+        },
+        {
+          "type": "official program, organizer statement or primary publication",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42889931/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bfa_pubmed_web_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "2026 post-challenge journal report for the existing Beyond FA competition; publication year does not define a new edition."
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "evaluation: public MLP example also supports age MAE and sex accuracy; confirm original final challenge endpoints and ranking beyond homepage cognitive-status description.",
+        "data_access: hidden cohort license/access terms and compute limits not fully verified.",
+        "MIDL Challenge Board formal endorsement and actual presentation in the generic MIDL Challenge Results session are not independently verified."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/beyond-fa-2025.json",
+          "_collection/verification_20261003/literature_context/beyond-fa-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-21",
+          "scope": "User requested writing preceding documentary findings into the original challenge JSON",
+          "fields_updated": [
+            "event.conference_relationship_review"
+          ],
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/beyond-fa-2025.json",
+          "previous_sha256": "693ae073e7cb77c178224526c42bc6ed7bf3bdb75191ecbf305af4f4c31c93e4",
+          "previous_record_backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/canonical_followup_20261021_154948/ISBI/2025/beyond-fa-2025.json",
+          "qualification": "Targeted documentary review; pending conference relationships remain unverified. No independent human double coding asserted. Aggregate outputs not rebuilt."
+        },
+        {
+          "date": "2026-10-22",
+          "scope": "Conference association and result publication",
+          "previous_relationship": {
+            "current_inventory_year": 2025,
+            "conference_assignment": "ISBI 2025",
+            "relationship": "MIDL publication relationship pending verification",
+            "status": "retain existing ISBI affiliation; MIDL lead recorded separately",
+            "source_url": "https://bfa.grand-challenge.org/",
+            "existing_record": "ISBI/2025/beyond-fa-2025.json",
+            "note_zh": "已计入总量，原始记录归属 ISBI 2025。用户指出研究方案在 MIDL 2025 发表；正式 MIDL 挑战身份与发表关系须分开核实，不能重复计数。"
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bfa_affiliation_20261022_011121/ISBI/2025/beyond-fa-2025.json",
+          "human_review_scope": "User documentary findings reconciled with primary sources; no independent double coding claimed."
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "basis": "Existing phase-two test leaderboard; additionally supported by organizer post-challenge journal report abstract.",
+      "evidence_urls": [
+        "https://bfa.grand-challenge.org/evaluation/phase-2-testing-agesexcognitive-statussecret-variables/leaderboard/",
+        "https://pubmed.ncbi.nlm.nih.gov/42889931/"
+      ],
+      "qualification": "Result publication in 2026 concerns the retained 2025 edition; no new edition or extra count."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Not applicable",
+        "state": "Not applicable",
+        "rationale": "无统一指定训练集：允许自选diffusion MRI训练数据；MASiVar仅用于Phase 1调试，Phase 2隐藏数据由评估方训练和测试。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "Participant-selected training",
+            "category": "Not applicable",
+            "access_steps": [
+              "Use any eligible diffusion MRI training data"
+            ],
+            "manual_review": null
+          },
+          {
+            "scope": "Phase 1 debugging examples",
+            "category": "Public download",
+            "access_steps": [
+              "Open MASiVar examples; not a prescribed training cohort"
+            ],
+            "manual_review": false
+          },
+          {
+            "scope": "Phase 2 training/test",
+            "category": "Held centrally",
+            "access_steps": [
+              "Organiser-side training and testing"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "Primary protocol / metadata checked",
+        "confidence": "High",
+        "source_urls": [
+          "https://bfa.grand-challenge.org/bfa/"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-24 round 3: 无统一指定训练集：允许自选diffusion MRI训练数据；MASiVar仅用于Phase 1调试，Phase 2隐藏数据由评估方训练和测试。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/beyond-fa-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://bfa.grand-challenge.org/bfa/",
+          "local_source": "_collection/access_backfill_round3_20261024/sources/282abb88a770fcb0.json",
+          "review_date": "2026-10-24",
+          "section": "Round 3 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Not applicable",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Not established",
+      "terms_documented": false,
+      "detail_level": "Source-specific; organizer data terms unresolved",
+      "licence_names": [],
+      "scope": "Participant-selected training data: source-specific licences; organizer debug/evaluation data: terms not established",
+      "agreement_required": null,
+      "summary_zh": "训练数据由参赛者自行选择，不存在统一的指定训练集许可；组织者提供MASiVar调试样本及隐藏评估数据，其完整条款仍未明确。",
+      "qualifications": [],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "url": "https://bfa.grand-challenge.org/timeline/",
+          "local_source": "_collection/sources/43-18bd6dc90115.json"
+        },
+        {
+          "url": "https://bfa.grand-challenge.org/bfa/",
+          "local_source": "_collection/sources/43-282abb88a770.json"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/MASILab/BeyondFA_eval/main/eval/bfa_dev/utils/trainer.py",
+          "local_source": "_collection/sources/43-61e60c0e1d51.json"
+        },
+        {
+          "url": "https://github.com/MASILab/BeyondFA_eval",
+          "local_source": "_collection/sources/43-ac20b0ca9322.json"
+        },
+        {
+          "url": "https://bfa.grand-challenge.org/challenge/statistics/",
+          "local_source": "_collection/sources/43-af60c8acd214.json"
+        },
+        {
+          "url": "https://bfa.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_followup_20261025/sources/feb78f0a853e9a91.json",
+          "evidence_type": "Official source"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "search_attempts": [
+        {
+          "url": "https://yehyunsuh.github.io/news/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/41880eb768da8de7.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/MASILab/BeyondFA_eval",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/ac20b0ca93224f47.json",
+          "status": 200
+        },
+        {
+          "url": "https://raw.githubusercontent.com/MASILab/BeyondFA_eval/main/eval/bfa_dev/train.py",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/b1493692fa64d894.json",
+          "status": 200
+        },
+        {
+          "url": "https://raw.githubusercontent.com/MASILab/BeyondFA_eval/main/eval/bfa_dev/utils/trainer.py",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/61e60c0e1d517af8.json",
+          "status": 200
+        },
+        {
+          "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1e460fb35d79919e.json",
+          "status": 200
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance.",
+      "previous_review": {
+        "review_date": "2026-10-25",
+        "review_cohort": "Previously reviewed 215",
+        "review_population": "Legacy 101 previously unestablished records",
+        "state": "Not established",
+        "terms_documented": false,
+        "detail_level": "Not established",
+        "licence_names": [],
+        "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+        "agreement_required": null,
+        "summary_zh": "官方 Beyond FA 数据/流程与评估仓库未给出可确认的比赛数据许可；不推定上游资源的通用条款覆盖所有数据。",
+        "qualifications": [],
+        "scoped_terms": [],
+        "sources": [
+          {
+            "url": "https://bfa.grand-challenge.org/timeline/",
+            "local_source": "_collection/sources/43-18bd6dc90115.json"
+          },
+          {
+            "url": "https://bfa.grand-challenge.org/bfa/",
+            "local_source": "_collection/sources/43-282abb88a770.json"
+          },
+          {
+            "url": "https://raw.githubusercontent.com/MASILab/BeyondFA_eval/main/eval/bfa_dev/utils/trainer.py",
+            "local_source": "_collection/sources/43-61e60c0e1d51.json"
+          },
+          {
+            "url": "https://github.com/MASILab/BeyondFA_eval",
+            "local_source": "_collection/sources/43-ac20b0ca9322.json"
+          },
+          {
+            "url": "https://bfa.grand-challenge.org/challenge/statistics/",
+            "local_source": "_collection/sources/43-af60c8acd214.json"
+          }
+        ],
+        "substantive_terms_documented": false,
+        "search_attempts": [
+          {
+            "url": "https://yehyunsuh.github.io/news/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/41880eb768da8de7.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/MASILab/BeyondFA_eval",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/ac20b0ca93224f47.json",
+            "status": 200
+          },
+          {
+            "url": "https://raw.githubusercontent.com/MASILab/BeyondFA_eval/main/eval/bfa_dev/train.py",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/b1493692fa64d894.json",
+            "status": 200
+          },
+          {
+            "url": "https://raw.githubusercontent.com/MASILab/BeyondFA_eval/main/eval/bfa_dev/utils/trainer.py",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/61e60c0e1d517af8.json",
+            "status": 200
+          },
+          {
+            "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/1e460fb35d79919e.json",
+            "status": 200
+          }
+        ],
+        "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+      },
+      "supplemental_user_review": "_collection/legacy_license_followup_20261025/user_review.txt",
+      "training_licence_applicability": "No single organizer-prescribed training dataset"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "organizer_classifier_training / images",
+              "value": 500,
+              "unit": "images",
+              "canonical_field": "dataset.split_details.organizer_classifier_training.images",
+              "scope": "Organizer classifier training/testing only; not prescribed participant training data",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "organizer_classifier_testing / images",
+              "value": 100,
+              "unit": "images",
+              "canonical_field": "dataset.split_details.organizer_classifier_testing.images",
+              "scope": "Organizer classifier training/testing only; not prescribed participant training data",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [],
+          "source_urls": "https://bfa.grand-challenge.org/timeline/; https://bfa.grand-challenge.org/bfa/; https://raw.githubusercontent.com/MASILab/BeyondFA_eval/main/eval/bfa_dev/utils/trainer.py; https://github.com/MASILab/BeyondFA_eval; https://bfa.grand-challenge.org/challenge/statistics/; https://raw.githubusercontent.com/MASILab/BeyondFA_eval/main/eval/bfa_dev/train.py; https://bfa.grand-challenge.org/prizes/; https://bfa.grand-challenge.org/; https://biomedicalimaging.org/2025/challenges/; https://yehyunsuh.github.io/news/; https://openreview.net/pdf?id=KZXJDxQegd; https://pubmed.ncbi.nlm.nih.gov/42889931/; https://doi.org/10.1117/1.JMI.13.5.054003"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

@@ -1,0 +1,1015 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "endouc-2026",
+    "challenge_name": "Multi-modal Ulcerative Colitis Grading in Endoscopy",
+    "full_name": "Multi-modal Ulcerative Colitis Grading in Endoscopy",
+    "year": 2026,
+    "event": {
+      "conference": "ISBI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2026-04-11",
+      "location": {
+        "city": "London",
+        "country": "United Kingdom",
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Abdomen"
+      ],
+      "organ_system": [
+        "Gastrointestinal"
+      ],
+      "organs_or_structures": [
+        "Colon",
+        "Rectum"
+      ],
+      "diseases": [
+        "Ulcerative colitis"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": null,
+      "organ_system_coding_scope": null
+    },
+    "task_profile": {
+      "primary_task_family": null,
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Mayo Endoscopic Score grading",
+          "task_family": "Classification",
+          "task_subtype": "multi-class classification",
+          "input": [
+            "colonoscopy images"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "MES 0–3"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Ulcerative colitis image captioning",
+          "task_family": "Captioning",
+          "task_subtype": "free-text generation",
+          "input": [
+            "colonoscopy images"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "clinical image descriptions"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Generalization to unseen centers",
+          "task_family": "Domain Generalization",
+          "task_subtype": null,
+          "input": [
+            "held-out center colonoscopy images"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Task I and Task II outputs"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        }
+      ],
+      "task_numbering_note": {
+        "reviewed_on": "2026-10-22",
+        "status": "source_specific_numbering_resolved",
+        "website_overview": {
+          "Task I": "MES classification",
+          "Task II": "Captioning",
+          "Task III": "Generalization"
+        },
+        "official_submission_guides": {
+          "Task 1": "MES classification",
+          "Task 2": "UCEIS classification",
+          "Task 3": "Captioning"
+        },
+        "basis": "Both official EndoUC Docker READMEs explicitly list the three prediction CSV formats. Participant Task 2 UCEIS description agrees with submission guides. Preserve website declarations separately.",
+        "source_urls": [
+          "https://raw.githubusercontent.com/EndoUC/EndoUCDocker/0e93cfd43733f007d044371f52fafa441a26378d/README.md",
+          "https://raw.githubusercontent.com/EndoUC/EndoUCDocker-Template/e96b1c893c4f690673fac4e1e081338e4c5af19d/README.md"
+        ]
+      },
+      "task_numbering_history": [
+        {
+          "reviewed_on": "2026-10-21",
+          "official_website_task2": "Ulcerative colitis image captioning",
+          "participant_paper_task2_as_reported_in_user_summary": "UCEIS classification",
+          "status": "Source-specific numbering difference; paper content not independently verified. Retain official declared tasks, do not overwrite task2 or its metrics.",
+          "effect_on_caption_completion": "No change; baseline evaluation confirmed, final competition caption results unverified."
+        }
+      ],
+      "submission_tasks": [
+        {
+          "submission_task_id": "1",
+          "task_family": "Classification",
+          "official_output": "id,mes_score_0_3"
+        },
+        {
+          "submission_task_id": "2",
+          "task_family": "Classification",
+          "official_output": "id,uceis_score"
+        },
+        {
+          "submission_task_id": "3",
+          "task_family": "Captioning",
+          "official_output": "id,caption"
+        }
+      ],
+      "task_families": [
+        "Classification",
+        "Report generation"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "Report generation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null,
+      "caption_annotation_evidence": {
+        "source_url": "https://arxiv.org/html/2603.14559v1",
+        "scope": "Dataset paper Methods; not an independent verification of all challenge labels",
+        "description": "Gastroenterologists annotate vascular pattern, bleeding, erythema, erosions/ulcers and friability; Python code combines these features into standardized caption sentences.",
+        "interpretation": "Expert-annotated clinical features with template-based caption construction; do not characterize all reference captions as independently authored free-text reports."
+      }
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Endoscopy"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": "Synapse with organizer-signed challenge agreement",
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": "Agreement states possible public reuse after joint paper and an initially 24-month, extendable embargo.",
+      "access_scope": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Publicly available additional data may be used if disclosed in the method."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": true,
+      "platform": "Synapse",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "MES classification accuracy"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "caption similarity to expert annotations"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "task3",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null,
+      "caption_baseline_evidence": {
+        "reviewed_on": "2026-10-21",
+        "source_url": "https://arxiv.org/html/2603.14559v1",
+        "source_location": "Technical Validation, Table 4, and Discussion",
+        "assessment_type": "dataset baseline technical validation",
+        "caption_baseline_assessment": "confirmed",
+        "sample_count": 311,
+        "sample_unit": "low-resolution test images",
+        "models": [
+          "BLIP-Base",
+          "BLIP-Large"
+        ],
+        "metrics": [
+          "Cosine Similarity",
+          "BLEU-1",
+          "BLEU-4",
+          "METEOR",
+          "ROUGE-1",
+          "ROUGE-L"
+        ],
+        "results": [
+          {
+            "model": "BLIP-Base",
+            "cosine_similarity": 0.759,
+            "BLEU-1": 0.7887,
+            "BLEU-4": 0.6573,
+            "METEOR": 0.8124,
+            "ROUGE-1": 0.8338,
+            "ROUGE-L": 0.8298
+          },
+          {
+            "model": "BLIP-Large",
+            "cosine_similarity": 0.7977,
+            "BLEU-1": 0.821,
+            "BLEU-4": 0.696,
+            "METEOR": 0.8435,
+            "ROUGE-1": 0.8615,
+            "ROUGE-L": 0.8574
+          }
+        ],
+        "competition_caption_final_assessment": "not_established_by_this_baseline_paper_alone",
+        "count_as_confirmed_competition_caption_assessment": false,
+        "interpretation": "The paper reports executed caption baseline tests, not entrant-level final caption rankings. Do not describe caption assessment as wholly absent; distinguish dataset technical validation from completion of the competition caption track.",
+        "dataset_scope_note": "Keep the paper benchmark sample sizes separate from edition-level challenge splits. Paper contains inconsistent total-image and subset descriptions; no canonical dataset total or exact center count is overwritten.",
+        "snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_dataset_paper_2603_14559_20261021.json"
+      },
+      "caption_competition_evidence": {
+        "reviewed_on": "2026-10-22",
+        "evidence_state": "human_confirmed_with_documentary_support",
+        "declared_captioning_objective": "confirmed",
+        "published_evaluation_protocol": "confirmed",
+        "published_participant_result": "confirmed",
+        "caption_competition_assessment": "confirmed",
+        "independently_verified_complete_final_rankings": "not_verified",
+        "include_in_confirmed_caption_assessment_count": true,
+        "basis": "User explicitly confirms UCMoLE reports an EndoUC captioning leaderboard result. Combined with official declared task, official submission specification and edition-level final leaderboard announcement, this supports performed competitive caption assessment without requiring complete official rankings.",
+        "participant_paper_doi": "10.1109/ISBI61048.2026.11515305",
+        "verification_limit": "Assistant verified paper bibliography and official website/submission instructions; participant paper contents and evaluation-code metrics are accepted on the user review. Full paper, exact final-stage scores and complete official caption rankings have not been independently verified by assistant.",
+        "supersedes": "2026-10-21 instruction to exclude EndoUC from confirmed caption competition assessments",
+        "baseline_separation": "BLIP results in arXiv:2603.14559 Table 4 remain baseline-only evidence and are not the basis of competitive ranking confirmation."
+      },
+      "caption_protocol_metrics": {
+        "metrics": [
+          "Cosine similarity (TF-IDF)",
+          "BLEU",
+          "METEOR",
+          "ROUGE-1",
+          "ROUGE-L"
+        ],
+        "evidence_basis": "User-confirmed official evaluation repository; precise repository URL not supplied or independently resolved in this turn.",
+        "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_user_caption_confirmation_20261022.json",
+        "reviewed_on": "2026-10-22"
+      }
+    },
+    "submission": {
+      "submission_type": "Docker container; one task per container; CSV predictions produced during inference",
+      "platform": "Synapse",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": {
+        "MES": "id,mes_score_0_3",
+        "UCEIS": "id,uceis_score",
+        "Caption": "id,caption"
+      },
+      "official_guide_evidence": {
+        "source_urls": [
+          "https://raw.githubusercontent.com/EndoUC/EndoUCDocker/0e93cfd43733f007d044371f52fafa441a26378d/README.md",
+          "https://raw.githubusercontent.com/EndoUC/EndoUCDocker-Template/e96b1c893c4f690673fac4e1e081338e4c5af19d/README.md"
+        ],
+        "reviewed_on": "2026-10-22",
+        "scope": "Inference-only containers; mounted image inputs; CSV output. Instructions establish submission protocol, not independent execution logs."
+      }
+    },
+    "schedule": {
+      "final_test_results_date": "2026-01-15",
+      "final_test_results_date_review": {
+        "event": "Final Test results on Leaderboard",
+        "source_text": "January 15th 2025",
+        "source_date": "2025-01-15",
+        "interpreted_date": "2026-01-15",
+        "evidence_state": "human_adjudicated_probable_year_typo",
+        "basis": "User identifies a highly probable year typo, consistent with December 2025 data release and subsequent 2026 paper deadlines. Not an organizer-issued correction.",
+        "source_url": "https://endouc.github.io/EndoUC-CV.github.io/",
+        "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_6edc661be5ca94.json"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "dataset_benchmark_paper": {
+        "title": "A comprehensive multimodal dataset and benchmark for ulcerative colitis scoring in endoscopy",
+        "first_author": "Noha Ghatwary",
+        "arxiv_id": "2603.14559v1",
+        "date": "2026-03-15",
+        "url": "https://arxiv.org/abs/2603.14559",
+        "doi": "10.48550/arXiv.2603.14559",
+        "type": "dataset and baseline-benchmark preprint",
+        "supports": [
+          "dataset documentation",
+          "caption annotation procedure",
+          "completed classification and caption baseline evaluations"
+        ],
+        "does_not_establish": "Final competition caption-track results"
+      },
+      "participant_paper_metadata": [
+        {
+          "title": "Multi-Task Ensemble Learning for Endoscopic Ulcerative Colitis Severity Grading",
+          "authors": [
+            "Kareem K. Badawy",
+            "Noha Ghatwary",
+            "Sherine Nagy Saleh"
+          ],
+          "doi": "10.1109/ISBI61048.2026.11515934",
+          "publication_date": "2026-04-08",
+          "metadata_verified": true,
+          "full_text_reviewed": false,
+          "content_scope": "Classification results described in user summary; verify original before coding task execution or scores."
+        },
+        {
+          "title": "UCMoLE: Cluster-Routed Mixture of Low-Rank Experts for Endoscopic Ulcerative Colitis Captioning",
+          "authors": [
+            "Robert Chandler",
+            "Sakib Ahammed",
+            "Moi Hoon Yap",
+            "Xinqi Fan"
+          ],
+          "doi": "10.1109/ISBI61048.2026.11515305",
+          "publication_date": "2026-04-08",
+          "metadata_verified": true,
+          "full_text_reviewed": false,
+          "content_scope": "Endoscopic UC captioning; competition leaderboard claim requires primary-source/phase verification."
+        }
+      ]
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://endouc.github.io/EndoUC-CV.github.io/",
+      "grand_challenge": null,
+      "platform": "https://www.synapse.org/Synapse:syn70967760",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Edition is listed in the ISBI 2026 official challenge program; distinct from MICCAI 2026 FoundUS and earlier series editions.",
+      "Organizer page contains an apparent 'January 15th 2025' typo within its 2026 timeline; no date is normalized from that line.",
+      "2026-10-21 human review: retain EndoUC 2026 and its declared image-caption generation objective. Do not count it as publicly confirmed completed caption assessment. Interpret January 15, 2025 as a probable typo for January 15, 2026, retaining the original wording and attribution."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-20",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date of documentary extraction, not image acquisition or challenge completion.",
+      "last_verified": "2026-10-20",
+      "source_list": "ISBI 2026 official challenge program addendum",
+      "source_index": 5,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://biomedicalimaging.org/2026/challenges/",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "edition identity",
+            "conference affiliation",
+            "task scope"
+          ],
+          "basis": "ISBI 2026 lists this edition in its challenge session."
+        },
+        {
+          "type": "organizer edition website",
+          "url": "https://endouc.github.io/EndoUC-CV.github.io/",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "three tasks",
+            "final test statement",
+            "Synapse submission"
+          ],
+          "basis": "Organizer says the final-test leaderboard is out."
+        },
+        {
+          "type": "official challenge data agreement",
+          "url": "https://endouc.github.io/EndoUC-CV.github.io/assets/DataAgreement_EndoUC_EndoCV2026_ISBIChallenge_V2.pdf",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "data access",
+            "external data",
+            "embargo"
+          ],
+          "basis": "Signed agreement is required; public reuse is deferred until a later paper and embargo."
+        },
+        {
+          "type": "explicit human adjudication",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_user_adjudication_20261021.json",
+          "reviewed_on": "2026-10-21",
+          "supports": [
+            "schedule.final_test_results_date_review",
+            "assessment_evidence.caption_assessment_review"
+          ]
+        },
+        {
+          "type": "dataset and baseline-benchmark paper",
+          "url": "https://arxiv.org/html/2603.14559v1",
+          "retrieved_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_dataset_paper_2603_14559_20261021.json",
+          "supports": [
+            "evaluation.caption_baseline_evidence",
+            "publication.dataset_benchmark_paper",
+            "labels_and_targets.caption_annotation_evidence"
+          ]
+        },
+        {
+          "type": "user-supplied research summary",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_user_summary_20261021.json",
+          "reviewed_on": "2026-10-21",
+          "supports": [
+            "literature_review_leads",
+            "task_profile.task_numbering_note"
+          ]
+        },
+        {
+          "type": "publisher-deposited DOI metadata",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_participant_crossref_11515934_20261021.json",
+          "reviewed_on": "2026-10-21",
+          "supports": [
+            "publication.participant_paper_metadata"
+          ]
+        },
+        {
+          "type": "publisher-deposited DOI metadata",
+          "url": "https://api.crossref.org/works/10.1109/ISBI61048.2026.11515305",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_ucmole_crossref_11515305_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "publication.participant_paper_metadata"
+          ]
+        },
+        {
+          "type": "official organizer submission guide",
+          "url": "https://raw.githubusercontent.com/EndoUC/EndoUCDocker/0e93cfd43733f007d044371f52fafa441a26378d/README.md",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_endoucdocker_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "task_profile.submission_tasks",
+            "submission.submission_type",
+            "submission.task_outputs"
+          ]
+        },
+        {
+          "type": "official organizer submission guide",
+          "url": "https://raw.githubusercontent.com/EndoUC/EndoUCDocker-Template/e96b1c893c4f690673fac4e1e081338e4c5af19d/README.md",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_endoucdocker-template_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "task_profile.submission_tasks",
+            "submission.submission_type",
+            "submission.task_outputs"
+          ]
+        },
+        {
+          "type": "explicit human adjudication",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_user_caption_confirmation_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "assessment_evidence.caption_competition_assessment_status",
+            "review_coding.vision_language_objective_assessed"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset size and independent center count",
+        "Post-challenge release date",
+        "Complete official caption final rankings and individual team scores not independently verified; competitive caption assessment is human-confirmed with participant result evidence."
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "event.conference": {
+          "source_url": "https://biomedicalimaging.org/2026/challenges/",
+          "reviewed_on": "2026-10-20",
+          "basis": "Named in the ISBI 2026 official challenge program."
+        },
+        "assessment_evidence.status": {
+          "source_url": "https://endouc.github.io/EndoUC-CV.github.io/",
+          "reviewed_on": "2026-10-20",
+          "basis": "Organizer page explicitly states that the final-test leaderboard is out; the page does not isolate completed caption-track results."
+        }
+      },
+      "targeted_review_history": [
+        {
+          "reviewed_on": "2026-10-21",
+          "decision_basis": "Explicit user adjudication supported by the retained organizer timeline and final-test announcement",
+          "retain_edition": true,
+          "retain_declared_caption_generation_objective": true,
+          "edition_completion": "confirmed",
+          "caption_specific_final_assessment": "not_established",
+          "include_in_confirmed_caption_assessment_count": false,
+          "qualification": "Lack of public caption-specific confirmation does not imply that caption assessment did not occur."
+        },
+        {
+          "reviewed_on": "2026-10-21",
+          "result": "Completed caption baseline assessment documented in Table 4. Prior user decision to exclude from publicly confirmed final competition caption assessment remains unchanged."
+        },
+        {
+          "reviewed_on": "2026-10-21",
+          "result": "EndoUC.txt confirms prior baseline/final distinction and supplies participant-paper lead. Metadata verified; task-number mismatch retained as unverified paper-content note. No change to caption counts or closed human decision."
+        },
+        {
+          "reviewed_on": "2026-10-22",
+          "result": "UCMoLE identified as a new caption competition-results lead. Bibliography verified; indexed leaderboard claim not verified in original paper and final phase unspecified. Caption final-assessment status unchanged."
+        },
+        {
+          "reviewed_on": "2026-10-22",
+          "evidence_state": "human_confirmed_with_documentary_support",
+          "declared_captioning_objective": "confirmed",
+          "published_evaluation_protocol": "confirmed",
+          "published_participant_result": "confirmed",
+          "caption_competition_assessment": "confirmed",
+          "independently_verified_complete_final_rankings": "not_verified",
+          "include_in_confirmed_caption_assessment_count": true,
+          "basis": "User explicitly confirms UCMoLE reports an EndoUC captioning leaderboard result. Combined with official declared task, official submission specification and edition-level final leaderboard announcement, this supports performed competitive caption assessment without requiring complete official rankings.",
+          "participant_paper_doi": "10.1109/ISBI61048.2026.11515305",
+          "verification_limit": "Assistant verified paper bibliography and official website/submission instructions; participant paper contents and evaluation-code metrics are accepted on the user review. Full paper, exact final-stage scores and complete official caption rankings have not been independently verified by assistant.",
+          "supersedes": "2026-10-21 instruction to exclude EndoUC from confirmed caption competition assessments",
+          "baseline_separation": "BLIP results in arXiv:2603.14559 Table 4 remain baseline-only evidence and are not the basis of competitive ranking confirmation."
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "final_assessment_confirmed",
+      "evidence_source_url": "https://endouc.github.io/EndoUC-CV.github.io/",
+      "basis": "Organizer page explicitly states that the final-test leaderboard is out; the page does not isolate completed caption-track results.",
+      "qualification": "Public-document evidence review only; conference date or planned deadline alone does not confirm a completed assessment.",
+      "caption_assessment_review": {
+        "reviewed_on": "2026-10-22",
+        "evidence_state": "human_confirmed_with_documentary_support",
+        "declared_captioning_objective": "confirmed",
+        "published_evaluation_protocol": "confirmed",
+        "published_participant_result": "confirmed",
+        "caption_competition_assessment": "confirmed",
+        "independently_verified_complete_final_rankings": "not_verified",
+        "include_in_confirmed_caption_assessment_count": true,
+        "basis": "User explicitly confirms UCMoLE reports an EndoUC captioning leaderboard result. Combined with official declared task, official submission specification and edition-level final leaderboard announcement, this supports performed competitive caption assessment without requiring complete official rankings.",
+        "participant_paper_doi": "10.1109/ISBI61048.2026.11515305",
+        "verification_limit": "Assistant verified paper bibliography and official website/submission instructions; participant paper contents and evaluation-code metrics are accepted on the user review. Full paper, exact final-stage scores and complete official caption rankings have not been independently verified by assistant.",
+        "supersedes": "2026-10-21 instruction to exclude EndoUC from confirmed caption competition assessments",
+        "baseline_separation": "BLIP results in arXiv:2603.14559 Table 4 remain baseline-only evidence and are not the basis of competitive ranking confirmation."
+      },
+      "caption_baseline_assessment_status": "confirmed",
+      "caption_review_history": [
+        {
+          "reviewed_on": "2026-10-21",
+          "decision_basis": "Explicit user adjudication supported by the retained organizer timeline and final-test announcement",
+          "retain_edition": true,
+          "retain_declared_caption_generation_objective": true,
+          "edition_completion": "confirmed",
+          "caption_specific_final_assessment": "not_established",
+          "include_in_confirmed_caption_assessment_count": false,
+          "qualification": "Lack of public caption-specific confirmation does not imply that caption assessment did not occur.",
+          "additional_evidence": "arXiv:2603.14559v1 Table 4 confirms completed caption baseline testing; final competition caption assessment remains unestablished."
+        }
+      ],
+      "caption_competition_assessment_status": "confirmed",
+      "caption_final_rankings_independently_verified": false
+    },
+    "review_coding": {
+      "vision_language_objective": "documented",
+      "vision_language_objective_assessed": "confirmed",
+      "report_generation_label": "boundary_case_captioning",
+      "basis": "Human-confirmed participant caption leaderboard report, supported by official caption task/submission protocol and final-test announcement. Complete official caption ranking not independently verified.",
+      "caption_generation_objective_assessed": "confirmed",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid",
+      "task_families": [
+        "Classification",
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "literature_review_leads": [
+      {
+        "title": "Multi-Task Ensemble Learning for Endoscopic Ulcerative Colitis Severity Grading",
+        "doi": "10.1109/ISBI61048.2026.11515934",
+        "authors": [
+          "Kareem K. Badawy",
+          "Noha Ghatwary",
+          "Sherine Nagy Saleh"
+        ],
+        "bibliography_status": "Title, authors and 2026-04-08 publication date verified through publisher-deposited Crossref metadata.",
+        "content_status": "Full text and publisher abstract not accessed; task descriptions and scores below remain claims from user-supplied summary, not verified original-paper results.",
+        "reported_task_mapping": {
+          "Task 1": "MES classification (4 classes)",
+          "Task 2": "UCEIS classification (9 classes)"
+        },
+        "reported_hidden_test_results_unverified": {
+          "Task 1": {
+            "F1_percent": 46.0,
+            "AUC_percent": 67.2
+          },
+          "Task 2": {
+            "F1_percent": 35.8,
+            "AUC_percent": 65.1
+          }
+        },
+        "interpretation": "Do not map the reported Task 2 classification scores to the website Task II Captioning. Numbering differs across the sources; this alone does not establish task replacement or cancellation.",
+        "reviewed_on": "2026-10-21",
+        "user_summary": "ISBI/2026/EndoUC.txt",
+        "metadata_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_participant_crossref_11515934_20261021.json",
+        "requires_original_paper_for_content_verification": true
+      },
+      {
+        "title": "UCMoLE: Cluster-Routed Mixture of Low-Rank Experts for Endoscopic Ulcerative Colitis Captioning",
+        "doi": "10.1109/ISBI61048.2026.11515305",
+        "authors": [
+          "Robert Chandler",
+          "Sakib Ahammed",
+          "Moi Hoon Yap",
+          "Xinqi Fan"
+        ],
+        "publication_date": "2026-04-08",
+        "reviewed_on": "2026-10-22",
+        "bibliography_status": "Verified via publisher-deposited Crossref metadata; also listed by author institution.",
+        "discovery_abstract_url": "https://eurekamag.com/research/107/713/107713766.php",
+        "discovery_claim": "Indexed abstract says UCMoLE achieved the best performance on the EndoUC captioning leaderboard.",
+        "evidence_level": "Competition-specific captioning result lead, stronger in scope than baseline-only evidence, but presently an unverified secondary abstract reproduction.",
+        "primary_full_text_access": "IEEE DOI/document page unavailable or empty; author institutional page blocked. Crossref has no abstract.",
+        "final_phase_identification": "Not explicit in the retrieved abstract reproduction; no final test scores verified.",
+        "decision": "User confirms published participant caption leaderboard result; accepted as competitive assessment evidence. Exact complete official final rankings remain not independently verified.",
+        "metadata_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_ucmole_crossref_11515305_20261022.json",
+        "subsequent_human_verification": {
+          "reviewed_on": "2026-10-22",
+          "evidence_state": "human_confirmed_with_documentary_support",
+          "declared_captioning_objective": "confirmed",
+          "published_evaluation_protocol": "confirmed",
+          "published_participant_result": "confirmed",
+          "caption_competition_assessment": "confirmed",
+          "independently_verified_complete_final_rankings": "not_verified",
+          "include_in_confirmed_caption_assessment_count": true,
+          "basis": "User explicitly confirms UCMoLE reports an EndoUC captioning leaderboard result. Combined with official declared task, official submission specification and edition-level final leaderboard announcement, this supports performed competitive caption assessment without requiring complete official rankings.",
+          "participant_paper_doi": "10.1109/ISBI61048.2026.11515305",
+          "verification_limit": "Assistant verified paper bibliography and official website/submission instructions; participant paper contents and evaluation-code metrics are accepted on the user review. Full paper, exact final-stage scores and complete official caption rankings have not been independently verified by assistant.",
+          "supersedes": "2026-10-21 instruction to exclude EndoUC from confirmed caption competition assessments",
+          "baseline_separation": "BLIP results in arXiv:2603.14559 Table 4 remain baseline-only evidence and are not the basis of competitive ranking confirmation."
+        },
+        "previous_decision": "Preserve as a participant-caption leaderboard lead; do not yet override the prior human decision on publicly confirmed final Caption assessment. This is EndoUC-related, not FETUS."
+      }
+    ],
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "训练数据按Set I/II发布；最终通过Synapse提交并运行任务容器。"
+      },
+      "decision_history": [
+        "训练数据按Set I/II发布；最终通过Synapse提交并运行任务容器。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_6edc661be5ca94.json",
+          "url": "https://endouc.github.io/EndoUC-CV.github.io/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_endoucdocker-template_20261022.json",
+          "url": "https://raw.githubusercontent.com/EndoUC/EndoUCDocker-Template/e96b1c893c4f690673fac4e1e081338e4c5af19d/README.md"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/endouc-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "Report generation"
+      ],
+      "previous_emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "Report generation": "Declared task output"
+      },
+      "note_zh": "MES/UCEIS 等分级分类与图像 caption；BLIP 基线不建立赛事 FM 目标，caption 也不自动构成显式推理。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2603.14559v1",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_dataset_paper_2603_14559_20261021.json",
+          "sha256": "fe94d1d3c1be56c76f67f7cca6ebd6b06986d5df921b11cc719baa5b0195481d"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/EndoUC/EndoUCDocker/0e93cfd43733f007d044371f52fafa441a26378d/README.md",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_endoucdocker_20261022.json",
+          "sha256": "0987aaa9fa8babe0deadcf8845dc3fb34b47569a6277a50a7678f7f9d1a61958"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/EndoUC/EndoUCDocker-Template/e96b1c893c4f690673fac4e1e081338e4c5af19d/README.md",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_endoucdocker-template_20261022.json",
+          "sha256": "6e154f7316559bcbb203553dbd922811301011a33d7661857459e24319709237"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "ISBI/2026/endouc-2026.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Agreement states possible public reuse after joint paper and an initially 24-month, extendable embargo.",
+              "sources": [
+                {
+                  "type": "official conference program",
+                  "url": "https://biomedicalimaging.org/2026/challenges/",
+                  "retrieved_on": "2026-10-20",
+                  "local_snapshot": null,
+                  "supports": [
+                    "edition identity",
+                    "conference affiliation",
+                    "task scope"
+                  ],
+                  "basis": "ISBI 2026 lists this edition in its challenge session."
+                },
+                {
+                  "type": "organizer edition website",
+                  "url": "https://endouc.github.io/EndoUC-CV.github.io/",
+                  "retrieved_on": "2026-10-20",
+                  "local_snapshot": null,
+                  "supports": [
+                    "three tasks",
+                    "final test statement",
+                    "Synapse submission"
+                  ],
+                  "basis": "Organizer says the final-test leaderboard is out."
+                },
+                {
+                  "type": "official challenge data agreement",
+                  "url": "https://endouc.github.io/EndoUC-CV.github.io/assets/DataAgreement_EndoUC_EndoCV2026_ISBIChallenge_V2.pdf",
+                  "retrieved_on": "2026-10-20",
+                  "local_snapshot": null,
+                  "supports": [
+                    "data access",
+                    "external data",
+                    "embargo"
+                  ],
+                  "basis": "Signed agreement is required; public reuse is deferred until a later paper and embargo."
+                },
+                {
+                  "type": "explicit human adjudication",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_user_adjudication_20261021.json",
+                  "reviewed_on": "2026-10-21",
+                  "supports": [
+                    "schedule.final_test_results_date_review",
+                    "assessment_evidence.caption_assessment_review"
+                  ]
+                },
+                {
+                  "type": "dataset and baseline-benchmark paper",
+                  "url": "https://arxiv.org/html/2603.14559v1",
+                  "retrieved_on": "2026-10-21",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_dataset_paper_2603_14559_20261021.json",
+                  "supports": [
+                    "evaluation.caption_baseline_evidence",
+                    "publication.dataset_benchmark_paper",
+                    "labels_and_targets.caption_annotation_evidence"
+                  ]
+                },
+                {
+                  "type": "user-supplied research summary",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_user_summary_20261021.json",
+                  "reviewed_on": "2026-10-21",
+                  "supports": [
+                    "literature_review_leads",
+                    "task_profile.task_numbering_note"
+                  ]
+                },
+                {
+                  "type": "publisher-deposited DOI metadata",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_participant_crossref_11515934_20261021.json",
+                  "reviewed_on": "2026-10-21",
+                  "supports": [
+                    "publication.participant_paper_metadata"
+                  ]
+                },
+                {
+                  "type": "publisher-deposited DOI metadata",
+                  "url": "https://api.crossref.org/works/10.1109/ISBI61048.2026.11515305",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_ucmole_crossref_11515305_20261022.json",
+                  "reviewed_on": "2026-10-22",
+                  "supports": [
+                    "publication.participant_paper_metadata"
+                  ]
+                },
+                {
+                  "type": "official organizer submission guide",
+                  "url": "https://raw.githubusercontent.com/EndoUC/EndoUCDocker/0e93cfd43733f007d044371f52fafa441a26378d/README.md",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_endoucdocker_20261022.json",
+                  "retrieved_on": "2026-10-22",
+                  "supports": [
+                    "task_profile.submission_tasks",
+                    "submission.submission_type",
+                    "submission.task_outputs"
+                  ]
+                },
+                {
+                  "type": "official organizer submission guide",
+                  "url": "https://raw.githubusercontent.com/EndoUC/EndoUCDocker-Template/e96b1c893c4f690673fac4e1e081338e4c5af19d/README.md",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_endoucdocker-template_20261022.json",
+                  "retrieved_on": "2026-10-22",
+                  "supports": [
+                    "task_profile.submission_tasks",
+                    "submission.submission_type",
+                    "submission.task_outputs"
+                  ]
+                },
+                {
+                  "type": "explicit human adjudication",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/endouc_user_caption_confirmation_20261022.json",
+                  "reviewed_on": "2026-10-22",
+                  "supports": [
+                    "assessment_evidence.caption_competition_assessment_status",
+                    "review_coding.vision_language_objective_assessed"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  }
+}

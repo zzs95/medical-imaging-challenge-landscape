@@ -1,0 +1,615 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "selma3d-2025",
+    "challenge_name": "SSL for 3D light-sheet microscopy image segmentation",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": null,
+      "challenge_event_date": "2025-09-27",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Microscopy"
+      ],
+      "submodality": [
+        "3D light-sheet fluorescence microscopy"
+      ],
+      "body_region": [
+        "Human and mouse specimens"
+      ],
+      "organ_system": [
+        "Immune / lymphatic"
+      ],
+      "organs_or_structures": [
+        "Cells",
+        "Nuclei",
+        "Plaques",
+        "Vessels",
+        "Lymphatics",
+        "Nerves"
+      ],
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Isolated structures",
+          "task_family": "Segmentation",
+          "task_subtype": "Semantic segmentation",
+          "input": [
+            "3D light-sheet microscopy"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Isolated-structure segmentation"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Contiguous structures",
+          "task_family": "Segmentation",
+          "task_subtype": "Semantic segmentation",
+          "input": [
+            "3D light-sheet microscopy"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Contiguous-structure segmentation"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "Human and mouse 3D light-sheet microscopy",
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "task1": "30 unannotated volumes (>2×10^10 voxels), plus annotated patches.",
+        "task2": "More than 25 unannotated volumes (>10^10 voxels), plus annotated patches."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "registration-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC. 2025 年两个任务的数据使用条款均列 CC BY-NC。",
+      "access_after_challenge": null,
+      "access_scope": "training data access as stated in the cited edition source",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "DSC",
+            "Betti matching error (dimension 0)"
+          ],
+          "ranking": "Average metrics across cases, rank each metric, then average metric ranks."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "DSC",
+            "Betti matching error",
+            "clDice",
+            "HD95"
+          ],
+          "ranking": "Average metrics across cases, rank each metric, then average metric ranks."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_release": "2025-06-26",
+      "final_phase_start": "2025-09-11",
+      "final_submission_deadline": "2025-09-18"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 59,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary Development Phase Task 1 w/o SSL",
+            "submission_count": 5
+          },
+          {
+            "official_phase_name": "Preliminary Development Phase Task 2 w/o SSL",
+            "submission_count": 13
+          },
+          {
+            "official_phase_name": "Preliminary Development Phase Task 1 with SSL",
+            "submission_count": 12
+          },
+          {
+            "official_phase_name": "Preliminary Development Phase Task 2 with SSL",
+            "submission_count": 14
+          },
+          {
+            "official_phase_name": "Final Test Phase Task 1 w/o SSL",
+            "submission_count": 14
+          },
+          {
+            "official_phase_name": "Final Test Phase Task  2 w/o SSL",
+            "submission_count": 2
+          },
+          {
+            "official_phase_name": "Final Test Phase Task 1 with SSL",
+            "submission_count": 2
+          },
+          {
+            "official_phase_name": "Final Test Phase Task 2 with SSL",
+            "submission_count": 2
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://selma3d2025.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Submissions with and without self-supervised pretraining are evaluated; the without-SSL setting is a reference comparison. Dataset pages returned HTTP 403."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d2025.grand-challenge.org/task/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/27-185172de8f37.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d2025.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/27-1e3002b5a975.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d2025.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/27-3aa2510c190a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d2025.grand-challenge.org/selma3d2025/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/27-3eea3ad54b56.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d2025.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/27-55eb6b4b6925.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://selma3d2025.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/27-80d20891a988.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d2025.grand-challenge.org/assessment/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/27-9ca3f146b672.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d2025.grand-challenge.org/participate-rules/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/27-bc30d8f104eb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://selma3d2025.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/27-overview.json"
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://selma3d2025.grand-challenge.org/task/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/selma3d-2025.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset: exact annotated-patch and held-out split counts behind restricted pages.",
+        "data_access: license and external-data restrictions require verification."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://selma3d2025.grand-challenge.org/participate-rules/",
+          "local_snapshot": "_collection/sources/27-bc30d8f104eb.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://selma3d2025.grand-challenge.org/participate-rules/",
+          "local_snapshot": "_collection/sources/27-bc30d8f104eb.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://selma3d2025.grand-challenge.org/task/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/selma3d-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://selma3d2025.grand-challenge.org/task/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/selma3d-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://selma3d2025.grand-challenge.org/task/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/selma3d-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/selma3d-2025.json",
+          "_collection/verification_20261003/literature_context/selma3d-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_emerging_objectives": [],
+      "note_zh": "独立核对2025年规则：无标注3D LSM预训练、标注子集微调及多结构可迁移表征是组织目标；补记FM。",
+      "sources": [
+        {
+          "url": "https://selma3d2025.grand-challenge.org/",
+          "local_source": "_collection/sources/27-1e3002b5a975.json",
+          "sha256": "0c249b8f43dd2ae685e5389d9dd9adcfce182e0f58804ccee696a7f6a61ed9f1"
+        }
+      ],
+      "scope": "Reverse screening of 288 previously unlabelled editions",
+      "previous_task_families": [
+        "Segmentation"
+      ],
+      "task_roles": {
+        "Segmentation": "Declared task output retained from existing coding"
+      },
+      "foundation_model_basis": "自监督预训练与跨结构适配",
+      "text_output_rule": "Narrative outputs, VQA, finite labels, prompts and tool actions are distinguished"
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_objective_basis": "Reverse screening of 288 previously unlabelled editions, 2026-10-25; see task_objective_review"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "2025 年两个任务的数据使用条款均列 CC BY-NC。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 2",
+          "text": "CC BY-NC (Attribution-NonCommercial)",
+          "source": {
+            "url": "https://zenodo.org/records/15267392/files/232-SELMA3D_2025_Self-supervised_learning_for_3D_light-sheet_microscopy_2025-03-20T11-15-38.pdf?download=1",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/05fe1094409bff0a.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15267392/files/232-SELMA3D_2025_Self-supervised_learning_for_3D_light-sheet_microscopy_2025-03-20T11-15-38.pdf?download=1",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/05fe1094409bff0a.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://selma3d2025.grand-challenge.org/participate-rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/bc30d8f104eb5e0a.json",
+          "status": 200
+        },
+        {
+          "url": "https://selma3d2025.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1e3002b5a9757589.json",
+          "status": 200
+        },
+        {
+          "url": "https://selma3d2025.grand-challenge.org/task/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/185172de8f37b63f.json",
+          "status": 200
+        },
+        {
+          "url": "https://selma3d2025.grand-challenge.org/timeline/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/55eb6b4b69254fdb.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/records/15077390",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/a51d89cf57e9156c.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/records/15267392/files/232-SELMA3D_2025_Self-supervised_learning_for_3D_light-sheet_microscopy_2025-03-20T11-15-38.pdf?download=1",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/05fe1094409bff0a.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/records/15267392/preview/232-SELMA3D_2025_Self-supervised_learning_for_3D_light-sheet_microscopy_2025-03-20T11-15-38.pdf?include_deleted=0",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/3166fcfb0555da75.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

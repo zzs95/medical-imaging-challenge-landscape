@@ -1,0 +1,529 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "ocelot-2023",
+    "challenge_name": "OCELOT 2023: Cell Detection from Cell-Tissue Interaction",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Pathology"
+      ],
+      "submodality": [
+        "H&E histopathology"
+      ],
+      "body_region": [
+        "Abdomen",
+        "Pelvis",
+        "Head and Neck"
+      ],
+      "organ_system": [
+        "Digestive",
+        "Genitourinary",
+        "Reproductive"
+      ],
+      "organs_or_structures": [
+        "Tumor cells",
+        "Background cells",
+        "Tissue context"
+      ],
+      "diseases": [
+        "Cancer (multiple types)"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "Curated grouping of explicit protocol targets: kidney, prostate, bladder, stomach and endometrium; head-and-neck targets have no single assigned system.",
+      "body_region_basis": "Anatomical grouping of the six organs explicitly named in the registered 2023 cohort.",
+      "disease_evidence_scope": "Histologically confirmed cancer cohort spanning kidney, head-and-neck, prostate, stomach, endometrium and bladder; no cancer subtype inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Detection",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Cell Detection from Cell-Tissue Interaction",
+          "task_family": "Detection",
+          "task_subtype": "point detection and cell classification",
+          "input": [
+            "Small-FoV cell image",
+            "Large-FoV tissue image",
+            "Relative patch coordinates"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Cell coordinates, classes and confidence scores"
+          ],
+          "granularity": "cell-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": true,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "TCGA whole-slide image patches",
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Pathology"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "request-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC. 数据许可 CC BY-NC，并声明仅限研究目的。",
+      "access_after_challenge": null,
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": null,
+        "policy": "No additional training/validation data; publicly available pretrained models allowed with link disclosure."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Mean F1 score"
+          ],
+          "ranking": "Average class-specific F1; confidence-ordered greedy one-to-one matching within approximately 15 pixels / 3 micrometers."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_data_release": "2023-04-10",
+      "final_submission_deadline": "2023-08-04"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "proceedings": "Springer LNCS"
+    },
+    "participation_statistics": {
+      "registered_participants": 329,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Validation",
+            "submission_count": 260
+          },
+          {
+            "official_phase_name": "Test",
+            "submission_count": 23
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://ocelot2023.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Four under-annotated test cases (586, 589, 609, 615) excluded and scores recomputed. Tissue segmentation labels support training context; tissue segmentation is not a separate evaluated task. Online event September 11 and timeline winner announcement October 8 differ."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://ocelot2023.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/79-111e73fe4e92.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ocelot2023.grand-challenge.org/datasets/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/79-523a61f20fc8.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://ocelot2023.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/79-541412f1817b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ocelot2023.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/79-767430c6147f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ocelot2023.grand-challenge.org/evaluation-metric/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/79-91d1c6e80e5b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ocelot2023.grand-challenge.org/ocelot2023/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/79-ca5892695111.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ocelot2023.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/79-dce1378d0c80.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ocelot2023.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/79-eea21a56f79f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ocelot2023.grand-challenge.org/submission-instructions/",
+          "supports": [
+            "data_usage_mode",
+            "evaluation.platform",
+            "submission",
+            "submission.platform"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/79-f4aa2cddbcd8.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ocelot2023.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/79-overview.json"
+        },
+        {
+          "type": "official registered challenge design",
+          "url": "https://zenodo.org/records/7841792/files/OCELOT2023%20CellDetectionfromCell-TissueInteraction_04-18-2023_03-07-19.pdf",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/web/ocelot2023_protocol.json",
+          "title": "OCELOT 2023 registered challenge design",
+          "supports": [
+            "clinical_domain.diseases",
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.body_region",
+            "clinical_domain.body_region_basis",
+            "clinical_domain.disease_evidence_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify corrected split counts and exact dataset license."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://ocelot2023.grand-challenge.org/submission-instructions/",
+          "local_snapshot": "_collection/sources/79-f4aa2cddbcd8.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'submission system', 'url': 'https://ocelot2023.grand-challenge.org/evaluation/challenge/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "submission.platform": {
+          "source_url": "https://ocelot2023.grand-challenge.org/submission-instructions/",
+          "local_snapshot": "_collection/sources/79-f4aa2cddbcd8.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'submission system', 'url': 'https://ocelot2023.grand-challenge.org/evaluation/challenge/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "clinical_domain.diseases": {
+          "source_url": "https://zenodo.org/records/7841792/files/OCELOT2023%20CellDetectionfromCell-TissueInteraction_04-18-2023_03-07-19.pdf",
+          "local_snapshot": "_collection/verification_20261003/web/ocelot2023_protocol.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2023 design explicitly names histologically confirmed cancer and six cohort organs; system/region values are curated anatomical groupings."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://zenodo.org/records/7841792/files/OCELOT2023%20CellDetectionfromCell-TissueInteraction_04-18-2023_03-07-19.pdf",
+          "local_snapshot": "_collection/verification_20261003/web/ocelot2023_protocol.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2023 design explicitly names histologically confirmed cancer and six cohort organs; system/region values are curated anatomical groupings."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://zenodo.org/records/7841792/files/OCELOT2023%20CellDetectionfromCell-TissueInteraction_04-18-2023_03-07-19.pdf",
+          "local_snapshot": "_collection/verification_20261003/web/ocelot2023_protocol.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2023 design explicitly names histologically confirmed cancer and six cohort organs; system/region values are curated anatomical groupings."
+        },
+        "clinical_domain.body_region": {
+          "source_url": "https://zenodo.org/records/7841792/files/OCELOT2023%20CellDetectionfromCell-TissueInteraction_04-18-2023_03-07-19.pdf",
+          "local_snapshot": "_collection/verification_20261003/web/ocelot2023_protocol.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2023 design explicitly names histologically confirmed cancer and six cohort organs; system/region values are curated anatomical groupings."
+        },
+        "clinical_domain.body_region_basis": {
+          "source_url": "https://zenodo.org/records/7841792/files/OCELOT2023%20CellDetectionfromCell-TissueInteraction_04-18-2023_03-07-19.pdf",
+          "local_snapshot": "_collection/verification_20261003/web/ocelot2023_protocol.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2023 design explicitly names histologically confirmed cancer and six cohort organs; system/region values are curated anatomical groupings."
+        },
+        "clinical_domain.disease_evidence_scope": {
+          "source_url": "https://zenodo.org/records/7841792/files/OCELOT2023%20CellDetectionfromCell-TissueInteraction_04-18-2023_03-07-19.pdf",
+          "local_snapshot": "_collection/verification_20261003/web/ocelot2023_protocol.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2023 design explicitly names histologically confirmed cancer and six cohort organs; system/region values are curated anatomical groupings."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.body_region",
+          "clinical_domain.body_region_basis",
+          "clinical_domain.disease_evidence_scope",
+          "clinical_domain.diseases",
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "evaluation.platform",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/ocelot-2023.json",
+          "_collection/verification_20261003/literature_context/ocelot-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "数据许可 CC BY-NC，并声明仅限研究目的。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "CC BY NC. Additional comments: ONLY for research purposes.",
+          "source": {
+            "url": "https://zenodo.org/records/7841792/files/OCELOT2023%20CellDetectionfromCell-TissueInteraction_04-18-2023_03-07-19.pdf",
+            "local_source": "_collection/verification_20261003/web/ocelot2023_protocol.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/7841792/files/OCELOT2023%20CellDetectionfromCell-TissueInteraction_04-18-2023_03-07-19.pdf",
+          "local_source": "_collection/verification_20261003/web/ocelot2023_protocol.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

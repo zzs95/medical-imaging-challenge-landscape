@@ -1,0 +1,851 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "mario-2024",
+    "challenge_name": "MARIO 2024",
+    "full_name": "Monitoring Age-related Macular Degeneration Progression In Optical Coherence Tomography",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R31",
+      "official_programme_row_numbers": "20",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Univ Bretagne Occidentale, Brest, F-29200 France",
+        "Inserm, UMR 1101, Brest, F-29200 France",
+        "IMT Atlantique, Brest, F-29200 France",
+        "University of Tlemcen, Algeria",
+        "Service d'Ophtalmologie, CHRU Brest, Brest, F-29200 France",
+        "LAZOUNI Ophthalmology Clinic, Tlemcen, Algeria"
+      ],
+      "registered_authors": [
+        {
+          "name": "Zeghlache, Rachid",
+          "affiliation": "Univ Bretagne Occidentale, Brest, F-29200 France"
+        },
+        {
+          "name": "Lamard, Mathieu",
+          "affiliation": "Inserm, UMR 1101, Brest, F-29200 France"
+        },
+        {
+          "name": "Conze, Pierre-Henri",
+          "affiliation": "IMT Atlantique, Brest, F-29200 France"
+        },
+        {
+          "name": "El Habib Daho, Mostafa",
+          "affiliation": "Inserm, UMR 1101, Brest, F-29200 France"
+        },
+        {
+          "name": "El Amine Lazouni, Mohammed",
+          "affiliation": "University of Tlemcen, Algeria"
+        },
+        {
+          "name": "Monfort, Thomas",
+          "affiliation": "Service d'Ophtalmologie, CHRU Brest, Brest, F-29200 France"
+        },
+        {
+          "name": "Benyoussef, Anas-Alexis",
+          "affiliation": "Service d'Ophtalmologie, CHRU Brest, Brest, F-29200 France"
+        },
+        {
+          "name": "Cochener, Béatrice",
+          "affiliation": "Univ Bretagne Occidentale, Brest, F-29200 France"
+        },
+        {
+          "name": "Rezaei, Alireza",
+          "affiliation": "Univ Bretagne Occidentale, Brest, F-29200 France"
+        },
+        {
+          "name": "Aziza Elaouaber, Zineb",
+          "affiliation": "University of Tlemcen, Algeria"
+        },
+        {
+          "name": "Lazouni, Leila Ryma",
+          "affiliation": "University of Tlemcen, Algeria"
+        },
+        {
+          "name": "Zehar, Sofiane",
+          "affiliation": "LAZOUNI Ophthalmology Clinic, Tlemcen, Algeria"
+        },
+        {
+          "name": "Boukli Hacene, Karim",
+          "affiliation": "LAZOUNI Ophthalmology Clinic, Tlemcen, Algeria"
+        },
+        {
+          "name": "Quellec, Gwenolé",
+          "affiliation": "Inserm, UMR 1101, Brest, F-29200 France"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "OCT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Eye"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Retina",
+        "Macula"
+      ],
+      "diseases": [
+        "Neovascular age-related macular degeneration"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "secondary_task_families": [
+        "Prognosis"
+      ],
+      "task_families": [
+        "Classification",
+        "Prognosis"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Classify evolution between two pairs of 2-D slices from two consecutive 2D OCT acquisitions.",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992294",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Prediction of evolution within 3 mounts of AMD on OCT 2D slices for planning treatment anti-VEGF.",
+          "task_family": "Prognosis",
+          "task_families": [
+            "Prognosis"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992294",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": true,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992294",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "OCT"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992294",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Challenge-only restricted use; CC BY / CC BY 4.0 (proposed later release). 比赛期间仅供本赛事使用且禁止第三方分发；CC BY/CC BY 4.0 的赛后转换仍为计划/协商，不能当作已经生效。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992294",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24; targeted access backfill",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "2024 participation route; later public research release recorded separately",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992294",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Grand Challenge",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992294",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992294",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nQuadratic-weighted Kappa (QWK), F1 score, Specificity, Rk-correlation.\n\n\nAdditionally, let a2 denote the automatic annotations. Let h2a and h2b denote the human annotations for the\ntask. Agreement scores for task 2 (k2) is defined as follows:\nAverage quadratic-weighted Kappa with a human grader (k2 = 0.5 weighted_kappa(a2, h2a) + 0.5\nweighted_kappa(a2, h2b)).\n\n\nNote that there is one label per pair of B-scans. We will not compute a k2 score per case and then average it.\nInstead, we will directly compute a single k2 score across all pairs. This is because some label categories in some\npatients.\n\n\nWe will release the computing for all metrics in challenge website mario.grand-challenge.org.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe labels are ordered categorical variables (ordinal variables), so quadratic-weighted Kappa is used. F1 score,\nand specificity are commonly employed metrics to assess the performance of multi-class classification methods,\nparticularly in biomedical applications where classes represent distinct severity. F1 score harmonizes precision\nand recall, while specificity quantifies the proportion of truly negative samples accurately classified. These metrics\n\n\n\n\n\f            Monitoring Age-related Macular Degeneration Progression In Optical Coherence Tomography\n\nprovide valuable insights into the effectiveness of classification models in biomedical contexts. Rk-correlation\noffers a compelling approach for evaluating model performance in medical data challenges, especially when\ndealing with class imbalance, multi-class classification, and the need for interpretable metrics. It provides a\nvaluable complement to traditional metrics and helps researchers gain deeper insights into their models'\neffectiveness in real-world medical applications.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThe simultaneous utilization of quadratic-weighted Kappa, F1 score, and specificity, provides a more\ncomprehensive assessment of the classification model, reducing the risk of bias.\n\n\nRk-correlation coefficient (RkC) provides a valuable alternative to traditional accuracy by focusing on agreement\nacross all classes and offering a clear interpretation of performance.\n\n\nAdditionally, in the final ranking, task 2 will be assigned a higher weight due to its greater challenge and clinical\nsignificance. Finally, given that the labels are ordered categorical variables, quadratic-weighted Kappa will be\ngiven greater emphasis.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSubmissions with missing results will not be evaluated. Only participants with comprehensive results for the task\nwill appear in the final ranking. Our submission system will provide feedback error to the participant and will not\noutput the calculation results of the metric.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nSeparate metric scores are computed for quadratic-weighted Kappa, F1 score and specificity and RkC on all test\ncases.\nSecond, the ranking score is obtained by averaging the scores of all metrics. The achieved quadratic-weighted\nKappa will be used as a tie-break. algorithms will be ranked by decreasing order of the average (Cohen or\nquadratic-weighted) Kappa (i.e. k1 or k2). Additionally, a final ranking will be produced to determine the challenge\nwinner. Only participants with a result for both tasks will be ranked. The aggregate score (k) will be defined as k =\nk1 + 2 k2. Algorithms will be sorted by\ndecreasing order of k."
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992294",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf",
+            "registered_task_index": 2
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992294",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf",
+            "registered_task_index": 2
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nQuadratic-weighted Kappa (QWK), F1 score, Specificity, Rk-correlation\n\n\nAdditionally, let a2 denote the automatic annotations. Let h2a and h2b denote the human annotations for the\ntask. Agreement\nscores for task 2 (k2) is defined as follows:\nAverage quadratic-weighted Kappa with a human grader (k2 = 0.5 weighted_kappa(a2, h2a) + 0.5\nweighted_kappa(a2, h2b)).\n\n\nNote that there is one label for each B-scans. We will not compute a k2 score per case and then average it.\nInstead, we will directly compute a single k2 score across all pairs. This is because some label categories in some\npatients.\n\n\nWe will release the computing for all metrics in challenge website mario.grand-challenge.org.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe labels are ordered categorical variables (ordinal variables), so quadratic-weighted Kappa is used. F1 score,\nand specificity are commonly employed metrics to assess the performance of multi-class classification methods,\nparticularly in biomedical applications where classes represent distinct severities. F1 score harmonizes precision\n\n\n\n\n\f            Monitoring Age-related Macular Degeneration Progression In Optical Coherence Tomography\n\nand recall, while specificity quantifies the proportion of truly negative samples accurately classified. These metrics\nprovide valuable insights into the effectiveness of classification models in biomedical contexts. Rk-correlation\noffers a compelling approach for evaluating model performance in medical data challenges, especially when\ndealing with class imbalance, multi-class classification, and the need for interpretable metrics. It provides a\nvaluable complement to traditional metrics and helps researchers gain deeper insights into their models'\neffectiveness in real-world medical applications.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThe simultaneous utilization of quadratic-weighted Kappa, F1 score, and specificity, provides a more\ncomprehensive assessment of the classification model, reducing the risk of bias.\n\n\nRk-correlation coefficient (RkC) provides a valuable alternative to traditional accuracy by focusing on agreement\nacross all classes and offering a clear interpretation of performance.\n\n\nAdditionally, in the final ranking, task 2 will be assigned a higher weight due to its greater challenge and clinical\nsignificance. Finally, given that the labels are ordered categorical variables, quadratic-weighted Kappa will be\ngiven greater emphasis.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSubmissions with missing results will not be evaluated. Only participants with comprehensive results for the task\nwill appear in the final ranking. Our submission system will provide feedback error to the participant and will not\noutput the calculation results of the metric.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nSeparate metric scores are computed for quadratic-weighted Kappa, F1 score and specificity and RkC on all test\ncases.\nSecond, the ranking score is obtained by averaging the scores of all metrics. The achieved quadratic-weighted\nKappa will be used as a tie-break. algorithms will be ranked by decreasing order of the average (Cohen or\nquadratic-weighted) Kappa (i.e. k1 or k2). Additionally, a final ranking will be produced to determine the challenge\nwinner. Only participants with a result for both tasks will be ranked. The aggregate score (k) will be defined as k =\nk1 + 2 k2. Algorithms will be sorted by\ndecreasing order of k."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Prediction files (pre-evaluation); Docker container (final)",
+      "platform": "Grand Challenge",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "During the off-site evaluation period, algorithm outputs will be submitted through grand-challenge. Providing a Docker container to the organizers will be a requirement for participating in the final evaluation. This approach ensures the reproducibility and fairness of proposed solutions, enabling continued exploration and utilization by the research community.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992294",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "protocol_description": "During the off-site evaluation period, algorithm outputs will be submitted through grand-challenge. Providing a Docker container to the organizers will be a requirement for participating in the final evaluation. This approach ensures the reproducibility and fairness of proposed solutions, enabling continued exploration and utilization by the research community.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992294",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992294",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10992294"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://youvenz.github.io/MARIO_challenge.github.io/",
+      "registration": "https://doi.org/10.5281/zenodo.10992294",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10992294",
+          "resolved_record_id": 10992295,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/Monitoring Age-related Macular Degeneration Progre.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://youvenz.github.io/MARIO_challenge.github.io/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/d04eea64bcf801b3.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "MARIO"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification",
+        "Prognosis"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "2024比赛参与流程要求提交表格，经核验后48个工作小时内提供下载链接；后续Zenodo公开发布不覆盖当届申请流程。",
+        "scope": "2024 participation route; later public research release recorded separately",
+        "evidence_basis": "Primary protocol / dataset metadata checked on 2026-10-24; no medical images downloaded",
+        "source_urls": [
+          "https://raw.githubusercontent.com/YouvenZ/MARIO-Challenge-MICCAI-2024/main/README.md"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992294",
+          "excerpt": "ssful completion of the challenge and acceptance of the associated paper, the data will be released publicly under the terms of the Creative Commons Attribution (CC-BY) license, as was done with data from previous challenges (https://ieee-dataport.org/open-access/cataracts). We are currently actively negotiating a transition to the CC-BY 4.0 license, which offers broader usage rights. This includes allowing commercial entities like industry partners to utilize the data for purposes such as prototyping new technologies or developing robust models for clinica"
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992294",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. During the off-site evaluation period, algorithm outputs will be submitted through grand-challenge. Providing a Docker container to the organizers will be a requirement for participating in the final evaluation. This approach ensures the reproducibility and fairness of proposed solutions, enabling continued exploration and utilization by the research community. b) Provide information on the possibility for participating team"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992294",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results The following information outlines a proposed timeline for the challenge, subject to adjustments based on the MICCAI 2024 schedule and the organizers' assessment to guarantee the quality of the challenge. Registration Period: April 1, 2024 - July 10, 2024 Release of Training and Off-site Validation Data (Without Labels): May 2, 2024 Off-site Result Submission Period: May 2, 2024 - July 10, 2024 Announcement of Finalists: July 11, 2024 Report (2-page Summary) and Docker Container Submission Period (For Finalists): July 11, 2024 - 15 september, 2024 Release of Challenge Results: Challenge Day (October 6 or 10, 2024) during the PRIME workshop"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992294",
+          "excerpt": ""
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992294",
+          "excerpt": "ssful completion of the challenge and acceptance of the associated paper, the data will be released publicly under the terms of the Creative Commons Attribution (CC-BY) license, as was done with data from previous challenges (https://ieee-dataport.org/open-access/cataracts). We are currently actively negotiating a transition to the CC-BY 4.0 license, which offers broader usage rights. This includes allowing commercial entities like industry partners to utilize the data for purposes such as prototyping new technologies or developing robust models for clinica"
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992294",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. During the off-site evaluation period, algorithm outputs will be submitted through grand-challenge. Providing a Docker container to the organizers will be a requirement for participating in the final evaluation. This approach ensures the reproducibility and fairness of proposed solutions, enabling continued exploration and utilization by the research community. b) Provide information on the possibility for participating team"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992294",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) Monitoring Age-related Macular Degeneration Progression In Optical Coherence Tomography • the release date(s) of the results The following information outli [...]  the MICCAI 2024 schedule and the organizers' assessment to guarantee the quality of the challenge. Registration Period: April 1, 2024 - July 10, 2024 Release of Training and Off-site Validation Data (Without Labels): May 2, 2024 Off-site Result Submission Period: May 2, 2024 - July 10, 2024 Announcement of Finalists: July 11, 2024 Report (2-page Summary) and Docker Container Submission Period (For Finalists): July 11, 2024 - 15 september, 2024 Release of Challenge Results: Challenge Day (October 6 or 10, 2024) during the PRIME workshop"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992294",
+          "excerpt": ""
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/d04eea64bcf801b3.json",
+          "url": "https://youvenz.github.io/MARIO_challenge.github.io/",
+          "excerpt": "ff-site result submission ==> finalists Report (For eligible solution present in the leader-board)+ Docker container submission period (for finalists) All challenge submissions are in the form of a docker container, which means that participants should submit their method to be evaluated on the test sets. The training set will be released during the challenge and participants will not have access to any part of the test set. Tasks: Two tasks will be addressed in the challenge: The first task focuses on pairs of 2D slices (B-scans) from two consecutive OCT acquisitions. The goal is to classify the evolution between these two slices (before and after), which clinicians typically examine side  [...]  Method (Pre-processing, Proposed method, Pre-training, Post-processing) Results Discussion Link to public code repository Author Guidelines Presentation Format: Papers for both tasks can be submitted as one combined paper or as separate papers. Registration Requirements: All accepted authors must register by the specified deadlines. Publication: Accepted papers will be published in the International Workshop on Predictive Intelligence in Medicine (PRIME) as part of the Lecture Notes in Computer Science (LNCS) series. 🗓 Important Dates Deadline for paper submission: 01/09/2024 11:59PM (pacific time) Decision about paper (acceptance or [...] buttal): 13/11/2024 11:59PM (pacific time) Camera-ready paper: 20/09/2024 11:59PM (pacific time) 🎉🥳 Publication of the Image-Based Prediction of Retinal Disease Progression Proceedings 🎉🥳 !! These proceedings document the outcomes of two significant challenges— DIAMOND and MARIO —organized in conjunction with the 27th International Conference on Medical Image Computing and Computer Assisted Intervention [...] oth challenges were hosted on the Codabench platform , promoting transparent AI development through containerized submissions and open access to training datasets (MARIO only). Topics addressed in this volume include: Deep learning ensemble approaches OCT-based progression prediction Multimodal data fusion Model calibration and generalization across domains Each submission underwent peer review by experts in the field, assessing novelty,"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/mario-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/YouvenZ/MARIO-Challenge-MICCAI-2024/main/README.md",
+          "local_source": "_collection/access_backfill_20261024/sources/643efa0ebcc45279.json",
+          "review_date": "2026-10-24",
+          "section": "Development-data access; edition and phase scope retained"
+        },
+        {
+          "local_source": "_collection/access_backfill_20261024/user_evidence.txt",
+          "url": "",
+          "section": "User-supplied follow-up; classification checked against the linked primary sources"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-24 access backfill: 2024比赛参与流程要求提交表格，经核验后48个工作小时内提供下载链接；后续Zenodo公开发布不覆盖当届申请流程。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 68,
+              "unit": "patients",
+              "scope": "Brest",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 34,
+              "unit": "patients",
+              "scope": "Brest",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 34,
+              "unit": "patients",
+              "scope": "Brest",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 30,
+              "unit": "patients",
+              "scope": "Tlemcen planned",
+              "approximate": true,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 14496,
+              "unit": "image pairs",
+              "scope": "Evolution classification",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 7010,
+              "unit": "image pairs",
+              "scope": "Evolution classification",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 8341,
+              "unit": "image pairs",
+              "scope": "Brest evolution classification",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 5257,
+              "unit": "B-scans",
+              "scope": "Prediction",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 2486,
+              "unit": "B-scans",
+              "scope": "Prediction",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 7291,
+              "unit": "B-scans",
+              "scope": "Prediction",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "France",
+              "Algeria"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Documented and classifiable",
+          "value": "Restricted to challenge duration initially; public CC-BY release planned after challenge and paper acceptance."
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Longitudinal images and pairs not independent patients; Algerian totals pending in protocol.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10992294",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://youvenz.github.io/MARIO_challenge.github.io/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/d04eea64bcf801b3.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/mario-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Eye"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Ophthalmic"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Retina",
+        "Macula"
+      ],
+      "specific_diseases": [
+        "Neovascular age-related macular degeneration"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992294"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992294"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/mario-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "Challenge-only restricted use",
+        "CC BY / CC BY 4.0 (proposed later release)"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "比赛期间仅供本赛事使用且禁止第三方分发；CC BY/CC BY 4.0 的赛后转换仍为计划/协商，不能当作已经生效。",
+      "qualifications": [
+        "Competition-time restrictions and proposed later release kept separate; later release not verified here."
+      ],
+      "scoped_terms": [
+        {
+          "scope": "Registered task/section 1",
+          "text": "The data associated with this challenge is currently available for restricted use. This means it can only be used for the specific purpose of participating in the challenge and for the duration of the challenge itself. Distribution of the data to third parties is prohibited. Following the successful completion of the challenge and acceptance of the associated paper, the data will be released publicly under the terms of the Creative Commons Attribution (CC-BY) license, as was done with data from previous challenges (https://ieee-dataport.org/open-access/cataracts). We are currently actively negotiating a transition to the CC-BY 4.0 license, which offers broader usage rights. This includes allowing commercial entities like industry partners to utilize the data for purposes such as prototyping new technologies or developing robust models for clinical deployment. This broader license will ultimately maximize the impact of the provided data, benefiting not only the research community but also patients through the Monitoring Age-related Macular Degeneration Progression In Optical Coherence Tomography development of improved clinical solutions.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10992294"
+          }
+        },
+        {
+          "scope": "Registered task/section 2",
+          "text": "The data associated with this challenge is currently available for restricted use. This means it can only be used for the specific purpose of participating in the challenge and for the duration of the challenge itself. Distribution of the data to third parties is prohibited. Following the successful completion of the challenge and acceptance of the associated paper, the data will be released publicly under the terms of the Creative Commons Attribution (CC-BY) license, as was done with data from previous challenges (https://ieee-dataport.org/open-access/cataracts). We are currently actively negotiating a transition to the CC-BY 4.0 license, which offers broader usage rights. This includes allowing commercial entities like industry partners to utilize the data for purposes such as prototyping new technologies or developing robust models for clinical deployment. This broader license will ultimately maximize the impact of the provided data, benefiting not only the research community but also patients through the development of improved clinical solutions.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10992294"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992294"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/mario-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "France",
+                  "Algeria"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10992294",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://youvenz.github.io/MARIO_challenge.github.io/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/d04eea64bcf801b3.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/mario-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/mario-2024.json",
+              "source_field": "resource_characteristics_review.fields.post_challenge",
+              "value": "Restricted to challenge duration initially; public CC-BY release planned after challenge and paper acceptance.",
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10992294",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R31/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://youvenz.github.io/MARIO_challenge.github.io/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/d04eea64bcf801b3.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/mario-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

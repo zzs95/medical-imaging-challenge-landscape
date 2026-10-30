@@ -1,0 +1,342 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "pharos-aif-mih-2026",
+    "challenge_name": "PHAROS-AIF-MIH Competition",
+    "full_name": "PHAROS-AIF-MIH Competition",
+    "year": 2026,
+    "event": {
+      "conference": "CVPR 2026 - PHAROS-AIF-MIH Workshop",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": [
+        "National Technical University of Athens",
+        "Queen Mary University of London",
+        "University of Exeter",
+        "University of Catania"
+      ],
+      "international": true
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Chest"
+      ],
+      "organ_system": [
+        "Respiratory"
+      ],
+      "organs_or_structures": [
+        "Lungs"
+      ],
+      "diseases": [
+        "COVID-19",
+        "Lung adenocarcinoma",
+        "Lung squamous cell carcinoma"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Multi-Source COVID-19 Detection",
+          "task_family": "Classification",
+          "task_subtype": "binary classification",
+          "input": [
+            "3D chest CT",
+            "Source identifier"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "COVID-19 / non-COVID-19 label"
+          ],
+          "granularity": "study-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Fair Disease Diagnosis",
+          "task_family": "Classification",
+          "task_subtype": "four-class classification",
+          "input": [
+            "3D chest CT",
+            "Sex metadata"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Healthy / adenocarcinoma / squamous cell carcinoma / COVID-19 label"
+          ],
+          "granularity": "study-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": "Lung disease status",
+      "label_semantics": "Binary COVID-19 labels and four-way diagnostic labels; source and sex metadata support stratified evaluation.",
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "source_centers_by_task": [
+        {
+          "task_id": "task1",
+          "center_count": 4
+        }
+      ]
+    },
+    "data_access": {
+      "is_public": false,
+      "access_status": "registration-and-approval-required",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Signed EULA required; unrestricted reuse is not established.",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": false,
+        "submission_artifact": "Predictions"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": true,
+        "policy": null,
+        "policy_by_task": [
+          {
+            "task_id": "task1",
+            "public_external_data_allowed": true
+          },
+          {
+            "task_id": "task2",
+            "training_data_restricted_to_challenge": true,
+            "public_pretrained_models_allowed": true,
+            "restriction": "Pretraining specifically for the four target diagnostic classes is prohibited."
+          }
+        ]
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": false,
+      "platform": "Organizer evaluation",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Source-wise macro F1 score"
+          ],
+          "ranking": "Mean macro F1 over four acquisition sources."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Sex-stratified macro F1 score"
+          ],
+          "ranking": "Mean of male and female macro F1 scores."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Test predictions, GitHub code link and 4–8-page arXiv paper by email",
+      "platform": "Organizer email",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "max_team_members": 8
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "opening": "2026-01-30",
+      "test_data_release": "2026-03-09",
+      "final_submission_end": "2026-03-15",
+      "winners_announcement": "2026-03-17",
+      "paper_submission_end": "2026-03-21"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": null
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://ai-medical-image-analysis.github.io/6th/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Workshop discussion of language models or explainability does not establish reasoning or agent outputs in the competition.",
+      "The four-center count applies to the COVID-19 task, not necessarily to the fair-diagnosis dataset."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "last_updated": "2026-10-03",
+      "collection_date_definition": "Date of web and literature metadata collection, not medical-image acquisition.",
+      "source_list": "challenge_list_other_platforms_22_26_v4.json",
+      "source_list_index": 77,
+      "source_list_index_base": 1,
+      "collection_status": "partially_verified",
+      "sources": [
+        {
+          "type": "Official organizer source",
+          "url": "https://ai-medical-image-analysis.github.io/6th/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/78d4f75e96017ceb.json",
+          "supports": [
+            "task_profile",
+            "clinical_domain",
+            "dataset.multi_center",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule",
+            "organizers"
+          ],
+          "snapshot_sha256": "973a0f31051d5ae7bab1faabc7374383a98b9dac0716e550a84abab47fada6ea"
+        }
+      ],
+      "unresolved_fields": [
+        "dataset.population.patient_count",
+        "dataset.center_count",
+        "dataset.collection_period.start_year",
+        "participation_statistics.registered_teams"
+      ],
+      "verification_policy": "Only edition-specific official evidence populates facts; unknown values remain null."
+    },
+    "record_level": "umbrella_challenge",
+    "scope_status": "core_medical_imaging",
+    "count_in_core_medical_imaging_review": true,
+    "count_in_edition_statistics": true,
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  }
+}

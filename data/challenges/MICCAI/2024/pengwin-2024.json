@@ -1,0 +1,668 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "pengwin-2024",
+    "challenge_name": "Pelvic Bone Fragments with Injuries Segmentation Challenge",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "X-ray"
+      ],
+      "submodality": [
+        "DeepDRR synthetic X-ray"
+      ],
+      "body_region": [
+        "Pelvis"
+      ],
+      "organ_system": [
+        "Musculoskeletal"
+      ],
+      "organs_or_structures": [
+        "Sacrum",
+        "Left hipbone",
+        "Right hipbone",
+        "Fracture fragments"
+      ],
+      "diseases": [
+        "Pelvic fracture"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "ct",
+          "official_name": "Pelvic fragment segmentation on CT",
+          "task_family": "Segmentation",
+          "task_subtype": "instance segmentation",
+          "input": [
+            "3D CT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Bone identity and fracture-instance mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "xray",
+          "official_name": "Pelvic fragment segmentation on X-ray",
+          "task_family": "Segmentation",
+          "task_subtype": "instance segmentation",
+          "input": [
+            "Synthetic 2D X-ray"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Bone identity and fracture-instance mask"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": "CT: 0 background; 1–10 sacrum fragments, 11–20 left hipbone, 21–30 right hipbone. Synthetic X-ray masks use multi-label uint32 encoding for overlapping fragments.",
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Semi-automatic fragment annotations validated by medical experts; DeepDRR creates corresponding synthetic X-ray labels.",
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": 150,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT",
+        "X-ray"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "ct_train": {
+          "case_count": 100
+        },
+        "xray_train": {
+          "source_ct_count": 100,
+          "image_count": null,
+          "images_per_ct": null
+        },
+        "ct_validation": {
+          "case_count": 20
+        },
+        "ct_test": {
+          "case_count": 30
+        },
+        "xray_validation": {
+          "source_ct_count": 20,
+          "image_count": 8000
+        },
+        "xray_test": {
+          "source_ct_count": 30,
+          "image_count": 600
+        }
+      },
+      "source_conflicts": {
+        "xray_train_image_count": {
+          "public_repository": 50000,
+          "organizer_report": 40000
+        },
+        "xray_images_per_training_ct": {
+          "public_repository": 500,
+          "organizer_report": 400
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Public original CT/X-ray repository metadata: CC BY 4.0. Final organizer report calls both CC BY-NC-SA; unresolved conflict.",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Public data and open pretrained models under permissive licenses allowed; disclose resources."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "ct",
+          "metrics": [
+            "Fracture IoU",
+            "Fracture HD95",
+            "Fracture ASSD",
+            "Anatomical IoU",
+            "Anatomical HD95",
+            "Anatomical ASSD"
+          ],
+          "ranking": "Highest-IoU matching of fragment instances; mean of six independent metric ranks."
+        },
+        {
+          "task_id": "xray",
+          "metrics": [
+            "Fracture IoU",
+            "Fracture HD95",
+            "Fracture ASSD",
+            "Anatomical IoU",
+            "Anatomical HD95",
+            "Anatomical ASSD"
+          ],
+          "ranking": "Highest-IoU matching of fragment instances; mean of six independent metric ranks."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "preliminary_submissions_per_task": 5,
+        "final_submissions_per_task": 1
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 316,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary Development Phase CT",
+            "submission_count": 256
+          },
+          {
+            "official_phase_name": "Preliminary Development Phase X-ray",
+            "submission_count": 84
+          },
+          {
+            "official_phase_name": "Final Test Phase CT",
+            "submission_count": 44
+          },
+          {
+            "official_phase_name": "Final Test Phase X-ray",
+            "submission_count": 11
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://pengwin.grand-challenge.org/",
+      "dataset": "https://zenodo.org/records/10927452",
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "CT repository 10927452; X-ray repository 10913195. Synthetic X-ray is not a separate real-patient radiographic cohort. Original one-final-submission rule was relaxed for the 72-hour deadline extension.",
+      "Final organizer report gives CT splits 100/20/30 and X-ray 400/400/20 projections per training/validation/test CT. Original public repository instead provides 500 projections per training CT. X-ray training image_count remains null until the competition version is reconciled."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/#april-2026-pengwin-2026-is-now-open-on-grand-challenge",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-08969b4f2187.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://pengwin.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-113ce236e7b2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/result/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-1acbec6500df.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-2668c21da389.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/pengwin/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-579a86ab05ca.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/#_1",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-592b749168c0.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/#background",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-702dae1f6505.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-8df8166fcff2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/awards/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-9149485a946f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-9595b9d42d9c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-9b00783fd699.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/data/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-b5e719180bc5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/#december-2025-our-challenge-review-paper-has-been-accepted-by-ieee-tmi-ieee-arxiv",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-b63a0b951abc.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/#tasks",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-c28b991185a5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/#citation",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-da25c70337f6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/#news",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-ebbede1db033.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-overview.json"
+        },
+        {
+          "type": "official conference registered-challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "supports": [
+            "event",
+            "year"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json"
+        },
+        {
+          "type": "official organizer source",
+          "url": "https://zenodo.org/records/10927452",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-b06eb06b0dd2.json"
+        },
+        {
+          "type": "official organizer source",
+          "url": "https://zenodo.org/records/10913195",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-2ca2a23c6a9b.json"
+        },
+        {
+          "type": "official organizer final challenge report",
+          "url": "https://arxiv.org/abs/2504.02382",
+          "supports": [
+            "dataset",
+            "evaluation",
+            "submission",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/59-organizer-paper.txt"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Resolve final-report versus original-repository X-ray training projections/counts and dataset-license conflicts."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/pengwin-2024.json",
+          "_collection/verification_20261003/literature_context/pengwin-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "PENGWIN2024两个赛道的训练数据分别直接在公开Zenodo10927452及10913195下载。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "PENGWIN2024两个赛道的训练数据分别直接在公开Zenodo10927452及10913195下载。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/b5e719180bc506c2.json",
+          "url": "https://pengwin.grand-challenge.org/data/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/pengwin-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Observed persistent data resource",
+              "summary": "Edition-linked dataset files and download links remained listed in a repository snapshot after the competition year.",
+              "url": "https://zenodo.org/records/10927452",
+              "snapshot": "_collection/sources/59-b06eb06b0dd2.json",
+              "scope": "File listing establishes continuing resource provision at the snapshot; authenticated download experience and unrestricted reuse are separate.",
+              "value": null,
+              "excerpt": "Files\nPENGWIN_CT_train_images_part1.zip\nFiles\n(7.6 GB)\nName\nSize\nPENGWIN_CT_train_images_part1.zip\nmd5:1d7cd8dc537ba12c61165f1be3e86022\n3.9 GB\nPreview\nDownload\nPENGWIN_CT_train_images_part2.zip\nmd5:308a619a9c24fbcfbd197127c4cb39fb\n3.6 GB\nPreview\nDownload\nPENGWIN_CT_train_labels.zip\nmd5:77b3a29d528c719a917e6f90eb9b20d4\n33.3 MB\nPreview\nDownload\nAdditional details\nRelated works\nIs new version of\nConference proceeding:\n10.1007/978-3-031-43996-4_30\n(DOI)\nDates\nCreated\n2024-03-20\n6K\nViews\n7K\nDownloads\nShow more details\nAll versions\nThis version\nViews\nTotal views\n5,655\n5,655\nDownloads\nTotal downloads\n6,617\n6,617\nData volume\nTotal data volume\n63.1 TB\n63.1 TB\nMore info on how stats are collected....\nVersions\nExternal resources\nIndexed in\nOpenAIRE\nCommunities\nKeywords and subjects\nKeywords\nImage segmentation\nFracture\nPelvis\nEuroSciVoc\nComputed tomography\nOrthopaedics\nDetails\nDOI\nDOI Badge\nDOI\n10.5281/zenodo.10927452\nMarkdown\n[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10927452.svg)](https://doi.org/10.5281/zenodo.10927452)\nreStructuredText\n.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.10927452.svg\n  :target: https://doi.org/10.5281/zenodo.10927452\nHTML\n<a href=\"https://doi.org/10.5281/zenodo.10927452\"><img src=\"https://zenodo.org/badge/DOI/10.5281/zenodo.10927452.svg\" alt=\"DOI\"></a>\nImage URL\nhttps://zenodo.org/badge/DOI/10.5281/zenodo.10927452.svg\nTarget URL\nhttps://doi.org/10.5281/zenodo.10927452\nResource type\nImage\nPublisher\nZenodo\nRights\nLicense\nCreative Commons Attribution 4.0 International\nThe Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited.\nRead more\nCitation\nExport\nTechnical metadata\nCreated\nApril 7, 2024\nModified\nApril 7, 2024\nJump up",
+              "snapshot_date": "2026-10-02"
+            },
+            {
+              "kind": "Observed persistent data resource",
+              "summary": "Edition-linked dataset files and download links remained listed in a repository snapshot after the competition year.",
+              "url": "https://zenodo.org/records/10913195",
+              "snapshot": "_collection/sources/59-2ca2a23c6a9b.json",
+              "scope": "File listing establishes continuing resource provision at the snapshot; authenticated download experience and unrestricted reuse are separate.",
+              "value": null,
+              "excerpt": "Files\nrequirements.txt\nFiles\n(35.0 GB)\nName\nSize\npengwin_utils.py\nmd5:1064af816c0aadcb81af46808c7df6a4\n19.4 kB\nDownload\nrequirements.txt\nmd5:23937d78ebc0d0d9fb95a2a985843e96\n50 Bytes\nPreview\nDownload\ntrain.zip\nmd5:9c90215dae54d8f494a85cfc7b19bc96\n35.0 GB\nPreview\nDownload\nAdditional details\nRelated works\nIs derived from\nPublication:\n10.1007/978-3-031-43996-4_30\n(DOI)\nSoftware\nDevelopment Status\nActive\n3K\nViews\n3K\nDownloads\nShow more details\nAll versions\nThis version\nViews\nTotal views\n3,124\n3,124\nDownloads\nTotal downloads\n2,967\n2,967\nData volume\nTotal data volume\n282.2 TB\n282.2 TB\nMore info on how stats are collected....\nVersions\nExternal resources\nIndexed in\nOpenAIRE\nCommunities\nKeywords and subjects\nEuroSciVoc\nX-ray radiography\nSurgery\nOrthopaedics\nDetails\nDOI\nDOI Badge\nDOI\n10.5281/zenodo.10913196\nMarkdown\n[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10913196.svg)](https://doi.org/10.5281/zenodo.10913196)\nreStructuredText\n.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.10913196.svg\n  :target: https://doi.org/10.5281/zenodo.10913196\nHTML\n<a href=\"https://doi.org/10.5281/zenodo.10913196\"><img src=\"https://zenodo.org/badge/DOI/10.5281/zenodo.10913196.svg\" alt=\"DOI\"></a>\nImage URL\nhttps://zenodo.org/badge/DOI/10.5281/zenodo.10913196.svg\nTarget URL\nhttps://doi.org/10.5281/zenodo.10913196\nResource type\nDataset\nPublisher\nZenodo\nLanguages\nEnglish\nRights\nLicense\nCreative Commons Attribution 4.0 International\nThe Creative Commons Attribution license allows re-distribution and re-use of a licensed work on the condition that the creator is appropriately credited.\nRead more\nCitation\nExport\nTechnical metadata\nCreated\nApril 4, 2024\nModified\nApril 4, 2024\nJump up",
+              "snapshot_date": "2026-10-02"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "16 teams evaluated at final test.",
+              "url": "https://arxiv.org/abs/2504.02382",
+              "snapshot": "_collection/sources/59-organizer-paper.txt",
+              "scope": "teams evaluated at final test",
+              "value": {
+                "value": 16,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "DRR method. Final submissions interactive segmentation approaches, integrating human decision- from 16 teams worldwide were evaluated under a rigorous making with task-relevant information, may be essential for multi-metric testing scheme. The top-performing CT algorithm improv",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

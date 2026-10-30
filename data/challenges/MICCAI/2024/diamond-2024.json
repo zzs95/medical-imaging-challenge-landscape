@@ -1,0 +1,658 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "diamond-2024",
+    "challenge_name": "DIAMOND 2024",
+    "full_name": "DIAMOND: Device-Independent diAbetic Macular edema ONset preDiction",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R15",
+      "official_programme_row_numbers": "33",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "University of West Brittany, Brest, France",
+        "University of Tlemcen, Tlemcen, Algeria",
+        "LAZOUNI Ophthalmology Clinic, Tlemcen, Algeria",
+        "IMT Atlantique, Brest, France",
+        "University of West Brittany and Brest University Hospital, Brest, France",
+        "AP-HP, Paris, France",
+        "Fondation Rothschild, Paris, France",
+        "Inserm, Brest, France"
+      ],
+      "registered_authors": [
+        {
+          "name": "El Habib Daho, Mostafa",
+          "affiliation": "University of West Brittany, Brest, France"
+        },
+        {
+          "name": "El Amine Lazouni, Mohammed",
+          "affiliation": "University of Tlemcen, Tlemcen, Algeria"
+        },
+        {
+          "name": "Matta, Sarah",
+          "affiliation": "University of West Brittany, Brest, France"
+        },
+        {
+          "name": "Aziza Elaouaber, Zineb",
+          "affiliation": "LAZOUNI Ophthalmology Clinic, Tlemcen, Algeria"
+        },
+        {
+          "name": "Lazouni, Leila Ryma",
+          "affiliation": "University of Tlemcen, Tlemcen, Algeria"
+        },
+        {
+          "name": "Bouayad Agha, Mohammed Youcef",
+          "affiliation": "LAZOUNI Ophthalmology Clinic, Tlemcen, Algeria"
+        },
+        {
+          "name": "Zeghlache, Rachid",
+          "affiliation": "University of West Brittany, Brest, France"
+        },
+        {
+          "name": "Rezaei, Alireza",
+          "affiliation": "University of West Brittany, Brest, France"
+        },
+        {
+          "name": "Lamard, Mathieu",
+          "affiliation": "University of West Brittany, Brest, France"
+        },
+        {
+          "name": "Conze, Pierre-Henri",
+          "affiliation": "IMT Atlantique, Brest, France"
+        },
+        {
+          "name": "Cochener, Béatrice",
+          "affiliation": "University of West Brittany and Brest University Hospital, Brest, France"
+        },
+        {
+          "name": "Couturier, Aude",
+          "affiliation": "AP-HP, Paris, France"
+        },
+        {
+          "name": "Bonnin, Sophie",
+          "affiliation": "Fondation Rothschild, Paris, France"
+        },
+        {
+          "name": "Tadayoni, Ramin",
+          "affiliation": "AP-HP, Paris, France"
+        },
+        {
+          "name": "Quellec, Gwenolé",
+          "affiliation": "Inserm, Brest, France"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "Fundus"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Eye"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Retina",
+        "Macula"
+      ],
+      "diseases": [
+        "Diabetic retinopathy",
+        "Center-involved diabetic macular edema"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Prognosis",
+      "secondary_task_families": [],
+      "task_families": [
+        "Prognosis"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Predicting the onset of ci-DME using UWF-CFP images",
+          "task_family": "Prognosis",
+          "task_families": [
+            "Prognosis"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991336",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/DIAMOND_ Device-Independent diAbetic Macular edema.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": true,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991336",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/DIAMOND_ Device-Independent diAbetic Macular edema.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Fundus"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991336",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/DIAMOND_ Device-Independent diAbetic Macular edema.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND. 注册需签署 DUA；明确的 CC BY-NC-ND 只对应 sample，不扩大至全部数据。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991336",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/DIAMOND_ Device-Independent diAbetic Macular edema.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991336",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/DIAMOND_ Device-Independent diAbetic Macular edema.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "CodaLab",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991336",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/DIAMOND_ Device-Independent diAbetic Macular edema.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991336",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/DIAMOND_ Device-Independent diAbetic Macular edema.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nArea under the receiver operating characteristic curve (AUC), F1-score (F1) and Expected Calibration Error (ECE).\nAll three metrics are used for ranking: S = AUC + 0.5 x F1 + 0.5 x ECE.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe use of AUC in our study aligns with the goal of achieving high sensitivity and specificity in predictions. It is a\ncommonly used metric to evaluate medical classification/prediction challenges and competitions on Grand\nChallenge, Kaggle, etc., as well as in the medical literature.\nTwo secondary metrics are considered (with a lower weight) to further assess the relevance of the computed\nprobabilities.\n- The use of F1 ensures that binary predictions (when using a probability cutoff of 0.5) are relevant. It also\nassesses precision (not assessed in AUC).\n- The use of ECE ensures the calibration properties for a model, i.e., ensures that its predicted probabilities match\nthe actual probabilities of the ground truth distribution.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\n\n\n\n\f                      DIAMOND: Device-Independent diAbetic Macular edema ONset preDiction\n\naggregated to arrive at a final score/ranking.\n\nThe final ranking of the submitted algorithms will be determined by a composite score that reflects their\nperformances across four distinct test subsets (D1: CLARUS / European population, D2: OPTOS / European\npopulation, D3: OPTOS / African population and D4: EIDON / African population). This approach is specifically\ndesigned to assess the device-agnostic and population-agnostic capabilities of the proposed methods.\nEach algorithm will be evaluated separately on the four test subsets. The performance on each subset D will be\nmeasured using the chosen metric, namely S(D) (with S = AUC + 0.5 x F1 + 0.5 x ECE). To arrive at the final score for\neach submission, we will aggregate the individual performance scores through averaging: final score = S(D1) +\nS(D2) + S(D3) + S(D4).\nNote that, even though equal weights are given to each test subset, more emphasis is put on out-of-domain test\ncases, since the corresponding test subsets (D3 and D4) are smaller.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nThe tests will be run by the organizing committee. Each algorithm is expected to give one prediction for each case.\nIt should be noted that if a Docker container fails at training or evaluation, the submission will be ignored and an\nerror message will be reported to the participating team to fix it. In particular, a failure in the submission does not\ncount against the 3 training submission credits allotted to each team.\nA Docker container failing at evaluation means that predictions are missing for at least one test case. However, if\nparticipants fail to correct that issue, incomplete submissions will be evaluated as follows: if a prediction is\nmissing for a test case, it will be given a default probability of 0 (meaning \"absence of ci-DME one year after the\nUWF-CFP image was taken\").\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThe rationale behind this methodology is to ensure that algorithms that perform consistently well across various\ndevices and populations receive a higher ranking, thus highlighting their robustness and generalizability."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container for training and inference",
+      "platform": "CodaLab",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "DIAMOND is a blind challenge. Participants must submit their codes for training and evaluation through a Docker submission. The organizing committee will provide a starting PyTorch Lightning-based code and Docker container with the full pipeline, which will also serve as the baseline for performance evaluation. Upon training/validation completion, participants will receive an email with the performances of their algorithm. In detail, they will receive the training and validation scores for each user-defined checkpoint (e.g., a YAML dictionary mapping checkpoint identifiers to training/validation losses and validation metrics). Next, the validation data leaderboard will be updated with the best validation score. For illustration purposes, participants will have access to images of one patient (sample data). To facilitate model development, an artificial dataset will be generated through random data augmentations of this sample data: it will help participants understand how the hidden challenge dataset is structured and test run their code.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991336",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/DIAMOND_ Device-Independent diAbetic Macular edema.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991336",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/DIAMOND_ Device-Independent diAbetic Macular edema.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10991336"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://www.codabench.org/competitions/2333/",
+      "registration": "https://doi.org/10.5281/zenodo.10991336",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10991336",
+          "resolved_record_id": 10991337,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/DIAMOND_ Device-Independent diAbetic Macular edema.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/DIAMOND_ Device-Independent diAbetic Macular edema.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://www.codabench.org/competitions/2333/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/51094461a8464275.json",
+          "http_status": null,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "DIAMOND"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Prognosis"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "Registration and a signed agreement are specified for the sample development data. The main training and testing cohorts remain centrally held."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "One real patient and artificial sample data are supplied for development; the main training, validation and test cohorts remain centrally held and submitted containers perform training and inference. This mixed arrangement is not unrestricted raw-data release."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991336",
+          "excerpt": "ike) • CC BY-NC-ND (Attribution-NonCommercial-NoDerivs) Participants will have to sign a data usage agreement when registering to the challenge. The license for the sample data will be restrictive: CC BY-NC-ND."
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991336",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. DIAMOND is a blind challenge. Participants must submit their codes for training and evaluation through a Docker submission. The organizing committee will provide a starting PyTorch Lightning-based code and Docker container with the full pipeline, which will also serve as the baseline for performance evaluation. Upon training/validation completion, participants will receive an email with the performances of their algorithm. In detail, they will receive the training and validation scores for each user-defined checkpoin [...] d will be updated with the best validation score. For illustration purposes, participants will have access to images of one patient (sample data). To facilitate model development, an artificial dataset will be generated through random data augmentations of this sample data: it will help participants understand how the hidden challenge dataset is structured and test run their code. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. We will authorize each team to have 3 training/validation runs, and each training/validation run will be limited to 7 days. Each container will be run through Slurm on one computer node with Ubuntu Server 20.04 LTS installed. Each computer node has the following resources: 4× Nvidia Tesla V100s GPUs (32Gb), 2x Intel Xeon Gold 6226R CPUs DIAMOND: Device-Independent diAbetic Macular edema ONset preDiction (16 cores/32 threads - 2.9 GHz/ [...] 933 MHz). A quarter of these resources (1 GPU, 16 CPU threads, 96 Gb RAM) will be allocated to each container for 7 days. During one training/validation run, participants are encouraged to evaluate multiple neural architectures, hyperparameters, etc. A code example will be provided to participants for that purpose. Should the run complete or crash before the end of the 7-day period (say after n days), part"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991336",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results - Registration period: April 1 - June 20, 2024 - Release date of sample data (one patient) and artificial dataset: April 1, 2024 - Training Docker container submission period: April 1 - June 30, 2024 - Final Docker container submission period (evaluation only): July 1 - July 5, 2024 - Finalists' announcement date: July 15, 2024 - Report submission period (for finalists): July 15 - September 15, 2024 - Release date of the results: challenge day (October 6 or 10, 2024)"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991336",
+          "excerpt": ""
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 5652,
+              "unit": "cases",
+              "scope": "EVIRED",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 707,
+              "unit": "cases",
+              "scope": "EVIRED",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 706,
+              "unit": "cases",
+              "scope": "EVIRED",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 300,
+              "unit": "cases",
+              "scope": "Algeria",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "source",
+              "value": 1917,
+              "unit": "patients",
+              "scope": "EVIRED",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "source",
+              "value": 150,
+              "unit": "patients",
+              "scope": "Algeria",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "France",
+              "Algeria"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Repeated visits and both eyes; 14 French hospitals plus Algerian clinic. Patient splits explicit.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10991336",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/diamond-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Eye"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Ophthalmic"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Retina",
+        "Macula"
+      ],
+      "specific_diseases": [
+        "Diabetic retinopathy",
+        "Center-involved diabetic macular edema"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991336"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/diamond-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-ND"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": true,
+      "summary_zh": "注册需签署 DUA；明确的 CC BY-NC-ND 只对应 sample，不扩大至全部数据。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "Participants will have to sign a data usage agreement when registering to the challenge. The license for the sample data will be restrictive: CC BY-NC-ND.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10991336"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991336"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/diamond-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "France",
+                  "Algeria"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10991336",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R15/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/diamond-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

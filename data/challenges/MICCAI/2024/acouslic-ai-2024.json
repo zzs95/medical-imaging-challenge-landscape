@@ -1,0 +1,664 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "acouslic-ai-2024",
+    "challenge_name": "Abdominal Circumference Operator-agnostic UltraSound measurement",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Ultrasound"
+      ],
+      "submodality": [
+        "2D B-mode blind-sweep ultrasound"
+      ],
+      "body_region": [
+        "Fetal abdomen"
+      ],
+      "organ_system": [
+        "Obstetric"
+      ],
+      "organs_or_structures": [
+        "Fetal abdominal circumference"
+      ],
+      "diseases": [
+        "Fetal growth restriction"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [
+        "Segmentation"
+      ],
+      "tasks": [
+        {
+          "task_id": "frame",
+          "official_name": "Optimal fetal abdominal frame selection",
+          "task_family": "Classification",
+          "task_subtype": "frame selection",
+          "input": [
+            "Blind-sweep ultrasound sequence"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Frame index or -1"
+          ],
+          "granularity": "sequence-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "mask",
+          "official_name": "Fetal abdomen segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "binary segmentation",
+          "input": [
+            "Selected ultrasound frame"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Binary abdomen mask"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": 6,
+      "institutions_description": "Five African peripheral healthcare units and one European hospital; public training is a smaller three-PHU subset.",
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Ultrasound"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "case_count": 300
+        },
+        "validation": {
+          "case_count": 10
+        },
+        "test": {
+          "case_count": 290
+        }
+      },
+      "input_frames_per_case": 840,
+      "frame_dimensions": [
+        744,
+        562
+      ],
+      "pixel_spacing_mm": 0.28
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Training: CC BY-NC-SA; test cannot be shared for ethical/proprietary reasons.",
+      "access_after_challenge": null,
+      "access_scope": "Public Training and Development Set, 300 cases"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Pretraining and external datasets allowed if published under permissive license within one month of development deadline."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "frame",
+          "metrics": [
+            "Weighted Frame Selection Score"
+          ],
+          "ranking": "Composite score = 0.5*(1-NAE_AC) + 0.25*DSC_soft + 0.25*WFSS; higher is better. HD is supplementary and excluded from ranking."
+        },
+        {
+          "task_id": "mask",
+          "metrics": [
+            "Soft Dice",
+            "Hausdorff distance",
+            "Normalized Absolute Error of circumference"
+          ],
+          "ranking": "Composite score = 0.5*(1-NAE_AC) + 0.25*DSC_soft + 0.25*WFSS; higher is better. HD is supplementary and excluded from ranking."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 1,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "development_submissions_per_team": 10
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 253,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary Development Phase",
+            "submission_count": 92
+          },
+          {
+            "official_phase_name": "Final Test Phase",
+            "submission_count": 8
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://acouslic-ai.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Measurement is derived through ellipse fitting, not an additional directly submitted regression task. Official split summary says 290 test cases; later annotation paragraph says 282, requiring reconciliation."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/ai-algorithm-submissions/",
+          "supports": [
+            "data_usage_mode",
+            "evaluation.platform",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-219b24f6bde6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/#references",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-2853d014364d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/#partners-and-organizers",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-28b1be8f38ed.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/overview-and-goals/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-2962bc8df5ca.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/miccai2024-workshop/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-2b2300960049.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/contact-information/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-411464a4d929.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/challenge-outcomes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-42bc62ac81a6.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://acouslic-ai.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-4bc4d6b0bdf8.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/#clinical-and-societal-problem",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-516de2a8ab3a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/#contact-information",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-55e064e8277f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/ai-phases-rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-5f24841392e8.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/ai-tasks-and-evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-798ebbb7c1ca.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/announcements-news/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-7e15e019a311.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-8008a412e677.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/#the-acouslic-ai-challenge",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-87c5892d70a9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/#diagnosing-fetal-growth-restriction-is-challenging-in-low-resource-settings",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-9f94abf93c6c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/datasets-data-visualization/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-9fc6fce63b35.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/#publication",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-aad9d071e74c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/datasets/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "dataset",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-cb4ef728a043.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/#ai-powered-low-cost-prenatal-ultrasound-for-novice-operators",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-f8c9f8d1ac2e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-f9e050ec84cc.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acouslic-ai.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "dataset.institutions_description",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-overview.json"
+        },
+        {
+          "type": "official conference registered-challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "supports": [
+            "event",
+            "year"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json"
+        },
+        {
+          "type": "official challenge ranking formula image",
+          "url": "https://public.grand-challenge-user-content.org/i/2024/07/24/image_ZAjBxjI.png",
+          "supports": [
+            "evaluation"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/66-ranking-formula.png"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Resolve 290 versus 282 test-case discrepancy and verify hard runtime/resource limits."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://acouslic-ai.grand-challenge.org/ai-algorithm-submissions/",
+          "local_snapshot": "_collection/sources/66-219b24f6bde6.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'Preliminary Development Phase', 'url': 'https://acouslic-ai.grand-challenge.org/evaluation/preliminary-development-phase/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "data_access.access_status": {
+          "source_url": "https://acouslic-ai.grand-challenge.org/datasets/",
+          "local_snapshot": "_collection/sources/66-cb4ef728a043.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition dataset page explicitly identifies the public training split and its license."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://acouslic-ai.grand-challenge.org/datasets/",
+          "local_snapshot": "_collection/sources/66-cb4ef728a043.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition dataset page explicitly identifies the public training split and its license."
+        },
+        "dataset.institutions_description": {
+          "source_url": "https://acouslic-ai.grand-challenge.org/",
+          "local_snapshot": "_collection/sources/66-overview.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official cohort overview counts five peripheral healthcare units and one hospital; dataset source count is six, not the number of units in the public training split."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status",
+          "dataset.institutions_description",
+          "evaluation.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "submission.platform",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/acouslic-ai-2024.json",
+          "_collection/verification_20261003/literature_context/acouslic-ai-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Fetal abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Congenital / developmental"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Fetal growth restriction"
+      ],
+      "disease_scope_note": "Explicit intended clinical target; cohort prevalence not inferred",
+      "disease_review_note": "官方明确以胎儿生长受限识别所需的腹围测量为临床目标；不声称全部胎儿已确诊。",
+      "sources": [
+        {
+          "url": "https://acouslic-ai.grand-challenge.org/overview-and-goals/",
+          "local_source": "_collection/sources/66-2962bc8df5ca.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "官方明确以胎儿生长受限识别所需的腹围测量为临床目标；不声称全部胎儿已确诊。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2024/acouslic-ai-2024.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Five African peripheral healthcare units and one European hospital; public training is a smaller three-PHU subset.",
+              "url": "https://acouslic-ai.grand-challenge.org/",
+              "snapshot": "_collection/sources/66-overview.json",
+              "scope": "Explicit acquisition-institution or region description; partial scope retained.",
+              "value": "Five African peripheral healthcare units and one European hospital; public training is a smaller three-PHU subset.",
+              "excerpt": "",
+              "snapshot_date": "2026-10-03",
+              "source_path": "MICCAI/2024/acouslic-ai-2024.json",
+              "source_field": "dataset.institutions_description"
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

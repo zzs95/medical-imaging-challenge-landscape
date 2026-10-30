@@ -1,0 +1,551 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "hecktor-2022",
+    "challenge_name": "MICCAI HECKTOR 2022",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2022-09-22",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "PET",
+        "CT"
+      ],
+      "submodality": [
+        "FDG-PET",
+        "Low-dose CT",
+        "PET/CT"
+      ],
+      "body_region": [
+        "Head and Neck"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Primary gross tumor volume (GTVp)",
+        "Nodal gross tumor volume (GTVn)"
+      ],
+      "diseases": [
+        "Oropharyngeal cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Survival Prediction"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Primary tumor and lymph node segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "multi-class segmentation",
+          "input": [
+            "FDG-PET volume",
+            "CT volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "GTVp and GTVn mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Recurrence-free survival prediction",
+          "task_family": "Survival Prediction",
+          "task_subtype": "time-to-event prediction",
+          "input": [
+            "FDG-PET/CT",
+            "Clinical information"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Recurrence risk score"
+          ],
+          "granularity": "patient-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "mask_values": {
+            "0": "Background",
+            "1": "GTVp",
+            "2": "GTVn"
+          }
+        },
+        {
+          "task_id": "task2",
+          "target": "Recurrence-free survival in days and censoring"
+        }
+      ],
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-national",
+      "multi_center": true,
+      "international": null,
+      "center_count": 9,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "FDG-PET/CT",
+        "GTVp/GTVn masks",
+        "Clinical variables",
+        "RFS time and censoring"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits_by_task": {
+        "task1": {
+          "train_case_count": 524,
+          "test_case_count": 359
+        },
+        "task2": {
+          "train_case_count": 488,
+          "test_case_count": 339
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "temporarily-unavailable",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Partner-hospital agreement renewal pending; access unavailable at current snapshot.",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": null,
+        "submission_artifact": "prediction file"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "aggregated DSC (DSC_agg)"
+          ],
+          "ranking": "Average separately computed GTVp and GTVn aggregated Dice scores; aggregated Dice = 2 sum_i |A_i intersection B_i| / sum_i (|A_i| + |B_i|)."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Concordance index (C-index)"
+          ],
+          "ranking": "Rank by C-index on test data."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "prediction file",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 3,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": [
+        {
+          "task_id": "task1",
+          "format": "NIfTI in ZIP",
+          "content": "GTVp=1, GTVn=2, background=0; original CT resolution"
+        },
+        {
+          "task_id": "task2",
+          "format": "CSV",
+          "content": "PatientID and risk Prediction"
+        }
+      ]
+    },
+    "schedule": {
+      "training_data_release": "2022-06-07",
+      "test_data_release": "2022-08-01",
+      "final_submission_deadline": "2022-09-05",
+      "challenge_event": "2022-09-22"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 284,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "RFS prediction (Task 2)",
+            "submission_count": 122
+          },
+          {
+            "official_phase_name": "GTVp and GTVn segmentation (Task 1)",
+            "submission_count": 210
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://hecktor.grand-challenge.org/",
+      "dataset": null,
+      "github": "https://github.com/voreille/hecktor",
+      "challenge_paper": null
+    },
+    "notes": [
+      "Counts above preserve the task-specific tables. Dataset prose gives 845 total and 356 test cases, while Task 1 table gives 524 train and 359 test; overview says approximately 882. These are conflicting source statements, not harmonized counts. Evaluation prose calls the metric aggregated DSC but also describes Jaccard-style intersection/union; official evaluator must resolve the exact implementation.",
+      "Final organizer overview resolves earlier webpage inconsistencies: segmentation 524/359; RFS 488/339. The 489 training cases on the platform are superseded by 488 in the final paper. Final paper defines aggregated Dice with factor two, not Jaccard."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor.grand-challenge.org/Participation/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/119-084485b189ca.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor.grand-challenge.org/Timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/119-6f92db985010.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor.grand-challenge.org/Data/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/119-817e0f3f6bd4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor.grand-challenge.org/Submit/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/119-845a85bd0b8d.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://hecktor.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/119-87d0541fa66f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor.grand-challenge.org/Evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/119-a28c15d5857c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://hecktor.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/119-overview.json"
+        },
+        {
+          "type": "official organizer publication",
+          "url": "https://publications.hevs.ch/index.php/attachments/single/1741",
+          "local_snapshot": "_collection/sources/119-results.pdf",
+          "retrieved_on": "2026-10-02",
+          "supports": [
+            "dataset",
+            "evaluation"
+          ]
+        }
+      ],
+      "collection_status": "verified",
+      "unresolved_fields": [],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "clinical_domain.organ_system"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/hecktor-2022.json",
+          "_collection/verification_20261003/literature_context/hecktor-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "The organizer cohort table identifies source centers in Canada, the United States, Switzerland and France.",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10171217/",
+              "snapshot": "",
+              "scope": "Table 1 of the HECKTOR2022 organizer report; nine acquisition centers.",
+              "value": null,
+              "excerpt": "",
+              "snapshot_date": "2026-10-27"
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "Table 4 reports 12 eligible teams for Task 2.",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10171217/",
+              "snapshot": "",
+              "scope": "Task-2 eligible result rows; not a whole-competition unique-team total.",
+              "value": {
+                "value": 12,
+                "unit": "Task-2 eligible teams"
+              },
+              "excerpt": "",
+              "snapshot_date": "2026-10-27"
+            }
+          ]
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "task1 / train_case_count",
+              "value": 524,
+              "unit": "cases",
+              "canonical_field": "dataset.splits_by_task.task1.train_case_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task1 / test_case_count",
+              "value": 359,
+              "unit": "cases",
+              "canonical_field": "dataset.splits_by_task.task1.test_case_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task2 / train_case_count",
+              "value": 488,
+              "unit": "cases",
+              "canonical_field": "dataset.splits_by_task.task2.train_case_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task2 / test_case_count",
+              "value": 339,
+              "unit": "cases",
+              "canonical_field": "dataset.splits_by_task.task2.test_case_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://hecktor.grand-challenge.org/Data/",
+              "supports": [
+                "dataset",
+                "labels_and_targets",
+                "data_access"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/119-817e0f3f6bd4.json"
+            },
+            {
+              "type": "official organizer publication",
+              "url": "https://publications.hevs.ch/index.php/attachments/single/1741",
+              "local_snapshot": "_collection/sources/119-results.pdf",
+              "retrieved_on": "2026-10-02",
+              "supports": [
+                "dataset",
+                "evaluation"
+              ]
+            }
+          ],
+          "source_urls": "https://hecktor.grand-challenge.org/Participation/; https://hecktor.grand-challenge.org/Timeline/; https://hecktor.grand-challenge.org/Data/; https://hecktor.grand-challenge.org/Submit/; https://hecktor.grand-challenge.org/challenge/statistics/; https://hecktor.grand-challenge.org/Evaluation/; https://hecktor.grand-challenge.org/; https://publications.hevs.ch/index.php/attachments/single/1741; https://github.com/voreille/hecktor"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

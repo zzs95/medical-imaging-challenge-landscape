@@ -1,0 +1,498 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "surgtoolloc-2023",
+    "challenge_name": "Endoscopic surgical tool localization using tool presence labels",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2023-10-08",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "EndoVis",
+        "relationship": "Parent challenge",
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "submodality": [
+        "Robotic surgical video"
+      ],
+      "body_region": [
+        "Surgical field"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Surgical instruments"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Detection",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Surgical Tool Localization",
+          "task_family": "Detection",
+          "task_subtype": "bounding box detection and tool classification",
+          "input": [
+            "Endoscopic video frames"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Tool bounding boxes and class labels"
+          ],
+          "granularity": "frame-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": true,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": "Weak robot-log tool-presence labels; tool installation does not guarantee visibility.",
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Endoscopy"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "video_count": 24695,
+          "clip_duration_seconds": 30,
+          "frame_rate_fps": 60,
+          "frame_resolution": [
+            1280,
+            720
+          ]
+        }
+      },
+      "training_tool_class_count": 14
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Training released with 2022 paper and free to use with citation; exact license not established.",
+      "access_after_challenge": null,
+      "access_scope": "training data; original 2022 collection reused for the 2023 edition"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "COCO mAP@[0.5:0.05:0.95]"
+          ],
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "final_submission_deadline": "2023-09-23"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 101,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Prelim Testing Phase",
+            "submission_count": 208
+          },
+          {
+            "official_phase_name": "Final Testing Phase",
+            "submission_count": 59
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://surgtoolloc23.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "New expanded test set; shared training data does not make this a duplicate of the 2022 edition."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://surgtoolloc23.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/80-222d84b169e7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgtoolloc23.grand-challenge.org/surgtoolloc23/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/80-26296e95b40a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgtoolloc23.grand-challenge.org/important-dates/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/80-2a261f0018d7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgtoolloc23.grand-challenge.org/getting-started/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/80-37a925592280.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgtoolloc23.grand-challenge.org/challenge-guidelines/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/80-37b0358a4fe1.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgtoolloc23.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/80-4267a3bc2360.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgtoolloc23.grand-challenge.org/submission-instructions/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/80-5258edf5c22c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgtoolloc23.grand-challenge.org/evaluation-criteria/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/80-b2a64b239272.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgtoolloc23.grand-challenge.org/data-description/",
+          "supports": [
+            "challenge context",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_access.is_public"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/80-d2675e0d23e7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgtoolloc23.grand-challenge.org/surgtoolloc-2022-resources/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/80-de63563abee5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgtoolloc23.grand-challenge.org/challenge-categories/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/80-ff12ccf8d390.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgtoolloc23.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/80-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify test split counts and detailed dataset/external-data license rules."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://surgtoolloc23.grand-challenge.org/data-description/",
+          "local_snapshot": "_collection/sources/80-d2675e0d23e7.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2023 data page explicitly declares released training data free for use with citation."
+        },
+        "data_access.is_public": {
+          "source_url": "https://surgtoolloc23.grand-challenge.org/data-description/",
+          "local_snapshot": "_collection/sources/80-d2675e0d23e7.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2023 data page explicitly declares released training data free for use with citation."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://surgtoolloc23.grand-challenge.org/data-description/",
+          "local_snapshot": "_collection/sources/80-d2675e0d23e7.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official 2023 data page explicitly declares released training data free for use with citation."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_access.is_public"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.body_region",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/surgtoolloc-2023.json",
+          "_collection/verification_20261003/literature_context/surgtoolloc-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "record_relationships": {
+      "parent_challenge_id": "endovis-2023",
+      "analytical_unit": "child_challenge_edition"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Surgical field"
+          ],
+          "note": "2023独立数据说明明确沿用训练练习视频且扩展测试集；按器械操作场景编码。"
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "sources": [
+        {
+          "url": "https://surgtoolloc23.grand-challenge.org/data-description/",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/d2675e0d23e79567.json"
+        }
+      ],
+      "note_zh": "2023独立数据说明明确沿用训练练习视频且扩展测试集；按器械操作场景编码。",
+      "anatomical_scope": "Procedure context",
+      "remaining_detail": "",
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "2023独立数据页明确沿用操作练习视频并扩充测试集，无疾病目标。",
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "2023独立数据页明确沿用操作练习视频并扩充测试集，无疾病目标。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2023/surgtoolloc-2023.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

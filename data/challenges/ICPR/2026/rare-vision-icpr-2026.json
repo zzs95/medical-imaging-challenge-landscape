@@ -1,0 +1,513 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "rare-vision-icpr-2026",
+    "challenge_name": "ICPR 2026 RARE-VISION: Robust AI for Rare Events in Video Capsule Endoscopy",
+    "full_name": "ICPR 2026 RARE-VISION: Robust AI for Rare Events in Video Capsule Endoscopy",
+    "year": 2026,
+    "event": {
+      "conference": "ICPR 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2026-08-18",
+      "location": {
+        "city": "Lyon",
+        "country": "France",
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy",
+        "Video"
+      ],
+      "submodality": [
+        "Other"
+      ],
+      "body_region": [
+        "Gastrointestinal tract"
+      ],
+      "organ_system": [
+        "Gastrointestinal"
+      ],
+      "organs_or_structures": [
+        "Gastrointestinal tract"
+      ],
+      "diseases": [
+        "Gastrointestinal bleeding, ulcers and other rare pathological findings"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": null,
+      "organ_system_coding_scope": null,
+      "submodality_detail": "Video capsule endoscopy"
+    },
+    "task_profile": {
+      "primary_task_family": "Detection",
+      "secondary_task_families": [
+        "Classification",
+        "Localization"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Anatomical region and rare pathology event detection",
+          "task_family": "Detection",
+          "task_subtype": null,
+          "input": [
+            "full-length video capsule endoscopy"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "labelled temporal events for 17 classes"
+          ],
+          "granularity": "temporal-event",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": true,
+      "classification": true,
+      "localization": true,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Endoscopy",
+        "Video"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "reported_quantities": [
+        {
+          "phase": "development",
+          "unit": "videos",
+          "value": 80,
+          "source_url": "https://link.springer.com/chapter/10.1007/978-3-032-31936-4_17"
+        },
+        {
+          "phase": "blind test",
+          "unit": "videos",
+          "value": 3,
+          "source_url": "https://link.springer.com/chapter/10.1007/978-3-032-31936-4_17"
+        }
+      ]
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": "Figshare development data and OPARA test videos",
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY 4.0. 官方挑战代码仓库链接的 Galar 训练视频数据记录列 CC BY 4.0；不覆盖比赛新增隐藏测试视频。",
+      "access_after_challenge": null,
+      "access_scope": null,
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": null,
+        "submission_artifact": "temporal event predictions"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "RareEval organizer web application",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "combined temporal mean average precision"
+          ],
+          "ranking": "organizer-reported hidden-test temporal mAP"
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Temporal-event prediction JSON and methods report",
+      "platform": "RareEval",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": [
+        "anatomy and pathology events"
+      ]
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null,
+      "reported_participants": {
+        "value": 60,
+        "approximate": false,
+        "relation": "equal_to",
+        "raw_text": "sixty participants worldwide",
+        "unit": "participants; registration/active status not specified"
+      }
+    },
+    "links": {
+      "official": "https://icpr2026.org/competitions.html",
+      "grand_challenge": null,
+      "platform": "https://scoringrarevision.streamlit.app/",
+      "dataset": "https://opara.zih.tu-dresden.de/items/64342f8d-b739-4055-8e7c-9d2dce0d39d4",
+      "github": "https://github.com/RAREChallenge2026/RARE-VISION-2026-Challenge",
+      "challenge_paper": "https://link.springer.com/chapter/10.1007/978-3-032-31936-4_17"
+    },
+    "notes": [
+      "Organizer result report was first available online on 2026-08-05; a later print year does not change the 2026 challenge edition year.",
+      "ICPR program lists March 1 as the planned deadline, but the organizer repository and retrospective report establish March 18 as the actual close.",
+      "The three blind-test videos were distributed without reference annotations; do not interpret hidden labels as unseen test imagery."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-20",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Documentary extraction date, not competition completion date.",
+      "last_verified": "2026-10-20",
+      "source_list": "2026 computer-vision-related conference challenge audit",
+      "source_index": null,
+      "sources": [
+        {
+          "type": "official ICPR competitions list",
+          "url": "https://icpr2026.org/competitions.html",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "edition identity",
+            "affiliation",
+            "task scope"
+          ],
+          "basis": "ICPR selected RARE-VISION as a 2026 competition; the page retains an obsolete March 1 deadline."
+        },
+        {
+          "type": "organizer edition repository",
+          "url": "https://github.com/RAREChallenge2026/RARE-VISION-2026-Challenge",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "actual close",
+            "labels",
+            "submission process"
+          ],
+          "basis": "Organizer revised the deadline to March 18 and describes the 17-label capsule-video task."
+        },
+        {
+          "type": "organizer-authored result report",
+          "url": "https://link.springer.com/chapter/10.1007/978-3-032-31936-4_17",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "completed final assessment",
+            "ranking",
+            "dataset scale",
+            "participation"
+          ],
+          "basis": "First online August 5, 2026; reports 80 development videos, three blind test videos, 60 participants and ranked team scores."
+        },
+        {
+          "type": "organizer test-data repository",
+          "url": "https://opara.zih.tu-dresden.de/items/64342f8d-b739-4055-8e7c-9d2dce0d39d4",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "independent blind test",
+            "test video units"
+          ],
+          "basis": "Three test examinations have hidden reference annotations and were distinct from development videos."
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Comparable active-team count; the report's 60 participants are not necessarily 60 teams",
+        "Exact data-use terms of every source video"
+      ],
+      "last_updated": "2026-10-20",
+      "field_evidence": {
+        "event.conference": {
+          "source_url": "https://icpr2026.org/competitions.html",
+          "reviewed_on": "2026-10-20",
+          "basis": "Official conference or workshop identifies this 2026 edition."
+        },
+        "assessment_evidence.status": {
+          "source_url": "https://link.springer.com/chapter/10.1007/978-3-032-31936-4_17",
+          "reviewed_on": "2026-10-20",
+          "basis": "Organizer-authored report published online 2026-08-05 gives hidden-test scores and names the leading three teams."
+        }
+      }
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-20",
+      "final_assessment_status": "final_assessment_confirmed",
+      "evidence_source_url": "https://link.springer.com/chapter/10.1007/978-3-032-31936-4_17",
+      "basis": "Organizer-authored report published online 2026-08-05 gives hidden-test scores and names the leading three teams.",
+      "qualification": "Review of publicly available documents only; no algorithm was independently rerun."
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Gastrointestinal tract"
+          ],
+          "note": "官方赛事仓库明确胶囊内镜中的消化道解剖及病变事件；补入胃肠道类别。"
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Other"
+          ],
+          "note": "Previous disease coding retained; not reclassified in this audit"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/RAREChallenge2026/RARE-VISION-2026-Challenge/main/README.md",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/9aa255ce934779cd.json"
+        }
+      ],
+      "note_zh": "官方赛事仓库明确胶囊内镜中的消化道解剖及病变事件；补入胃肠道类别。",
+      "anatomical_scope": "Named anatomy from edition-specific materials",
+      "remaining_detail": ""
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Endoscopy",
+        "Video"
+      ],
+      "harmonized_modalities": [
+        "Endoscopy"
+      ],
+      "video_format_documented": true,
+      "note": "Video retained as data-format attribute, not an acquisition modality.",
+      "sources": [
+        {
+          "url": "https://icpr2026.org/competitions.html",
+          "local_source": "_collection/anatomy_modality_audit_20261025/before/ICPR/2026/rare-vision-icpr-2026.json"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY 4.0"
+      ],
+      "scope": "Named source/development data or edition-specific signed agreement",
+      "agreement_required": null,
+      "summary_zh": "官方挑战代码仓库链接的 Galar 训练视频数据记录列 CC BY 4.0；不覆盖比赛新增隐藏测试视频。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"Galar - a large multi-label video capsule endoscopy dataset\", \"license\": {\"value\": 1, \"name\": \"CC BY 4.0\", \"url\": \"https://creativecommons.org/licenses/by/4.0/\"}, \"description\": \"<p dir=\\\"ltr\\\">We propose Galar, the most comprehensive dataset of VCE to date. Galar consists of 80 videos, culminating in 3,513,539 annotated frames covering functional, anatomical, and pathological aspects and introducing a selection of 29 distinct labels. The multisystem and multicenter VCE data from two centers in Saxony (Germany), was annotated framewise and cross-validated by five annotators. The vast scope of annotation and size of Galar make the dataset a valuable resource for the use of AI models in VCE, thereby facilitating research in diagnostic methods, patient care workflow, and the development of predictive analytics in the field.<br><br>Update</p><p dir=\\\"ltr\\\">2025-12: Correction of 6.csv - error on first line of table (anatomy region missing)</p>\"}",
+          "source": {
+            "url": "https://api.figshare.com/v2/articles/25304616",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/5ec126c50f2fafa0.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://api.figshare.com/v2/articles/25304616",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/5ec126c50f2fafa0.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://github.com/RAREChallenge2026/RARE-VISION-2026-Challenge",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/86705cb4421d3f23.json",
+          "status": 200
+        },
+        {
+          "url": "https://raw.githubusercontent.com/RAREChallenge2026/RARE-VISION-2026-Challenge/main/README.md",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/9aa255ce934779cd.json",
+          "status": 200
+        },
+        {
+          "url": "https://icpr2026.org/competitions.html",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/2955f362691d1dd2.json",
+          "status": 200
+        },
+        {
+          "url": "https://scoringrarevision.streamlit.app/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/d97cbc2d879a7f49.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/RAREChallenge2026/RARE-VISION-2026-Challenge/blob/main/sample_codes/download_dataset.py",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/6236f5c9ca1a8d84.json",
+          "status": 200
+        },
+        {
+          "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1e460fb35d79919e.json",
+          "status": 200
+        },
+        {
+          "url": "https://api.figshare.com/v2/articles/25304616",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/5ec126c50f2fafa0.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported participants; unit/status qualified",
+              "summary": "Source-reported participation count; retain exact unit and scope instead of requiring a harmonized active-team definition.",
+              "url": "https://doi.org/10.1007/978-3-032-31936-4_17",
+              "snapshot": "",
+              "scope": "No conversion of registered accounts or submission attempts into teams; reported team/participant definitions remain source-specific. Existing source-linked extraction reconciled in this update; source-reported participation does not establish independent validation of the reported number.",
+              "value": {
+                "reported_participants": {
+                  "value": 60,
+                  "approximate": false,
+                  "relation": "equal_to",
+                  "raw_text": "sixty participants worldwide",
+                  "unit": "participants; registration/active status not specified"
+                }
+              },
+              "excerpt": "",
+              "snapshot_date": "2026-10-20",
+              "source_path": "ICPR/2026/rare-vision-icpr-2026.json",
+              "source_field": "participation_statistics"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,691 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "chaimeleon-open-2024",
+    "challenge_name": "CHAIMELEON Open Challenges",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "Standalone",
+      "event_type": "project_or_institution_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI",
+        "CT"
+      ],
+      "submodality": [
+        "T2-weighted MRI"
+      ],
+      "body_region": [
+        "Prostate",
+        "Lung",
+        "Breast",
+        "Colon",
+        "Rectum"
+      ],
+      "organ_system": [
+        "Respiratory",
+        "Digestive",
+        "Genitourinary",
+        "Breast"
+      ],
+      "organs_or_structures": null,
+      "diseases": [
+        "Cancer"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [
+        "Prognosis"
+      ],
+      "tasks": [
+        {
+          "task_id": "qualification_prostate",
+          "official_name": "Classification phase: prostate cancer risk",
+          "task_family": "Classification",
+          "task_subtype": "binary classification",
+          "input": [
+            "Harmonized prostate T2 MRI",
+            "Age",
+            "PSA"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Low/high risk label"
+          ],
+          "granularity": "patient-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "qualification_lung",
+          "official_name": "Classification phase: lung cancer overall survival",
+          "task_family": "Prognosis",
+          "task_subtype": "survival prediction",
+          "input": [
+            "Harmonized lung CT",
+            "Clinical variables"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Overall survival prediction"
+          ],
+          "granularity": "patient-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": true,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "MRI",
+        "CT"
+      ],
+      "data_components": [
+        "Harmonized medical images",
+        "Clinical variables",
+        "Risk/survival labels"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "registration-and-approval-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "ChAImeleon custom challenge data-use terms. 当届规则限定非商业、不可转让、挑战用途，禁止再分发并要求赛后或应要求删除数据。",
+      "access_after_challenge": "Rules require participants to destroy confidential information after the challenge, or earlier upon organizer request; no continuing public access to confidential challenge materials is established.",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "qualification_prostate",
+          "metrics": [
+            "AUC",
+            "Sensitivity",
+            "Specificity",
+            "Balanced Accuracy"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "qualification_lung",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "qualification_validation_submissions": 3,
+        "qualification_test_submissions": 1
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "classification_phase_end": "2024-01-15",
+      "championship_phase_start": "2024-01-16",
+      "championship_phase_end": "2024-03-10",
+      "winner_announcement": "2024-03-22"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 163,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Validation Prostate Classification",
+            "submission_count": 155
+          },
+          {
+            "official_phase_name": "Test Prostate Classification",
+            "submission_count": 38
+          },
+          {
+            "official_phase_name": "Validation Lung Classification",
+            "submission_count": 112
+          },
+          {
+            "official_phase_name": "Test Lung Classification",
+            "submission_count": 41
+          },
+          {
+            "official_phase_name": "Validation Rectum Championship",
+            "submission_count": 72
+          },
+          {
+            "official_phase_name": "Test Rectum Championship",
+            "submission_count": 17
+          },
+          {
+            "official_phase_name": "Validation Colon Championship",
+            "submission_count": 76
+          },
+          {
+            "official_phase_name": "Test Colon Championship",
+            "submission_count": 13
+          },
+          {
+            "official_phase_name": "Validation Breast Championship",
+            "submission_count": 109
+          },
+          {
+            "official_phase_name": "Test Breast Championship",
+            "submission_count": 13
+          },
+          {
+            "official_phase_name": "Validation Prostate Championship",
+            "submission_count": 75
+          },
+          {
+            "official_phase_name": "Test Prostate Championship",
+            "submission_count": 14
+          },
+          {
+            "official_phase_name": "Validation Lung Championship",
+            "submission_count": 98
+          },
+          {
+            "official_phase_name": "Test Lung Championship",
+            "submission_count": 15
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://chaimeleon.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Only the two confirmed qualification tasks are specified here. Championship runs on CHAIMELEON platform for five cancer types; its full task definitions are unresolved. Updated timeline supersedes earlier February 29 end date.",
+      "Source-list platform_year is 2023; the official challenge edition is 2024. The output directory follows the official edition."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://chaimeleon.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/75-0185e434c7ca.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chaimeleon.grand-challenge.org/overview/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/75-13da7b03752f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chaimeleon.grand-challenge.org/how-to-participate/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/75-6e6d86d4d0ab.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chaimeleon.grand-challenge.org/classification-phase/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/75-6f73b98348e9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chaimeleon.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/75-84002f274070.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chaimeleon.grand-challenge.org/terms-conditions/",
+          "supports": [
+            "challenge context",
+            "data_access.access_after_challenge"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/75-ced0d77d1a5c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chaimeleon.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/75-f3a9117af33b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chaimeleon.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/75-overview.json"
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://chaimeleon.grand-challenge.org/challenge/statistics/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/chaimeleon-open-2024.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify championship task definitions, metrics, counts, license and official edition naming; final championship took place in 2024."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_after_challenge"
+        ],
+        "remaining_core_fields": [
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/chaimeleon-open-2024.json",
+          "_collection/verification_20261003/literature_context/chaimeleon-open-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "data_access.access_after_challenge": {
+          "source_url": "https://chaimeleon.grand-challenge.org/terms-conditions/",
+          "local_snapshot": "_collection/sources/75-ced0d77d1a5c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit edition-source post-challenge policy reviewed; planned releases, continuing public access, controlled requests and required deletion are kept distinct."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://chaimeleon.grand-challenge.org/challenge/statistics/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/chaimeleon-open-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://chaimeleon.grand-challenge.org/challenge/statistics/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/chaimeleon-open-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://chaimeleon.grand-challenge.org/challenge/statistics/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/chaimeleon-open-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      }
+    },
+    "conference_affiliation_review": {
+      "review_date": "2026-10-25",
+      "previous_analysis_conference": "Unknown",
+      "analysis_conference": "Standalone",
+      "primary_conference": null,
+      "organizing_arrangement": "Project / institution-led competition",
+      "primary_relationship": "Project/institution organized; no designated conference host",
+      "related_events": [],
+      "note_zh": "补为CHAIMELEON欧盟项目组织，官网直接说明由项目联盟创建Open Challenges；未指定主办会议。",
+      "sources": [
+        {
+          "url": "https://chaimeleon.grand-challenge.org/overview/",
+          "local_source": "_collection/conference_audit_20261025/sources/13da7b03752f271.json",
+          "sha256": "0b6f879dc7975cdf0aaba6767fab11153faa9c559f209c9b696977624a71b4c4"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "ChAImeleon custom challenge data-use terms"
+      ],
+      "scope": "Explicitly identified competition rules or named source data; not all components implied",
+      "agreement_required": null,
+      "summary_zh": "当届规则限定非商业、不可转让、挑战用途，禁止再分发并要求赛后或应要求删除数据。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "r right over the Data, other than as set forth herein. 5.4 The Organizer grants the Participants a royalty-free, non-sublicensable, non-transferable, non-commercial, non-exclusive, revocable license to use the Data for the Challenge. 5.5 Participants expressly agree to exclusively use the provided Data for participation in the Challenge and not to distribute, transfer, share or disclose it in any way or form. 5.6 After the Challenge (or any time before upon request by the Organizer), the Participants must destroy all Data disclosed by the Organizer in their possession, stored electronically and/or on record-bearing media as well as any copies thereof. Upon",
+          "source": {
+            "url": "https://chaimeleon.grand-challenge.org/terms-conditions/",
+            "local_source": "_collection/sources/75-ced0d77d1a5c.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "forth herein. 5.4 The Organizer grants the Participants a royalty-free, non-sublicensable, non-transferable, non-commercial, non-exclusive, revocable license to use the Data for the Challenge. 5.5 Participants expressly agree to exclusively use the provided Data for participation in the Challenge and not to distribute, transfer, share or disclose it in any way or form. 5.6 After the Challenge (or any time before upon request by the Organizer), the Participants must destroy all Data disclosed by the Organizer in their possession, stored electronically and/or on record-bearing media as well as any copies thereof. Upon request by the Organizer, Partici",
+          "source": {
+            "url": "https://chaimeleon.grand-challenge.org/terms-conditions/",
+            "local_source": "_collection/sources/75-ced0d77d1a5c.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": " or disclosed in any way or form by Participants; - must be kept confidential by Participants; and - remains the sole property of the Organizer. 8.2 \"Confidential Information\" means any information and data, including, but not limited to, the Data (as defined in Clause 5.1 of this Terms), any kind of business, commercial, code, dataset or technical information, and data disclosed in connection with the Challenge irrespective of the medium in which such information or data is embedded. 8.3 After the Challenge (or any time before upon request by the Organizer), the Participants must destroy all Confidential Information disclosed by the Organizer in their p",
+          "source": {
+            "url": "https://chaimeleon.grand-challenge.org/terms-conditions/",
+            "local_source": "_collection/sources/75-ced0d77d1a5c.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "h such information or data is embedded. 8.3 After the Challenge (or any time before upon request by the Organizer), the Participants must destroy all Confidential Information disclosed by the Organizer in their possession, including Confidential Information stored electronically and/or on record-bearing media as well as any copies thereof. 9. License 9.1 Every Participant grants the Organizer a sublicensable, royalty-free license for the use of Participant’s Submissions if they are chosen by the Organizer (discretionally) after the end of the Challenge, for implementation in the Platform within the scope of the Project. 9.2 The further terms for licensin",
+          "source": {
+            "url": "https://chaimeleon.grand-challenge.org/terms-conditions/",
+            "local_source": "_collection/sources/75-ced0d77d1a5c.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://chaimeleon.grand-challenge.org/terms-conditions/",
+          "local_source": "_collection/sources/75-ced0d77d1a5c.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "Unconfirmed/2024/chaimeleon-open-2024.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Rules require participants to destroy confidential information after the challenge, or earlier upon organizer request; no continuing public access to confidential challenge materials is established.",
+              "sources": [
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://chaimeleon.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/75-0185e434c7ca.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://chaimeleon.grand-challenge.org/overview/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/75-13da7b03752f.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://chaimeleon.grand-challenge.org/how-to-participate/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/75-6e6d86d4d0ab.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://chaimeleon.grand-challenge.org/classification-phase/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/75-6f73b98348e9.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://chaimeleon.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/75-84002f274070.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://chaimeleon.grand-challenge.org/terms-conditions/",
+                  "supports": [
+                    "challenge context",
+                    "data_access.access_after_challenge"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/75-ced0d77d1a5c.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://chaimeleon.grand-challenge.org/timeline/",
+                  "supports": [
+                    "year",
+                    "schedule",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/75-f3a9117af33b.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://chaimeleon.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/75-overview.json"
+                },
+                {
+                  "type": "review-derived anatomical classification of source-recorded targets",
+                  "url": "https://chaimeleon.grand-challenge.org/challenge/statistics/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/clinical_mapping/chaimeleon-open-2024.json",
+                  "supports": [
+                    "clinical_domain.organ_system",
+                    "clinical_domain.organ_system_basis",
+                    "clinical_domain.organ_system_coding_scope"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

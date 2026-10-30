@@ -1,0 +1,490 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "isles-2022",
+    "challenge_name": "Ischemic Stroke Lesion Segmentation Challenge",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": [
+        "DWI",
+        "ADC",
+        "FLAIR"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "Ischemic infarct lesions"
+      ],
+      "diseases": [
+        "Ischemic stroke"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Multimodal MRI infarct segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "binary segmentation",
+          "input": [
+            "DWI volume",
+            "ADC volume",
+            "FLAIR volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Stroke lesion mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-national",
+      "multi_center": true,
+      "international": null,
+      "center_count": 3,
+      "institutions_description": "Technical University Munich, University Hospital Bern, and University Medical Center Hamburg-Eppendorf; training uses centers 1/2 and testing uses all three.",
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 250,
+        "validation_count": null,
+        "test_count": 150,
+        "case_count": 400
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "patient_count": 250
+        },
+        "test": {
+          "patient_count": 150
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Training data: CC BY 4.0.",
+      "access_after_challenge": null,
+      "access_scope": "training data; 150-subject test set not released",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice similarity coefficient",
+            "Absolute infarct volume difference",
+            "Absolute lesion count difference",
+            "Lesion detection F1 score"
+          ],
+          "ranking": "Rank each metric per case, average the metric ranks per case, then average case ranks."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 3096,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary Docker Evaluation",
+            "submission_count": 213
+          },
+          {
+            "official_phase_name": "ISLES22 Test Phase",
+            "submission_count": 130
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://isles22.grand-challenge.org/",
+      "dataset": "https://doi.org/10.5281/zenodo.7153326",
+      "github": null,
+      "challenge_paper": "https://doi.org/10.1038/s41597-022-01875-5"
+    },
+    "notes": [
+      "Original MICCAI 2022 challenge is followed by continuous evaluation; current homepage permits one test-set Docker per month."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://isles22.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/107-247b1cbe4173.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://isles22.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/107-overview.json"
+        },
+        {
+          "type": "official organizer publication",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9741583/",
+          "local_snapshot": "_collection/sources/107-b56cc0863cd8.json",
+          "retrieved_on": "2026-10-02",
+          "supports": [
+            "dataset",
+            "data_access",
+            "evaluation"
+          ]
+        },
+        {
+          "type": "official organizer challenge or dataset paper",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9741583/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9741583.json",
+          "title": "ISLES 2022: A multi-center magnetic resonance imaging stroke lesion segmentation dataset",
+          "supports": [
+            "dataset.center_count",
+            "dataset.center_type",
+            "dataset.institutions_description",
+            "data_access.access_scope",
+            "dataset.splits.train.patient_count",
+            "dataset.splits.test.patient_count",
+            "evaluation.hidden_test_set"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Original submission and external-data rules require further verification; official platform pages are access-restricted."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "dataset.center_count": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9741583/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9741583.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer dataset paper explicitly names the ISLES 2022 edition, three hospitals, split units, public training license and withheld test data."
+        },
+        "dataset.center_type": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9741583/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9741583.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer dataset paper explicitly names the ISLES 2022 edition, three hospitals, split units, public training license and withheld test data."
+        },
+        "dataset.institutions_description": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9741583/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9741583.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer dataset paper explicitly names the ISLES 2022 edition, three hospitals, split units, public training license and withheld test data."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9741583/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9741583.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer dataset paper explicitly names the ISLES 2022 edition, three hospitals, split units, public training license and withheld test data."
+        },
+        "dataset.splits.train.patient_count": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9741583/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9741583.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer dataset paper explicitly names the ISLES 2022 edition, three hospitals, split units, public training license and withheld test data."
+        },
+        "dataset.splits.test.patient_count": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9741583/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9741583.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer dataset paper explicitly names the ISLES 2022 edition, three hospitals, split units, public training license and withheld test data."
+        },
+        "evaluation.hidden_test_set": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9741583/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9741583.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer dataset paper explicitly names the ISLES 2022 edition, three hospitals, split units, public training license and withheld test data."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "dataset.center_count",
+          "dataset.center_type",
+          "dataset.institutions_description",
+          "dataset.splits.test.patient_count",
+          "dataset.splits.train.patient_count",
+          "evaluation.hidden_test_set"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/isles-2022.json",
+          "_collection/verification_20261003/literature_context/isles-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "250例训练数据公开下载；150例测试数据不发布，采用容器评测。"
+      },
+      "decision_history": [
+        "250例训练数据公开下载；150例测试数据不发布，采用容器评测。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/107-overview.json",
+          "url": "https://isles22.grand-challenge.org/"
+        },
+        {
+          "local_source": "_collection/sources/107-b56cc0863cd8.json",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/verification_20261003/papers/PMC9741583.json",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9741583/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/isles-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Technical University Munich, University Hospital Bern, and University Medical Center Hamburg-Eppendorf; training uses centers 1/2 and testing uses all three.",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9741583/",
+              "snapshot": "_collection/verification_20261003/papers/PMC9741583.json",
+              "scope": "Explicit acquisition-institution or region description; partial scope retained.",
+              "value": "Technical University Munich, University Hospital Bern, and University Medical Center Hamburg-Eppendorf; training uses centers 1/2 and testing uses all three.",
+              "excerpt": "",
+              "snapshot_date": "2026-10-03",
+              "source_path": "MICCAI/2022/isles-2022.json",
+              "source_field": "dataset.institutions_description"
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "12 teams met the final ISLES22 requirements.",
+              "url": "https://arxiv.org/pdf/2403.19425",
+              "snapshot": "latex_sourcev2/data/resource_information_update_20261027/sources/ad62b2573b1ba3.json",
+              "scope": "Eligible final teams; separate from 20 sanity-check teams and 15 final submissions.",
+              "value": {
+                "value": 12,
+                "unit": "eligible final teams"
+              },
+              "excerpt": "o\nthe challenge’s final test-phase, from which 12 fulfilled the ISLES’22-MICCAI requirements25. The 12 participating teams\n submitted deep learning-based solutions. In Figure 1(B), a fingerprint of the methods is shown. nnUnet26 and UNet-like27, 28\nneural networks were the most prevalent architectures. The most frequently used loss function was a combination of Dice\nwith categorical cross-entropy. Figure 1(C) shows a pictorial ranking of the algorithmic submissions. Most teams preferred\n to use all the available MRI modalities (DWI, apparent diffusion coefficient ‘ADC’, and fluid-attenuated inversion recovery\n‘FLAIR’) as inputs to the model. It is worth observing that the top-3 ranked teams used diverse deep learning pipelines in\n terms of architecture, loss function, and model inputs.\n\nPerformance and ranking\nThe final ISLES’22 leaderboard is shown in Table 1. In Figure 2, boxplots with performance metrics are displayed. Further\nstatistics about the challenge rankings obtained through a thousand bootstraps are available in Supplementary Materials S1-\nS2. While the winner of the challenge (team ‘SEALS’) led the leaderboard in the detection metrics (lesion-wise F1 score\n   a\n       https://www.rsna.org/rsnai/ai-image-challenge\n\n\n                                                    ",
+              "snapshot_date": "2026-10-27"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

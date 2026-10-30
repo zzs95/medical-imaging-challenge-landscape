@@ -1,0 +1,418 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "airogs-2022",
+    "challenge_name": "AIROGS",
+    "full_name": "Artificial Intelligence for RObust Glaucoma Screening Challenge",
+    "year": 2022,
+    "event": {
+      "conference": "ISBI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Fundus"
+      ],
+      "submodality": [
+        "Color fundus photography"
+      ],
+      "body_region": [
+        "Eye"
+      ],
+      "organ_system": [
+        "Ophthalmic"
+      ],
+      "organs_or_structures": [
+        "Optic disc"
+      ],
+      "diseases": [
+        "Glaucoma"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [
+        "Quality Assessment"
+      ],
+      "tasks": [
+        {
+          "task_id": "screening",
+          "official_name": "Referable glaucoma screening",
+          "task_family": "Classification",
+          "task_subtype": "binary classification",
+          "input": [
+            "Color fundus photograph"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Glaucoma likelihood",
+            "Referral decision"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "gradability",
+          "official_name": "Image ungradability detection",
+          "task_family": "Quality Assessment",
+          "task_subtype": "binary classification",
+          "input": [
+            "Color fundus photograph"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Ungradable decision",
+            "Ungradability likelihood"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": "Referable glaucoma, no referable glaucoma, ungradable. Training contains gradable images only.",
+      "annotation_source": "Two human graders initially; disagreement resolved by a glaucoma specialist.",
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": "Approximately 500 sites",
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "image_count": 113893,
+        "subject_count": 60357
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "image_count": {
+            "value": 101000,
+            "approximate": true,
+            "raw_text": "approximately 101,000 gradable images"
+          }
+        },
+        "test": {
+          "image_count": {
+            "value": 11000,
+            "approximate": true,
+            "raw_text": "about 11,000 gradable and ungradable images"
+          }
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "agreement-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND; Zenodo access requests manually approved.",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": null,
+        "policy": "Additional fundus data, fundus-pretrained weights and fundus preprocessing models prohibited."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "screening",
+          "metrics": [
+            "Partial AUROC (90–100% specificity)",
+            "Sensitivity at 95% specificity"
+          ],
+          "ranking": "Final rank averages ranks of the two screening metrics and two gradability metrics."
+        },
+        {
+          "task_id": "gradability",
+          "metrics": [
+            "Cohen's kappa",
+            "AUROC for ungradability"
+          ],
+          "ranking": "Equal contribution of all four metric ranks to final score."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": 32,
+        "reserved_ram_gb": null,
+        "gpu": "NVIDIA T4",
+        "gpu_vram_gb": 16,
+        "cpu_count": 8
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 1,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "preliminary_phase2_submissions": 3
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_data_release": "2021-12-01",
+      "final_submission_deadline": "2022-03-04"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 658,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary Test Phase 1",
+            "submission_count": 117
+          },
+          {
+            "official_phase_name": "Preliminary Test Phase 2",
+            "submission_count": 115
+          },
+          {
+            "official_phase_name": "Final Test Phase",
+            "submission_count": 32
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://airogs.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Binary referral output O2 is requested but excluded from the challenge leaderboard evaluation. Current submission statistics include reopened post-challenge phases."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://airogs.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/133-5115441682ae.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://airogs.grand-challenge.org/data-and-challenge/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/133-5b2eb7c7500f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://airogs.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/133-overview.json"
+        }
+      ],
+      "collection_status": "verified",
+      "unresolved_fields": [],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/airogs-2022.json",
+          "_collection/verification_20261003/literature_context/airogs-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Observed continuation statement",
+              "summary": "Organizer states that all phases reopened after the awards and remain open indefinitely.",
+              "url": "https://airogs.grand-challenge.org/",
+              "snapshot": "latex_sourcev2/data/resource_information_update_20261027/sources/712bfb1059c5f0.json",
+              "scope": "Source describes implemented reopening; checked 2026-10-27.",
+              "value": null,
+              "excerpt": "anizers A follow-up challenge has started – visit JustRAIGS to participate. The AIROGS challenge is again open for submissions indefinitely! The prizes have already been awarded, but new submissions will be shown on the leaderboards. To view the new maximum number of submissions per team, click the \"Submit\" button. You can read more about the outcomes of AIROGS in our IEEE TMI paper . AIROGS: Artificial Intelligence for RObust Glaucoma Screening Challenge ¶ Motivation ¶ Early detection of glaucoma can avoid visual impairment,  which could\n  be facilitated through screening. Artificial intelligence (AI) could increase the cost-effectiveness of\n  glaucoma screening, by reducing the need for manual labor. AI approaches for glaucoma detection from color fundus photography\n  (CFP) have been proposed and promising at-the-lab performances have\n  been reported. However, large performance drops often occur when AI\n  solutions are applied in real-world settings. Unexpected\n  out-of-distribution data and bad quality images are major causes for\n  this performance drop. Aim ¶ The development of solutions for glaucoma screening from CFP that are\n  robust to real-world scenarios. Scope ¶ The participants will be provided with gradable images to develop a\n  model for glaucoma screening. In the t",
+              "snapshot_date": "2026-10-27"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "15 teams submitted a solution for the final leaderboard.",
+              "url": "https://coendevente.com/project-airogs.html",
+              "snapshot": "latex_sourcev2/data/resource_information_update_20261027/sources/3450e644aa5f52.json",
+              "scope": "Organizer retrospective; separate from 14 teams analyzed in the later report.",
+              "value": {
+                "value": 15,
+                "unit": "final-submitting teams"
+              },
+              "excerpt": " the world joined the AIROGS challenge. 351 participants from 51 countries joined the challenge and 15 teams from 13 countries eventually submitted a solution for the final leaderboard. The world map below depicts for each country how many users joined and submitted to the final leaderboard. Each circle indicates a country and the circle’s size portrays the number of participants from that country. Participants were evaluated on two aspects: glaucoma screening performance and robustness. Glaucoma screening performance was measured by the partial area under the receiver operator characteristic curve at 90-100% specificity (pAUC S ) and the sensitivity at 95% specificity (SE@95SP S ). We quantified robustness using Cohen's kappa score, i.e. the agreement between the reference and the decisions provided by the challenge participants on image gradability (κ U ), and the area under the receiver operator characteristic curve with the human reference for ungradability as labels and ungradability scalar values provided by the participants, as the target scores (AUC U ). A final score, defined as the mean of these four metrics, subsequently determined the final participant ranking. The best pAUC S , SE@95SP S , κ U and AUC U were 0.90, 85%, 0.82 and 0.99, respectively. The four metrics fo",
+              "snapshot_date": "2026-10-27"
+            },
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "The report evaluated solutions from 14 teams.",
+              "url": "https://arxiv.org/abs/2302.01738",
+              "snapshot": "latex_sourcev2/data/resource_information_update_20261027/sources/b698d83fb9babf.json",
+              "scope": "Paper-analyzed subset, not the number of all final submissions.",
+              "value": {
+                "value": 14,
+                "unit": "teams analyzed in report"
+              },
+              "excerpt": " of algorithms that are robust to ungradable and unexpected input data. We evaluated solutions from 14 teams in this paper, and found that the best teams performed similarly to a set of 20 expert ophthalmologists and optometrists. The highest-scoring team achieved an area under the receiver operating characteristic curve of 0.99 (95% CI: 0.98-0.99) for detecting ungradable images on-the-fly. Additionally, many of the algorithms showed robust performance when tested on three other publicly available datasets. These results demonstrate the feasibility of robust AI-enabled glaucoma screening. Comments: 19 pages, 8 figures, 3 tables Subjects: Image and Video Processing (eess.IV) ; Machine Learning (cs.LG) Cite as: arXiv:2302.01738 [eess.IV] (or arXiv:2302.01738v2 [eess.IV] for this version) https://doi.org/10.48550/arXiv.2302.01738 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Coen de Vente MSc [ view email ] [v1] Fri, 3 Feb 2023 13:55:30 UTC (7,978 KB) [v2] Fri, 10 Feb 2023 10:23:42 UTC (4,853 KB) Full-text links: Access Paper: View a PDF of the paper titled AIROGS: Artificial Intelligence for RObust Glaucoma Screening Challenge, by Coen de Vente and 35 other authors View PDF HTML (experimental) TeX Source view license Current browse context: eess.IV < p",
+              "snapshot_date": "2026-10-27"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

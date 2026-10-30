@@ -1,0 +1,615 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "rsna-breast-cancer-detection-2023",
+    "challenge_name": "RSNA Screening Mammography Breast Cancer Detection 2023",
+    "full_name": "RSNA Screening Mammography Breast Cancer Detection 2023",
+    "year": 2023,
+    "event": {
+      "conference": "RSNA 2023",
+      "event_type": "conference_challenge",
+      "parent_event": null
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Mammography"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Breast"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Breast parenchyma",
+        "Breast lesions"
+      ],
+      "diseases": [
+        "Breast cancer"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "task_families": [
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Screening mammography cancer classification",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "source_url": "https://www.rsna.org/media/press/i/2436"
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "Mammography"
+      ],
+      "population": null,
+      "source_reference": "https://www.rsna.org/media/press/i/2436",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "RSNA-SMBC custom non-commercial data licence. RSNA 官方数据发布条款明确非商业研究/教育、禁止再识别及再分发、要求引用。此为当届数据的后续公开发布条款；不据此重建 2023 Kaggle 注册时的完整协议。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-25; access completion",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_by_scope": [],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Kaggle",
+      "metrics": null,
+      "source_reference": "https://www.rsna.org/media/press/i/2436",
+      "execution_note": "Service and artifact descriptions do not by themselves establish execution location or automation."
+    },
+    "submission": {
+      "submission_type": "Notebook execution",
+      "platform": "Kaggle",
+      "source_reference": "https://www.kaggle.com/competitions/rsna-breast-cancer-detection",
+      "runtime_limits": null,
+      "primary_artifacts": [
+        "Kaggle Notebook version"
+      ],
+      "additional_artifacts": [],
+      "execution": "Kaggle executes the notebook, which writes the prediction CSV; the CSV is generated output rather than direct uploaded predictions.",
+      "format_by_task_or_phase": [
+        {
+          "generated_output": "submission.csv",
+          "columns": [
+            "prediction_id",
+            "cancer"
+          ],
+          "unit": "patient and breast laterality",
+          "value": "cancer probability"
+        }
+      ],
+      "format_limitations": [],
+      "source_urls": [
+        "https://www.kaggle.com/competitions/rsna-breast-cancer-detection"
+      ],
+      "evidence_basis": "Human-supplied review of edition-specific organizer documentation",
+      "review_date": "2026-10-24",
+      "submission_evidence_status": "Primary artifact identified by human review; format-specific limitations retained",
+      "review_source": "_collection/submission22_review_20261024/user_review.txt",
+      "additional_materials": []
+    },
+    "schedule": {
+      "edition_year": 2023,
+      "source_reference": "https://www.rsna.org/media/press/i/2436"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://www.rsna.org/media/press/i/2436",
+      "supporting_sources": [
+        "https://www.rsna.org/artificial-intelligence/ai-image-challenge",
+        "https://www.kaggle.com/competitions/rsna-breast-cancer-detection/"
+      ]
+    },
+    "notes": [
+      "Launched in November 2022 and concluded in 2023; RSNA lists it as the 2023 challenge. Assigned to 2023. Clinical detection is implemented as classification, not box detection."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.rsna.org/media/press/i/2436",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/d43653c112665690.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.rsna.org/artificial-intelligence/ai-image-challenge",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/d8c5c8b14936e3f4.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.kaggle.com/competitions/rsna-breast-cancer-detection/",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": null,
+          "http_status": null
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://www.kaggle.com/competitions/rsna-breast-cancer-detection",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields"
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py",
+      "submission_human_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/submission22_review_20261024/user_review.txt",
+        "basis": "Human-supplied review of edition-specific organizer documentation",
+        "scope": "Submission artifact, format and executor; source assertions supplied by human review, not a new independent audit of all linked pages."
+      }
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": "Official RSNA winner announcement",
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "当届记录指定 Kaggle competition 数据入口；Kaggle 官方下载规则要求账号加入赛事并接受规则。按明确的平台下载流程归为注册访问，未进行登录下载或假定额外人工审核。",
+        "evidence_basis": "Official edition sources and explicit access procedures; temporal/platform qualifications retained",
+        "review_date": "2026-10-25",
+        "source_urls": [
+          "https://www.kaggle.com/docs/competitions?source=post_page---------------------------"
+        ],
+        "access_by_scope": [],
+        "confidence": "Documented procedure; source and temporal qualifications retained"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "RSNA Announces Screening Mammography AI Challenge Results | RSNA",
+          "local_source": "_collection/other_venues_audit_20261024/sources/d43653c112665690.json",
+          "url": "https://www.rsna.org/media/press/i/2436",
+          "excerpt": "of the RSNA Machine Learning Steering Committee. \"We expect that the dataset and the work of the contestants will provide an ideal foundation for rapid advance in breast imaging AI.\" For more information on the challenge, visit RSNA.org/AI-image-challenge or contact informatics@rsna.org. RSNA is an association of radiologists, radiation oncologists, medical physicists and related scientists promoting excellence in pa"
+        },
+        {
+          "section": "AI Challenges | RSNA",
+          "local_source": "_collection/other_venues_audit_20261024/sources/d8c5c8b14936e3f4.json",
+          "url": "https://www.rsna.org/artificial-intelligence/ai-image-challenge",
+          "excerpt": "llenge (2019) RSNA Pneumonia Detection Challenge (2018) RSNA Pediatric Bone Age Challenge (2017) AI Publications Tools for AI Get Involved with AI AI at the Annual Meeting AI Challenges AI promises to provide tools that will enhance the efficiency and accuracy of radiologic diagnoses. RSNA organizes AI challenges to spur the creation of AI tools for radiology. To build these tools, AI researchers need access to substantial volumes of imaging data annotated by expert radiologists. Data challenges engage the radiology community to develop such datasets, which provide the standard of truth in training AI systems to perform tasks relevant to diagnostic imaging. In a challenge, researchers compete on how we"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/rsna-breast-cancer-detection-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/kaggle_download_policy.json",
+          "url": "https://www.kaggle.com/docs/competitions?source=post_page---------------------------",
+          "section": "Development access follow-up 2026-10-25"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-25 access completion: 当届记录指定 Kaggle competition 数据入口；Kaggle 官方下载规则要求账号加入赛事并接受规则。按明确的平台下载流程归为注册访问，未进行登录下载或假定额外人工审核。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Account registration",
+        "rationale": "当届记录指定 Kaggle competition 数据入口；Kaggle 官方下载规则要求账号加入赛事并接受规则。按明确的平台下载流程归为注册访问，未进行登录下载或假定额外人工审核。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/bb58689fe6945c91.json",
+          "_collection/access_completion_20261025/sources/82fc31bf2a85c3f9.json",
+          "_collection/access_completion_20261025/sources/kaggle_download_policy.json",
+          "_collection/access_completion_20261025/sources/2b175229c3283ef0.json",
+          "_collection/access_completion_20261025/sources/a0e6ad5e65e64ee9.json",
+          "_collection/access_completion_20261025/sources/bc338eedbc7330e6.json",
+          "_collection/access_completion_20261025/sources/48211e5332e5271d.json",
+          "_collection/access_completion_20261025/sources/325c48de501c75eb.json",
+          "_collection/access_completion_20261025/sources/d43653c112665690.json",
+          "_collection/access_completion_20261025/sources/53534f1d1d91320a.json",
+          "_collection/access_completion_20261025/sources/426065db2fb48504.json",
+          "_collection/access_completion_20261025/sources/3a2b28ee06dad10e.json",
+          "_collection/access_completion_20261025/sources/03c9b65c3d2580e4.json"
+        ]
+      }
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "test",
+              "value": 10830,
+              "unit": "single-breast exams",
+              "scope": "RSNA organizer retrospective evaluation; separate from training",
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "Australia",
+              "United States"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Documented and classifiable",
+          "value": "RSNA states challenge dataset will remain available for further research."
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": {
+            "value": 1700,
+            "unit": "participating teams",
+            "approximate": true,
+            "comparable": false,
+            "details": "Official announcement: attracted nearly 1700 teams; not explicitly a unique submitting-team count."
+          }
+        }
+      },
+      "review_note": " RSNA 2025 organizer press release reports 10830 single-breast test exams; 1537 working algorithms is not treated as an independent team count.",
+      "sources": [
+        {
+          "url": "https://www.rsna.org/media/press/i/2436",
+          "local_source": "_collection/other_venues_audit_20261024/sources/d43653c112665690.json"
+        },
+        {
+          "url": "https://www.rsna.org/artificial-intelligence/ai-image-challenge",
+          "local_source": "_collection/other_venues_audit_20261024/sources/d8c5c8b14936e3f4.json"
+        },
+        {
+          "url": "https://www.rsna.org/media/press/i/2597?PdfExport=1",
+          "local_source": "_collection/resource_audit_20261025/online/7f4123d1c78c0fb7.txt"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/rsna-breast-cancer-detection-2023.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Breast"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Breast parenchyma",
+        "Breast lesions"
+      ],
+      "specific_diseases": [
+        "Breast cancer"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/d43653c112665690.json",
+          "url": "https://www.rsna.org/media/press/i/2436"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/d8c5c8b14936e3f4.json",
+          "url": "https://www.rsna.org/artificial-intelligence/ai-image-challenge"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/7f4123d1c78c0fb7.txt",
+          "url": "https://www.rsna.org/media/press/i/2597?PdfExport=1"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/rsna-breast-cancer-detection-2023.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "RSNA-SMBC custom non-commercial data licence"
+      ],
+      "scope": "Post-challenge release of the RSNA-SMBC challenge dataset",
+      "agreement_required": null,
+      "summary_zh": "RSNA 官方数据发布条款明确非商业研究/教育、禁止再识别及再分发、要求引用。此为当届数据的后续公开发布条款；不据此重建 2023 Kaggle 注册时的完整协议。",
+      "qualifications": [
+        "Later dataset release; competition-time full rules remain unavailable."
+      ],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/1c32fdca77e8eea8.json",
+          "url": "https://registry.opendata.aws/rsna-screening-mammography-breast-cancer-detection/"
+        },
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/82fc31bf2a85c3f9.json",
+          "url": "https://www.kaggle.com/competitions/rsna-breast-cancer-detection/rules"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "RSNA/2023/rsna-breast-cancer-detection-2023.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "Australia",
+                  "United States"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://www.rsna.org/media/press/i/2436",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/d43653c112665690.json"
+                },
+                {
+                  "url": "https://www.rsna.org/artificial-intelligence/ai-image-challenge",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/d8c5c8b14936e3f4.json"
+                },
+                {
+                  "url": "https://www.rsna.org/media/press/i/2597?PdfExport=1",
+                  "local_source": "_collection/resource_audit_20261025/online/7f4123d1c78c0fb7.txt"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/rsna-breast-cancer-detection-2023.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "RSNA/2023/rsna-breast-cancer-detection-2023.json",
+              "source_field": "resource_characteristics_review.fields.post_challenge",
+              "value": "RSNA states challenge dataset will remain available for further research.",
+              "sources": [
+                {
+                  "url": "https://www.rsna.org/media/press/i/2436",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/d43653c112665690.json"
+                },
+                {
+                  "url": "https://www.rsna.org/artificial-intelligence/ai-image-challenge",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/d8c5c8b14936e3f4.json"
+                },
+                {
+                  "url": "https://www.rsna.org/media/press/i/2597?PdfExport=1",
+                  "local_source": "_collection/resource_audit_20261025/online/7f4123d1c78c0fb7.txt"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/rsna-breast-cancer-detection-2023.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "1700 reported teams; approximately/nearly.",
+              "url": "https://www.rsna.org/media/press/i/2436",
+              "snapshot": "_collection/other_venues_audit_20261024/sources/d43653c112665690.json",
+              "scope": "reported teams; approximately/nearly",
+              "value": {
+                "value": 1700,
+                "unit": "teams",
+                "approximate": true
+              },
+              "excerpt": " challenge, hosted on a platform provided by Kaggle, Inc. (an Alphabet company), attracted nearly 1,700 teams from around the world. The competition was launched November 28, 2022, and ran through February 2023. The prize-winning solutions were then reviewed by a team of volunte",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

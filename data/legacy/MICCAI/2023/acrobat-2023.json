@@ -1,0 +1,547 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "acrobat-2023",
+    "challenge_name": "ACROBAT 2023",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Pathology"
+      ],
+      "submodality": [
+        "H&E pathology",
+        "Immunohistochemistry"
+      ],
+      "body_region": [
+        "Breast"
+      ],
+      "organ_system": [
+        "Breast"
+      ],
+      "organs_or_structures": [
+        "Breast tissue sections"
+      ],
+      "diseases": [
+        "Breast cancer"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Registration",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Multi-stain breast tissue whole-slide registration",
+          "task_family": "Registration",
+          "task_subtype": "image registration",
+          "input": [
+            "Moving WSI",
+            "Target WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Transformed landmarks"
+          ],
+          "granularity": "structure-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": true,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": true,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 750,
+        "validation_count": 100,
+        "test_count": 200
+      },
+      "modalities": null,
+      "data_components": [
+        "H&E and IHC WSIs",
+        "Landmarks"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "test_description": "200 new cases with unseen IHC stains, including IHC–IHC and IHC–H&E pairs."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": null,
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": null,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": null,
+        "policy": "No training-data restrictions; private external data permitted."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge; organizer-run final evaluation",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Landmark registration error (µm)",
+            "Mean 90th percentile registration error"
+          ],
+          "ranking": "Mean of per-image-pair 90th-percentile landmark errors; lower is better."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge submission; organizer secured local final execution",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "submission_start": "2023-06-01",
+      "final_submission_deadline": "2023-08-26"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 1574,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Challenge: validation",
+            "submission_count": 589
+          },
+          {
+            "official_phase_name": "Challenge: test",
+            "submission_count": 22
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ],
+      "shared_platform_snapshot": {
+        "snapshot_date": "2026-10-21",
+        "source_url": "https://acrobat.grand-challenge.org/challenge/statistics/",
+        "evidence_ids": [
+          "E3"
+        ],
+        "platform_registered_users": 1576,
+        "submissions_by_phase": [
+          {
+            "official_phase_name": "Challenge: validation",
+            "count": 596,
+            "unit": "submission"
+          },
+          {
+            "official_phase_name": "Challenge: test",
+            "count": 22,
+            "unit": "submission"
+          }
+        ],
+        "edition_scope": "Shared ACROBAT platform; attribution exclusively to the 2023 competition is not established.",
+        "unique_submitting_teams": null,
+        "previous_snapshot": {
+          "snapshot_date": "2026-10-02",
+          "platform_registered_users": 1574,
+          "validation_submissions": 589,
+          "test_submissions": 22
+        },
+        "notes": [
+          "Preserve original 2026-10-02 canonical snapshot; this new snapshot is stored separately.",
+          "Counts do not establish successful scoring, unique teams, or closure of the 2023 final assessment."
+        ]
+      }
+    },
+    "links": {
+      "grand_challenge": "https://acrobat.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "2022 edition used 300 test cases and median 90th percentile; these values are not used for the 2023 edition. Current statistics belong to a reused platform and may combine editions.",
+      "Source-list platform_year is 2022; the official challenge edition is 2023. The output directory follows the official edition.",
+      "Original challenge_id/year preserve source provenance for the 2023 component. Analytical display/unit is ACROBAT 2022–2023, counted once in a separate multi-year bin. Only one original inventory row existed: do not decrement the total as if two rows had been merged. 2022 results do not prove 2023 completion.",
+      "2026-10-22 canonical synchronization: user-authorized combined analysis unit saved, separate multi-year bin and single count explicit; 2022 confirmed results separated from unresolved 2023 completion; shared-platform counts saved without summing years."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://acrobat.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/123-74e3a6c56609.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acrobat.grand-challenge.org/participation-rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/123-9738c9e62da5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acrobat.grand-challenge.org/data/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/123-c48ea7c0968f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acrobat.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/123-d85f093a42c1.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acrobat.grand-challenge.org/evaluation-ranking-and-prizes/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/123-e51687fc07fd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://acrobat.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/123-overview.json"
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://acrobat.grand-challenge.org/challenge/statistics/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/acrobat-2023.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "previously reviewed documentary evidence",
+          "url": "https://acrobat.grand-challenge.org/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_4434395d1693ed.json",
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/acrobat-2023.json",
+          "propagated_on": "2026-10-22",
+          "supports": [
+            "Site describes distinct 2022 and 2023 test cohorts, but exposed final ranking is explicitly for 2022."
+          ]
+        },
+        {
+          "type": "previously reviewed documentary evidence",
+          "url": "https://acrobat.grand-challenge.org/participation-rules/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_9738c9e62da5ec.json",
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/acrobat-2023.json",
+          "propagated_on": "2026-10-22",
+          "supports": [
+            "2023 containers explicitly run on secured local infrastructure."
+          ]
+        },
+        {
+          "type": "previously reviewed documentary evidence",
+          "url": "https://acrobat.grand-challenge.org/challenge/statistics/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_74e3a6c566098f.json",
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/acrobat-2023.json",
+          "propagated_on": "2026-10-22",
+          "supports": [
+            "Current public statistics show 1,576 platform participants, 596 validation submissions and 22 test submissions. These are shared-platform cumulative snapshot counts, not deduplicated 2023 teams or proof of 2023 final scoring."
+          ]
+        },
+        {
+          "type": "previously reviewed documentary evidence",
+          "url": "https://acrobat.grand-challenge.org/challenge-ranking/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_6119e57643f275.json",
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/acrobat-2023.json",
+          "propagated_on": "2026-10-22",
+          "supports": [
+            "Official 2022 final-test ranking names CM (Gestalt), CG and AGHSSO as overall prize recipients. Supports the 2022 component of the combined record; does not establish a 2023 final evaluation."
+          ]
+        }
+      ],
+      "collection_status": "verified",
+      "unresolved_fields": [],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/acrobat-2023.json",
+          "_collection/verification_20261003/literature_context/acrobat-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "clinical_domain.organ_system": {
+          "source_url": "https://acrobat.grand-challenge.org/challenge/statistics/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/acrobat-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://acrobat.grand-challenge.org/challenge/statistics/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/acrobat-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://acrobat.grand-challenge.org/challenge/statistics/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/acrobat-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "action": "Propagate already authorized review decisions into original challenge JSON",
+          "changes": [
+            "user-authorized combined analysis unit saved, separate multi-year bin and single count explicit",
+            "2022 confirmed results separated from unresolved 2023 completion",
+            "shared-platform counts saved without summing years"
+          ],
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/acrobat-2023.json",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/canonical_decisions_sync_20261022_013012/MICCAI/2023/acrobat-2023.json",
+          "new_external_search": false,
+          "aggregate_rebuilt": false
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "not_established",
+      "basis": "Available static final ranking explicitly belongs to 2022; 2023-specific final outcome not established.",
+      "audit_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/acrobat-2023.json",
+      "objective_assessment": [],
+      "scope": "Existing completed documentary review propagated to canonical record; no new external evidence collected in this turn.",
+      "combined_record_assessment": {
+        "value": "confirmed",
+        "scope": "Confirmed results for the 2022 component only; independent 2023 completion remains not established.",
+        "evidence_ids": [
+          "E4"
+        ]
+      }
+    },
+    "analysis_unit_decision": {
+      "decision_id": "acrobat_series_2022_2023",
+      "date": "2026-10-21",
+      "authorized_by": "user",
+      "instruction": "合并统计ACROBAT 2022–2023，按照这个吧",
+      "analysis_id": "acrobat-2022-2023",
+      "display_name": "ACROBAT 2022–2023",
+      "original_inventory_ids": [
+        "acrobat-2023"
+      ],
+      "covered_years": [
+        2022,
+        2023
+      ],
+      "unit_type": "combined_series_record",
+      "annual_group": "2022",
+      "count_once": true,
+      "assessment_value": "confirmed",
+      "assessment_scope": "Confirmed results for the 2022 component only; independent 2023 completion remains not established.",
+      "assessment_evidence_ids": [
+        "E4"
+      ],
+      "participation_policy": "Use the single shared-platform snapshot once; do not sum across years or interpret submissions as unique teams.",
+      "methodological_note": "User-confirmed allocation on 2026-10-22: retain ACROBAT 2022–2023 as one combined unit, assigned once to 2022 for annual analyses.",
+      "historical_inventory_note": "Only acrobat-2023 existed in the 219-record inventory. This is a redefinition of that observation, not a two-row deduplication. Total remains 219.",
+      "aggregate_application_status": "Saved in canonical record; aggregate rebuild pending."
+    },
+    "analysis_display_name": "ACROBAT 2022–2023",
+    "analysis_id": "acrobat-2022-2023",
+    "covered_years": [
+      2022,
+      2023
+    ],
+    "analysis_year_group": "2022",
+    "analysis_count": 1,
+    "annual_allocation_decision": {
+      "decision_id": "acrobat_annual_allocation_2022_20261022",
+      "date": "2026-10-22",
+      "authorized_by": "user",
+      "instruction": "2022-2023 归入2022",
+      "analysis_id": "acrobat-2022-2023",
+      "analysis_year": 2022,
+      "count_once": true,
+      "covered_years": [
+        2022,
+        2023
+      ],
+      "note": "Combined name and original source identity retained; analytical annual bin is 2022. Total remains 216."
+    },
+    "current_inclusion_decision": {
+      "date": "2026-10-24",
+      "analysis_include": false,
+      "reason": "Human decision: retain ACROBAT 2022 only; a complete 2023 record was not located. Prior combined-unit decision superseded."
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

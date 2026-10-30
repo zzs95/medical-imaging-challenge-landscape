@@ -1,0 +1,656 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "stsr-2025",
+    "challenge_name": "Semi-supervised teeth segmentation and registration",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "Other"
+      ],
+      "submodality": [
+        "Cone-beam CT",
+        "Intraoral surface scanning"
+      ],
+      "body_region": [
+        "Oral and maxillofacial"
+      ],
+      "organ_system": [
+        "Dental"
+      ],
+      "organs_or_structures": [
+        "Teeth",
+        "Root pulp canals"
+      ],
+      "diseases": [
+        "Dental caries",
+        "Periodontal disease",
+        "Malocclusion",
+        "Tooth loss",
+        "Tooth wear"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Registration",
+      "secondary_task_families": [
+        "Segmentation"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Semi-supervised CBCT-IOS registration",
+          "task_family": "Registration",
+          "task_subtype": null,
+          "input": [
+            "Cone-beam CT",
+            "Intraoral surface scan"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Registration outputs"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Semi-supervised Root Pulp Canals Segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "Cone-beam CT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Root pulp canal segmentation"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": true,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Teeth",
+        "Root pulp canals"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT",
+        "Other"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND. 当届数据使用条款列 CC BY-NC-ND。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; round 3",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "2025 training",
+          "category": "Individual authorization",
+          "access_steps": [
+            "Register",
+            "Data Access Agreement",
+            "Eligibility verification",
+            "Approved download access"
+          ],
+          "manual_review": true
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Root Mean Square Error (RMSE)",
+            "Normalized Cross-Correlation (NCC)",
+            "Normalized Mutual Information (NMI)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Normalized Surface Dice (NSD)",
+            "Intersection over Union (IoU)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.15045004"
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://songhen15.github.io/STSdevelop.github.io/index.html",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 53,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/40cba6887cd7753d.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://songhen15.github.io/STSdevelop.github.io/index.html",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/00d0162299036df4.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/15045004",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-15045004.txt",
+          "supports": [
+            "clinical_domain",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://songhen15.github.io/STSdevelop.github.io/index.html",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/stsr-2025.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/15045004",
+          "local_snapshot": "_collection/sources_other/protocol-15045004.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Submissions will be made via Docker container. The participating teams should upload their algorithm to the online submission system. We will look for sponsors for computing resources. If it is not available, we will use our local hardware. It has two 8-Cores CPUs, one NVIDIA 2080Ti GPU, and 64G RAM. Only one GPU is allowed to use during inference."
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/15045004",
+          "local_snapshot": "_collection/sources_other/protocol-15045004.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Submissions will be made via Docker container. The participating teams should upload their algorithm to the online submission system. We will look for sponsors for computing resources. If it is not available, we will use our local hardware. It has two 8-Cores CPUs, one NVIDIA 2080Ti GPU, and 64G RAM. Only one GPU is allowed to use during inference."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://songhen15.github.io/STSdevelop.github.io/index.html",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/stsr-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://songhen15.github.io/STSdevelop.github.io/index.html",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/stsr-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://songhen15.github.io/STSdevelop.github.io/index.html",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/stsr-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "submission.evidence_stage",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/stsr-2025.json",
+          "_collection/verification_20261003/literature_context/stsr-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "组织者2025-12总结明确数据协议下的资格核验，通过核验后获得下载权限；属于当届流程回顾。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "2025 training",
+            "category": "Individual authorization",
+            "access_steps": [
+              "Register",
+              "Data Access Agreement",
+              "Eligibility verification",
+              "Approved download access"
+            ],
+            "manual_review": true
+          }
+        ],
+        "evidence_basis": "Primary protocol / metadata checked",
+        "confidence": "High",
+        "source_urls": [
+          "https://arxiv.org/html/2512.02867v1"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "STSR2025当届协议明确释放训练数据，提交Docker由评估端在验证和测试集运行。"
+      },
+      "decision_history": [
+        "STSR2025当届协议明确释放训练数据，提交Docker由评估端在验证和测试集运行。",
+        "2026-10-24 round 3: 组织者2025-12总结明确数据协议下的资格核验，通过核验后获得下载权限；属于当届流程回顾。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/protocol-15045004.txt",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/stsr-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://arxiv.org/html/2512.02867v1",
+          "local_source": "_collection/access_backfill_round3_20261024/sources/74fdaa7c588f4403.json",
+          "review_date": "2026-10-24",
+          "section": "Round 3 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "CT",
+        "Other"
+      ],
+      "harmonized_modalities": [
+        "CT",
+        "Optical 3D surface scans"
+      ],
+      "video_format_documented": false,
+      "note": "Replace Other using explicit recorded input/submodality.",
+      "sources": [
+        {
+          "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+          "local_source": "_collection/sources_other/40cba6887cd7753d.json"
+        },
+        {
+          "url": "https://songhen15.github.io/STSdevelop.github.io/index.html",
+          "local_source": "_collection/sources_other/00d0162299036df4.json"
+        },
+        {
+          "url": "https://zenodo.org/records/15045004",
+          "local_source": "_collection/sources_other/protocol-15045004.txt"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-ND"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届数据使用条款列 CC BY-NC-ND。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "CC BY-NC-ND -- Semi-supervised Teeth Segmentation and Registration",
+          "source": {
+            "url": "https://zenodo.org/records/15045004",
+            "local_source": "_collection/sources_other/protocol-15045004.txt"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15045004",
+          "local_source": "_collection/sources_other/protocol-15045004.txt"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Oral and maxillofacial"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Inflammatory / infectious",
+            "Other"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Dental caries",
+        "Periodontal disease",
+        "Malocclusion",
+        "Tooth loss",
+        "Tooth wear"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "当届方案的IOS来源队列逐项列出龋病、牙周病、错颌、缺牙及磨耗；不因配准/分割任务而忽略明确疾病背景。",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15045004",
+          "local_source": "_collection/sources_other/protocol-15045004.txt"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "当届方案的IOS来源队列逐项列出龋病、牙周病、错颌、缺牙及磨耗；不因配准/分割任务而忽略明确疾病背景。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2025/stsr-2025.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "The patients in this experiment were from patients who received informed consent from West China Stomatology Hospital of Sichuan University, Hangzhou Children's Stomatology Hospital, and Hangzhou Qiantang Dental Hospital. Part of the dataset are from our previous challenge: MICCAI Semi-supervised Teeth Segmentation Challenge (https://sts-challenge.github.io/miccai2024/index.html)",
+              "url": "https://zenodo.org/records/15045004",
+              "snapshot": "_collection/sources_other/protocol-15045004.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nThe patients in this experiment were from patients who received informed consent from West China Stomatology\nHospital of Sichuan University, Hangzhou Children's Stomatology Hospital, and Hangzhou Qiantang Dental\nHospital. Part of the dataset are from our previous challenge: MICCAI Semi-supervised Teeth Segmentation\nChallenge (https://sts-challenge.github.io/miccai2024/index.html)",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Open call (challenge opens for new submissions after conference deadline)",
+              "url": "https://zenodo.org/records/15045004",
+              "snapshot": "_collection/sources_other/protocol-15045004.txt",
+              "scope": "Organizer specifies continued evaluation or persistent results; implemented availability is not inferred from this plan.",
+              "value": null,
+              "excerpt": "z.edu.cn.\n\nLife cycle type\n\nDefine the intended submission cycle of the challenge. Include information on whether/how the challenge will be\ncontinued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time\nevent). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some\nmodifications (repeated event).\n\n\nExamples:\n\n  • One-time event with fixed conference submission deadline\n\n  • Open call (challenge opens for new submissions after conference deadline)\n\n  • Repeated event with annual fixed conference submission deadline\n\nOpen call (challenge opens for new submissions after conference deadline)\n\nChallenge venue and platform\n\na) Report the event (e.g. conference) that is associated with the challenge (if any).\n\nMICCAI",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

@@ -1,0 +1,560 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "leopard-2024",
+    "challenge_name": "The LEOPARD Challenge",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Pathology"
+      ],
+      "submodality": [
+        "H&E prostatectomy WSI"
+      ],
+      "body_region": [
+        "Prostate"
+      ],
+      "organ_system": [
+        "Genitourinary"
+      ],
+      "organs_or_structures": [
+        "Prostate cancer tissue"
+      ],
+      "diseases": [
+        "Prostate cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Prognosis",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "recurrence",
+          "official_name": "Time to biochemical recurrence prediction",
+          "task_family": "Prognosis",
+          "task_subtype": "censored survival-time prediction",
+          "input": [
+            "Prostatectomy WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Time to biochemical recurrence in years"
+          ],
+          "granularity": "patient-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": true,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Pathology"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "patient_count": 508
+        },
+        "validation": {
+          "patient_count": 99
+        },
+        "test": {
+          "patient_count": 824
+        },
+        "sanity_check": {
+          "patient_count": 3
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "registration-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA plus publication embargo until challenge and baseline journal papers are published.",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Freely public datasets and pretrained models under permissive open-source licenses."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "recurrence",
+          "metrics": [
+            "Censored concordance index"
+          ],
+          "ranking": "Rank by censored concordance index."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "method_report": "Six-page MICCAI-template report excluding references; source-code repository URL."
+    },
+    "schedule": {
+      "training_data_release": "2024-04-18",
+      "final_submission_deadline": "2024-08-18",
+      "challenge_event": "2024-10-06"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 657,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Sanity check",
+            "submission_count": 370
+          },
+          {
+            "official_phase_name": "Validation phase",
+            "submission_count": 137
+          },
+          {
+            "official_phase_name": "Testing phase",
+            "submission_count": 77
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://leopard.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/sponsors/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-060cb0c1bd0c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/leopard/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-0a66750b08e8.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/awards/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-1652a33d14d4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/#the-gleason-growth-patterns-representing-morphological-patterns-of-prostate-cancer-are-used-to-categorize-cancerous-tissue-into-isup-grade-groups-j-i-epstein-2010-p-m-pierorazio-et-al-2013-g-j-l-h-van-leenders-et-al-2020-j-i-epstein-et-al-2016-however-the-isup-grade-has-limitations-such-as-grading-disagreement-among-pathologists-j-i-epstein-et-al-2016-and-coarse-descriptors-of-tissue-morphology",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-19005d27e4d6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/#the-leopard-challenge",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-1dbd9a680e6c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-24276dc72e3d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/testing-phase/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-2a4ac05e3fdd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-2d4a38c4c21d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-3eb432b7ab8b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/validation-phase/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-54f74b78bb05.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/test-results/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-7f6dd5d8634f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/#prostate-cancer-impacting-14-million-men-annually-is-a-prevalent-malignancy-h-sung-et-al-2021-a-substantial-number-of-these-individuals-undergo-prostatectomy-as-the-primary-curative-treatment-the-efficacy-of-this-surgery-is-assessed-in-part-by-monitoring-the-concentration-of-prostate-specific-antigen-psa-in-the-bloodstream-while-the-role-of-psa-in-prostate-cancer-screening-is-debatable-w-f-clark-et-al-2018-e-a-m-heijnsdijk-et-al-2018-it-serves-as-a-valuable-biomarker-for-postprostatectomy-follow-up-in-patients-following-successful-surgery-psa-concentration-is-typically-undetectable-01-ngml-within-4-6-weeks-s-s-goonewardene-et-al-2014-however-approximately-30-of-patients-experience-biochemical-recurrence-signifying-the-resurgence-of-prostate-cancer-cells-this-recurrence-serves-as-a-prognostic-indicator-for-progression-to-clinical-metastases-and-eventual-prostate-cancer-related-mortality-cl-amling-2014-s-j-freedland-et-al-2005-m-han-et-al-2001-t-van-den-broeck-et-al-2001",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-92eb7c193737.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-95df6761d187.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/#current-clinical-practices-gauge-the-risk-of-biochemical-recurrence-by-considering-the-international-society-of-urological-pathology-isup-grade-psa-value-at-diagnosis-and-tnm-staging-criteria-j-i-epstein-et-al-2016-a-recent-european-consensus-guideline-suggests-categorizing-patients-into-low-risk-intermediate-risk-and-high-risk-groups-based-on-these-factors-n-mottet-et-al-2021-notably-a-high-isup-grade-independently-assigns-a-patient-to-the-intermediate-grade-23-or-high-risk-group-grade-45",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-991bb3b4dcfd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/announcements-news/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-9beca1fe1dc3.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://leopard.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-9df2ec965506.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/#clinical-background",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-c28f4dfb7faf.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/faq-tips/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-c7d0be5b5f55.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/evaluation-ranking/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-c8401a116364.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/#recently-deep-learning-was-shown-h-pinckaers-et-al-2022-o-eminaga-et-al-2024-to-be-able-to-predict-the-biochemical-recurrence-of-prostate-cancer-hypothesizing-that-deep-learning-could-uncover-finer-morphological-features-prognostic-value-we-are-organizing-the-learning-biochemical-prostate-cancer-recurrence-from-histopathology-slides-leopard-challenge-the-goal-of-this-challenge-is-to-yield-top-performance-deep-learning-solutions-to-predict-the-time-to-biochemical-recurrence-from-he-stained-histopathological-tissue-sections-ie-based-on-morphological-features",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-cd406dc61bc0.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-e8bec569cecb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/miccai2024-workshop/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-f0cbc9e7696d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/data/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-f540b80cc46a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://leopard.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/65-overview.json"
+        },
+        {
+          "type": "official conference registered-challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "supports": [
+            "event",
+            "year"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify exact submission/resource limits; runtime container access does not mean validation/test data are downloadable."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/leopard-2024.json",
+          "_collection/verification_20261003/literature_context/leopard-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

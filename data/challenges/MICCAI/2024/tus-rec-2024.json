@@ -1,0 +1,630 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "tus-rec-2024",
+    "challenge_name": "TUS-REC 2024",
+    "full_name": "Trackerless 3D Freehand Ultrasound Reconstruction Challenge",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R46",
+      "official_programme_row_numbers": "19",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "University College London",
+        "King's College London"
+      ],
+      "registered_authors": [
+        {
+          "name": "Li, Qi",
+          "affiliation": "University College London"
+        },
+        {
+          "name": "Saeed, Shaheer U.",
+          "affiliation": "University College London"
+        },
+        {
+          "name": "Barratt, Dean C.",
+          "affiliation": "University College London"
+        },
+        {
+          "name": "Clarkson, Matthew J.",
+          "affiliation": "University College London"
+        },
+        {
+          "name": "Vercauteren, Tom",
+          "affiliation": "King's College London"
+        },
+        {
+          "name": "Hu, Yipeng",
+          "affiliation": "University College London"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "Ultrasound"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Extremities"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Forearms",
+        "Vascular and musculoskeletal anatomy"
+      ],
+      "diseases": [],
+      "clinical_context": "Volunteer forearm scans; possible future cardiac, fetal and abdominal applications not counted."
+    },
+    "task_profile": {
+      "primary_task_family": "Reconstruction",
+      "secondary_task_families": [],
+      "task_families": [
+        "Reconstruction"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Trackerless Freehand Ultrasound Reconstruction",
+          "task_family": "Reconstruction",
+          "task_families": [
+            "Reconstruction"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991500",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": true,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991500",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Ultrasound"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991500",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991500",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991500",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Organizer-run university server",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991500",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991500",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nFor each scan, the submitted method is tasked to output two types of transformation-representing displacement\nvectors (hereinafter is also referred to as the prediction), at global and local levels.\n- The \"global displacement vectors\" will be used to reconstruct individual frames (without the first frame), with\nrespect to the first frame in the scan as the \"global reference frame\".\n- The \"local displacement vectors\" will be used to reconstruct individual frames (without the first frame), with\nrespect to the immediately previous frame in the scan as the \"local reference frame\".\n\n\nFor each scan, the performance of a submitted method will be evaluated using two reconstruction errors,\n\"landmark reconstruction error\" and \"pixel reconstruction error\".\n- The \"landmark reconstruction error\" is defined as average Euclidean distance, between the\nground-truth-reconstructed frame and the prediction-reconstructed frame, averaged over a set of predefined\nanatomical landmarks in each scan.\n- The \"pixel reconstruction error\" is defined as the same average Euclidean distance, between the\nground-truth-reconstructed frame and the prediction-reconstructed frame, averaged over all pixels of all but the\nfirst frames in each scan.\n\n\nThus, each submitted method should output four sets of displacement vectors:\n- Global displacement vectors for pixel reconstruction (number of the \"GP\" vectors = number of pixels in the\nentire scan)\n- Global displacement vectors for landmark reconstruction (number of the \"GL\" vectors = number of defined\nlandmarks in the scan)\n- Local displacement vectors for pixel reconstruction (number of the \"LP\" vectors = number of pixels in the entire\nscan)\n- Local displacement vectors for landmark reconstruction (number of the \"LL\" vectors = number of defined\nlandmarks in the scan)\n\n\nBased on these four output vector sets, four evaluation metrics will be used in this challenge:\n- Global pixel reconstruction error (GPE), the pixel reconstruction error using GP vectors.\n- Global landmark reconstruction error (GLE), the landmark reconstruction error using GL vectors.\n- Local pixel reconstruction error (LPE), the pixel reconstruction error using LP vectors.\n- Local landmark reconstruction error (LLE), the landmark reconstruction error using LL vectors.\n\n\nThe landmark is defined based on anatomical structures, such as vessel branches, bony structures and other ad\n\n\n\n\f                            Trackerless 3D Freehand Ultrasound Reconstruction Challenge\n\nhoc landmarks. It is estimated that between 10-20 landmarks will be available for each scan, but this is subject to\nfurther verification. Further details and summary statistics of the landmarks will be made available by the\nchallenge commence. The final score on the four evaluation metrics will be averaged over all scans in the test set.\n\n\nRuntime will be considered as additional evaluation metric which is the consumed time of predicting positions for\nall frames in a scan, averaged over all scans in the test set.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\n<Rationale in using Euclidean distance-based error metrics, as opposed to errors defined in transformation\nparameter space> Direct measuring the accuracy of parameters of transformation matrix is difficult since the\ncontribution and weighting between rotation and translation components can be sensitive to experimental and\nimaging configurations, such as reference coordinates and definition of rotation axis, and dependent on\napplication. In this challenge, metrics based on distance error is preferred, which is arguably considered a more\npractical type of measure to reflect the difference between ground truth and prediction in Euclidean space (Luo et\nal. 2023).\n\n\n<Justification of using displacement-based representation of transformation, as opposed to rigid- or affine\nmatrices, as the algorithm output> Although the ground-truth are available in the form of rigid transformation, we\nargue that, from experience in developing similar numerical algorithms, enforcing the algorithm output to be\nhomogeneous transformation is not only unnecessary, but sometimes misleadingly encourages a more\nnumerically challenging solution due to issues such as gimbal lock in using rotation matrix, local minima in\nnumerical optimisation. In addition, the displacement-based representation allows flexibility for a quantitatively\nmore accurate reconstruction, with a near-rigid transformation, which could be sufficient for clinical use.\nHowever, there is no requirement in the internal methodology adopted, for example, the submitted algorithm\ncan convert a single estimated rigid transformation matrix to all these four types of required displacement\nvectors as output.\n\n\n<Justification of the local and global reconstruction errors> The reconstructed scan from either local level or\nglobal level displacement are capable of representing different types of reconstruction performance, such as\nframe-level reconstruction error and accumulated error of the algorithm (Li. et al. 2023, Wein et al. 2020). To\nstreamline the evaluation, other monotonic metrics, such as final drift and Dice overlap, albeit commonly\nreported in literature (e.g. Li et al 2023), are not included. However, in practical applications, one might choose to\nreconstruct a sequence of ultrasound frames (as opposed to the entire scan or two adjacent frames, which are\nrepresented by local and global errors, respectively), using a pre-optimised sequence length that is most suitable\nto the downstream application. Without specifying a single target clinical application, these two adopted local and\nglobal errors shall represent the range of accuracy between the choices of the reconstruction length.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nFirst, for each individual metric, the values for all submissions will be normalised to the range [0, 1] by the value of\nbaseline method, and then the final score will be generated using the formula below:\n\n\n\n\n\n\f                               Trackerless 3D Freehand Ultrasound Reconstruction Challenge\n\n\n\nOverall score = 0.25*(1-GPE*) + 0.25*(1-GLE*) + 0.25*(1-LPE*) + 0.25*(1-LLE*)\n\n\nwhere * indicates the normalised reconstruction errors. The \"overall score\" within the range of [0,1] will be used\nto produce the final rank for all the submitted algorithms. The final score will be reported with 3 decimal places\nand the higher the better. For the submissions with the same final score, the rank will be generated based on the\nruntime. A smaller runtime will be awarded a higher rank. A maximum runtime will be imposed for challenge\nsubmissions, benchmarked as the speed of our baseline methods, to encourage usability in the clinical\napplications. All the raw values for the defined metrics will also be made available.\n\n\nWe also report four other categories of scores, global reconstruction score = 0.5*(1-GPE*) + 0.5*(1-GLE*), local\nreconstruction score = 0.5*(1-LPE*) + 0.5*(1-LLE*), landmark reconstruction score = 0.5*(1-GLE*) + 0.5*(1-LLE*)\nand pixel reconstruction score = 0.5*(1-GPE*) + 0.5*(1-LPE*). These are provided for reference and research\ninterest without formal ranking.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nThe submitted algorithms will be run on a docker container such that this case is not likely to happen. In case such\nevent occurs, the minimum score (0) will be given to any case where the code cannot run or the metric cannot be\ncomputed successfully.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nAll the metrics are normalized to a common scale so that the metrics with larger values will not dominate. The two\nlevels of measurement with two types of displacement are assumed equally important to make a desirable\nreconstruction performance. Therefore, we use equal weights to generate a benchmark for the challenge."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Organizer-run university server",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "We will prepare a Docker container to provide a consistent submission environment. The detailed information of the release and usage of the Docker container will be announced in our website mentioned above, once the challenge is accepted. Participants will be asked to Dockerize and submit their trained model/algorithm to us, via our secured server hosted at our university.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991500",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991500",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10991500"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://github-pages.ucl.ac.uk/tus-rec-challenge/",
+      "registration": "https://doi.org/10.5281/zenodo.10991500",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10991500",
+          "resolved_record_id": 10991501,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://github-pages.ucl.ac.uk/tus-rec-challenge/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/c8be0149cfe5ac7f.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "TUS-REC"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Reconstruction"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "The archived 2024-specific data page links three public Zenodo training-data parts. Challenge registration is separate."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991500",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991500",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. We will prepare a Docker container to provide a consistent submission environment. The detailed information of the release and usage of the Docker container will be announced in our website mentioned above, once the challenge is accepted. Participants will be asked to Dockerize and submit their trained model/algorithm to us, via our secured server hosted at our university. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and "
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991500",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Challenge website/registration open: Monday, April 1 2024 Training dataset release: Monday, May 13 2024 Validation dataset release: Monday, July 29 2024 Submissions begins: Monday, Aug 12 2024 Submissions Closes: Monday, Aug 19 2024 Winners Announcement and Speaker Invitations: Monday, Sep 16 2024 Challenge Event @ MICCAI 2024: Monday, Oct. 6 2024"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991500",
+          "excerpt": ""
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/c8be0149cfe5ac7f.json",
+          "url": "https://github-pages.ucl.ac.uk/tus-rec-challenge/",
+          "excerpt": "neficial to a wide range of downstream tasks such as quantitative biometric measurement, multimodal registration, and 3D visualisation. This application is challenging due to 1) inherent accumulated error - frame-to-frame transformation error will be accumulated through time when reconstructing long sequence of US frames, and 2) a lack of publicly-accessible data with synchronised spatial location, often obtained from tracking devices, for benchmarking the performance and for training learning-based methods. TUS-REC2025 presents a different scanning protocol, in addition to the previous TUS-REC2024 non-rotation-based protocols. The new scans includ [...]  ability among different scan protocols. The outcome of the challenge includes 1) providing in open access the new US dataset with accurate positional information; 2) establishing the first benchmark for 3D US reconstruction for rotating scans, suitable for modern learning-based data-driven approaches. Main resources Full challenge description Training data Validation data Baseline code Submission/Evalu [...] I 2025 . All times are 23:59 BST. Date Challenge Milestone Apr. 01, 2025 Challenge Websites Opening/Registration Opens Apr. 28, 2025 Training Data/Baseline Code Release Jun. 23, 2025 Validation Data/Submission Code Release Jul. 07, 2025 Submission Starts Aug. 31, 2025 Submission Closes Sep. 01, 2025 Winners Announcement Sep. 27, 2025 TUS-REC2025 Challenge Events at MICCAI 2025 Oct. 13, 2025 Post-challenge submission deadline Programme The Challenge will take place [...] taset , assessment , and submission process . Awards The results from all participants will be made publicly available on leaderboard unless the submitted dockers incurred errors during the evaluation process. Teams are allowed to make multiple distinct submissions (but must ensure they are not merely simple variations in hyperparameter values). The leaderboard will be accessible for public viewing here . The first-place and runner-up achievers will receive additional certificates. Participants who successfully participated the challenge will be awarded certificates of participation. Organizers Qi Li , University College London Yuliang Huang, University College London Shaheer U. Saeed"
+        },
+        {
+          "section": "Official edition data/registration instructions",
+          "local_source": "_collection/access_flow_review_20261024/sources/2bf5c5ed8a43b9be.json",
+          "url": "https://github-pages.ucl.ac.uk/tus-rec-challenge/TUS-REC2024/data.html",
+          "excerpt": ""
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 720,
+              "unit": "scans",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 96,
+              "unit": "scans",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 384,
+              "unit": "scans",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "United Kingdom"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Single center"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10991500",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://github-pages.ucl.ac.uk/tus-rec-challenge/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/c8be0149cfe5ac7f.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/tus-rec-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Extremities"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Forearms",
+        "Vascular and musculoskeletal anatomy"
+      ],
+      "specific_diseases": [],
+      "review_note": "Volunteer forearm scans; possible future cardiac, fetal and abdominal applications not counted.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991500"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/tus-rec-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC SA",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10991500"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991500"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/tus-rec-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "United Kingdom"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10991500",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://github-pages.ucl.ac.uk/tus-rec-challenge/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/c8be0149cfe5ac7f.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/tus-rec-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Open call",
+              "url": "https://doi.org/10.5281/zenodo.10991500",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.pdf",
+              "scope": "Edition-specific lifecycle answer: open-call continuation or a stated future release. Policy/plan coverage only, not evidence that continuing evaluation actually ran.",
+              "value": null,
+              "excerpt": "continued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time event). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some modifications (repeated event). Examples: • One-time event with fixed conference submission deadline • Open call (challenge opens for new submissions after conference deadline) • Repeated event with annual fixed conference submission deadline Open call ",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Organizer/platform-side inference",
+          "final_stage": "Designated final scored evaluation stage",
+          "evidence_scope": "Specified protocol",
+          "coding_basis": "Edition-level source rereading, 2026-10-27",
+          "evidence_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R46/Trackerless 3D Freehand Ultrasound Reconstruction.txt",
+          "evidence_excerpt": "our secured server hosted at our university",
+          "rationale": "Submission instructions specify trained-model delivery to the organizer university server; the missing-test-result policy describes execution of submitted algorithms in Docker. This establishes the specified final-stage executor.",
+          "source_urls": "https://miccai.org/sig/sig-challenges/; https://doi.org/10.5281/zenodo.10991500; https://conferences.miccai.org/2024/en/challenges.asp; https://github-pages.ucl.ac.uk/tus-rec-challenge/",
+          "completed_execution_claim": "Not inferred from this classification",
+          "review_date": "2026-10-27"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

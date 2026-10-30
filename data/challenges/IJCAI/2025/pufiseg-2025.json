@@ -1,0 +1,573 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "pufiseg-2025",
+    "challenge_name": "Pulmonary Fibrosis Segmentation Challenge 2025 (PuFiSeg2025)",
+    "full_name": "Pulmonary Fibrosis Segmentation Challenge 2025 (PuFiSeg2025)",
+    "year": 2025,
+    "event": {
+      "conference": "IJCAI 2025 Competitions and Challenges",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": [
+        "Imperial College London",
+        "Tianjin Fourth Central Hospital",
+        "Royal Brompton Hospital"
+      ],
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "HRCT",
+        "Low-dose CT"
+      ],
+      "body_region": [
+        "Chest"
+      ],
+      "organ_system": [
+        "Respiratory"
+      ],
+      "organs_or_structures": [
+        "Lungs"
+      ],
+      "diseases": [
+        "Pulmonary fibrosis"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Enhancement"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Pulmonary fibrosis segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "automatic binary segmentation",
+          "input": [
+            "3D HRCT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Fibrosis segmentation mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Low-dose pulmonary CT denoising",
+          "task_family": "Enhancement",
+          "task_subtype": "CT denoising",
+          "input": [
+            "Low-dose chest CT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Denoised pulmonary CT"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": true,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": "Pulmonary fibrosis regions and denoised CT",
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Task 1 labels were delineated slice by slice by three experienced radiologists.",
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "task_datasets": [
+        {
+          "task_id": "task1",
+          "total_count": {
+            "value": 262,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "train_count": {
+            "value": 120,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "validation_count": {
+            "value": 52,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "test_count": {
+            "value": 90,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          }
+        },
+        {
+          "task_id": "task2",
+          "total_count": {
+            "value": 262,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "train_count": {
+            "value": 120,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "validation_count": {
+            "value": 52,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "test_count": {
+            "value": 90,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "noise_simulation": "25% dose simulated by scanner-aware noise insertion."
+        }
+      ]
+    },
+    "data_access": {
+      "is_public": false,
+      "access_status": "registration-and-approval-required",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "PUFISEG data-use restrictions. 比赛规则禁止转交或分发数据/链接；后续免费开放为声明，不代表已核验完整开放许可。",
+      "access_after_challenge": null,
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": null,
+        "policy": "Both tasks require fully automatic methods based on the released training set; manual correction is prohibited."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Codabench validation; organizer-run Docker testing",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "IoU",
+            "Voxel-wise precision",
+            "Runtime",
+            "Maximum GPU memory"
+          ],
+          "ranking": "0.70 × rank(mean IoU and precision) + 0.15 × rank(runtime) + 0.15 × rank(maximum GPU memory).",
+          "validation_ranking": "Mean of IoU and precision."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "PSNR",
+            "SSIM",
+            "LPIPS",
+            "Runtime",
+            "Maximum GPU memory"
+          ],
+          "ranking": "0.70 × mean of PSNR/SSIM/LPIPS ranks + 0.15 × runtime rank + 0.15 × maximum-GPU-memory rank.",
+          "validation_metrics": [
+            "PSNR",
+            "SSIM",
+            "FID",
+            "LPIPS"
+          ],
+          "validation_mode": "Local validation only; reconstructed-volume upload is not required."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Validation NIfTI masks; final Docker container and 4–12-page methodology paper",
+      "platform": "Codabench and organizer email",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null,
+        "max_processing_time_total_hours": 12,
+        "runtime_limit_scope": "All 90 task-1 test cases; not 12 hours per case."
+      },
+      "submission_limits": {
+        "validation_submissions_per_day": 3,
+        "final_successful_submissions": 1
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "postponement_announcement": "2025-05-20",
+      "task1_training_release_listed": "2025-06-12",
+      "task1_validation_release_listed": "2025-06-25",
+      "final_submission_end": null
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": null
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": "2026-10-03",
+      "statistics_status": "current platform snapshot",
+      "notes": [
+        "Participant accounts are not teams. Cumulative platform counts are not treated as edition-specific final participation."
+      ],
+      "platform_snapshot": {
+        "participant_accounts": 39,
+        "submission_count": 0,
+        "scope": "Task-1 hosting page. Empty final-results rows are placeholders, not finalist teams."
+      },
+      "additional_platform_snapshots": [
+        {
+          "task_id": "task2",
+          "participant_accounts": 18,
+          "submission_count": 0,
+          "scope": "Denoising track; may overlap task-1 registrations."
+        }
+      ]
+    },
+    "links": {
+      "official": "https://www.codabench.org/competitions/7330/",
+      "grand_challenge": null,
+      "platform": "https://www.codabench.org/competitions/7330/",
+      "dataset": null,
+      "github": "https://github.com/pufiseg2025/PuFiSeg2025",
+      "challenge_paper": null,
+      "task2_platform": "https://www.codabench.org/competitions/7331/"
+    },
+    "notes": [
+      "The official overview announces a postponement on 2025-05-20 without a definitive replacement final deadline. The conference timeline repeats the preceding competition timeline and is not used as verified PuFiSeg dates.",
+      "The 262 cases and 120/52/90 split refer to fibrosis segmentation only. Background biomarker references do not establish additional classification tasks.",
+      "The two tasks each report 262 scans and identical splits. Their patient/case overlap is not independently quantified; the task counts are not added to assert 524 unique cases.",
+      "2026-10-22: 维持延期状态；页面存在和提交计数不能证明延期后最终评价，本轮平台访问受限。",
+      "2026-10-22: IJCAI介绍和容器材料为设计/计划，延期后的实际最终成绩或获奖仍未补齐。",
+      "2026-10-22 最新人工完成确认（替代旧完成待查状态）：PUFISEG 2025：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "collection_date_definition": "Date of web and literature metadata collection, not medical-image acquisition.",
+      "source_list": "challenge_list_other_platforms_22_26_v4.json",
+      "source_list_index": 42,
+      "source_list_index_base": 1,
+      "collection_status": "partially_verified",
+      "sources": [
+        {
+          "type": "Official organizer source",
+          "url": "https://www.codabench.org/api/competitions/7330/?format=api",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/68c1deb67bb4baa1.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule",
+            "organizers",
+            "participation_statistics.platform_snapshot"
+          ],
+          "snapshot_sha256": "1ea4dbd486712be5f8d3ae52b41fe489fef8fb7fd32870dbb5fea40b1cbf5115"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://2025.ijcai.org/competitions-and-challenges/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/99c06b14da70dad9.json",
+          "supports": [
+            "event.conference"
+          ],
+          "snapshot_sha256": "399769190161e7f3ed4f16e165a0eefbf742019e037719949d1c838e1fab2d7f"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://www.codabench.org/api/competitions/7331/?format=api",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/883c408b4591cfab.json",
+          "supports": [
+            "task_profile.tasks.task2",
+            "dataset.task_datasets.task2",
+            "evaluation.tasks.task2",
+            "submission",
+            "participation_statistics.additional_platform_snapshots"
+          ],
+          "snapshot_sha256": "7e1cdf91fc45eb3fe2f7d3027b5f97e1062401171edab765f16f5ebfd3eabbc7"
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://www.codabench.org/competitions/7330/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_c4feb1c9f503_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Access failed/empty; user-supplied documentary review retained",
+          "source_accessible": false,
+          "supports": [
+            "维持延期状态；页面存在和提交计数不能证明延期后最终评价，本轮平台访问受限。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://2025.ijcai.org/competitions-and-challenges-guangzhou-for-the-34th-international-joint-conference-on-artificial-intelligence-ijcai-2025/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_2b8dbbda9b6f_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "IJCAI介绍和容器材料为设计/计划，延期后的实际最终成绩或获奖仍未补齐。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        }
+      ],
+      "unresolved_fields": [
+        "schedule.final_implemented_dates",
+        "dataset.population.patient_count",
+        "dataset.center_count",
+        "dataset.collection_period.start_year",
+        "data_access.license_or_terms",
+        "participation_statistics.registered_teams"
+      ],
+      "verification_policy": "Only edition-specific official evidence populates facts; unknown values remain null.",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "维持延期状态；页面存在和提交计数不能证明延期后最终评价，本轮平台访问受限。",
+          "previous_assessment": {
+            "value": "postponed",
+            "event_state": "postponed",
+            "evidence_state": "documented",
+            "evidence_ids": [
+              "E1"
+            ],
+            "reason": "Explicit postponement retained; no later organizer completion found."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/IJCAI/2025/pufiseg-2025.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "IJCAI介绍和容器材料为设计/计划，延期后的实际最终成绩或获奖仍未补齐。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/IJCAI/2025/pufiseg-2025.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "PUFISEG 2025：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/four_human_confirmations_20261022_152301/IJCAI/2025/pufiseg-2025.json"
+        }
+      ]
+    },
+    "record_level": "challenge_edition",
+    "scope_status": "core_medical_or_biomedical_imaging",
+    "count_in_core_medical_imaging_review": true,
+    "count_in_edition_statistics": true,
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "PUFISEG 2025：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+        "basis_type": "explicit_user_confirmation",
+        "user_instruction": "BodyMaps 2024、FETUS 2026、MOOD 2025、PUFISEG 2025 都已经完成",
+        "propagation_status": "Canonical JSON, audit, current triage CSV/Excel, decisions and reports synchronized; manuscript and aggregate statistics not regenerated."
+      },
+      "remaining_questions": [],
+      "event_state": "completed",
+      "completion_basis": "explicit_user_confirmation",
+      "completion_adjudication": {
+        "decision_id": "pufiseg-2025_human_completion_20261022",
+        "date": "2026-10-22",
+        "authorized_by": "user",
+        "instruction": "BodyMaps 2024、FETUS 2026、MOOD 2025、PUFISEG 2025 都已经完成",
+        "analysis_id": "pufiseg-2025",
+        "edition_year": 2025,
+        "completion_status": "confirmed",
+        "basis_type": "explicit_user_confirmation",
+        "exact_completion_date": null,
+        "independently_verified_final_completion_by_this_update": false,
+        "qualification": "Explicit human confirmation of actual completion, distinct from plan-based adjudications. Previous documentary evidence and limitations retained; no new public results were independently verified in this update."
+      },
+      "basis": "PUFISEG 2025：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+      "qualification": "Explicit human confirmation of actual completion, distinct from plan-based adjudications. Previous documentary evidence and limitations retained; no new public results were independently verified in this update.",
+      "optional_documentary_limitations": [],
+      "documentary_final_assessment_status_before_human_confirmation": "postponed"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "PUFISEG data-use restrictions"
+      ],
+      "scope": "Explicitly identified competition rules or named source data; not all components implied",
+      "agreement_required": null,
+      "summary_zh": "比赛规则禁止转交或分发数据/链接；后续免费开放为声明，不代表已核验完整开放许可。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "(Docker container and methodology paper), \\n they will be listed in the dishonest list and forbidden to join future PuFiSeg challenges.</p>\\n<p>8. Redistribution, transfer, and sharing of data are prohibited. Participants can only utilise the data \\n independently. After the submission of a challenge paper, the challenge data will be freely accessible (31/01/2026).</p>\\n<p>9. For a fair comparison, participants are not allowed to use any additional data and pre-trained models.</p>\", \"pages\": [ { \"id\": 38496, \"title\": \"overview\", \"content\": \"<h1><strong>PuFiSeg2025: Task 1</strong></h1>\\n<p><strong><i",
+          "source": {
+            "url": "https://www.codabench.org/api/competitions/7330/?format=api",
+            "local_source": "_collection/v4_20261003/sources/68c1deb67bb4baa1.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "(Docker container and methodology paper), \\n they will be listed in the dishonest list and forbidden to join future PuFiSeg challenges.</p>\\n<p>8. Redistribution, transfer, and sharing of data are prohibited. Participants can only utilise the data \\n independently. After the submission of a challenge paper, the challenge data will be freely accessible (31/01/2026).</p>\\n<p>9. For a fair comparison, participants are not allowed to use any additional data and pre-trained models.</p>\", \"pages\": [ { \"id\": 38497, \"title\": \"overview\", \"content\": \"<h1><strong>PuFiSeg2025: Task 2</strong></h1>\\n<p><strong><i",
+          "source": {
+            "url": "https://www.codabench.org/api/competitions/7331/?format=api",
+            "local_source": "_collection/v4_20261003/sources/883c408b4591cfab.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.codabench.org/api/competitions/7330/?format=api",
+          "local_source": "_collection/v4_20261003/sources/68c1deb67bb4baa1.json"
+        },
+        {
+          "url": "https://www.codabench.org/api/competitions/7331/?format=api",
+          "local_source": "_collection/v4_20261003/sources/883c408b4591cfab.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  }
+}

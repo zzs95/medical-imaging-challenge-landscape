@@ -1,0 +1,654 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "muregpro-2023",
+    "challenge_name": "μ-RegPro 2023",
+    "full_name": "MR to Ultrasound Registration for Prostate Challenge",
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2023-R26",
+      "official_programme_row_numbers": "3",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "University College London"
+      ],
+      "registered_authors": [
+        {
+          "name": "Zachary M. C. Baum",
+          "affiliation": "University College London"
+        },
+        {
+          "name": "Shaheer U. Saeed",
+          "affiliation": "University College London"
+        },
+        {
+          "name": "Zhe Min",
+          "affiliation": "University College London"
+        },
+        {
+          "name": "Yipeng Hu",
+          "affiliation": "University College London"
+        },
+        {
+          "name": "Dean C. Barratt",
+          "affiliation": "University College London"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI",
+        "Ultrasound"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Pelvis"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Prostate",
+        "Biopsy targets"
+      ],
+      "diseases": [
+        "Suspected prostate cancer"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Registration",
+      "secondary_task_families": [],
+      "task_families": [
+        "Registration"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Prostate MRI to TRUS Registration",
+          "task_family": "Registration",
+          "task_families": [
+            "Registration"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7844907",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/MRtoUltrasoundRegistrationforProstateChallenge_04-25-2023_10-39-21.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": true,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7844907",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/MRtoUltrasoundRegistrationforProstateChallenge_04-25-2023_10-39-21.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI",
+        "Ultrasound"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7844907",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/MRtoUltrasoundRegistrationforProstateChallenge_04-25-2023_10-39-21.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. CC BY-NC-SA；明确科研、非商业用途，训练/验证资源的赛后公开与测试保密分开。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7844907",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/MRtoUltrasoundRegistrationforProstateChallenge_04-25-2023_10-39-21.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7844907",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/MRtoUltrasoundRegistrationforProstateChallenge_04-25-2023_10-39-21.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Grand Challenge",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7844907",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/MRtoUltrasoundRegistrationforProstateChallenge_04-25-2023_10-39-21.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7844907",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/MRtoUltrasoundRegistrationforProstateChallenge_04-25-2023_10-39-21.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\n1) Dice Similarity Coefficient (DSC): computed between the warped mask of the TRUS image and the mask of the\nMRI image over the prostate gland boundary; averaged over all cases in the test set; in the range [0, 1] where\nhigher indicates better registration\n\n\n2) Robustness of DSC (RDSC): DSC averaged over 68% of the highest-DSC cases in the test set\n\n\n3) Target Registration Error (TRE): registration error based on the l1 norm for anatomical landmarks which are\nindicated by regions identifiable in both sets of imaging, such as zonal structures, waterfilled cysts, and\ncalcifications. A lower TRE between the TRUS and MRI images indicates better registration. TRE is computed per-\ncase, where the TRE for each case if the root-mean-square (RMS) TRE over all landmarks for that case. The mean of\nthe TRE over all cases is then normalised to the range [0, 1] by assuming unregistered images have maximum TRE.\nThis maximum TRE is obtained by determining the maximum individual landmark pre-registration TRE in the test\nset. If any submitted aggregate TREs are higher than the maximum individual landmark pre-registration TRE, the\nvalue will be clipped to 1.\n\n\n4) Robustness of TRE (RTRE): TRE averaged over 68% of lowest-TRE cases in the test set\n\n\n5) Robustness of Targets (RTs): registration error based on the l1 norm for 3 lowest-error landmarks out of 5 total\nlandmarks between the TRUS and MRI images; averaged over all cases in the test set\n\n\n6) 95th Percentile Hausdorff Distance (95%HD): 95th percentile of the distances between boundary points in one\nset to the nearest point in the other set where sets are based on organ boundary points from TRUS and MRI image\nsegmentations; averaged over all cases in the test set; normalised to the range [0, 1] by assuming unregistered\nimages have maximum 95%HD (if any cases submitted with worse performance than unregistered then values are\nclipped to the range [0, 1]).\n\n\n7) Standard Deviation of log Jacobian Determinant (StDJD): computed using the jacobian over the deformation\n\n\n\n\fMR to Ultrasound Registration for Prostate Challenge\n\nfield; averaged over all cases in the test set\n\n\n8) Runtime: the amount of time it takes to compute the warped image using the algorithm; computed over all\ncases and then averaged to obtain the average per-case runtime.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\n1) Dice Similarity Coefficient (DSC): DSC reflects the volumetric overlap between the registered image pair which is\ndesirable in use cases such as intra-operative augmented reality where preoperative images (or features from these\nimages) may be registered and overlaid onto the intraoperative images (Bianchi et al., 2021); furthermore, DSC is\ncapable of reflecting both size and localization agreement between the registered image pair which is useful for\nmedical imaging applications such as intraoperative lesion localization using registration of intra-operative and\npreoperative images (Zijdenbos et al., 1994) (Bertels et al. 2019)\n\n\n2) Robustness of DSC (RDSC): we chose to compute robustness metrics to ignore the effect of outliers if they are\npresent; the value of 68% was chosen as we assumed computed metric values to be normally distributed so it then\nfollows that approximately 68% of the errors must lie within one standard deviation of the mean error, which we\ndeem to be sufficient to ignore the effect of outliers\n\n\n3) Target Registration Error (TRE): TRE specifically allows us to evaluate registration performance for the specific\nfeatures of interest in the biomedical application (Datteri et al. 2012); in this challenge, these include apex, base,\nurethra, visible lesions, junctions between the gland, gland zonal separations, vas deferens and the seminal\nvesicles, and other patient-specific point landmarks such as calcifications and fluid-filled cysts. Furthermore, TRE\nmay also indicate physical plausibility e.g. DSC may be very high but points at the features of interest may not be\nproperly aligned, which is why TRE supplements DSC as a metric for evaluating registration performance\n\n\n4) Robustness of TRE (RTRE): see point 2\n\n\n5) Robustness of Targets (RTs): see point 2; additionally, accounting for robustness over targets allows us to ignore\nsome labelling inconsistencies in the data that may have occurred due to errors and variability in human labels\n\n\n6) 95th Percentile Hausdorff Distance (95%HD): 95%HD indicates the 95th percentile of distances between the\nboundaries of the organs of interest, which is important in clinical applications such as for intraoperative guidance\n(Bianchi et al., 2021)\n\n\n7) Standard Deviation of log Jacobian Determinant (StDJD): StDJD indicates the smoothness of deformation which\nis may indicate the physical plausibility of the deformations (Kabus et al., 2009) (Leow et al., 2007)\n\n\n8) Runtime: the runtime is important in our application of interest, which is preoperative to intraoperative\nregistration, where ideally real-time registration would be desirable to generate any overlays of the preoperative\nimages onto intraoperative images (Bianchi et al., 2021)",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\n\n\n\fMR to Ultrasound Registration for Prostate Challenge\n\nWe compute an overall score for each team using the formula below:\n\n\n0.2*(DSC) + 0.1*(RDSC) + 0.3*(1-TRE) + 0.1*(1-RTRE) + 0.1*(1-RTs) + 0.2*(1-95%HD)\n\n\nThe overall scores will be in the range [0, 1] where higher is better. We will report these to 3 decimal places.\nRankings will be generated based on these scores. In the event of the same scores, we will award a higher rank\nbased on the StDJD and award. In the case of a further tie, we will award a higher rank to the submission with a\nsmaller runtime.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSince we plan to run a Type 2 challenge, where we run the participants' code in a docker container, we do not\nexpect this scenario to arise. In the unlikely event of such a scenario, the minimum score (0) will be given for any\ncase which does not run correctly or for which metrics are unable to be calculated.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nIn our overall score computation we weight TRE the highest, with DSC and 95%HD having lower weights. TRE is\nweighted the highest since it is of most relevance in the clinical application of intraoperative guidance indicating\nerror in alignment between areas of interest and registration of landmarks of interest (Bianchi et al. 2021). We\ninclude 95%HD in our weighting since it ensures registration of boundaries which is of interest for intraoperative\nguidance applications where overlays of pre-operative images may be placed onto intraoperative images (Bianchi\net al. 2021). The robustness measures are weighted least since we want to ensure good performance over the\nentire test set while at the same time minimising effects of outliers e.g. nearly perfectly registered cases or cases left\ncompletely unregistered."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Participants will be asked to Dockerize their trained network/algorithm/method and will submit these to grandchallenges.org for evaluation and ranking on the validation and test sets at the appropriate times in the challenge.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7844907",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/MRtoUltrasoundRegistrationforProstateChallenge_04-25-2023_10-39-21.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2023,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7844907",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/MRtoUltrasoundRegistrationforProstateChallenge_04-25-2023_10-39-21.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.7844907"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://muregpro.github.io/",
+      "registration": "https://doi.org/10.5281/zenodo.7844907",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2023/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.7844907",
+          "resolved_record_id": 7861715,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/MRtoUltrasoundRegistrationforProstateChallenge_04-25-2023_10-39-21.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/MRtoUltrasoundRegistrationforProstateChallenge_04-25-2023_10-39-21.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://muregpro.github.io/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/0222d2eb97c12b23.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "μ-RegPro"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Registration"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "The edition data page links the public Zenodo dataset; research-use restrictions remain distinct from administrative access."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7844907",
+          "excerpt": "roval and patient consent (https://clinicaltrials.gov/ct2/show/record/NCT02341677?view=record). The training and validation data will remain publicly available after the completion of the challenge. The training and validation data may be used within the research remit of this challenge, and in further research-related publications. The training and validation data is not to be used commercially. However, if the desired use is unclear, the organizers ask that those accessing the data refrain from further use or distribution outside of this challenge."
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7844907",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Participants will be asked to Dockerize their trained network/algorithm/method and will submit these to grandchallenges.org for evaluation and ranking on the validation and test sets at the appropriate times in the challenge. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitti [...] sults, and only the last run is officially counted to compute challenge results. We plan to release access to evalua tion on a small validation set ahead of the release of the test set. This evaluation process will allow participants to tune their methods on unseen data and to ensure they avoid any errors with image orientation or preprocessing. Validation data will be released publicly instead of through an evaluation period on grand-challenges."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7844907",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Registration Opens: Monday, April 3 2023 Training Data Release: Monday, April 3 2023 Validation Data Release: Monday, June 5 2023 Test Data Evaluation Period Begins: Monday, July 3 2023 Baseline Performance Release: Monday, July 3 2023 Final Evaluation Deadline: Monday, July 17 2023 Winners Announced & Speaker Invitations: Monday, July 24 2023 MR to Ultrasound Registration for Prostate Challenge Presentation of Results, Challenge Talks, Prizes: MICCAI 2023 (Subject to change based on MICCAI 2023 deadlines)"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7844907",
+          "excerpt": "and test cases comprise paired MRI and TRUS volumes. Each will be accompanied by a MR to Ultrasound Registration for Prostate Challenge complete prostate gland segmentation, as well as at least three additional anatomical landmark annotations (as described in 23). Using intensity-based methods, feature-based methods, or some combination of the two, participants’ should provide a function which accepts: Input: [...] poses of metric computation on the test data. While the test data will not have segmentation labels publicly visible, participants may derive segmentations as part of their inference process. b) State the total number of training, validation and test cases. Training Set - 65 Validation Set - 8 Test Set - 35 c) Explain why a total number of cases and the specific proportion of training, validation and te"
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/0222d2eb97c12b23.json",
+          "url": "https://muregpro.github.io/",
+          "excerpt": "Menu Expand (external link) Copy Copied μ-RegPro µ-RegPro Challenge Welcome to the MR to Ultrasound Registration for Prostate (µ-RegPro) Challenge homepage. Multimodal image registration between pre-operative and intra-operative imaging enables the fusion of clinically important information during many surgical and interventional tasks. The registration of magnetic resonance imaging (MR) and transrectal ultrasound (TRUS) images assists prostate biopsy and focal therapy, arguably having transformed prostate cancer patient care to a less invasive and more localized diagnostic, monitoring and treatment pathway. Though, even with great progress having [...] d MR and TRUS data from a sizable patient cohort are not routinely stored in clinical practice, and publicly-accessible data is scarce and low-quality. Second, annotating anatomical and pathological landmarks on both images - critical in representing corresponding locations for validation - requires expert domain knowledge and experience from multiple disciplines including urology, radiology and pathology. In addition to its prevalence-warranted clinical importance, this application has seen a wide range of registration algorithms proposed; both feature- and intensity-based classical methods and unsupervised or segmentation-driven learning methods have been innovated with some most technically interesting approaches in the field such as biomechanical regularisation and statistical motion modelling. The µ-RegPro ch [...] aging datasets, facilitated with expert annotations for validation, for benchmarking advancement in registration methodologies, as well as for future research in managing the most common non-skin cancer in men. The µ-RegPro challenge will occur as a one-time event with a fixed challenge submission timeline at MICCAI 2023 , as noted in the challenge timeline . The full challenge description can be found here . The challenge data is accessible here . Sample baseline models for training and testing on the challenge data are accessible here . Timeline Date Challenge Milestone Apr. 3 2023 Registration Opens Apr. 28 2023 Training Data Release Jun. 5 2023 Validation Data Release Jul. 3 2023 Test Data Evaluation Begins (“Submissions Open”) Jul. 3 2023 Baseline Algorithm Performance Released Jul. 17 2023 Aug. 28 2023 Test Data Evaluation Closes Jul. 24 2023 Sep. 11 2023 Winners Announced and Speaker Invitations Oct. 8 2023 µ-RegPro Challenge Event @ MICCAI 2023 The Challenge [...]  and data use policies, as well as our code of conduct . Additionally, we request that participants register by e-mailing us with their intent to participate at muregpro@gmail.com . Awards All results will be announced publicly unless errors were made in the data processing. Teams will be permitted to make multiple distinct submissions (must not be a simple change of hyperparameters). The leaderboards will be available to view publicly here . The first-place and runner-up participants will receive additional certificates. All successful participants will receive certificates of participation. Discussion Board TBA on GitHub Organizers Zachary M. C. Baum, PhD, University College London Shaheer U. Saeed, BEng, University College L"
+        },
+        {
+          "section": "Official edition data/registration instructions",
+          "local_source": "_collection/access_flow_review_20261024/sources/ff18703e1b58af43.json",
+          "url": "https://muregpro.github.io/data.html",
+          "excerpt": "University College London Hospital (UCLH), London, UK; 129 underwent both biopsy strategies (visual registration and image fusion) and completed the study. Of these 141 patients, 108 pairs had US images acquired in the transverse plane during their biopsy, and 33 in the sagittal plane. The 108 pairs which were acquired in the transverse plane, as well as their paired MRs, are included in the challenge. The da [...] ve been resampled to 0.8mm^3 isotropic voxel size, which is sufficent for developing and validating registration algorithms. The TRUS volumes were centre cropped to a field of view which includes the required anatomical structures. Training, validation and test cases consist of paired MR and TRUS volumes. Each will be accompanied by a complete prostate gland segmentation, as well as other additional anatomica [...] ctures, water-filled cysts, and calcifications, as well as prostate gland masks are provided in the training and validation data. For the provided annotations, the prostate gland segmentations on the MR images were acquired as part of the Smart Target clinical trial protocols ( Donaldson et al., 2017 ). The gland segmentations on the TRUS images were manually edited by two medical imaging research fellows based on automatically contoured pr"
+        },
+        {
+          "section": "Official edition data/registration instructions",
+          "local_source": "_collection/access_flow_review_20261024/sources/4c1f856e2d38de0f.json",
+          "url": "https://muregpro.github.io/policies.html",
+          "excerpt": "external link) Copy Copied μ-RegPro Participation Policy Submitted methods must be fully automatic. Public and Private Data are permitted, however their use must be disclosed by participants. Organizers may participate and be listed in leaderboards, but are not eligble for awards. All participants must form teams (even if the team is composed of a single participant), and each participant can only be a  [...]  research purposes, due to the restrictions from original ethics approval and patient consent . The training and validation data will remain publicly available after the completion of the challenge, and is accessible here . The training and validation data may be used within the research remit of this challenge, and in further research-related publications. The training and validation data is not to be used commercially. However, if the desired use case is unclear, the organizers ask that those accessing the data refrain from further use or distribution outside of this challenge. Publication Policy We aim to submit a publication which summarizes the dataset and results from the challenge. Members of the top five teams will be invited as co-authors. We encourage participants to submit papers of their contributions and/or any novel methodologies for medical image registration. However, until the challenge paper is published (submission to arXiv is considered sufficient), participants should not refer to challenge-specific data or results. Participants must cite the challenge paper and dataset once they are available. Participant Code of Conduct By participating in this  [...]  advances of any kind Trolling, insulting or derogatory comments, and personal or political attacks Public or private harassment Publishing others’ private information, such as a physical or email address, without their explicit permission Other conduct which could reasonably be considered inappropriate in a professional setting Enforcement Responsibilities Community leaders are responsible for clarifyi"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 65,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 8,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 35,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "United Kingdom"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Single center"
+        },
+        "post_challenge": {
+          "state": "Documented and classifiable",
+          "value": "Training and validation data remain publicly available after challenge for noncommercial research and further publications."
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.7844907",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html"
+        },
+        {
+          "url": "https://muregpro.github.io/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/0222d2eb97c12b23.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/muregpro-2023.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Pelvis"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Prostate",
+        "Biopsy targets"
+      ],
+      "specific_diseases": [
+        "Suspected prostate cancer"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7844907"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/muregpro-2023.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "CC BY-NC-SA；明确科研、非商业用途，训练/验证资源的赛后公开与测试保密分开。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC SA. Additional comments: The data shall be available for use exclusively for research purposes, due to the restrictions from original ethics approval and patient consent (https://clinicaltrials.gov/ct2/show/record/NCT02341677?view=record). The training and validation data will remain publicly available after the completion of the challenge. The training and validation data may be used within the research remit of this challenge, and in further research-related publications. The training and validation data is not to be used commercially. However, if the desired use is unclear, the organizers ask that those accessing the data refrain from further use or distribution outside of this challenge.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.7844907"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7844907"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2023/muregpro-2023.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "United Kingdom"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.7844907",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html"
+                },
+                {
+                  "url": "https://muregpro.github.io/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/0222d2eb97c12b23.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/muregpro-2023.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2023/muregpro-2023.json",
+              "source_field": "resource_characteristics_review.fields.post_challenge",
+              "value": "Training and validation data remain publicly available after challenge for noncommercial research and further publications.",
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.7844907",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2023/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2023.html"
+                },
+                {
+                  "url": "https://muregpro.github.io/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/0222d2eb97c12b23.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/muregpro-2023.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Organizer/platform-side inference",
+          "final_stage": "Designated final scored evaluation stage",
+          "evidence_scope": "Specified protocol",
+          "coding_basis": "Edition-level source rereading, 2026-10-27",
+          "evidence_path": "_collection/miccai_gapfill_20261024/MICCAI-2023-R26/MRtoUltrasoundRegistrationforProstateChallenge_04-25-2023_10-39-21.txt",
+          "evidence_excerpt": "Docker containers for testing (Type 2 challenge) will be run on grand-challenge.org.",
+          "rationale": "The testing executor is explicit; participant-side training is a different phase, not a second final execution track.",
+          "source_urls": "https://miccai.org/sig/sig-challenges/; https://doi.org/10.5281/zenodo.7844907; https://conferences.miccai.org/2023/en/challenges.asp; https://muregpro.github.io/",
+          "completed_execution_claim": "Not inferred from this classification",
+          "review_date": "2026-10-27"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

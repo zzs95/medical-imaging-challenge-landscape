@@ -1,0 +1,777 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cxr-lt-2024",
+    "challenge_name": "CXR-LT 2024",
+    "full_name": "CXR-LT 2024: Long-tailed, multi-label, and zero-shot classification on chest X-rays",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R13",
+      "official_programme_row_numbers": "34",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Weill Cornell Medicine",
+        "The University of Texas at Austin",
+        "Hong Kong University of Science and Technology",
+        "Thomas Jefferson University",
+        "MIT/Harvard",
+        "FACMI, NIH",
+        "NIH"
+      ],
+      "registered_authors": [
+        {
+          "name": "Peng, Yifan",
+          "affiliation": "Weill Cornell Medicine"
+        },
+        {
+          "name": "Lin, Mingquan",
+          "affiliation": "Weill Cornell Medicine"
+        },
+        {
+          "name": "Holste, Gregory",
+          "affiliation": "The University of Texas at Austin"
+        },
+        {
+          "name": "Wang, Song",
+          "affiliation": "The University of Texas at Austin"
+        },
+        {
+          "name": "Zhou, Yiliang",
+          "affiliation": "Weill Cornell Medicine"
+        },
+        {
+          "name": "Chen, Hao",
+          "affiliation": "Hong Kong University of Science and Technology"
+        },
+        {
+          "name": "Wang, Atlas",
+          "affiliation": "The University of Texas at Austin"
+        },
+        {
+          "name": "Flanders, Adam E.",
+          "affiliation": "Thomas Jefferson University"
+        },
+        {
+          "name": "Celi, Leo Anthony",
+          "affiliation": "MIT/Harvard"
+        },
+        {
+          "name": "Lu, Zhiyong",
+          "affiliation": "FACMI, NIH"
+        },
+        {
+          "name": "Shih, George",
+          "affiliation": "Weill Cornell Medicine"
+        },
+        {
+          "name": "Summers, Ronald M.",
+          "affiliation": "NIH"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "X-ray"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Chest"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Lungs",
+        "Pleura",
+        "Cardiac silhouette",
+        "Thoracic bones"
+      ],
+      "diseases": [
+        "Pneumonia",
+        "Tuberculosis",
+        "Pulmonary embolism",
+        "Cardiomyopathy",
+        "Fractures",
+        "Other thoracic findings"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [],
+      "task_families": [
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Long-tailed classification in a large, noisy test set",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991412",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Long-tailed classification in a small, manually annotated test set",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991412",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+            "registered_task_index": 2
+          }
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Zero-shot classification of previously unseen diseases",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991412",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+            "registered_task_index": 3
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991412",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "X-ray"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991412",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "PhysioNet credentialed-data agreement and MIDRC agreement. MIMIC-CXR 数据受 PhysioNet credentialed-data 协议约束；2024 Task 2 另含 MIDRC 协议，需分别满足。不将平台下载权限视为可再分发许可。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991412",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991412",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "CodaLab",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991412",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991412",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nMean average precision (mAP), area under the receiver operating characteristic curve (mAUROC), and F1 score\n(mF1), and expected calibration error (mECE). Each metric will be computed for each class in the test set and then\n\"macro-averaged\" to form overall mAP, mAUROC, mF1, and mECE. The specific implementations of the first three\nmetrics are provided by the scikit-learn library [25]. The primary metric is mAP, and mAUROC will be used to break\nties if necessary. F1 is computed by binarizing predicted probabilities with a threshold of 0.5.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nAs explained in the prior version of CXR-LT (https://codalab.lisn.upsaclay.fr/competitions/12599 -> \"Learn the\nDetails\" -> \"Evaluation\"), the primary evaluation metric for this challenge will be mAP. While mAUROC is a\nstandard metric for related CXR classification datasets, AUROC can be heavily inflated in the face of strong class\nimbalance [26,27]. We argue that mAP (summarizing area under the precision-recall curve) is more appropriate\nfor the long-tailed, multi-label setting since it both (i) measures performance across decision thresholds and (ii)\ndoes not degrade under imbalance [28]. For thoroughness and accordance with the literature, mAUROC will also\nbe calculated and appear on the leaderboard, only being used in ranking to break ties. For additional evaluation\nof precision and recall with a fixed decision threshold, mF1 score will also be calculated and appear on the\nleaderboard. Finally, to provide auxiliary assessment of model calibration (beyond class discrimination), mECE will\nbe computed and appear on the leaderboard.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nRanking will be determined primarily by macro-averaged mAP (higher is better), the average AP value over all\ntarget classes present in the test. If ties are present, mAUROC (higher is better) will be used to break ties. *Each\ntask is completely independent with regard to evaluation and ranking.*\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSubmissions with missing results will be discarded (submission will fail). The evaluation code used by CodaLab will\nensure that predictions for all test set cases are present in the uploaded CSV file before performance evaluation.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\n\n\n\f                   CXR-LT 2024: Long-tailed, multi-label, and zero-shot classification on chest X-rays\n\nRanking is based primarily on mAP for the reasons outlined above. mAUROC is also included (and used as a\ntiebreaker) because it is a \"standard\" metric for related tasks of disease classification on CXR. While we\nunderstand the importance of assessing ranking stability via methods like bootstrapping (discussed later), the\nfinal ranking of teams will depend on the single scalar metric values obtained on the official test set for this task."
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991412",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+            "registered_task_index": 2
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991412",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+            "registered_task_index": 2
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nMean average precision (mAP), area under the receiver operating characteristic curve (mAUROC), and F1 score\n(mF1), and expected calibration error (mECE). Each metric will be computed for each class in the test set and then\n\"macro-averaged\" to form overall mAP, mAUROC, mF1, and mECE. The specific implementations of the first three\nmetrics are provided by the scikit-learn library [25]. The primary metric is mAP, and mAUROC will be used to break\nties if necessary. F1 is computed by binarizing predicted probabilities with a threshold of 0.5.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nAs explained in the prior version of CXR-LT (https://codalab.lisn.upsaclay.fr/competitions/12599 -> \"Learn the\nDetails\" -> \"Evaluation\"), the primary evaluation metric for this challenge will be mAP. While mAUROC is a\n\n\n\n\f                   CXR-LT 2024: Long-tailed, multi-label, and zero-shot classification on chest X-rays\n\nstandard metric for related CXR classification datasets, AUROC can be heavily inflated in the face of strong class\nimbalance [26,27]. We argue that mAP (summarizing area under the precision-recall curve) is more appropriate\nfor the long-tailed, multi-label setting since it both (i) measures performance across decision thresholds and (ii)\ndoes not degrade under imbalance [28]. For thoroughness and accordance with the literature, mAUROC will also\nbe calculated and appear on the leaderboard, only being used in ranking to break ties. For additional evaluation\nof precision and recall with a fixed decision threshold, mF1 score will also be calculated and appear on the\nleaderboard. Finally, to provide auxiliary assessment of model calibration (beyond class discrimination), mECE will\nbe computed and appear on the leaderboard.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nRanking will be determined primarily by macro-averaged mAP (higher is better), the average AP value over all\ntarget classes present in the test. If ties are present, mAUROC (higher is better) will be used to break ties. *Each\ntask is completely independent with regard to evaluation and ranking.*\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSubmissions with missing results will be discarded (submission will fail). The evaluation code used by CodaLab will\nensure that predictions for all test set cases are present in the uploaded CSV file before performance evaluation.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nRanking is based primarily on mAP for the reasons outlined above. mAUROC is also included (and used as a\ntiebreaker) because it is a \"standard\" metric for related tasks of disease classification on CXR. While we\nunderstand the importance of assessing ranking stability via methods like bootstrapping (discussed later), the\nfinal ranking of teams will depend on the single scalar metric values obtained on the official test set for this task."
+        },
+        {
+          "task_id": "task3",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991412",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+            "registered_task_index": 3
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991412",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+            "registered_task_index": 3
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nMean average precision (mAP), area under the receiver operating characteristic curve (mAUROC), and F1 score\n(mF1), and expected calibration error (mECE). Each metric will be computed for each class in the test set and then\n\"macro-averaged\" to form overall mAP, mAUROC, mF1, and mECE. The specific implementations of the first three\nmetrics are provided by the scikit-learn library [25]. The primary metric is mAP, and mAUROC will be used to break\nties if necessary. F1 is computed by binarizing predicted probabilities with a threshold of 0.5.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nAs explained in the prior version of CXR-LT (https://codalab.lisn.upsaclay.fr/competitions/12599 -> \"Learn the\nDetails\" -> \"Evaluation\"), the primary evaluation metric for this challenge will be mAP. While mAUROC is a\nstandard metric for related CXR classification datasets, AUROC can be heavily inflated in the face of strong class\nimbalance [26,27]. We argue that mAP (summarizing area under the precision-recall curve) is more appropriate\nfor the long-tailed, multi-label setting since it both (i) measures performance across decision thresholds and (ii)\ndoes not degrade under imbalance [28]. For thoroughness and accordance with the literature, mAUROC will also\nbe calculated and appear on the leaderboard, only being used in ranking to break ties. For additional evaluation\nof precision and recall with a fixed decision threshold, mF1 score will also be calculated and appear on the\nleaderboard. Finally, to provide auxiliary assessment of model calibration (beyond class discrimination), mECE will\nbe computed and appear on the leaderboard.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nRanking will be determined primarily by macro-averaged mAP (higher is better), the average AP value over all\ntarget classes present in the test. If ties are present, mAUROC (higher is better) will be used to break ties. *Each\ntask is completely independent with regard to evaluation and ranking.*\n\n\n\n\n\f                   CXR-LT 2024: Long-tailed, multi-label, and zero-shot classification on chest X-rays\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSubmissions with missing results will be discarded (submission will fail). The evaluation code used by CodaLab will\nensure that predictions for all test set cases are present in the uploaded CSV file before performance evaluation.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nRanking is based primarily on mAP for the reasons outlined above. mAUROC is also included (and used as a\ntiebreaker) because it is a \"standard\" metric for related tasks of disease classification on CXR. While we\nunderstand the importance of assessing ranking stability via methods like bootstrapping (discussed later), the\nfinal ranking of teams will depend on the single scalar metric values obtained on the official test set for this task."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Prediction CSV files",
+      "platform": "CodaLab",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Teams will submit comma separated value (CSV) files containing their model's predictions on held-out test data via the CodaLab platform. Similar to last year's challenge (https://codalab.lisn.upsaclay.fr/competitions/12599 -> \"Learn the Details\" -> \"Submission Format\"), instructions will be given to ensure that the submitted file is in the proper format (e.g., columns correspond to the test set disease classes and there is a row/prediction for every test set image).",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991412",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "protocol_description": "Teams will submit comma separated value (CSV) files containing their model's predictions on held-out test data via the CodaLab platform. Similar to last year's challenge (https://codalab.lisn.upsaclay.fr/competitions/12599 -> \"Learn the Details\" -> \"Submission Format\"), instructions will be given to ensure that the submitted file is in the proper format (e.g., columns correspond to the test set disease classes and there is a row/prediction for every test set image).",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991412",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+            "registered_task_index": 2
+          }
+        },
+        {
+          "task_id": "task3",
+          "protocol_description": "Teams will submit comma separated value (CSV) files containing their model's predictions on held-out test data via the CodaLab platform. Similar to last year's challenge (https://codalab.lisn.upsaclay.fr/competitions/12599 -> \"Learn the Details\" -> \"Submission Format\"), instructions will be given to ensure that the submitted file is in the proper format (e.g., columns correspond to the test set disease classes and there is a row/prediction for every test set image).",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991412",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+            "registered_task_index": 3
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991412",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10991412"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://bionlplab.github.io/2024_MICCAI_CXRLT/",
+      "registration": "https://doi.org/10.5281/zenodo.10991412",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "resolved_record_id": 10991413,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/CXR-LT 2024_ Long-tailed, multi-label, and zero-sh.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://bionlplab.github.io/2024_MICCAI_CXRLT/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/623c79537cb2accb.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "CXR-LT 2024"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "data-to-model"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "Participants must provide acceptable proof of MIMIC-CXR access; the additional task also requires MIDRC terms."
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "excerpt": "ero-shot classification on chest X-rays Participants are required to sign and abide by the data use agreement for MIMIC-CXR-JPG v2.0.0: https://physionet.org/content/mimic-cxr-jpg/view-dua/2.0.0/. As in last year's challenge, participants are only granted permission to participate if they provide acceptable proof (via Google Form) that they have properly met the registration requirements for MIMIC-CXR-JPG access. Instructions for applying to the prior version of CXR-LT can be found here: https://codalab.lisn.upsaclay.fr/competitions/12599 (\"Learn the Details\" -> \"Terms and Conditions\")."
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Teams will submit comma separated value (CSV) files containing their model's predictions on held-out test data via the CodaLab platform. [...] t (e.g., columns correspond to the test set disease classes and there is a row/prediction for every test set image). b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. CXR-LT 2024: Long-tailed, multi-label, a [...]  a held-out development/validation set (10% of the data). The development phase will feature a live public leaderboard, displaying the performance metrics and ranking of each team's best-performing solution (according to the primary evaluation metric)."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results 05/01/2024: Training data released and challenge (development phase) begins 08/01/2024: Test labels released and final evaluation (test phase) begins 08/04/2024: Test phase ends and competition is closed 08/15/2024: Top-performing teams invited to present at MICCAI 2024 10/06/2024: MICCAI 2024 CXR-LT challenge event"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "excerpt": ""
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "excerpt": "ND (Attribution-NonCommercial-NoDerivs) Participants are required to sign and abide by the data use agreement for MIMIC-CXR-JPG v2.0.0: https://physionet.org/content/mimic-cxr-jpg/view-dua/2.0.0/. As in last year's challenge, participants are only granted permission to participate if they provide acceptable proof (via Google Form) that they have properly met the registration requirements for MIMIC-CXR-JPG access. Instructions for applying to the prior version of CXR-LT can be found here: https://codalab.lisn.upsaclay.fr/competitions/12599 (\"Learn the Details\" -> \"Terms and Conditions\"). Participants also must agree to the MIDRC data use agreement (https://data.midrc.org/dashboard/Public/documentation/DUA.html)."
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Teams will submit comma separated value (CSV) files containing their model's predictions on held-out test data via the CodaLab platform. [...] t (e.g., columns correspond to the test set disease classes and there is a row/prediction for every test set image). b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. CXR-LT 2024: Long-tailed, multi-label, a [...]  a held-out development/validation set (10% of the data). The development phase will feature a live public leaderboard, displaying the performance metrics and ranking of each team's best-performing solution (according to the primary evaluation metric)."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results 05/01/2024: Training data released and challenge (development phase) begins 08/01/2024: Test labels released and final evaluation (test phase) begins 08/04/2024: Test phase ends and competition is closed 08/15/2024: Top-performing teams invited to present at MICCAI 2024 10/06/2024: MICCAI 2024 CXR-LT challenge event"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "excerpt": ""
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "excerpt": "ero-shot classification on chest X-rays Participants are required to sign and abide by the data use agreement for MIMIC-CXR-JPG v2.0.0: https://physionet.org/content/mimic-cxr-jpg/view-dua/2.0.0/. As in last year's challenge, participants are only granted permission to participate if they provide acceptable proof (via Google Form) that they have properly met the registration requirements for MIMIC-CXR-JPG access. Instructions for applying to the prior version of CXR-LT can be found here: https://codalab.lisn.upsaclay.fr/competitions/12599 (\"Learn the Details\" -> \"Terms and Conditions\")."
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Teams will submit comma separated value (CSV) files containing their model's predictions on held-out test data via the CodaLab platform. [...] t (e.g., columns correspond to the test set disease classes and there is a row/prediction for every test set image). b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. CXR-LT 2024: Long-tailed, multi-label, a [...]  a held-out development/validation set (10% of the data). The development phase will feature a live public leaderboard, displaying the performance metrics and ranking of each team's best-performing solution (according to the primary evaluation metric)."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results 05/01/2024: Training data released and challenge (development phase) begins 08/01/2024: Test labels released and final evaluation (test phase) begins 08/04/2024: Test phase ends and competition is closed 08/15/2024: Top-performing teams invited to present at MICCAI 2024 10/06/2024: MICCAI 2024 CXR-LT challenge event"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "excerpt": ""
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 263977,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 37711,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 75422,
+              "unit": "cases",
+              "scope": "Large/zero-shot test",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 609,
+              "unit": "cases",
+              "scope": "Manually annotated test",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "MIMIC single-center plus MIDRC multicenter task; shared training corpus not counted three times.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10991412",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://bionlplab.github.io/2024_MICCAI_CXRLT/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/623c79537cb2accb.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/cxr-lt-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Chest"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Inflammatory / infectious",
+            "Cardiovascular",
+            "Trauma",
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Lungs",
+        "Pleura",
+        "Cardiac silhouette",
+        "Thoracic bones"
+      ],
+      "specific_diseases": [
+        "Pneumonia",
+        "Tuberculosis",
+        "Pulmonary embolism",
+        "Cardiomyopathy",
+        "Fractures",
+        "Other thoracic findings"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/cxr-lt-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "PhysioNet credentialed-data agreement and MIDRC agreement"
+      ],
+      "scope": "Competition data",
+      "agreement_required": true,
+      "summary_zh": "MIMIC-CXR 数据受 PhysioNet credentialed-data 协议约束；2024 Task 2 另含 MIDRC 协议，需分别满足。不将平台下载权限视为可再分发许可。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Registered task/section 1",
+          "text": "CXR-LT 2024: Long-tailed, multi-label, and zero-shot classification on chest X-rays Participants are required to sign and abide by the data use agreement for MIMIC-CXR-JPG v2.0.0: https://physionet.org/content/mimic-cxr-jpg/view-dua/2.0.0/. As in last year's challenge, participants are only granted permission to participate if they provide acceptable proof (via Google Form) that they have properly met the registration requirements for MIMIC-CXR-JPG access. Instructions for applying to the prior version of CXR-LT can be found here: https://codalab.lisn.upsaclay.fr/competitions/12599 (\"Learn the Details\" -> \"Terms and Conditions\").",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10991412"
+          }
+        },
+        {
+          "scope": "Registered task/section 2",
+          "text": "Participants are required to sign and abide by the data use agreement for MIMIC-CXR-JPG v2.0.0: https://physionet.org/content/mimic-cxr-jpg/view-dua/2.0.0/. As in last year's challenge, participants are only granted permission to participate if they provide acceptable proof (via Google Form) that they have properly met the registration requirements for MIMIC-CXR-JPG access. Instructions for applying to the prior version of CXR-LT can be found here: https://codalab.lisn.upsaclay.fr/competitions/12599 (\"Learn the Details\" -> \"Terms and Conditions\"). Participants also must agree to the MIDRC data use agreement (https://data.midrc.org/dashboard/Public/documentation/DUA.html).",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10991412"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991412"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

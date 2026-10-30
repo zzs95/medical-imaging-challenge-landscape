@@ -1,0 +1,744 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "clear-ec-2026",
+    "challenge_name": "CLEAR-EC",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "Standalone",
+      "event_type": "project_or_institution_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Microscopy"
+      ],
+      "submodality": [
+        "Corneal endothelial specular microscopy"
+      ],
+      "body_region": [
+        "Cornea"
+      ],
+      "organ_system": [
+        "Eye"
+      ],
+      "organs_or_structures": [
+        "Endothelial cells"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Regression",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Corneal endothelial quality measurement",
+          "task_family": "Regression",
+          "task_subtype": "Quantitative image biomarkers",
+          "input": [
+            "Specular microscopy image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Cell density (cells/mm²)",
+            "Coefficient of variation",
+            "Hexagonality"
+          ],
+          "granularity": "image",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "Eye-bank specular microscopy",
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 9000,
+        "validation_count": null,
+        "test_count": 1000
+      },
+      "modalities": null,
+      "data_components": [
+        "BMP endothelial images",
+        "Cell density",
+        "Cell-area coefficient of variation",
+        "Hexagonality"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "phase1_test_images": 100,
+        "phase2_test_images": 1000,
+        "training_unit": "Images, not donors."
+      }
+    },
+    "data_access": {
+      "is_public": false,
+      "access_status": "Restricted Zenodo files, organizer approval required",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": false,
+      "commercial_permission_required": null,
+      "redistribution_allowed": false,
+      "license_or_terms": "CLEAR-EC Restricted Research Data License v1.0; noncommercial research/challenge use, no redistribution or third-party upload without written authorization.",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Cell-density mean absolute percentage error",
+            "Coefficient-of-variation mean absolute percentage error",
+            "Hexagonality mean absolute percentage error"
+          ],
+          "ranking": "Absolute percentage error per image, mean across images per endpoint, then equal-weight mean across three endpoints; lower is better."
+        }
+      ],
+      "cross_task_rule": null,
+      "phase_execution_evidence": {
+        "Phase I": {
+          "executed_assessment_status": "confirmed",
+          "example": {
+            "user": "MxieR",
+            "algorithm": "mxier2",
+            "status": "Succeeded",
+            "score": 8.9037,
+            "submission_date": "2026-09-13",
+            "result_date": "2026-09-13",
+            "evaluation_url": "https://clear-ec.grand-challenge.org/evaluation/533c7c0e-2fc7-4d5c-b5ae-a703177a5bef/"
+          },
+          "public_leaderboard_rows": 30,
+          "submission_count": 78,
+          "count_scope": "Rows, submissions and unique teams are distinct."
+        },
+        "Phase II": {
+          "submission_count": 3,
+          "public_leaderboard_rows": 1,
+          "successful_scoring_record_exists": true,
+          "example": {
+            "user": "pxl01",
+            "algorithm": "first submission",
+            "status": "Succeeded",
+            "score": 37.9846,
+            "submission_date": "2026-07-15",
+            "result_date": "2026-07-15",
+            "evaluation_url": "https://clear-ec.grand-challenge.org/evaluation/301b4e67-1795-4182-92b7-63b013813f19/"
+          },
+          "eligible_competitive_final_scoring_status": "not_independently_verified",
+          "final_ranking_status": "not_independently_verified",
+          "winner_announcement_status": "not_located_in_reviewed_sources",
+          "qualification": "Successful technical scoring exists in the phase. The July record precedes announced finalist selection; no assertion that it was definitely testing. One visible ranked row is not independently established as the official competition final ranking; other submissions may be private, failed or unlisted, none inferred."
+        }
+      }
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "phase1_runs_per_team": 3,
+        "phase2_runs_per_team": 2
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "phase1": "July 15–September 14 (organizer timetable)",
+      "phase2": "October 1–November 14 (organizer timetable)",
+      "year_evidence": "2026 platform edition with official dataset release July 9, 2026; organizer timetable omits explicit year.",
+      "phase2_review": "November 15–November 30 (organizer timetable; page omits explicit year)",
+      "conflicting_schedule_evidence": {
+        "organizer_source": "https://opticlab.med.upenn.edu/clear-ec-challenge",
+        "platform_advertised_close": "2026-10-15T10:00",
+        "platform_timezone": null,
+        "platform_source": "https://grand-challenge.org/challenges/?educational=unknown&page=1&submit=Apply+Filters&task_types=1",
+        "platform_evidence_scope": "Official directory search index still shows October 15 cutoff; user additionally reports completed label, not used as proof of final competition outcome.",
+        "resolution": "not_established",
+        "year_qualification": "Organizer month/day timetable interpreted within the existing 2026 edition; no explicit year added to source wording."
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 127,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Debugging Phase: Test your algorithm with sample images",
+            "submission_count": 134,
+            "statistics_snapshot_date": "2026-10-22",
+            "evidence_source": "independently retrieved official platform counter",
+            "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/clear26_statistics_20261022.json"
+          },
+          {
+            "official_phase_name": "Phase I: Screening Phase (Preliminary Evaluation)",
+            "submission_count": 78,
+            "statistics_snapshot_date": "2026-10-22",
+            "evidence_source": "independently retrieved official platform counter",
+            "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/clear26_statistics_20261022.json"
+          },
+          {
+            "official_phase_name": "Phase II: Final Evaluation Phase",
+            "submission_count": 3,
+            "previous_snapshot": {
+              "submission_count": 2,
+              "snapshot_date": "2026-10-02"
+            },
+            "statistics_snapshot_date": "2026-10-22",
+            "evidence_source": "independently retrieved official platform counter",
+            "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/clear26_statistics_20261022.json"
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-22",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions.",
+        "2026-10-21: Final-phase submissions updated from 2 (2026-10-02 snapshot) to 3 from user transcription. Other counts retain their prior snapshot date. Three submissions do not establish three unique teams or three publicly scored entries.",
+        "2026-10-22: Official counters rechecked. Phase I has 30 public leaderboard rows; Phase II has one succeeded July 15 row. These are distinct from 78/3 submissions and not unique-team counts. Early final-phase score does not establish eligible final competition completion."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://clear-ec.grand-challenge.org/",
+      "dataset": "https://zenodo.org/records/21270595",
+      "github": "https://github.com/CLEAR-EC/CLEAR-EC",
+      "challenge_paper": null
+    },
+    "notes": [
+      "Actual output is three endothelial quality measurements; baseline cell segmentation is an internal method, not a required segmentation task. Homepage calls data public, but the dated Zenodo record has restricted files and explicit DUA; use the repository access terms. Conference affiliation not established.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date.",
+      "Baseline repository defines HEX as IoU with fitted hexagons, whereas challenge overview describes six-sided-cell percentage. Baseline implementation is not used to redefine the clinical target.",
+      "2026-10-22: Phase I actual assessment confirmed. Phase II has three submissions and one directly verified early succeeded entry (July 15, score 37.9846), but eligibility/final-ranking status is unverified. Final completion remains not_established. Retain for later outcome follow-up; unrelated CLEAR-EC endometrial cancer trial excluded as evidence.",
+      "2026-10-22: 维持Phase I成功评分及早期Phase II技术评分；正式决赛资格/排名未核实，组织者结果评审延至11月30日。",
+      "2026-10-22: 仍待正式Phase II资格/最终排名；保留已核实早期成功评分，不将其当作正式决赛结果。",
+      "2026-10-22 最新人工分析裁定（替代旧完成待查要求）：CLEAR-EC 2026：按用户明确判定，依据挑战计划视为2026年完成并纳入2026范围；解除完成状态待查项。依据为计划基础上的人工分析裁定，未声称截至审查日已独立核验最终结果。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-22",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://zenodo.org/records/21270595",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/18-33b0db248176.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://clear-ec.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/18-6f312d98bb59.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://clear-ec.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/18-709458062fc5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://bit.ly/CLEAR-EC",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/18-8a3072fc5f67.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://clear-ec.grand-challenge.org/clear-ec/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/18-ba71780d4cad.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://github.com/CLEAR-EC/CLEAR-EC",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/18-f6b30c8b96d9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://clear-ec.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/18-overview.json"
+        },
+        {
+          "type": "user-transcribed platform counter; not independently fetched this turn",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/clear_ec_user_phase_count_20261021.json",
+          "received_on": "2026-10-21",
+          "supports": [
+            "participation_statistics.submissions.by_phase"
+          ]
+        },
+        {
+          "type": "official organizer or public platform evaluation record",
+          "url": "https://clear-ec.grand-challenge.org/challenge/statistics/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/clear26_statistics_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Current platform counters: 134 debugging, 78 Phase I, 3 Phase II; not unique teams or scored-entry counts."
+          ]
+        },
+        {
+          "type": "official organizer or public platform evaluation record",
+          "url": "https://opticlab.med.upenn.edu/clear-ec-challenge",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/clear26_organizer_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Organizer schedule: Phase I July 15–September 14; screening review September 15–30; Phase II October 1–November 14; final review November 15–30. Page omits explicit year."
+          ]
+        },
+        {
+          "type": "official organizer or public platform evaluation record",
+          "url": "https://clear-ec.grand-challenge.org/evaluation/phase-i-screening-phase-preliminary-evaluation/leaderboard/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/clear26_phase1_board_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Public Phase I DataTables response contains 30 displayed rows; not a count of unique teams."
+          ]
+        },
+        {
+          "type": "official organizer or public platform evaluation record",
+          "url": "https://clear-ec.grand-challenge.org/evaluation/533c7c0e-2fc7-4d5c-b5ae-a703177a5bef/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/clear26_phase1_evaluation_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "MxieR / mxier2: Succeeded, score 8.9037, submission and result September 13 2026 14:45 (page UTC context). Confirms preliminary evaluation."
+          ]
+        },
+        {
+          "type": "official organizer or public platform evaluation record",
+          "url": "https://clear-ec.grand-challenge.org/evaluation/phase-ii-final-evaluation-phase/leaderboard/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/clear26_phase2_board_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Public Phase II DataTables response contains one row: pxl01 / first submission, July 15 2026, score 37.9846; eligible final entry status unverified."
+          ]
+        },
+        {
+          "type": "official organizer or public platform evaluation record",
+          "url": "https://clear-ec.grand-challenge.org/evaluation/301b4e67-1795-4182-92b7-63b013813f19/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/clear26_phase2_evaluation_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Phase II evaluation explicitly Succeeded with score 37.9846, created July 15 2026 00:54 (page UTC context), earlier than announced finalist phase. Do not call it definitively a test entry or an eligible final result."
+          ]
+        },
+        {
+          "type": "official directory indexed source",
+          "url": "https://grand-challenge.org/challenges/?educational=unknown&page=1&submit=Apply+Filters&task_types=1",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/clear26_directory_web_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "conflicting schedule; not final results"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://opticlab.med.upenn.edu/clear-ec-challenge",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_dc888d3777f3_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "维持Phase I成功评分及早期Phase II技术评分；正式决赛资格/排名未核实，组织者结果评审延至11月30日。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://opticlab.med.upenn.edu/clear-ec-challenge",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_dc888d3777f3_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "仍待正式Phase II资格/最终排名；保留已核实早期成功评分，不将其当作正式决赛结果。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "event/year: organizer timetable omits the year and conference; 2026 association supported by platform edition and dated public dataset release, exact edition designation requires confirmation.",
+        "submission: external-data policy and runtime constraints not verified.",
+        "labels_and_targets.HEX: clinical target definition differs from baseline fitted-hexagon surrogate; confirm ground-truth units and definition.",
+        "Confirm eligibility and competition role of the July 15 Phase II succeeded entry, or obtain eligible final-phase scores/awards.",
+        "Resolve organizer November timeline versus previously advertised platform October 15 closure; do not infer timetable change or completed final assessment from platform status."
+      ],
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/clear-ec-2026.json",
+          "_collection/verification_20261003/literature_context/clear-ec-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Stage-specific assessment execution and timetable conflict",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "undetermined",
+            "evidence_state": "searched_not_established",
+            "evidence_ids": [],
+            "reason": "Earlier review saw one public final-phase row with a July 15 first-submission date. User now reports 3 total final-phase submissions; these are different counts and do not establish whether later submissions were scored or made by competitors. Clarify submission identities/dates or obtain final results."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/clear26_phase_review_20261022_011918/Unconfirmed/2026/clear-ec-2026.json",
+          "qualification": "User review reconciled with directly fetched public Phase I/II evaluation records; preliminary scores not promoted to final completion."
+        },
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "维持Phase I成功评分及早期Phase II技术评分；正式决赛资格/排名未核实，组织者结果评审延至11月30日。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "partially_completed",
+            "evidence_state": "searched_not_established",
+            "evidence_ids": [
+              "E6",
+              "E8",
+              "E4"
+            ],
+            "reason": "Preliminary assessment is directly confirmed. Phase II has one public succeeded July 15 score, predating finalist selection; eligible competitive final completion remains unverified. Three submissions and platform closure labels do not resolve this."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/Unconfirmed/2026/clear-ec-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "仍待正式Phase II资格/最终排名；保留已核实早期成功评分，不将其当作正式决赛结果。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/Unconfirmed/2026/clear-ec-2026.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "CLEAR-EC 2026：按用户明确判定，依据挑战计划视为2026年完成并纳入2026范围；解除完成状态待查项。依据为计划基础上的人工分析裁定，未声称截至审查日已独立核验最终结果。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/clear_big_plan_decisions_20261022_152203/Unconfirmed/2026/clear-ec-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-24",
+      "any_executed_assessment_status": "confirmed",
+      "final_assessment_status": "confirmed",
+      "phase1": {
+        "executed_assessment_status": "confirmed",
+        "example": {
+          "user": "MxieR",
+          "algorithm": "mxier2",
+          "status": "Succeeded",
+          "score": 8.9037,
+          "submission_date": "2026-09-13",
+          "result_date": "2026-09-13",
+          "evaluation_url": "https://clear-ec.grand-challenge.org/evaluation/533c7c0e-2fc7-4d5c-b5ae-a703177a5bef/"
+        },
+        "public_leaderboard_rows": 30,
+        "submission_count": 78,
+        "count_scope": "Rows, submissions and unique teams are distinct."
+      },
+      "phase2": {
+        "submission_count": 3,
+        "public_leaderboard_rows": 1,
+        "successful_scoring_record_exists": true,
+        "example": {
+          "user": "pxl01",
+          "algorithm": "first submission",
+          "status": "Succeeded",
+          "score": 37.9846,
+          "submission_date": "2026-07-15",
+          "result_date": "2026-07-15",
+          "evaluation_url": "https://clear-ec.grand-challenge.org/evaluation/301b4e67-1795-4182-92b7-63b013813f19/"
+        },
+        "eligible_competitive_final_scoring_status": "not_independently_verified",
+        "final_ranking_status": "not_independently_verified",
+        "winner_announcement_status": "not_located_in_reviewed_sources",
+        "qualification": "Successful technical scoring exists in the phase. The July record precedes announced finalist selection; no assertion that it was definitely testing. One visible ranked row is not independently established as the official competition final ranking; other submissions may be private, failed or unlisted, none inferred."
+      },
+      "remaining_questions": [],
+      "counting_note": "Count as completed in the 2026 analysis by explicit user plan-based adjudication; do not label as independently verified final competition outcome.",
+      "followup": {
+        "status": "optional_documentary_followup_not_required_for_inclusion",
+        "suggested_recheck_on_or_after": "2026-12-01",
+        "basis": "User accepted 2026 completion for analysis on the planned schedule; optional later results retrieval does not block current classification.",
+        "trigger": "Eligible final results or organizer award announcement",
+        "automatic_monitoring_scheduled": false
+      },
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "CLEAR-EC 2026：按用户明确判定，依据挑战计划视为2026年完成并纳入2026范围；解除完成状态待查项。依据为计划基础上的人工分析裁定，未声称截至审查日已独立核验最终结果。",
+        "basis_type": "user_adjudication_based_on_challenge_plan",
+        "user_instruction": "CLEAR-EC 2026 BIG-MRI 2026 按照挑战计划可以视为26年完成",
+        "propagation_status": "Canonical JSON, audit, current triage CSV/Excel, decisions and reports updated; manuscript and aggregate statistics not regenerated."
+      },
+      "programme_status": "completed_for_analysis_by_user_plan_decision",
+      "completion_adjudication": {
+        "decision_id": "clear-ec-2026_plan_based_completion_20261022",
+        "date": "2026-10-22",
+        "authorized_by": "user",
+        "instruction": "CLEAR-EC 2026 BIG-MRI 2026 按照挑战计划可以视为26年完成",
+        "analysis_id": "clear-ec-2026",
+        "analysis_year": 2026,
+        "include_in_2026_scope": true,
+        "completion_for_analysis": "accepted_as_completed_in_2026",
+        "basis_type": "user_adjudication_based_on_challenge_plan",
+        "independently_verified_final_completion": false,
+        "qualification": "Analytical year-end treatment based on user instruction; not retrospective evidence of final completion as of October 22. Dated schedule and actual scoring evidence retained separately."
+      },
+      "basis": "Human confirmation of competition completion on 2026-10-24",
+      "qualification": "Analytical year-end treatment based on user instruction; not retrospective evidence of final completion as of October 22. Dated schedule and actual scoring evidence retained separately.",
+      "optional_documentary_limitations": [
+        "Confirm eligibility and competition role of the July 15 Phase II succeeded entry, or obtain eligible final-phase scores/awards.",
+        "Resolve organizer November timeline versus previously advertised platform October 15 closure; do not infer timetable change or completed final assessment from platform status."
+      ],
+      "documentary_final_assessment_status_before_adjudication": "not_established"
+    },
+    "current_completion_adjudication": {
+      "date": "2026-10-24",
+      "status": "completed",
+      "basis": "Human confirmation",
+      "statement": "User explicitly confirms that the 2026 competitions have been held; supersedes the earlier plan-based inclusion decision.",
+      "source": "User instruction in this conversation",
+      "public_final_scores_independently_verified": false
+    },
+    "conference_affiliation_review": {
+      "review_date": "2026-10-25",
+      "previous_analysis_conference": "Unknown",
+      "analysis_conference": "Standalone",
+      "primary_conference": null,
+      "organizing_arrangement": "Project / institution-led competition",
+      "primary_relationship": "Project/institution organized; no designated conference host",
+      "related_events": [
+        {
+          "venue": "AAO",
+          "year": 2025,
+          "relationship": "Related proof-of-concept study presentation only",
+          "count_as_primary": false
+        },
+        {
+          "venue": "ARVO",
+          "year": null,
+          "relationship": "Related research poster; edition-specific challenge hosting not established",
+          "count_as_primary": false
+        }
+      ],
+      "note_zh": "补为UPenn OPTIC Lab及眼库合作的机构组织赛事；官网AAO2025及ARVO条目为相关研究报告，不是CLEAR-EC主办会议。",
+      "sources": [
+        {
+          "url": "https://opticlab.med.upenn.edu/clear-ec-challenge",
+          "local_source": "_collection/conference_audit_20261025/sources/dc888d3777f3a49.json",
+          "sha256": "ea593bde841fbea73e26e25e5f1592716b794f40ea72cfefc38c88ca27cd8d96"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 9000,
+              "unit": "images",
+              "canonical_field": "dataset.population.train_count",
+              "scope": "Images, not donors",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "phase1 test",
+              "value": 100,
+              "unit": "images",
+              "canonical_field": "dataset.split_details.phase1_test_images",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "phase2 test",
+              "value": 1000,
+              "unit": "images",
+              "canonical_field": "dataset.split_details.phase2_test_images",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [],
+          "source_urls": "https://zenodo.org/records/21270595; https://clear-ec.grand-challenge.org/challenge/statistics/; https://clear-ec.grand-challenge.org/; https://bit.ly/CLEAR-EC; https://clear-ec.grand-challenge.org/clear-ec/; https://github.com/CLEAR-EC/CLEAR-EC; https://opticlab.med.upenn.edu/clear-ec-challenge; https://clear-ec.grand-challenge.org/evaluation/phase-i-screening-phase-preliminary-evaluation/leaderboard/; https://clear-ec.grand-challenge.org/evaluation/533c7c0e-2fc7-4d5c-b5ae-a703177a5bef/; https://clear-ec.grand-challenge.org/evaluation/phase-ii-final-evaluation-phase/leaderboard/; https://clear-ec.grand-challenge.org/evaluation/301b4e67-1795-4182-92b7-63b013813f19/; https://grand-challenge.org/challenges/?educational=unknown&page=1&submit=Apply+Filters&task_types=1"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

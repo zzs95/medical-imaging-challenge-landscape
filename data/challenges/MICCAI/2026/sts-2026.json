@@ -1,0 +1,990 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "sts-2026",
+    "challenge_name": "The 4th Semi-supervised Teeth Segmentation Challenge on Metal Artifact Reduction and Beyond",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "Other"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Oral and maxillofacial"
+      ],
+      "organ_system": [
+        "Dental"
+      ],
+      "organs_or_structures": [
+        "Teeth"
+      ],
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Other",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Semi-supervised Teeth Segmentation and Registration Challenge 2026 (STS 2026): Metal Artifact Reduction and Beyond",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": [
+            "Cone-beam CT",
+            "Intraoral surface scans"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Teeth segmentations",
+            "Registration outputs"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ],
+      "related_task_families": [
+        "Segmentation",
+        "Registration"
+      ],
+      "task_families": [
+        "Registration",
+        "Segmentation",
+        "Structured clinical field prediction"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Registration": "Declared task output",
+        "Segmentation": "Declared task output",
+        "Structured clinical field prediction": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": true,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Teeth"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT",
+        "Other"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "preregistered_data_license": "CC BY-NC",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design.",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Codabench",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "HD95",
+            "Mean Translation Error (MTE)",
+            "Mean Rotation Error (MRE)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19732810",
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Codabench",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": true,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "participant_papers": [
+        {
+          "title": "Segmentation-Guided 3D Dental ROI Transformer for Structured Clinical Report Generation from CBCT",
+          "authors": [
+            "Changkai Ji",
+            "Yusheng Liu",
+            "Yuxian Jiang",
+            "Lisheng Wang"
+          ],
+          "task": "Task 3",
+          "challenge_year": 2026,
+          "publication_status": "accepted_camera_ready_full_text_publicly_available",
+          "source_url": "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_021.html",
+          "full_text_url": "https://papers.miccai.org/miccai-2026-sat/paper/ODIN_challenges_021.pdf",
+          "springer_doi": null,
+          "pages": null,
+          "bibliographic_note": "DOI/pages pending on official listing; site editor is not included as an author.",
+          "results": {
+            "total_score": 10.08,
+            "rank": 2,
+            "phase": "validation",
+            "output": "seven structured report fields generated using deterministic templates"
+          },
+          "evidence_id": "E6"
+        },
+        {
+          "title": "GQ-TSR: Guarded Query Teacher–Student Retrieval for CBCT-to-Clinical Record Prediction",
+          "authors": [
+            "Wei Zeng"
+          ],
+          "task": "Task 3",
+          "challenge_year": 2026,
+          "publication_status": "accepted_camera_ready_full_text_publicly_available",
+          "source_url": "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_009.html",
+          "full_text_url": "https://papers.miccai.org/miccai-2026-sat/paper/ODIN_challenges_009.pdf",
+          "springer_doi": null,
+          "pages": null,
+          "bibliographic_note": "DOI/pages pending on official listing; site editor is not included as an author.",
+          "results": {
+            "weighted_score": 0.26,
+            "field_completion_rate": 1.0,
+            "phase": "public validation",
+            "output": "seven clinical record fields"
+          },
+          "evidence_id": "E7"
+        },
+        {
+          "title": "Landmark-Guided Coarse-to-Fine Registration of Intraoral Scans and Cone-Beam CT",
+          "authors": [
+            "Alex Veronese",
+            "Matteo Lugli",
+            "Omar Carpentiero",
+            "Kevin Marchesini",
+            "Luca Lumetti",
+            "Federico Bolelli"
+          ],
+          "task": "Task 2",
+          "challenge_year": 2026,
+          "publication_status": "accepted_camera_ready_full_text_publicly_available",
+          "source_url": "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_004.html",
+          "full_text_url": "https://papers.miccai.org/miccai-2026-sat/paper/ODIN_challenges_004.pdf",
+          "springer_doi": null,
+          "pages": null,
+          "bibliographic_note": "DOI/pages pending on official listing; site editor is not included as an author.",
+          "results": {
+            "mean_translation_error_mm": 4.988,
+            "mean_rotation_error_degrees": 1.421,
+            "rank_at_evaluation": 1,
+            "phase": "validation",
+            "qualification": "rank at time of evaluation; not final hidden-test ranking"
+          },
+          "evidence_id": "E8"
+        }
+      ],
+      "organizer_retrospective_2026_status": "planned; not located in reviewed sources",
+      "related_2024_report_warning": "Medical Image Analysis 2026, 103986, summarizes STS 2024; publication year does not change edition year."
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://odin-workshops.org/2026/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "2026-10-22: 仍待补：有2026协议，未取得当届最终结果；视觉—语言/报告生成实际评价另待补，不混入旧届STS或ODIN其他赛事。",
+      "2026-10-22: Task 3榜单及论文仍为发布计划；未补足2026视觉—语言/报告生成最终结果，不混用STS 2024回顾。",
+      "2026-10-22: STS 2026：赛事完成按人工判断确认；当届已录用camera-ready论文独立证实Task 3报告生成及Task 2配准的验证阶段评价。验证第一/第二名不作为最终隐藏测试名次，专项最终评价仍未核实。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 11,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://odin-workshops.org/2026/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/7bc00d870e2b8c64.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19732810",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "supports": [
+            "clinical_domain",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://odin-workshops.org/2026/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/sts-2026.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://nixy495.github.io/miccai2026/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_f5abc5ac4e13_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "仍待补：有2026协议，未取得当届最终结果；视觉—语言/报告生成实际评价另待补，不混入旧届STS或ODIN其他赛事。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://nixy495.github.io/miccai2026/mmdental_multimodal.html",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_5b1b02672894_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "Task 3榜单及论文仍为发布计划；未补足2026视觉—语言/报告生成最终结果，不混用STS 2024回顾。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        },
+        {
+          "type": "official MICCAI camera-ready participant paper",
+          "url": "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_021.html",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/sts26_paper_review_0_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Accepted camera-ready participant paper publicly hosted by MICCAI; reports validation-phase scores, not final test results: Segmentation-Guided 3D Dental ROI Transformer for Structured Clinical Report Generation from CBCT"
+          ]
+        },
+        {
+          "type": "official MICCAI camera-ready participant paper",
+          "url": "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_009.html",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/sts26_paper_review_1_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Accepted camera-ready participant paper publicly hosted by MICCAI; reports validation-phase scores, not final test results: GQ-TSR: Guarded Query Teacher–Student Retrieval for CBCT-to-Clinical Record Prediction"
+          ]
+        },
+        {
+          "type": "official MICCAI camera-ready participant paper",
+          "url": "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_004.html",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/sts26_paper_review_2_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Accepted camera-ready participant paper publicly hosted by MICCAI; reports validation-phase scores, not final test results: Landmark-Guided Coarse-to-Fine Registration of Intraoral Scans and Cone-Beam CT"
+          ]
+        },
+        {
+          "type": "official publication plan",
+          "url": "https://nixy495.github.io/miccai2026/challenge_publications.html",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/sts26_paper_review_3_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Official page plans a 2026 retrospective publication; linked Medical Image Analysis 2026 article concerns the 2024 edition."
+          ]
+        },
+        {
+          "type": "user human adjudication",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/sts26_human_adjudication_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "edition completion judgment"
+          ],
+          "qualification": "Not independently verified final hidden-test evidence."
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "dataset.multi_center": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "dataset.center_type": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "evaluation.platform": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container submission via the Codabench platform. (Participants must package their inference code and environment into a Docker image, which will be run on the organizers' server against the hidden test set)."
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container submission via the Codabench platform. (Participants must package their inference code and environment into a Docker image, which will be run on the organizers' server against the hidden test set)."
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container submission via the Codabench platform. (Participants must package their inference code and environment into a Docker image, which will be run on the organizers' server against the hidden test set)."
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container submission via the Codabench platform. (Participants must package their inference code and environment into a Docker image, which will be run on the organizers' server against the hidden test set)."
+        },
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Docker container submission via the Codabench platform. (Participants must package their inference code and environment into a Docker image, which will be run on the organizers' server against the hidden test set)."
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19732810",
+          "local_snapshot": "_collection/sources_other/protocol-19732810.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Docker container submission via the Codabench platform. (Participants must package their inference code and environment into a Docker image, which will be run on the organizers' server against the hidden test set)."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://odin-workshops.org/2026/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/sts-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://odin-workshops.org/2026/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/sts-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://odin-workshops.org/2026/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/sts-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/sts-2026.json",
+          "_collection/verification_20261003/literature_context/sts-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "仍待补：有2026协议，未取得当届最终结果；视觉—语言/报告生成实际评价另待补，不混入旧届STS或ODIN其他赛事。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "undetermined",
+            "evidence_state": "searched_not_established",
+            "evidence_ids": [],
+            "reason": "Current official pages contain protocol and scheduled result-announcement dates, not actual ranked teams. No final scored results recovered; shared ODIN winners concern other challenges."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2026/sts-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "Task 3榜单及论文仍为发布计划；未补足2026视觉—语言/报告生成最终结果，不混用STS 2024回顾。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2026/sts-2026.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "STS 2026：赛事完成按人工判断确认；当届已录用camera-ready论文独立证实Task 3报告生成及Task 2配准的验证阶段评价。验证第一/第二名不作为最终隐藏测试名次，专项最终评价仍未核实。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/sts_validation_results_20261022_134846/MICCAI/2026/sts-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "STS 2026：赛事完成按人工判断确认；当届已录用camera-ready论文独立证实Task 3报告生成及Task 2配准的验证阶段评价。验证第一/第二名不作为最终隐藏测试名次，专项最终评价仍未核实。",
+        "source_urls": [
+          "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_021.html",
+          "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_009.html",
+          "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_004.html",
+          "https://nixy495.github.io/miccai2026/challenge_publications.html"
+        ],
+        "source_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/sts26_human_adjudication_20261022.json",
+        "evidence_ids": [
+          "E6",
+          "E7",
+          "E8",
+          "E9",
+          "E10"
+        ],
+        "propagation_status": "Original/audit/current CSV/Excel/reports updated; manuscript, aggregate figures and release not regenerated."
+      },
+      "remaining_questions": [
+        "Obtain final hidden-test scores/ranks or a 2026 organizer retrospective; validation ranks are not final ranks.",
+        "Confirm objective-specific final evaluation of report generation/vision-language separately from the demonstrated validation evaluation.",
+        "Update bibliographic DOI/pages when released; do not use the 2024 challenge report published in 2026 as 2026 edition evidence."
+      ],
+      "event_state": "completed",
+      "confirmation_basis": "user_human_adjudication",
+      "public_final_results_independently_verified": false,
+      "basis": "STS 2026：赛事完成按人工判断确认；当届已录用camera-ready论文独立证实Task 3报告生成及Task 2配准的验证阶段评价。验证第一/第二名不作为最终隐藏测试名次，专项最终评价仍未核实。",
+      "any_executed_assessment_status": "confirmed",
+      "phase_assessment": {
+        "validation": {
+          "status": "confirmed",
+          "participant_results": [
+            {
+              "title": "Segmentation-Guided 3D Dental ROI Transformer for Structured Clinical Report Generation from CBCT",
+              "authors": [
+                "Changkai Ji",
+                "Yusheng Liu",
+                "Yuxian Jiang",
+                "Lisheng Wang"
+              ],
+              "task": "Task 3",
+              "challenge_year": 2026,
+              "publication_status": "accepted_camera_ready_full_text_publicly_available",
+              "source_url": "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_021.html",
+              "full_text_url": "https://papers.miccai.org/miccai-2026-sat/paper/ODIN_challenges_021.pdf",
+              "springer_doi": null,
+              "pages": null,
+              "bibliographic_note": "DOI/pages pending on official listing; site editor is not included as an author.",
+              "results": {
+                "total_score": 10.08,
+                "rank": 2,
+                "phase": "validation",
+                "output": "seven structured report fields generated using deterministic templates"
+              },
+              "evidence_id": "E6"
+            },
+            {
+              "title": "GQ-TSR: Guarded Query Teacher–Student Retrieval for CBCT-to-Clinical Record Prediction",
+              "authors": [
+                "Wei Zeng"
+              ],
+              "task": "Task 3",
+              "challenge_year": 2026,
+              "publication_status": "accepted_camera_ready_full_text_publicly_available",
+              "source_url": "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_009.html",
+              "full_text_url": "https://papers.miccai.org/miccai-2026-sat/paper/ODIN_challenges_009.pdf",
+              "springer_doi": null,
+              "pages": null,
+              "bibliographic_note": "DOI/pages pending on official listing; site editor is not included as an author.",
+              "results": {
+                "weighted_score": 0.26,
+                "field_completion_rate": 1.0,
+                "phase": "public validation",
+                "output": "seven clinical record fields"
+              },
+              "evidence_id": "E7"
+            },
+            {
+              "title": "Landmark-Guided Coarse-to-Fine Registration of Intraoral Scans and Cone-Beam CT",
+              "authors": [
+                "Alex Veronese",
+                "Matteo Lugli",
+                "Omar Carpentiero",
+                "Kevin Marchesini",
+                "Luca Lumetti",
+                "Federico Bolelli"
+              ],
+              "task": "Task 2",
+              "challenge_year": 2026,
+              "publication_status": "accepted_camera_ready_full_text_publicly_available",
+              "source_url": "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_004.html",
+              "full_text_url": "https://papers.miccai.org/miccai-2026-sat/paper/ODIN_challenges_004.pdf",
+              "springer_doi": null,
+              "pages": null,
+              "bibliographic_note": "DOI/pages pending on official listing; site editor is not included as an author.",
+              "results": {
+                "mean_translation_error_mm": 4.988,
+                "mean_rotation_error_degrees": 1.421,
+                "rank_at_evaluation": 1,
+                "phase": "validation",
+                "qualification": "rank at time of evaluation; not final hidden-test ranking"
+              },
+              "evidence_id": "E8"
+            }
+          ]
+        },
+        "final_hidden_test": {
+          "status": "not_established"
+        }
+      },
+      "objective_assessment": [
+        {
+          "objective": "Vision-language",
+          "value": "not_established",
+          "evidence_ids": [
+            "E6",
+            "E7"
+          ],
+          "reason": "Official camera-ready participant papers document executed Task 3 validation scoring. Final hidden-test assessment for this objective remains unverified; value retains the existing final-assessment definition.",
+          "validation_assessment_status": "confirmed",
+          "final_assessment_status": "not_established",
+          "confirmed_scope": "Image-grounded structured clinical report/record prediction, validation phase only; not all vision-language capabilities."
+        },
+        {
+          "objective": "Report generation",
+          "value": "not_established",
+          "evidence_ids": [
+            "E6",
+            "E7"
+          ],
+          "reason": "Official camera-ready participant papers document executed Task 3 validation scoring. Final hidden-test assessment for this objective remains unverified; value retains the existing final-assessment definition.",
+          "validation_assessment_status": "confirmed",
+          "final_assessment_status": "not_established",
+          "confirmed_scope": "Image-grounded structured clinical report/record prediction, validation phase only; not all vision-language capabilities."
+        }
+      ],
+      "counting_note": "Count as completed only under the explicitly human-adjudicated completion category. Public evidence confirms validation scoring, not final hidden-test scoring. Retain final objective-specific counts separately; no new edition."
+    },
+    "current_output_classification": {
+      "review_date": "2026-10-22",
+      "report_caption_generation": false,
+      "vision_language": true,
+      "structured_clinical_field_prediction": true,
+      "reason": "The strict free-text category excludes prediction/retrieval of seven predefined clinical fields. The organizer explicitly couples CBCT with expert medical records, so the broader image-language objective remains. This is an operational classification, not a judgment about competition completion or the quality of participant methods.",
+      "source_urls": [
+        "https://nixy495.github.io/miccai2026/mmdental_multimodal.html",
+        "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_009.html",
+        "https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_021.html"
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "当届官网要求Codabench注册并加入对应任务，获准访问后下载训练和验证数据。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "当届官网要求Codabench注册并加入对应任务，获准访问后下载训练和验证数据。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_f5abc5ac4e13_20261022.json",
+          "url": "https://nixy495.github.io/miccai2026/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_5b1b02672894_20261022.json",
+          "url": "https://nixy495.github.io/miccai2026/mmdental_multimodal.html"
+        },
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/sts26_paper_review_3_20261022.json",
+          "url": "https://nixy495.github.io/miccai2026/challenge_publications.html"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/sts-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid",
+      "task_families": [
+        "Registration",
+        "Segmentation",
+        "Structured clinical field prediction"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Registration",
+        "Segmentation",
+        "Structured clinical field prediction"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "previous_task_families": [
+        "Registration",
+        "Segmentation",
+        "Structured clinical field prediction"
+      ],
+      "previous_emerging_objectives": [
+        "VLM"
+      ],
+      "task_roles": {
+        "Registration": "Declared task output",
+        "Segmentation": "Declared task output",
+        "Structured clinical field prediction": "Declared task output"
+      },
+      "note_zh": "最终三任务为分割、配准和临床字段预测；结构化字段预测不直接算自由报告，不采用已被最终方案替换的金属伪影消除提案。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://odin-workshops.org/2026/",
+          "local_source": "_collection/sources_other/7bc00d870e2b8c64.json",
+          "sha256": "6e246696f1c85c7d7fcb5c97ad50917f14945d8307694f143ebac77093e6315f"
+        },
+        {
+          "url": "https://zenodo.org/records/19732810",
+          "local_source": "_collection/sources_other/protocol-19732810.txt",
+          "sha256": "05b4f5beb8a6c1106b048f9b0e5dbc858db1c4e9514a10b08ee4693dd722f8a3"
+        },
+        {
+          "url": "https://nixy495.github.io/miccai2026/challenge_publications.html",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/sts26_paper_review_3_20261022.json",
+          "sha256": "08144ea5478974419318010fdfd97ea8248a39f69f6a88ae152b6a23e529a52e"
+        },
+        {
+          "url": "https://nixy495.github.io/miccai2026/evaluation_protocol.html",
+          "local_source": "_collection/task_objective_audit_20261025/sources/sts-2026_642afe237a.txt",
+          "sha256": "686644664dc8372f9d3484c7910258714c5311d46f1f351f08b5aef3baa2f4ca"
+        },
+        {
+          "url": "https://nixy495.github.io/miccai2026/mmdental_multimodal.html",
+          "local_source": "_collection/task_objective_audit_20261025/sources/sts-2026_5b1b026728.txt",
+          "sha256": "d706cfd4638a42fdad03e13770abdbe96173dd6f8b213abfd7f44c861e049e8b"
+        }
+      ]
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "CT",
+        "Other"
+      ],
+      "harmonized_modalities": [
+        "CT",
+        "Optical 3D surface scans"
+      ],
+      "video_format_documented": false,
+      "note": "Replace Other using explicit recorded input/submodality.",
+      "sources": [
+        {
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "local_source": "_collection/sources_other/eecea60a02acc8f1.json"
+        },
+        {
+          "url": "https://odin-workshops.org/2026/",
+          "local_source": "_collection/sources_other/7bc00d870e2b8c64.json"
+        },
+        {
+          "url": "https://zenodo.org/records/19732810",
+          "local_source": "_collection/sources_other/protocol-19732810.txt"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Data was acquired at Sir Run Run Shaw Hospital (Zhejiang University School of Medicine), Hangzhou Dental Hospital, and two other collaborating stomatological centers in China.",
+              "url": "https://zenodo.org/records/19732810",
+              "snapshot": "_collection/sources_other/protocol-19732810.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nData was acquired at Sir Run Run Shaw Hospital (Zhejiang University School of Medicine), Hangzhou Dental\nHospital, and two other collaborating stomatological centers in China.",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Organizer/platform-side inference",
+          "final_stage": "Designated final scored evaluation stage",
+          "evidence_scope": "Specified protocol",
+          "coding_basis": "Edition-level source rereading, 2026-10-27",
+          "evidence_path": "_collection/sources_other/protocol-19732810.txt",
+          "evidence_excerpt": "will be run on the organizers' server against the hidden test set",
+          "rationale": "The submission paragraph explicitly identifies organizer-side hidden-test inference; no online final scores are required to classify this protocol.",
+          "source_urls": "https://conferences.miccai.org/2026/en/challenges.asp; https://odin-workshops.org/2026/; https://zenodo.org/records/19732810; https://nixy495.github.io/miccai2026/; https://nixy495.github.io/miccai2026/mmdental_multimodal.html; https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_021.html; https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_009.html; https://papers.miccai.org/miccai-2026-sat/ODIN_challenges_004.html; https://nixy495.github.io/miccai2026/challenge_publications.html",
+          "completed_execution_claim": "Not inferred from this classification",
+          "review_date": "2026-10-27"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

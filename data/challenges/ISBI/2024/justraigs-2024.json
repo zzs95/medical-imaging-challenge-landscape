@@ -1,0 +1,685 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "justraigs-2024",
+    "challenge_name": "Justified Referral in AI Glaucoma Screening",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "ISBI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Fundus"
+      ],
+      "submodality": [
+        "Color fundus photography"
+      ],
+      "body_region": [
+        "Eye"
+      ],
+      "organ_system": [
+        "Ophthalmic"
+      ],
+      "organs_or_structures": [
+        "Optic nerve head"
+      ],
+      "diseases": [
+        "Glaucoma"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "referral",
+          "official_name": "Referral performance",
+          "task_family": "Classification",
+          "task_subtype": "binary classification",
+          "input": [
+            "Fundus photograph"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Referable glaucoma likelihood"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "justification",
+          "official_name": "Justification performance",
+          "task_family": "Classification",
+          "task_subtype": "multi-label classification",
+          "input": [
+            "Fundus photograph"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Ten glaucoma feature labels"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Two qualified graders per image; glaucoma specialist resolves disagreement on referral; feature disagreement is excluded from evaluation.",
+      "tasks": [
+        {
+          "task_id": "justification",
+          "classes": [
+            "ANRS",
+            "ANRI",
+            "RNFLDS",
+            "RNFLDI",
+            "BCLVS",
+            "BCLVI",
+            "NVT",
+            "DH",
+            "LD",
+            "LC"
+          ]
+        }
+      ],
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": 500,
+      "institutions_description": "EyePACS screening images from 500 sites in the USA; external OHTS centers are not included in this source-center count.",
+      "population": {
+        "patient_count": 61919,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "image_count": 111178
+      },
+      "modalities": [
+        "Fundus"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "image_count": 101442
+        },
+        "test": {
+          "image_count": 9741
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Training: CC BY-NC-SA; test set remains private.",
+      "access_after_challenge": null,
+      "access_scope": "training data; test images and labels remain closed"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker image"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "referral",
+          "metrics": [
+            "Sensitivity at 95% specificity"
+          ],
+          "ranking": "Mean of referral and justification ranks."
+        },
+        {
+          "task_id": "justification",
+          "metrics": [
+            "Modified Hamming distance"
+          ],
+          "ranking": "Only features agreed by both graders are evaluated; mean of referral and justification ranks."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 1,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "development_submissions": 10
+      },
+      "task_outputs": null,
+      "submission_artifact": "Docker image",
+      "execution_mode": "Platform-run",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Scored submission artifact; additional reproducibility/publication materials recorded separately.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "user_supplied_review",
+        "summary": "提交算法容器，由Grand Challenge执行推理；不将容器输出视为直接上传的预测文件。",
+        "evidence_ids": [
+          "E2"
+        ],
+        "source_urls": [
+          "https://justraigs.grand-challenge.org/"
+        ],
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+        "directly_retrieved_protocol_snapshots": [],
+        "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced."
+      }
+    },
+    "schedule": {
+      "training_data_release": "2024-01-08",
+      "final_submission_deadline": "2024-04-20"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "proceedings": "IEEE ISBI 2024",
+      "participant_method_paper_pages": 4
+    },
+    "participation_statistics": {
+      "registered_participants": 427,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": 20,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Development Phase",
+            "submission_count": 445
+          },
+          {
+            "official_phase_name": "Test Phase",
+            "submission_count": 27
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://justraigs.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": "https://doi.org/10.1109/TMI.2025.3596874"
+    },
+    "notes": [
+      "Justification evaluated on referable-glaucoma images only.",
+      "Source-list platform_year is 2023; the official challenge edition is 2024. The output directory follows the official edition.",
+      "2026-10-22 提交方式字段同步：提交算法容器，由Grand Challenge执行推理；不将容器输出视为直接上传的预测文件。"
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://justraigs.grand-challenge.org/publication-rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/71-0d7029b69da2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://justraigs.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/71-13d3b34f01a3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://justraigs.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/71-163e5f7f172a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://justraigs.grand-challenge.org/dataset/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/71-22a8b86400ab.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://justraigs.grand-challenge.org/justraigs/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/71-37dc9328d37a.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://justraigs.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/71-3a12d69d8f2b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://justraigs.grand-challenge.org/how-to-submit/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/71-3aed41977f6c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://justraigs.grand-challenge.org/ranking-prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/71-43588fb0e1b5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://justraigs.grand-challenge.org/important-dates/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/71-69f63d190275.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://justraigs.grand-challenge.org/evaluation-metrics/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/71-f86e56d46a30.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://justraigs.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/71-overview.json"
+        },
+        {
+          "type": "official organizer challenge or dataset paper",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "title": "JustRAIGS: Justified Referral in AI Glaucoma Screening Challenge",
+          "supports": [
+            "dataset.multi_center",
+            "dataset.center_count",
+            "dataset.center_type",
+            "dataset.institutions_description",
+            "dataset.population.patient_count",
+            "dataset.population.image_count",
+            "data_access.access_scope",
+            "evaluation.platform",
+            "submission.platform",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.training.paradigm",
+            "data_usage_mode.training.training_data_downloadable",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.testing.test_data_visible_to_participants",
+            "data_usage_mode.testing.server_side_inference",
+            "participation_statistics.finalist_teams",
+            "links.challenge_paper"
+          ]
+        },
+        {
+          "type": "user_supplied_review",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "source_urls": [
+            "https://justraigs.grand-challenge.org/"
+          ],
+          "supports": [
+            "提交算法容器，由Grand Challenge执行推理；不将容器输出视为直接上传的预测文件。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "External-data policy and exact inference resources require verification from the official submission repository."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "dataset.multi_center": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "dataset.center_count": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "dataset.center_type": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "dataset.institutions_description": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "dataset.population.patient_count": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "dataset.population.image_count": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "evaluation.platform": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "submission.platform": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "data_usage_mode.training.training_data_downloadable": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "data_usage_mode.testing.test_data_visible_to_participants": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "data_usage_mode.testing.server_side_inference": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "participation_statistics.finalist_teams": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        },
+        "links.challenge_paper": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer 2024 challenge paper specifies 500 screening sites, public CC training data and hidden-test Docker evaluation. The paper inconsistently calls 322 participants teams elsewhere, so that count is not converted to registered teams."
+        }
+      },
+      "last_updated": "2026-10-22",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.testing.server_side_inference",
+          "data_usage_mode.testing.test_data_visible_to_participants",
+          "data_usage_mode.training.paradigm",
+          "data_usage_mode.training.training_data_downloadable",
+          "dataset.center_count",
+          "dataset.center_type",
+          "dataset.institutions_description",
+          "dataset.multi_center",
+          "dataset.population.image_count",
+          "dataset.population.patient_count",
+          "evaluation.platform",
+          "links.challenge_paper",
+          "participation_statistics.finalist_teams",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/justraigs-2024.json",
+          "_collection/verification_20261003/literature_context/justraigs-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "user_supplied_review",
+          "summary": "提交算法容器，由Grand Challenge执行推理；不将容器输出视为直接上传的预测文件。",
+          "evidence_ids": [
+            "E2"
+          ],
+          "source_urls": [
+            "https://justraigs.grand-challenge.org/"
+          ],
+          "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/ISBI/2024/justraigs-2024.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "EyePACS screening images from 500 sites in the USA; external OHTS centers are not included in this source-center count.",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+              "snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+              "scope": "Explicit acquisition-institution or region description; partial scope retained.",
+              "value": "EyePACS screening images from 500 sites in the USA; external OHTS centers are not included in this source-center count.",
+              "excerpt": "",
+              "snapshot_date": "2026-10-03",
+              "source_path": "ISBI/2024/justraigs-2024.json",
+              "source_field": "dataset.institutions_description"
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported finalists",
+              "summary": "Source-reported participation count; retain exact unit and scope instead of requiring a harmonized active-team definition.",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12882781/",
+              "snapshot": "_collection/verification_20261003/papers/PMC12882781.json",
+              "scope": "No conversion of registered accounts or submission attempts into teams; reported team/participant definitions remain source-specific. Existing source-linked extraction reconciled in this update; source-reported participation does not establish independent validation of the reported number.",
+              "value": {
+                "finalist_teams": 20
+              },
+              "excerpt": "",
+              "snapshot_date": "2026-10-02",
+              "source_path": "ISBI/2024/justraigs-2024.json",
+              "source_field": "participation_statistics"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

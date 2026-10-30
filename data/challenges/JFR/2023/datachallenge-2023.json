@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "datachallenge-2023",
+    "challenge_name": "SFR/JFR Data Challenge 2023",
+    "full_name": "SFR/JFR Data Challenge 2023",
+    "year": 2023,
+    "event": {
+      "conference": "JFR 2023",
+      "event_type": "conference_challenge",
+      "parent_event": null
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Pancreas"
+      ],
+      "diseases": [
+        "Pancreatic malignancy",
+        "Benign pancreatic masses"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "task_families": [
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Pancreatic mass presence and benign/malignant classification",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "source_url": "https://www.sciencedirect.com/science/article/pii/S2211568424001633"
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "CT"
+      ],
+      "population": null,
+      "source_reference": "https://www.sciencedirect.com/science/article/pii/S2211568424001633",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Challenge-specific signed data-use charter. 组织者论文明确：每位团队成员须签署数据使用章程，数据限本届挑战使用；未取得完整章程，其他权限不推断。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "Data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": false,
+        "submission_artifact": "Prediction scores"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": null,
+      "metrics": [
+        {
+          "name": "AUC",
+          "averaging": "macro",
+          "weight": 0.5
+        },
+        {
+          "name": "Precision",
+          "averaging": "macro",
+          "weight": 0.25
+        },
+        {
+          "name": "Sensitivity",
+          "averaging": "macro",
+          "weight": 0.25
+        }
+      ],
+      "source_reference": "https://www.em-consulte.com/showarticlefile/1691063/main.pdf",
+      "execution_note": "Nextcloud is the prediction-delivery platform; organizer scoring is documented, but scoring software and automatic triggering by Nextcloud are not specified.",
+      "model_executor": "Participants",
+      "scoring_executor": "Organizers using hidden labels",
+      "ranking": {
+        "method": "Weighted sum of macro-averaged metrics",
+        "weights": {
+          "macro_auc": 0.5,
+          "macro_precision": 0.25,
+          "macro_sensitivity": 0.25
+        },
+        "formula": "0.5 * macro_auc + 0.25 * macro_precision + 0.25 * macro_sensitivity"
+      },
+      "scoring_software": null,
+      "automatic_scoring_trigger": null
+    },
+    "submission": {
+      "submission_type": "Prediction/result files",
+      "platform": "Nextcloud (HDS-certified platform)",
+      "source_reference": "https://www.em-consulte.com/showarticlefile/1691063/main.pdf",
+      "runtime_limits": null,
+      "primary_artifacts": [
+        "Three prediction scores per CT: no lesion, benign mass, malignant mass"
+      ],
+      "additional_artifacts": [],
+      "execution": "Participants download encrypted test data, run inference after password release and upload prediction scores to Nextcloud; organizers score using hidden labels.",
+      "format_by_task_or_phase": [
+        {
+          "phase": "final test",
+          "unit": "CT case",
+          "labels": [
+            "No lesion",
+            "Benign mass",
+            "Malignant mass"
+          ],
+          "scores_per_case": 3,
+          "score_range": [
+            0,
+            1
+          ],
+          "file_extension": null,
+          "column_template": null
+        }
+      ],
+      "format_limitations": [
+        "Prediction file extension and column template not specified.",
+        "Exact Nextcloud submission URL not disclosed.",
+        "Scoring software name and automatic scoring trigger not specified."
+      ],
+      "source_urls": [
+        "https://www.em-consulte.com/showarticlefile/1691063/main.pdf",
+        "https://doi.org/10.1016/j.diii.2024.07.002"
+      ],
+      "evidence_basis": "Human review of edition-specific organizer retrospective paper, sections 2.2, 2.6 and 3.2, journal pages 396–397",
+      "review_date": "2026-10-24",
+      "submission_evidence_status": "Confirmed by source-linked human review",
+      "review_source": "_collection/jfr2023_protocol_review_20261024/user_review.txt",
+      "additional_materials": [],
+      "portal_review_source": "_collection/jfr2023_protocol_review_20261024/user_review.txt"
+    },
+    "schedule": {
+      "edition_year": 2023,
+      "source_reference": "https://www.sciencedirect.com/science/article/pii/S2211568424001633",
+      "final_test": {
+        "encrypted_data_available": "One day before final inference",
+        "date": "2023-10-15",
+        "password_release_time": "11:00",
+        "prediction_upload_deadline_time": "14:00",
+        "timezone": null,
+        "source_reference": "https://www.em-consulte.com/showarticlefile/1691063/main.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://www.sciencedirect.com/science/article/pii/S2211568424001633",
+      "supporting_sources": [
+        "https://health-data-hub.fr/projets/data-challenge-ia",
+        "https://www.jfr.plus/system/files/medias/documents/2023/10/JFR-DOSSIERDEPRESSE-sept2023%20VF.pdf"
+      ]
+    },
+    "notes": [
+      "Result paper published in 2024 (DOI 10.1016/j.diii.2024.07.002), but the competition is 2023. Lesion presence/type are scan-level classification outputs."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.sciencedirect.com/science/article/pii/S2211568424001633",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/4d26f2f9512b14a3.json",
+          "http_status": 403,
+          "browser_verification": "Primary source readable through browser/search rendering",
+          "verification_notes": "_collection/other_venues_audit_20261024/browser_verified_primary_facts.json"
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://health-data-hub.fr/projets/data-challenge-ia",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/146dd5948a1f42fe.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.jfr.plus/system/files/medias/documents/2023/10/JFR-DOSSIERDEPRESSE-sept2023%20VF.pdf",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": null,
+          "http_status": 404,
+          "browser_verification": "Primary source readable through browser/search rendering",
+          "verification_notes": "_collection/other_venues_audit_20261024/browser_verified_primary_facts.json"
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://esploro.umontpellier.fr/esploro/outputs/journalArticle/Detection-and-characterization-of-pancreatic-lesion/99162826209311",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        },
+        {
+          "type": "Source cited in human portal/classification review",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39048455/",
+          "review_record": "_collection/portal_classification_review_20261024/user_review.txt",
+          "reviewed_on": "2026-10-24"
+        },
+        {
+          "type": "Organizer retrospective paper cited in human review",
+          "url": "https://www.em-consulte.com/showarticlefile/1691063/main.pdf",
+          "doi": "10.1016/j.diii.2024.07.002",
+          "publication_year": 2024,
+          "competition_year": 2023,
+          "review_record": "_collection/jfr2023_protocol_review_20261024/user_review.txt",
+          "sections": [
+            "2.2",
+            "2.6",
+            "3.2"
+          ],
+          "journal_pages": [
+            396,
+            397
+          ]
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields",
+        "Prediction file extension and column template not specified.",
+        "Exact Nextcloud submission URL not disclosed.",
+        "Scoring software name and automatic scoring trigger not specified."
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py",
+      "submission_human_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/jfr2023_protocol_review_20261024/user_review.txt",
+        "basis": "User-provided source-linked human review of organizer paper",
+        "sections": [
+          "2.2",
+          "2.6",
+          "3.2"
+        ],
+        "journal_pages": [
+          396,
+          397
+        ],
+        "independent_full_text_access_this_turn": false,
+        "scope": "Final submission artifact, delivery platform, inference executor and weighted scoring formula"
+      },
+      "portal_classification_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/jfr2023_protocol_review_20261024/user_review.txt",
+        "basis": "User-provided source-linked human review of organizer paper",
+        "sections": [
+          "2.2",
+          "2.6",
+          "3.2"
+        ],
+        "journal_pages": [
+          396,
+          397
+        ],
+        "independent_full_text_access_this_turn": false,
+        "scope": "Final submission artifact, delivery platform, inference executor and weighted scoring formula"
+      }
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Account registration",
+      "data_model_flow": "data-to-model"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": "Organizer retrospective paper reports ten teams and final scores",
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "The 2023 organizer report describes team registration, individual signed charters and access to anonymized images and labels."
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "ScienceDirect",
+          "local_source": "_collection/other_venues_audit_20261024/sources/4d26f2f9512b14a3.json",
+          "url": "https://www.sciencedirect.com/science/article/pii/S2211568424001633",
+          "excerpt": ""
+        },
+        {
+          "section": "Data Challenge IA | Health Data Hub",
+          "local_source": "_collection/other_venues_audit_20261024/sources/146dd5948a1f42fe.json",
+          "url": "https://health-data-hub.fr/projets/data-challenge-ia",
+          "excerpt": " traitement Article 9 du RGPD (Exception permettant de traiter des données de santé) (2)(i) intérêt public dans le domaine de la santé publique Transfert de données personnelles vers un pays hors UE Non Droits des personnes Chaque partie au projet (patients, centres inclueurs, équipes participant au Data Challenge) sont informées de la réglementation qui leur est applicable. La Société française de radi"
+        },
+        {
+          "section": "Organizer results paper: data distribution",
+          "local_source": "_collection/access_flow_review_20261024/sfr2023_results.txt",
+          "url": "https://www.em-consulte.com/showarticlefile/1691063/main.pdf",
+          "excerpt": "provided with cre- Abdominal and Digestive Imaging (SIAD) have jointly initiated a data dentials to access and upload their DICOM ﬁles to the HDS platform challenge, an innovative approach to explore and potentially solve to ensure secure exchange, without access to the other center’s complex medical problems using AI. uploads. Each upload to the platform was reviewed by the organizing Data challenges have proven effective in validating proposed solu- team to ensure that the inclusion criteria were met. The uploading tions to critical health issues. They cr [...] a pancre- atic mass and distinguish between benign and malignant pancreatic The composition of each registered team required the participa- masses on abdominal CT examinations. tion of at least one radiologist, one data scientist, and one engineering 396 © 2026 Elsevier Masson SAS. Tous droits réservés. - Document téléchargé le 25/10/2026 Il est interdit et illégal de diffuser ce document. T. Aouad, V. La [...] ch laboratories. As part of the Centers that participated in uploading 1037 CT examinations for the registration process, team leaders were asked to complete a form 2023 SFR data challenge. detailing their team’s composition, contact information, and afﬁlia- Name of the participating center Number of CT examinations tions. Each team member was required to sign a data use charter spe- Hospices Civils de Lyon 150 ciﬁc to the data challenge. Access to the anonymized data and labels ^ pital Saint Joseph Paris Ho 100 was granted only after all team members had signed. All teams were ^ pital Kremlin-Bice Ho ^tre 70 required to delete the image data upon completion of the challenge. CHU Reims 61 The data release was done in three phases. During the ﬁrst phase, the CHU Nantes 55 ^ pital Cochin Ho 54 ﬁrst training batch was released one month before the data challenge to ^ pital Paul Brousse Ho 52 train the main algorithm. During the second phase, the second training ^ pital Pitie Ho \u0001-Salpe ^trie \u0003re 51 batch was released two days before the data challenge for model reﬁne- CHU Montpellier 50 ment. The ﬁnal data challenge pha [...] ion period. class. The evaluation consisted of three metrics: the mean sensitivity The results were publicly announced during the SFR annual meet- (MS), the mean precision (MP), and the mean area under the curve ing on October 16, 2023 and the winning team was Punkcreas (Phi- (MAUC) [17]. To calculate the MS, the sensitivity of each class was cal- lips) with a ﬁnal score of 0.72. Detailed results are re [...] valuate their or normalization methods. In addition, to address this concern, four models. The ﬁrst training batch (n = 500) was released on September centers were designated solely for external testing purposes, to mea- 7, 2023, giving them one month to develop their main algorithms sure the generalizability of the proposed algorithms. 397 © 2026 Elsevier Masson SAS. Tous droits réservés. - Document téléchargé le 25/10/2026 Il est  [...] ing agencies in the simultaneous artiﬁcial intelligence data challenges on ultrasound, CT, and MRI. public, commercial, or not-for-proﬁt sectors. Diagn Interv Imaging 2019;100:199–209. [13] Lassau N, Bousaid I, Chouzenoux E, Lamarque JP, Charmettant B, Azoulay M, et al. Three artiﬁcial intelligence data challenges based on CT and MRI. Diagn Interv Author contribution Imaging 2020;101:783–8. [14] Lassau  [...]  multi-class classiﬁcation: an overview. Acknowledgments https://doi.org/10.48550/arXiv.2008.05756 (accessed 22 January 2024). [18] Yu AC, Mohajer B, Eng J. External validation of deep learning algorithms for radio- The authors would like to thank the French Society of Radiology logic diagnosis: a systematic review. Radiol Artif Intell 2022;4:e210064. [19] Toshima F, Watanabe R, Inoue D, Yoneda N, Yamam"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train batch 1",
+              "value": 500,
+              "unit": "exams",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train batch 2",
+              "value": 232,
+              "unit": "exams",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test internal",
+              "value": 139,
+              "unit": "exams",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test external",
+              "value": 166,
+              "unit": "exams",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "France"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Documented and classifiable",
+          "value": "All teams required to delete image data after completion."
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": {
+            "value": 10,
+            "unit": "participating teams",
+            "comparable": false,
+            "details": "Paper reports10 participating teams and93 members; only top3 final scores published."
+          }
+        }
+      },
+      "review_note": "Organizer report:18 French acquisition centers;14 development/4 external centers; no inference from 2022 rules.",
+      "sources": [
+        {
+          "url": "https://www.sciencedirect.com/science/article/pii/S2211568424001633",
+          "local_source": "_collection/other_venues_audit_20261024/sources/4d26f2f9512b14a3.json"
+        },
+        {
+          "url": "https://health-data-hub.fr/projets/data-challenge-ia",
+          "local_source": "_collection/other_venues_audit_20261024/sources/146dd5948a1f42fe.json"
+        },
+        {
+          "url": "https://doi.org/10.1016/j.diii.2024.07.002",
+          "local_source": "_collection/access_flow_review_20261024/sfr2023_results.txt"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/datachallenge-2023.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer",
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Pancreas"
+      ],
+      "specific_diseases": [
+        "Pancreatic malignancy",
+        "Benign pancreatic masses"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/4d26f2f9512b14a3.json",
+          "url": "https://www.sciencedirect.com/science/article/pii/S2211568424001633"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/146dd5948a1f42fe.json",
+          "url": "https://health-data-hub.fr/projets/data-challenge-ia"
+        },
+        {
+          "local_source": "_collection/access_flow_review_20261024/sfr2023_results.txt",
+          "url": "https://doi.org/10.1016/j.diii.2024.07.002"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/datachallenge-2023.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "Challenge-specific signed data-use charter"
+      ],
+      "scope": "Competition data",
+      "agreement_required": true,
+      "summary_zh": "组织者论文明确：每位团队成员须签署数据使用章程，数据限本届挑战使用；未取得完整章程，其他权限不推断。",
+      "qualifications": [],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_review_20261024/sfr2023_results.txt",
+          "url": "https://www.em-consulte.com/showarticlefile/1691063/main.pdf"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "JFR/2023/datachallenge-2023.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "France"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://www.sciencedirect.com/science/article/pii/S2211568424001633",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/4d26f2f9512b14a3.json"
+                },
+                {
+                  "url": "https://health-data-hub.fr/projets/data-challenge-ia",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/146dd5948a1f42fe.json"
+                },
+                {
+                  "url": "https://doi.org/10.1016/j.diii.2024.07.002",
+                  "local_source": "_collection/access_flow_review_20261024/sfr2023_results.txt"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/datachallenge-2023.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "JFR/2023/datachallenge-2023.json",
+              "source_field": "resource_characteristics_review.fields.post_challenge",
+              "value": "All teams required to delete image data after completion.",
+              "sources": [
+                {
+                  "url": "https://www.sciencedirect.com/science/article/pii/S2211568424001633",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/4d26f2f9512b14a3.json"
+                },
+                {
+                  "url": "https://health-data-hub.fr/projets/data-challenge-ia",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/146dd5948a1f42fe.json"
+                },
+                {
+                  "url": "https://doi.org/10.1016/j.diii.2024.07.002",
+                  "local_source": "_collection/access_flow_review_20261024/sfr2023_results.txt"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/datachallenge-2023.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

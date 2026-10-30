@@ -1,0 +1,577 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "iugc-2025",
+    "challenge_name": "Landmark Detection Challenge for Intrapartum Ultrasound Measurement Meeting the Actual Clinical Assessment of Labor Progress",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Ultrasound"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Pelvis"
+      ],
+      "organ_system": [
+        "Obstetric"
+      ],
+      "organs_or_structures": [
+        "Intrapartum ultrasound landmarks"
+      ],
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Localization",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Landmark Detection for Intrapartum Ultrasound Measurement",
+          "task_family": "Localization",
+          "task_subtype": null,
+          "input": [
+            "Intrapartum ultrasound image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Anatomical landmark coordinates",
+            "Ultrasound measurements"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": true,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Intrapartum ultrasound landmarks"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Ultrasound"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Not established",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 当届数据使用条款列 CC BY-NC-SA。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; round 3",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "Post-challenge release",
+          "category": "Public download",
+          "access_steps": [
+            "Zenodo release reported 2025-10-15"
+          ],
+          "manual_review": false
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Mean Radial Error (MRE)",
+            "Ultrasound parameter measurement error"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.15081528"
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://www.codabench.org/competitions/7108/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 41,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/40cba6887cd7753d.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://www.codabench.org/competitions/7108/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/908b57cdb536884b.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/15081528",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-15081528.txt",
+          "supports": [
+            "clinical_domain",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://www.codabench.org/competitions/7108/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/iugc-2025.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/15081528",
+          "local_snapshot": "_collection/sources_other/protocol-15081528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: For the purpose of result verification and to encourage reproducibility and transparency, all entries must submit the following: (1) Docker containers. (2) A paper highlighting the contribution of the submission, but not limited to, the method, experimental results and analysis, prepared according to the format stipulated by MICCAI 2025. All challenge entries should be accompanied by a description of the method. (3) GitHub repository URL containing all source codes for their implemented method a"
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/15081528",
+          "local_snapshot": "_collection/sources_other/protocol-15081528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: For the purpose of result verification and to encourage reproducibility and transparency, all entries must submit the following: (1) Docker containers. (2) A paper highlighting the contribution of the submission, but not limited to, the method, experimental results and analysis, prepared according to the format stipulated by MICCAI 2025. All challenge entries should be accompanied by a description of the method. (3) GitHub repository URL containing all source codes for their implemented method a"
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://www.codabench.org/competitions/7108/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/iugc-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://www.codabench.org/competitions/7108/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/iugc-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://www.codabench.org/competitions/7108/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/iugc-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "submission.evidence_stage",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/iugc-2025.json",
+          "_collection/verification_20261003/literature_context/iugc-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Not established",
+        "state": "Not established",
+        "rationale": "2025-10-15的Zenodo公开记录晚于比赛，赛后发布不能证明当届训练数据准入。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "Post-challenge release",
+            "category": "Public download",
+            "access_steps": [
+              "Zenodo release reported 2025-10-15"
+            ],
+            "manual_review": false
+          }
+        ],
+        "evidence_basis": "User-supplied round 3 source and temporal-scope review; no new access classification asserted",
+        "confidence": "Partial",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "300例标注及31421例未标注训练数据提供参赛者；100例可见验证，501例隐藏测试由平台运行方法。"
+      },
+      "decision_history": [
+        "300例标注及31421例未标注训练数据提供参赛者；100例可见验证，501例隐藏测试由平台运行方法。",
+        "2026-10-24 round 3: 2025-10-15的Zenodo公开记录晚于比赛，赛后发布不能证明当届训练数据准入。",
+        "2026-10-25 access completion: 后续 Zenodo 公开时间不能代替赛中数据准入证据。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/protocol-15081528.txt",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/iugc-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Not established",
+        "rationale": "后续 Zenodo 公开时间不能代替赛中数据准入证据。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/908b57cdb536884b.json",
+          "_collection/access_completion_20261025/sources/d0d37166492ae1fb.json",
+          "_collection/access_completion_20261025/sources/91ff37c42bc1a2bc.json",
+          "_collection/access_completion_20261025/sources/c81bf8bd96b2837c.json",
+          "_collection/access_completion_20261025/sources/00d0162299036df4.json"
+        ]
+      }
+    },
+    "review_coding": {
+      "development_access": "Not established",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届数据使用条款列 CC BY-NC-SA。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "CC BY-NC-SA (Attribution-NonCommercial-ShareAlike)",
+          "source": {
+            "url": "https://zenodo.org/records/15081528",
+            "local_source": "_collection/sources_other/protocol-15081528.txt"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15081528",
+          "local_source": "_collection/sources_other/protocol-15081528.txt"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Pelvis"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "当届方案明确为需评估胎头站位的产妇，目标为产程生物测量，不将常规分娩监测编码为疾病。",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15081528",
+          "local_source": "_collection/sources_other/protocol-15081528.txt"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "当届方案明确为需评估胎头站位的产妇，目标为产程生物测量，不将常规分娩监测编码为疾病。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2025/iugc-2025.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "First Affiliated Hospital of Jinan University Zhujiang Hospital of Southern Medical University Nanfang Hospital of Southern Medical University Third Affiliated Hospital of Sun Yat-sen University Guangzhou Women and Children’s Medical Center of Guangzhou Medical University Third Affiliated Hospital of Guangzhou Medical University Shenzhen People’s Hospital Chengdu Women’s and Children’s Central Hospital of the University of Electronic Science and Technology of China Page 11 of 17 Biomedical Image Analysis ChallengeS (BIAS) Initiative Landmark Detection Challenge for Intrapartum Ultrasound Measurement Meeting Wuxi People's Hospital Department of Obstetrics and Gynecology of Fudan University Lu'an City Jin'an District Maternal and Child Health Hospital Lianyungang Maternal and Child Health Hospital Weifang Maternal and Child Health Hospital Qianjiang Central Hospital Shantou Maternal and Child Health Hospital Ma'anshan Maternal and Child Health Hospital Zhangjiagang First People's Hospital Peking University First Hospital Taizhou First People's Hospital Xianju County People's Hospital Sanmen County People's Hospital Foshan Nanhai District People's Hospital Zhongshan Boai Hospital Dongguan Donghua Hospital",
+              "url": "https://zenodo.org/records/15081528",
+              "snapshot": "_collection/sources_other/protocol-15081528.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nFirst Affiliated Hospital of Jinan University\nZhujiang Hospital of Southern Medical University\nNanfang Hospital of Southern Medical University\nThird Affiliated Hospital of Sun Yat-sen University\nGuangzhou Women and Children’s Medical Center of Guangzhou Medical University\nThird Affiliated Hospital of Guangzhou Medical University\nShenzhen People’s Hospital\nChengdu Women’s and Children’s Central Hospital of the University of Electronic Science and Technology of China\n\n\n\n                                                      Page 11 of 17                Biomedical Image Analysis ChallengeS (BIAS) Initiative\n\f                  Landmark Detection Challenge for Intrapartum Ultrasound Measurement Meeting\n\n\n\nWuxi People's Hospital\nDepartment of Obstetrics and Gynecology of Fudan University\nLu'an City Jin'an District Maternal and Child Health Hospital\nLianyungang Maternal and Child Health Hospital\nWeifang Maternal and Child Health Hospital\nQianjiang Central Hospital\nShantou Maternal and Child Health Hospital\nMa'anshan Maternal and Child Health Hospital\nZhangjiagang First People's Hospital\nPeking University First Hospital\nTaizhou First People's Hospital\nXianju County People's Hospital\nSanmen County People's Hospital\nFoshan Nanhai District People's Hospital\nZhongshan Boai Hospital\nDongguan Donghua Hospital",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Open call (challenge opens for new submissions after conference deadline)",
+              "url": "https://zenodo.org/records/15081528",
+              "snapshot": "_collection/sources_other/protocol-15081528.txt",
+              "scope": "Organizer specifies continued evaluation or persistent results; implemented availability is not inferred from this plan.",
+              "value": null,
+              "excerpt": "mail.com)\n\nLife cycle type\n\nDefine the intended submission cycle of the challenge. Include information on whether/how the challenge will be\ncontinued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time\nevent). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some\n\n\n                                                        Page 5 of 17              Biomedical Image Analysis ChallengeS (BIAS) Initiative\n\f                  Landmark Detection Challenge for Intrapartum Ultrasound Measurement Meeting\n\nmodifications (repeated event).\n\n\nExamples:\n\n  • One-time event with fixed conference submission deadline\n\n  • Open call (challenge opens for new submissions after conference deadline)\n\n  • Repeated event with annual fixed conference submission deadline\n\nOpen call (challenge opens for new submissions after conference deadline)\n\nChallenge venue and platform\n\na) Report the event (e.g. conference) that is associated with the challenge (if any).\n\nASMUS 2025: The 6th International Workshop on Advances in Simplifying Medical UltraSound(a half-day session)",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

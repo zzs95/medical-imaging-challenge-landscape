@@ -1,0 +1,605 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "imageclefmedical-medvqa-gi-2026",
+    "challenge_name": "ImageCLEFmedical MedVQA-GI 2026",
+    "full_name": "ImageCLEFmedical MedVQA-GI 2026",
+    "year": 2026,
+    "event": {
+      "conference": "CLEF 2026",
+      "event_type": "shared_task",
+      "parent_event": "ImageCLEFmedical"
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Gastrointestinal tract"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "GI mucosa",
+        "Polyps",
+        "Endoscopic tools"
+      ],
+      "diseases": [
+        "Gastrointestinal polyps and other mucosal abnormalities"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "task_families": [
+        "Clinical reasoning",
+        "VQA / multimodal QA"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Clinically relevant visual question answering",
+          "task_family": "VQA / multimodal QA",
+          "task_families": [
+            "VQA / multimodal QA"
+          ],
+          "source_url": "https://www.imageclef.org/2026/medical/medvqa-gi"
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Multimodal explainability and safety-aware reasoning",
+          "task_family": "Reasoning",
+          "task_families": [
+            "Reasoning"
+          ],
+          "source_url": "https://www.imageclef.org/2026/medical/medvqa-gi"
+        }
+      ],
+      "task_role_scope": {
+        "Clinical reasoning": "Declared task output",
+        "VQA / multimodal QA": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": false,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": true,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "Endoscopy"
+      ],
+      "population": null,
+      "source_reference": "https://www.imageclef.org/2026/medical/medvqa-gi",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC 4.0 (Kvasir-VQA-x1 source dataset). 2026 当届任务页明确采用扩展 Kvasir-VQA-x1；官方源数据仓库明确 dataset and code 为 CC BY-NC 4.0。仅确认该源数据范围，不扩展到所有竞赛新增内容。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": null,
+      "metrics": null,
+      "source_reference": "https://www.imageclef.org/2026/medical/medvqa-gi",
+      "execution_note": "The challenge does not use AI4MediaBench. Task 2 evaluates submitted JSONL answers and explanations.",
+      "model_executor": "Task 1: organizers; Task 2: participants",
+      "scoring_executor": "Organizers"
+    },
+    "submission": {
+      "submission_type": "Task 1 model repository and inference code; Task 2 prediction JSONL package",
+      "platform": "Task 1: Hugging Face repository via medvqa CLI; Task 2: email to organizers",
+      "source_reference": "https://github.com/simula/ImageCLEFmed-MEDVQA-GI-2026",
+      "runtime_limits": null,
+      "primary_artifacts": [
+        "Task 1 model repository and inference script",
+        "Task 2 answer and explanation JSONL"
+      ],
+      "additional_artifacts": [
+        {
+          "task": "Task 2",
+          "artifact": "submission_task2.py",
+          "role": "Team metadata, not model inference code"
+        },
+        {
+          "task": "Task 2",
+          "artifact": "README.md and optional visuals/",
+          "role": "Documentation and visual explanations"
+        }
+      ],
+      "execution": "Organizers load Task 1 models. Participants produce Task 2 answers and explanations; submission_task2.py contains team metadata, not inference code.",
+      "format_by_task_or_phase": [
+        {
+          "task": "Task 1",
+          "model_repository": "Hugging Face",
+          "root_script": "submission_task1.py",
+          "registration": "CLI"
+        },
+        {
+          "task": "Task 2",
+          "archive": "<TeamName>_task2.zip",
+          "required_files": [
+            "submission_task2.jsonl",
+            "submission_task2.py",
+            "README.md"
+          ],
+          "optional_directory": "visuals/",
+          "JSONL_fields": [
+            "val_id",
+            "img_id",
+            "question",
+            "answer",
+            "textual_explanation"
+          ],
+          "python_file_role": "Team metadata"
+        }
+      ],
+      "format_limitations": [],
+      "source_urls": [
+        "https://github.com/simula/ImageCLEFmed-MEDVQA-GI-2026"
+      ],
+      "evidence_basis": "Human-supplied review of edition-specific organizer documentation",
+      "review_date": "2026-10-24",
+      "submission_evidence_status": "Primary artifact identified by human review; format-specific limitations retained",
+      "review_source": "_collection/submission22_review_20261024/user_review.txt",
+      "additional_materials": [
+        {
+          "task": "Task 2",
+          "artifact": "submission_task2.py",
+          "role": "Team metadata, not model inference code"
+        },
+        {
+          "task": "Task 2",
+          "artifact": "README.md and optional visuals/",
+          "role": "Documentation and visual explanations"
+        }
+      ],
+      "portal_review_source": "_collection/portal_classification_review_20261024/user_review.txt"
+    },
+    "schedule": {
+      "edition_year": 2026,
+      "source_reference": "https://www.imageclef.org/2026/medical/medvqa-gi"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://www.imageclef.org/2026/medical/medvqa-gi",
+      "supporting_sources": [
+        "https://www.imageclef.org/2026/medical"
+      ]
+    },
+    "notes": [
+      "Annual tasks are read separately: the 2024 edition requests image synthesis and prompt generation, despite MedVQA in the series name. Question generation is not recoded as image captioning."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.imageclef.org/2026/medical/medvqa-gi",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/3be36d174252a536.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.imageclef.org/2026/medical",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json",
+          "http_status": 200
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://github.com/simula/ImageCLEFmed-MEDVQA-GI-2026",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields"
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py",
+      "submission_human_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/submission22_review_20261024/user_review.txt",
+        "basis": "Human-supplied review of edition-specific organizer documentation",
+        "scope": "Submission artifact, format and executor; source assertions supplied by human review, not a new independent audit of all linked pages."
+      },
+      "portal_classification_review": {
+        "date": "2026-10-24",
+        "local_review": "_collection/portal_classification_review_20261024/user_review.txt",
+        "basis": "Human-supplied source-linked review; organizer BraTS reply and ICPR programme also checked directly."
+      }
+    },
+    "review_coding": {
+      "task_families": [
+        "Clinical reasoning",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Clinical Reasoning"
+      ],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid",
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "record_relationships": {
+      "analytical_unit": "named_subchallenge_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": null,
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "The edition-specific ImageCLEF registration instructions require organizer validation of the submitted agreement/form before dataset/task access is granted."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "ImageCLEF MEDVQA-GI | ImageCLEF / LifeCLEF -  Multimedia Retrieval in CLEF",
+          "local_source": "_collection/other_venues_audit_20261024/sources/3be36d174252a536.json",
+          "url": "https://www.imageclef.org/2026/medical/medvqa-gi",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home › ImageCLEF 2026 › ImageCLEFmedical ImageCLEF MEDVQA-GI Motivation The MEDVQA-GI challenge, now in its fourth iteration, continues to advance research in Visual Question Answering (VQA) for gastrointestinal (GI) endoscopy with a strong emphasis on clinical rele [...]  online leaderboard for rapid evaluation feedback to nurture a competitive environment. Participant registration Please refer to the general ImageCLEF registration instructions . Please also email steven@simula.no to register your interest. Note: Thie task does not use the Ai4Media benchmarking platform for evaluation. Creating an account on the platform for this task is not required. Completing the registration form is still required, similar to the other tasks. You can also find the form here . Preliminary Schedule 26.01.2026 : Registration opens for all ImageCLEF tasks 01.03.2026 : Development dataset released 15.03.2026 : Test dataset released 23.04.2026 : Registration closes for all ImageCLEF tasks 07.05.2026 : Deadline for submitting participant runs 14.05.2026 : Release of the processed results by the task organizers (depends on task) 28.05.2026 : Submission of participant papers [CEUR-WS] 30.06.2026 : Notification of acceptance 21.09.2026 : CLEF 2026 , Jena, "
+        },
+        {
+          "section": "ImageCLEFmedical | ImageCLEF / LifeCLEF -  Multimedia Retrieval in CLEF",
+          "local_source": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json",
+          "url": "https://www.imageclef.org/2026/medical",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home › ImageCLEF 2026 ImageCLEFmedical ImageCLEF has included medical tasks every year since 2004. Since 2019 we focus each of the medical tasks to one specific problem but combine them as a single task with several subtasks. Our hope is that this approach helps inf"
+        },
+        {
+          "section": "Official edition data/registration instructions",
+          "local_source": "_collection/access_flow_review_20261024/sources/88ddf557ccfb9930.json",
+          "url": "https://www.imageclef.org/2026#registration",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home ImageCLEF 2026 Tweets by @imageclef News Registration for all ImageCLEF tasks started! Motivation ImageCLEF 2026 is organized as part of the CLEF Initiative Labs. The target audience for ImageCLEF 2026 is mainly expected to be from the multimodal data annotation and retrieval community, from fields such as computer vision, image information retrieval  [...] ing task webpage for specific dates. A (tentative) global schedule can be found below: 26.01.2026 : Registration opens for all ImageCLEF tasks 02.02.2026 : Development dataset released (depends on task) 09.03.2026 : Test dataset released (depends on task) 23.04.2026 : Registration closes for all ImageCLEF tasks 07.05.2026 : Deadline for submitting participant runs 14.05.2026 : Release of the processed results by the task organizers (depends on task) 28.05.2026 : Submission of participant papers [CEUR-WS] 30.06.2026 : Notification of acceptance 21.09.2026 : CLEF 2026 , Jena,  [...] d workshops on a broad range of challenges in the fields of multilingual and multimodal information access evaluation, and a set of benchmarking activities carried in various labs designed to test different aspects of mono and cross-language information retrieval systems. More details about the conference can be found here . Also there is more information about the CLEF Initiative . Programme of ImageCL [...] eration A. Gentili , Latent Vector Identification via Regression and Bipartite Matching Participant registration ImageCLEF is an evaluation lab and starting from this edition it will be managed by the ImageCLEF team through the AI4Media benchmarking platform (based on Codalab). The main features of the platform are: online registration system, end-user agreement submission, data distribution, a leaderboard system as well as interaction with participants, reducing the administrative overhead. The platform is now up for participants' registration. https://ai4media-bench.aimultimedialab.ro/competitions/public/ Instructions for registration: Create an account on the AI4MediaBench benchmarking platform . Complete the Terms and Conditions form, available on any task page under 'Get Started → Terms' . This form is mandatory. Within the form, you may select one or more ImageCLEF tasks from the provided list. Once submitted, your applicati [...] rresponding task pages. After the form is validated, you will receive a confirmation email and gain access to all tasks you have registered for. Please do not register separately on the official CLEF 2026 registration page. Registrations on the AI4Media Bench Platform will automatically be transmitted to CLEF. In case the sub(task) is not present on the AI4Media Bench Platform, please contact the task responsibles (listed on the bottom of each task page). The Tasks ImageCLEF 2025 proposes 5 main tasks: (10th edition) ImageCLEFmedi"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "source",
+              "value": 150000,
+              "unit": "question-answer pairs",
+              "scope": "Expanded Kvasir-VQA-x1 lower bound",
+              "approximate": false,
+              "lower_bound": true
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Not established",
+          "value": null
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": {
+            "value": 8,
+            "unit": "submitting teams in Task1",
+            "comparable": false,
+            "details": "Task1 count only; complete multi-task unique union not established."
+          }
+        }
+      },
+      "review_note": "Image-grounded QA pairs, not 150000 images or patients.",
+      "sources": [
+        {
+          "url": "https://www.imageclef.org/2026/medical/medvqa-gi",
+          "local_source": "_collection/other_venues_audit_20261024/sources/3be36d174252a536.json"
+        },
+        {
+          "url": "https://www.imageclef.org/2026/medical",
+          "local_source": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json"
+        },
+        {
+          "url": "https://ceur-ws.org/Vol-4283/paper231.pdf",
+          "local_source": "_collection/resource_audit_20261025/online/0416881ad0deadd2.txt"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/imageclefmedical-medvqa-gi-2026.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Gastrointestinal tract"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "GI mucosa",
+        "Polyps",
+        "Endoscopic tools"
+      ],
+      "specific_diseases": [
+        "Gastrointestinal polyps and other mucosal abnormalities"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/3be36d174252a536.json",
+          "url": "https://www.imageclef.org/2026/medical/medvqa-gi"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json",
+          "url": "https://www.imageclef.org/2026/medical"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/0416881ad0deadd2.txt",
+          "url": "https://ceur-ws.org/Vol-4283/paper231.pdf"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/imageclefmedical-medvqa-gi-2026.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Clinical reasoning",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Clinical Reasoning"
+      ],
+      "previous_task_families": [
+        "Clinical reasoning",
+        "VQA / multimodal QA"
+      ],
+      "previous_emerging_objectives": [
+        "VLM",
+        "Clinical Reasoning"
+      ],
+      "task_roles": {
+        "Clinical reasoning": "Declared task output",
+        "VQA / multimodal QA": "Declared task output"
+      },
+      "note_zh": "VQA 及明确的理由/视觉解释与安全性要求，保留显式推理；允许 RAG 不等于要求工具工作流。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://www.imageclef.org/2026/medical/medvqa-gi",
+          "local_source": "_collection/other_venues_audit_20261024/sources/3be36d174252a536.json",
+          "sha256": "4a7ae43a53af2bc80b50f6bd75b71dcbfe3b485b156c8ecc74cd5757a07a608a"
+        },
+        {
+          "url": "https://www.imageclef.org/2026/medical",
+          "local_source": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json",
+          "sha256": "c5d5188f6333772cbed4333c1e03c9b2bed54b6dd1694075dcb2d04c7d2249fa"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC 4.0 (Kvasir-VQA-x1 source dataset)"
+      ],
+      "scope": "Kvasir-VQA-x1 source dataset; challenge additions unverified",
+      "agreement_required": null,
+      "summary_zh": "2026 当届任务页明确采用扩展 Kvasir-VQA-x1；官方源数据仓库明确 dataset and code 为 CC BY-NC 4.0。仅确认该源数据范围，不扩展到所有竞赛新增内容。",
+      "qualifications": [
+        "Partial resource scope; challenge-specific additions not covered by source-dataset evidence."
+      ],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/3be36d174252a536.json",
+          "url": "https://www.imageclef.org/2026/medical/medvqa-gi"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/a728cd6f4a8a8867.json",
+          "url": "https://www.imageclef.org/2026/medical"
+        },
+        {
+          "local_source": "_collection/access_flow_review_20261024/sources/88ddf557ccfb9930.json",
+          "url": "https://www.imageclef.org/2026#registration"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/0416881ad0deadd2.txt",
+          "url": "https://ceur-ws.org/Vol-4283/paper231.pdf"
+        },
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/69f9a2ee4924c205.json",
+          "url": "https://github.com/simula/ImageCLEFmed-MEDVQA-GI-2026"
+        },
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/585280036c1fe656.json",
+          "url": "https://github.com/simula/Kvasir-VQA-x1"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

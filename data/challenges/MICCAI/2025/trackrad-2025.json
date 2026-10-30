@@ -1,0 +1,792 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "trackrad-2025",
+    "challenge_name": "TrackRad: Real-time tumor tracking for MRI-guided radiotherapy",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": [
+        "2D sagittal cine MRI",
+        "0.35 T",
+        "1.5 T"
+      ],
+      "body_region": [
+        "Thorax",
+        "Abdomen",
+        "Pelvis"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Tracking targets",
+        "Tumors"
+      ],
+      "diseases": [
+        "Cancer treated with MRI-guided radiotherapy"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "tracking",
+          "official_name": "Real-time tumor tracking",
+          "task_family": "Segmentation",
+          "task_subtype": "segmentation-based tracking",
+          "input": [
+            "Cine-MRI sequence",
+            "First-frame target mask"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Per-frame target segmentation masks"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": 6,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "MRI"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "unlabeled_train": {
+          "patient_count": 477
+        },
+        "labeled_train": {
+          "patient_count": 50
+        },
+        "preliminary_test": {
+          "patient_count": 8
+        },
+        "final_test": {
+          "patient_count": 50
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Data page: CC BY-NC; rules inconsistently write CC-BY(-NC).",
+      "access_after_challenge": "Preliminary and final test data remain accessible only through model submission for evaluation, including after completion; this does not provide direct test-image downloads.",
+      "access_scope": "Public MRI-linac training split; preliminary/final testing data are private"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Only additional public data and public pretrained weights available before March 15, 2025; private resources prohibited."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "tracking",
+          "metrics": [
+            "DSC",
+            "HD95",
+            "MASD",
+            "Centroid distance",
+            "Relative D98% dose metric",
+            "Inference time per frame"
+          ],
+          "ranking": "Mean of six metric ranks; geometric metrics averaged per sequence then across cases. Must outperform no-tracking baseline in at least one geometric metric."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": "NVIDIA A10G",
+        "gpu_vram_gb": 24,
+        "max_inference_seconds_per_frame": 1
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 2,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "preliminary_submissions_per_team": 10
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_data_release": "2025-03-15"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 184,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary testing",
+            "submission_count": 177
+          },
+          {
+            "official_phase_name": "Final testing",
+            "submission_count": 29
+          },
+          {
+            "official_phase_name": "Post-challenge",
+            "submission_count": 42
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://trackrad2025.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "108 labeled patients is the combined training/evaluation cohort, not the training count. Inference is guided by first-frame target mask.",
+      "Source-list platform_year is 2024; the official challenge edition is 2025. The output directory follows the official edition."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/#objective",
+          "supports": [
+            "challenge context",
+            "data_access.access_scope",
+            "data_access.access_status"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-05019297c75b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/trackrad2025/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-07752dcef764.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-10eb7db672fb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/#background",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-227d00178d8f.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://trackrad2025.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-38c2e4621d2f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/#real-time-tumor-tracking-for-mri-guided-radiotherapy",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-5b349da60c87.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/winners-announcement/",
+          "supports": [
+            "challenge context",
+            "evaluation.platform"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-5da674cd60b3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/metrics/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-65ef50fa0263.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/awards/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-6ac598b279b3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/#_1",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-7d84d0651d9b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/data/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-9c4aee8c87d2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/submission-instructions/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-a3ece55a5415.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-ad0066c2c820.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/#outcome",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-bdfd46ed3ac2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/task/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-c537075bc544.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_access.access_after_challenge",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-ddd3222e451f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/#trackrad2025",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-f361f6ee7e00.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://trackrad2025.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/48-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Rules retain a 2023 final-test date typo inside a 2025 timeline; verify actual final-test dates from organizer protocol."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://trackrad2025.grand-challenge.org/winners-announcement/",
+          "local_snapshot": "_collection/sources/48-5da674cd60b3.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'Leaderboard', 'url': 'https://trackrad2025.grand-challenge.org/evaluation/final-testing/leaderboard/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "data_access.access_status": {
+          "source_url": "https://trackrad2025.grand-challenge.org/#objective",
+          "local_snapshot": "_collection/sources/48-05019297c75b.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official page explicitly identifies a public training/pretraining release; detailed license/gates remain unverified and are not inferred."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://trackrad2025.grand-challenge.org/#objective",
+          "local_snapshot": "_collection/sources/48-05019297c75b.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official page explicitly identifies a public training/pretraining release; detailed license/gates remain unverified and are not inferred."
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://trackrad2025.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/48-ddd3222e451f.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit edition-source post-challenge policy reviewed; planned releases, continuing public access, controlled requests and required deletion are kept distinct."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_after_challenge",
+          "data_access.access_scope",
+          "data_access.access_status",
+          "evaluation.platform"
+        ],
+        "remaining_core_fields": [
+          "submission.platform",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/trackrad-2025.json",
+          "_collection/verification_20261003/literature_context/trackrad-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen",
+            "Chest",
+            "Pelvis"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Cancer treated with MRI-guided radiotherapy"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "MRI引导放疗的实时肿瘤跟踪为明确肿瘤临床目标。",
+      "sources": [
+        {
+          "url": "https://trackrad2025.grand-challenge.org/trackrad2025/",
+          "local_source": "_collection/sources/48-07752dcef764.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "MRI引导放疗的实时肿瘤跟踪为明确肿瘤临床目标。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2025/trackrad-2025.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2025/trackrad-2025.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Preliminary and final test data remain accessible only through model submission for evaluation, including after completion; this does not provide direct test-image downloads.",
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/#objective",
+                  "supports": [
+                    "challenge context",
+                    "data_access.access_scope",
+                    "data_access.access_status"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-05019297c75b.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/trackrad2025/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-07752dcef764.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-10eb7db672fb.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/#background",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-227d00178d8f.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://trackrad2025.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-38c2e4621d2f.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/#real-time-tumor-tracking-for-mri-guided-radiotherapy",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-5b349da60c87.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/winners-announcement/",
+                  "supports": [
+                    "challenge context",
+                    "evaluation.platform"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-5da674cd60b3.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/metrics/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-65ef50fa0263.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/awards/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-6ac598b279b3.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/#_1",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-7d84d0651d9b.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/data/",
+                  "supports": [
+                    "dataset",
+                    "labels_and_targets",
+                    "data_access"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-9c4aee8c87d2.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/submission-instructions/",
+                  "supports": [
+                    "submission",
+                    "data_usage_mode"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-a3ece55a5415.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/organizers/",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-ad0066c2c820.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/#outcome",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-bdfd46ed3ac2.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/task/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-c537075bc544.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/rules/",
+                  "supports": [
+                    "data_access",
+                    "data_access.access_after_challenge",
+                    "data_usage_mode",
+                    "evaluation",
+                    "publication",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-ddd3222e451f.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/#trackrad2025",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-f361f6ee7e00.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://trackrad2025.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/48-overview.json"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            },
+            {
+              "kind": "Observed post-challenge evaluation activity",
+              "summary": "Positive submissions recorded in explicitly named post-challenge or long-term evaluation phases.",
+              "url": "https://trackrad2025.grand-challenge.org/challenge/statistics/",
+              "snapshot": "_collection/sources/48-38c2e4621d2f.json",
+              "scope": "Evidence that the service was used after the competitive phase; cumulative counts do not identify teams or guarantee current acceptance.",
+              "value": [
+                {
+                  "official_phase_name": "Preliminary testing",
+                  "submission_count": 177
+                },
+                {
+                  "official_phase_name": "Final testing",
+                  "submission_count": 29
+                },
+                {
+                  "official_phase_name": "Post-challenge",
+                  "submission_count": 42
+                }
+              ],
+              "excerpt": "",
+              "snapshot_date": "2026-10-02"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

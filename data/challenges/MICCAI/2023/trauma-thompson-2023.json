@@ -1,0 +1,887 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "trauma-thompson-2023",
+    "challenge_name": "The Trauma THOMPSON Challenge",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Surgical video"
+      ],
+      "submodality": [
+        "Egocentric first-person video"
+      ],
+      "body_region": [
+        "Emergency procedure field"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Life-saving intervention procedures"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": null,
+      "secondary_task_families": [
+        "Visual Question Answering"
+      ],
+      "tasks": [
+        {
+          "task_id": "action",
+          "official_name": "Action Recognition",
+          "task_family": "Classification",
+          "task_subtype": "action classification",
+          "input": [
+            "Medical procedure video segment"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Action, verb and noun classes"
+          ],
+          "granularity": "clip-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "anticipation",
+          "official_name": "Action Anticipation",
+          "task_family": "Classification",
+          "task_subtype": "future action classification",
+          "input": [
+            "Medical procedure video segment"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Next action, verb and noun classes"
+          ],
+          "granularity": "clip-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "procedure",
+          "official_name": "Procedure Recognition",
+          "task_family": "Classification",
+          "task_subtype": "procedure classification",
+          "input": [
+            "Medical procedure video segment"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Procedure class"
+          ],
+          "granularity": "clip-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "vqa",
+          "official_name": "Visual Question Answering",
+          "task_family": "Visual Question Answering",
+          "task_subtype": "open-ended VQA",
+          "input": [
+            "Procedure image",
+            "Natural language question"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Natural language answer"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        }
+      ],
+      "previous_primary_task_family": "Classification",
+      "primary_output_coding": "Multiple / composite outputs",
+      "declared_vision_language_objective": true,
+      "objective_execution_status": "not_established",
+      "task_families": [
+        "Classification",
+        "VQA / multimodal QA"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "VQA / multimodal QA": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": true,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "video_count": {
+          "lower_bound_exclusive": 200,
+          "raw_text": "over 200 procedure videos"
+        }
+      },
+      "modalities": [
+        "Surgical video"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "action",
+          "metrics": [
+            "Top-1/5 action, verb and noun accuracy"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "anticipation",
+          "metrics": [
+            "Top-1/5 action, verb and noun accuracy"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "procedure",
+          "metrics": [
+            "Top-1 accuracy"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "vqa",
+          "metrics": [
+            "Accuracy",
+            "BLEU"
+          ],
+          "ranking": "Average accuracy and BLEU."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "JSON prediction files",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "official_submission_instructions"
+    },
+    "schedule": {
+      "training_data_release": "2023-07-06",
+      "test_data_release": "2023-08-15",
+      "challenge_event": "2023-10-12"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "organizer_results_report": {
+        "title": "Overview of the Trauma THOMPSON Challenge at MICCAI 2023",
+        "doi": "10.1007/978-3-031-71626-3_7",
+        "publication_year": 2025,
+        "challenge_year": 2023,
+        "url": "https://scholar.usuhs.edu/en/publications/overview-ofthetrauma-thompson-challenge-atmiccai-2023/"
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 123,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Procedure Recognition Result Submission",
+            "submission_count": 3
+          },
+          {
+            "official_phase_name": "Visual Question Answering Result Submission",
+            "submission_count": 27
+          },
+          {
+            "official_phase_name": "Action Recognition Result Submission",
+            "submission_count": 45
+          },
+          {
+            "official_phase_name": "Action Anticipation Result Submission",
+            "submission_count": 32
+          },
+          {
+            "official_phase_name": "Final Procedure Recognition",
+            "submission_count": 0
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://thompson-challenge.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Includes medical simulation/procedure recordings; counts do not imply human patient counts.",
+      "2026-10-22 canonical synchronization: existing VQA task retained; declared vision-language objective and unconfirmed execution explicitly separated; primary output corrected to multiple/composite; submission: JSON predictions via Grand Challenge.",
+      "2026-10-22: 组织者综述确认2023 VQA准确率74.35%；动作识别35.27%、预测23.67%；活动识别Task 3明确无提交。发表于2025，不新增2025赛事。",
+      "2026-10-22: 维持2023 VQA已确认，2025为结果报告出版年。"
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://thompson-challenge.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/77-262b345b69bf.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://thompson-challenge.grand-challenge.org/data-download/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/77-2f8a52e6ce72.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://thompson-challenge.grand-challenge.org/submission-instruction/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/77-4d0cf81c7963.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://thompson-challenge.grand-challenge.org/submission-policies/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/77-50526dd18c7e.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://thompson-challenge.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/77-5357c5655635.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://thompson-challenge.grand-challenge.org/paper-submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/77-5f0f22813d9e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://thompson-challenge.grand-challenge.org/task-and-evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/77-68dc72cb151b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://thompson-challenge.grand-challenge.org/organizers-information/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/77-7fc43defcb80.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://thompson-challenge.grand-challenge.org/ground-truth/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/77-abeaba5cbae6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://thompson-challenge.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/77-c76c42ef163c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://thompson-challenge.grand-challenge.org/participation-policy/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/77-fade191b1f2c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://thompson-challenge.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/77-overview.json"
+        },
+        {
+          "type": "official conference challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json",
+          "supports": [
+            "event.conference"
+          ],
+          "retrieved_on": "2026-10-02"
+        },
+        {
+          "type": "previously reviewed documentary evidence",
+          "url": "https://thompson-challenge.grand-challenge.org/task-and-evaluation/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_68dc72cb151b62.json",
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/trauma-thompson-2023.json",
+          "propagated_on": "2026-10-22",
+          "supports": [
+            "Action recognition, anticipation, procedure recognition, and image-grounded VQA are explicitly specified."
+          ]
+        },
+        {
+          "type": "previously reviewed documentary evidence",
+          "url": "https://thompson-challenge.grand-challenge.org/submission-instruction/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_4d0cf81c796343.json",
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/trauma-thompson-2023.json",
+          "propagated_on": "2026-10-22",
+          "supports": [
+            "JSON predictions are evaluated automatically through the native portal."
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://scholar.usuhs.edu/en/publications/overview-ofthetrauma-thompson-challenge-atmiccai-2023/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_8b2a54e60e12_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "组织者综述确认2023 VQA准确率74.35%；动作识别35.27%、预测23.67%；活动识别Task 3明确无提交。发表于2025，不新增2025赛事。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://scholar.usuhs.edu/en/publications/overview-ofthetrauma-thompson-challenge-atmiccai-2023/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_8b2a54e60e12_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "维持2023 VQA已确认，2025为结果报告出版年；正文及年度统计待统一同步。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Confirm precise splits, access license and per-track submission artifacts/resources."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.body_region",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/trauma-thompson-2023.json",
+          "_collection/verification_20261003/literature_context/trauma-thompson-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "action": "Propagate already authorized review decisions into original challenge JSON",
+          "changes": [
+            "existing VQA task retained; declared vision-language objective and unconfirmed execution explicitly separated",
+            "primary output corrected to multiple/composite",
+            "submission: JSON predictions via Grand Challenge"
+          ],
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/trauma-thompson-2023.json",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/canonical_decisions_sync_20261022_013012/MICCAI/2023/trauma-thompson-2023.json",
+          "new_external_search": false,
+          "aggregate_rebuilt": false
+        },
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "组织者综述确认2023 VQA准确率74.35%；动作识别35.27%、预测23.67%；活动识别Task 3明确无提交。发表于2025，不新增2025赛事。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "undetermined",
+            "evidence_state": "searched_not_established",
+            "evidence_ids": [
+              "E1",
+              "E2"
+            ],
+            "reason": "Prospective tasks and scoring rules are available, but no final ranking or retrospective organizer result was established. Public final-procedure table returns zero entries; this does not prove no assessment occurred."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2023/trauma-thompson-2023.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "维持2023 VQA已确认，2025为结果报告出版年；正文及年度统计待统一同步。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2023/trauma-thompson-2023.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "basis": "组织者综述确认2023 VQA准确率74.35%；动作识别35.27%、预测23.67%；活动识别Task 3明确无提交。发表于2025，不新增2025赛事。",
+      "audit_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/trauma-thompson-2023.json",
+      "objective_assessment": [
+        {
+          "objective": "Vision-language",
+          "declared": true,
+          "evidence_ids": [
+            "E3"
+          ],
+          "reason": "Organizer retrospective report explicitly gives 2023 Track 2 VQA accuracy 74.35%; 2025 is the publication year, not a new edition.",
+          "value": "confirmed"
+        }
+      ],
+      "scope": "MICCAI 2023, Track 1 Tasks 1–2 and Track 2 VQA; Track 1 Task 3 received no submissions",
+      "evidence_type": "published_competition_result_or_award",
+      "evidence_sources": [
+        "https://scholar.usuhs.edu/en/publications/overview-ofthetrauma-thompson-challenge-atmiccai-2023/"
+      ],
+      "organizer_full_rankings_independently_verified": false,
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "维持2023 VQA已确认，2025为结果报告出版年；正文及年度统计待统一同步。",
+        "source_urls": [
+          "https://scholar.usuhs.edu/en/publications/overview-ofthetrauma-thompson-challenge-atmiccai-2023/"
+        ],
+        "evidence_ids": [
+          "E4"
+        ],
+        "details": {},
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_round2_user_20261022.txt",
+        "propagation_status": "Original JSON, audit, current CSV/Excel/reports updated; manuscript/figures/frozen release not regenerated."
+      },
+      "task_result_evidence": {
+        "publication_year": 2025,
+        "challenge_year": 2023,
+        "doi": "10.1007/978-3-031-71626-3_7",
+        "action_recognition_top1_percent": 35.27,
+        "action_anticipation_top1_percent": 23.67,
+        "VQA_accuracy_percent": 74.35,
+        "activity_recognition": "organizer explicitly reports no submissions",
+        "all_tasks_evaluated": false
+      },
+      "remaining_questions": [
+        "Manuscript and aggregate temporal narrative must recognize documented and assessed VQA in 2023; Task 3 has an explicit organizer no-submission statement."
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "参与政策明确提交最终用户协议后授予数据访问。"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "参与政策明确提交最终用户协议后授予数据访问。"
+      },
+      "decision_history": [
+        "2023训练及测试数据分阶段发布，提交VQA预测JSON。",
+        "参与政策明确提交最终用户协议后授予数据访问。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/77-c76c42ef163c.json",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/fade191b1f2c4525.json",
+          "url": "https://thompson-challenge.grand-challenge.org/participation-policy/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/trauma-thompson-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "data-to-model",
+      "task_families": [
+        "Classification",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "VQA / multimodal QA"
+      ],
+      "previous_emerging_objectives": [
+        "VLM"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "VQA / multimodal QA": "Declared task output"
+      },
+      "note_zh": "动作识别、动作预判和流程识别归分类；另有独立 VQA。动作预判不等于患者预后。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/",
+          "local_source": "_collection/sources/77-262b345b69bf.json",
+          "sha256": "05888525aa39677bc674f4e505daef30ae6bb5348d509744e9677d5d5999f39d"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/data-download/",
+          "local_source": "_collection/sources/77-2f8a52e6ce72.json",
+          "sha256": "787bd94cf95f255b9ff75c85984e43243ec7f3cb4c99ded8190c376d16a5b84b"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/submission-instruction/",
+          "local_source": "_collection/sources/77-4d0cf81c7963.json",
+          "sha256": "0076e718f0431b5ee08c74828e474dd66ad03a0532ab2d577475215b9026d18f"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/submission-policies/",
+          "local_source": "_collection/sources/77-50526dd18c7e.json",
+          "sha256": "47f5108cbf345d0cd1267146d1bde451694a8fc1996e844e629f989ed2364c48"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/paper-submission/",
+          "local_source": "_collection/sources/77-5f0f22813d9e.json",
+          "sha256": "548ad43c48ad76591d8177169f77be06986661502a866eadffa63c0056b5f1e5"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/task-and-evaluation/",
+          "local_source": "_collection/sources/77-68dc72cb151b.json",
+          "sha256": "0f500c6cd679cad466ea7b28f73aa79631087ba18ac84441d4a36e6972c3a50c"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/ground-truth/",
+          "local_source": "_collection/sources/77-abeaba5cbae6.json",
+          "sha256": "16421f48c7744883223630b2c667a5a1219f99e283655d2137ad8218ea467fa6"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/participation-policy/",
+          "local_source": "_collection/sources/77-fade191b1f2c.json",
+          "sha256": "25097319f6269cdd87f437e238d0b8e5d8b0f1f618eef2eb71a6f544663ae4c6"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/",
+          "local_source": "_collection/sources/77-overview.json",
+          "sha256": "05888525aa39677bc674f4e505daef30ae6bb5348d509744e9677d5d5999f39d"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/task-and-evaluation/",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_68dc72cb151b62.json",
+          "sha256": "eec318fb07584ee895905080b6a47044cf072be339c896d038eb9a66bdafd83f"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/submission-instruction/",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_4d0cf81c796343.json",
+          "sha256": "60d076b0888607da7d91564ab70eafa79ebf87427359dd18b4f43dd812eaaa5f"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Emergency procedure field"
+          ],
+          "note": "急救操作的第一视角视频，按操作场景编码；不从操作名称推断患者病种或身体部位。"
+        },
+        "disease": {
+          "state": "Not established",
+          "value": [],
+          "note": "Previous disease coding retained; not reclassified in this audit"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/",
+          "local_source": "_collection/sources/77-262b345b69bf.json"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/data-download/",
+          "local_source": "_collection/sources/77-2f8a52e6ce72.json"
+        }
+      ],
+      "note_zh": "急救操作的第一视角视频，按操作场景编码；不从操作名称推断患者病种或身体部位。",
+      "anatomical_scope": "Procedure context",
+      "remaining_detail": ""
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Surgical video"
+      ],
+      "harmonized_modalities": [
+        "Optical procedure imaging"
+      ],
+      "video_format_documented": true,
+      "note": "Classified using documented acquisition context; video format retained.",
+      "sources": [
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/",
+          "local_source": "_collection/sources/77-262b345b69bf.json"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/data-download/",
+          "local_source": "_collection/sources/77-2f8a52e6ce72.json"
+        },
+        {
+          "url": "https://thompson-challenge.grand-challenge.org/submission-instruction/",
+          "local_source": "_collection/sources/77-4d0cf81c7963.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "dataset",
+              "value": 200,
+              "unit": "videos",
+              "canonical_field": "dataset.population.video_count",
+              "scope": "More than 200 procedure videos; exclusive lower bound",
+              "approximate": false,
+              "lower_bound": true
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [],
+          "source_urls": "https://thompson-challenge.grand-challenge.org/; https://thompson-challenge.grand-challenge.org/data-download/; https://thompson-challenge.grand-challenge.org/submission-instruction/; https://thompson-challenge.grand-challenge.org/submission-policies/; https://thompson-challenge.grand-challenge.org/challenge/statistics/; https://thompson-challenge.grand-challenge.org/paper-submission/; https://thompson-challenge.grand-challenge.org/task-and-evaluation/; https://thompson-challenge.grand-challenge.org/organizers-information/; https://thompson-challenge.grand-challenge.org/ground-truth/; https://thompson-challenge.grand-challenge.org/timeline/; https://thompson-challenge.grand-challenge.org/participation-policy/; https://miccai.org/sig/sig-challenges/; https://scholar.usuhs.edu/en/publications/overview-ofthetrauma-thompson-challenge-atmiccai-2023/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

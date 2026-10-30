@@ -1,0 +1,890 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "light-my-cells-2024",
+    "challenge_name": "Light My Cells: Bright Field to Fluorescence Imaging Challenge",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "ISBI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Microscopy"
+      ],
+      "submodality": [
+        "Bright field",
+        "Phase contrast",
+        "Differential interference contrast",
+        "Predicted fluorescence"
+      ],
+      "body_region": [
+        "Cell specimens"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Nucleus",
+        "Mitochondria",
+        "Tubulin",
+        "Actin"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Synthesis",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "synthesis",
+          "official_name": "Label-free to best-focus fluorescence prediction",
+          "task_family": "Synthesis",
+          "task_subtype": "multi-output image translation",
+          "input": [
+            "Transmitted-light image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Four best-focus organelle fluorescence channels"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": true,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Microscopy"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "preregistered_splits": {
+        "preliminary_test": {
+          "image_count": 30
+        },
+        "final_test": {
+          "image_count": 300
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY",
+      "access_after_challenge": "Official rules state the training data will remain public for continuing research; private test data are a separate scope.",
+      "access_scope": "Published challenge microscopy training dataset"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "External data and pretrained models must be permissively published within three months of development deadline for prize eligibility."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "synthesis",
+          "metrics": [
+            "MAE",
+            "SSIM",
+            "PCC",
+            "Euclidean texture distance",
+            "Cosine texture distance"
+          ],
+          "ranking": "Average individual metric rankings across organelles/focus offsets; nucleus/mitochondria use all metrics, actin/tubulin use SSIM/PCC only. Code bonuses do not alter final ranking."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null,
+        "average_execution_time_per_submission_minutes": 10
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": {
+        "synthesis": "Four fluorescence images in OME-TIFF, same dimensions as input"
+      },
+      "preregistered_submission_limits": {
+        "preliminary": 5,
+        "preliminary_per_week": 1,
+        "final": 1
+      },
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 321,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Phase 1",
+            "submission_count": 82
+          },
+          {
+            "official_phase_name": "Phase 2",
+            "submission_count": 15
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://lightmycells.grand-challenge.org/",
+      "dataset": "https://www.ebi.ac.uk/biostudies/BioImages/studies/S-BIAD1047",
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Evaluate four organelles by six focus deviations (0–5); absent ground-truth channels are not scored but all four channels must be predicted. One acquisition site held out for final evaluation.",
+      "Registered protocol is preregistration evidence; later official website updates take priority. Planned counts are explicitly labeled and not assumed to equal the final released cohort."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-079da51aa257.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-0eb6ecbcb9a7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/#motivations",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-2a20d36b9816.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-2e9a33872cee.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/#institutions",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-34a14b889e7f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/#aim",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-3f15cef7f51c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/results/",
+          "supports": [
+            "challenge context",
+            "evaluation.platform"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-5649e44cdcfa.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/rules-policies/",
+          "supports": [
+            "data_access",
+            "data_access.access_after_challenge",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-59c112283532.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/#publication-of-the-database-paper",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-5f55ee116147.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/#technical-motivations",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-6085ff880a78.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/#france-bioimaging",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-627092d850d4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/how-to-participate/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-6a032fae39cb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/#do-you-like-this-project",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-8648b351ca5f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/#task",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-963ec0601e4f.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://lightmycells.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-a0aa3b6121b6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-a11f41688e73.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/metrics-evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-b3588fdd9f41.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/lightmycells/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-faaf31cbab05.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lightmycells.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-overview.json"
+        },
+        {
+          "type": "official registered challenge protocol (preregistration, not final report)",
+          "url": "https://zenodo.org/records/10687569/files/113-Light%20My%20Cells%20_%20Bright%20Field%20to%20Fluorescence%20Imag_2024-02-21T09-45-53.pdf",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "dataset",
+            "evaluation",
+            "submission.evidence_stage",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/68-design-2024.txt"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Confirm final competition split counts versus preregistration and final extended deadline; database page returns 403."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://lightmycells.grand-challenge.org/results/",
+          "local_snapshot": "_collection/sources/68-5649e44cdcfa.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'final leaderboard', 'url': 'https://lightmycells.grand-challenge.org/evaluation/phase-2/leaderboard/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "data_access.access_status": {
+          "source_url": "https://lightmycells.grand-challenge.org/rules-policies/",
+          "local_snapshot": "_collection/sources/68-59c112283532.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official dataset/rules evidence explicitly establishes released training data and dataset license."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://lightmycells.grand-challenge.org/rules-policies/",
+          "local_snapshot": "_collection/sources/68-59c112283532.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official dataset/rules evidence explicitly establishes released training data and dataset license."
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/10687569/files/113-Light%20My%20Cells%20_%20Bright%20Field%20to%20Fluorescence%20Imag_2024-02-21T09-45-53.pdf",
+          "local_snapshot": "_collection/sources/68-design-2024.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: All participants will perform local training (and validation) before submitting to the test phases. For both phases, participants will submit their algorithm in docker format to Grand-challenge.org, where metrics will automatically evaluate predictions on secret test datasets and rank participants. When submitting, participants will have two choices: - Submit open source code (Recommended) - or only submit the inference part including the saved trained model (in h5 format) (in which case it will"
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://lightmycells.grand-challenge.org/rules-policies/",
+          "local_snapshot": "_collection/sources/68-59c112283532.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit edition-source post-challenge policy reviewed; planned releases, continuing public access, controlled requests and required deletion are kept distinct."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_after_challenge",
+          "data_access.access_scope",
+          "data_access.access_status",
+          "evaluation.platform",
+          "submission.evidence_stage"
+        ],
+        "remaining_core_fields": [
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.body_region",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/light-my-cells-2024.json",
+          "_collection/verification_20261003/literature_context/light-my-cells-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cell specimens"
+          ],
+          "note": "任务以细胞核、线粒体、微管及肌动蛋白荧光预测为目标；记录细胞标本，不强行归入人体部位。"
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "sources": [
+        {
+          "url": "https://lightmycells.grand-challenge.org/#publication-of-the-database-paper",
+          "local_source": "_collection/sources/68-5f55ee116147.json"
+        },
+        {
+          "url": "https://lightmycells.grand-challenge.org/#task",
+          "local_source": "_collection/sources/68-963ec0601e4f.json"
+        }
+      ],
+      "note_zh": "任务以细胞核、线粒体、微管及肌动蛋白荧光预测为目标；记录细胞标本，不强行归入人体部位。",
+      "anatomical_scope": "Cellular specimen context",
+      "remaining_detail": "",
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "细胞培养的无标记荧光预测；癌来源细胞系名称不等同于临床患者疾病评价或疾病模型比较。",
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "细胞培养的无标记荧光预测；癌来源细胞系名称不等同于临床患者疾病评价或疾病模型比较。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/ISBI/2024/light-my-cells-2024.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "France BioImaging Platforms: - Montpellier Ressources Imagerie (MRI) - Montpellier - Centre de Recherches de Biochimie Macromoléculaire CRBM - Montpellier - Centre de Biochimie Structurale(CBS) - Montpellier - Institute of Human Genetics (IGH) - Montpellier - L'Institut Génétique & Développement de Rennes (IGDR) - Rennes - Institut de génétique et de biologie moléculaire et cellulaire (IGBMC) - Alsace - Genethon - Île-de-France - Light Imaging Toulouse CBI (TRI-LITC) Toulouse - Bordeaux Imaging Center (BIC) - Bordeaux - Institut Gustave Roussi - Île-de-France",
+              "url": "https://zenodo.org/records/10687569/files/113-Light%20My%20Cells%20_%20Bright%20Field%20to%20Fluorescence%20Imag_2024-02-21T09-45-53.pdf",
+              "snapshot": "_collection/sources/68-design-2024.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nFrance BioImaging Platforms:\n- Montpellier Ressources Imagerie (MRI) - Montpellier\n- Centre de Recherches de Biochimie Macromoléculaire CRBM - Montpellier\n- Centre de Biochimie Structurale(CBS) - Montpellier\n- Institute of Human Genetics (IGH) - Montpellier\n- L'Institut Génétique & Développement de Rennes (IGDR) - Rennes\n- Institut de génétique et de biologie moléculaire et cellulaire (IGBMC) - Alsace\n- Genethon - Île-de-France\n- Light Imaging Toulouse CBI (TRI-LITC) Toulouse\n- Bordeaux Imaging Center (BIC) - Bordeaux\n- Institut Gustave Roussi - Île-de-France",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "ISBI/2024/light-my-cells-2024.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Official rules state the training data will remain public for continuing research; private test data are a separate scope.",
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-079da51aa257.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/organizers/",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-0eb6ecbcb9a7.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/#motivations",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-2a20d36b9816.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/timeline/",
+                  "supports": [
+                    "year",
+                    "schedule",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-2e9a33872cee.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/#institutions",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-34a14b889e7f.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/#aim",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-3f15cef7f51c.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/results/",
+                  "supports": [
+                    "challenge context",
+                    "evaluation.platform"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-5649e44cdcfa.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/rules-policies/",
+                  "supports": [
+                    "data_access",
+                    "data_access.access_after_challenge",
+                    "data_access.access_scope",
+                    "data_access.access_status",
+                    "data_usage_mode",
+                    "evaluation",
+                    "publication",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-59c112283532.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/#publication-of-the-database-paper",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-5f55ee116147.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/#technical-motivations",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-6085ff880a78.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/#france-bioimaging",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-627092d850d4.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/how-to-participate/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-6a032fae39cb.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/#do-you-like-this-project",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-8648b351ca5f.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/#task",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-963ec0601e4f.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://lightmycells.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-a0aa3b6121b6.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/prizes/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-a11f41688e73.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/metrics-evaluation/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-b3588fdd9f41.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/lightmycells/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-faaf31cbab05.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://lightmycells.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-overview.json"
+                },
+                {
+                  "type": "official registered challenge protocol (preregistration, not final report)",
+                  "url": "https://zenodo.org/records/10687569/files/113-Light%20My%20Cells%20_%20Bright%20Field%20to%20Fluorescence%20Imag_2024-02-21T09-45-53.pdf",
+                  "supports": [
+                    "data_access",
+                    "data_usage_mode",
+                    "dataset",
+                    "evaluation",
+                    "submission.evidence_stage",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/68-design-2024.txt"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "11 reported participating teams.",
+              "url": "https://lightmycells.grand-challenge.org/results/",
+              "snapshot": "_collection/sources/68-5649e44cdcfa.json",
+              "scope": "reported participating teams",
+              "value": {
+                "value": 11,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "of a new database of more than 57,000 images. For our first challenge, we had 215 registrations and 11 participating teams from around the world. After a preliminary test phase - on 36 test images to familiarize with the new data and the submission procedure- the participating teams evaluate",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "preliminary_test / image_count",
+              "value": 30,
+              "unit": "images",
+              "canonical_field": "dataset.preregistered_splits.preliminary_test.image_count",
+              "scope": "Specified dataset allocation in the registered design; not a separately verified final cohort",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "final_test / image_count",
+              "value": 300,
+              "unit": "images",
+              "canonical_field": "dataset.preregistered_splits.final_test.image_count",
+              "scope": "Specified dataset allocation in the registered design; not a separately verified final cohort",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official registered challenge protocol (preregistration, not final report)",
+              "url": "https://zenodo.org/records/10687569/files/113-Light%20My%20Cells%20_%20Bright%20Field%20to%20Fluorescence%20Imag_2024-02-21T09-45-53.pdf",
+              "supports": [
+                "data_access",
+                "data_usage_mode",
+                "dataset",
+                "evaluation",
+                "submission.evidence_stage",
+                "task_profile"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/68-design-2024.txt"
+            }
+          ],
+          "source_urls": "https://lightmycells.grand-challenge.org/; https://lightmycells.grand-challenge.org/organizers/; https://lightmycells.grand-challenge.org/#motivations; https://lightmycells.grand-challenge.org/timeline/; https://lightmycells.grand-challenge.org/#institutions; https://lightmycells.grand-challenge.org/#aim; https://lightmycells.grand-challenge.org/results/; https://lightmycells.grand-challenge.org/rules-policies/; https://lightmycells.grand-challenge.org/#publication-of-the-database-paper; https://lightmycells.grand-challenge.org/#technical-motivations; https://lightmycells.grand-challenge.org/#france-bioimaging; https://lightmycells.grand-challenge.org/how-to-participate/; https://lightmycells.grand-challenge.org/#do-you-like-this-project; https://lightmycells.grand-challenge.org/#task; https://lightmycells.grand-challenge.org/challenge/statistics/; https://lightmycells.grand-challenge.org/prizes/; https://lightmycells.grand-challenge.org/metrics-evaluation/; https://lightmycells.grand-challenge.org/lightmycells/; https://zenodo.org/records/10687569/files/113-Light%20My%20Cells%20_%20Bright%20Field%20to%20Fluorescence%20Imag_2024-02-21T09-45-53.pdf; https://www.ebi.ac.uk/biostudies/BioImages/studies/S-BIAD1047"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

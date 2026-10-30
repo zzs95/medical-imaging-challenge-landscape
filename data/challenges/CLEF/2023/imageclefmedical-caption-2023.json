@@ -1,0 +1,639 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "imageclefmedical-caption-2023",
+    "challenge_name": "ImageCLEFmedical Caption 2023",
+    "full_name": "ImageCLEFmedical Caption 2023",
+    "year": 2023,
+    "event": {
+      "conference": "CLEF 2023",
+      "event_type": "shared_task",
+      "parent_event": "ImageCLEFmedical"
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "X-ray",
+        "CT",
+        "MRI",
+        "Ultrasound",
+        "PET",
+        "Angiography",
+        "Combined modalities (e.g. PET/CT)"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain",
+        "Spine",
+        "Extremities",
+        "Chest",
+        "Breast",
+        "Abdomen",
+        "Pelvis"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Radiological anatomy across eight IRMA body-region codes"
+      ],
+      "diseases": [],
+      "clinical_context": "Edition-specific organizer paper lists cranium, spine, upper/lower limbs, chest, breast, abdomen and pelvis. Diverse image-caption corpus; no disease-family list is established from image examples.",
+      "modality_evidence_scope": "Evaluation section lists seven concepts including angiography, while the data-creation section lists six; preserve this within-paper discrepancy.",
+      "modality_counting_note": "Dataset modality range, not simultaneous modalities per patient or independent evaluation results."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "task_families": [
+        "Classification",
+        "Report generation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Concept detection (image-level UMLS labels)",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "source_url": "https://www.imageclef.org/2023/medical/caption"
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Caption prediction",
+          "task_family": "Report generation",
+          "task_families": [
+            "Report generation"
+          ],
+          "source_url": "https://www.imageclef.org/2023/medical/caption"
+        }
+      ],
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "Report generation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": true,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "X-ray",
+        "CT",
+        "MRI",
+        "Ultrasound",
+        "PET",
+        "Angiography",
+        "Combined modalities (e.g. PET/CT)"
+      ],
+      "population": null,
+      "source_reference": "https://www.imageclef.org/2023/medical/caption",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "ImageCLEF 2023 task-specific End-User Agreement. 已读取当届 EUA：限 2023 评测用途，禁止第三方接触/转发、商业用途及分发；须保留来源附加许可并引用；协议明确于 2023-10-01 结束。条款适用于协议定义的 Test collection，不等同于上游图像本身许可。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": null,
+      "metrics": [
+        {
+          "name": "F1",
+          "task": "concept detection"
+        },
+        {
+          "name": "BERTScore",
+          "task": "caption prediction"
+        }
+      ],
+      "source_reference": "https://www.imageclef.org/2023/medical/caption",
+      "execution_note": "Sciebo receives files; organizer scripts compute scores.",
+      "model_executor": "Participants",
+      "scoring_executor": "Organizers"
+    },
+    "submission": {
+      "submission_type": "Prediction CSV with method description",
+      "platform": "Sciebo file-drop directory",
+      "source_reference": "https://ceur-ws.org/Vol-3497/paper-128.pdf",
+      "runtime_limits": null,
+      "primary_artifacts": [
+        "Prediction CSV"
+      ],
+      "additional_artifacts": [
+        {
+          "artifact": "TXT",
+          "role": "Brief method description per run"
+        }
+      ],
+      "execution": "Participants infer locally; organizers receive results via Sciebo and run evaluation scripts. Private GitHub hosts instructions, not scoring; no AIcrowd real-time scoreboard is inferred.",
+      "format_by_task_or_phase": [
+        {
+          "per_run": [
+            "prediction CSV",
+            "method-description TXT"
+          ],
+          "detailed_instructions": "Participant-private GitHub"
+        }
+      ],
+      "format_limitations": [
+        "Exact header, delimiter and uniform ZIP requirement not publicly established."
+      ],
+      "source_urls": [
+        "https://ceur-ws.org/Vol-3497/paper-128.pdf"
+      ],
+      "evidence_basis": "Human-supplied review of participant working-notes paper",
+      "review_date": "2026-10-24",
+      "submission_evidence_status": "Primary artifact identified by human review; format-specific limitations retained",
+      "review_source": "_collection/submission22_review_20261024/user_review.txt",
+      "additional_materials": [
+        {
+          "artifact": "TXT",
+          "role": "Brief method description per run"
+        }
+      ],
+      "portal_review_source": "_collection/portal_classification_review_20261024/user_review.txt"
+    },
+    "schedule": {
+      "edition_year": 2023,
+      "source_reference": "https://www.imageclef.org/2023/medical/caption"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://www.imageclef.org/2023/medical/caption",
+      "supporting_sources": [
+        "https://www.imageclef.org/2023/medical"
+      ]
+    },
+    "notes": [
+      "One named Caption edition, not separate counts for concept/caption subtasks. Concept detection is image-level tagging, not bounding-box detection. Dataset modality scope is recorded by edition, including the 2023 source-section discrepancy."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.imageclef.org/2023/medical/caption",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/4b8337f407a191ea.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.imageclef.org/2023/medical",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/66a7666ae1fa85b3.json",
+          "http_status": 200
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://ceur-ws.org/Vol-3497/paper-128.pdf",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        },
+        {
+          "type": "Source cited in human portal/classification review",
+          "url": "https://ceur-ws.org/Vol-3497/paper-108.pdf",
+          "review_record": "_collection/portal_classification_review_20261024/user_review.txt",
+          "reviewed_on": "2026-10-24"
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields",
+        "Exact header, delimiter and uniform ZIP requirement not publicly established."
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py",
+      "submission_human_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/submission22_review_20261024/user_review.txt",
+        "basis": "Human-supplied review of participant working-notes paper",
+        "scope": "Submission artifact, format and executor; source assertions supplied by human review, not a new independent audit of all linked pages."
+      },
+      "portal_classification_review": {
+        "date": "2026-10-24",
+        "local_review": "_collection/portal_classification_review_20261024/user_review.txt",
+        "basis": "Human-supplied source-linked review; organizer BraTS reply and ICPR programme also checked directly."
+      }
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification",
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "data-to-model",
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "record_relationships": {
+      "analytical_unit": "named_subchallenge_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": "Official results tables published",
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "The edition-specific ImageCLEF registration instructions require organizer validation of the submitted agreement/form before dataset/task access is granted."
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "ImageCLEFmedical Caption | ImageCLEF / LifeCLEF -  Multimedia Retrieval in CLEF",
+          "local_source": "_collection/other_venues_audit_20261024/sources/4b8337f407a191ea.json",
+          "url": "https://www.imageclef.org/2023/medical/caption",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home › ImageCLEF 2023 › ImageCLEFmedical ImageCLEFmedical Caption Welcome to the 7th edition of the Caption Task! Motivation Interpreting and summarizing the insights gained from medical images such as radiology output is a time-consuming task that involves highly t [...] sts regarding interpretation. We work on the basis of a large-scale collection of figures from open access biomedical journal articles (PubMed Central). All images in the training data are accompanied by UMLS concepts extracted from the original image caption. Lessons learned : In the first and second editions of this task, held at ImageCLEF 2017 and ImageCLEF 2018, participants noted a broad variety of [...] luation metric for the caption prediction subtask. News 12.10.2022 : website goes live 12.01.2023 : registration opens 09.02.2023 : development dataset released 14.03.2023 : test dataset released 09.05.2023 : run submission deadline extended to May 12 19.05.2023 : results published Task Description For captioning, participants will be requested to develop solutions for automatically identifying individual components from which captions are composed in Radiology Objects in COntext images. I [...] h subtasks. As in previous editions, the dataset originates from biomedical articles of the PMC OpenAccess subset. Training Set: Consists of 60,918 radiology images Validation Set: Consists of 10,437 radiology images Test Set: Consists of 10,473 radiology images Concept Detection Task The concepts were generated using a reduced subset of the UMLS 2022 AB release. To improve the feasibility of recognizin [...]  Captioning (arxiv.org) . GitHub: jmhessel/clipscore: CLIPScore EMNLP code (github.com) Participant registration Please refer to the general ImageCLEF registration instructions EUA template Preliminary Schedule 19 December 2022: Registration opens 6 Feburary 2023: Release of the training and validation sets 14 March 2023: Release of the test sets 22 April 2023: Registration closes 10 May 12 May 2023: Run submission deadline 17 May 19 May 2023: Release of the processed results by the task organizers 5 June 2023: Submission of participant papers [CEUR-WS] 23 June 2023: Notification of acceptance 7 July 2023: Camera ready copy of participant papers and extended lab overv [...]  Submission Instructions Please find detailed submission instructions on GitHub (private repository accessible only for participants). Results The tables below contain only the best runs of each team, for a complete list of all runs please see the CSV files in this Sciebo folder . Concept Detection Task For the cconcept detection task, the ranking is based on the F1-score as described in the Evaluation  [...] the Citations section below. Citations When referring to ImageCLEF 2023 , please cite the following publication: Bogdan Ionescu, Henning Müller, Ana-Maria Drăgulinescu, Wen-wai Yim, Asma Ben Abacha, Neal Snider, Griffin Adams, Meliha Yetisgen, Johannes Rückert, Alba García Seco de Herrera, Christoph M. Friedrich, Louise Bloch, Raphael Brüngel, Ahmad Idrissi-Yaghir, Henning Schäfer, Steven A. Hicks, Mich [...] ing to ImageCLEFmedical 2023 Caption general goals, general results, etc. please cite the following publication: Johannes Rückert, Asma Ben Abacha, Alba G. Seco de Herrera, Louise Bloch, Raphael Brüngel, Ahmad Idrissi-Yaghir, Henning Schäfer, Henning Müller and Christoph M. Friedrich. Overview of ImageCLEFmedical 2023 – Caption Prediction and Concept Detection, in Experimental IR Meets Multilinguality, "
+        },
+        {
+          "section": "ImageCLEFmedical | ImageCLEF / LifeCLEF -  Multimedia Retrieval in CLEF",
+          "local_source": "_collection/other_venues_audit_20261024/sources/66a7666ae1fa85b3.json",
+          "url": "https://www.imageclef.org/2023/medical",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home › ImageCLEF 2023 ImageCLEFmedical ImageCLEF has included medical tasks every year since 2004. Since 2019 we focus each of the medical tasks to one specific problem but combine them as a single task with several subtasks. Our hope is that this approach helps inf"
+        },
+        {
+          "section": "Official edition data/registration instructions",
+          "local_source": "_collection/access_flow_review_20261024/sources/30918aba788a0c29.json",
+          "url": "https://www.imageclef.org/2023#registration",
+          "excerpt": "CLEF 2009 ImageCLEF 2008 ImageCLEF 2007 ImageCLEF 2006 ImageCLEF 2005 ImageCLEF 2004 ImageCLEF 2003 Publications Old resources You are here Home ImageCLEF 2023 Tweets by @imageclef Sponsors Motivation Following the ImageCLEF 2003-2022 evaluation campaigns, ImageCLEF 2023 ( https://www.imageclef.org/ , https://www.facebook.com/imageclef , https://twitter.com/imageclef ), the Multimodal Challenge organize [...] ing, #classification and #retrieval of multimodal data, with the objective of providing information access to large collections in various usage scenarios and domains. The campaign offers several research tasks that welcome participation from teams around the world. ImageCLEF 2023 will focus again on a diversity of applications, namely medical, social media and Internet, and content recommendation, allo [...]  http://ceur-ws.org/Vol-3180/ ). Selected contributions among the participants, will be invited for publication in the following year in the Springer Lecture Notes in Computer Science (LNCS) together with the annual lab overviews (e.g., 2022 https://link.springer.com/book/10.1007/978-3-031-13643-6 ). Target communities involve (but are not limited to): information retrieval (e.g., text, vision, audio, m [...] ing task webpage for specific dates. A (tentative) global schedule can be found below: 14.11.2022 : registration opens for all ImageCLEF tasks 17.01.2023 : development data release starts (depends on the task) 14.03.2023 : test data release starts (depends on the task) 10.05.2023 : deadline for submitting the participants runs (depends on the task) 17.05.2023 : release of the processed results by the task organizers (depends on the task) 05.06.2023 : deadline for submission of working notes papers by the participants 23.06.2023 : noti [...] d workshops on a broad range of challenges in the fields of multilingual and multimodal information access evaluation, and a set of benchmarking activities carried in various labs designed to test different aspects of mono and cross-language information retrieval systems. More details about the conference can be found here . Also there is more information about the CLEF Initiative . Programme of ImageCLEF at the CLEF 2023 Conference Please check the programme here : Participant registration Important: We do not longer accept registrations to ImageCLEF2023, but we are looking forward to welcome you to ImageCLEF2024. Registration Form A team can be registered by a representative member by filling in the ImageCLEF Registration Form (for any information, please contact Ivan Eggel ivan.eggel@hevs.ch or Ana-Maria Drăgulinescu ana.dragulinescu@upb.ro .) EUA uploading Team’s representative member has to fill in and submit one EUA for each ImageCLEF task they want to participate in (please note that some tasks do not require an EUA). The Registration Form has special fields for documents upload and are made available once the representative member selects to register for a specific task. An ImageCLEF participant is considered as registered for a task as soon as he/she has uploaded a valid EUA that was approved by the ImageCLEF task (examples of how the EUAs should be filled in can be found here: Caption 2019 EUA example , Tuberculosis 2019 EUA example and VQA 2019 EUA example ). After validating your EUA, the task will grant read access to the dataset via the team representative’s Github account. If the registration needs to be modified, the team’s representative member will receive an e-mail notification. The EUAs templates are available here: Caption 2023 EUA GANs 2023 EUA VQA 2023 EUA Fusion 2023 EUA Aware 2023 EUA Form update Each representative will be able to modify the registration, except the already uploaded documents. In case it is necessary to resubmit new versions of EUAs, you will receive an e-mail notification from the registered tasks. Thus, the team’s representative is allowed to: change the representative member’s and team’s information using the same form just by sending another response via the Google Form. The team’s representative member and the organizers of all the tasks to which one registered will be notified. register to new tasks until the task registration deadline is over, using the same form just by sending another response via the Google Form. Important notes: Please DO NOT register on the CLEF websites for the ImageCLEF tasks. Our registrations will be automatically transmitted to CLEF. The representative members are not allowed to register twice. The Tasks ImageCLEF 2023 proposes 4 main tasks: (5th edition) ImageCLEFmedical : Medical information can be used in a variety of scenarios and this task will combine the most popular medical task of ImageCLEF with three new tasks and continue the idea of 2019 by mixing various applications,  [...] ion systems and methods. Overview Paper When referring to ImageCLEF 2023, please cite the following publication: Bogdan Ionescu, Henning Müller, Ana-Maria Drăgulinescu, Wen-wai Yim, Asma Ben Abacha, Neal Snider, Griffin Adams, Meliha Yetisgen, Johannes Rückert, Alba García Seco de Herrera, Christoph M. Friedrich, Louise Bloch, Raphael Brüngel, Ahmad Idrissi-Yaghir, Henning Schäfer, Steven A. Hicks, Mich"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 60918,
+              "unit": "images",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 10437,
+              "unit": "images",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 10473,
+              "unit": "images",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Not established",
+          "value": null
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Documented and classifiable",
+          "value": {
+            "value": 13,
+            "unit": "submitting teams",
+            "comparable": true,
+            "details": ""
+          }
+        }
+      },
+      "review_note": "ROCO biomedical article images; publication source not an acquisition center.",
+      "sources": [
+        {
+          "url": "https://www.imageclef.org/2023/medical/caption",
+          "local_source": "_collection/other_venues_audit_20261024/sources/4b8337f407a191ea.json"
+        },
+        {
+          "url": "https://www.imageclef.org/2023/medical",
+          "local_source": "_collection/other_venues_audit_20261024/sources/66a7666ae1fa85b3.json"
+        },
+        {
+          "url": "https://ceur-ws.org/Vol-3497/paper-108.pdf",
+          "local_source": "_collection/resource_audit_20261025/online/74edd9e4fc6c5377.txt"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/imageclefmedical-caption-2023.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain",
+            "Spine",
+            "Extremities",
+            "Chest",
+            "Breast",
+            "Abdomen",
+            "Pelvis"
+          ]
+        },
+        "disease": {
+          "state": "Not established",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Radiological anatomy across eight IRMA body-region codes"
+      ],
+      "specific_diseases": [],
+      "review_note": "Edition-specific organizer paper lists cranium, spine, upper/lower limbs, chest, breast, abdomen and pelvis. Diverse image-caption corpus; no disease-family list is established from image examples.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/4b8337f407a191ea.json",
+          "url": "https://www.imageclef.org/2023/medical/caption"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/66a7666ae1fa85b3.json",
+          "url": "https://www.imageclef.org/2023/medical"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/74edd9e4fc6c5377.txt",
+          "url": "https://ceur-ws.org/Vol-3497/paper-108.pdf"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/imageclefmedical-caption-2023.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "Report generation"
+      ],
+      "previous_emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "Report generation": "Declared task output"
+      },
+      "note_zh": "概念分类与 caption prediction 分别保留；标题中的 concept detection 不编码为对象检测。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://www.imageclef.org/2023/medical/caption",
+          "local_source": "_collection/other_venues_audit_20261024/sources/4b8337f407a191ea.json",
+          "sha256": "ffa0d5f310c4be44878fd4148f6ee72243cfc3f967aeb5fecf96e783baf3cc72"
+        },
+        {
+          "url": "https://www.imageclef.org/2023/medical",
+          "local_source": "_collection/other_venues_audit_20261024/sources/66a7666ae1fa85b3.json",
+          "sha256": "5d0e634231d383040830b658d067821edd70ef67ff04de6baea59eb9ca8b89e9"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "ImageCLEF 2023 task-specific End-User Agreement"
+      ],
+      "scope": "Test collection as defined by the edition-specific EUA",
+      "agreement_required": true,
+      "summary_zh": "已读取当届 EUA：限 2023 评测用途，禁止第三方接触/转发、商业用途及分发；须保留来源附加许可并引用；协议明确于 2023-10-01 结束。条款适用于协议定义的 Test collection，不等同于上游图像本身许可。",
+      "qualifications": [],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/d8dc68649e05d7f8.json",
+          "url": "https://www.imageclef.org/2023"
+        },
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/8bcd508fcd2abdca.json",
+          "url": "https://drive.google.com/uc?export=download&id=1voArZbMuvchoRyvtfHVvLbvYFh7seHoz"
+        }
+      ],
+      "agreement_end_date": "2023-10-01",
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "CLEF/2023/imageclefmedical-caption-2023.json",
+              "source_field": "resource_characteristics_review.fields.active_teams",
+              "value": {
+                "value": 13,
+                "unit": "submitting teams",
+                "comparable": true,
+                "details": ""
+              },
+              "sources": [
+                {
+                  "url": "https://www.imageclef.org/2023/medical/caption",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/4b8337f407a191ea.json"
+                },
+                {
+                  "url": "https://www.imageclef.org/2023/medical",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/66a7666ae1fa85b3.json"
+                },
+                {
+                  "url": "https://ceur-ws.org/Vol-3497/paper-108.pdf",
+                  "local_source": "_collection/resource_audit_20261025/online/74edd9e4fc6c5377.txt"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/imageclefmedical-caption-2023.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

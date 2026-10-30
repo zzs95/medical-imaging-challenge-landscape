@@ -1,0 +1,932 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "brats-2025-lighthouse-challenge-2025",
+    "challenge_name": "BraTS 2025 Lighthouse Challenge",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI",
+        "Pathology"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "Brain tumors"
+      ],
+      "diseases": [
+        "Brain tumors"
+      ],
+      "clinical_context": null,
+      "disease_evidence_scope": "The 2025 registered challenge design explicitly targets multiple brain tumor entities; broad coding avoids transferring subtype counts between years.",
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Other",
+        "Synthesis",
+        "Classification",
+        "Outcome Prediction"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "BraTS-Glioma: Glioma Segmentation on Pre- and Post-treatment MRI",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "BraTS-Meningioma: Pre-operative Meningioma Tumor Segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "BraTS-Meningioma-RT: Meningioma Radiotherapy Segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task4",
+          "official_name": "BraTS-Metastasis: Segmentation of Pre- and Post-Treatment Brain Metastases",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task5",
+          "official_name": "BraTS-Africa: Segmentation of Brain Glioma in Sub-Saharan Africa patient population",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task6",
+          "official_name": "BraTS-PEDs: Multi-Consortium International Pediatric Brain Tumor Segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task7",
+          "official_name": "BraTS-GoAT: Generalizability Across Tumors",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task8",
+          "official_name": "BraTS-Augment: Evaluation of Augmentation Techniques for BraTS",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task9",
+          "official_name": "BraTS-Synthesis: MR Image Synthesis for BraTS",
+          "task_family": "Synthesis",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task10",
+          "official_name": "BraTS-Inpainting: MR Image Inpainting for BraTS",
+          "task_family": "Synthesis",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task11",
+          "official_name": "BraTS-Pathology: Assessing the Heterogeneous Histologic Landscape of Glioma",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task12",
+          "official_name": "BraTS-Pro: Brain Tumor Progression Challenge",
+          "task_family": "Outcome Prediction",
+          "task_subtype": null,
+          "input": null,
+          "optional_training_input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ],
+      "related_task_families": [
+        "Segmentation",
+        "Synthesis",
+        "Classification",
+        "Outcome Prediction"
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": true,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Brain tumors"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "MRI",
+        "Pathology"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Not established",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY; CC BY-NC; Inherited BraTS source terms. 多任务许可不同：部分 CC BY，部分公开训练集 CC BY-NC；非 TCIA 子集可能依贡献者意见限制为非商业；GoAT 继承来源任务条款。保留条件及隐藏验证/测试范围。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-25; access completion",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_by_scope": [],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design.",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Synapse",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Lesionwise Normalized Surface Distance (NSD)",
+            "Lesionwise Sensitivity",
+            "Lesionwise Specificity",
+            "Lesionwise Precision"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Lesionwise Normalized Surface Distance (NSD)",
+            "Lesionwise Sensitivity",
+            "Lesionwise Specificity",
+            "Lesionwise Precision"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Lesionwise Normalized Surface Distance (NSD)",
+            "Lesionwise Sensitivity",
+            "Lesionwise Specificity",
+            "Lesionwise Precision"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 3 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task4",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Lesionwise Normalized Surface Distance (NSD)",
+            "Lesionwise Sensitivity",
+            "Lesionwise Specificity",
+            "Lesionwise Precision"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 4 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task5",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Lesionwise Normalized Surface Distance (NSD)",
+            "Lesionwise Sensitivity",
+            "Lesionwise Specificity",
+            "Lesionwise Precision"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 5 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task6",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Lesionwise Normalized Surface Distance (NSD)",
+            "Lesionwise Sensitivity",
+            "Lesionwise Specificity",
+            "Lesionwise Precision"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 6 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task7",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Lesionwise Normalized Surface Distance (NSD)",
+            "Lesionwise Sensitivity",
+            "Lesionwise Specificity",
+            "Lesionwise Precision"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 7 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task8",
+          "metrics": null,
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 8 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task9",
+          "metrics": null,
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 9 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task10",
+          "metrics": null,
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 10 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task11",
+          "metrics": null,
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 11 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task12",
+          "metrics": null,
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 12 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.13981215",
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Prediction files (training/validation); algorithm container (test)",
+      "platform": "Synapse",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://www.synapse.org/brats2025",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "This is an umbrella challenge record. Child challenges or tracks may have separate records; do not sum participation or dataset counts across parent and child records."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 32,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/40cba6887cd7753d.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://www.synapse.org/brats2025",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/c46fef6deab663b5.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/13981215",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "supports": [
+            "clinical_domain",
+            "clinical_domain.disease_evidence_scope",
+            "clinical_domain.diseases",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://www.synapse.org/brats2025",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/brats-2025-lighthouse-challenge-2025.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "dataset.multi_center": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "dataset.center_type": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "evaluation.platform": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): The participants are required to send the output of their methods to the evaluation platform for the scoring to occur during the training and the validation phases. At the end of the validation phase the participants are asked to identify the method they would like to evaluate in the final testing/ranking phase. The organizers will then confirm receiving the containerized method and will evaluate it in the hidden testing data. The participants will be provided guidelines on the form of the container as we have done in previous years. This will enable confirmation of reproducibility. The Brain Tumor Segmentation (BraTS) Cluster of Challenges D"
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): The participants are required to send the output of their methods to the evaluation platform for the scoring to occur during the training and the validation phases. At the end of the validation phase the participants are asked to identify the method they would like to evaluate in the final testing/ranking phase. The organizers will then confirm receiving the containerized method and will evaluate it in the hidden testing data. The participants will be provided guidelines on the form of the container as we have done in previous years. This will enable confirmation of reproducibility. The Brain Tumor Segmentation (BraTS) Cluster of Challenges D"
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): The participants are required to send the output of their methods to the evaluation platform for the scoring to occur during the training and the validation phases. At the end of the validation phase the participants are asked to identify the method they would like to evaluate in the final testing/ranking phase. The organizers will then confirm receiving the containerized method and will evaluate it in the hidden testing data. The participants will be provided guidelines on the form of the container as we have done in previous years. This will enable confirmation of reproducibility. The Brain Tumor Segmentation (BraTS) Cluster of Challenges D"
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): The participants are required to send the output of their methods to the evaluation platform for the scoring to occur during the training and the validation phases. At the end of the validation phase the participants are asked to identify the method they would like to evaluate in the final testing/ranking phase. The organizers will then confirm receiving the containerized method and will evaluate it in the hidden testing data. The participants will be provided guidelines on the form of the container as we have done in previous years. This will enable confirmation of reproducibility. The Brain Tumor Segmentation (BraTS) Cluster of Challenges D"
+        },
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: The participants are required to send the output of their methods to the evaluation platform for the scoring to occur during the training and the validation phases. At the end of the validation phase the participants are asked to identify the method they would like to evaluate in the final testing/ranking phase. The organizers will then confirm receiving the containerized method and will evaluate it in the hidden testing data. The participants will be provided guidelines on the form of the conta"
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: The participants are required to send the output of their methods to the evaluation platform for the scoring to occur during the training and the validation phases. At the end of the validation phase the participants are asked to identify the method they would like to evaluate in the final testing/ranking phase. The organizers will then confirm receiving the containerized method and will evaluate it in the hidden testing data. The participants will be provided guidelines on the form of the conta"
+        },
+        "clinical_domain.diseases": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "The 2025 registered challenge design explicitly targets multiple brain tumor entities; broad coding avoids transferring subtype counts between years."
+        },
+        "clinical_domain.disease_evidence_scope": {
+          "source_url": "https://zenodo.org/records/13981215",
+          "local_snapshot": "_collection/sources_other/protocol-13981215.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "The 2025 registered challenge design explicitly targets multiple brain tumor entities; broad coding avoids transferring subtype counts between years."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://www.synapse.org/brats2025",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/brats-2025-lighthouse-challenge-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://www.synapse.org/brats2025",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/brats-2025-lighthouse-challenge-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://www.synapse.org/brats2025",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/brats-2025-lighthouse-challenge-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.disease_evidence_scope",
+          "clinical_domain.diseases",
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/brats-2025-lighthouse-challenge-2025.json",
+          "_collection/verification_20261003/literature_context/brats-2025-lighthouse-challenge-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Not established",
+        "state": "Not established",
+        "rationale": "2025-06-26 历史 Wiki：注册、表格、一小时内邀请、加入数据团队；不能仅凭等待时间判定自动或人工授权，分任务完整范围也需保留。",
+        "evidence_basis": "Official edition sources and explicit access procedures; temporal/platform qualifications retained",
+        "review_date": "2026-10-25",
+        "source_urls": [
+          "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn64153130/wiki2/631048?wikiVersion=30"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-25 access completion: 2025-06-26 历史 Wiki：注册、表格、一小时内邀请、加入数据团队；不能仅凭等待时间判定自动或人工授权，分任务完整范围也需保留。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/brats-2025-lighthouse-challenge-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/2361b8b2b0ebf9f9.json",
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn64153130/wiki2/631048?wikiVersion=30",
+          "section": "Development access follow-up 2026-10-25"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Not established",
+        "rationale": "2025-06-26 历史 Wiki：注册、表格、一小时内邀请、加入数据团队；不能仅凭等待时间判定自动或人工授权，分任务完整范围也需保留。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/e7a1ad190512785a.json",
+          "_collection/access_completion_20261025/sources/2361b8b2b0ebf9f9.json",
+          "_collection/access_completion_20261025/sources/d86408c901b9cab9.json",
+          "_collection/access_completion_20261025/sources/c46fef6deab663b5.json",
+          "_collection/access_completion_20261025/sources/c81bf8bd96b2837c.json",
+          "_collection/access_completion_20261025/sources/00d0162299036df4.json"
+        ]
+      }
+    },
+    "review_coding": {
+      "development_access": "Not established",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY",
+        "CC BY-NC",
+        "Inherited BraTS source terms"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "多任务许可不同：部分 CC BY，部分公开训练集 CC BY-NC；非 TCIA 子集可能依贡献者意见限制为非商业；GoAT 继承来源任务条款。保留条件及隐藏验证/测试范围。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "CC-BY Additional comments: CC-BY, but if any of the non-TCIA contributors object to this license, the specific subset of the BraTS data will be released under a CC-BY-NC license.",
+          "source": {
+            "url": "https://zenodo.org/records/13981215",
+            "local_source": "_collection/sources_other/protocol-13981215.txt"
+          }
+        },
+        {
+          "scope": "Edition-specific data-use section 2",
+          "text": "CC-BY",
+          "source": {
+            "url": "https://zenodo.org/records/13981215",
+            "local_source": "_collection/sources_other/protocol-13981215.txt"
+          }
+        },
+        {
+          "scope": "Edition-specific data-use section 3",
+          "text": "Since the BraTS-GoAT challenge is using datasets from other BraTS challenges (specifically, Tasks 1, 2, 4, 5, and 6), we will follow their data usage agreement.",
+          "source": {
+            "url": "https://zenodo.org/records/13981215",
+            "local_source": "_collection/sources_other/protocol-13981215.txt"
+          }
+        },
+        {
+          "scope": "Edition-specific data-use section 4",
+          "text": "CC-BY, as the exact training/validation data will follow the existing TCGA-GBM and TCGA-LGG license.",
+          "source": {
+            "url": "https://zenodo.org/records/13981215",
+            "local_source": "_collection/sources_other/protocol-13981215.txt"
+          }
+        },
+        {
+          "scope": "Edition-specific data-use section 5",
+          "text": "Public training set: CC BY-NC Validation and test set are not published",
+          "source": {
+            "url": "https://zenodo.org/records/13981215",
+            "local_source": "_collection/sources_other/protocol-13981215.txt"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/13981215",
+          "local_source": "_collection/sources_other/protocol-13981215.txt"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "The provided data describe MRI scans, acquired with different clinical protocols and various scanners from: UCSF, UCSD, Duke University, Indiana University, Thomas Jefferson University, Yale University, etc.",
+              "url": "https://zenodo.org/records/13981215",
+              "snapshot": "_collection/sources_other/protocol-13981215.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nThe provided data describe MRI scans, acquired with different clinical protocols and various scanners from: UCSF,\nUCSD, Duke University, Indiana University, Thomas Jefferson University, Yale University, etc.",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Page 79 of 196 Biomedical Image Analysis ChallengeS (BIAS) Initiative The Brain Tumor Segmentation (BraTS) Cluster of Challenges The provided data describe mpMRI scans, acquired with different clinical protocols and various scanners across sub-Saharan Africa from: Crestview Radiology, Lagos, Nigeria (1.5 T Siemens) Lagos University Teaching Hospital, Lagos Nigeria (1.5T Toshiba/Canon) Lagos State University Teaching Hospital, Lagos Nigeria (1.5T Philips) The National Hospital, Abuja, Nigeria (1.5 T Toshiba) Aminu Kano Teaching Hospital, Lagos, Nigeria (1.5 T Siemens) Lily Hospital, Benin (1.5T GE) Medhub Africa (multi-scanner) Muhimbili University of Health and Allied Sciences (1.5T and 3T multi-scanner) Korle Bu Teaching Hospital (Toshiba 1.5T MRI) Data Contributors: Abiodun Fatade, MBBS Crestview Radiology, Lagos, Nigeria Olubukola Omidiji, MBBS Lagos University Teaching Hospital, Lagos Nigeria. Rachel Akinola, MBBS Lagos State University Teaching Hospital, Lagos Nigeria Feyisayo Daji National Hospital, Abuja, Nigeria M.A Suwaid, MBBS Aminu Kano Teaching Hospital, Lagos, Nigeria Kenneth Aguh Medhub Africa Mayomi Onuwaje Lily Hospitals Benin Ugumba Kwikima, MD Muhimbili University of Health and Allied Sciences, Tanzania Yaw Mensah, MBBS Korle Bu Teaching Hospital, Ghana",
+              "url": "https://zenodo.org/records/13981215",
+              "snapshot": "_collection/sources_other/protocol-13981215.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\n\n\n                                                     Page 79 of 196                Biomedical Image Analysis ChallengeS (BIAS) Initiative\n\f                              The Brain Tumor Segmentation (BraTS) Cluster of Challenges\n\nThe provided data describe mpMRI scans, acquired with different clinical protocols and various scanners across\nsub-Saharan Africa from:\nCrestview Radiology, Lagos, Nigeria (1.5 T Siemens)\nLagos University Teaching Hospital, Lagos Nigeria (1.5T Toshiba/Canon)\nLagos State University Teaching Hospital, Lagos Nigeria (1.5T Philips)\nThe National Hospital, Abuja, Nigeria (1.5 T Toshiba)\nAminu Kano Teaching Hospital, Lagos, Nigeria (1.5 T Siemens)\nLily Hospital, Benin (1.5T GE)\nMedhub Africa (multi-scanner)\nMuhimbili University of Health and Allied Sciences (1.5T and 3T multi-scanner)\nKorle Bu Teaching Hospital (Toshiba 1.5T MRI)\n\n\nData Contributors:\nAbiodun Fatade, MBBS\nCrestview Radiology, Lagos, Nigeria\n\n\nOlubukola Omidiji, MBBS\nLagos University Teaching Hospital, Lagos Nigeria.\n\n\nRachel Akinola, MBBS\nLagos State University Teaching Hospital, Lagos Nigeria\n\n\nFeyisayo Daji\nNational Hospital, Abuja, Nigeria\n\n\nM.A Suwaid, MBBS\nAminu Kano Teaching Hospital, Lagos, Nigeria\n\n\nKenneth Aguh\nMedhub Africa\n\n\nMayomi Onuwaje\nLily Hospitals Benin\n\n\nUgumba Kwikima, MD\nMuhimbili University of Health and Allied Sciences, Tanzania\n\n\nYaw Mensah, MBBS\nKorle Bu Teaching Hospital, Ghana",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "The provided data describe mpMRI scans, acquired with different clinical protocols and various scanners from: 1. University of Pennsylvania (PA, USA), 2. University of Alabama at Birmingham (AL, USA), 3. Heidelberg University (Germany), 4. University of Bern (Switzerland), 5. University of Debrecen (Hungary), 6. Henry Ford Hospital (MI, USA), 7. University of California (CA, USA), 8. MD Anderson Cancer Center (TX, USA), 9. Emory University (GA, USA), 10. Mayo Clinic (MN, USA), 11. Thomas Jefferson University (PA, USA), 12. Duke University School of Medicine (NC, USA), 13. Saint Joseph Hospital and Medical Center (AZ, USA), 14. Case Western Reserve University (OH, USA), 15. University of North Carolina (NC, USA), 16. Fondazione IRCCS Instituto Neuroligico C. Besta, (Italy), 17. Ivy Glioblastoma Atlas Project, 18. MD Anderson Cancer Center (TX, USA), 19. Washington University in St. Louis (MO, USA), 20. Tata Memorial Center (India), 21. University of Pittsburg Medical Center (PA, USA), 22. University of California San Francisco (CA, USA), 23. Unity Health, 24. University Hospital of Zurich. Note that data from institutions 6-17 are provided through The Cancer Imaging Archive (TCIA - http://www.cancerimagingarchive.net/), supported by the Cancer Imaging Program (CIP) of the National Cancer Institute (NCI) of the National Institutes of Health (NIH).",
+              "url": "https://zenodo.org/records/13981215",
+              "snapshot": "_collection/sources_other/protocol-13981215.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nThe provided data describe mpMRI scans, acquired with different clinical protocols and various scanners from:\n1. University of Pennsylvania (PA, USA),\n2. University of Alabama at Birmingham (AL, USA),\n3. Heidelberg University (Germany),\n4. University of Bern (Switzerland),\n5. University of Debrecen (Hungary),\n6. Henry Ford Hospital (MI, USA),\n7. University of California (CA, USA),\n8. MD Anderson Cancer Center (TX, USA),\n9. Emory University (GA, USA),\n10. Mayo Clinic (MN, USA),\n11. Thomas Jefferson University (PA, USA),\n12. Duke University School of Medicine (NC, USA),\n13. Saint Joseph Hospital and Medical Center (AZ, USA),\n14. Case Western Reserve University (OH, USA),\n15. University of North Carolina (NC, USA),\n16. Fondazione IRCCS Instituto Neuroligico C. Besta, (Italy),\n17. Ivy Glioblastoma Atlas Project,\n18. MD Anderson Cancer Center (TX, USA),\n19. Washington University in St. Louis (MO, USA),\n20. Tata Memorial Center (India),\n21. University of Pittsburg Medical Center (PA, USA),\n22. University of California San Francisco (CA, USA),\n23. Unity Health,\n24. University Hospital of Zurich.\nNote that data from institutions 6-17 are provided through The Cancer Imaging Archive (TCIA -\nhttp://www.cancerimagingarchive.net/), supported by the Cancer Imaging Program (CIP) of the National Cancer\nInstitute (NCI) of the National Institutes of Health (NIH).",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Page 7 of 196 Biomedical Image Analysis ChallengeS (BIAS) Initiative The Brain Tumor Segmentation (BraTS) Cluster of Challenges One-time event with fixed conference submission deadline, and continuous evaluation after the conference deadline",
+              "url": "https://zenodo.org/records/13981215",
+              "snapshot": "_collection/sources_other/protocol-13981215.txt",
+              "scope": "Organizer specifies continued evaluation or persistent results; implemented availability is not inferred from this plan.",
+              "value": null,
+              "excerpt": "gmail.com\n\nLife cycle type\n\nDefine the intended submission cycle of the challenge. Include information on whether/how the challenge will be\ncontinued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time\nevent). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some\nmodifications (repeated event).\n\n\nExamples:\n\n  • One-time event with fixed conference submission deadline\n\n  • Open call (challenge opens for new submissions after conference deadline)\n\n  • Repeated event with annual fixed conference submission deadline\n\n\n                                                    Page 7 of 196                 Biomedical Image Analysis ChallengeS (BIAS) Initiative\n\f                             The Brain Tumor Segmentation (BraTS) Cluster of Challenges\n\nOne-time event with fixed conference submission deadline, and continuous evaluation after the conference\ndeadline\n\nChallenge venue and platform\n\na) Report the event (e.g. conference) that is associated with the challenge (if any).\n\nMICCAI",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "One time event with fixed submission deadline. However, we plan to enable further testing of methods on the test set with a separate post-challenge leaderboard. Additionally, we plan to repeat this challenge at future MICCAIs.",
+              "url": "https://zenodo.org/records/13981215",
+              "snapshot": "_collection/sources_other/protocol-13981215.txt",
+              "scope": "Organizer specifies continued evaluation or persistent results; implemented availability is not inferred from this plan.",
+              "value": null,
+              "excerpt": "elberg.de\n\nLife cycle type\n\nDefine the intended submission cycle of the challenge. Include information on whether/how the challenge will be\ncontinued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time\nevent). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some\nmodifications (repeated event).\n\n\nExamples:\n\n  • One-time event with fixed conference submission deadline\n\n  • Open call (challenge opens for new submissions after conference deadline)\n\n  • Repeated event with annual fixed conference submission deadline\n\nOne time event with fixed submission deadline.\nHowever, we plan to enable further testing of methods on the test set with a separate post-challenge\nleaderboard. Additionally, we plan to repeat this challenge at future MICCAIs.\n\nChallenge venue and platform\n\na) Report the event (e.g. conference) that is associated with the challenge (if any).\n\nMICCAI",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

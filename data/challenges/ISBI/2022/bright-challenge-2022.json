@@ -1,0 +1,835 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "bright-challenge-2022",
+    "challenge_name": "BRIGHT Challenge",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "ISBI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Pathology"
+      ],
+      "submodality": [
+        "H&E pathology",
+        "Whole-slide image"
+      ],
+      "body_region": [
+        "Breast"
+      ],
+      "organ_system": [
+        "Breast"
+      ],
+      "organs_or_structures": [
+        "Breast lesion subtypes"
+      ],
+      "diseases": [
+        "Benign breast lesions",
+        "Usual ductal hyperplasia",
+        "Flat epithelial atypia",
+        "Atypical ductal hyperplasia",
+        "Ductal carcinoma in situ",
+        "Invasive breast carcinoma"
+      ],
+      "clinical_context": null,
+      "disease_evidence_scope": "Official Synapse wiki explicitly lists the six noncancerous, precancerous and cancerous breast lesion classes.",
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Cancer-risk category classification",
+          "task_family": "Classification",
+          "task_subtype": "multi-class classification",
+          "input": [
+            "H&E gigapixel whole-slide image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Noncancerous, precancerous or cancerous category"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Fine-grained lesion subtype classification",
+          "task_family": "Classification",
+          "task_subtype": "multi-class classification",
+          "input": [
+            "H&E gigapixel whole-slide image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "One of six lesion subtype labels"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Breast lesion subtypes"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "slide_count": {
+          "value": 550,
+          "approximate": true,
+          "raw_text": "more than 550 annotated WSIs"
+        }
+      },
+      "modalities": [
+        "Pathology"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "补充材料称参赛论文曾提到许可文件；本轮未取得可核对的正式数据条款，维持未明确。",
+      "access_after_challenge": null,
+      "review_status": "Human-confirmed 2026-10-25",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition-specific competition data access",
+      "access_by_scope": [
+        {
+          "scope": "Training/validation",
+          "category": "Individual authorization",
+          "access_steps": [
+            "Synapse account and challenge entry",
+            "Separate manual data authorization",
+            "Dataset download"
+          ],
+          "manual_review": true
+        }
+      ],
+      "license_review_status": "Not established",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": "Code and model files in a Synapse Project"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Prediction / result files",
+      "platform": "Synapse",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "submission_artifact": "Prediction files uploaded through a Synapse project",
+      "execution_mode": "Participant-run inference; organizer scoring",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Code/model materials submitted via Synapse Project, as confirmed by user; execution mechanism not specified.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "explicit_user_confirmation",
+        "instruction": "BRIGHT 2022通过Create a Synapse Project 上传代码模型提交",
+        "summary": "BRIGHT 2022：用户确认通过Create a Synapse Project上传代码和模型提交；主要提交类型更新为Code and model weights。具体归档格式、容器化要求和实际执行方未由此次反馈指定，不作推断。",
+        "independently_verified_in_this_update": false,
+        "qualification": "Confirms code/model submission through a Synapse project; does not independently establish Docker packaging, automatic execution, or the executor identity."
+      },
+      "submission_entry": "Create a Synapse Project",
+      "scoring_submission_review": {
+        "date": "2026-10-24",
+        "basis": "Official submission tutorial and final-round leaderboard distinguish scored prediction files from accompanying code.",
+        "source_urls": [
+          "https://www.synapse.org/Synapse:syn26480664/wiki/616328",
+          "https://www.synapse.org/Synapse:syn26480664/wiki/616847"
+        ]
+      },
+      "additional_materials": [
+        {
+          "artifact": "Source code and model materials in the Synapse project",
+          "purpose": "Accompanying reproducibility material; not the scored prediction artifact"
+        }
+      ],
+      "additional_materials_count_as_primary_scored_artifact": false
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://www.synapse.org/Synapse:syn26480664",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "The official description supplies a lower-bound slide count; 550 is not an exact total.",
+      "2026-10-22 提交方式字段同步：Synapse入口已知；不能在缺少直接说明时推断CSV或Docker。",
+      "2026-10-22 最新提交类型确认：BRIGHT 2022：用户确认通过Create a Synapse Project上传代码和模型提交；主要提交类型更新为Code and model weights。具体归档格式、容器化要求和实际执行方未由此次反馈指定，不作推断。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 81,
+      "sources": [
+        {
+          "type": "official challenge source",
+          "url": "https://www.synapse.org/Synapse:syn26480664",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/7cbb8a6958b842d7.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official challenge source",
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/96cc2491847244b4.json",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "clinical_domain.disease_evidence_scope",
+            "clinical_domain.diseases",
+            "dataset or rules where stated",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "official conference program, browser extraction",
+          "url": "https://biomedicalimaging.org/2022/challenges/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/isbi-conference-web.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation",
+            "task_profile",
+            "clinical_domain"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://www.synapse.org/Synapse:syn26480664",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/bright-challenge-2022.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "user_supplied_review",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "source_urls": [
+            "https://www.synapse.org/Synapse:syn26480664/discussion/threadId=8926"
+          ],
+          "supports": [
+            "Synapse入口已知；不能在缺少直接说明时推断CSV或Docker。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.disease_evidence_scope",
+          "clinical_domain.diseases",
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/bright-challenge-2022.json",
+          "_collection/verification_20261003/literature_context/bright-challenge-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "field_evidence": {
+        "clinical_domain.diseases": {
+          "source_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki",
+          "local_snapshot": "_collection/sources_other/96cc2491847244b4.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official Synapse wiki explicitly lists the six noncancerous, precancerous and cancerous breast lesion classes."
+        },
+        "clinical_domain.disease_evidence_scope": {
+          "source_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki",
+          "local_snapshot": "_collection/sources_other/96cc2491847244b4.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official Synapse wiki explicitly lists the six noncancerous, precancerous and cancerous breast lesion classes."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://www.synapse.org/Synapse:syn26480664",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/bright-challenge-2022.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://www.synapse.org/Synapse:syn26480664",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/bright-challenge-2022.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://www.synapse.org/Synapse:syn26480664",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/bright-challenge-2022.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "user_supplied_review",
+          "summary": "Synapse入口已知；不能在缺少直接说明时推断CSV或Docker。",
+          "evidence_ids": [
+            "E3"
+          ],
+          "source_urls": [
+            "https://www.synapse.org/Synapse:syn26480664/discussion/threadId=8926"
+          ],
+          "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/ISBI/2022/bright-challenge-2022.json"
+        },
+        {
+          "date": "2026-10-22",
+          "basis_type": "explicit_user_confirmation",
+          "instruction": "BRIGHT 2022通过Create a Synapse Project 上传代码模型提交",
+          "summary": "BRIGHT 2022：用户确认通过Create a Synapse Project上传代码和模型提交；主要提交类型更新为Code and model weights。具体归档格式、容器化要求和实际执行方未由此次反馈指定，不作推断。",
+          "independently_verified_in_this_update": false,
+          "qualification": "Confirms code/model submission through a Synapse project; does not independently establish Docker packaging, automatic execution, or the executor identity.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bright_user_submission_20261022_155557/ISBI/2022/bright-challenge-2022.json"
+        }
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "2026-10-25人工确认：Synapse数据集和比赛入口；用户确认存在独立人工授权。",
+        "scope": "Edition-specific competition data access",
+        "access_by_scope": [
+          {
+            "scope": "Training/validation",
+            "category": "Individual authorization",
+            "access_steps": [
+              "Synapse account and challenge entry",
+              "Separate manual data authorization",
+              "Dataset download"
+            ],
+            "manual_review": true
+          }
+        ],
+        "evidence_basis": "Explicit user confirmation of manual authorization; prior public workflow evidence retained, no new independent web verification",
+        "confidence": "Human-confirmed",
+        "source_urls": [
+          "https://www.synapse.org/Synapse%3Asyn26480664/discussion/threadId%3D8943"
+        ]
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "BRIGHT官方提交教程要求从已提供数据生成预测文件；最终排行榜说明所有队伍可再交结果文件。代码为项目随附材料，不能将其等同正式模型执行评分。"
+      },
+      "decision_history": [
+        "BRIGHT官方提交教程要求从已提供数据生成预测文件；最终排行榜说明所有队伍可再交结果文件。代码为项目随附材料，不能将其等同正式模型执行评分。",
+        "2026-10-24 round 2: 账号及Synapse客户端访问步骤有支持；尚不能排除附加权限审核。保留Account registration为候选解释，不把未发现人工审批当成自动放行的证明。",
+        "2026-10-25人工确认：Synapse数据集和比赛入口；用户确认存在独立人工授权。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/343b4b488bfcbe70.json",
+          "url": "https://www.synapse.org/Synapse:syn26480664/wiki/616328",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki/616328"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/4b8c0a60aa6434c5.json",
+          "url": "https://www.synapse.org/Synapse:syn26480664/wiki/616847",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki/616847"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/bright-challenge-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://www.synapse.org/Synapse%3Asyn26480664/discussion/threadId%3D8943",
+          "local_source": "_collection/access_backfill_round2_20261024/sources/bright22_forum.json",
+          "review_date": "2026-10-24",
+          "section": "Round 2 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round2_20261024/user_review_summary.json",
+          "section": "User-supplied round 2 findings, summarized; independent checks stated separately"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_manual_20261025/user_confirmation.json",
+          "review_date": "2026-10-25",
+          "section": "Explicit human confirmation of manual approval for this edition"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "2",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        },
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Ambiguous",
+            "state": "Ambiguous",
+            "rationale": "账号及Synapse客户端访问步骤有支持；尚不能排除附加权限审核。保留Account registration为候选解释，不把未发现人工审批当成自动放行的证明。",
+            "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+            "access_by_scope": [
+              {
+                "scope": "Training/validation",
+                "category": "Account registration candidate",
+                "access_steps": [
+                  "Synapse account/login",
+                  "Client download",
+                  "Additional approval not established"
+                ],
+                "manual_review": null
+              }
+            ],
+            "evidence_basis": "User supplied login evidence; official download-help forum checked; approval mode unresolved",
+            "confidence": "Moderate",
+            "source_urls": [
+              "https://www.synapse.org/Synapse%3Asyn26480664/discussion/threadId%3D8943"
+            ]
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "data-to-model"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Not established",
+      "terms_documented": false,
+      "detail_level": "Not established",
+      "licence_names": [],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "补充材料称参赛论文曾提到许可文件；本轮未取得可核对的正式数据条款，维持未明确。",
+      "qualifications": [],
+      "scoped_terms": [],
+      "sources": [
+        {
+          "url": "https://www.synapse.org/Synapse:syn26480664",
+          "local_source": "_collection/sources_other/7cbb8a6958b842d7.json"
+        },
+        {
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki",
+          "local_source": "_collection/sources_other/96cc2491847244b4.json"
+        },
+        {
+          "url": "https://www.synapse.org/Synapse:syn26480664/wiki/616328",
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/343b4b488bfcbe70.json"
+        },
+        {
+          "url": "https://www.synapse.org/Synapse:syn26480664/wiki/616847",
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/4b8c0a60aa6434c5.json"
+        },
+        {
+          "url": "https://www.synapse.org/Synapse%3Asyn26480664/discussion/threadId%3D8943",
+          "local_source": "_collection/access_backfill_round2_20261024/sources/bright22_forum.json"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "search_attempts": [
+        {
+          "url": "https://www.synapse.org/Synapse:syn26480664",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/7cbb8a6958b842d7.json",
+          "status": 200
+        },
+        {
+          "url": "https://biomedicalimaging.org/2022/challenges/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/bbf58238aa3a1944.json",
+          "status": 403
+        },
+        {
+          "url": "https://www.synapse.org/Synapse:syn26480664/wiki/616328",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/635c959aa96501b9.json",
+          "status": 200
+        },
+        {
+          "url": "https://www.synapse.org/Synapse:syn26480664/wiki/616847",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/daebc46398cce3aa.json",
+          "status": 200
+        },
+        {
+          "url": "https://sagebionetworks.org/trust-center",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/def4c6ed544daa61.json",
+          "status": 200
+        },
+        {
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/96cc2491847244b4.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wikiheadertree",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/39de7ff258d76f1b.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki/614729",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/2b0a945c2def6209.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki/616846",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/518d826f90dce0c6.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki/616328",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/343b4b488bfcbe70.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki/616847",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/4b8c0a60aa6434c5.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki/614732",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/221d863c0c3cb42a.json",
+          "status": 404,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance.",
+      "previous_review": {
+        "review_date": "2026-10-25",
+        "review_cohort": "Previously reviewed 215",
+        "review_population": "Legacy 101 previously unestablished records",
+        "state": "Not established",
+        "terms_documented": false,
+        "detail_level": "Not established",
+        "licence_names": [],
+        "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+        "agreement_required": null,
+        "summary_zh": "Synapse 当届公开页面可确认比赛和数据准入，但未取得独立的数据许可/完整协议正文。",
+        "qualifications": [],
+        "scoped_terms": [],
+        "sources": [
+          {
+            "url": "https://www.synapse.org/Synapse:syn26480664",
+            "local_source": "_collection/sources_other/7cbb8a6958b842d7.json"
+          },
+          {
+            "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki",
+            "local_source": "_collection/sources_other/96cc2491847244b4.json"
+          },
+          {
+            "url": "https://www.synapse.org/Synapse:syn26480664/wiki/616328",
+            "local_source": "_collection/access_flow_full_audit_20261024/sources/343b4b488bfcbe70.json"
+          },
+          {
+            "url": "https://www.synapse.org/Synapse:syn26480664/wiki/616847",
+            "local_source": "_collection/access_flow_full_audit_20261024/sources/4b8c0a60aa6434c5.json"
+          },
+          {
+            "url": "https://www.synapse.org/Synapse%3Asyn26480664/discussion/threadId%3D8943",
+            "local_source": "_collection/access_backfill_round2_20261024/sources/bright22_forum.json"
+          }
+        ],
+        "substantive_terms_documented": false,
+        "search_attempts": [
+          {
+            "url": "https://www.synapse.org/Synapse:syn26480664",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/7cbb8a6958b842d7.json",
+            "status": 200
+          },
+          {
+            "url": "https://biomedicalimaging.org/2022/challenges/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/bbf58238aa3a1944.json",
+            "status": 403
+          },
+          {
+            "url": "https://www.synapse.org/Synapse:syn26480664/wiki/616328",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/635c959aa96501b9.json",
+            "status": 200
+          },
+          {
+            "url": "https://www.synapse.org/Synapse:syn26480664/wiki/616847",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/daebc46398cce3aa.json",
+            "status": 200
+          },
+          {
+            "url": "https://sagebionetworks.org/trust-center",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/def4c6ed544daa61.json",
+            "status": 200
+          },
+          {
+            "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/96cc2491847244b4.json",
+            "status": 200,
+            "error": null
+          },
+          {
+            "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wikiheadertree",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/39de7ff258d76f1b.json",
+            "status": 200,
+            "error": null
+          },
+          {
+            "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki/614729",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/2b0a945c2def6209.json",
+            "status": 200,
+            "error": null
+          },
+          {
+            "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki/616846",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/518d826f90dce0c6.json",
+            "status": 200,
+            "error": null
+          },
+          {
+            "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki/616328",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/343b4b488bfcbe70.json",
+            "status": 200,
+            "error": null
+          },
+          {
+            "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki/616847",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/4b8c0a60aa6434c5.json",
+            "status": 200,
+            "error": null
+          },
+          {
+            "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn26480664/wiki/614732",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/221d863c0c3cb42a.json",
+            "status": 404,
+            "error": null
+          }
+        ],
+        "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+      },
+      "supplemental_user_review": "_collection/legacy_license_followup_20261025/user_review.txt"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02"
+  ]
+}

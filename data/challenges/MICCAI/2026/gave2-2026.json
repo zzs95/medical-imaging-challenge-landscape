@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "gave2-2026",
+    "challenge_name": "Generalized Analysis of Vessels in Eye Edition 2",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Fundus"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Eye"
+      ],
+      "organ_system": [
+        "Ophthalmic"
+      ],
+      "organs_or_structures": [
+        "Retinal arteries and veins"
+      ],
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Quantification"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Artery/vein segmentation based on color fundus images",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "Color fundus photograph"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Retinal artery and vein segmentation"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Cross-Modal Fluorescein Angiography-Guided Retinal Artery–Vein Segmentation in Color Fundus Imaging",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "Color fundus photograph",
+            "Fundus fluorescein angiography"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Retinal artery and vein segmentation"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Vascular Biomarker Quantification",
+          "task_family": "Quantification",
+          "task_subtype": null,
+          "input": [
+            "Color fundus photograph"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Vascular biomarker measurements"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Retinal arteries and veins"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Fundus"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Not established",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "preregistered_data_license": "CC BY-NC-ND",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "AI Studio",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Sensitivity",
+            "Specificity",
+            "Accuracy",
+            "Infeasible path percentage (INF)",
+            "Correct path percentage (COR)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Sensitivity",
+            "Specificity",
+            "Accuracy",
+            "Infeasible path percentage (INF)",
+            "Correct path percentage (COR)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Mean Absolute Error (MAE)",
+            "Symmetric Mean Absolute Percentage Error (SMAPE)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 3 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19732677",
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Prediction files (preliminary); Docker container (final verification)",
+      "platform": "AI Studio",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null,
+      "reported_counts": [
+        {
+          "reviewed_on": "2026-10-22",
+          "source_url": "https://es.linkedin.com/in/gplazaaarriola",
+          "teams": 43,
+          "source_type": "participant award announcement",
+          "scope": "Reported counters; do not treat as independently verified eligible final/active team count."
+        }
+      ]
+    },
+    "links": {
+      "official": "https://aistudio.baidu.com/competition/detail/1463",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "2026-10-22: 已确认：血管生物标志物子任务第二名、总榜第四名；分割独立最终结果待补。",
+      "2026-10-22: 分割竞赛结果新增确认：Gonzalo Plaza Arriola团队A/V分割第三名；Task 1/Task 2归属未明确。另有机构隐藏数据决赛前十记录。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 25,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19732677",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19732677.txt",
+          "supports": [
+            "clinical_domain",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://aistudio.baidu.com/competition/detail/1463",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/gave2-2026.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://de.linkedin.com/company/medical-image-computing",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_web_review_d63e2708d295_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Public institutional feed read through web tool; direct HTTP returned 999",
+          "source_accessible": true,
+          "supports": [
+            "已确认：血管生物标志物子任务第二名、总榜第四名；分割独立最终结果待补。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://es.linkedin.com/in/gplazaaarriola",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_web_b04c830762c2_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "Participant Gonzalo Plaza Arriola separately reports a MICCAI 2026 OMIA13 best oral paper award and third place in the GAVE2 A/V segmentation competition, described as having 43 teams. Task 1 versus Task 2 is unspecified; the count is participant-reported and not a verified active-team total."
+          ],
+          "retrieval_scope": "Primary source text retrieved through web search index; reviewer paraphrase, not raw page capture"
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://eti.pg.edu.pl/wydzial/strona-glowna/2026-10/zespol-ksmm-w-top-10-konkursu-gave2-na-wiodacej-konferencji-miccai",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_web_5fefb3b6f0ce_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "Gdansk University of Technology institutional report describes its team advancing to the GAVE2 2026 final on unseen data and finishing in the global top ten. This corroborates hidden final evaluation but does not give an exact rank or assign the other team third-place award to Task 1 or Task 2."
+          ],
+          "retrieval_scope": "Primary source text retrieved through web search index; reviewer paraphrase, not raw page capture"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://zenodo.org/records/19732677",
+          "local_snapshot": "_collection/sources_other/protocol-19732677.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): The algorithm output will be requested to be sent to the AI Studio platform and then be automatically evaluated. And, after the preliminary stage, the organizer will collect the Docker containers of the top 20-30 teams for Generalized Analysis of Vessels in Eye Edition 2 verification, and the top 5-15 teams who are willing to submit and have valid codes will enter the final. (The number of teams collecting materials and the number of teams in the final will be adjusted according to the actual number of participants). Submission instructions will be available on the AI Studio platform's challenge page."
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/19732677",
+          "local_snapshot": "_collection/sources_other/protocol-19732677.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): The algorithm output will be requested to be sent to the AI Studio platform and then be automatically evaluated. And, after the preliminary stage, the organizer will collect the Docker containers of the top 20-30 teams for Generalized Analysis of Vessels in Eye Edition 2 verification, and the top 5-15 teams who are willing to submit and have valid codes will enter the final. (The number of teams collecting materials and the number of teams in the final will be adjusted according to the actual number of participants). Submission instructions will be available on the AI Studio platform's challenge page."
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/19732677",
+          "local_snapshot": "_collection/sources_other/protocol-19732677.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): The algorithm output will be requested to be sent to the AI Studio platform and then be automatically evaluated. And, after the preliminary stage, the organizer will collect the Docker containers of the top 20-30 teams for Generalized Analysis of Vessels in Eye Edition 2 verification, and the top 5-15 teams who are willing to submit and have valid codes will enter the final. (The number of teams collecting materials and the number of teams in the final will be adjusted according to the actual number of participants). Submission instructions will be available on the AI Studio platform's challenge page."
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/19732677",
+          "local_snapshot": "_collection/sources_other/protocol-19732677.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): The algorithm output will be requested to be sent to the AI Studio platform and then be automatically evaluated. And, after the preliminary stage, the organizer will collect the Docker containers of the top 20-30 teams for Generalized Analysis of Vessels in Eye Edition 2 verification, and the top 5-15 teams who are willing to submit and have valid codes will enter the final. (The number of teams collecting materials and the number of teams in the final will be adjusted according to the actual number of participants). Submission instructions will be available on the AI Studio platform's challenge page."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/19732677",
+          "local_snapshot": "_collection/sources_other/protocol-19732677.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: The algorithm output will be requested to be sent to the AI Studio platform and then be automatically evaluated. And, after the preliminary stage, the organizer will collect the Docker containers of the top 20-30 teams for Generalized Analysis of Vessels in Eye Edition 2 verification, and the top 5-15 teams who are willing to submit and have valid codes will enter the final. (The number of teams collecting materials and the number of teams in the final will be adjusted according to the actual nu"
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19732677",
+          "local_snapshot": "_collection/sources_other/protocol-19732677.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: The algorithm output will be requested to be sent to the AI Studio platform and then be automatically evaluated. And, after the preliminary stage, the organizer will collect the Docker containers of the top 20-30 teams for Generalized Analysis of Vessels in Eye Edition 2 verification, and the top 5-15 teams who are willing to submit and have valid codes will enter the final. (The number of teams collecting materials and the number of teams in the final will be adjusted according to the actual nu"
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://aistudio.baidu.com/competition/detail/1463",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/gave2-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://aistudio.baidu.com/competition/detail/1463",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/gave2-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://aistudio.baidu.com/competition/detail/1463",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/gave2-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/gave2-2026.json",
+          "_collection/verification_20261003/literature_context/gave2-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "已确认：血管生物标志物子任务第二名、总榜第四名；分割独立最终结果待补。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "undetermined",
+            "evidence_state": "access_limited",
+            "evidence_ids": [],
+            "reason": "Official platform access failed; specific 2026 searches did not recover organizer final results. Preserve registered segmentation and quantification tracks."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2026/gave2-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "分割竞赛结果新增确认：Gonzalo Plaza Arriola团队A/V分割第三名；Task 1/Task 2归属未明确。另有机构隐藏数据决赛前十记录。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2026/gave2-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "scope": "Vascular biomarker and overall results retained; A/V segmentation award now confirmed, Task 1 versus Task 2 assignment unresolved.",
+      "basis": "分割竞赛结果新增确认：Gonzalo Plaza Arriola团队A/V分割第三名；Task 1/Task 2归属未明确。另有机构隐藏数据决赛前十记录。 Existing vascular-biomarker and overall award evidence remains valid.",
+      "evidence_type": "published_competition_result_or_award",
+      "evidence_sources": [
+        "https://de.linkedin.com/company/medical-image-computing"
+      ],
+      "organizer_full_rankings_independently_verified": false,
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "分割竞赛结果新增确认：Gonzalo Plaza Arriola团队A/V分割第三名；Task 1/Task 2归属未明确。另有机构隐藏数据决赛前十记录。",
+        "source_urls": [
+          "https://es.linkedin.com/in/gplazaaarriola",
+          "https://eti.pg.edu.pl/wydzial/strona-glowna/2026-10/zespol-ksmm-w-top-10-konkursu-gave2-na-wiodacej-konferencji-miccai"
+        ],
+        "evidence_ids": [
+          "E3",
+          "E4"
+        ],
+        "details": {
+          "segmentation_competition_assessment": "confirmed",
+          "award_rank": 3,
+          "participant": "Gonzalo Plaza Arriola and team",
+          "task_id": null,
+          "participant_reported_team_count": 43,
+          "count_definition": "participant statement; phase and eligible-team definition not independently verified",
+          "independent_corrobation": "Gdansk institution reports hidden final assessment and top-ten finish; different team"
+        },
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_round2_user_20261022.txt",
+        "propagation_status": "Original JSON, audit, current CSV/Excel/reports updated; manuscript/figures/frozen release not regenerated."
+      },
+      "remaining_questions": [
+        "Determine whether the A/V segmentation third-place award belongs to Task 1 or Task 2; no claim both independently confirmed.",
+        "43 teams is participant-reported, with phase/eligible-team definition unverified."
+      ],
+      "segmentation_result_evidence": {
+        "segmentation_competition_assessment": "confirmed",
+        "award_rank": 3,
+        "participant": "Gonzalo Plaza Arriola and team",
+        "task_id": null,
+        "participant_reported_team_count": 43,
+        "count_definition": "participant statement; phase and eligible-team definition not independently verified",
+        "independent_corrobation": "Gdansk institution reports hidden final assessment and top-ten finish; different team"
+      }
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Not established",
+        "state": "Not established",
+        "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "GAVE2当届协议明确发布训练、初赛及加密决赛输入，由队伍在发放密码后本地推理并提交结果；Docker为决赛前资格核验。"
+      },
+      "decision_history": [
+        "GAVE2当届协议明确发布训练、初赛及加密决赛输入，由队伍在发放密码后本地推理并提交结果；Docker为决赛前资格核验。",
+        "2026-10-25 access completion: 已复核现有当届协议、关联官网及数据入口；可读材料仍未说明数据下载的身份验证或授权步骤，部分入口无法访问。保留原分类，不从提交平台或数据发布时间推断。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources_other/protocol-19732677.txt",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/gave2-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Not established",
+        "rationale": "已复核现有当届协议、关联官网及数据入口；可读材料仍未说明数据下载的身份验证或授权步骤，部分入口无法访问。保留原分类，不从提交平台或数据发布时间推断。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/3a2f19689bb73814.json",
+          "_collection/access_completion_20261025/sources/d4ce5a858ac62dbb.json",
+          "_collection/access_completion_20261025/sources/c7bca566dfd23862.json"
+        ]
+      }
+    },
+    "review_coding": {
+      "development_access": "Not established",
+      "data_model_flow": "data-to-model"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Shenzhen Eye Hospital, China",
+              "url": "https://zenodo.org/records/19732677",
+              "snapshot": "_collection/sources_other/protocol-19732677.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nShenzhen Eye Hospital, China",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Open call (challenge opens for new submissions after conference deadline)",
+              "url": "https://zenodo.org/records/19732677",
+              "snapshot": "_collection/sources_other/protocol-19732677.txt",
+              "scope": "Organizer specifies continued evaluation or persistent results; implemented availability is not inferred from this plan.",
+              "value": null,
+              "excerpt": "hallenge.\n\nLife cycle type\n\nDefine the intended submission cycle of the challenge. Include information on whether/how the challenge will be\ncontinued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time\nevent). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some\nmodifications (repeated event).\n\n\nExamples:\n\n  • One-time event with fixed conference submission deadline\n\n  • Open call (challenge opens for new submissions after conference deadline)\n\n  • Repeated event with annual fixed conference submission deadline\n\nOpen call (challenge opens for new submissions after conference deadline)\n\nChallenge venue and platform\n\na) Report the event (e.g. conference) that is associated with the challenge (if any).\n\nOMIA13 – The 13th Ophthalmic Medical Image Analysis Workshop",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "Source-reported participation count; retain exact unit and scope instead of requiring a harmonized active-team definition.",
+              "url": "https://es.linkedin.com/in/gplazaaarriola",
+              "snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_web_b04c830762c2_20261022.json",
+              "scope": "No conversion of registered accounts or submission attempts into teams; reported team/participant definitions remain source-specific. Existing source-linked extraction reconciled in this update; source-reported participation does not establish independent validation of the reported number.",
+              "value": {
+                "reported_counts": [
+                  {
+                    "reviewed_on": "2026-10-22",
+                    "source_url": "https://es.linkedin.com/in/gplazaaarriola",
+                    "teams": 43,
+                    "source_type": "participant award announcement",
+                    "scope": "Reported counters; do not treat as independently verified eligible final/active team count."
+                  }
+                ]
+              },
+              "excerpt": "",
+              "snapshot_date": "2026-10-22",
+              "source_path": "MICCAI/2026/gave2-2026.json",
+              "source_field": "participation_statistics"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

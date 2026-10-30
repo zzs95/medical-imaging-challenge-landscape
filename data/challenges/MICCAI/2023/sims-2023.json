@@ -1,0 +1,474 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "sims-2023",
+    "challenge_name": "sims 2023",
+    "full_name": "SIMS: Surgical Instrument Multi-Domain Segmentation Challenge",
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "parent_event": "Endoscopic Vision Challenge",
+      "official_registration_id": "MICCAI-2023-R14"
+    },
+    "organizers": {
+      "institutions": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7845159",
+        "section": "Organizers",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/EndoscopicVisionChallenge2023_09-04-2023_01-33-14_v2.pdf",
+        "registered_task_index": 1
+      }
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "body_region": [
+        "Abdomen",
+        "Chest"
+      ],
+      "organs_or_structures": [
+        "Gallbladder operative field",
+        "Esophagectomy operative field",
+        "Surgical instruments"
+      ],
+      "diseases": [],
+      "clinical_context": "Human and porcine surgical videos; no specific diagnosis is assigned solely from operation names."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "secondary_task_families": [
+        "Localization",
+        "Classification"
+      ],
+      "task_families": [
+        "Segmentation",
+        "Localization",
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "SIMS: Surgical Instrument Multi-Domain Segmentation Challenge",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation",
+            "Localization",
+            "Classification"
+          ],
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7845159",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/EndoscopicVisionChallenge2023_09-04-2023_01-33-14_v2.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7845159",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/EndoscopicVisionChallenge2023_09-04-2023_01-33-14_v2.pdf",
+        "registered_task_index": 1
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Endoscopy"
+      ],
+      "population": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7845159",
+        "section": "Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/EndoscopicVisionChallenge2023_09-04-2023_01-33-14_v2.pdf",
+        "registered_task_index": 1
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7845159",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/EndoscopicVisionChallenge2023_09-04-2023_01-33-14_v2.pdf",
+        "registered_task_index": 1
+      },
+      "access_status": "Individual authorization",
+      "review_status": "Reviewed 2026-10-24",
+      "public_download": false,
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_or_terms": "CC BY-NC-SA. 当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {},
+      "testing": {},
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nFor segmentation: The DICE similarity coefficient and Normalized Surface Distance (NSD) will be used for ranking.\nFor instrument type classification: The mean average precision (MAP) will be used as described for the Pascal VOC\ndataset.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe DICE coefficient (and the positive correlated IoU) is a metric used commonly in the segmentation and the\nsurgical workflow community and is generally an accepted metric. For segmentation tasks the NSD complements\nthe DICE coefficient as it examines contour while the DICE coefficient examines the volume overlap. MAP is also a\ncommonly used metric, e.g. used in the Pascal VOC challenge.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nThe DICE coefficient and Hausdorf distance will be computed for every class in each selected image in a video and\nthen averaged over each video and then over all videos. We will then compute two ranks, one for each metric. The\nrank of each team will then be determined through its average rank. For the combination of the segmentation\nand classification challenge, we will compute the rank for each metric and compute the average rank to decide the\nleader board.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nAs each team will have to submit a docker image for evaluation, missing cases should not occur. If a class is not\npresent in a case/image but as detected, the DICE coefficient for that class will be set to 0.\n\n\n\n\n\fEndoscopic Vision Challenge 2023\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nWe decided to first average over each video to make sure that each case is weighted equally, even though the\nvideos vary in length.",
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7845159",
+            "section": "Metric(s); Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/EndoscopicVisionChallenge2023_09-04-2023_01-33-14_v2.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Synapse",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Docker container on the Synapse platform. Link to submission instructions: https://www.synapse.org/sims2023",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7845159",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/EndoscopicVisionChallenge2023_09-04-2023_01-33-14_v2.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Task-specific registered EndoVis protocol"
+    },
+    "schedule": {
+      "edition_year": 2023,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7845159",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/EndoscopicVisionChallenge2023_09-04-2023_01-33-14_v2.pdf",
+        "registered_task_index": 1
+      }
+    },
+    "publication": {
+      "registration_doi": "10.5281/zenodo.7845159"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "active_teams": null,
+      "teams_with_submission": null
+    },
+    "links": {
+      "registration": "https://doi.org/10.5281/zenodo.7845159",
+      "official_website": "https://endovis.grand-challenge.org/"
+    },
+    "notes": [
+      "Task-specific information is taken from the registered EndoVis protocol, not from unrelated child challenges."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "miccai_gapfill_20261024",
+      "sources": [
+        {
+          "type": "Official registered EndoVis protocol",
+          "url": "https://doi.org/10.5281/zenodo.7845159",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/EndoscopicVisionChallenge2023_09-04-2023_01-33-14_v2.pdf",
+          "supports": [
+            "year",
+            "parent-child relation",
+            "task design",
+            "submission and evaluation protocol"
+          ],
+          "registered_task_indices": [
+            1
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/task_sections.json",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ]
+    },
+    "record_relationships": {
+      "analytical_unit": "child_challenge_edition",
+      "parent_challenge_id": "endovis-2023",
+      "child_challenge_ids": []
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation",
+        "Localization",
+        "Classification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Registered sub-challenge design",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Sub-challenge explicitly named in registered EndoVis protocol",
+      "completion_status": "Not independently recoded in this gap-fill"
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Named EndoVis child challenge; parent is not additionally counted."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "SIMS要求填写、扫描并邮件发送数据规则表，完成后才提供数据。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7845159",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7845159",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker container on the Synapse platform. Link to submission instructions: https://www.synapse.org/sims2023 b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the "
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7845159",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Release of training data (1st part): 1st of May 2023 Release of training data (2nd part): 1st of July 2023 Start of evaluation: 1st of September 2023 Submission deadline: 1st of October 2023 Challenge Day: Day of Endovis 2023 (8th or 12th of October 2023)"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7845159",
+          "excerpt": "ex-vivo laparoscopic porcine, ex-vivo robotic porcine). In the first part of the release 50% of the training data will be released. b) State the total number of training, validation and test cases. 500 images training and 50 Images test per Domain, i.e. 2000 images training and 200 Images test in total. c) Explain why a total number of cases and the specific proportion of training, validation and test cases was chosen. The to"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/d4f166e24eed05fd.json",
+          "url": "https://www.synapse.org/Synapse:syn47193563/wiki/621969",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn47193563/wiki/621969"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/sims-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "SIMS要求填写、扫描并邮件发送数据规则表，完成后才提供数据。"
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 2000,
+              "unit": "images",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 200,
+              "unit": "images",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "Germany"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Four domains, 500/50 images per domain; Heidelberg University Hospital and Salem Hospital.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.7845159",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/task_sections.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/sims-2023.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen",
+            "Chest"
+          ]
+        },
+        "disease": {
+          "state": "Not established",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Gallbladder operative field",
+        "Esophagectomy operative field",
+        "Surgical instruments"
+      ],
+      "specific_diseases": [],
+      "review_note": "Human and porcine surgical videos; no specific diagnosis is assigned solely from operation names.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7845159"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/sims-2023.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC SA.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.7845159"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7845159"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2023/sims-2023.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "Germany"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.7845159",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2023-R14/task_sections.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/sims-2023.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN07"
+  ]
+}

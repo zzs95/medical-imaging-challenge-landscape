@@ -1,0 +1,1011 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "slc-pfm-2025",
+    "challenge_name": "SLC-PFM: Self-supervised Learning for Cancer Pathology Foundation Models",
+    "full_name": "SLC-PFM: Self-supervised Learning for Cancer Pathology Foundation Models",
+    "year": 2025,
+    "event": {
+      "conference": "NeurIPS 2025 Competition Track",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2025-12-07",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Histopathology"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain",
+        "Head and Neck",
+        "Abdomen",
+        "Pelvis",
+        "Chest",
+        "Breast",
+        "Skin",
+        "Eye",
+        "Gastrointestinal tract",
+        "Cell / tissue specimens"
+      ],
+      "organ_system": null,
+      "organs_or_structures": null,
+      "diseases": [
+        "Cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [
+        "Prognosis",
+        "Retrieval",
+        "Other"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Biomarker prediction",
+          "task_family": "Other",
+          "task_subtype": "Biomarker classification or continuous prediction; endpoint-specific mapping not fully released.",
+          "input": [
+            "H&E pathology tiles"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Biomarker predictions"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "endpoint_scope": "Slide- or patient-level endpoints vary across private downstream tasks."
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Cancer subtype classification",
+          "task_family": "Classification",
+          "task_subtype": "downstream subtype classification",
+          "input": [
+            "H&E pathology tiles"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Cancer subtype label"
+          ],
+          "granularity": null,
+          "clinical_goal": null,
+          "endpoint_scope": "Slide- or patient-level endpoints vary across private downstream tasks."
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Survival prognosis",
+          "task_family": "Prognosis",
+          "task_subtype": "downstream prognosis",
+          "input": [
+            "H&E pathology tiles"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Survival-related predictions"
+          ],
+          "granularity": "patient-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task4",
+          "official_name": "Image retrieval",
+          "task_family": "Retrieval",
+          "task_subtype": "image retrieval",
+          "input": [
+            "H&E pathology tiles"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Retrieved pathology images"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ],
+      "learning_paradigms": [
+        "Self-supervised learning",
+        "Pathology foundation models"
+      ],
+      "official_downstream_task_count": 23,
+      "task_families": [
+        "Biomarker discovery / prediction",
+        "Classification",
+        "Prognosis",
+        "Retrieval"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Biomarker discovery / prediction": "Declared task output",
+        "Classification": "Declared task output",
+        "Prognosis": "Declared task output",
+        "Retrieval": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": true,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": true,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": {
+          "value": 300000000,
+          "unit": "pathology tiles",
+          "approximate": true,
+          "lower_bound": false,
+          "raw_text": "~300 million pathology image tiles"
+        },
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Histopathology"
+      ],
+      "data_components": [
+        "Pre-cropped H&E pathology tiles",
+        "Private downstream evaluation datasets"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "source_datasets": [
+        "TCGA",
+        "CPTAC",
+        "MSKCC"
+      ],
+      "slide_count_observations": [
+        {
+          "value": 51578,
+          "scope": "official dataset specification"
+        },
+        {
+          "value": 51132,
+          "scope": "sum of listed TCGA 10438, CPTAC 6004 and MSKCC 34690 composition counts"
+        }
+      ],
+      "slide_count_consistency": "Conflicting official counts; no single slide total is asserted.",
+      "raw_whole_slide_images_available": false,
+      "cancer_type_count": 39
+    },
+    "data_access": {
+      "is_public": false,
+      "access_status": "registration-and-approval-required",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": false,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "MSKCC Competition Participation Agreement; noncommercial academic research use; approved registrants receive secure access.",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Model checkpoint and feature-extraction code"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": true,
+        "policy": "External pathology datasets are prohibited. Approved public pretrained models and public-LLM-generated descriptions derived from challenge data are permitted with disclosure."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": false,
+      "platform": "Decentralized organizer-institution evaluation",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task3",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task4",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null,
+      "protocol_metrics": [
+        "AUROC",
+        "Pearson correlation",
+        "Concordance index"
+      ],
+      "overall_ranking": "Borda-count aggregation across 23 downstream tasks, with bootstrap analyses.",
+      "task_metric_mapping_status": "The exact metric-to-task mapping for all 23 tasks is not fully published."
+    },
+    "submission": {
+      "submission_type": "Model checkpoint, Python feature-extraction interface and LaTeX technical report",
+      "platform": "Organizer evaluation infrastructure",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": 80,
+        "max_gpus": 1
+      },
+      "submission_limits": {
+        "max_team_members": 10,
+        "max_teams_per_organization": 2
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "original_announced_schedule": {
+        "registration_end": "2025-08-15",
+        "model_submission_end": "2025-10-15",
+        "evaluation_setup_start": "2025-10-16",
+        "evaluation_setup_end": "2025-10-30",
+        "testing_start": "2025-11-01",
+        "testing_end": "2025-11-30",
+        "challenge_event": "2025-12-07"
+      },
+      "original_schedule_status": "Historical/prospective 2025 schedule still visible on Phase 2 page; not verified actual execution",
+      "registration_end": "2025-08-15",
+      "registration_end_scope": "original announced date; subsequent extension not independently established",
+      "model_submission_end": null,
+      "reported_final_deadline_month": "2026-06",
+      "reported_deadline_source": "https://abci.ai/ja/acceleration_program/fy25/FY25-97.pdf",
+      "reported_deadline_source_type": "participant institutional report; exact day unreported",
+      "testing_start": null,
+      "testing_end": null,
+      "challenge_event": null,
+      "planned_awards": {
+        "date": "2026-12-11",
+        "start_time": "15:26",
+        "end_time": "15:30",
+        "timezone": "Australia/Sydney",
+        "venue": "ASCI workshop at NeurIPS 2026",
+        "competition_name_on_program": "NeurIPS 2025 SLC-PFM competition",
+        "status": "scheduled; occurrence and winners not verified",
+        "source_url": "https://asci.artificialintelligencepathology.org/"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": true,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": null,
+      "results_manuscript_status": "in_preparation",
+      "results_manuscript_status_source": "user human confirmation on 2026-10-22",
+      "results_manuscript_status_independently_verified": false
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://neurips.cc/virtual/2025/events/Competition",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Only tiles are released for pretraining; raw whole-slide images and tile coordinates are not provided.",
+      "If more than 20 models are submitted, a three-task gateway prioritizes 20 models; this is a procedure, not an observed team count.",
+      "2026-10-22: 仍待补：官网下游任务与计划已确认，本轮未取得正式最终成绩或奖项；录像入口不等于已核验录像内容。",
+      "2026-10-22: SLC-PFM 2025：有跨年延期证据（参赛机构报告最终截止2026年6月），官方安排2026-12-11颁奖；最终成绩和23项下游任务实际评价尚未核实。保留2025届，不新增2026赛事，不因结果未确认而排除。",
+      "2026-10-22: 维持跨年延期和12月11日计划颁奖；2025届、最终评价未核实，不把计划23任务计为已完成。",
+      "2026-10-22: SLC-PFM 2025：按用户人工确认，赛事评价已完成，结果论文准备中；公开最终成绩/获奖名单及下游任务实际评价范围仍待核实。不新增2026届，不将人工确认标成公开结果独立核验。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "collection_date_definition": "Date of web and literature metadata collection, not medical-image acquisition.",
+      "source_list": "challenge_list_other_platforms_22_26_v4.json",
+      "source_list_index": 71,
+      "source_list_index_base": 1,
+      "collection_status": "partially_verified",
+      "sources": [
+        {
+          "type": "Official organizer source",
+          "url": "https://deeplearningpathology.org/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/89d10eb2a2dfb928.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule"
+          ],
+          "snapshot_sha256": "c63edb7ab55579132545f0c895f366bad370add21da8b82081702b0900a3e7ee"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://deeplearningpathology.org/phase1/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/9d5f1845ea898bcf.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule"
+          ],
+          "snapshot_sha256": "5c3557c979d4f4df85351251b61328bd04eb08fb6d2b9c990893178ef85b96e1"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://deeplearningpathology.org/phase2/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/5512d4f072d52d4a.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule"
+          ],
+          "snapshot_sha256": "07a4a8b92b6e5df9d95ba084b46f48a6cfbb3423e8416e29858bc7c68a960095"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://deeplearningpathology.org/registration/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/6e20a30c5aacccd0.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule"
+          ],
+          "snapshot_sha256": "834ead2be15df85911b83c7940f9808e6d7eff1c0a95cffb57a8c74806fda5f5"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://deeplearningpathology.org/faqs/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/81173d0e80d5db78.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule"
+          ],
+          "snapshot_sha256": "3a5da59985b9d5c9c74c261ec0c73d4c9875cc976a0c14b425de0ce8654b8366"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://neurips.cc/virtual/2025/events/Competition",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/0343d782b41582b3.json",
+          "supports": [
+            "event"
+          ],
+          "snapshot_sha256": "3eaf00c60abccb691525193d6cca5250f5c68c3a430f38fba1736c74584276bf"
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://deeplearningpathology.org/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_89d10eb2a2df_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "仍待补：官网下游任务与计划已确认，本轮未取得正式最终成绩或奖项；录像入口不等于已核验录像内容。"
+          ]
+        },
+        {
+          "type": "participant institutional report",
+          "url": "https://abci.ai/ja/acceleration_program/fy25/FY25-97.pdf",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/slcpfm_abci_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Participant institution ABCI project report: project August 8 2025–March 30 2026; competition final deadline reported as June 2026, no results at report-writing time. No exact deadline day or post-June completion established."
+          ]
+        },
+        {
+          "type": "official organizer source",
+          "url": "https://asci.artificialintelligencepathology.org/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/slcpfm_asci_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Organizer workshop program schedules awards for the NeurIPS 2025 SLC-PFM competition on December 11 2026, 15:26–15:30 Sydney local time. No winning team, rank or score listed; this is a future event."
+          ]
+        },
+        {
+          "type": "official organizer source",
+          "url": "https://deeplearningpathology.org/phase2/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/slcpfm_phase2_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "Official prospective design lists 23 downstream tasks and Borda aggregation, but retains 2025 evaluation/result dates and information-coming-soon notice. Not evidence of executed assessment."
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://asci.artificialintelligencepathology.org/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_3c58732cddac_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "维持跨年延期和12月11日计划颁奖；2025届、最终评价未核实，不把计划23任务计为已完成。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        },
+        {
+          "type": "user human adjudication",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/slcpfm_human_confirmation_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "edition completion",
+            "results manuscript in preparation"
+          ],
+          "qualification": "Not an independently retrieved public final-result source."
+        }
+      ],
+      "unresolved_fields": [
+        "dataset.population.slide_count",
+        "evaluation.complete_task_metric_mapping",
+        "dataset.population.patient_count",
+        "dataset.center_count",
+        "dataset.collection_period.start_year",
+        "participation_statistics.registered_teams"
+      ],
+      "verification_policy": "Only edition-specific official evidence populates facts; unknown values remain null.",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "仍待补：官网下游任务与计划已确认，本轮未取得正式最终成绩或奖项；录像入口不等于已核验录像内容。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "undetermined",
+            "evidence_state": "searched_not_established",
+            "evidence_ids": [],
+            "reason": "Official phase pages and targeted result searches do not establish a final organizer ranking, completion statement or retrospective evaluation report. The elapsed December 2025 deadline is not used as evidence."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/NeurIPS/2025/slc-pfm-2025.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "scope": "Cross-year extension, prospective awards and actual assessment distinction",
+          "summary": "SLC-PFM 2025：有跨年延期证据（参赛机构报告最终截止2026年6月），官方安排2026-12-11颁奖；最终成绩和23项下游任务实际评价尚未核实。保留2025届，不新增2026赛事，不因结果未确认而排除。",
+          "previous_schedule": {
+            "registration_end": "2025-08-15",
+            "model_submission_end": "2025-10-15",
+            "evaluation_setup_start": "2025-10-16",
+            "evaluation_setup_end": "2025-10-30",
+            "testing_start": "2025-11-01",
+            "testing_end": "2025-11-30",
+            "challenge_event": "2025-12-07"
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/slcpfm_delay_20261022_132004/NeurIPS/2025/slc-pfm-2025.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "维持跨年延期和12月11日计划颁奖；2025届、最终评价未核实，不把计划23任务计为已完成。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/NeurIPS/2025/slc-pfm-2025.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "SLC-PFM 2025：按用户人工确认，赛事评价已完成，结果论文准备中；公开最终成绩/获奖名单及下游任务实际评价范围仍待核实。不新增2026届，不将人工确认标成公开结果独立核验。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "extended_across_years",
+            "evidence_state": "documented_extension_final_results_not_verified",
+            "evidence_ids": [
+              "E3",
+              "E4",
+              "E5"
+            ],
+            "reason": "Cross-year continuation is documented: participant institutional report states a June 2026 final deadline; organizer program plans 2025 competition awards for December 11 2026. Final scoring/results and actual downstream-task coverage remain unverified as of October 22. Planned awards and expired deadlines do not establish completion."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/slcpfm_human_confirmation_20261022_134618/NeurIPS/2025/slc-pfm-2025.json"
+        }
+      ]
+    },
+    "record_level": "challenge_edition",
+    "scope_status": "core_medical_or_biomedical_imaging",
+    "count_in_core_medical_imaging_review": true,
+    "count_in_edition_statistics": true,
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "SLC-PFM 2025：按用户人工确认，赛事评价已完成，结果论文准备中；公开最终成绩/获奖名单及下游任务实际评价范围仍待核实。不新增2026届，不将人工确认标成公开结果独立核验。",
+        "source_type": "user_human_adjudication",
+        "evidence_ids": [
+          "E7"
+        ],
+        "source_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/slcpfm_human_confirmation_20261022.json",
+        "propagation_status": "Original, audit and current CSV/Excel/reports synchronized; manuscript, aggregate figures and denominator not regenerated."
+      },
+      "remaining_questions": [
+        "Public final scores, award recipients and retrospective results manuscript remain to be independently verified; edition completion is user-adjudicated, not still awaiting human review.",
+        "Verify actual downstream-task coverage and objective-specific foundation-model assessment; do not infer all 23 planned tasks were evaluated."
+      ],
+      "event_state": "completed",
+      "basis": "SLC-PFM 2025：按用户人工确认，赛事评价已完成，结果论文准备中；公开最终成绩/获奖名单及下游任务实际评价范围仍待核实。不新增2026届，不将人工确认标成公开结果独立核验。",
+      "objective_assessment": [
+        {
+          "objective": "Foundation-model orientation",
+          "value": "not_established",
+          "evidence_ids": [
+            "E3",
+            "E4",
+            "E5"
+          ],
+          "reason": "Foundation-model objective and dedicated downstream design are declared. Edition completion is now user-confirmed; public evidence of objective-specific execution and actual task coverage remains unverified.",
+          "declared": true
+        }
+      ],
+      "followup": {
+        "status": "completed_by_human_adjudication_awaiting_public_results",
+        "suggested_recheck_on_or_after": "2026-12-12",
+        "scheduled_awards_date": "2026-12-11",
+        "time_local": "15:26–15:30",
+        "timezone": "Australia/Sydney",
+        "automatic_monitoring_scheduled": false,
+        "scope": "Follow up publication, public awards and actual downstream assessment coverage; not a prerequisite for the accepted human completion decision."
+      },
+      "counting_note": "Retain one 2025 edition. Human-adjudicated completion can enter a completion count that explicitly includes this evidence class; do not count as independently verified public final evidence. Foundation-model objective-specific confirmation remains unestablished.",
+      "planned_downstream_task_count": 23,
+      "confirmed_completed_downstream_task_count": null,
+      "confirmation_basis": "user_human_adjudication",
+      "public_final_results_independently_verified": false
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Biomarker discovery / prediction",
+        "Classification",
+        "Prognosis",
+        "Retrieval"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_task_families": [
+        "Biomarker discovery / prediction",
+        "Classification",
+        "Prognosis",
+        "Retrieval"
+      ],
+      "previous_emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_roles": {
+        "Biomarker discovery / prediction": "Declared task output",
+        "Classification": "Declared task output",
+        "Prognosis": "Declared task output",
+        "Retrieval": "Declared task output"
+      },
+      "note_zh": "预训练表征和临床下游测试是组织目标；保留生物标志物、分型、预后及检索的设计标签，不逐个追查最终成绩。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://deeplearningpathology.org/",
+          "local_source": "_collection/v4_20261003/sources/89d10eb2a2dfb928.json",
+          "sha256": "c63edb7ab55579132545f0c895f366bad370add21da8b82081702b0900a3e7ee"
+        },
+        {
+          "url": "https://deeplearningpathology.org/phase1/",
+          "local_source": "_collection/v4_20261003/sources/9d5f1845ea898bcf.json",
+          "sha256": "5c3557c979d4f4df85351251b61328bd04eb08fb6d2b9c990893178ef85b96e1"
+        },
+        {
+          "url": "https://deeplearningpathology.org/phase2/",
+          "local_source": "_collection/v4_20261003/sources/5512d4f072d52d4a.json",
+          "sha256": "07a4a8b92b6e5df9d95ba084b46f48a6cfbb3423e8416e29858bc7c68a960095"
+        },
+        {
+          "url": "https://deeplearningpathology.org/registration/",
+          "local_source": "_collection/v4_20261003/sources/6e20a30c5aacccd0.json",
+          "sha256": "834ead2be15df85911b83c7940f9808e6d7eff1c0a95cffb57a8c74806fda5f5"
+        },
+        {
+          "url": "https://deeplearningpathology.org/faqs/",
+          "local_source": "_collection/v4_20261003/sources/81173d0e80d5db78.json",
+          "sha256": "3a5da59985b9d5c9c74c261ec0c73d4c9875cc976a0c14b425de0ce8654b8366"
+        },
+        {
+          "url": "https://neurips.cc/virtual/2025/events/Competition",
+          "local_source": "_collection/v4_20261003/sources/0343d782b41582b3.json",
+          "sha256": "3eaf00c60abccb691525193d6cca5250f5c68c3a430f38fba1736c74584276bf"
+        },
+        {
+          "url": "https://asci.artificialintelligencepathology.org/",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/slcpfm_asci_20261022.json",
+          "sha256": "498af1b595c555cf1119ffeef4f0df8b6a30eb374f188014939fc725153d8a77"
+        },
+        {
+          "url": "https://deeplearningpathology.org/phase2/",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/slcpfm_phase2_20261022.json",
+          "sha256": "a7360d66a3c603463a30cf4b7d755fd0926e65342c541d51202a62771dd207bb"
+        }
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Biomarker discovery / prediction",
+        "Classification",
+        "Prognosis",
+        "Retrieval"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain",
+            "Head and Neck",
+            "Abdomen",
+            "Pelvis",
+            "Chest",
+            "Breast",
+            "Skin",
+            "Eye",
+            "Gastrointestinal tract",
+            "Cell / tissue specimens"
+          ],
+          "note": "Phase 1官网逐项列出39类癌组织的预训练来源，补入明确部位；未限定部位的骨肿瘤/肉瘤保留标本范围，不推断四肢。这里只描述提供资源，不声称全部部位进入下游测试。"
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer"
+          ],
+          "note": "Previous disease coding retained; not reclassified in this audit"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://deeplearningpathology.org/phase1/",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/9d5f1845ea898bcf.json"
+        },
+        {
+          "url": "https://deeplearningpathology.org/phase2/",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/5512d4f072d52d4a.json"
+        }
+      ],
+      "note_zh": "Phase 1官网逐项列出39类癌组织的预训练来源，补入明确部位；未限定部位的骨肿瘤/肉瘤保留标本范围，不推断四肢。这里只描述提供资源，不声称全部部位进入下游测试。",
+      "anatomical_scope": "Pretraining tissue origins; downstream per-organ assessment not inferred",
+      "remaining_detail": ""
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "NeurIPS/2025/slc-pfm-2025.json",
+              "source_field": "dataset",
+              "value": {
+                "source_type": null,
+                "routine_clinical_practice": null,
+                "anonymized": null,
+                "ethical_approval": null,
+                "center_type": null,
+                "multi_center": true,
+                "international": true,
+                "center_count": null,
+                "institutions_description": null,
+                "population": {
+                  "patient_count": null,
+                  "study_count": null,
+                  "scan_count": {
+                    "value": null,
+                    "approximate": null,
+                    "raw_text": null
+                  },
+                  "train_count": {
+                    "value": 300000000,
+                    "unit": "pathology tiles",
+                    "approximate": true,
+                    "lower_bound": false,
+                    "raw_text": "~300 million pathology image tiles"
+                  },
+                  "validation_count": null,
+                  "test_count": null
+                },
+                "modalities": [
+                  "Histopathology"
+                ],
+                "data_components": [
+                  "Pre-cropped H&E pathology tiles",
+                  "Private downstream evaluation datasets"
+                ],
+                "collection_period": {
+                  "start_year": null,
+                  "end_year": null
+                },
+                "source_datasets": [
+                  "TCGA",
+                  "CPTAC",
+                  "MSKCC"
+                ],
+                "slide_count_observations": [
+                  {
+                    "value": 51578,
+                    "scope": "official dataset specification"
+                  },
+                  {
+                    "value": 51132,
+                    "scope": "sum of listed TCGA 10438, CPTAC 6004 and MSKCC 34690 composition counts"
+                  }
+                ],
+                "slide_count_consistency": "Conflicting official counts; no single slide total is asserted.",
+                "raw_whole_slide_images_available": false,
+                "cancer_type_count": 39
+              },
+              "sources": [
+                {
+                  "type": "Official organizer source",
+                  "url": "https://deeplearningpathology.org/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/v4_20261003/sources/89d10eb2a2dfb928.json",
+                  "supports": [
+                    "task_profile",
+                    "dataset",
+                    "data_access",
+                    "evaluation",
+                    "submission",
+                    "schedule"
+                  ],
+                  "snapshot_sha256": "c63edb7ab55579132545f0c895f366bad370add21da8b82081702b0900a3e7ee"
+                },
+                {
+                  "type": "Official organizer source",
+                  "url": "https://deeplearningpathology.org/phase1/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/v4_20261003/sources/9d5f1845ea898bcf.json",
+                  "supports": [
+                    "task_profile",
+                    "dataset",
+                    "data_access",
+                    "evaluation",
+                    "submission",
+                    "schedule"
+                  ],
+                  "snapshot_sha256": "5c3557c979d4f4df85351251b61328bd04eb08fb6d2b9c990893178ef85b96e1"
+                },
+                {
+                  "type": "Official organizer source",
+                  "url": "https://deeplearningpathology.org/phase2/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/v4_20261003/sources/5512d4f072d52d4a.json",
+                  "supports": [
+                    "task_profile",
+                    "dataset",
+                    "data_access",
+                    "evaluation",
+                    "submission",
+                    "schedule"
+                  ],
+                  "snapshot_sha256": "07a4a8b92b6e5df9d95ba084b46f48a6cfbb3423e8416e29858bc7c68a960095"
+                },
+                {
+                  "type": "Official organizer source",
+                  "url": "https://deeplearningpathology.org/registration/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/v4_20261003/sources/6e20a30c5aacccd0.json",
+                  "supports": [
+                    "task_profile",
+                    "dataset",
+                    "data_access",
+                    "evaluation",
+                    "submission",
+                    "schedule"
+                  ],
+                  "snapshot_sha256": "834ead2be15df85911b83c7940f9808e6d7eff1c0a95cffb57a8c74806fda5f5"
+                },
+                {
+                  "type": "Official organizer source",
+                  "url": "https://deeplearningpathology.org/faqs/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/v4_20261003/sources/81173d0e80d5db78.json",
+                  "supports": [
+                    "task_profile",
+                    "dataset",
+                    "data_access",
+                    "evaluation",
+                    "submission",
+                    "schedule"
+                  ],
+                  "snapshot_sha256": "3a5da59985b9d5c9c74c261ec0c73d4c9875cc976a0c14b425de0ce8654b8366"
+                },
+                {
+                  "type": "Official organizer source",
+                  "url": "https://neurips.cc/virtual/2025/events/Competition",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/v4_20261003/sources/0343d782b41582b3.json",
+                  "supports": [
+                    "event"
+                  ],
+                  "snapshot_sha256": "3eaf00c60abccb691525193d6cca5250f5c68c3a430f38fba1736c74584276bf"
+                },
+                {
+                  "type": "documentary follow-up source",
+                  "url": "https://deeplearningpathology.org/",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_89d10eb2a2df_20261022.json",
+                  "reviewed_on": "2026-10-22",
+                  "retrieval_scope": "Direct public HTTP request",
+                  "source_accessible": true,
+                  "supports": [
+                    "仍待补：官网下游任务与计划已确认，本轮未取得正式最终成绩或奖项；录像入口不等于已核验录像内容。"
+                  ]
+                },
+                {
+                  "type": "participant institutional report",
+                  "url": "https://abci.ai/ja/acceleration_program/fy25/FY25-97.pdf",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/slcpfm_abci_20261022.json",
+                  "retrieved_on": "2026-10-22",
+                  "supports": [
+                    "Participant institution ABCI project report: project August 8 2025–March 30 2026; competition final deadline reported as June 2026, no results at report-writing time. No exact deadline day or post-June completion established."
+                  ]
+                },
+                {
+                  "type": "official organizer source",
+                  "url": "https://asci.artificialintelligencepathology.org/",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/slcpfm_asci_20261022.json",
+                  "retrieved_on": "2026-10-22",
+                  "supports": [
+                    "Organizer workshop program schedules awards for the NeurIPS 2025 SLC-PFM competition on December 11 2026, 15:26–15:30 Sydney local time. No winning team, rank or score listed; this is a future event."
+                  ]
+                },
+                {
+                  "type": "official organizer source",
+                  "url": "https://deeplearningpathology.org/phase2/",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/slcpfm_phase2_20261022.json",
+                  "retrieved_on": "2026-10-22",
+                  "supports": [
+                    "Official prospective design lists 23 downstream tasks and Borda aggregation, but retains 2025 evaluation/result dates and information-coming-soon notice. Not evidence of executed assessment."
+                  ]
+                },
+                {
+                  "type": "documentary follow-up source",
+                  "url": "https://asci.artificialintelligencepathology.org/",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_3c58732cddac_20261022.json",
+                  "reviewed_on": "2026-10-22",
+                  "supports": [
+                    "维持跨年延期和12月11日计划颁奖；2025届、最终评价未核实，不把计划23任务计为已完成。"
+                  ],
+                  "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+                },
+                {
+                  "type": "user human adjudication",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/slcpfm_human_confirmation_20261022.json",
+                  "reviewed_on": "2026-10-22",
+                  "supports": [
+                    "edition completion",
+                    "results manuscript in preparation"
+                  ],
+                  "qualification": "Not an independently retrieved public final-result source."
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  }
+}

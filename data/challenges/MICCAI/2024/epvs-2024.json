@@ -1,0 +1,745 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "epvs-2024",
+    "challenge_name": "EPVS Challenge 2024",
+    "full_name": "Enlarged Perivascular Spaces (EPVS) Segmentation Challenge",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R18",
+      "official_programme_row_numbers": "42",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "National University of Singapore (NUS), Singapore",
+        "National University Hospital (NUH), Singapore",
+        "Harvard Medical School, USA",
+        "Longhua Hospital Shanghai University of Traditional Chinese Medicine, China",
+        "Technical University of Munich, Germany",
+        "Centre for Clinical Brain Sciences, University of Edinburgh, UK"
+      ],
+      "registered_authors": [
+        {
+          "name": "Zhou, Juan Helen",
+          "affiliation": "National University of Singapore (NUS), Singapore"
+        },
+        {
+          "name": "Chen, Christopher",
+          "affiliation": "National University of Singapore (NUS), Singapore"
+        },
+        {
+          "name": "Wu, Yilei",
+          "affiliation": "National University of Singapore (NUS), Singapore"
+        },
+        {
+          "name": "Dong, Zijian",
+          "affiliation": "National University of Singapore (NUS), Singapore"
+        },
+        {
+          "name": "Chen, Zijiao",
+          "affiliation": "National University of Singapore (NUS), Singapore"
+        },
+        {
+          "name": "Ji, Fang",
+          "affiliation": "National University of Singapore (NUS), Singapore"
+        },
+        {
+          "name": "Chen, Huijuan",
+          "affiliation": "National University of Singapore (NUS), Singapore"
+        },
+        {
+          "name": "Tan, Gifford",
+          "affiliation": "National University Hospital (NUH), Singapore"
+        },
+        {
+          "name": "Tan, An Sen",
+          "affiliation": "National University Hospital (NUH), Singapore"
+        },
+        {
+          "name": "Tang, Sizhao",
+          "affiliation": "National University Hospital (NUH), Singapore"
+        },
+        {
+          "name": "Li, Hongwei Bran",
+          "affiliation": "Harvard Medical School, USA"
+        },
+        {
+          "name": "Chen, Xin",
+          "affiliation": "Longhua Hospital Shanghai University of Traditional Chinese Medicine, China"
+        },
+        {
+          "name": "Gong, Zhenyu",
+          "affiliation": "Technical University of Munich, Germany"
+        },
+        {
+          "name": "Wiestler, Benedikt",
+          "affiliation": "Technical University of Munich, Germany"
+        },
+        {
+          "name": "del C. Valdés Hernández, Maria",
+          "affiliation": "Centre for Clinical Brain Sciences, University of Edinburgh, UK"
+        },
+        {
+          "name": "Duarte Coello, Roberto",
+          "affiliation": null
+        },
+        {
+          "name": "Wardlaw, Joanna M.",
+          "affiliation": "Centre for Clinical Brain Sciences, University of Edinburgh, UK"
+        },
+        {
+          "name": "McFadden, John",
+          "affiliation": "Centre for Clinical Brain Sciences, University of Edinburgh, UK"
+        },
+        {
+          "name": "Bernal Moyano, José",
+          "affiliation": "Centre for Clinical Brain Sciences, University of Edinburgh, UK"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Perivascular spaces"
+      ],
+      "diseases": [
+        "Enlarged perivascular spaces",
+        "Mild cognitive impairment",
+        "Dementia"
+      ],
+      "clinical_context": "Dementia/MCI are explicit challenge cohort conditions; no Alzheimer subtype or stroke diagnosis inferred from EPVS."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Enlarged Perivascular Spaces (EPVS) Segmentation Challenge",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992173",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/Enlarged Perivascular Spaces (EPVS) Segmentation.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992173",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/Enlarged Perivascular Spaces (EPVS) Segmentation.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992173",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/Enlarged Perivascular Spaces (EPVS) Segmentation.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "EPVS Challenge custom data-use terms. 自定义条款：非商业研究/教育且限 EPVS 2024；禁止分享原始或处理后数据；其他项目或发表用途需数据负责人正式同意。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992173",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/Enlarged Perivascular Spaces (EPVS) Segmentation.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992173",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/Enlarged Perivascular Spaces (EPVS) Segmentation.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Organizer-run submission",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992173",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/Enlarged Perivascular Spaces (EPVS) Segmentation.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992173",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/Enlarged Perivascular Spaces (EPVS) Segmentation.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nFour complementary types of performance metrics will be used to compute the rankings:\n1. The Dice similarity coefficient (DSC) is used to quantify the overlap\n2. The absolute volume difference(AVD) (in percentage) is used to quantify the volume difference\n3. Sensitivity for individual lesions (in percentage). Individual lesions are defined as 3D-connected components\n(https://examples.itk.org/src/segmentation/regiongrowing/connectedcomponentsinimage/documentation).\n4. Specificity for individual lesions (in percentage). Individual lesions are defined as 3D connected components\n(https://examples.itk.org/src/segmentation/regiongrowing/connectedcomponentsinimage/documentation).\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nWe selected the Dice Similarity Coefficient (DSC) as our primary metric for the segmentation task, emphasizing its\neffectiveness in measuring the overlap between our predictions and the ground truth. Recognizing that Enlarged\nPerivascular Spaces (EPVS) are commonly evaluated in terms of volume, we have incorporated absolute volume\ndifference(AVD) to accurately assess the volumetric aspects of our predictions. Furthermore, we have opted to\nuse Sensitivity and Specificity for individual lesions. Our final evaluation strategy will integrate all these metrics for\na comprehensive assessment of our segmentation task.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nWe will assess the performance of algorithms in segmenting the human brain using four metrics: Dice Similarity\nCoefficient (DSC), Absolute Volume Difference (AVD), Sensitivity, and Specificity. For each algorithm, these metrics\nwill be calculated across all labels in the predicted brain EPVS maps of our test set. The mean and standard\ndeviation for each label will be determined.\n\n\nRanking will be based on performance: lower AVD scores indicate better performance, while higher scores in DSC,\n\n\n\n\f                               Enlarged Perivascular Spaces (EPVS) Segmentation Challenge\n\nSensitivity, and Specificity are preferable. The rankings for each label will be aggregated to identify the\ntop-performing algorithm.\n\n\nFinally, the results of the challenge will be run through the ChallengeR toolkit, specifically designed to calculate\nand display imaging challenge results.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nThe only possibility for missing data would be if an algorithm does not find any of the EPVS in the final label map.\nIf there are missing results, the worst possible value will be used. For example, if a label does not exist in the label\nmap, it will receive a DSC, Precision, and Recall to be 0, and the AVD will be 1 the max value of the other\nalgorithms submitted (to ensure it is ranked last for that sub-ranking).\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThis ranking system was developed in order to take three different metric types equally into account. We also\nwanted to determine not just average ranking, but see if algorithms performed better in when the image was high\nquality vs low quality, as well as how well they performed on the pathological vs the neurotypical brains."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Organizer-run submission",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Participants will create a Docker container with their algorithm, and provide this to the challenge organizers. Once the website is up, it will contain instructions on how to containerize the algorithms, and the organizers will provide support to the participants when requested. The organizers will run the Docker container on the test data set using publicly available evaluation code. The organizers will inform the participants if the Docker container fails to run, and allow the participants to provide a fix.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992173",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/Enlarged Perivascular Spaces (EPVS) Segmentation.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992173",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/Enlarged Perivascular Spaces (EPVS) Segmentation.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10992173"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://www.synapse.org/#!Synapse:syn54100278/wiki/626542",
+      "registration": "https://doi.org/10.5281/zenodo.10992173",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10992173",
+          "resolved_record_id": 10992174,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/Enlarged Perivascular Spaces (EPVS) Segmentation.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/Enlarged Perivascular Spaces (EPVS) Segmentation.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://www.synapse.org/#!Synapse:syn54100278/wiki/626542",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/39c493d4220cf3f4.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "EPVS Challenge"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "The organizer must accept team membership, based on supplied name and institutional affiliation, before dataset access."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992173",
+          "excerpt": "e to accept your request. The application link will be available on the challenge website later. 2. Access to the data requires you to agree with the following terms and conditions: By joining the EPVS Challenge users team, you acknowledge that the owner of the EPVS Challenge Dataset available is the National University of Singapore/National University Hospital (for SG70 and MACC dataset), Longhua Hospi [...] ata sharing consent if you would like to use it for any other purpose (including but not limited to publication, using this dataset in other projects). NOTE: Information on how to download the data will be available on the challenge website upon acceptance."
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992173",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Participants will create a Docker container with their algorithm, and provide this to the challenge organizers. Once the website is up, it will contain instructions on how to containerize the algorithms, and the organizers will provide support to the participants when requested. The organizers will run the Docker container on the test data set using publicly available evaluation code. The organizers will inform the participants if the Docker container fails to run, and allow the participants to provide a fix. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted t [...] multiple times before the designated deadline. The evaluation will be conducted using the submitted Docker image on the validation dataset, and the performance will be displayed on the public leaderboard. For the testing phase: No multiple submissions will be allowed. The evaluation will be performed on the latest submitted Docker image on the test dataset. Resubmissions are only allowed in cases of technical errors with Docker. After the MICCAI challenge session, new submissions and updates may be made."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992173",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Training Data Release: April-May, 2024 Registration: Will be announced once the challenge is accepted Docker Submission Deadline: 2 months before the challenge session Top 3 teams informed: 2 weeks before the challenge, so they can prepare a presentation Complete results will be announced at the challenge session."
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992173",
+          "excerpt": ""
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/39c493d4220cf3f4.json",
+          "url": "https://www.synapse.org/#!Synapse:syn54100278/wiki/626542",
+          "excerpt": "napse Does Synapse is the platform Sage Bionetworks uses to make biomedical research data findable, accessible, interoperable, and reusable (FAIR). Researchers, clinicians, and data scientists use Synapse to: Share large biomedical datasets across institutions, with appropriate access controls, data-use agreements, and governance. Run reproducible analyses on shared data with documented provenance. Coordinate consortium science across disease areas including Alzheimer's disease, neurofibromatosis, ALS, rare cancers, and others. Power public-facing knowledge portals such as the AD Knowledge Portal, the NF Data Portal, and the ALS Knowledge Portal. Nonprofit Identity Sage Bionetworks A 501(c)(3) nonprofit research organization EIN: 26-4489946 Seattle, Washington, USA sagebionetworks.org Trust Center — Terms of Service, Privacy Policy, f [...] ernance documents Sage Bionetworks — Mission, vision, and current work IRS Form 990 filings (via ProPublica Nonprofit Explorer) Synapse documentation and help Synapse Home crawl link This static content is provided for search engines and users with JavaScript disabled. For the full Synapse experience, please enable JavaScript in your browser. Loading…"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 20,
+              "unit": "volumes",
+              "scope": "SG70",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 10,
+              "unit": "volumes",
+              "scope": "SG70",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 10,
+              "unit": "volumes",
+              "scope": "SG70",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 20,
+              "unit": "volumes",
+              "scope": "MACC",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 10,
+              "unit": "volumes",
+              "scope": "MACC",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 10,
+              "unit": "volumes",
+              "scope": "MACC",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 60,
+              "unit": "volumes",
+              "scope": "Edinburgh",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 30,
+              "unit": "volumes",
+              "scope": "Edinburgh",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 30,
+              "unit": "volumes",
+              "scope": "Edinburgh",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 20,
+              "unit": "volumes",
+              "scope": "Shanghai TCM",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "China",
+              "United Kingdom"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Documented and classifiable",
+          "value": "Data restricted to EPVS 2024; redistribution prohibited; other projects/publications require separate formal consent."
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Singapore institutions named but country not independently inferred from affiliation; Scotland normalized to United Kingdom.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10992173",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://www.synapse.org/#!Synapse:syn54100278/wiki/626542",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/39c493d4220cf3f4.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/epvs-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Degenerative",
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Perivascular spaces"
+      ],
+      "specific_diseases": [
+        "Enlarged perivascular spaces",
+        "Mild cognitive impairment",
+        "Dementia"
+      ],
+      "review_note": "Dementia/MCI are explicit challenge cohort conditions; no Alzheimer subtype or stroke diagnosis inferred from EPVS.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992173"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/epvs-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "EPVS Challenge custom data-use terms"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "自定义条款：非商业研究/教育且限 EPVS 2024；禁止分享原始或处理后数据；其他项目或发表用途需数据负责人正式同意。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "Custom data license; non-commercial use only for the challenge purpose. Terms of use: 1. When joining the EPVS Challenge users team, please make sure you provide a short description of your core team, which includes your name and academic affiliation. Without these information, we are not able to accept your request. The application link will be available on the challenge website later. 2. Access to the data requires you to agree with the following terms and conditions: By joining the EPVS Challenge users team, you acknowledge that the owner of the EPVS Challenge Dataset available is the National University of Singapore/National University Hospital (for SG70 and MACC dataset), Longhua Hospital Shanghai University of Traditional Chinese Medicine, China (for Shanghai TCM dataset) and University of Edinburgh (for Edinburgh dataset). 3. EPVS Challenge Dataset is used for research and education only. Any other kind of use might lead to recall of all datasets, stop of collaboration and legal consequences. 4. EPVS Challenge Dataset is used for the EPVS Challenge 2024 ONLY. Any form of data sharing and distribution (including raw data and pre-processed data) is strictly not allowed. Any other kind of use might lead to recall of all datasets, stop of collaboration and legal consequences. Enlarged Perivascular Spaces (EPVS) Segmentation Challenge 5. Please contact the PIs of the EPVS Challenge Dataset for formal data sharing consent if you would like to use it for any other purpose (including but not limited to publication, using this dataset in other projects). NOTE: Information on how to download the data will be available on the challenge website upon acceptance.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10992173"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992173"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/epvs-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "China",
+                  "United Kingdom"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10992173",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://www.synapse.org/#!Synapse:syn54100278/wiki/626542",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/39c493d4220cf3f4.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/epvs-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/epvs-2024.json",
+              "source_field": "resource_characteristics_review.fields.post_challenge",
+              "value": "Data restricted to EPVS 2024; redistribution prohibited; other projects/publications require separate formal consent.",
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10992173",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R18/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://www.synapse.org/#!Synapse:syn54100278/wiki/626542",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/39c493d4220cf3f4.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/epvs-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

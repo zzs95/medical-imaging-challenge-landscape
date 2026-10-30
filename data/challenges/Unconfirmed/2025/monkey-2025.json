@@ -1,0 +1,869 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "monkey-2025",
+    "challenge_name": "MONKEY Challenge: Detection of inflammation in kidney biopsies",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MIDL 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      },
+      "conference_relationship_review": {
+        "review_date": "2026-10-21",
+        "current_inventory_year": 2025,
+        "conference_assignment": "MIDL 2025",
+        "relationship": "MIDL Challenge",
+        "status": "human_confirmed",
+        "confirmation": {
+          "date": "2026-10-21",
+          "source_type": "user confirmation / classification decision",
+          "statement": "已经完成，可以认为是MIDL Challenge",
+          "scope": "MONKEY 2025 classified as a MIDL Challenge following user review of the official timeline",
+          "public_source": "https://monkey.grand-challenge.org/timeline/",
+          "qualification": "User-confirmed affiliation; retained public timeline still displays a pending marker for the presentation. Do not represent that marker as independently updated, or infer that the challenge paper has been published."
+        },
+        "note_zh": "用户确认已完成并可归为MIDL Challenge。ECDP 2024仅保留为挑战发布活动，2025年只计一条。官方时间线原始状态保留在证据快照中；不据此推定论文已发表。"
+      },
+      "conference_relationships": [
+        {
+          "conference": "ECDP 2024",
+          "relationship": "Challenge announcement",
+          "date": "2024-06-06",
+          "status": "marked completed in official timeline"
+        },
+        {
+          "conference": "MIDL 2025",
+          "relationship": "MIDL Challenge / challenge-results presentation",
+          "date": "2025-07",
+          "location": "Salt Lake City",
+          "status": "Completed / affiliation accepted on user confirmation",
+          "confirmation_basis": "User confirmation on 2026-10-21",
+          "documentary_limit": "Retained official timeline still carries pending marker; this update records user adjudication."
+        }
+      ]
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Pathology"
+      ],
+      "submodality": [
+        "PAS",
+        "IHC CD3/CD20/PU.1"
+      ],
+      "body_region": [
+        "Kidney"
+      ],
+      "organ_system": [
+        "Urinary"
+      ],
+      "organs_or_structures": [
+        "Mononuclear leukocytes",
+        "Lymphocytes",
+        "Monocytes"
+      ],
+      "diseases": [
+        "Kidney transplant inflammation"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Detection",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "mnl",
+          "official_name": "Mononuclear inflammatory cell detection",
+          "task_family": "Detection",
+          "task_subtype": "point detection",
+          "input": [
+            "PAS kidney biopsy WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "MNL point coordinates"
+          ],
+          "granularity": "cell-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "subtypes",
+          "official_name": "Lymphocyte and monocyte detection",
+          "task_family": "Detection",
+          "task_subtype": "class-specific point detection",
+          "input": [
+            "PAS kidney biopsy WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Lymphocyte and monocyte point coordinates"
+          ],
+          "granularity": "cell-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": true,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Co-registered IHC guides dot annotation on PAS slides.",
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": 6,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "wsi_count": 119,
+        "roi_count": 231
+      },
+      "modalities": [
+        "Pathology"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA 4.0. 官方 AWS Open Data 数据资源页列 CC BY-NC-SA 4.0，适用于 MONKEY 公开训练资源。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; round 2",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "MONKEY training data",
+          "category": "Public download",
+          "access_steps": [
+            "Anonymous S3 access with no-sign-request"
+          ],
+          "manual_review": false
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": true,
+        "submission_artifact": "Docker image"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "mnl",
+          "metrics": [
+            "FROC score"
+          ],
+          "ranking": "Sensitivity at listed FP/mm² points: 10,20,50,100,200,300."
+        },
+        {
+          "task_id": "subtypes",
+          "metrics": [
+            "Class-averaged FROC score"
+          ],
+          "ranking": "Average FROC score over lymphocyte and monocyte classes."
+        }
+      ],
+      "cross_task_rule": null,
+      "completion_evidence": {
+        "value": "confirmed",
+        "source_url": "https://monkey.grand-challenge.org/",
+        "evidence": "Homepage states winners decided on final test set and names TIAKong, InstanSeg and AIRA Matrix; timeline marks final-test closure and March 11 winner webinar completed.",
+        "winning_teams": [
+          "TIAKong",
+          "InstanSeg",
+          "AIRA Matrix"
+        ],
+        "ranking_note": "Names retained in page order; do not infer individual rank solely from this list."
+      }
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "submission_artifact": "Docker image",
+      "execution_mode": "Platform-run",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Scored submission artifact; additional reproducibility/publication materials recorded separately.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "user_supplied_review",
+        "summary": "Grand Challenge执行离线容器；细胞坐标为推理输出，不是正式算法提交物。",
+        "evidence_ids": [
+          "E5"
+        ],
+        "source_urls": [
+          "https://monkey.grand-challenge.org/rules/"
+        ],
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+        "directly_retrieved_protocol_snapshots": [],
+        "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced."
+      }
+    },
+    "schedule": {
+      "training_data_release": "2024-09-20",
+      "test_phase_start": "2025-02-01",
+      "final_submission_deadline": "2025-02-09",
+      "winner_announcement": "2025-03-11",
+      "challenge_announcement": "2024-06-06",
+      "kickoff_webinar": "2024-09-26",
+      "open_submission_cycle_planned_start": "2025-04-01",
+      "status_note": "Official timeline marks final test and winner announcement completed. April opening, July MIDL presentation and 2025–2026 publication retain pending markers; current homepage independently confirms open submissions are active. Do not infer exact opening date or publication completion from planned dates."
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": true,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "publication_status_note": "Timeline lists planned 2025–2026 publication; homepage says stay tuned. Publication completion not established by these pages."
+    },
+    "participation_statistics": {
+      "registered_participants": 622,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Debugging",
+            "submission_count": 305
+          },
+          {
+            "official_phase_name": "Live validation",
+            "submission_count": 140
+          },
+          {
+            "official_phase_name": "Final test phase",
+            "submission_count": 17
+          },
+          {
+            "official_phase_name": "Challenge publication",
+            "submission_count": 11
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://monkey.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Edition assigned to 2025 final competition/winner period; announced at ECDP 2024, results presented at MIDL 2025. These presentations alone do not establish conference hosting. Evaluation prose says five FP points but lists six; all six listed points retained pending code verification. Post-reopening precision/recall metrics are not original competition ranking metrics.",
+      "Source-list platform_year is 2024; the official challenge edition is 2025. The output directory follows the official edition.",
+      "2026-10-22 提交方式字段同步：Grand Challenge执行离线容器；细胞坐标为推理输出，不是正式算法提交物。"
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/pathology-background/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-2e8fccccdb3b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/sponsors-and-award/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-3d5664f1ed8b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-4793aaeb3cf7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/dataset/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-48913267ec24.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/#machine-learning-for-optimal-detection-of-inflammatory-cells-in-the-kidney",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-4b393f1b634f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-501006125e20.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://monkey.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-771e2af9fa79.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/lifecycle-and-phases/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-7908713825fb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/#the-winners-have-been-decided-on-the-final-test-set-congratulations-to-team-tiakong-instanseg-and-aira-matrix",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-806226b36193.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/#challenge-overview",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-95a0743d8d0e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-ab6297873697.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "evaluation",
+            "evaluation.platform",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-d00761562c31.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/monkey/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-e49ff3997437.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/evaluation-ranking-2/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-e8466ea3dc65.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://monkey.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/51-overview.json"
+        },
+        {
+          "type": "official challenge timeline",
+          "url": "https://monkey.grand-challenge.org/timeline/",
+          "retrieved_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/monkey_timeline_followup_20261021.json",
+          "supports": [
+            "event.conference_relationships",
+            "schedule"
+          ],
+          "limits": "Preserve pending-versus-completed status of timeline items; results presentation is not proof of conference hosting."
+        },
+        {
+          "type": "official challenge home",
+          "url": "https://monkey.grand-challenge.org/",
+          "retrieved_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/monkey_home_followup_20261021.json",
+          "supports": [
+            "evaluation.completion_evidence"
+          ],
+          "limits": "Preserve pending-versus-completed status of timeline items; results presentation is not proof of conference hosting."
+        },
+        {
+          "type": "user confirmation",
+          "url": null,
+          "reviewed_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/monkey_midl_user_confirmation_20261021.json",
+          "supports": [
+            "event.conference",
+            "event.conference_relationship_review"
+          ]
+        },
+        {
+          "type": "user_supplied_review",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "source_urls": [
+            "https://monkey.grand-challenge.org/rules/"
+          ],
+          "supports": [
+            "Grand Challenge执行离线容器；细胞坐标为推理输出，不是正式算法提交物。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset details, rules and submission pages return 403: verify splits, license, runtime/submission artifact and exact FROC implementation."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://monkey.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/51-d00761562c31.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official organizer report, submission instructions or native platform submission statistics establishes the challenge evaluation service; reviewed for the named edition, not inferred from directory presence alone."
+        }
+      },
+      "last_updated": "2026-10-22",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "evaluation.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/monkey-2025.json",
+          "_collection/verification_20261003/literature_context/monkey-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-21",
+          "scope": "User requested writing preceding documentary findings into the original challenge JSON",
+          "fields_updated": [
+            "event.conference_relationship_review"
+          ],
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/monkey-2025.json",
+          "previous_sha256": "6a98ca95a388051d3a6e00805cca0fb890424be00ba65a5c54b243a7cc7d701c",
+          "previous_record_backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/canonical_followup_20261021_154948/Unconfirmed/2025/monkey-2025.json",
+          "qualification": "Targeted documentary review; pending conference relationships remain unverified. No independent human double coding asserted. Aggregate outputs not rebuilt."
+        },
+        {
+          "date": "2026-10-21",
+          "scope": "User resolved MIDL affiliation; source record updated without creating another edition.",
+          "previous_affiliation_review": {
+            "review_date": "2026-10-21",
+            "current_inventory_year": 2025,
+            "conference_assignment": null,
+            "relationship": "ECDP announcement documented; MIDL results presentation scheduled",
+            "status": "relationship types documented; formal MIDL challenge acceptance not established by this timeline",
+            "source_url": "https://monkey.grand-challenge.org/timeline/",
+            "note_zh": "2024年在ECDP发布，2025年2月完成最终测试、3月公布前三名；保留2025一条赛事记录。MIDL 2025列为结果展示安排，页面仍带待办标记，不能单凭该时间线确认实际展示或正式主办。正式MIDL Challenge接受身份尚无直接确认材料；不因跨年发布或展示增计赛事。"
+          },
+          "previous_record_backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/monkey_midl_confirm_20261021_162420/canonical.json"
+        },
+        {
+          "date": "2026-10-22",
+          "basis_type": "user_supplied_review",
+          "summary": "Grand Challenge执行离线容器；细胞坐标为推理输出，不是正式算法提交物。",
+          "evidence_ids": [
+            "E5"
+          ],
+          "source_urls": [
+            "https://monkey.grand-challenge.org/rules/"
+          ],
+          "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/Unconfirmed/2025/monkey-2025.json"
+        }
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "AWS官方开放数据目录确认MONKEY训练数据支持匿名S3访问，不需AWS账号；不推断测试集开放。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "MONKEY training data",
+            "category": "Public download",
+            "access_steps": [
+              "Anonymous S3 access with no-sign-request"
+            ],
+            "manual_review": false
+          }
+        ],
+        "evidence_basis": "Primary protocol / metadata checked",
+        "confidence": "High",
+        "source_urls": [
+          "https://registry.opendata.aws/monkey/",
+          "https://monkey.grand-challenge.org/dataset/"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "开发WSI供训练，最终隐藏测试采用离线容器评测。"
+      },
+      "decision_history": [
+        "开发WSI供训练，最终隐藏测试采用离线容器评测。",
+        "2026-10-24 round 2: AWS官方开放数据目录确认MONKEY训练数据支持匿名S3访问，不需AWS账号；不推断测试集开放。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/51-48913267ec24.json",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/sources/51-7908713825fb.json",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/sources/51-d00761562c31.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/monkey-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://registry.opendata.aws/monkey/",
+          "local_source": "_collection/access_backfill_round2_20261024/sources/80fd45a0d2362952.json",
+          "review_date": "2026-10-24",
+          "section": "Round 2 development access; task and temporal scope retained"
+        },
+        {
+          "url": "https://monkey.grand-challenge.org/dataset/",
+          "local_source": "_collection/access_backfill_round2_20261024/sources/48913267ec246231.json",
+          "review_date": "2026-10-24",
+          "section": "Round 2 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round2_20261024/user_review_summary.json",
+          "section": "User-supplied round 2 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "2",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA 4.0"
+      ],
+      "scope": "Explicitly identified competition rules or named source data; not all components implied",
+      "agreement_required": null,
+      "summary_zh": "官方 AWS Open Data 数据资源页列 CC BY-NC-SA 4.0，适用于 MONKEY 公开训练资源。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "thm provided by the organizers Include a short article describing the methodology Have the code released on GitHub under a permissive open-source license Inflammation cell detection (FROC score):** 🥇 800 € 🥈 500 € 🥉 300 € Monocyte and lymphocyte detection (average of the individual FROC scores):** 🥇 800 € 🥈 500 € 🥉 300 € The participants from organizing centers and sponsoring companies are not eligible for the cash prize award. Sponsors & Supporters 🤝 ¶",
+          "source": {
+            "url": "https://monkey.grand-challenge.org/sponsors-and-award/",
+            "local_source": "_collection/sources/51-3d5664f1ed8b.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "rnal data and pre-trained models are allowed in this competition as long as they are freely and publicly available under a permissive open-source license. Participants must clearly state the use of external data in their submission, using the algorithm name. The use must be clearly stated in the submission, using the algorithm name [e.g., \"Kidney AI Model (trained w/ private data)\"], algorithm page, and/or a supporting publication/URL. The participating team’s code (for training and inference) and model weights must be available on GitHub (or a similar platform) with a permissive open-source license . Publication: ¶ Up to three members",
+          "source": {
+            "url": "https://monkey.grand-challenge.org/rules/",
+            "local_source": "_collection/sources/51-d00761562c31.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "pating team’s code (for training and inference) and model weights must be available on GitHub (or a similar platform) with a permissive open-source license . Publication: ¶ Up to three members of each leaderboard's top three performing teams will be invited to participate in the challenge paper as consortium authors. Challenge participants are encouraged to submit their solution as a short paper at MIDL 2025. Participants in the MONKEY challenge and non-participating researchers using the dataset can publish their results separately at any time. All submitted algorithms will be publicly available as Grand Challenge Algorithms. Any public",
+          "source": {
+            "url": "https://monkey.grand-challenge.org/rules/",
+            "local_source": "_collection/sources/51-d00761562c31.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "n aid in the diagnostic process, reduce pathologistsâ workload, and improve patient outcomes in renal transplantation. Update Frequency As required License CC BY-NC-SA 4.0 Documentation https://monkey.grand-challenge.org/ Managed By Radboud University Medical Center See all datasets managed by Radboud University Medical Center . Contact linda.studer@radboudumc.nl How to Cite MONKEY was accessed on DATE from https://registry.opendata.aws/monkey. Usage Examples Tools & Applications ASAP Viewer by Geert Litjens MONKEY Challenge by Computational Pathology Group Radboudumc, Nijmegen MONKEY challenge tutorials by Computational Pathology Group Radboudumc",
+          "source": {
+            "url": "https://registry.opendata.aws/monkey/",
+            "local_source": "_collection/access_backfill_round2_20261024/sources/80fd45a0d2362952.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://monkey.grand-challenge.org/sponsors-and-award/",
+          "local_source": "_collection/sources/51-3d5664f1ed8b.json"
+        },
+        {
+          "url": "https://monkey.grand-challenge.org/rules/",
+          "local_source": "_collection/sources/51-d00761562c31.json"
+        },
+        {
+          "url": "https://registry.opendata.aws/monkey/",
+          "local_source": "_collection/access_backfill_round2_20261024/sources/80fd45a0d2362952.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "dataset",
+              "value": 119,
+              "unit": "whole-slide images",
+              "canonical_field": "dataset.population.wsi_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "dataset",
+              "value": 231,
+              "unit": "regions of interest",
+              "canonical_field": "dataset.population.roi_count",
+              "scope": "ROIs within the WSI collection; not an additional independent cohort",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://monkey.grand-challenge.org/dataset/",
+              "supports": [
+                "dataset",
+                "labels_and_targets",
+                "data_access"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/51-48913267ec24.json"
+            }
+          ],
+          "source_urls": "https://monkey.grand-challenge.org/pathology-background/; https://monkey.grand-challenge.org/sponsors-and-award/; https://monkey.grand-challenge.org/; https://monkey.grand-challenge.org/dataset/; https://monkey.grand-challenge.org/#machine-learning-for-optimal-detection-of-inflammatory-cells-in-the-kidney; https://monkey.grand-challenge.org/timeline/; https://monkey.grand-challenge.org/challenge/statistics/; https://monkey.grand-challenge.org/lifecycle-and-phases/; https://monkey.grand-challenge.org/#the-winners-have-been-decided-on-the-final-test-set-congratulations-to-team-tiakong-instanseg-and-aira-matrix; https://monkey.grand-challenge.org/#challenge-overview; https://monkey.grand-challenge.org/organizers/; https://monkey.grand-challenge.org/rules/; https://monkey.grand-challenge.org/monkey/; https://monkey.grand-challenge.org/evaluation-ranking-2/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

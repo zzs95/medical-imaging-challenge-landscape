@@ -1,0 +1,784 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "care-2026",
+    "challenge_name": "Comprehensive Analysis & computing of REal-world medical images",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI",
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Heart",
+        "Abdomen"
+      ],
+      "organ_system": [
+        "Cardiovascular",
+        "Digestive"
+      ],
+      "organs_or_structures": [
+        "Left atrium",
+        "Liver",
+        "Myocardium",
+        "Heart"
+      ],
+      "diseases": [
+        "Myocardial infarction",
+        "Atrial fibrillation",
+        "Valvular disease",
+        "Congenital cardiac conditions",
+        "Liver fibrosis"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Other"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "CARE-Left Atrium: Left Atrial Segmentation and Analysis",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "LGE MRI",
+            "CT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Left atrial cavity, scar and anatomical segmentation predictions"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "CARE-Liver: Liver Fibrosis Quantification and Analysis",
+          "task_family": "Other",
+          "task_subtype": null,
+          "input": [
+            "Multi-sequence liver MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Liver segmentation",
+            "Fibrosis stage"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "CARE-Myocardium: Myocardial Pathology Segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "LGE, T2 and cine cardiac MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Myocardial pathology segmentations"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task4",
+          "official_name": "CARE-Whole Heart: Whole Heart Segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": null,
+          "input": [
+            "CT",
+            "MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Whole-heart anatomical segmentation"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ],
+      "related_task_families": [
+        "Segmentation",
+        "Classification"
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Left atrium",
+        "Liver",
+        "Myocardium",
+        "Heart"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": 18,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "MRI",
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "request-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": "Official CARE track page directs post-challenge data requests to care26challenge@163.com; approval and availability across all tracks are not automatically established.",
+      "preregistered_data_license": "CC BY-NC-ND",
+      "access_scope": "Post-challenge data-request procedure on the cited CARE track page; final access conditions and all-track availability require organizer confirmation."
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design."
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Organizer-hosted",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Hausdorff Distance (HD)",
+            "Generalized Dice Similarity Coefficient (G-DSC)",
+            "Accuracy (ACC)",
+            "Sensitivity (SEN)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Area under curve (AUC)",
+            "Accuracy (ACC)",
+            "Dice Similarity Coefficient (DSC)",
+            "Hausdorff Distance (HD)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Hausdorff Distance (HD)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 3 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task4",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "Hausdorff Distance (HD)"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 4 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19727704",
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Prediction files (validation); Docker container (test)",
+      "platform": "Organizer-hosted",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": "2026-08-26",
+      "statistics_status": "Official homepage participation announcement; registration and submission status are not inferred",
+      "reported_participating_teams": 279
+    },
+    "links": {
+      "official": "https://www.zmic.org.cn/care_2026/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 3,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://www.zmic.org.cn/care_2026/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/63fe9155d6b258fc.json",
+          "supports": [
+            "challenge context",
+            "clinical_domain",
+            "data_access.access_after_challenge",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "homepage fields where stated",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19727704",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "supports": [
+            "clinical_domain",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "dataset.center_count",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://www.zmic.org.cn/care_2026/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/care-2026.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "dataset.multi_center": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "dataset.center_type": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "evaluation.platform": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): We established an online evaluation platform and plan to use Docker for the testing phase. During the training and validation phases, participants can register on our platform and directly upload their predictions on the validation set. To ensure a fair comparison, we adopt Docker for the testing phase, requiring participants to submit their Docker models for testing. The memory limit is pre-defined to 20GB. If any problem occurs in testing, we will contact participants through email and report corresponding error reason. Please see the challenge website (https://www.zmic.org.cn/care_2026/) for submission guidance. An example of a container w"
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): We established an online evaluation platform and plan to use Docker for the testing phase. During the training and validation phases, participants can register on our platform and directly upload their predictions on the validation set. To ensure a fair comparison, we adopt Docker for the testing phase, requiring participants to submit their Docker models for testing. The memory limit is pre-defined to 20GB. If any problem occurs in testing, we will contact participants through email and report corresponding error reason. Please see the challenge website (https://www.zmic.org.cn/care_2026/) for submission guidance. An example of a container w"
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): We established an online evaluation platform and plan to use Docker for the testing phase. During the training and validation phases, participants can register on our platform and directly upload their predictions on the validation set. To ensure a fair comparison, we adopt Docker for the testing phase, requiring participants to submit their Docker models for testing. The memory limit is pre-defined to 20GB. If any problem occurs in testing, we will contact participants through email and report corresponding error reason. Please see the challenge website (https://www.zmic.org.cn/care_2026/) for submission guidance. An example of a container w"
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): We established an online evaluation platform and plan to use Docker for the testing phase. During the training and validation phases, participants can register on our platform and directly upload their predictions on the validation set. To ensure a fair comparison, we adopt Docker for the testing phase, requiring participants to submit their Docker models for testing. The memory limit is pre-defined to 20GB. If any problem occurs in testing, we will contact participants through email and report corresponding error reason. Please see the challenge website (https://www.zmic.org.cn/care_2026/) for submission guidance. An example of a container w"
+        },
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "dataset.center_count": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered overview explicitly describes the overall challenge collection from 18 centers; no summing of per-task cohorts."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: We established an online evaluation platform and plan to use Docker for the testing phase. During the training and validation phases, participants can register on our platform and directly upload their predictions on the validation set. To ensure a fair comparison, we adopt Docker for the testing phase, requiring participants to submit their Docker models for testing. The memory limit is pre-defined to 20GB. If any problem occurs in testing, we will contact participants through email and report "
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19727704",
+          "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: We established an online evaluation platform and plan to use Docker for the testing phase. During the training and validation phases, participants can register on our platform and directly upload their predictions on the validation set. To ensure a fair comparison, we adopt Docker for the testing phase, requiring participants to submit their Docker models for testing. The memory limit is pre-defined to 20GB. If any problem occurs in testing, we will contact participants through email and report "
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://www.zmic.org.cn/care_2026/",
+          "local_snapshot": "_collection/sources_other/63fe9155d6b258fc.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit edition-source post-challenge policy reviewed; planned releases, continuing public access, controlled requests and required deletion are kept distinct."
+        },
+        "data_access.access_status": {
+          "source_url": "https://www.zmic.org.cn/care_2026/",
+          "local_snapshot": "_collection/sources_other/63fe9155d6b258fc.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official track-page post-challenge download process is contact/request-based, without assuming automatic approval."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://www.zmic.org.cn/care_2026/",
+          "local_snapshot": "_collection/sources_other/63fe9155d6b258fc.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official track-page post-challenge download process is contact/request-based, without assuming automatic approval."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://www.zmic.org.cn/care_2026/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/care-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://www.zmic.org.cn/care_2026/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/care-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://www.zmic.org.cn/care_2026/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/care-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_after_challenge",
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "dataset.center_count",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/care-2026.json",
+          "_collection/verification_20261003/literature_context/care-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "task_families": [
+        "Classification",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_emerging_objectives": [],
+      "note_zh": "当届注册说明明确鼓励基础模型跨器官、模态和地区迁移，并将微调/迁移方法列入目标；补记FM。",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/19727704",
+          "local_source": "_collection/sources_other/protocol-19727704.txt",
+          "sha256": "e1543586cd618a5aff63d41cb8787e187b6ba4445061ed2587fa21c838bedea0"
+        }
+      ],
+      "scope": "Reverse screening of 288 previously unlabelled editions",
+      "previous_task_families": [
+        "Classification",
+        "Segmentation"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output retained from existing coding",
+        "Segmentation": "Declared task output retained from existing coding"
+      },
+      "foundation_model_basis": "基础模型适配",
+      "text_output_rule": "Narrative outputs, VQA, finite labels, prompts and tool actions are distinguished"
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_objective_basis": "Reverse screening of 288 previously unlabelled editions, 2026-10-25; see task_objective_review"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen",
+            "Heart"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cardiovascular",
+            "Congenital / developmental",
+            "Other"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Myocardial infarction",
+        "Atrial fibrillation",
+        "Valvular disease",
+        "Congenital cardiac conditions",
+        "Liver fibrosis"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "当届独立方案明确心肌梗死、房颤、瓣膜/先天性心脏病及肝纤维化；多任务疾病标签同时保留。",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/19727704",
+          "local_source": "_collection/sources_other/protocol-19727704.txt"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "当届独立方案明确心肌梗死、房颤、瓣膜/先天性心脏病及肝纤维化；多任务疾病标签同时保留。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2026/care-2026.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2026/care-2026.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Official CARE track page directs post-challenge data requests to care26challenge@163.com; approval and availability across all tracks are not automatically established.",
+              "sources": [
+                {
+                  "type": "official conference program",
+                  "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+                  "supports": [
+                    "challenge identity",
+                    "event affiliation"
+                  ]
+                },
+                {
+                  "type": "official challenge website",
+                  "url": "https://www.zmic.org.cn/care_2026/",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/63fe9155d6b258fc.json",
+                  "supports": [
+                    "challenge context",
+                    "clinical_domain",
+                    "data_access.access_after_challenge",
+                    "data_access.access_scope",
+                    "data_access.access_status",
+                    "homepage fields where stated",
+                    "task_profile"
+                  ]
+                },
+                {
+                  "type": "official preregistered challenge design",
+                  "url": "https://zenodo.org/records/19727704",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/protocol-19727704.txt",
+                  "supports": [
+                    "clinical_domain",
+                    "data_usage_mode.evidence_stage",
+                    "data_usage_mode.interpretation",
+                    "data_usage_mode.overall_paradigm",
+                    "data_usage_mode.testing.paradigm",
+                    "data_usage_mode.training.paradigm",
+                    "dataset.center_count",
+                    "dataset.center_type",
+                    "dataset.multi_center",
+                    "evaluation.platform",
+                    "evaluation.platform_evidence_stage",
+                    "evaluation.platform_scope",
+                    "preregistered evaluation design",
+                    "submission.evidence_stage",
+                    "submission.platform",
+                    "submission.submission_type",
+                    "task_profile"
+                  ]
+                },
+                {
+                  "type": "review-derived anatomical classification of source-recorded targets",
+                  "url": "https://www.zmic.org.cn/care_2026/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/clinical_mapping/care-2026.json",
+                  "supports": [
+                    "clinical_domain.organ_system",
+                    "clinical_domain.organ_system_basis",
+                    "clinical_domain.organ_system_coding_scope"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "Source-reported participation count; retain exact unit and scope instead of requiring a harmonized active-team definition.",
+              "url": "https://www.zmic.org.cn/care_2026/",
+              "snapshot": "_collection/verification_20261003/clinical_mapping/care-2026.json",
+              "scope": "No conversion of registered accounts or submission attempts into teams; reported team/participant definitions remain source-specific. Existing source-linked extraction reconciled in this update; source-reported participation does not establish independent validation of the reported number.",
+              "value": {
+                "reported_participating_teams": 279
+              },
+              "excerpt": "",
+              "snapshot_date": "2026-10-02",
+              "source_path": "MICCAI/2026/care-2026.json",
+              "source_field": "participation_statistics"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

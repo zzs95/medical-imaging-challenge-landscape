@@ -1,0 +1,521 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "topbrain-2025",
+    "challenge_name": "TopBrain Segmentation Challenge for Whole Brain Vessel Anatomy",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": null,
+      "challenge_event_date": "2025-09-23",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "SWITCH 2025",
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CTA",
+        "MRA"
+      ],
+      "submodality": [
+        "Brain angiography"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Cerebrovascular system"
+      ],
+      "organs_or_structures": [
+        "Whole-brain arterial vessels"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "CTA track",
+          "task_family": "Segmentation",
+          "task_subtype": "Semantic segmentation",
+          "input": [
+            "CTA"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "40-class vessel segmentation"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "MRA track",
+          "task_family": "Segmentation",
+          "task_subtype": "Semantic segmentation",
+          "input": [
+            "MRA"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "42-class vessel segmentation"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 25,
+        "validation_count": null,
+        "test_count": 20
+      },
+      "modalities": null,
+      "data_components": [
+        "Paired CTA and MRA",
+        "Detailed vessel-specific labels"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "count_unit": "Patients; each has CTA and MRA. Training therefore 50 volumes, testing 40 volumes.",
+        "labels": "40 CTA classes; 42 MRA classes; 34 shared classes."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": true,
+      "commercial_use_allowed_without_permission": false,
+      "commercial_permission_required": true,
+      "redistribution_allowed": null,
+      "license_or_terms": "Swiss open-data terms with source attribution; commercial use requires data-owner permission.",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Class-wise DSC",
+            "Class-wise clDice",
+            "Connected-component count error",
+            "Class-wise HD95",
+            "Invalid-neighbor error",
+            "Side-road vessel F1"
+          ],
+          "ranking": "Six metrics have equal importance."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Class-wise DSC",
+            "Class-wise clDice",
+            "Connected-component count error",
+            "Class-wise HD95",
+            "Invalid-neighbor error",
+            "Side-road vessel F1"
+          ],
+          "ranking": "Six metrics have equal importance."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": 15,
+        "max_ram_gb": 31,
+        "reserved_ram_gb": null,
+        "gpu": "NVIDIA T4",
+        "gpu_vram_gb": 16
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "final_phase_start": "2025-09-15",
+      "final_submission_deadline": "2025-09-21"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 274,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Validation-CTA-Seg",
+            "submission_count": 36
+          },
+          {
+            "official_phase_name": "FinalTest-CTA-Seg",
+            "submission_count": 14
+          },
+          {
+            "official_phase_name": "Validation-MRA-Seg",
+            "submission_count": 55
+          },
+          {
+            "official_phase_name": "FinalTest-MRA-Seg",
+            "submission_count": 30
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://topbrain2025.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://topbrain2025.grand-challenge.org/participation-rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/31-15f1431321c3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topbrain2025.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/31-98b46930ac47.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topbrain2025.grand-challenge.org/tutorials/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/31-c948a17e92a6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topbrain2025.grand-challenge.org/topbrain2025/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/31-d93ae5f0998c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topbrain2025.grand-challenge.org/assessment/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/31-ece9d4ff39dc.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://topbrain2025.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/31-f34f2d0758b9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topbrain2025.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/31-f5e534e4ce6a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topbrain2025.grand-challenge.org/data/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/31-f60ede7d4140.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://topbrain2025.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/31-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "evaluation: exact case/class aggregation and rank computation need code verification.",
+        "dataset: validation cohort size and full label names not transcribed."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/topbrain-2025.json",
+          "_collection/verification_20261003/literature_context/topbrain-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "TopBrain2025训练数据页直接链接公开Zenodo16878417，下载即接受许可证条款。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "TopBrain2025训练数据页直接链接公开Zenodo16878417，下载即接受许可证条款。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/f60ede7d4140e3f2.json",
+          "url": "https://topbrain2025.grand-challenge.org/data/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/topbrain-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 25,
+              "unit": "patients",
+              "canonical_field": "dataset.population.train_count",
+              "scope": "Paired CTA and MRA per patient",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 20,
+              "unit": "patients",
+              "canonical_field": "dataset.population.test_count",
+              "scope": "Paired CTA and MRA per patient",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://topbrain2025.grand-challenge.org/data/",
+              "supports": [
+                "dataset",
+                "labels_and_targets",
+                "data_access"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/31-f60ede7d4140.json"
+            }
+          ],
+          "source_urls": "https://topbrain2025.grand-challenge.org/participation-rules/; https://topbrain2025.grand-challenge.org/; https://topbrain2025.grand-challenge.org/tutorials/; https://topbrain2025.grand-challenge.org/topbrain2025/; https://topbrain2025.grand-challenge.org/assessment/; https://topbrain2025.grand-challenge.org/challenge/statistics/; https://topbrain2025.grand-challenge.org/organizers/; https://topbrain2025.grand-challenge.org/data/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

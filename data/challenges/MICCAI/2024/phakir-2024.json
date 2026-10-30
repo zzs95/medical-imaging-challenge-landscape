@@ -1,0 +1,553 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "phakir-2024",
+    "challenge_name": "phakir 2024",
+    "full_name": "PhaKIR: Surgical Procedure Phase Recognition, Keypoint Estimation, and Instrument Instance Segmentat",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "parent_event": "Endoscopic Vision Challenge",
+      "official_registration_id": "MICCAI-2024-R16"
+    },
+    "organizers": {
+      "institutions": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Organizers",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 3
+      }
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "body_region": [
+        "Abdomen"
+      ],
+      "organs_or_structures": [
+        "Gallbladder operative field",
+        "Surgical instruments"
+      ],
+      "diseases": [],
+      "clinical_context": "Cholecystectomy videos; no specific diagnosis inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "secondary_task_families": [
+        "Localization",
+        "Segmentation",
+        "Tracking"
+      ],
+      "task_families": [
+        "Classification",
+        "Localization",
+        "Segmentation",
+        "Tracking"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "PhaKIR: Surgical Procedure Phase Recognition, Keypoint Estimation, and Instrument Instance Segmentat",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification",
+            "Localization",
+            "Segmentation",
+            "Tracking"
+          ],
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990991",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+            "registered_task_index": 3
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 3
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Endoscopy"
+      ],
+      "population": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 3
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 3
+      },
+      "access_status": "Account registration",
+      "review_status": "Reviewed 2026-10-24; round 3",
+      "public_download": false,
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "2024 training",
+          "category": "Account registration",
+          "access_steps": [
+            "Successful registration",
+            "Login",
+            "Download video ZIPs"
+          ],
+          "manual_review": null
+        },
+        {
+          "scope": "Post-challenge release",
+          "category": "Individual authorization",
+          "access_steps": [
+            "Zenodo access request; user-reported later author review"
+          ],
+          "manual_review": true
+        }
+      ],
+      "license_or_terms": "CC BY-NC-SA. 当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {},
+      "testing": {},
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Organizer-run submission",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nFor the instance segmentation of the surgical instruments, three metrics are employed. For localization, the mean\naverage precision (mAP) is applied, whereby the Mask Intersection over Union (IoU) is used as the localization\ncriterion. The calculation of the mAP is analogous to that of the Common Objects in Context (COCO) dataset [1],\ni.e., the mAP is computed for IoU thresholds between 0.50 and 0.95 with an interval of 0.05 and the results are\naveraged for the final mAP [2]. As a per-class counting metric, the F1-score is applied, and the 95%\nHausdorff-Distance (HD) serves as the boundary-based metric. For the assignment strategy of predictions to\nground truth segmentations, the Hungarian Maximum Matching Algorithm is utilized.\nThe evaluation of the keypoint accuracy is analogous to the calculation of the COCO mAP, whereby the object\nkeypoint similarity (OKS) is used instead of the mIoU [3]. The OKS is calculated using the Euclidean distance\nbetween a predicted and a ground truth point, which is passed through an unnormalized Gaussian distribution\nwhere the standard deviation corresponds to the square root of the size of the segmentation area multiplied by a\nper-keypoint constant. We use the tuned version of the OKS proposed by COCO, which is based on a per-keypoint\nstandard deviation with respect to the object scale and an adjusted constant. A more detailed description of OKS\nand the tuned version is given in [3]. The classification of the surgical phases is evaluated using the Balanced\nAccuracy (BA) as the multi-class counting metric, the F1-score as the harmonic mean of precision of recall as the\nper-class counting metric, and the Area under the Receiver Operating Characteristic Curve (AUROC) as the\nthreshold-based metric.\n1: Lin, Tsung-Yi, Michael Maire, Serge J. Belongie, James Hays, Pietro Perona, Deva Ramanan, Piotr Dollár and C.\nLawrence Zitnick. \"Microsoft COCO: Common Objects in Context.\" European Conference on Computer Vision\n(2014).\n2: Common Objects in Context - Detection Evaluation. https://cocodataset.org/detection-eval. Accessed: 14\nNovember 2023.\n3: Common Objects in Context - Keypoint Evaluation. https://cocodataset.org/keypoints-eval. Accessed: 14\nNovember 2023.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\n\n\n\n\n\f                                    Endoscopic Vision Challenge 2024 (EndoVis24)\n\nThe metrics mAP, F1-score, and 95% HD for instance segmentation of surgical tools were selected based on the\npublication by Maier-Hein et al. [1]. Furthermore, these metrics are common and frequently used for instance\nsegmentation and are widely accepted in the community as measures for the quality of an algorithm. The COCO\nvariant of mAP also serves to ensure that algorithms whose predictions have a higher IoU benefit more from it\nand that a higher IoU has a greater impact on the final result. Analogously, the calculation of the mAP based on\nthe OKS for the keypoint estimation task as a measure of the quality of an algorithm should lead to the most\naccurate possible determination of keypoint coordinates, with similar benefits as mentioned above. The metrics\nBA, F1-score, and AUROC for the classification of procedure phases were also selected based on [1], which\nrepresent widely used metrics for classification tasks and ensure a reliable statement about the quality of a\nmethod.\n[1] Maier-Hein, L. et al. \"Metrics reloaded: Pitfalls and recommendations for image analysis validation.\" arXiv. org\n2206.01653 (2022).",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nBy determining the results per video and averaging them we give equal weighting to all videos, even if they are of\ndifferent lengths. The same applies to the task of phase classification in videos regarding the varying number of\nframes in a phase.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nAs participants submit docker containers containing their algorithms, there should be a corresponding result for\neach test case. However, if a result is missing, the metrics for this case will be set to zero.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nWe calculate the above mentioned metrics for each class in a frame, and average the results across all classes to\nget a final result for the single frame. We carry out this procedure for all images in a video to get a per-video result\nand average the results over all videos in the test dataset. For the phase classification task, we additionally\naverage the per-phase results over all phases in a video to ensure that an unbalanced number of frames between\nphases does not affect the overall result. Since our challenge consists of three different tasks, and participants do\nnot necessarily have to take part in all tasks, we carry out a separate evaluation and obtain three result lists at the\nend. For each task, we calculate all mentioned metrics and average the corresponding ranks in order to\ndetermine the final task-specific rank.",
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990991",
+            "section": "Metric(s); Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+            "registered_task_index": 3
+          }
+        }
+      ]
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Organizer-run submission",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Docker container on the self-hosted challenge website. The Submission instructions are in preparation, a link will be provided. All participating teams have to submit a brief methodology report.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990991",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+            "registered_task_index": 3
+          }
+        }
+      ],
+      "submission_evidence_status": "Task-specific registered EndoVis protocol"
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 3
+      }
+    },
+    "publication": {
+      "registration_doi": "10.5281/zenodo.10990991"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "active_teams": null,
+      "teams_with_submission": null
+    },
+    "links": {
+      "registration": "https://doi.org/10.5281/zenodo.10990991",
+      "official_website": "https://endovis.grand-challenge.org/"
+    },
+    "notes": [
+      "Task-specific information is taken from the registered EndoVis protocol, not from unrelated child challenges."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "miccai_gapfill_20261024",
+      "sources": [
+        {
+          "type": "Official registered EndoVis protocol",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+          "supports": [
+            "year",
+            "parent-child relation",
+            "task design",
+            "submission and evaluation protocol"
+          ],
+          "registered_task_indices": [
+            3
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ]
+    },
+    "record_relationships": {
+      "analytical_unit": "child_challenge_edition",
+      "parent_challenge_id": "endovis-2024",
+      "child_challenge_ids": []
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification",
+        "Localization",
+        "Segmentation",
+        "Tracking"
+      ],
+      "emerging_objectives": [],
+      "basis": "Registered sub-challenge design",
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Sub-challenge explicitly named in registered EndoVis protocol",
+      "completion_status": "Not independently recoded in this gap-fill"
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Named EndoVis child challenge; parent is not additionally counted."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "2024官方说明要求成功注册并登录后下载训练视频ZIP。赛后Zenodo申请访问为另一个时段，不覆盖当届登录下载规则。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "2024 training",
+            "category": "Account registration",
+            "access_steps": [
+              "Successful registration",
+              "Login",
+              "Download video ZIPs"
+            ],
+            "manual_review": null
+          },
+          {
+            "scope": "Post-challenge release",
+            "category": "Individual authorization",
+            "access_steps": [
+              "Zenodo access request; user-reported later author review"
+            ],
+            "manual_review": true
+          }
+        ],
+        "evidence_basis": "2024 official PDF checked; later Zenodo authorization reported in supplied review",
+        "confidence": "Moderate",
+        "source_urls": [
+          "https://phakir.re-mic.de/images/PhaKIR_Data_Description_and_Labeling_Instructions_v2.pdf"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker container on the self-hosted challenge website. The Submission instructions are in preparation, a link will be provided. All participating teams have to submit a brief methodology report. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final re [...] ts. We provide a platform for participants to verify the technical functionality of their submitted Docker containers. For the evaluation of the algorithms, only the last submitted version will be considered. An evaluation on the test data will only be performed once per team to prevent iterative adaptation to the test data."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period Endoscopic Vision Challenge 2024 (EndoVis24) • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Challenge website and challenge registration opens: April 2024 Release of training data: May 2024 Release of docker submission guide/evaluation instructions: 1st of August 2024 Submission deadline and registration closing: 15th of September 2024 ; Methodology report deadline: 15th of September 2024 Challenge Day: Day of Endovis 2024"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "excerpt": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/phakir-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://phakir.re-mic.de/images/PhaKIR_Data_Description_and_Labeling_Instructions_v2.pdf",
+          "local_source": "_collection/access_backfill_round3_20261024/sources/phakir2024.json",
+          "review_date": "2026-10-24",
+          "section": "Round 3 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-24 round 3: 2024官方说明要求成功注册并登录后下载训练视频ZIP。赛后Zenodo申请访问为另一个时段，不覆盖当届登录下载规则。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 8,
+              "unit": "videos",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 5,
+              "unit": "videos",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 18500,
+              "unit": "frames",
+              "scope": "Annotated",
+              "approximate": true,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 11500,
+              "unit": "frames",
+              "scope": "Annotated",
+              "approximate": true,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "Germany"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/phakir-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Not established",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Gallbladder operative field",
+        "Surgical instruments"
+      ],
+      "specific_diseases": [],
+      "review_note": "Cholecystectomy videos; no specific diagnosis inferred.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/phakir-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY-NC-SA",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10990991"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/phakir-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "Germany"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10990991",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/phakir-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN07"
+  ]
+}

@@ -1,0 +1,767 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "k2s-2022",
+    "challenge_name": "K2S: from undersampled K-space To automatic Segmentation",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2022-09-18",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": [
+        "Fat-suppressed 3D FSE CUBE"
+      ],
+      "body_region": [
+        "Lower extremity"
+      ],
+      "organ_system": [
+        "Musculoskeletal"
+      ],
+      "organs_or_structures": [
+        "Knee cartilage",
+        "Knee bone"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Segmentation from 8× undersampled knee k-space",
+          "task_family": "Segmentation",
+          "task_subtype": "multi-class segmentation",
+          "input": [
+            "8× undersampled multi-coil knee MRI k-space"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Bone and cartilage segmentation masks"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": true,
+      "ethical_approval": true,
+      "center_type": "single-center",
+      "multi_center": false,
+      "international": null,
+      "center_count": 1,
+      "institutions_description": "Challenge cohort from UCSF Orthopedic Institute; the separate 480-case three-site cohort trained the annotation pipeline and is not the K2S challenge cohort.",
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 300,
+        "validation_count": null,
+        "test_count": 50
+      },
+      "modalities": null,
+      "data_components": [
+        "Undersampled k-space",
+        "Bone/cartilage masks",
+        "Fully sampled training images"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "patient_count": 300
+        },
+        "test": {
+          "patient_count": 50
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "closed",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND; official page states data are no longer shared after challenge conclusion.",
+      "access_after_challenge": false
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": false
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": false,
+        "submission_artifact": "HDF5"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": null,
+        "policy": "No additional training data."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Organizer-run",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient (DSC)",
+            "weighted Dice"
+          ],
+          "ranking": "Weights are inversely proportional to anatomical structure volume."
+        }
+      ],
+      "cross_task_rule": null,
+      "execution_operator": "Organizer-run",
+      "execution_mode": "Organizer scores submitted prediction files",
+      "workflow_evidence": {
+        "date": "2026-10-22",
+        "basis_type": "user_confirmed_submission_and_evaluation_workflow",
+        "summary": "K2S 2022：在线入口上传预测结果，由组织者计算评价；不指定未确认的平台供应商。 依据为2026-10-22用户人工核查反馈。",
+        "independently_verified_in_this_update": false,
+        "qualification": "Human review supplied by user; no new public source independently retrieved. Submission portal, submitted artifact and scoring operator recorded separately; no physical server or automation inferred."
+      }
+    },
+    "submission": {
+      "submission_type": "prediction file",
+      "platform": "Online submission portal (vendor unspecified)",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "total_submissions_per_participant": 3
+      },
+      "task_outputs": [
+        {
+          "task_id": "task1",
+          "format": "HDF5",
+          "content": "Predicted structure masks"
+        }
+      ],
+      "submission_format": "HDF5",
+      "evaluation_operator": "Organizer-run",
+      "workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "user_confirmed_submission_and_evaluation_workflow",
+        "summary": "K2S 2022：在线入口上传预测结果，由组织者计算评价；不指定未确认的平台供应商。 依据为2026-10-22用户人工核查反馈。",
+        "independently_verified_in_this_update": false,
+        "qualification": "Human review supplied by user; no new public source independently retrieved. Submission portal, submitted artifact and scoring operator recorded separately; no physical server or automation inferred."
+      }
+    },
+    "schedule": {
+      "training_data_release": "2022-04-15",
+      "test_data_release": "2022-07-06",
+      "final_submission_deadline": "2022-07-21",
+      "challenge_event": "2022-09-18"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 88,
+      "registered_teams": 87,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": 12,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Challenge",
+            "submission_count": 0
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://k2s.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": "https://doi.org/10.3390/bioengineering10020267"
+    },
+    "notes": [
+      "Reconstruction is an optional intermediate step and is explicitly not evaluated. The 300 development cases include participant-defined validation splits. Current data download is closed; data were downloadable during the competition.",
+      "2026-10-22 最新提交/评价流程人工核查：K2S 2022：在线入口上传预测结果，由组织者计算评价；不指定未确认的平台供应商。 依据为2026-10-22用户人工核查反馈。"
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://k2s.grand-challenge.org/Evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/118-227fac32dc55.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://k2s.grand-challenge.org/Timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/118-3482d1f72811.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://k2s.grand-challenge.org/Data/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/118-37923a219119.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://k2s.grand-challenge.org/Submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/118-7121773cec0d.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://k2s.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/118-823c85b1cc19.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://k2s.grand-challenge.org/Rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/118-e1fbb15a0fc0.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://k2s.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/118-overview.json"
+        },
+        {
+          "type": "official organizer challenge or dataset paper",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+          "title": "K2S Challenge: From Undersampled K-Space to Automatic Segmentation",
+          "supports": [
+            "dataset.multi_center",
+            "dataset.center_count",
+            "dataset.center_type",
+            "dataset.institutions_description",
+            "dataset.splits.train.patient_count",
+            "dataset.splits.test.patient_count",
+            "participation_statistics.registered_teams",
+            "participation_statistics.teams_with_submission",
+            "data_access.public_download",
+            "data_access.is_public",
+            "links.challenge_paper"
+          ]
+        }
+      ],
+      "collection_status": "verified",
+      "unresolved_fields": [],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "dataset.multi_center": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer K2S paper describes a UCSF challenge cohort of 300 training and 50 test patients, distinct from multicenter annotation-model pretraining, and reports team counts explicitly."
+        },
+        "dataset.center_count": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer K2S paper describes a UCSF challenge cohort of 300 training and 50 test patients, distinct from multicenter annotation-model pretraining, and reports team counts explicitly."
+        },
+        "dataset.center_type": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer K2S paper describes a UCSF challenge cohort of 300 training and 50 test patients, distinct from multicenter annotation-model pretraining, and reports team counts explicitly."
+        },
+        "dataset.institutions_description": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer K2S paper describes a UCSF challenge cohort of 300 training and 50 test patients, distinct from multicenter annotation-model pretraining, and reports team counts explicitly."
+        },
+        "dataset.splits.train.patient_count": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer K2S paper describes a UCSF challenge cohort of 300 training and 50 test patients, distinct from multicenter annotation-model pretraining, and reports team counts explicitly."
+        },
+        "dataset.splits.test.patient_count": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer K2S paper describes a UCSF challenge cohort of 300 training and 50 test patients, distinct from multicenter annotation-model pretraining, and reports team counts explicitly."
+        },
+        "participation_statistics.registered_teams": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer K2S paper describes a UCSF challenge cohort of 300 training and 50 test patients, distinct from multicenter annotation-model pretraining, and reports team counts explicitly."
+        },
+        "participation_statistics.teams_with_submission": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer K2S paper describes a UCSF challenge cohort of 300 training and 50 test patients, distinct from multicenter annotation-model pretraining, and reports team counts explicitly."
+        },
+        "data_access.public_download": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer K2S paper describes a UCSF challenge cohort of 300 training and 50 test patients, distinct from multicenter annotation-model pretraining, and reports team counts explicitly."
+        },
+        "data_access.is_public": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer K2S paper describes a UCSF challenge cohort of 300 training and 50 test patients, distinct from multicenter annotation-model pretraining, and reports team counts explicitly."
+        },
+        "links.challenge_paper": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer K2S paper describes a UCSF challenge cohort of 300 training and 50 test patients, distinct from multicenter annotation-model pretraining, and reports team counts explicitly."
+        }
+      },
+      "last_updated": "2026-10-22",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.is_public",
+          "data_access.public_download",
+          "dataset.center_count",
+          "dataset.center_type",
+          "dataset.institutions_description",
+          "dataset.multi_center",
+          "dataset.splits.test.patient_count",
+          "dataset.splits.train.patient_count",
+          "links.challenge_paper",
+          "participation_statistics.registered_teams",
+          "participation_statistics.teams_with_submission"
+        ],
+        "remaining_core_fields": [
+          "evaluation.platform",
+          "submission.platform",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/k2s-2022.json",
+          "_collection/verification_20261003/literature_context/k2s-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "user_confirmed_submission_and_evaluation_workflow",
+          "summary": "K2S 2022：在线入口上传预测结果，由组织者计算评价；不指定未确认的平台供应商。 依据为2026-10-22用户人工核查反馈。",
+          "independently_verified_in_this_update": false,
+          "qualification": "Human review supplied by user; no new public source independently retrieved. Submission portal, submitted artifact and scoring operator recorded separately; no physical server or automation inferred.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/four_submission_hosts_20261022_152726/MICCAI/2022/k2s-2022.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Challenge cohort from UCSF Orthopedic Institute; the separate 480-case three-site cohort trained the annotation pipeline and is not the K2S challenge cohort.",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+              "snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+              "scope": "Explicit acquisition-institution or region description; partial scope retained.",
+              "value": "Challenge cohort from UCSF Orthopedic Institute; the separate 480-case three-site cohort trained the annotation pipeline and is not the K2S challenge cohort.",
+              "excerpt": "",
+              "snapshot_date": "2026-10-03",
+              "source_path": "MICCAI/2022/k2s-2022.json",
+              "source_field": "dataset.institutions_description"
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2022/k2s-2022.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": false,
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://k2s.grand-challenge.org/Evaluation/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-227fac32dc55.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://k2s.grand-challenge.org/Timeline/",
+                  "supports": [
+                    "year",
+                    "schedule",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-3482d1f72811.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://k2s.grand-challenge.org/Data/",
+                  "supports": [
+                    "dataset",
+                    "labels_and_targets",
+                    "data_access"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-37923a219119.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://k2s.grand-challenge.org/Submission/",
+                  "supports": [
+                    "submission",
+                    "data_usage_mode"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-7121773cec0d.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://k2s.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-823c85b1cc19.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://k2s.grand-challenge.org/Rules/",
+                  "supports": [
+                    "data_access",
+                    "data_usage_mode",
+                    "submission",
+                    "evaluation",
+                    "publication"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-e1fbb15a0fc0.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://k2s.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-overview.json"
+                },
+                {
+                  "type": "official organizer challenge or dataset paper",
+                  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+                  "title": "K2S Challenge: From Undersampled K-Space to Automatic Segmentation",
+                  "supports": [
+                    "dataset.multi_center",
+                    "dataset.center_count",
+                    "dataset.center_type",
+                    "dataset.institutions_description",
+                    "dataset.splits.train.patient_count",
+                    "dataset.splits.test.patient_count",
+                    "participation_statistics.registered_teams",
+                    "participation_statistics.teams_with_submission",
+                    "data_access.public_download",
+                    "data_access.is_public",
+                    "links.challenge_paper"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2022/k2s-2022.json",
+              "source_field": "participation_statistics",
+              "value": {
+                "registered_participants": 88,
+                "registered_teams": 87,
+                "active_participants": null,
+                "active_teams": null,
+                "participants_with_submission": null,
+                "teams_with_submission": 12,
+                "qualified_teams": null,
+                "finalist_teams": null,
+                "submissions": {
+                  "directory_summary_submissions": null,
+                  "total_submissions": null,
+                  "by_task": null,
+                  "by_phase": [
+                    {
+                      "official_phase_name": "Challenge",
+                      "submission_count": 0
+                    }
+                  ]
+                },
+                "statistics_snapshot_date": "2026-10-02",
+                "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+                "notes": [
+                  "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+                ]
+              },
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://k2s.grand-challenge.org/Evaluation/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-227fac32dc55.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://k2s.grand-challenge.org/Timeline/",
+                  "supports": [
+                    "year",
+                    "schedule",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-3482d1f72811.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://k2s.grand-challenge.org/Data/",
+                  "supports": [
+                    "dataset",
+                    "labels_and_targets",
+                    "data_access"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-37923a219119.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://k2s.grand-challenge.org/Submission/",
+                  "supports": [
+                    "submission",
+                    "data_usage_mode"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-7121773cec0d.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://k2s.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-823c85b1cc19.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://k2s.grand-challenge.org/Rules/",
+                  "supports": [
+                    "data_access",
+                    "data_usage_mode",
+                    "submission",
+                    "evaluation",
+                    "publication"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-e1fbb15a0fc0.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://k2s.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/118-overview.json"
+                },
+                {
+                  "type": "official organizer challenge or dataset paper",
+                  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9952400/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/papers/PMC9952400.json",
+                  "title": "K2S Challenge: From Undersampled K-Space to Automatic Segmentation",
+                  "supports": [
+                    "dataset.multi_center",
+                    "dataset.center_count",
+                    "dataset.center_type",
+                    "dataset.institutions_description",
+                    "dataset.splits.train.patient_count",
+                    "dataset.splits.test.patient_count",
+                    "participation_statistics.registered_teams",
+                    "participation_statistics.teams_with_submission",
+                    "data_access.public_download",
+                    "data_access.is_public",
+                    "links.challenge_paper"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

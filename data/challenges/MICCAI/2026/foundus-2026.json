@@ -1,0 +1,534 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "foundus-2026",
+    "challenge_name": "Foundation Model Challenge for Ultrasound Biometry",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Ultrasound"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Other"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Ultrasound biometric landmarks"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Localization",
+      "secondary_task_families": [
+        "Quantification / measurement"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Landmark Detection for Ultrasound Parameter Measurement",
+          "task_family": "Localization",
+          "task_subtype": null,
+          "input": [
+            "Ultrasound images"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Anatomical landmark coordinates",
+            "Derived biometric measurements"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ],
+      "task_families": [
+        "Localization",
+        "Quantification / measurement"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Localization": "Declared task output",
+        "Quantification / measurement": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": true,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Ultrasound biometric landmarks"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Ultrasound"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "preregistered_data_license": "CC BY-NC",
+      "review_status": "Human-confirmed 2026-10-25",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Competition-time training/development data",
+      "access_by_scope": [
+        {
+          "scope": "Training/development",
+          "category": "Account registration",
+          "access_steps": [
+            "Register",
+            "Download development data"
+          ],
+          "manual_review": null
+        }
+      ]
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design.",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Mean Radial Error (MRE)",
+            "Ultrasound parameter absolute error"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19736827"
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://mwm2026.github.io/gu-biometry",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "The conference acronym is FoundUS; its registered design title and acronym are Generalization-oriented Ultrasound Biometry / GU_Biometry."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 6,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19736827",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19736827.txt",
+          "supports": [
+            "clinical_domain",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/19736827",
+          "local_snapshot": "_collection/sources_other/protocol-19736827.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19736827",
+          "local_snapshot": "_collection/sources_other/protocol-19736827.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/19736827",
+          "local_snapshot": "_collection/sources_other/protocol-19736827.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/19736827",
+          "local_snapshot": "_collection/sources_other/protocol-19736827.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/19736827",
+          "local_snapshot": "_collection/sources_other/protocol-19736827.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/19736827",
+          "local_snapshot": "_collection/sources_other/protocol-19736827.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: During the testing phase, each participant was allowed to successfully submit the Docker container only once to prevent repeated tuning on the hidden test set. In addition, a strict separation between the validation leaderboard (public) and the final test evaluation (private) was maintained, ensuring that final rankings were determined solely based on the unseen test set. To further safeguard fairness and result integrity, top-ranked submissions underwent manual verification by the organizing co"
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19736827",
+          "local_snapshot": "_collection/sources_other/protocol-19736827.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: During the testing phase, each participant was allowed to successfully submit the Docker container only once to prevent repeated tuning on the hidden test set. In addition, a strict separation between the validation leaderboard (public) and the final test evaluation (private) was maintained, ensuring that final rankings were determined solely based on the unseen test set. To further safeguard fairness and result integrity, top-ranked submissions underwent manual verification by the organizing co"
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "submission.evidence_stage",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/foundus-2026.json",
+          "_collection/verification_20261003/literature_context/foundus-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。",
+        "scope": "Competition-time training/development data",
+        "access_by_scope": [
+          {
+            "scope": "Training/development",
+            "category": "Account registration",
+            "access_steps": [
+              "Register",
+              "Download development data"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "Human confirmation supplied by user; no new independent web verification",
+        "confidence": "Human-confirmed",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-25: 2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/foundus-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_registration_20261025/user_confirmation.json",
+          "review_date": "2026-10-25",
+          "section": "User-confirmed registration/download; scope limited to pending editions"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid",
+      "task_families": [
+        "Localization",
+        "Quantification / measurement"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Localization",
+        "Quantification / measurement"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_task_families": [
+        "Localization"
+      ],
+      "previous_emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_roles": {
+        "Localization": "Declared task output",
+        "Quantification / measurement": "Declared task output"
+      },
+      "note_zh": "坐标定位和派生临床参数均参与评分，补记测量；组织者明确以可泛化超声基础模型为目标。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/19736827",
+          "local_source": "_collection/sources_other/protocol-19736827.txt",
+          "sha256": "e5cb2da47cbb24b05cb0c4c470c8dfe56a9010aa2d1e0dc082d98d0833e87cee"
+        },
+        {
+          "url": "https://communities.springernature.com/posts/miccai-2026-challenge-on-foundation-model-for-ultrasound-biometry",
+          "local_source": "_collection/task_objective_audit_20261025/sources/foundus-2026_d86f80969d.txt",
+          "sha256": "42f44102069cbeb8a85ee93be82c88dfe0b658472670d1f0332b205f319c6c70"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/lijiake2408/Foundation-Model-for-Ultrasound-Biometry/main/README.md",
+          "local_source": "_collection/task_objective_audit_20261025/sources/foundus-2026_e559ee93da.txt",
+          "sha256": "7854c9b755a30378234a4e3f7e9ebe27b92d386c1cd3974050d05a45284eb934"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Cho Ray Hospital, Vietnam Aga Khan University Hospital, Kenya University of Barcelona, Spain Zhenjiang Maternal and Child Health Hospital, China Third People’s Hospital of Zhenjiang City, China Fifth People’s Hospital of Zhenjiang City, China Zhujiang Hospital, Southern Medical University, China Guangzhou Women and Children’s Medical Center, China First Affiliated Hospital of Jinan University, China Third Affiliated Hospital of Sun Yat-sen University, China Shenzhen People’s Hospital, China Chengdu Women’s and Children’s Central Hospital of the University of Electronic Science and Technology of China Wuxi People's Hospital, China Department of Obstetrics and Gynecology of Fudan University, China Lu'an City Jin'an District Maternal and Child Health Hospital, China Lianyungang Maternal and Child Health Hospital, China Weifang Maternal and Child Health Hospital, China Qianjiang Central Hospital, China Shantou Maternal and Child Health Hospital, China Ma'anshan Maternal and Child Health Hospital, China Zhangjiagang First People's Hospital, China Page 16 of 25 Biomedical Image Analysis ChallengeS (BIAS) Initiative Generalization-oriented Ultrasound Biometry Peking University First Hospital, China Taizhou First People's Hospital, China Xianju County People's Hospital, China Sanmen County People's Hospital, China Foshan Nanhai District People's Hospital, China Zhongshan Boai Hospital, China Donghua Hospital, China",
+              "url": "https://zenodo.org/records/19736827",
+              "snapshot": "_collection/sources_other/protocol-19736827.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nCho Ray Hospital, Vietnam\nAga Khan University Hospital, Kenya\nUniversity of Barcelona, Spain\nZhenjiang Maternal and Child Health Hospital, China\nThird People’s Hospital of Zhenjiang City, China\nFifth People’s Hospital of Zhenjiang City, China\nZhujiang Hospital, Southern Medical University, China\nGuangzhou Women and Children’s Medical Center, China\nFirst Affiliated Hospital of Jinan University, China\nThird Affiliated Hospital of Sun Yat-sen University, China\nShenzhen People’s Hospital, China\nChengdu Women’s and Children’s Central Hospital of the University of Electronic Science and Technology of China\nWuxi People's Hospital, China\nDepartment of Obstetrics and Gynecology of Fudan University, China\nLu'an City Jin'an District Maternal and Child Health Hospital, China\nLianyungang Maternal and Child Health Hospital, China\nWeifang Maternal and Child Health Hospital, China\nQianjiang Central Hospital, China\nShantou Maternal and Child Health Hospital, China\nMa'anshan Maternal and Child Health Hospital, China\nZhangjiagang First People's Hospital, China\n\n\n                                                       Page 16 of 25               Biomedical Image Analysis ChallengeS (BIAS) Initiative\n\f                                         Generalization-oriented Ultrasound Biometry\n\n\n\nPeking University First Hospital, China\nTaizhou First People's Hospital, China\nXianju County People's Hospital, China\nSanmen County People's Hospital, China\nFoshan Nanhai District People's Hospital, China\nZhongshan Boai Hospital, China\nDonghua Hospital, China",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

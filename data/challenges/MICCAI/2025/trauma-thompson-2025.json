@@ -1,0 +1,858 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "trauma-thompson-2025",
+    "challenge_name": "The Trauma THOMPSON Challenge 2025",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Surgical video"
+      ],
+      "submodality": [
+        "Egocentric emergency-procedure recordings"
+      ],
+      "body_region": [
+        "Emergency procedure field"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Hands",
+        "Medical tools"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [
+        "Tracking",
+        "Detection",
+        "Regression",
+        "Visual Question Answering"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Action recognition and anticipation",
+          "task_family": "Classification",
+          "task_subtype": "Temporal recognition and anticipation",
+          "input": [
+            "Video frames"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Current and anticipated action class names"
+          ],
+          "granularity": "video",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Hand tracking",
+          "task_family": "Tracking",
+          "task_subtype": "Hand box tracking",
+          "input": [
+            "Video frames"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Hand IDs and YOLO-format boxes"
+          ],
+          "granularity": "frame sequence",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Tool detection",
+          "task_family": "Detection",
+          "task_subtype": "Object detection",
+          "input": [
+            "Video frames"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Tool names and YOLO-format boxes"
+          ],
+          "granularity": "frame",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task4",
+          "official_name": "Realism assessment",
+          "task_family": "Regression",
+          "task_subtype": "Realism scoring",
+          "input": [
+            "Simulated trauma video frames"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Integer realism score"
+          ],
+          "granularity": "video",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task5",
+          "official_name": "Visual question answering",
+          "task_family": "Visual Question Answering",
+          "task_subtype": "Medical VQA",
+          "input": [
+            "Egocentric image",
+            "Question"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Text answer"
+          ],
+          "granularity": "image",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": true,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": true,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "Egocentric trauma/emergency-procedure video",
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "task1": {
+          "train_videos": 141,
+          "test_regular_videos": 36,
+          "test_just_in_time_videos": 43
+        },
+        "task2": {
+          "train_videos": 20,
+          "test_videos": 15
+        },
+        "task3": {
+          "train_annotated_frames": 36000,
+          "test_frames": 10000
+        },
+        "task4": {
+          "train_videos": 141,
+          "test_videos": 36
+        },
+        "task5": {
+          "train_annotated_question_frames": 475000,
+          "test_frames": 119000
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "registration-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 2025 年五个任务的数据使用条款均列 CC BY-NC-SA。",
+      "access_after_challenge": null,
+      "access_scope": "training data access as stated in the cited edition source",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task3",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task4",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task5",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "testing_submissions_including_failures": 2
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "method_description_required": true,
+      "method_description": "At least eight pages in Springer proceedings format required for prize eligibility. Accepted papers enter MICCAI challenge LNCS proceedings."
+    },
+    "participation_statistics": {
+      "registered_participants": 79,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Open Development Phase Task 1",
+            "submission_count": 29
+          },
+          {
+            "official_phase_name": "Open Development Phase Task 2",
+            "submission_count": 22
+          },
+          {
+            "official_phase_name": "Open Development Phase Task 3",
+            "submission_count": 4
+          },
+          {
+            "official_phase_name": "Open Development Phase Task 5",
+            "submission_count": 0
+          },
+          {
+            "official_phase_name": "Open Development Phase Task 4",
+            "submission_count": 3
+          },
+          {
+            "official_phase_name": "Final Test Phase Task 1",
+            "submission_count": 7
+          },
+          {
+            "official_phase_name": "Final Test Phase Task 2",
+            "submission_count": 22
+          },
+          {
+            "official_phase_name": "Final Test Phase Task 3",
+            "submission_count": 1
+          },
+          {
+            "official_phase_name": "Final Test Phase Task 4",
+            "submission_count": 3
+          },
+          {
+            "official_phase_name": "Final Test Phase Task 5",
+            "submission_count": 0
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://t3challenge25.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Last testing run is the final result. Pretrained models allowed. Hand output is a hand ID plus YOLO-format bounding box, not an inferred 3D pose."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://t3challenge25.grand-challenge.org/miccai-2025-satellite-event/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/32-0aeceb6c6a35.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://t3challenge25.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/32-2d5560969839.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://t3challenge25.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/32-3b1c626da732.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://t3challenge25.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/32-40495f74d692.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://t3challenge25.grand-challenge.org/submission-instructions/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/32-40c2fa3aeaec.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://t3challenge25.grand-challenge.org/data/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "dataset",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/32-63013065da1d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://t3challenge25.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/32-6aa7b9a60b06.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://t3challenge25.grand-challenge.org/organizing-team/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/32-80fd500122a7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://t3challenge25.grand-challenge.org/t3challenge25/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/32-cc703cbb97cb.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://t3challenge25.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/32-cf2beb55dbca.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://t3challenge25.grand-challenge.org/task/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/32-df11dd43a829.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://t3challenge25.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/32-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "evaluation: official task metrics, matching rules and cross-task ranking require further verification.",
+        "data_access: dataset license and resource limits not fully verified."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://t3challenge25.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/32-63013065da1d.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://t3challenge25.grand-challenge.org/data/",
+          "local_snapshot": "_collection/sources/32-63013065da1d.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/trauma-thompson-2025.json",
+          "_collection/verification_20261003/literature_context/trauma-thompson-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Quantification / measurement",
+        "Tracking",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "previous_emerging_objectives": [],
+      "note_zh": "2025独立注册说明明确包含VQA，原任务标签已有VQA而目标漏记VLM；仅补记VLM，不将远程指导愿景或工具检测改为Agent。",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15075994",
+          "local_source": "_collection/objective_reverse_audit_20261025/sources/acac20c31fff9a2f.json",
+          "sha256": "7f6cc532f1669a5502b141733c28d81994ee0c4fff6901b4b2d0b72670e4b448"
+        }
+      ],
+      "scope": "Reverse screening of 288 previously unlabelled editions",
+      "previous_task_families": [
+        "Classification",
+        "Detection",
+        "Quantification / measurement",
+        "Tracking",
+        "VQA / multimodal QA"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output retained from existing coding",
+        "Detection": "Declared task output retained from existing coding",
+        "Quantification / measurement": "Declared task output retained from existing coding",
+        "Tracking": "Declared task output retained from existing coding",
+        "VQA / multimodal QA": "Declared task output retained from existing coding"
+      },
+      "foundation_model_basis": "Not an organizer-defined foundation-model objective",
+      "text_output_rule": "Narrative outputs, VQA, finite labels, prompts and tool actions are distinguished"
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification",
+        "Detection",
+        "Quantification / measurement",
+        "Tracking",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "task_objective_basis": "Reverse screening of 288 previously unlabelled editions, 2026-10-25; see task_objective_review"
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Surgical video"
+      ],
+      "harmonized_modalities": [
+        "Optical procedure imaging"
+      ],
+      "video_format_documented": true,
+      "note": "Classified using documented acquisition context; video format retained.",
+      "sources": [
+        {
+          "url": "https://t3challenge25.grand-challenge.org/miccai-2025-satellite-event/",
+          "local_source": "_collection/sources/32-0aeceb6c6a35.json"
+        },
+        {
+          "url": "https://t3challenge25.grand-challenge.org/timeline/",
+          "local_source": "_collection/sources/32-2d5560969839.json"
+        },
+        {
+          "url": "https://t3challenge25.grand-challenge.org/",
+          "local_source": "_collection/sources/32-3b1c626da732.json"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "2025 年五个任务的数据使用条款均列 CC BY-NC-SA。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "CC BY-NC-SA (Attribution-NonCommercial-ShareAlike) Page 8 of 60 Biomedical Image Analysis ChallengeS (BIAS) Initiative The Trauma THOMPSON Challenge 2025",
+          "source": {
+            "url": "https://zenodo.org/api/records/15075994/files/198-The_Trauma_THOMPSON_Challenge_2025_2025-03-17T09-24-12.pdf/content",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/5c673a2762d9e62f.json"
+          }
+        },
+        {
+          "scope": "Edition-specific data-use section 5",
+          "text": "CC BY-NC-SA (Attribution-NonCommercial-ShareAlike)",
+          "source": {
+            "url": "https://zenodo.org/api/records/15075994/files/198-The_Trauma_THOMPSON_Challenge_2025_2025-03-17T09-24-12.pdf/content",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/5c673a2762d9e62f.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/15075994/files/198-The_Trauma_THOMPSON_Challenge_2025_2025-03-17T09-24-12.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/5c673a2762d9e62f.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://zenodo.org/api/records/15075994",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/428f422eb19845f1.json",
+          "status": 200
+        },
+        {
+          "url": "https://t3challenge25.grand-challenge.org/data/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/63013065da1db904.json",
+          "status": 200
+        },
+        {
+          "url": "https://t3challenge25.grand-challenge.org/rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/40495f74d6927ed0.json",
+          "status": 200
+        },
+        {
+          "url": "https://t3challenge25.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/3b1c626da732cc41.json",
+          "status": 200
+        },
+        {
+          "url": "https://t3challenge25.grand-challenge.org/task/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/df11dd43a8294506.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/api/records/15075994/files/198-The_Trauma_THOMPSON_Challenge_2025_2025-03-17T09-24-12.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/5c673a2762d9e62f.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "task1 / train_videos",
+              "value": 141,
+              "unit": "videos",
+              "canonical_field": "dataset.split_details.task1.train_videos",
+              "scope": "Task-specific counts; overlapping task datasets not summed",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task1 / test_regular_videos",
+              "value": 36,
+              "unit": "videos",
+              "canonical_field": "dataset.split_details.task1.test_regular_videos",
+              "scope": "Task-specific counts; overlapping task datasets not summed",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task1 / test_just_in_time_videos",
+              "value": 43,
+              "unit": "videos",
+              "canonical_field": "dataset.split_details.task1.test_just_in_time_videos",
+              "scope": "Task-specific counts; overlapping task datasets not summed",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task2 / train_videos",
+              "value": 20,
+              "unit": "videos",
+              "canonical_field": "dataset.split_details.task2.train_videos",
+              "scope": "Task-specific counts; overlapping task datasets not summed",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task2 / test_videos",
+              "value": 15,
+              "unit": "videos",
+              "canonical_field": "dataset.split_details.task2.test_videos",
+              "scope": "Task-specific counts; overlapping task datasets not summed",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task3 / train_annotated_frames",
+              "value": 36000,
+              "unit": "frames",
+              "canonical_field": "dataset.split_details.task3.train_annotated_frames",
+              "scope": "Task-specific counts; overlapping task datasets not summed",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task3 / test_frames",
+              "value": 10000,
+              "unit": "frames",
+              "canonical_field": "dataset.split_details.task3.test_frames",
+              "scope": "Task-specific counts; overlapping task datasets not summed",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task4 / train_videos",
+              "value": 141,
+              "unit": "videos",
+              "canonical_field": "dataset.split_details.task4.train_videos",
+              "scope": "Task-specific counts; overlapping task datasets not summed",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task4 / test_videos",
+              "value": 36,
+              "unit": "videos",
+              "canonical_field": "dataset.split_details.task4.test_videos",
+              "scope": "Task-specific counts; overlapping task datasets not summed",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task5 / train_annotated_question_frames",
+              "value": 475000,
+              "unit": "frames",
+              "canonical_field": "dataset.split_details.task5.train_annotated_question_frames",
+              "scope": "Task-specific counts; overlapping task datasets not summed",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task5 / test_frames",
+              "value": 119000,
+              "unit": "frames",
+              "canonical_field": "dataset.split_details.task5.test_frames",
+              "scope": "Task-specific counts; overlapping task datasets not summed",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://t3challenge25.grand-challenge.org/data/",
+              "supports": [
+                "data_access",
+                "data_access.access_scope",
+                "data_access.access_status",
+                "dataset",
+                "labels_and_targets"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/32-63013065da1d.json"
+            }
+          ],
+          "source_urls": "https://t3challenge25.grand-challenge.org/miccai-2025-satellite-event/; https://t3challenge25.grand-challenge.org/timeline/; https://t3challenge25.grand-challenge.org/; https://t3challenge25.grand-challenge.org/rules/; https://t3challenge25.grand-challenge.org/submission-instructions/; https://t3challenge25.grand-challenge.org/data/; https://t3challenge25.grand-challenge.org/prizes/; https://t3challenge25.grand-challenge.org/organizing-team/; https://t3challenge25.grand-challenge.org/t3challenge25/; https://t3challenge25.grand-challenge.org/challenge/statistics/; https://t3challenge25.grand-challenge.org/task/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

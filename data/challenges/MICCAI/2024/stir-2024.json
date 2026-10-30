@@ -1,0 +1,507 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "stir-2024",
+    "challenge_name": "stir 2024",
+    "full_name": "STIR: Surgical Tissue Tracking Using the STIR (Surgical Tattoos in Infrared) Dataset",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "parent_event": "Endoscopic Vision Challenge",
+      "official_registration_id": "MICCAI-2024-R16"
+    },
+    "organizers": {
+      "institutions": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Organizers",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 5
+      }
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "body_region": [
+        "Animal tissue specimens"
+      ],
+      "organs_or_structures": [
+        "Porcine abdominal tissue",
+        "Deformable tissue surface"
+      ],
+      "diseases": [],
+      "clinical_context": "Challenge cohort is in-vivo/ex-vivo porcine tissue; human abdominal surgery is the intended application, stored separately rather than counted as human cases."
+    },
+    "task_profile": {
+      "primary_task_family": "Tracking",
+      "secondary_task_families": [],
+      "task_families": [
+        "Tracking"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "STIR: Surgical Tissue Tracking Using the STIR (Surgical Tattoos in Infrared) Dataset",
+          "task_family": "Tracking",
+          "task_families": [
+            "Tracking"
+          ],
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990991",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+            "registered_task_index": 5
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 5
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Endoscopy"
+      ],
+      "population": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 5
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 5
+      },
+      "access_status": "Account registration",
+      "review_status": "Reviewed 2026-10-25; access completion",
+      "public_download": false,
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [],
+      "license_or_terms": "CC BY. 当届提案明确列出 CC BY；未标明版本时不自行补写版本。",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {},
+      "testing": {},
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nWe will use <delta_avg^x as is introduced in the TAP-Vid Benchmark [3] which is used for evaluation of many\nmodern point trackers [2, 4, 5]. This is chosen rather than multi-object-tracking metrics [1] which focus on\nmultiple object regions. <delta_avg^x measures the fraction of points closer than a specified threshold distance\nand is averaged over multiple thresholds. Similar to popular methods [2, 3, 4, 5], we choose thresholds of 4, 8, 16,\n32, and 64 pixels.\n\n\nMedian trajectory error [5] and mean trajectory error will also be reported, but not used for ranking. 2D tracking\nmethods will be evaluated in pixels, and 3D will be in millimetres.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThese were chosen as we are interested in physical accuracy for tissue tracking, so metrics such as IOU or\nassociation are not useful for points. We desire metrics that are commonly used and standard for point tracking.\n<delta_avg^x has become the most used metric for this purpose from our survey of the point tracking literature.\n\n\n\n\n[1] J. Luiten et al., HOTA: A Higher Order Metric for Evaluating Multi-Object Tracking, Int J Comput Vis, vol. 129, no.\n2, pp. 548-578, Feb. 2021, doi: 10.1007/s11263-020-01375-2.\n[2] M. Neoral, J. Serych, and J. Matas, MFT: Long-Term Tracking of Every Pixel, presented at the Proceedings of the\nIEEE/CVF Winter Conference on Applications of Computer Vision, 2024, pp. 6837-6847. Accessed: Jan. 09, 2024.\n[Online]. Available: https://openaccess.thecvf.com/content/WACV2024/html/Neoral_MFT_Long-Term_Tracking_of_\nEvery_Pixel_WACV_2024_paper.html\n[3] C. Doersch et al., TAP-Vid: A Benchmark for Tracking Any Point in a Video, in Advances in Neural Information\n\n\n\n\n\f                                    Endoscopic Vision Challenge 2024 (EndoVis24)\n\nProcessing Systems, Dec. 2022, pp. 13610-13626. Accessed: Jan. 09, 2024. [Online]. Available: https://proceedings.\nneurips.cc/paper_files/paper/2022/hash/58168e8a92994655d6da3939e7cc0918-Abstract-Datasets_and_Benchma\nrks.html\n[4] Q. Wang et al., Tracking Everything Everywhere All at Once, presented at the Proceedings of the IEEE\nInternational Conference on Computer Vision, 2023.\n[5] Y. Zheng, A. W. Harley, B. Shen, G. Wetzstein, and L. J. Guibas, PointOdyssey: A Large-Scale Synthetic Dataset\nfor Long-Term Point Tracking, presented at the Proceedings of the IEEE/CVF International",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThe ranking by the metric <delta_avg^x is motivated in 26(a). As for the reason for separating methods by\nreal-time, streaming, and offline, we do this to motivate clinical applications. Some applications may desire the\nhighest accuracy albeit slow algorithm, while others need real-time performance. The less efficient streaming\nmethods would still be useful for methods such as SLAM in which separate, but less efficient, threads are used in\nthe mapping pipeline.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSubmissions with missing results will be excluded from evaluation.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nAlgorithms will be ranked based on their performance on <delta_avg^x. There will be separate rankings for best\n2D and 3D algorithms. Aggregation will be performed over all points over all images. That means a video clip with\n15 points will contribute 50% more to the metric than one with 10 points.",
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990991",
+            "section": "Metric(s); Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+            "registered_task_index": 5
+          }
+        }
+      ]
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "A link must be provided to a docker container which uses our benchmarking tool which will be available on github (see item 9). For submission, teams will upload their algorithm that they integrate with our evaluation pipeline. The metrics will be evaluated automatically by our evaluation script. An additional container will be provided for submissions in the real-time category which will benchmark the algorithm on a test sequence.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990991",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+            "registered_task_index": 5
+          }
+        }
+      ],
+      "submission_evidence_status": "Task-specific registered EndoVis protocol"
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990991",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+        "registered_task_index": 5
+      }
+    },
+    "publication": {
+      "registration_doi": "10.5281/zenodo.10990991"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "active_teams": null,
+      "teams_with_submission": null
+    },
+    "links": {
+      "registration": "https://doi.org/10.5281/zenodo.10990991",
+      "official_website": "https://endovis.grand-challenge.org/"
+    },
+    "notes": [
+      "Task-specific information is taken from the registered EndoVis protocol, not from unrelated child challenges."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "miccai_gapfill_20261024",
+      "sources": [
+        {
+          "type": "Official registered EndoVis protocol",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/Endoscopic Vision Challenge 2024_EndoVis-Classification-Tracking_EndoVis-Segmentation_v2.pdf",
+          "supports": [
+            "year",
+            "parent-child relation",
+            "task design",
+            "submission and evaluation protocol"
+          ],
+          "registered_task_indices": [
+            5
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ]
+    },
+    "record_relationships": {
+      "analytical_unit": "child_challenge_edition",
+      "parent_challenge_id": "endovis-2024",
+      "child_challenge_ids": []
+    },
+    "review_coding": {
+      "task_families": [
+        "Tracking"
+      ],
+      "emerging_objectives": [],
+      "basis": "Registered sub-challenge design",
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Sub-challenge explicitly named in registered EndoVis protocol",
+      "completion_status": "Not independently recoded in this gap-fill"
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Named EndoVis child challenge; parent is not additionally counted."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "官方 2024 数据页指定公开发布的 STIR 原始数据用于训练和验证，官方仓库指向 IEEE DataPort open-access 数据集。依据 IEEE 官方账号访问说明编码为注册下载；比赛参赛协议与训练数据下载分开。平台说明发布于2025年，未独立测试2024年登录过程。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [],
+        "evidence_basis": "Official edition sources and explicit access procedures; temporal/platform qualifications retained",
+        "confidence": "Documented procedure; source and temporal qualifications retained",
+        "source_urls": [
+          "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn54126082/wiki/626920",
+          "https://raw.githubusercontent.com/athaddius/STIRMetrics/main/README.md",
+          "https://ieeephotonics.org/news/unlock-the-power-of-research-data-with-ieee-dataport/"
+        ],
+        "review_date": "2026-10-25"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. A link must be provided to a docker container which uses our benchmarking tool which will be available on github (see item 9). For submission, teams will upload their algorithm that they integrate with our evaluation pipeline. The metrics will be evaluated automatically by our evaluation script. An additional container will be provided for submissions in the real-time category which will benchmark the algorithm on a test sequence. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. Members can only assess their methods on [...] lable validation set. This can be done through the grand challenge website with a live leaderboard. Docker instructions and an example script will be provided for both the results submission and the benchmarking submission."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Participant Registration, and initial website release: March 2024 Release validation set: March 15th Submission: September 15th Challenge Day: Day of Endovis 2024 Endoscopic Vision Challenge 2024 (EndoVis24)"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "excerpt": " number of cases and the specific proportion of training, validation and test cases was chosen. The training and test cases are separated to provide a large amount for training while still leaving a reasonable size for robust evaluation in testing and validation. The total number of cases is limited by the number of labelling experiments we performed. d) Mention further important characteristics of the training, validation and test cases (e.g."
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/stir-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round2_20261024/user_review_summary.json",
+          "section": "User-supplied round 2 findings, summarized; independent checks stated separately"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/c31e3c189e58b56f.json",
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn54126082/wiki/626920",
+          "section": "Development access follow-up 2026-10-25"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/f293608509323d2a.json",
+          "url": "https://raw.githubusercontent.com/athaddius/STIRMetrics/main/README.md",
+          "section": "Development access follow-up 2026-10-25"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/ieee_dataport_account_policy.json",
+          "url": "https://ieeephotonics.org/news/unlock-the-power-of-research-data-with-ieee-dataport/",
+          "section": "Development access follow-up 2026-10-25"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-24 round 2: 公开基础数据与后续Zenodo发布需和2024比赛专属资源区分。",
+        "2026-10-25 access completion: 官方 2024 数据页指定公开发布的 STIR 原始数据用于训练和验证，官方仓库指向 IEEE DataPort open-access 数据集。依据 IEEE 官方账号访问说明编码为注册下载；比赛参赛协议与训练数据下载分开。平台说明发布于2025年，未独立测试2024年登录过程。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "2",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        },
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "公开基础数据与后续Zenodo发布需和2024比赛专属资源区分。",
+            "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+            "access_by_scope": [],
+            "evidence_basis": "User-supplied round 2 unresolved-issue summary; no new classification asserted",
+            "confidence": "Partial",
+            "source_urls": []
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Account registration",
+        "rationale": "官方 2024 数据页指定公开发布的 STIR 原始数据用于训练和验证，官方仓库指向 IEEE DataPort open-access 数据集。依据 IEEE 官方账号访问说明编码为注册下载；比赛参赛协议与训练数据下载分开。平台说明发布于2025年，未独立测试2024年登录过程。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/8dba7fe9e3f7388c.json",
+          "_collection/access_completion_20261025/sources/d7f943fc3d09ad01.json",
+          "_collection/access_completion_20261025/sources/c31e3c189e58b56f.json",
+          "_collection/access_completion_20261025/sources/ieee_dataport_account_policy.json"
+        ]
+      }
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 1000,
+              "unit": "cases",
+              "scope": "Lower bound",
+              "approximate": false,
+              "lower_bound": true
+            },
+            {
+              "split": "validation",
+              "value": 20,
+              "unit": "cases",
+              "scope": "Approximate",
+              "approximate": true,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 100,
+              "unit": "cases",
+              "scope": "Lower bound",
+              "approximate": false,
+              "lower_bound": true
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Not established",
+          "value": null
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Intuitive Surgical identified as provider, not enough to determine physical acquisition-center count.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10990991",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/stir-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Animal tissue specimens"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Porcine abdominal tissue",
+        "Deformable tissue surface"
+      ],
+      "specific_diseases": [],
+      "review_note": "Challenge cohort is in-vivo/ex-vivo porcine tissue; human abdominal surgery is the intended application, stored separately rather than counted as human cases.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/stir-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10990991"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R16/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990991"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN07"
+  ]
+}

@@ -1,0 +1,578 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "rsna-knee-abnormality-detection-2026",
+    "challenge_name": "RSNA Knee Abnormality Detection 2026",
+    "full_name": "RSNA Knee Abnormality Detection 2026",
+    "year": 2026,
+    "event": {
+      "conference": "RSNA 2026",
+      "event_type": "conference_challenge",
+      "parent_event": null
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Extremities"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Knee joint",
+        "Ligaments",
+        "Menisci",
+        "Cartilage"
+      ],
+      "diseases": [
+        "Knee injuries",
+        "Cartilage loss",
+        "Synovitis and other knee abnormalities"
+      ],
+      "clinical_context": "Official description lists knee injuries, cartilage loss, synovitis and cysts; no specific osteoarthritis diagnosis inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "task_families": [
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Knee MRI abnormality classification",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "source_url": "https://www.rsna.org/news/2026/august/ai-challenge-knee-mri"
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "population": null,
+      "source_reference": "https://www.rsna.org/news/2026/august/ai-challenge-knee-mri",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-25; access completion",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_by_scope": [],
+      "license_review_status": "Not established",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Kaggle",
+      "metrics": [
+        {
+          "name": "Macro AUC",
+          "classes": 12
+        }
+      ],
+      "source_reference": "https://www.rsna.org/news/2026/august/ai-challenge-knee-mri",
+      "execution_note": "Notebook execution; 12-class image-based abnormality predictions; test inputs omit Report."
+    },
+    "submission": {
+      "submission_type": "Notebook execution",
+      "platform": "Kaggle",
+      "source_reference": "https://github.com/Sibusiso-K/RSNA-Knee-Abnormality-Detection/blob/main/README.md",
+      "runtime_limits": null,
+      "primary_artifacts": [
+        "Kaggle Notebook version"
+      ],
+      "additional_artifacts": [],
+      "execution": "Kaggle executes the notebook to generate submission.csv.",
+      "format_by_task_or_phase": [
+        {
+          "generated_output": "submission.csv",
+          "identifier": "StudyInstanceUID",
+          "class_confidences_per_study": 12,
+          "column_order": "Follow sample_submission.csv"
+        }
+      ],
+      "format_limitations": [
+        "Output structure is supported by a participant repository; exact official class-column names were not separately reverified in this update."
+      ],
+      "source_urls": [
+        "https://github.com/Sibusiso-K/RSNA-Knee-Abnormality-Detection/blob/main/README.md"
+      ],
+      "evidence_basis": "Human-supplied review of participant repository",
+      "review_date": "2026-10-24",
+      "submission_evidence_status": "Primary artifact identified by human review; format-specific limitations retained",
+      "review_source": "_collection/submission22_review_20261024/user_review.txt",
+      "additional_materials": []
+    },
+    "schedule": {
+      "edition_year": 2026,
+      "source_reference": "https://www.rsna.org/news/2026/august/ai-challenge-knee-mri"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://www.rsna.org/news/2026/august/ai-challenge-knee-mri",
+      "supporting_sources": [
+        "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection"
+      ]
+    },
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.rsna.org/news/2026/august/ai-challenge-knee-mri",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/a5eda84647b2965b.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": null,
+          "http_status": null
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://github.com/Sibusiso-K/RSNA-Knee-Abnormality-Detection/blob/main/README.md",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        },
+        {
+          "type": "Source cited in human portal/classification review",
+          "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/data",
+          "review_record": "_collection/portal_classification_review_20261024/user_review.txt",
+          "reviewed_on": "2026-10-24"
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields",
+        "Output structure is supported by a participant repository; exact official class-column names were not separately reverified in this update."
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py",
+      "submission_human_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/submission22_review_20261024/user_review.txt",
+        "basis": "Human-supplied review of participant repository",
+        "scope": "Submission artifact, format and executor; source assertions supplied by human review, not a new independent audit of all linked pages."
+      },
+      "portal_classification_review": {
+        "date": "2026-10-24",
+        "local_review": "_collection/portal_classification_review_20261024/user_review.txt",
+        "basis": "Human-supplied source-linked review; organizer BraTS reply and ICPR programme also checked directly."
+      }
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Under the existing task/output definition, training-only text supervision is recorded separately from a vision-language assessment objective. Official test inputs omit Report; outputs are 12 abnormality confidences.",
+      "training_objectives": [
+        "Vision-language learning / report supervision"
+      ],
+      "stage_specific_objectives": {
+        "training": "Paired images and original radiology reports",
+        "test": "Image-only abnormality classification; no Report field",
+        "report_generation": false,
+        "VQA": false,
+        "image_text_retrieval": false
+      },
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": null,
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "当届记录指定 Kaggle competition 数据入口；Kaggle 官方下载规则要求账号加入赛事并接受规则。按明确的平台下载流程归为注册访问，未进行登录下载或假定额外人工审核。",
+        "evidence_basis": "Official edition sources and explicit access procedures; temporal/platform qualifications retained",
+        "review_date": "2026-10-25",
+        "source_urls": [
+          "https://www.kaggle.com/docs/competitions?source=post_page---------------------------"
+        ],
+        "access_by_scope": [],
+        "confidence": "Documented procedure; source and temporal qualifications retained"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "AI Challenge Knee MRI | RSNA",
+          "local_source": "_collection/other_venues_audit_20261024/sources/a5eda84647b2965b.json",
+          "url": "https://www.rsna.org/news/2026/august/ai-challenge-knee-mri",
+          "excerpt": "and require management. However, MRI interpretation varies across readers and practice settings and access to specialty-trained musculoskeletal radiologists is limited. By training AI models on a large dataset of knee MRIs paired with the radiologist’s report, this challenge aims to develop tools that can reliably identify abnormalities and support more consistent, timely care. The models developed in t [...]  they detect and classify knee abnormalities on MRI. To construct these models, AI researchers need access to substantial volumes of imaging data annotated by expert radiologists. RSNA’s AI challenges engage the radiology community to develop such datasets, which provide the standard of truth in training AI systems to perform tasks relevant to diagnostic imaging. “The 2026 RSNA AI Challenge introduces s [...]  Annual meeting Education and funding Journal highlights Member updates R&E Foundation Radiology in public focus"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/rsna-knee-abnormality-detection-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/kaggle_download_policy.json",
+          "url": "https://www.kaggle.com/docs/competitions?source=post_page---------------------------",
+          "section": "Development access follow-up 2026-10-25"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-25 access completion: 当届记录指定 Kaggle competition 数据入口；Kaggle 官方下载规则要求账号加入赛事并接受规则。按明确的平台下载流程归为注册访问，未进行登录下载或假定额外人工审核。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Account registration",
+        "rationale": "当届记录指定 Kaggle competition 数据入口；Kaggle 官方下载规则要求账号加入赛事并接受规则。按明确的平台下载流程归为注册访问，未进行登录下载或假定额外人工审核。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/a5eda84647b2965b.json",
+          "_collection/access_completion_20261025/sources/b50f507feea396fc.json",
+          "_collection/access_completion_20261025/sources/kaggle_download_policy.json",
+          "_collection/access_completion_20261025/sources/325c48de501c75eb.json",
+          "_collection/access_completion_20261025/sources/7d11837afe798716.json",
+          "_collection/access_completion_20261025/sources/3a2b28ee06dad10e.json",
+          "_collection/access_completion_20261025/sources/f6f542e4846cb6c3.json"
+        ]
+      }
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 5000,
+              "unit": "exams",
+              "scope": "Knee MRI lower bound",
+              "approximate": false,
+              "lower_bound": true
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [],
+            "reported_scope": "Five continents; country names not specified"
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "16 sites worldwide, five continents; twelve report languages not twelve acquisition countries. Winning model open license is not dataset-reuse policy.",
+      "sources": [
+        {
+          "url": "https://www.rsna.org/news/2026/august/ai-challenge-knee-mri",
+          "local_source": "_collection/other_venues_audit_20261024/sources/a5eda84647b2965b.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/rsna-knee-abnormality-detection-2026.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Extremities"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Trauma",
+            "Degenerative",
+            "Inflammatory / infectious",
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Knee joint",
+        "Ligaments",
+        "Menisci",
+        "Cartilage"
+      ],
+      "specific_diseases": [
+        "Knee injuries",
+        "Cartilage loss",
+        "Synovitis and other knee abnormalities"
+      ],
+      "review_note": "Official description lists knee injuries, cartilage loss, synovitis and cysts; no specific osteoarthritis diagnosis inferred.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/a5eda84647b2965b.json",
+          "url": "https://www.rsna.org/news/2026/august/ai-challenge-knee-mri"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/rsna-knee-abnormality-detection-2026.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Not established",
+      "terms_documented": false,
+      "detail_level": "Not established",
+      "licence_names": [],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "用户补充核查报告指出 Kaggle 数据页标记 Subject to Competition Rules；本轮数据页和此前 rules 页未返回可读的详细许可条款。保留未明确，不从标签推断商业、再分发或赛后使用权限。",
+      "qualifications": [
+        "本轮分开记录协议要求、全文可读性、数据适用范围与再利用条款；有条款线索不等于已取得全部数据权利。"
+      ],
+      "scoped_terms": [
+        {
+          "scope": "Kaggle data page retrieval",
+          "text": "页面请求返回成功但无可读条款正文；Subject to Competition Rules 标签来自用户补充报告，未在本次抓取中独立复现。",
+          "source": {
+            "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/data",
+            "local_source": "_collection/data_license_followup_20261025/sources/b50f507feea396fc.json"
+          },
+          "verification": "Label user-reported; full terms not retrieved"
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/a5eda84647b2965b.json",
+          "url": "https://www.rsna.org/news/2026/august/ai-challenge-knee-mri"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/kaggle_download_policy.json",
+          "url": "https://www.kaggle.com/docs/competitions?source=post_page---------------------------"
+        },
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/f6f542e4846cb6c3.json",
+          "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/rules"
+        },
+        {
+          "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/data",
+          "local_source": "_collection/data_license_followup_20261025/sources/b50f507feea396fc.json"
+        },
+        {
+          "local_source": "_collection/data_license_followup_20261025/user_review.txt",
+          "url": "https://www.kaggle.com/competitions/rsna-knee-abnormality-detection/data",
+          "provenance": "User-supplied audit; not a captured Kaggle page"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability.",
+      "agreement_full_text_verified": "Not verified",
+      "dataset_scope_verified": "Not verified for complete licence terms",
+      "reuse_terms_verified": "Not verified",
+      "followup_review": "data_license_followup_20261025"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "RSNA/2026/rsna-knee-abnormality-detection-2026.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [],
+                "reported_scope": "Five continents; country names not specified"
+              },
+              "sources": [
+                {
+                  "url": "https://www.rsna.org/news/2026/august/ai-challenge-knee-mri",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/a5eda84647b2965b.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/rsna-knee-abnormality-detection-2026.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

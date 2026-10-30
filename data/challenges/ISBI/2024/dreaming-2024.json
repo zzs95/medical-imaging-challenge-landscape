@@ -1,0 +1,724 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "dreaming-2024",
+    "challenge_name": "Diminished Reality for Emerging Applications in Medicine",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "ISBI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Synthetic surgical imaging"
+      ],
+      "submodality": [
+        "Photorealistic operating-room renders"
+      ],
+      "body_region": [
+        "Face"
+      ],
+      "organ_system": [
+        "Oral and maxillofacial"
+      ],
+      "organs_or_structures": [
+        "Faces obscured by instruments/hands"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Enhancement",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "inpainting",
+          "official_name": "Diminished reality through inpainting",
+          "task_family": "Enhancement",
+          "task_subtype": "image inpainting",
+          "input": [
+            "Rendered surgical video sequence",
+            "Occlusion masks identifying instruments/hands"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Inpainted video sequence"
+          ],
+          "granularity": "frame-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": true,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Synthetic surgical imaging"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "synthetic": true,
+      "preregistered_splits": {
+        "train": {
+          "sequence_count": 100
+        },
+        "container_debug": {
+          "sequence_count": 2
+        },
+        "synthetic_test": {
+          "sequence_count": 10
+        },
+        "real_qualitative_test": {
+          "sequence_count": 2
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Registered protocol: CC BY.",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; targeted access backfill",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Public development-data release during the 2024 competition"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "inpainting",
+          "metrics": [
+            "PSNR",
+            "MAE",
+            "LPIPS",
+            "FID",
+            "VFID",
+            "Inference time",
+            "Qualitative assessment"
+          ],
+          "ranking": "Preregistered: normalized LPIPS/FID/VFID equally averaged as primary plausibility score; PSNR/MAE equally weighted for secondary accuracy; runtime ranked separately. Real scenes qualitative only."
+        }
+      ],
+      "cross_task_rule": null,
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "preregistered_submission_limits": {
+        "container_debug": 5,
+        "final": 2
+      },
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 149,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Phase 1 - Preliminary Container Testing Phase",
+            "submission_count": 58
+          },
+          {
+            "official_phase_name": "Phase 2 - Final Test Phase",
+            "submission_count": 33
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://dreaming.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Synthetic scenes support a biomedical surgical-visualization task; retained within imaging scope. Organizers report unplanned submission extensions due to platform resources/account issues.",
+      "Registered protocol is preregistration evidence; later official website updates take priority. Planned counts are explicitly labeled and not assumed to equal the final released cohort."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/awards/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-01820bc9897d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/#task",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-101839bfa5bd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/submission-instructions/",
+          "supports": [
+            "data_usage_mode",
+            "evaluation.platform",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-260cc3a59e0f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/#description",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-4ae812973d4a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/dreaming-at-ieee-isbi-2024/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-63ce91c2e1f5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/#challenge-concluded",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-7c8c04cf160e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/#background",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-91ddcaf180b9.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://dreaming.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-92a193ebf541.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-a5fcd2418ab6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-b77ee333a4e4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/#diminished-reality-for-emerging-applications-in-medicine-through-inpainting",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-b897f9875c15.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/#dreaming-2024",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-c7009662d002.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/#references",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-d89e86b02be6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/dreaming/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-f77486db6553.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-fec0fe1899ed.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dreaming.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-overview.json"
+        },
+        {
+          "type": "official registered challenge protocol (preregistration, not final report)",
+          "url": "https://zenodo.org/records/10687606/files/114-Diminished%20Reality%20for%20Emerging%20Applications%20in%20Me_2024-02-21T10-28-44.pdf",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "dataset",
+            "evaluation",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "submission.evidence_stage",
+            "submission.platform",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/67-design-2024.txt"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Confirm final data sizes and metrics/ranking after website restrictions and unplanned deadline extensions; verify external-data policy and hard resource limits."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://dreaming.grand-challenge.org/submission-instructions/",
+          "local_snapshot": "_collection/sources/67-260cc3a59e0f.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "  Docker containers and algorithms on the grand-challenge.org platform.; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/10687606/files/114-Diminished%20Reality%20for%20Emerging%20Applications%20in%20Me_2024-02-21T10-28-44.pdf",
+          "local_snapshot": "_collection/sources/67-design-2024.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container submissions on grand-challenge.org. Submission instructions: https://grand-challenge.org/documentation/create-your-own-algorithm/"
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/10687606/files/114-Diminished%20Reality%20for%20Emerging%20Applications%20in%20Me_2024-02-21T10-28-44.pdf",
+          "local_snapshot": "_collection/sources/67-design-2024.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container submissions on grand-challenge.org. Submission instructions: https://grand-challenge.org/documentation/create-your-own-algorithm/"
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/10687606/files/114-Diminished%20Reality%20for%20Emerging%20Applications%20in%20Me_2024-02-21T10-28-44.pdf",
+          "local_snapshot": "_collection/sources/67-design-2024.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container submissions on grand-challenge.org. Submission instructions: https://grand-challenge.org/documentation/create-your-own-algorithm/"
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/10687606/files/114-Diminished%20Reality%20for%20Emerging%20Applications%20in%20Me_2024-02-21T10-28-44.pdf",
+          "local_snapshot": "_collection/sources/67-design-2024.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Docker container submissions on grand-challenge.org. Submission instructions: https://grand-challenge.org/documentation/create-your-own-algorithm/"
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/dreaming-2024.json",
+          "_collection/verification_20261003/literature_context/dreaming-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "2024年1月8日发布的当届Zenodo数据记录标注Open，并提供训练数据下载及后续训练／验证发布日程；未以之后的公开发布倒推比赛时权限。",
+        "scope": "Public development-data release during the 2024 competition",
+        "evidence_basis": "Primary protocol / dataset metadata checked on 2026-10-24; no medical images downloaded",
+        "source_urls": [
+          "https://zenodo.org/records/10471365"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "训练、验证数据发布，最终隐藏测试运行容器。"
+      },
+      "decision_history": [
+        "训练、验证数据发布，最终隐藏测试运行容器。",
+        "2026-10-24 access backfill: 2024年1月8日发布的当届Zenodo数据记录标注Open，并提供训练数据下载及后续训练／验证发布日程；未以之后的公开发布倒推比赛时权限。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/67-260cc3a59e0f.json",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/sources/67-b77ee333a4e4.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/dreaming-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://zenodo.org/records/10471365",
+          "local_source": "_collection/access_backfill_20261024/sources/1f0a66e49566674e.json",
+          "review_date": "2026-10-24",
+          "section": "Development-data access; edition and phase scope retained"
+        },
+        {
+          "local_source": "_collection/access_backfill_20261024/user_evidence.txt",
+          "url": "",
+          "section": "User-supplied follow-up; classification checked against the linked primary sources"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Face"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "模拟手术场景中的图像修复/器械移除；疾病不是该图像生成任务的标签，不从手术背景推断病种。",
+      "sources": [
+        {
+          "url": "https://dreaming.grand-challenge.org/#task",
+          "local_source": "_collection/sources/67-101839bfa5bd.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "模拟手术场景中的图像修复/器械移除；疾病不是该图像生成任务的标签，不从手术背景推断病种。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/ISBI/2024/dreaming-2024.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Renderings are created at the Institute of Computer Graphics and Vision of the Graz University of Technology in Austria and the Institute for AI in Medicine of the University Hospital Essen in Germany. The medical instruments have been provided by the Department of Oral and Maxillofacial Surgery of the University Hospital RWTH Aachen in Aachen, Germany, and were acquired at the Institute for AI in Medicine (IKIM), University Hospital Essen, Germany. Real scenes will be captured at the University Hospital RWTH Aachen in Aachen, Germany.",
+              "url": "https://zenodo.org/records/10687606/files/114-Diminished%20Reality%20for%20Emerging%20Applications%20in%20Me_2024-02-21T10-28-44.pdf",
+              "snapshot": "_collection/sources/67-design-2024.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site. Real-image acquisition and synthetic rendering locations are distinguished in the source.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nRenderings are created at the Institute of Computer Graphics and Vision of the Graz University of Technology in\nAustria and the Institute for AI in Medicine of the University Hospital Essen in Germany.\nThe medical instruments have been provided by the Department of Oral and Maxillofacial Surgery of the\nUniversity Hospital RWTH Aachen in Aachen, Germany, and were acquired at the Institute for AI in Medicine\n(IKIM), University Hospital Essen, Germany. Real scenes will be captured at the University Hospital RWTH Aachen\nin Aachen, Germany.",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train / sequence_count",
+              "value": 100,
+              "unit": "sequences",
+              "canonical_field": "dataset.preregistered_splits.train.sequence_count",
+              "scope": "Specified dataset allocation in the registered design; not a separately verified final cohort",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "container_debug / sequence_count",
+              "value": 2,
+              "unit": "sequences",
+              "canonical_field": "dataset.preregistered_splits.container_debug.sequence_count",
+              "scope": "Specified dataset allocation in the registered design; not a separately verified final cohort",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "synthetic_test / sequence_count",
+              "value": 10,
+              "unit": "sequences",
+              "canonical_field": "dataset.preregistered_splits.synthetic_test.sequence_count",
+              "scope": "Specified dataset allocation in the registered design; not a separately verified final cohort",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "real_qualitative_test / sequence_count",
+              "value": 2,
+              "unit": "sequences",
+              "canonical_field": "dataset.preregistered_splits.real_qualitative_test.sequence_count",
+              "scope": "Specified dataset allocation in the registered design; not a separately verified final cohort",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official registered challenge protocol (preregistration, not final report)",
+              "url": "https://zenodo.org/records/10687606/files/114-Diminished%20Reality%20for%20Emerging%20Applications%20in%20Me_2024-02-21T10-28-44.pdf",
+              "supports": [
+                "data_access",
+                "data_usage_mode",
+                "dataset",
+                "evaluation",
+                "evaluation.platform_evidence_stage",
+                "evaluation.platform_scope",
+                "submission.evidence_stage",
+                "submission.platform",
+                "task_profile"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/67-design-2024.txt"
+            }
+          ],
+          "source_urls": "https://dreaming.grand-challenge.org/awards/; https://dreaming.grand-challenge.org/#task; https://dreaming.grand-challenge.org/submission-instructions/; https://dreaming.grand-challenge.org/#description; https://dreaming.grand-challenge.org/dreaming-at-ieee-isbi-2024/; https://dreaming.grand-challenge.org/#challenge-concluded; https://dreaming.grand-challenge.org/#background; https://dreaming.grand-challenge.org/challenge/statistics/; https://dreaming.grand-challenge.org/organizers/; https://dreaming.grand-challenge.org/timeline/; https://dreaming.grand-challenge.org/#diminished-reality-for-emerging-applications-in-medicine-through-inpainting; https://dreaming.grand-challenge.org/#dreaming-2024; https://dreaming.grand-challenge.org/#references; https://dreaming.grand-challenge.org/dreaming/; https://dreaming.grand-challenge.org/; https://zenodo.org/records/10687606/files/114-Diminished%20Reality%20for%20Emerging%20Applications%20in%20Me_2024-02-21T10-28-44.pdf"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

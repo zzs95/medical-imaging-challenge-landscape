@@ -1,0 +1,430 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cov19d-4th-2024",
+    "challenge_name": "4th COV19D Competition",
+    "full_name": "4th COV19D Competition",
+    "year": 2024,
+    "event": {
+      "conference": "CVPR 2024 - DEF-AI-MIA Workshop",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Chest"
+      ],
+      "organ_system": [
+        "Respiratory"
+      ],
+      "organs_or_structures": [
+        "Lungs"
+      ],
+      "diseases": [
+        "COVID-19"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "COVID-19 Detection",
+          "task_family": "Classification",
+          "task_subtype": "binary classification",
+          "input": [
+            "3D chest CT series"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "COVID-19 / non-COVID-19 label"
+          ],
+          "granularity": "study-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "COVID-19 Domain Adaptation",
+          "task_family": "Classification",
+          "task_subtype": "binary classification under domain shift",
+          "input": [
+            "3D chest CT series"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "COVID-19 / non-COVID-19 label in target-domain CT"
+          ],
+          "granularity": "study-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": "COVID-19 status across domains",
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Manually assigned scan-level diagnostic labels.",
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": true,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "source_database": {
+        "name": "COV19-CT-DB",
+        "scan_count": {
+          "value": 7756,
+          "unit": "CT scans",
+          "approximate": false,
+          "lower_bound": false
+        },
+        "class_counts": [
+          {
+            "label": "COVID-19",
+            "value": 1661
+          },
+          {
+            "label": "non-COVID-19",
+            "value": 6095
+          }
+        ]
+      },
+      "task_datasets": [
+        {
+          "task_id": "task1",
+          "train_count": {
+            "value": 1358,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "validation_count": {
+            "value": 326,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "counts_basis": "703+655 training; 170+156 validation."
+        },
+        {
+          "task_id": "task2",
+          "labeled_training_count": {
+            "value": 239,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "unlabeled_training_count": {
+            "value": 494,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "validation_count": {
+            "value": 178,
+            "unit": "CT scans",
+            "approximate": false,
+            "lower_bound": false
+          },
+          "counts_basis": "120+119 labeled training; 65+113 validation."
+        }
+      ]
+    },
+    "data_access": {
+      "is_public": false,
+      "access_status": "registration-and-approval-required",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Signed EULA required; unrestricted reuse is not established.",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": false,
+        "submission_artifact": "Predictions"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Public external datasets may be used and must be reported."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": false,
+      "platform": "Organizer evaluation",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Macro F1 score"
+          ],
+          "ranking": "Highest macro F1 score"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Macro F1 score"
+          ],
+          "ranking": "Highest macro F1 score"
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Test predictions, source-code link and arXiv methodology paper by email",
+      "platform": "Organizer email",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "max_team_members": 8
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "opening": "2024-01-08",
+      "final_submission_end": "2024-03-19",
+      "winners_announcement": "2024-03-21",
+      "paper_submission_end": "2024-03-29"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": null
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": "organizer-reported edition results",
+      "participating_teams": 21,
+      "track_team_counts": [
+        {
+          "task_id": "task1",
+          "teams_with_submission": 12
+        },
+        {
+          "task_id": "task2",
+          "teams_with_submission": 10
+        }
+      ]
+    },
+    "links": {
+      "official": "https://ai-medical-image-analysis.github.io/4th/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": "https://arxiv.org/pdf/2403.02192"
+    },
+    "notes": [
+      "Task-level team counts overlap and must not be added to estimate unique participating teams. Test labels are held back; test images are released.",
+      "The source database has 7756 scans in the 2024 paper; the 2022 edition describes 7750. Source-cohort totals are distinct from each released task split."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "last_updated": "2026-10-03",
+      "collection_date_definition": "Date of web and literature metadata collection, not medical-image acquisition.",
+      "source_list": "challenge_list_other_platforms_22_26_v4.json",
+      "source_list_index": 23,
+      "source_list_index_base": 1,
+      "collection_status": "partially_verified",
+      "sources": [
+        {
+          "type": "Official organizer source",
+          "url": "https://mlearn.lincoln.ac.uk/ai-mia-cov19d-competition",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/1b37fb127408baf5.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "schedule",
+            "participation_statistics"
+          ],
+          "snapshot_sha256": "3cf2a37e69d7de2d4dab2fe2f9bc01b015a52b1244a4fb7a8215befe1b3f274e"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://ai-medical-image-analysis.github.io/4th/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/f1a4e2c60f6e852a.json",
+          "supports": [
+            "event.conference"
+          ],
+          "snapshot_sha256": "c11d6ccf14844d76f347039368e44bde748e9fb849ecd8f008ff1ae52ff9ea53"
+        },
+        {
+          "type": "Organizer challenge paper",
+          "url": "https://arxiv.org/pdf/2403.02192",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/b7e4c2ea41debf82.json",
+          "supports": [
+            "dataset.source_database",
+            "dataset.task_datasets",
+            "dataset.anonymized"
+          ],
+          "snapshot_sha256": "5c89097ba9452621cb6c375a347dadb9f8437eae22e69d175cfd98c64a8ac898"
+        }
+      ],
+      "unresolved_fields": [
+        "dataset.population.patient_count",
+        "dataset.center_count",
+        "dataset.collection_period.start_year",
+        "participation_statistics.registered_teams",
+        "dataset.task_datasets.test_count"
+      ],
+      "verification_policy": "Only edition-specific official evidence populates facts; unknown values remain null."
+    },
+    "record_level": "umbrella_challenge",
+    "scope_status": "core_medical_imaging",
+    "count_in_core_medical_imaging_review": true,
+    "count_in_edition_statistics": true,
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "Source-reported participation count; retain exact unit and scope instead of requiring a harmonized active-team definition.",
+              "url": "https://mlearn.lincoln.ac.uk/ai-mia-cov19d-competition",
+              "snapshot": "_collection/v4_20261003/sources/1b37fb127408baf5.json",
+              "scope": "No conversion of registered accounts or submission attempts into teams; reported team/participant definitions remain source-specific. Existing source-linked extraction reconciled in this update; source-reported participation does not establish independent validation of the reported number.",
+              "value": {
+                "participating_teams": 21,
+                "track_team_counts": [
+                  {
+                    "task_id": "task1",
+                    "teams_with_submission": 12
+                  },
+                  {
+                    "task_id": "task2",
+                    "teams_with_submission": 10
+                  }
+                ]
+              },
+              "excerpt": "",
+              "snapshot_date": "2026-10-03",
+              "source_path": "CVPR/2024/cov19d-4th-2024.json",
+              "source_field": "participation_statistics"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

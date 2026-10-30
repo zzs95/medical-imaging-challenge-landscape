@@ -1,0 +1,802 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "chimera-agent-2026",
+    "challenge_name": "CHIMERA-agent",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI-derived representations",
+        "Histopathology-derived representations"
+      ],
+      "submodality": [
+        "Multiparametric prostate MRI",
+        "Biopsy/prostatectomy WSI embeddings"
+      ],
+      "body_region": [
+        "Prostate"
+      ],
+      "organ_system": [
+        "Genitourinary system"
+      ],
+      "organs_or_structures": [
+        "Prostate tumor"
+      ],
+      "diseases": [
+        "Prostate cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [
+        "Survival Prediction"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Biopsy recommendation",
+          "task_family": "Classification",
+          "task_subtype": "Classification",
+          "input": [
+            "MRI representation",
+            "Clinical JSON and retrieved radiology reports"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Yes/no biopsy decision and structured reasoning"
+          ],
+          "granularity": "patient",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Post-biopsy treatment recommendation",
+          "task_family": "Classification",
+          "task_subtype": "Classification",
+          "input": [
+            "MRI and biopsy WSI representations",
+            "Clinical data and reports"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Active surveillance / continued surveillance / watchful waiting / active treatment, with reasoning"
+          ],
+          "granularity": "patient",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Post-prostatectomy BCR prediction",
+          "task_family": "Survival Prediction",
+          "task_subtype": "Time-to-event prediction",
+          "input": [
+            "MRI, biopsy and prostatectomy WSI representations",
+            "Clinical reports and preoperative PSA"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Predicted time to recurrence/follow-up",
+            "Event indicator",
+            "Reasoning"
+          ],
+          "granularity": "patient",
+          "clinical_goal": null
+        }
+      ],
+      "task_families": [
+        "Classification",
+        "Clinical reasoning",
+        "Prognosis"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "Clinical reasoning": "Declared task output",
+        "Prognosis": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "Structured clinical JSON",
+        "EHR reports retrieved through local MCP tools",
+        "Frozen MRI/WSI modality representations"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "training_case_folders": 195,
+        "validation_cases": 75,
+        "test_cases": 250,
+        "test_external_karolinska_cases": 100,
+        "per_task_training": {
+          "task1": {
+            "inputs": 195,
+            "labels": 91,
+            "reference_reasoning": 91
+          },
+          "task2": {
+            "inputs": 153,
+            "labels": 72,
+            "reference_reasoning": 72
+          },
+          "task3": {
+            "inputs": 75,
+            "labels": 75,
+            "reference_reasoning": 0
+          }
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "registration-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA; Separate EAU guideline-use conditions. 三个影像/表征任务列 CC BY-NC-SA；EAU 指南资源另有限非商业及比赛范围条款，不能混为统一数据许可。",
+      "access_after_challenge": null,
+      "access_scope": "edition-specific training-data download instructions",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "External datasets and pretrained models allowed if freely/publicly available under licenses permitting challenge use, and clearly declared. All LLMs, MCP tools, RAG resources and weights must run locally in the offline container."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Mean case score",
+            "Positive-class biopsy F1"
+          ],
+          "ranking": "Task score = (mean case score + biopsy F1)/2; incorrect decision/schema fails receive zero case score."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Mean case score",
+            "Support-weighted treatment F1"
+          ],
+          "ranking": "Task score = (mean case score + weighted F1)/2."
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Harrell's C-index"
+          ],
+          "ranking": "C-index is the ranking metric; case score and time-dependent AUC reported only for later analysis."
+        }
+      ],
+      "cross_task_rule": "Overall = 0.4×Task 1 + 0.4×Task 2 + 0.2×Task 3. Task 3 reasoning is not included in current leaderboard score."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "validation_submissions": 5,
+        "final_submissions": 1
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "method_description_required": true,
+      "method_description": "Six-page MICCAI manuscript excluding references; public/private GitHub source URL under permissive license."
+    },
+    "participation_statistics": {
+      "registered_participants": 318,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Debug",
+            "submission_count": 260
+          },
+          {
+            "official_phase_name": "Development",
+            "submission_count": 177
+          },
+          {
+            "official_phase_name": "Test",
+            "submission_count": 44
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://chimera-agent.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Included because actual inputs contain MRI and biopsy/prostatectomy WSI neural representations; it is not a text-only challenge. Raw DICOM/WSIs are not supplied at inference. Tasks must also produce structured/free-text reasoning outputs.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/eau-guideline-use/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-09a9ed08b03d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/chimera-agent/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-0fdab6b60d3c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-26f39dd1b219.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/task-3-prostatectomy-pathology-prediction/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-4557865074e6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/baseline-and-evaluation-repositories/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-5dea61a22c43.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://chimera-agent.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-60b0e80b9055.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/task-1-mri-only-diagnostic-decision/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-67869ab004cb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-7db844e4bbf9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/sponsors/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-8f6ee157fd0c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/task-2-mri-biopsy-risk-stratification/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-9df362f5df54.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/awards/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-c076ef4f1233.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/challenge-timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-d75c6f896782.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/data-sources-and-imaging/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-dcd1fe8cf249.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/submission/",
+          "supports": [
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_usage_mode",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-ecf93f544f3b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-eeab311f031c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://chimera-agent.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/3-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "evaluation: exact reasoning subcomponent weights/gates require code inspection.",
+        "data_access: license and numerical per-case runtime limits not fully verified."
+      ],
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://chimera-agent.grand-challenge.org/submission/",
+          "local_snapshot": "_collection/sources/3-ecf93f544f3b.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official participation workflow explicitly requires registration to obtain training-data download access."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://chimera-agent.grand-challenge.org/submission/",
+          "local_snapshot": "_collection/sources/3-ecf93f544f3b.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official participation workflow explicitly requires registration to obtain training-data download access."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/chimera-agent-2026.json",
+          "_collection/verification_20261003/literature_context/chimera-agent-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "Clinical reasoning",
+        "Prognosis"
+      ],
+      "emerging_objectives": [
+        "Clinical Reasoning",
+        "Agent"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "Clinical reasoning",
+        "Prognosis"
+      ],
+      "previous_emerging_objectives": [
+        "Clinical Reasoning",
+        "Agent"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "Clinical reasoning": "Declared task output",
+        "Prognosis": "Declared task output"
+      },
+      "note_zh": "临床决策分类、复发预后、结构化理由及 MCP 工具调用；已有嵌入作为输入不单独建立 FM，理由输出不等于报告。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://chimera-agent.grand-challenge.org/eau-guideline-use/",
+          "local_source": "_collection/sources/3-09a9ed08b03d.json",
+          "sha256": "23d8225468b17478851ff6dd452ded2691a4a430b600a640be382a088e0ac5a8"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/chimera-agent/",
+          "local_source": "_collection/sources/3-0fdab6b60d3c.json",
+          "sha256": "39d9fca72453044f1bcc7594e6a2596a6f1d0ffa0ad12c1a136c758c37df1eb9"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/",
+          "local_source": "_collection/sources/3-26f39dd1b219.json",
+          "sha256": "673e73847d61e0e4d45ae5aae13cf92ba4b1c67ada54989d5ab740e72c5c2338"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/task-3-prostatectomy-pathology-prediction/",
+          "local_source": "_collection/sources/3-4557865074e6.json",
+          "sha256": "199024301a064675f314759b0859bb2bc6bdba4df1eb6e50059515310ab30c30"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/baseline-and-evaluation-repositories/",
+          "local_source": "_collection/sources/3-5dea61a22c43.json",
+          "sha256": "526bfb5b4b0a366f2c4263e97f840e8228e60ab80ea988f30039773916e71662"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/task-1-mri-only-diagnostic-decision/",
+          "local_source": "_collection/sources/3-67869ab004cb.json",
+          "sha256": "07b857710427f94bf4599dc0e5d9ff7e5d9329995e0a5d00ec4f81cc92723fd5"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/rules/",
+          "local_source": "_collection/sources/3-7db844e4bbf9.json",
+          "sha256": "bdd5b967babb88f38cd1a445755ac3eeb7d4038abc27a7901255e602fc9e011b"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/sponsors/",
+          "local_source": "_collection/sources/3-8f6ee157fd0c.json",
+          "sha256": "fa02df0e00891c886dc4d9b8e26f47fd4b66e2c20c3ebb1fdc98fdb60fba4cc7"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/task-2-mri-biopsy-risk-stratification/",
+          "local_source": "_collection/sources/3-9df362f5df54.json",
+          "sha256": "ac0349d7bded3ad798c2f278886864d92bb9b9bda11424e7dd60ac1dda425410"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/awards/",
+          "local_source": "_collection/sources/3-c076ef4f1233.json",
+          "sha256": "610ee6c9978559efa53a5203d16c5725bddaf4f55414811c57dcfaf335d3505b"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/data-sources-and-imaging/",
+          "local_source": "_collection/sources/3-dcd1fe8cf249.json",
+          "sha256": "ef8e90b4a85c2c020f88f8c70a1d33b55fd43de3332342c955aaaa1d068521e1"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/submission/",
+          "local_source": "_collection/sources/3-ecf93f544f3b.json",
+          "sha256": "02b6d424055704b29ead78af2373db8ff3fd6a269d6981937675cf32d7d50ec6"
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/",
+          "local_source": "_collection/sources/3-overview.json",
+          "sha256": "673e73847d61e0e4d45ae5aae13cf92ba4b1c67ada54989d5ab740e72c5c2338"
+        }
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification",
+        "Clinical reasoning",
+        "Prognosis"
+      ],
+      "emerging_objectives": [
+        "Clinical Reasoning",
+        "Agent"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA",
+        "Separate EAU guideline-use conditions"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "三个影像/表征任务列 CC BY-NC-SA；EAU 指南资源另有限非商业及比赛范围条款，不能混为统一数据许可。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 3",
+          "text": "CC BY-NC-SA (Attribution-NonCommercial-ShareAlike)",
+          "source": {
+            "url": "https://zenodo.org/api/records/19818695/files/297-Combining_HIstology_Medical_imaging_and_molEcular_data_for_2026-04-27T14-15-57.pdf/content",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/1e7cf45a5c33d42e.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/19818695/files/297-Combining_HIstology_Medical_imaging_and_molEcular_data_for_2026-04-27T14-15-57.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1e7cf45a5c33d42e.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://chimera-agent.grand-challenge.org/rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/7db844e4bbf91e29.json",
+          "status": 200
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/data-sources-and-imaging/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/dcd1fe8cf249e33a.json",
+          "status": 200
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/26f39dd1b219e0bd.json",
+          "status": 200
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/awards/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/c076ef4f123318ce.json",
+          "status": 200
+        },
+        {
+          "url": "https://chimera-agent.grand-challenge.org/data-download/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/689a0ba86a068e7f.json",
+          "status": 403
+        },
+        {
+          "url": "https://zenodo.org/api/records/19818695/files/297-Combining_HIstology_Medical_imaging_and_molEcular_data_for_2026-04-27T14-15-57.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1e7cf45a5c33d42e.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training_case_folders",
+              "value": 195,
+              "unit": "case folders",
+              "canonical_field": "dataset.split_details.training_case_folders",
+              "scope": "External test cases are a subset of test cases; per-task label counts excluded",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation_cases",
+              "value": 75,
+              "unit": "cases",
+              "canonical_field": "dataset.split_details.validation_cases",
+              "scope": "External test cases are a subset of test cases; per-task label counts excluded",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test_cases",
+              "value": 250,
+              "unit": "cases",
+              "canonical_field": "dataset.split_details.test_cases",
+              "scope": "External test cases are a subset of test cases; per-task label counts excluded",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test_external_karolinska_cases",
+              "value": 100,
+              "unit": "cases",
+              "canonical_field": "dataset.split_details.test_external_karolinska_cases",
+              "scope": "External test cases are a subset of test cases; per-task label counts excluded",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [],
+          "source_urls": "https://chimera-agent.grand-challenge.org/eau-guideline-use/; https://chimera-agent.grand-challenge.org/chimera-agent/; https://chimera-agent.grand-challenge.org/; https://chimera-agent.grand-challenge.org/task-3-prostatectomy-pathology-prediction/; https://chimera-agent.grand-challenge.org/baseline-and-evaluation-repositories/; https://chimera-agent.grand-challenge.org/challenge/statistics/; https://chimera-agent.grand-challenge.org/task-1-mri-only-diagnostic-decision/; https://chimera-agent.grand-challenge.org/rules/; https://chimera-agent.grand-challenge.org/sponsors/; https://chimera-agent.grand-challenge.org/task-2-mri-biopsy-risk-stratification/; https://chimera-agent.grand-challenge.org/awards/; https://chimera-agent.grand-challenge.org/challenge-timeline/; https://chimera-agent.grand-challenge.org/data-sources-and-imaging/; https://chimera-agent.grand-challenge.org/submission/; https://chimera-agent.grand-challenge.org/organizers/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

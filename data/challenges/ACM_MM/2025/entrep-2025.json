@@ -1,0 +1,721 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "entrep-2025",
+    "challenge_name": "ENTRep 2025",
+    "full_name": "ENTRep 2025",
+    "year": 2025,
+    "event": {
+      "conference": "ACM MM 2025",
+      "event_type": "conference_challenge",
+      "parent_event": null
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head and Neck"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Ear canal",
+        "Tympanic membrane",
+        "Nasal cavity",
+        "Larynx"
+      ],
+      "diseases": [
+        "Unspecified ENT abnormalities"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "task_families": [
+        "Classification",
+        "Retrieval"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "ENT disease classification",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "source_url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep"
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Image-to-image retrieval",
+          "task_family": "Retrieval",
+          "task_families": [
+            "Retrieval"
+          ],
+          "source_url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep"
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Text-to-image retrieval",
+          "task_family": "Retrieval",
+          "task_families": [
+            "Retrieval"
+          ],
+          "source_url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep"
+        }
+      ],
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "Retrieval": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": null,
+      "registration": false,
+      "reconstruction": null,
+      "synthesis": false,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "task1": {
+        "label_type": null,
+        "exact_class_count_confirmed": null,
+        "class_count_description": null,
+        "complete_class_name_list_available_in_this_record": null
+      },
+      "task2": {
+        "label_type": null,
+        "mask_value_range": null,
+        "mask_datatype": null,
+        "background_included_in_value_range": null,
+        "exact_number_of_foreground_classes_inferred_from_range": null
+      },
+      "auxiliary_labels": {
+        "silver_standard_vessel_masks": null,
+        "training_only": null
+      },
+      "annotation_source": null
+    },
+    "dataset": {
+      "modalities": [
+        "Endoscopy"
+      ],
+      "population": null,
+      "source_reference": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep",
+      "structured_extraction_status": "Core identity/tasks reviewed; quantitative dataset/access fields not yet harmonized."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-25; access completion",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_by_scope": [],
+      "license_review_status": "Not established",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "topaneu_only_model_required_for_challenge_manuscript_comparison_if_external_data_used": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Codabench",
+      "metrics": null,
+      "source_reference": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep",
+      "execution_note": "Service and artifact descriptions do not by themselves establish execution location or automation."
+    },
+    "submission": {
+      "submission_type": "Prediction JSON files (ZIP)",
+      "platform": "Codabench",
+      "source_reference": "https://github.com/YangTuanAnh/ENTRep/tree/main/submissions",
+      "runtime_limits": null,
+      "primary_artifacts": [
+        "Classification and retrieval predictions"
+      ],
+      "additional_artifacts": [],
+      "execution": "Participants produce predictions; model execution by the platform is not established by these result archives.",
+      "format_by_task_or_phase": [
+        {
+          "task": "classification",
+          "observed_filename": "submission.json",
+          "mapping": "image filename -> class"
+        },
+        {
+          "task": "image-to-image retrieval",
+          "observed_filename": "submission_i2i.json",
+          "mapping": "query image -> returned image"
+        },
+        {
+          "task": "text-to-image retrieval",
+          "observed_filename": "submission_t2i.json",
+          "mapping": "query text -> returned image"
+        },
+        {
+          "archive": ".zip",
+          "scope": "Separate observed participant submission packages"
+        }
+      ],
+      "format_limitations": [
+        "Observed filenames are from actual participant packages, not independently established as mandatory official names."
+      ],
+      "source_urls": [
+        "https://github.com/YangTuanAnh/ENTRep/tree/main/submissions"
+      ],
+      "evidence_basis": "Human-supplied review of publicly released participant submission packages",
+      "review_date": "2026-10-24",
+      "submission_evidence_status": "Primary artifact identified by human review; format-specific limitations retained",
+      "review_source": "_collection/submission22_review_20261024/user_review.txt",
+      "additional_materials": []
+    },
+    "schedule": {
+      "edition_year": 2025,
+      "source_reference": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official_website": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep",
+      "supporting_sources": [
+        "https://arxiv.org/abs/2508.04801"
+      ]
+    },
+    "notes": [
+      "Three competitive tracks form one edition. Workshop topics such as report generation are not counted as actual competitive tasks."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "other_venues_audit_20261024",
+      "sources": [
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/04b4ab57e1604bb2.json",
+          "http_status": 200
+        },
+        {
+          "type": "Official challenge/programme or primary competition report",
+          "url": "https://arxiv.org/abs/2508.04801",
+          "retrieved_on": "2026-10-24",
+          "local_snapshot": "_collection/other_venues_audit_20261024/sources/f26726e926b818a2.json",
+          "http_status": 200
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://github.com/YangTuanAnh/ENTRep/tree/main/submissions",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        }
+      ],
+      "unresolved_fields": [
+        "harmonized data quantities and access conditions",
+        "comparable participation and reuse fields",
+        "Observed filenames are from actual participant packages, not independently established as mandatory official names."
+      ],
+      "curation_input": "_collection/other_venues_audit_20261024/curate.py",
+      "submission_human_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/submission22_review_20261024/user_review.txt",
+        "basis": "Human-supplied review of publicly released participant submission packages",
+        "scope": "Submission artifact, format and executor; source assertions supplied by human review, not a new independent audit of all linked pages."
+      }
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification",
+        "Retrieval"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "basis": "Organizer-defined task outputs, coded separately for each edition; multiple labels allowed.",
+      "development_access": "Public download",
+      "data_model_flow": "data-to-model",
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "count_parent_additionally": false,
+      "same_edition_subtasks_counted_separately": false
+    },
+    "assessment_evidence": {
+      "identity_status": "Verified from official programme/task documentation or primary competition report",
+      "outcome_evidence": "Organizer challenge overview/results preprint",
+      "scope": "Coverage reconciliation; detailed final-score auditing is not an inclusion requirement."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_date": "2026-10-24",
+      "decision_scope": "Expanded coverage inventory; not yet synchronized with the frozen manuscript analysis tables.",
+      "reason": "Distinct formal medical-imaging competition/shared-task edition in the review period."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "当届官网单独提供 training dataset 公共 Google Drive 链接，并将赛事报名入口另列；按公开开发数据链接编码。匿名页面可读到 train.zip 元数据，未下载图像；不将报名要求等同于数据授权。",
+        "evidence_basis": "Official edition sources and explicit access procedures; temporal/platform qualifications retained",
+        "review_date": "2026-10-25",
+        "source_urls": [
+          "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep",
+          "https://drive.google.com/file/d/1CmPSHLJJxuRhhy3soY3QOCNVXdSSPpNH/view?usp=sharing"
+        ],
+        "access_by_scope": [],
+        "confidence": "Documented procedure; source and temporal qualifications retained"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "Challenge@VNUHCM-US - ENTRep",
+          "local_source": "_collection/other_venues_audit_20261024/sources/04b4ab57e1604bb2.json",
+          "url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep",
+          "excerpt": "ion ENTRep Challenge: Advancing Vision-Language AI for ENT Endoscopy Analysis News 📢 We release the Public Dataset with Dataset Usage Guideline 📢 We provide the training dataset for three tasks. 📢 Public Test Submission Links for Track 1 , Track 2 , and Track 3 are now available on Codabench! 📢 Public Test Submission for Track 1, Track 2, and Track 3 on Codabench has now closed. 📢 Private Test Submission for Track 1, Track 2, and Track 3 is now open on Codabench! 📢 Our workshop takes place on Wednesday, October 29 Join our workshop in person at Dean Swift 2, Hyatt at the Royal Dublin Convention  [...] p Challenge, organized as part of ACM MM 2025 in Dublin, Ireland . This initiative offers exclusive access to a high-quality, expert-annotated dataset of ENT endoscopy images collected at Thong Nhat Hospital in Ho Chi Minh City, Vietnam. Clinical specialists have meticulously labeled each image to capture various ENT pathologies and anatomical nuances. In this challenge, you will develop innovative solu [...] visual data, by matching detailed text descriptions with their corresponding images to enhance data accessibility and diagnostic precision. Register now and join us in shaping the future of ENT diagnostics at ACM MM 2025. Leaderboards Track 1: Image Classification Track 2: Image-to-Image Retrieval Track 3: Text-to-Image Retrieval Workshop Schedule Our workshop takes place on Wednesday, October 29: 11:00 AM - 11:10 AM: Opening Remarks Prof. Minh [...] ssion website: https://cmt3.research.microsoft.com/ENTRep2025 . Important Dates (Anywhere on Earth) Registration opened: 26/3/2025 Public data released: 1 5/4/ 2025 Registration closed: 31/5/2025 Public session opened : 05 /6/2025 Public session closed : 22 / 6 /2025 Private data released: 2 3/6/2025 Private session opened : 23 /6/2025 Private session closed : 30 /6/2025 Results, Report, Paper submission deadline: 30 / 7/ 2025 Notification: 10 / 8 /2025 Camera-ready submission: 20 /8/2025 © Copyright Software Engineering Laboratory"
+        },
+        {
+          "section": "[2508.04801] ACM Multimedia Grand Challenge on ENT Endoscopy Analysis",
+          "local_source": "_collection/other_venues_audit_20261024/sources/f26726e926b818a2.json",
+          "url": "https://arxiv.org/abs/2508.04801",
+          "excerpt": "ually and through concise textual descriptions. These capabilities are rarely supported by existing public benchmarks. To this end, we introduce ENTRep, the ACM Multimedia 2025 Grand Challenge on ENT endoscopy analysis, which integrates fine-grained anatomical classification with image-to-image and text-to-image retrieval under bilingual (Vietnamese and English) clinical supervision. Specifically, the d [...] , we define three benchmark tasks, standardize the submission protocol, and evaluate performance on public and private test splits using server-side scoring. Moreover, we report results from the top-performing teams and provide an insight discussion. Subjects: Computer Vision and Pattern Recognition (cs.CV) Cite as: arXiv:2508.04801 [cs.CV] (or arXiv:2508.04801v1 [cs.CV] for this version) https://doi.or [...] m: Trong-Thuan Nguyen [ view email ] [v1] Wed, 6 Aug 2025 18:22:23 UTC (22,752 KB) Full-text links: Access Paper: View a PDF of the paper titled ACM Multimedia Grand Challenge on ENT Endoscopy Analysis, by Trong-Thuan Nguyen and 8 other authors View PDF HTML (experimental) TeX Source view license Additional Features Audio Summary Current browse context: cs.CV < prev | next > new | recent | 2025-08 Chang"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/entrep-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/04b4ab57e1604bb2.json",
+          "url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep",
+          "section": "Development access follow-up 2026-10-25"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/4cefade403673079.json",
+          "url": "https://drive.google.com/file/d/1CmPSHLJJxuRhhy3soY3QOCNVXdSSPpNH/view?usp=sharing",
+          "section": "Development access follow-up 2026-10-25"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-25 access completion: 当届官网单独提供 training dataset 公共 Google Drive 链接，并将赛事报名入口另列；按公开开发数据链接编码。匿名页面可读到 train.zip 元数据，未下载图像；不将报名要求等同于数据授权。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Public download",
+        "rationale": "当届官网单独提供 training dataset 公共 Google Drive 链接，并将赛事报名入口另列；按公开开发数据链接编码。匿名页面可读到 train.zip 元数据，未下载图像；不将报名要求等同于数据授权。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/1fe13c56a7cfa2bc.json",
+          "_collection/access_completion_20261025/sources/04b4ab57e1604bb2.json",
+          "_collection/access_completion_20261025/sources/4cefade403673079.json"
+        ]
+      }
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "test public",
+              "value": 645,
+              "unit": "images",
+              "scope": "Classification",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test private",
+              "value": 646,
+              "unit": "images",
+              "scope": "Classification",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 141,
+              "unit": "image pairs",
+              "scope": "Image retrieval",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test public",
+              "value": 139,
+              "unit": "image pairs",
+              "scope": "Image retrieval",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test private",
+              "value": 139,
+              "unit": "image pairs",
+              "scope": "Image retrieval",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 71,
+              "unit": "text-image pairs",
+              "scope": "Text retrieval",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test public",
+              "value": 71,
+              "unit": "text-image pairs",
+              "scope": "Text retrieval",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test private",
+              "value": 71,
+              "unit": "text-image pairs",
+              "scope": "Text retrieval",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "Vietnam"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Single center"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Organizer report; classification training size in figure not yet extracted. Top-ranked team tables not complete entrant count.",
+      "sources": [
+        {
+          "url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep",
+          "local_source": "_collection/other_venues_audit_20261024/sources/04b4ab57e1604bb2.json"
+        },
+        {
+          "url": "https://arxiv.org/abs/2508.04801",
+          "local_source": "_collection/other_venues_audit_20261024/sources/f26726e926b818a2.json"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2508.04801",
+          "local_source": "_collection/resource_audit_20261025/online/d530fe1b89c02d19.txt"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/entrep-2025.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head and Neck"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Ear canal",
+        "Tympanic membrane",
+        "Nasal cavity",
+        "Larynx"
+      ],
+      "specific_diseases": [
+        "Unspecified ENT abnormalities"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/04b4ab57e1604bb2.json",
+          "url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/f26726e926b818a2.json",
+          "url": "https://arxiv.org/abs/2508.04801"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/d530fe1b89c02d19.txt",
+          "url": "https://arxiv.org/pdf/2508.04801"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/entrep-2025.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "Retrieval"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "Retrieval"
+      ],
+      "previous_emerging_objectives": [
+        "VLM"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "Retrieval": "Declared task output"
+      },
+      "note_zh": "图像分类、图像检索和文本到图像检索，保留分类与检索及 VLM；无报告生成。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep",
+          "local_source": "_collection/other_venues_audit_20261024/sources/04b4ab57e1604bb2.json",
+          "sha256": "6dca070ba49d08c418da9b0694d893d7b18e50b59f22aa549e3242dbbc27f939"
+        },
+        {
+          "url": "https://arxiv.org/abs/2508.04801",
+          "local_source": "_collection/other_venues_audit_20261024/sources/f26726e926b818a2.json",
+          "sha256": "01031ec45a74c049c82a1c0ad4ae9abc2e9ad8afb018dbf129247c17c3a7f19e"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Not established",
+      "terms_documented": false,
+      "detail_level": "Not established",
+      "licence_names": [],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "组织者论文明确要求同意 Dataset Usage Guideline；原则上禁止外部私有数据，公开预训练权重须披露来源，组织者可审计提交物。竞赛使用约束已确认，但指南未提供完整的数据再利用、再分发和商业许可。",
+      "qualifications": [
+        "本轮分开记录协议要求、全文可读性、数据适用范围与再利用条款；有条款线索不等于已取得全部数据权利。"
+      ],
+      "scoped_terms": [
+        {
+          "scope": "Participation and data policy",
+          "text": "要求同意 Dataset Usage Guideline；除非明确允许，不得使用外部私有数据；公开预训练权重须说明来源，提交物可受审计。",
+          "source": {
+            "local_source": "_collection/resource_audit_20261025/online/d530fe1b89c02d19.txt",
+            "url": "https://arxiv.org/pdf/2508.04801"
+          },
+          "evidence_section": "Participation and data policy"
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/04b4ab57e1604bb2.json",
+          "url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep"
+        },
+        {
+          "local_source": "_collection/other_venues_audit_20261024/sources/f26726e926b818a2.json",
+          "url": "https://arxiv.org/abs/2508.04801"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/04b4ab57e1604bb2.json",
+          "url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/4cefade403673079.json",
+          "url": "https://drive.google.com/file/d/1CmPSHLJJxuRhhy3soY3QOCNVXdSSPpNH/view?usp=sharing"
+        },
+        {
+          "local_source": "_collection/resource_audit_20261025/online/d530fe1b89c02d19.txt",
+          "url": "https://arxiv.org/pdf/2508.04801"
+        },
+        {
+          "local_source": "_collection/data_license_audit_20261025/sources/c8a1f47c0b3272f6.json",
+          "url": "https://drive.google.com/uc?export=download&id=1rjKbAk86ygw50LeZzeT8kZTsJU6JE7fa"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability.",
+      "agreement_full_text_verified": "Not verified",
+      "dataset_scope_verified": "Not verified for complete licence terms",
+      "reuse_terms_verified": "Not verified",
+      "followup_review": "data_license_followup_20261025",
+      "agreement_acceptance_scope": "Dataset Usage Guideline acceptance; independent signed DUA not established"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "ACM_MM/2025/entrep-2025.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "Vietnam"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://aichallenge.hcmus.edu.vn/acm-mm-2025/entrep",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/04b4ab57e1604bb2.json"
+                },
+                {
+                  "url": "https://arxiv.org/abs/2508.04801",
+                  "local_source": "_collection/other_venues_audit_20261024/sources/f26726e926b818a2.json"
+                },
+                {
+                  "url": "https://arxiv.org/pdf/2508.04801",
+                  "local_source": "_collection/resource_audit_20261025/online/d530fe1b89c02d19.txt"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/entrep-2025.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN06"
+  ]
+}

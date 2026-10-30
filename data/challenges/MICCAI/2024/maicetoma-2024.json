@@ -1,0 +1,722 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "maicetoma-2024",
+    "challenge_name": "mAIcetoma 2024",
+    "full_name": "Mycetoma MicroImage: Detect and classify",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R35",
+      "official_programme_row_numbers": "11",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "University of Khartoum, Sudan",
+        "Orleans University, France"
+      ],
+      "registered_authors": [
+        {
+          "name": "Ali, Hyam",
+          "affiliation": "University of Khartoum, Sudan"
+        },
+        {
+          "name": "Alhesseen, Sahar",
+          "affiliation": "University of Khartoum, Sudan"
+        },
+        {
+          "name": "Elkhair, Lamis",
+          "affiliation": "University of Khartoum, Sudan"
+        },
+        {
+          "name": "Jennane, Rachid",
+          "affiliation": "Orleans University, France"
+        },
+        {
+          "name": "Fahal, Ahmed",
+          "affiliation": "University of Khartoum, Sudan"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "Pathology",
+        "Microscopy"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Skin"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Skin histopathology",
+        "Mycetoma grains"
+      ],
+      "diseases": [
+        "Mycetoma"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "secondary_task_families": [
+        "Classification"
+      ],
+      "task_families": [
+        "Detection",
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Mycetoma MicroImage: Detect and classify",
+          "task_family": "Detection",
+          "task_families": [
+            "Detection",
+            "Classification"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991252",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/Mycetoma MicroImage_ Detect & Classify.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": true,
+      "classification": true,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991252",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/Mycetoma MicroImage_ Detect & Classify.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Pathology",
+        "Microscopy"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991252",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/Mycetoma MicroImage_ Detect & Classify.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC. 当届提案明确列出 CC BY-NC；未标明版本时不自行补写版本。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991252",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/Mycetoma MicroImage_ Detect & Classify.pdf"
+      },
+      "review_status": "Reviewed 2026-10-25; access completion",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991252",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/Mycetoma MicroImage_ Detect & Classify.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991252",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/Mycetoma MicroImage_ Detect & Classify.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991252",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/Mycetoma MicroImage_ Detect & Classify.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nThe performance will be assessed using sensitivity, specificity, accuracy, and Matthew correlation coefficients\n(MCC).\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nSensitivity and specificity focus on minimizing false negatives and false positives, respectively, which are critical in\nmycetoma diagnoses. Accuracy provides an overall assessment, and MCC is particularly useful for imbalanced\ntype distribution.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThe use of a weighted sum allows for ranking based on the importance of each metric. Different participants may\nprioritize metrics differently. Weighted sum provides flexibility to align the evaluation with the specific goals of the\nchallenge.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSubmissions with missing results will be managed by assigning default scores to the missing results for each\nmetric.\nAssigning default scores helps maintain fairness in the evaluation process. The choice of these scores is based on\nthe performance of a model with missing results as well as the importance of each metric. Hence:\nSensitivity, Specificity, and Accuracy: A default score of 0.5 (average performance).\nMCC: A default score of 0 (indicating no correlation)\n\n\n\n\n\f                                       Mycetoma MicroImage: Detect & Classify\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThe ranking method for performance evaluation involves a weighted sum such that different weights will be\nassigned to different metrics based on their importance. The individual metric scores are then combined using a\nweighted sum to obtain a composite score for each algorithm.\nThe choice of weight aligns with the objectives of the challenge and it ranges in [0,1]. Sensitivity and specificity\nhave a similar impact in the context of the challenge. Accuracy is deemed more critical than sensitivity and\nspecificity so a higher weight is assigned to it. MCC has a higher weight since it indicates solid statistical accuracy\ntaking into account the different sizes of classes. Therefore,\nSensitivity (w_sen): 0.15\nSpecificity (w_spec): 0.15\nAccuracy (w_accu): 0.3\nMCC (w_mcc): 0.4"
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Prediction/result files",
+      "platform": "Synapse",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "A link for submission instructions will be sent to the participants. Jupyter Notebook can be used to display the algorithms' output.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991252",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/Mycetoma MicroImage_ Detect & Classify.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Primary artifact identified by human review; format-specific limitations retained",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null,
+      "primary_artifacts": [
+        "Segmentation predictions",
+        "Classification predictions"
+      ],
+      "additional_artifacts": [],
+      "execution": "Participants infer locally; submitted test predictions are evaluated by the organizers.",
+      "format_by_task_or_phase": [
+        {
+          "tasks": [
+            "segmentation",
+            "classification"
+          ],
+          "artifact": "test-set predictions",
+          "detailed_instructions": "Supplied after registration"
+        }
+      ],
+      "format_limitations": [
+        "Segmentation extension, classification columns and outer archive format not publicly established."
+      ],
+      "source_urls": [
+        "https://arxiv.org/pdf/2512.21792"
+      ],
+      "evidence_basis": "Human-supplied review of organizer retrospective paper; submission service retained from existing edition record",
+      "review_date": "2026-10-24",
+      "review_source": "_collection/submission22_review_20261024/user_review.txt",
+      "source_reference": "https://arxiv.org/pdf/2512.21792"
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991252",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/Mycetoma MicroImage_ Detect & Classify.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10991252"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://mycetoma.edu.sd/?page_id=5110",
+      "registration": "https://doi.org/10.5281/zenodo.10991252",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10991252",
+          "resolved_record_id": 10991253,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/Mycetoma MicroImage_ Detect & Classify.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/Mycetoma MicroImage_ Detect & Classify.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://mycetoma.edu.sd/?page_id=5110",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/b8f212231f82f770.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://arxiv.org/pdf/2512.21792",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts",
+        "Segmentation extension, classification columns and outer archive format not publicly established."
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/task_sections.json",
+      "submission_human_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/submission22_review_20261024/user_review.txt",
+        "basis": "Human-supplied review of organizer retrospective paper; submission service retained from existing edition record",
+        "scope": "Submission artifact, format and executor; source assertions supplied by human review, not a new independent audit of all linked pages."
+      }
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "mAIcetoma"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Detection",
+        "Classification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Account registration",
+      "data_model_flow": "data-to-model"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "当届组织者 Data Accessibility 页面明确：训练和验证数据在注册后向所有已注册参赛者开放，入口为 AfricaAI。采用该届声明流程；不以赛后受限 Zenodo 记录反推赛中人工审批。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [],
+        "evidence_basis": "Official edition sources and explicit access procedures; temporal/platform qualifications retained",
+        "confidence": "Documented procedure; source and temporal qualifications retained",
+        "source_urls": [
+          "https://mycetoma.edu.sd/?p=5242"
+        ],
+        "review_date": "2026-10-25"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991252",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991252",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. A link for submission instructions will be sent to the participants. Jupyter Notebook can be used to display the algorithms' output. b) "
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991252",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results The registration will start as soon as the challenge is accepted and the training dataset will be accessible. The challenge is a half-day virtual event. The test dataset will be released one week before the challenge. The announcement of the results is scheduled for the last day of the workshops."
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991252",
+          "excerpt": ""
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/b8f212231f82f770.json",
+          "url": "https://mycetoma.edu.sd/?page_id=5110",
+          "excerpt": "ings where mycetoma is most prevalent. These applications will help improve diagnostic accuracy and accessibility. Additionally, we plan to collaborate with healthcare providers, AI researchers, and public health experts to refine the tools and support their adoption in regions most affected by mycetoma. We are excited about the potential of these models to revolutionise mycetoma diagnosis and are actively planning future collaborations to bring these solutions into the field. Stay tuned for more upd"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/maicetoma-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://mycetoma.edu.sd/?p=5242",
+          "local_source": "_collection/access_backfill_round3_20261024/sources/96116291f0dcd1af.json",
+          "review_date": "2026-10-24",
+          "section": "Round 3 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        },
+        {
+          "local_source": "_collection/access_backfill_round3_20261024/sources/96116291f0dcd1af.json",
+          "url": "https://mycetoma.edu.sd/?p=5242",
+          "section": "Development access follow-up 2026-10-25"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-24 round 3: 当届官网称注册后通过AfricaAI获取训练／验证数据；用户另查到9月Zenodo受限记录，不能据此确定5月启动时是否自动放行。",
+        "2026-10-25 access completion: 当届组织者 Data Accessibility 页面明确：训练和验证数据在注册后向所有已注册参赛者开放，入口为 AfricaAI。采用该届声明流程；不以赛后受限 Zenodo 记录反推赛中人工审批。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        },
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Ambiguous",
+            "state": "Ambiguous",
+            "rationale": "当届官网称注册后通过AfricaAI获取训练／验证数据；用户另查到9月Zenodo受限记录，不能据此确定5月启动时是否自动放行。",
+            "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+            "access_by_scope": [
+              {
+                "scope": "2024 training/validation",
+                "category": "Registration; extra approval unresolved",
+                "access_steps": [
+                  "Register",
+                  "AfricaAI repository access"
+                ],
+                "manual_review": null
+              },
+              {
+                "scope": "Later Zenodo record",
+                "category": "Restricted access reported",
+                "access_steps": [
+                  "Login and request; temporal relation unresolved"
+                ],
+                "manual_review": null
+              }
+            ],
+            "evidence_basis": "Primary protocol / metadata checked",
+            "confidence": "High",
+            "source_urls": [
+              "https://mycetoma.edu.sd/?p=5242"
+            ]
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Account registration",
+        "rationale": "当届组织者 Data Accessibility 页面明确：训练和验证数据在注册后向所有已注册参赛者开放，入口为 AfricaAI。采用该届声明流程；不以赛后受限 Zenodo 记录反推赛中人工审批。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/b8f212231f82f770.json",
+          "_collection/access_completion_20261025/sources/73f17975f0c659d5.json"
+        ]
+      }
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "source",
+              "value": 863,
+              "unit": "images",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "Sudan"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Single center"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "70/10/20 proportions not rounded into invented integer split sizes.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10991252",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://mycetoma.edu.sd/?page_id=5110",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/b8f212231f82f770.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/maicetoma-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Skin"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Inflammatory / infectious"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Skin histopathology",
+        "Mycetoma grains"
+      ],
+      "specific_diseases": [
+        "Mycetoma"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991252"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/maicetoma-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY-NC.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10991252"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991252"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/maicetoma-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "Sudan"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10991252",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R35/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://mycetoma.edu.sd/?page_id=5110",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/b8f212231f82f770.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/maicetoma-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

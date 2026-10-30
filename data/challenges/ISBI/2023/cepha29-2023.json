@@ -1,0 +1,762 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cepha29-2023",
+    "challenge_name": "CEPHA29",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "ISBI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "X-ray"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Oral and maxillofacial"
+      ],
+      "organ_system": [
+        "Dental",
+        "Musculoskeletal"
+      ],
+      "organs_or_structures": [
+        "29 cephalometric landmarks",
+        "Cervical vertebral maturation stages"
+      ],
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Localization",
+      "secondary_task_families": [
+        "Classification"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Cephalometric landmark localization",
+          "task_family": "Localization",
+          "task_subtype": null,
+          "input": [
+            "Lateral cephalometric X-ray image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "29 landmark coordinates"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "CVM stage classification",
+          "task_family": "Classification",
+          "task_subtype": "multi-class classification",
+          "input": [
+            "Cephalometric X-ray image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "One of six CVM stage labels"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": true,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "29 cephalometric landmarks",
+        "Cervical vertebral maturation stages"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "image_count": 1000
+      },
+      "modalities": [
+        "X-ray"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "imaging_device_count": 7
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "registration-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY. 数据论文明确匿名化影像集按 CC BY 公开且禁止再识别；此为后续数据发布的明确条款，不是论文自身版权。",
+      "access_after_challenge": "Related Aariz dataset publicly released on Figshare in 2025 under CC BY 4.0; original competition access remains registration-required.",
+      "access_scope": "training data access as stated in the cited edition source",
+      "post_challenge_public_release": {
+        "dataset_name": "Aariz Cephalometric Dataset",
+        "status": "public download listed",
+        "repository": "Figshare",
+        "doi": "10.6084/m9.figshare.27986417.v1",
+        "public_release_date": "2025-05-21",
+        "license": "CC BY 4.0",
+        "file_name": "Aariz.zip",
+        "file_id": 51041642,
+        "download_url": "https://ndownloader.figshare.com/files/51041642",
+        "verified_on": "2026-10-21",
+        "source_url": "https://figshare.com/articles/dataset/Aariz_Cephalometric_Dataset/27986417",
+        "scope": "Later public dataset release; does not retroactively change registration requirements during the 2023 challenge. Metadata and link inspected, archive not downloaded."
+      },
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "mixed",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container / algorithm code",
+        "evidence_scope": "specified protocol; actual final execution not confirmed"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "validation": {
+        "paradigm": "data-to-model",
+        "data_visible_to_participants": true,
+        "submission_artifact": "prediction results",
+        "evidence_scope": "specified protocol"
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": null,
+      "platform": "Organizer-run evaluation (specified protocol)",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Mean Radial Error (MRE)",
+            "Standard Deviation (SD) of radial error",
+            "Success Detection Rate (SDR) at 2.0, 2.5, 3.0 and 4.0 mm"
+          ],
+          "ranking": null
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Accuracy",
+            "Precision",
+            "Recall",
+            "F1 score"
+          ],
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null,
+      "event_conduct_evidence": {
+        "value": "documented",
+        "source_url": "https://www.nature.com/articles/s41597-025-05542-3",
+        "location": "Evaluation of Baseline Model",
+        "finding": "Authors retrospectively report organizing CEPHA29 with ISBI 2023 and participation of 29 international teams.",
+        "limit": "Supports conduct and participation, not an explicitly documented final competitive ranking or completed assessment of all submitted teams."
+      },
+      "final_assessment_evidence": {
+        "value": "confirmed",
+        "event_state": "completed",
+        "evidence_state": "human_confirmed",
+        "evidence_ids": [
+          "E7"
+        ],
+        "reason": "Final assessment explicitly confirmed by user under revised criterion C. Public paper supports event conduct and 29 participating teams; final-score confirmation remains human-reported.",
+        "confirmation_basis": "explicit_user_confirmation",
+        "rule_version": "completion_evidence_v2_20261021",
+        "public_documentary_final_assessment_confirmed": false,
+        "confirmation_record": {
+          "date": "2026-10-21",
+          "source_type": "explicit user confirmation",
+          "reviewer_role": "user / manuscript reviewer",
+          "reviewer_name": null,
+          "statement": "最终评价 这个已经完成，才出的论文。这条规则要修改一下",
+          "edition_id": "cepha29-2023",
+          "supporting_document": "https://www.nature.com/articles/s41597-025-05542-3",
+          "public_document_scope": "Retrospective event conduct and participation by 29 international teams; baseline evaluation reported, not a final participant ranking.",
+          "confirmation_scope": "Final assessment completion explicitly confirmed by user; not independently verified from public final scores.",
+          "rule_version": "completion_evidence_v2_20261021"
+        },
+        "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_user_completion_confirmation_20261021.json"
+      },
+      "execution_details": {
+        "operator": "Challenge organizers",
+        "scope": "Specified validation scoring and hidden-test algorithm execution",
+        "named_technical_service": null,
+        "physical_execution_environment": null,
+        "completed_execution_confirmed": null,
+        "source_url": "https://arxiv.org/pdf/2212.04808v2"
+      },
+      "ranking_evidence_note": "Separate task leaderboards specified. Section 2.2.3 refers to validation and test performance for final rankings, whereas Section 4.2 says final submissions are graded solely on the final test set. Exact phase aggregation is ambiguous; do not invent a combined weighting. Macro/micro averaging for multiclass classification is not specified in Section 3.1.2."
+    },
+    "submission": {
+      "submission_type": "prediction file (validation); Docker container / algorithm code (final test)",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 1,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "repository_output_format_evidence": {
+        "date": "2026-10-21",
+        "source_url": "https://github.com/manwaarkhd/CEPHA29",
+        "tree_sha": "254ffa6e5401404887e8ef84bd683909f948c53c",
+        "finding": "Repository provides data reading, task-label definitions and prediction JSON formatting/saving. No metric computation or final leaderboard found in inspected current main files.",
+        "documented_output_format": "Validation example JSON: 29 landmark (x,y) coordinates and CVM stage (six defined classes).",
+        "results_file_caution": "results.py main uses random values to demonstrate output saving; results/valid contains example-shaped outputs, not a ranked challenge result table.",
+        "submission_service": null,
+        "scoring_execution_platform": null,
+        "completed_final_assessment": "not_established",
+        "limits": "Output-format support is not proof of an actual upload mechanism, final-test scoring, or competition completion.",
+        "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_github_review_20261021.json"
+      },
+      "phase_specific_requirements": [
+        {
+          "phase": "validation / Evaluation Phase-1",
+          "image_count": 150,
+          "submission_type": "prediction file",
+          "format": "JSON landmark coordinates and CVM stage; format corroborated by starter-code repository",
+          "data_visible_to_participants": true,
+          "annotations_visible_to_participants": false,
+          "evaluation_operator": "Organizers (specified protocol; user clarification)",
+          "source_sections": [
+            "2.2.2"
+          ],
+          "evidence_scope": "specified rules, not evidence that this phase completed"
+        },
+        {
+          "phase": "final test",
+          "image_count": 150,
+          "submission_type": "Docker container / algorithm code",
+          "data_visible_to_participants": false,
+          "annotations_visible_to_participants": false,
+          "evaluation_operator": "Organizers (specified protocol)",
+          "source_sections": [
+            "2.2.3",
+            "4.2"
+          ],
+          "evidence_scope": "specified rules, not confirmation of final execution"
+        }
+      ]
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "related_dataset_paper": {
+        "title": "A Benchmark Dataset for Automatic Cephalometric Landmark Detection and CVM Stage Classification",
+        "doi": "10.1038/s41597-025-05542-3",
+        "publication_date": "2025-07-31",
+        "type": "dataset descriptor with retrospective challenge participation and baseline evaluation",
+        "url": "https://www.nature.com/articles/s41597-025-05542-3"
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null,
+      "reported_participating_teams": {
+        "value": 29,
+        "unit": "international teams",
+        "source_term": "participation of 29 international teams",
+        "source_url": "https://www.nature.com/articles/s41597-025-05542-3",
+        "location": "Evaluation of Baseline Model",
+        "definition_limit": "Paper does not distinguish registration, valid submissions or final-ranked teams; do not populate teams_with_submission or finalist_teams from this count."
+      }
+    },
+    "links": {
+      "official": "http://vision.seecs.edu.pk/CEPHA29/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": "https://figshare.com/articles/dataset/Aariz_Cephalometric_Dataset/27986417",
+      "github": "https://github.com/manwaarkhd/CEPHA29",
+      "challenge_paper": null
+    },
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 74,
+      "sources": [
+        {
+          "type": "official challenge source",
+          "url": "http://vision.seecs.edu.pk/CEPHA29/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/5a3994a0846a1cde.json",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "dataset or rules where stated",
+            "homepage fields where stated",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "official conference program, browser extraction",
+          "url": "https://biomedicalimaging.org/2023/challenges/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/isbi-conference-web.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation",
+            "task_profile",
+            "clinical_domain"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "http://vision.seecs.edu.pk/CEPHA29/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/cepha29-2023.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "challenge starter-code repository",
+          "url": "https://github.com/manwaarkhd/CEPHA29",
+          "reviewed_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_github_review_20261021.json",
+          "supports": [
+            "submission.repository_output_format_evidence"
+          ],
+          "limits": "Output-format support is not proof of an actual upload mechanism, final-test scoring, or competition completion."
+        },
+        {
+          "type": "public dataset repository",
+          "url": "https://figshare.com/articles/dataset/Aariz_Cephalometric_Dataset/27986417",
+          "reviewed_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_figshare_27986417_20261021.json",
+          "supports": [
+            "links.dataset",
+            "data_access.post_challenge_public_release"
+          ]
+        },
+        {
+          "type": "primary dataset paper",
+          "url": "https://www.nature.com/articles/s41597-025-05542-3",
+          "reviewed_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_aariz_paper_20261021.json",
+          "supports": [
+            "participation_statistics.reported_participating_teams",
+            "evaluation.event_conduct_evidence",
+            "publication.related_dataset_paper"
+          ]
+        },
+        {
+          "type": "official challenge protocol preprint",
+          "url": "https://arxiv.org/pdf/2212.04808v2",
+          "reviewed_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_protocol_v2_20261021.json",
+          "local_pdf": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_protocol_v2_20261021.pdf",
+          "supports": [
+            "submission",
+            "evaluation.tasks",
+            "evaluation.platform",
+            "data_usage_mode"
+          ],
+          "locations": "Sections 2.2.1–2.2.3, 3.1, 4.2",
+          "limits": "Protocol defines intended conduct, not completed evaluation. Final ranking phase aggregation has conflicting wording."
+        },
+        {
+          "type": "user confirmation",
+          "url": null,
+          "reviewed_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_user_completion_confirmation_20261021.json",
+          "supports": [
+            "evaluation.final_assessment_evidence"
+          ],
+          "limits": "Human confirmation; not independent public final-score evidence."
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-21",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "http://vision.seecs.edu.pk/CEPHA29/",
+          "local_snapshot": "_collection/sources_other/5a3994a0846a1cde.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        },
+        "data_access.access_scope": {
+          "source_url": "http://vision.seecs.edu.pk/CEPHA29/",
+          "local_snapshot": "_collection/sources_other/5a3994a0846a1cde.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "http://vision.seecs.edu.pk/CEPHA29/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/cepha29-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "http://vision.seecs.edu.pk/CEPHA29/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/cepha29-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "http://vision.seecs.edu.pk/CEPHA29/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/cepha29-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/cepha29-2023.json",
+          "_collection/verification_20261003/literature_context/cepha29-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "manual_review_disposition": {
+        "date": "2026-10-21",
+        "review_status": "final_assessment_confirmed_by_user",
+        "scope": "Final assessment completion only; does not imply independent double coding or approval of every field.",
+        "supersedes": "Earlier skip request and unresolved final-completion disposition",
+        "confirmation_evidence_id": "E7"
+      },
+      "targeted_review_history": [
+        {
+          "date": "2026-10-21",
+          "scope": "Full protocol checked following user-provided validation and testing excerpts; phase-specific submissions and metrics now coded.",
+          "previous_record_backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/cepha29_protocol_20261021_161144/canonical.json",
+          "previous_sha256": "8a6d7daa46c989257c11e9b338ea4ccf64f93fe47b7b3cd6df525281cf1085ec"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY"
+      ],
+      "scope": "Later public training release; original hidden test excluded",
+      "agreement_required": null,
+      "summary_zh": "数据论文明确匿名化影像集按 CC BY 公开且禁止再识别；此为后续数据发布的明确条款，不是论文自身版权。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "IDC/IRC/2020/001/012). This approval includes consent for the open publication of the anonymized dataset under a Creative Commons Attribution (CC-BY) license, ensuring compliance with patient privacy and ethical standards. Dataset Description We have proposed a new benchmark dataset consisting of 1000 cephalometric X-ray images, which were collected from 1000 patients ranging in age from 12 to 62 years, and acquired from 7 different X-ray imaging devices with varying resolutions. Table 2 summarizes all of the X-ray imaging devices used to obtain the cephalograms, as well as their respective resolutions and the number of cephalograms from each machin",
+          "source": {
+            "url": "https://www.nature.com/articles/s41597-025-05542-3",
+            "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_aariz_paper_20261021.json"
+          }
+        },
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "ed cephalometric analysis. Usage Notes The dataset has been fully anonymized and is publicly available under the Creative Commons Attribution (CC-BY) license via Figshare. All personally identifiable information has been removed in compliance with ethical guidelines, and institutional approval for public data sharing has been obtained (IRB Number: IIDC/IRC/2020/001/012). Although openly accessible, users must refrain from any attempts at re-identification of individuals, in accordance with ethical standards for handling human data. Code availability To facilitate the use of our dataset and to provide a starting point for researchers, we have made th",
+          "source": {
+            "url": "https://www.nature.com/articles/s41597-025-05542-3",
+            "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_aariz_paper_20261021.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.nature.com/articles/s41597-025-05542-3",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_aariz_paper_20261021.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "ISBI/2023/cepha29-2023.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Related Aariz dataset publicly released on Figshare in 2025 under CC BY 4.0; original competition access remains registration-required.",
+              "sources": [
+                {
+                  "type": "official challenge source",
+                  "url": "http://vision.seecs.edu.pk/CEPHA29/",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/5a3994a0846a1cde.json",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "data_access.access_scope",
+                    "data_access.access_status",
+                    "dataset or rules where stated",
+                    "homepage fields where stated",
+                    "task_profile"
+                  ]
+                },
+                {
+                  "type": "official conference program, browser extraction",
+                  "url": "https://biomedicalimaging.org/2023/challenges/",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/isbi-conference-web.json",
+                  "supports": [
+                    "challenge identity",
+                    "event affiliation",
+                    "task_profile",
+                    "clinical_domain"
+                  ]
+                },
+                {
+                  "type": "review-derived anatomical classification of source-recorded targets",
+                  "url": "http://vision.seecs.edu.pk/CEPHA29/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/clinical_mapping/cepha29-2023.json",
+                  "supports": [
+                    "clinical_domain.organ_system",
+                    "clinical_domain.organ_system_basis",
+                    "clinical_domain.organ_system_coding_scope"
+                  ]
+                },
+                {
+                  "type": "challenge starter-code repository",
+                  "url": "https://github.com/manwaarkhd/CEPHA29",
+                  "reviewed_on": "2026-10-21",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_github_review_20261021.json",
+                  "supports": [
+                    "submission.repository_output_format_evidence"
+                  ],
+                  "limits": "Output-format support is not proof of an actual upload mechanism, final-test scoring, or competition completion."
+                },
+                {
+                  "type": "public dataset repository",
+                  "url": "https://figshare.com/articles/dataset/Aariz_Cephalometric_Dataset/27986417",
+                  "reviewed_on": "2026-10-21",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_figshare_27986417_20261021.json",
+                  "supports": [
+                    "links.dataset",
+                    "data_access.post_challenge_public_release"
+                  ]
+                },
+                {
+                  "type": "primary dataset paper",
+                  "url": "https://www.nature.com/articles/s41597-025-05542-3",
+                  "reviewed_on": "2026-10-21",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_aariz_paper_20261021.json",
+                  "supports": [
+                    "participation_statistics.reported_participating_teams",
+                    "evaluation.event_conduct_evidence",
+                    "publication.related_dataset_paper"
+                  ]
+                },
+                {
+                  "type": "official challenge protocol preprint",
+                  "url": "https://arxiv.org/pdf/2212.04808v2",
+                  "reviewed_on": "2026-10-21",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_protocol_v2_20261021.json",
+                  "local_pdf": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_protocol_v2_20261021.pdf",
+                  "supports": [
+                    "submission",
+                    "evaluation.tasks",
+                    "evaluation.platform",
+                    "data_usage_mode"
+                  ],
+                  "locations": "Sections 2.2.1–2.2.3, 3.1, 4.2",
+                  "limits": "Protocol defines intended conduct, not completed evaluation. Final ranking phase aggregation has conflicting wording."
+                },
+                {
+                  "type": "user confirmation",
+                  "url": null,
+                  "reviewed_on": "2026-10-21",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_user_completion_confirmation_20261021.json",
+                  "supports": [
+                    "evaluation.final_assessment_evidence"
+                  ],
+                  "limits": "Human confirmation; not independent public final-score evidence."
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "Source-reported participation count; retain exact unit and scope instead of requiring a harmonized active-team definition.",
+              "url": "https://www.nature.com/articles/s41597-025-05542-3",
+              "snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/cepha29_aariz_paper_20261021.json",
+              "scope": "No conversion of registered accounts or submission attempts into teams; reported team/participant definitions remain source-specific. Existing source-linked extraction reconciled in this update; source-reported participation does not establish independent validation of the reported number.",
+              "value": {
+                "reported_participating_teams": {
+                  "value": 29,
+                  "unit": "international teams",
+                  "source_term": "participation of 29 international teams",
+                  "source_url": "https://www.nature.com/articles/s41597-025-05542-3",
+                  "location": "Evaluation of Baseline Model",
+                  "definition_limit": "Paper does not distinguish registration, valid submissions or final-ranked teams; do not populate teams_with_submission or finalist_teams from this count."
+                }
+              },
+              "excerpt": "",
+              "snapshot_date": "2026-10-02",
+              "source_path": "ISBI/2023/cepha29-2023.json",
+              "source_field": "participation_statistics"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02"
+  ]
+}

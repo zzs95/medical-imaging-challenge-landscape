@@ -1,0 +1,749 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "feta-2022",
+    "challenge_name": "FeTA - Fetal Tissue Annotation Challenge",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2022-09-18",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "PIPPI 2022",
+        "relationship": "Associated MICCAI workshop",
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": [
+        "Super-resolution reconstructed fetal brain MRI"
+      ],
+      "body_region": [
+        "Brain"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "Developing fetal brain tissues"
+      ],
+      "diseases": [
+        "Abnormal fetal neurodevelopment",
+        "Fetal ventriculomegaly"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Multi-center fetal brain tissue segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "multi-class segmentation",
+          "input": [
+            "Reconstructed fetal brain MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Brain tissue segmentation mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": "Seven tissue classes plus background",
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Manual tissue annotations",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "classes": [
+            "External cerebrospinal fluid",
+            "Grey matter",
+            "White matter",
+            "Ventricles",
+            "Cerebellum",
+            "Deep grey matter",
+            "Brainstem"
+          ]
+        }
+      ],
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-national",
+      "multi_center": true,
+      "international": null,
+      "center_count": 4,
+      "institutions_description": "Zurich, Vienna, UCSF and Lausanne; two training sites, four testing sites.",
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 120,
+        "validation_count": null,
+        "test_count": 160,
+        "case_count": 280
+      },
+      "modalities": null,
+      "data_components": [
+        "Reconstructed fetal brain MRI",
+        "Manual tissue labels"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "case_count": 120
+        },
+        "test": {
+          "case_count": 160
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Not established",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Custom FeTA data-use terms. 当届方案规定自定义数据许可：非商业且限挑战用途。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; round 2",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Additional training data must be publicly available and documented."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice similarity coefficient (DSC)",
+            "95th-percentile Hausdorff distance (HD95)",
+            "Volume similarity (VS)"
+          ],
+          "ranking": "Combine ranks of the three metrics, using mean values over tissue labels and test cases; lower HD95 and higher DSC/VS are better. Separate subgroup rankings are supplementary."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 1,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "technical_error_resubmission_allowed": true,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {
+      "training_data_release": "2022-06-01",
+      "final_submission_deadline": "2022-08-03",
+      "challenge_event": "2022-09-18"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 928,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": 16,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Live FeTA 2022 Challenge",
+            "submission_count": 0
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ],
+      "evaluated_algorithms": 17
+    },
+    "links": {
+      "grand_challenge": "https://feta.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": "https://arxiv.org/abs/2402.09463"
+    },
+    "notes": [
+      "2022-specific archived page is used. Current main page redirects readers to the 2024 site, whose facts are not copied into this record.",
+      "Final organizer results paper confirms 120 training and 160 testing cases. The earlier design proposed Euler-characteristic evaluation; final primary competition ranking uses DSC, HD95 and VS. Published topology rankings are additional analysis."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://feta.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/135-091b94ca4c37.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://zenodo.org/records/6362587",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/135-355a4a802920.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://feta.grand-challenge.org/feta-2022/",
+          "supports": [
+            "task_profile",
+            "event",
+            "year",
+            "dataset"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/135-b9cab8eb872c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://feta.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/135-overview.json"
+        },
+        {
+          "type": "official organizer publication",
+          "url": "https://arxiv.org/pdf/2402.09463",
+          "local_snapshot": "_collection/sources/135-results.pdf",
+          "retrieved_on": "2026-10-02",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "evaluation",
+            "data_usage_mode",
+            "submission"
+          ]
+        },
+        {
+          "type": "official organizer publication",
+          "url": "https://zenodo.org/records/6362587/files/FetalTissueAnnotationChallenge_03-16-2022_02-46-49.pdf?download=1",
+          "local_snapshot": "_collection/sources/135-design.pdf",
+          "retrieved_on": "2026-10-02",
+          "supports": [
+            "preregistered challenge design",
+            "submission.evidence_stage"
+          ]
+        },
+        {
+          "type": "official organizer challenge or dataset paper",
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12099263/fullTextXML",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12099263.json",
+          "title": "Multi-Center Fetal Brain Tissue Annotation (FeTA) Challenge 2022 Results",
+          "supports": [
+            "dataset.center_type",
+            "dataset.splits.train.case_count",
+            "dataset.splits.test.case_count",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.server_side_inference",
+            "participation_statistics.teams_with_submission",
+            "participation_statistics.evaluated_algorithms"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Exact final dataset license and current access terms require verification; documentation license is not assumed to license the dataset."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "dataset.center_type": {
+          "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12099263/fullTextXML",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12099263.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2022 edition result paper explicitly distinguishes two training centers and four total centers, released training and withheld test data, and 16 teams versus 17 algorithms."
+        },
+        "dataset.splits.train.case_count": {
+          "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12099263/fullTextXML",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12099263.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2022 edition result paper explicitly distinguishes two training centers and four total centers, released training and withheld test data, and 16 teams versus 17 algorithms."
+        },
+        "dataset.splits.test.case_count": {
+          "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12099263/fullTextXML",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12099263.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2022 edition result paper explicitly distinguishes two training centers and four total centers, released training and withheld test data, and 16 teams versus 17 algorithms."
+        },
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12099263/fullTextXML",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12099263.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2022 edition result paper explicitly distinguishes two training centers and four total centers, released training and withheld test data, and 16 teams versus 17 algorithms."
+        },
+        "data_usage_mode.testing.server_side_inference": {
+          "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12099263/fullTextXML",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12099263.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2022 edition result paper explicitly distinguishes two training centers and four total centers, released training and withheld test data, and 16 teams versus 17 algorithms."
+        },
+        "participation_statistics.teams_with_submission": {
+          "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12099263/fullTextXML",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12099263.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2022 edition result paper explicitly distinguishes two training centers and four total centers, released training and withheld test data, and 16 teams versus 17 algorithms."
+        },
+        "participation_statistics.evaluated_algorithms": {
+          "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12099263/fullTextXML",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12099263.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "2022 edition result paper explicitly distinguishes two training centers and four total centers, released training and withheld test data, and 16 teams versus 17 algorithms."
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/6362587/files/FetalTissueAnnotationChallenge_03-16-2022_02-46-49.pdf?download=1",
+          "local_snapshot": "_collection/sources/135-design.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Participants will create a Docker container with their algorithm, and provide this to the challenge organizers. Once the website is up, it will contain instructions on how to containerize the algorithms, and the organizers will provide support to the participants when requested. The organizers will run the Docker container on the test data set using publicly available evaluation code. The organizers will inform the participants if the Docker container fails to run, and allow the participants to "
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.server_side_inference",
+          "dataset.center_type",
+          "dataset.splits.test.case_count",
+          "dataset.splits.train.case_count",
+          "participation_statistics.evaluated_algorithms",
+          "participation_statistics.teams_with_submission",
+          "submission.evidence_stage"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/feta-2022.json",
+          "_collection/verification_20261003/literature_context/feta-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Not established",
+        "state": "Not established",
+        "rationale": "当届发布日不等于准入机制；不能沿用2024 Synapse规则。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [],
+        "evidence_basis": "User-supplied round 2 unresolved-issue summary; no new classification asserted",
+        "confidence": "Partial",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-24 round 2: 当届发布日不等于准入机制；不能沿用2024 Synapse规则。",
+        "2026-10-25 access completion: 当届页面说明数据发布时间，缺少对应下载准入步骤；不移用2024规则。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/feta-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round2_20261024/user_review_summary.json",
+          "section": "User-supplied round 2 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "2",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Not established",
+        "rationale": "当届页面说明数据发布时间，缺少对应下载准入步骤；不移用2024规则。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/7a139a93873c48b0.json",
+          "_collection/access_completion_20261025/sources/59c4acf9099ca133.json",
+          "_collection/access_completion_20261025/sources/8b0de976830d6cf4.json",
+          "_collection/access_completion_20261025/sources/0bbae3ca48581116.json",
+          "_collection/access_completion_20261025/sources/b9cab8eb872cbbb4.json"
+        ]
+      }
+    },
+    "review_coding": {
+      "development_access": "Not established",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "Custom FeTA data-use terms"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届方案规定自定义数据许可：非商业且限挑战用途。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "Custom data license (current FeTA license can be found here under Terms of Use: https://www.synapse.org/#!Synapse:syn25649159/wiki/610007); non-commercial use only for the challenge purpose.",
+          "source": {
+            "url": "https://zenodo.org/records/6362587/files/FetalTissueAnnotationChallenge_03-16-2022_02-46-49.pdf?download=1",
+            "local_source": "_collection/sources/135-design.pdf"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/6362587/files/FetalTissueAnnotationChallenge_03-16-2022_02-46-49.pdf?download=1",
+          "local_source": "_collection/sources/135-design.pdf"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Congenital / developmental"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Abnormal fetal neurodevelopment",
+        "Fetal ventriculomegaly"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "当届结果报告将正常/病理性神经发育作为病例属性，并展示脑室扩张病例；不把参赛队外加脊柱裂图谱当作官方队列。",
+      "sources": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12099263/",
+          "local_source": "_collection/disease_followup_20261025/sources/feta.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "当届结果报告将正常/病理性神经发育作为病例属性，并展示脑室扩张病例；不把参赛队外加脊柱裂图谱当作官方队列。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2022/feta-2022.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Zurich, Vienna, UCSF and Lausanne; two training sites, four testing sites.",
+              "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12099263/fullTextXML",
+              "snapshot": "_collection/verification_20261003/papers/PMC12099263.json",
+              "scope": "Explicit acquisition-institution or region description; partial scope retained.",
+              "value": "Zurich, Vienna, UCSF and Lausanne; two training sites, four testing sites.",
+              "excerpt": "",
+              "snapshot_date": "2026-10-02",
+              "source_path": "MICCAI/2022/feta-2022.json",
+              "source_field": "dataset.institutions_description"
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2022/feta-2022.json",
+              "source_field": "participation_statistics",
+              "value": {
+                "registered_participants": 928,
+                "registered_teams": null,
+                "active_participants": null,
+                "active_teams": null,
+                "participants_with_submission": null,
+                "teams_with_submission": 16,
+                "qualified_teams": null,
+                "finalist_teams": null,
+                "submissions": {
+                  "directory_summary_submissions": null,
+                  "total_submissions": null,
+                  "by_task": null,
+                  "by_phase": [
+                    {
+                      "official_phase_name": "Live FeTA 2022 Challenge",
+                      "submission_count": 0
+                    }
+                  ]
+                },
+                "statistics_snapshot_date": "2026-10-02",
+                "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+                "notes": [
+                  "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+                ],
+                "evaluated_algorithms": 17
+              },
+              "sources": [
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://feta.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/135-091b94ca4c37.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://zenodo.org/records/6362587",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/135-355a4a802920.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://feta.grand-challenge.org/feta-2022/",
+                  "supports": [
+                    "task_profile",
+                    "event",
+                    "year",
+                    "dataset"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/135-b9cab8eb872c.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://feta.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/135-overview.json"
+                },
+                {
+                  "type": "official organizer publication",
+                  "url": "https://arxiv.org/pdf/2402.09463",
+                  "local_snapshot": "_collection/sources/135-results.pdf",
+                  "retrieved_on": "2026-10-02",
+                  "supports": [
+                    "dataset",
+                    "labels_and_targets",
+                    "evaluation",
+                    "data_usage_mode",
+                    "submission"
+                  ]
+                },
+                {
+                  "type": "official organizer publication",
+                  "url": "https://zenodo.org/records/6362587/files/FetalTissueAnnotationChallenge_03-16-2022_02-46-49.pdf?download=1",
+                  "local_snapshot": "_collection/sources/135-design.pdf",
+                  "retrieved_on": "2026-10-02",
+                  "supports": [
+                    "preregistered challenge design",
+                    "submission.evidence_stage"
+                  ]
+                },
+                {
+                  "type": "official organizer challenge or dataset paper",
+                  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12099263/fullTextXML",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/papers/PMC12099263.json",
+                  "title": "Multi-Center Fetal Brain Tissue Annotation (FeTA) Challenge 2022 Results",
+                  "supports": [
+                    "dataset.center_type",
+                    "dataset.splits.train.case_count",
+                    "dataset.splits.test.case_count",
+                    "data_usage_mode.overall_paradigm",
+                    "data_usage_mode.testing.server_side_inference",
+                    "participation_statistics.teams_with_submission",
+                    "participation_statistics.evaluated_algorithms"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

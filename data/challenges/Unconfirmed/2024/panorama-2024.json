@@ -1,0 +1,513 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "panorama-2024",
+    "challenge_name": "PANORAMA",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "Standalone",
+      "event_type": "standalone_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "Contrast-enhanced CT"
+      ],
+      "body_region": [
+        "Abdomen"
+      ],
+      "organ_system": [
+        "Digestive"
+      ],
+      "organs_or_structures": [
+        "Pancreas",
+        "PDAC lesions"
+      ],
+      "diseases": [
+        "Pancreatic ductal adenocarcinoma"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [
+        "Detection"
+      ],
+      "tasks": [
+        {
+          "task_id": "diagnosis",
+          "official_name": "Patient-level PDAC diagnosis",
+          "task_family": "Classification",
+          "task_subtype": "binary classification",
+          "input": [
+            "Abdominal CECT",
+            "Optional clinical/acquisition variables"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "PDAC likelihood"
+          ],
+          "granularity": "patient-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "detection",
+          "official_name": "Lesion-level PDAC detection",
+          "task_family": "Detection",
+          "task_subtype": "lesion detection",
+          "input": [
+            "Abdominal CECT",
+            "Optional clinical/acquisition variables"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "3D detection map with per-lesion confidence"
+          ],
+          "granularity": "lesion-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": true,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": true,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "public_train_development": {
+          "case_count": 2238
+        },
+        "hidden_validation_tuning": {
+          "case_count": 86
+        },
+        "hidden_test": {
+          "case_count": {
+            "lower_bound_exclusive": 400,
+            "raw_text": ">400 cases"
+          }
+        },
+        "reader_study_test_subset": {
+          "case_count": 400
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Public data: CC BY-NC 4.0.",
+      "access_after_challenge": null,
+      "access_scope": "Public Training and Development Dataset, 2238 cases"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "diagnosis",
+          "metrics": [
+            "AUROC"
+          ],
+          "ranking": "Mean of AUROC and AP ranks."
+        },
+        {
+          "task_id": "detection",
+          "metrics": [
+            "Average Precision (AP)"
+          ],
+          "ranking": "Mean of AUROC and AP ranks; lesion hit requires at least 0.15 3D IoU."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": 1,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "development_submission_start": "2024-05-13",
+      "final_submission_deadline": "2024-12-16"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 544,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Development Phase - Sanity Check",
+            "submission_count": 195
+          },
+          {
+            "official_phase_name": "Development Phase - Tuning",
+            "submission_count": 152
+          },
+          {
+            "official_phase_name": "Testing Phase",
+            "submission_count": 8
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://panorama.grand-challenge.org/",
+      "dataset": null,
+      "github": "https://github.com/DIAGNijmegen/panorama_labels",
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official rules explicitly call this PANORAMA24. Results presented at RSNA 2024 and ECR 2025 do not by themselves establish either as the hosting conference. FROC and spatial IoU analyses are secondary.",
+      "Source-list platform_year is 2023; the official challenge edition is 2024. The output directory follows the official edition."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://panorama.grand-challenge.org/overview-goals/",
+          "supports": [
+            "challenge context",
+            "dataset.center_type",
+            "dataset.multi_center"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/74-029f6343b54e.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://panorama.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/74-03931f673176.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panorama.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/74-25df1760279c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panorama.grand-challenge.org/aias/",
+          "supports": [
+            "challenge context",
+            "evaluation.platform",
+            "submission.platform"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/74-32f5e25a689d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panorama.grand-challenge.org/datasets-imaging-labels/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "dataset",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/74-41e41ffcde1c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panorama.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/74-80c11e3ccf20.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panorama.grand-challenge.org/aite/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/74-a584901b7564.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panorama.grand-challenge.org/aipr/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/74-e98b812f49eb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://panorama.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/74-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Conference hosting and detailed external-data/retraining rules require verification."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://panorama.grand-challenge.org/aias/",
+          "local_snapshot": "_collection/sources/74-32f5e25a689d.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'Submit', 'url': 'https://panorama.grand-challenge.org/evaluation/development-phase/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "submission.platform": {
+          "source_url": "https://panorama.grand-challenge.org/aias/",
+          "local_snapshot": "_collection/sources/74-32f5e25a689d.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'Submit', 'url': 'https://panorama.grand-challenge.org/evaluation/development-phase/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "dataset.multi_center": {
+          "source_url": "https://panorama.grand-challenge.org/overview-goals/",
+          "local_snapshot": "_collection/sources/74-029f6343b54e.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official AI-study description specifies a retrospective multicenter training collection."
+        },
+        "dataset.center_type": {
+          "source_url": "https://panorama.grand-challenge.org/overview-goals/",
+          "local_snapshot": "_collection/sources/74-029f6343b54e.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official AI-study description specifies a retrospective multicenter training collection."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://panorama.grand-challenge.org/datasets-imaging-labels/",
+          "local_snapshot": "_collection/sources/74-41e41ffcde1c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition dataset page explicitly identifies the public training split and its license."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/panorama-2024.json",
+          "_collection/verification_20261003/literature_context/panorama-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "conference_affiliation_review": {
+      "review_date": "2026-10-25",
+      "previous_analysis_conference": "Unknown",
+      "analysis_conference": "Standalone",
+      "primary_conference": null,
+      "organizing_arrangement": "Independent challenge",
+      "primary_relationship": "Independent challenge — human-confirmed",
+      "related_events": [
+        {
+          "venue": "ECR",
+          "year": 2025,
+          "relationship": "Challenge results presentation, 28 February 2025",
+          "count_as_primary": false
+        }
+      ],
+      "note_zh": "按用户确认归为独立challenge。ECR2025结果报告关联保留；主要统计归属为Standalone，按2024届计一次。",
+      "sources": [
+        {
+          "url": "https://panorama.grand-challenge.org/overview-goals/",
+          "local_source": "_collection/conference_audit_20261025/sources/029f6343b54e47e.json",
+          "sha256": "ae26f06145ddc284c192d8abc5aa9fa045a04f8a9acd0a54df1c7e3d2989838a"
+        },
+        {
+          "local_source": "_collection/panorama_independent_confirmation_20261025/human_confirmation.json",
+          "sha256": "af7cb86f2686fc8de48ab494aed83f2155349f541e56befe00565ee47c45835f",
+          "url": "",
+          "type": "Explicit human confirmation",
+          "supports": "Independent challenge statistical assignment"
+        }
+      ],
+      "assignment_basis": "Explicit human confirmation"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

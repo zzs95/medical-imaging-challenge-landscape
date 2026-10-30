@@ -1,0 +1,738 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "medvidu-2026",
+    "challenge_name": "MedVidU Challenge: Medical Video Understanding",
+    "full_name": "MedVidU Challenge: Medical Video Understanding",
+    "year": 2026,
+    "event": {
+      "conference": "ECCV 2026",
+      "event_type": "workshop_challenge",
+      "challenge_event_date": "2026-09-09",
+      "location": {
+        "city": "Malmö",
+        "country": "Sweden",
+        "venue": null,
+        "room": null
+      },
+      "workshop": "Workshop on Medical Video Understanding (MedVidU)"
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy",
+        "Video"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Surgical field"
+      ],
+      "organ_system": [
+        "Gastrointestinal",
+        "Multisystem"
+      ],
+      "organs_or_structures": null,
+      "diseases": null,
+      "clinical_context": "Laparoscopic, open and robotic surgery, and nursing care videos",
+      "organ_system_basis": null,
+      "organ_system_coding_scope": null
+    },
+    "task_profile": {
+      "primary_task_family": null,
+      "secondary_task_families": [
+        "Classification",
+        "Localization",
+        "Captioning",
+        "Quality Assessment"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Critical View of Safety assessment",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "surgical video"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "safety assessment"
+          ],
+          "granularity": "video-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Next action prediction",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "surgical video"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "next action"
+          ],
+          "granularity": "video-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Surgical skill assessment",
+          "task_family": "Quality Assessment",
+          "task_subtype": null,
+          "input": [
+            "surgical video"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "skill rating"
+          ],
+          "granularity": "video-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task4",
+          "official_name": "Temporal action grounding",
+          "task_family": "Localization",
+          "task_subtype": null,
+          "input": [
+            "surgical video",
+            "action text"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "action time intervals"
+          ],
+          "granularity": "temporal",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task5",
+          "official_name": "Spatiotemporal grounding",
+          "task_family": "Localization",
+          "task_subtype": null,
+          "input": [
+            "surgical video",
+            "action text"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "spatiotemporal action locations"
+          ],
+          "granularity": "spatiotemporal",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task6",
+          "official_name": "Dense video captioning",
+          "task_family": "Captioning",
+          "task_subtype": null,
+          "input": [
+            "surgical video"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "timed text descriptions"
+          ],
+          "granularity": "temporal",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task7",
+          "official_name": "Video summary",
+          "task_family": "Captioning",
+          "task_subtype": null,
+          "input": [
+            "surgical video"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "text summary"
+          ],
+          "granularity": "video-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task8",
+          "official_name": "Region captioning",
+          "task_family": "Captioning",
+          "task_subtype": null,
+          "input": [
+            "surgical video region"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "region description"
+          ],
+          "granularity": "region-level",
+          "clinical_goal": null
+        }
+      ],
+      "task_families": [
+        "Classification",
+        "Localization",
+        "Quality / suitability assessment",
+        "Report generation"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "Localization": "Declared task output",
+        "Quality / suitability assessment": "Declared task output",
+        "Report generation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": true,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "sample_count": {
+          "value": 6270,
+          "approximate": false,
+          "relation": "equal_to",
+          "raw_text": "6,270 train/validation samples across eight tasks",
+          "unit": "video-task samples"
+        }
+      },
+      "modalities": [
+        "Endoscopy",
+        "Video"
+      ],
+      "data_components": [
+        "Eight source video datasets",
+        "MedVidU ECCV 2026 train/validation task samples"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": "Hugging Face gated dataset",
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": false,
+      "license_or_terms": "CC BY-NC-SA 4.0 plus upstream source-dataset terms",
+      "access_after_challenge": null,
+      "access_scope": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "Unknown",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": null,
+        "policy": "Organizer guide permits other open-source or internal training data."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "MedVidBench Hugging Face Space for Phase I public leaderboard; evaluation-side Docker execution for Phase II, underlying final service not specified",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task3",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task4",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task5",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task6",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task7",
+          "metrics": null,
+          "ranking": null
+        },
+        {
+          "task_id": "task8",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null,
+      "phases": [
+        {
+          "phase": "Phase I: public leaderboard evaluation",
+          "eligible_participants": "Participants",
+          "scoring_submission": "Prediction/result files",
+          "inference_executor": "Participants",
+          "data_model_flow": "data-to-model"
+        },
+        {
+          "phase": "Phase II: final evaluation",
+          "eligible_participants": "Shortlisted teams",
+          "scoring_submission": "Docker containers",
+          "inference_executor": "Evaluation side",
+          "test_data": "Held-out final test data, per existing dataset-card evidence",
+          "data_model_flow": "model-to-data"
+        }
+      ]
+    },
+    "submission": {
+      "submission_type": "Phase I: prediction/result files for public leaderboard evaluation; Phase II: Docker containers for shortlisted-team final evaluation",
+      "platform": "Hugging Face Space; OpenReview methods report",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": [
+        "classification",
+        "localization",
+        "captioning",
+        "skill assessment"
+      ],
+      "phases": [
+        {
+          "phase": "Phase I: public leaderboard evaluation",
+          "eligible_participants": "Participants",
+          "scoring_submission": "Prediction/result files",
+          "inference_executor": "Participants",
+          "data_model_flow": "data-to-model"
+        },
+        {
+          "phase": "Phase II: final evaluation",
+          "eligible_participants": "Shortlisted teams",
+          "scoring_submission": "Docker containers",
+          "inference_executor": "Evaluation side",
+          "test_data": "Held-out final test data, per existing dataset-card evidence",
+          "data_model_flow": "model-to-data"
+        }
+      ],
+      "scoring_submission_review": {
+        "basis": "2026-10-25 user-confirmed phase assignment: Phase I predictions; Phase II finalist Docker; see data/medvidu_phase_20261025/user_confirmation.json. Existing public sources retained; no new independent web verification.",
+        "source_urls": [
+          "https://medvidu.github.io/challenge-guide.html",
+          "https://huggingface.co/datasets/UII-AI/MedVidU_ECCV2026_TrainVal/blob/main/README.md"
+        ]
+      }
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://medvidu.github.io/",
+      "grand_challenge": null,
+      "platform": "https://huggingface.co/spaces/UII-AI/MedVidBench-Leaderboard",
+      "dataset": "https://huggingface.co/datasets/UII-AI/MedVidU_ECCV2026_TrainVal/blob/main/README.md",
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "One ECCV workshop challenge is counted despite eight task families and eleven task variants in its development dataset.",
+      "The organizer workshop page and guide describe MedVidBench-test prediction submissions; the organizer dataset card describes a separate hidden MedVidU-test Docker final. These statements are preserved as a source conflict.",
+      "The MedVidBench dataset and CVPR 2026 MedGRPO paper are input resources and prior research, not separate CVPR 2026 challenge editions."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-20",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Documentary extraction date, not competition completion date.",
+      "last_verified": "2026-10-20",
+      "source_list": "2026 computer-vision-related conference challenge audit",
+      "source_index": null,
+      "sources": [
+        {
+          "type": "official ECCV workshop list",
+          "url": "https://eccv.ecva.net/Conferences/2026/Workshops",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "conference affiliation",
+            "workshop date"
+          ],
+          "basis": "ECCV lists the MedVidU workshop in its 2026 program."
+        },
+        {
+          "type": "organizer workshop and challenge website",
+          "url": "https://medvidu.github.io/",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "edition identity",
+            "tasks",
+            "deadline",
+            "awards session"
+          ],
+          "basis": "Organizer describes a formal MedVidU Challenge, task scope, and a challenge awards session."
+        },
+        {
+          "type": "organizer challenge guide",
+          "url": "https://medvidu.github.io/challenge-guide.html",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "access",
+            "submissions",
+            "MedVidBench leaderboard"
+          ],
+          "basis": "Guide requires manual training-data approval, prediction submission, and a methods report."
+        },
+        {
+          "type": "organizer dataset card",
+          "url": "https://huggingface.co/datasets/UII-AI/MedVidU_ECCV2026_TrainVal/blob/main/README.md",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "development scale",
+            "licence",
+            "test plan"
+          ],
+          "basis": "Dataset card lists 6,270 train/validation samples and describes a distinct hidden Docker final test, conflicting with the current workshop guide."
+        },
+        {
+          "type": "organizer benchmark leaderboard",
+          "url": "https://huggingface.co/spaces/UII-AI/MedVidBench-Leaderboard",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "visible benchmark interface"
+          ],
+          "basis": "MedVidBench leaderboard exists, but its relation to the claimed dedicated MedVidU final test is unresolved."
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Which test set and artifact actually determined the ECCV final ranking",
+        "Dated organizer final ranking and task-specific results",
+        "Number of active or submitting teams"
+      ],
+      "last_updated": "2026-10-20",
+      "field_evidence": {
+        "event.conference": {
+          "source_url": "https://medvidu.github.io/",
+          "reviewed_on": "2026-10-20",
+          "basis": "Official conference or workshop identifies this 2026 edition."
+        },
+        "assessment_evidence.status": {
+          "source_url": "https://medvidu.github.io/",
+          "reviewed_on": "2026-10-20",
+          "basis": "Workshop schedule includes challenge awards, but a dated, edition-specific final ranking or completed hidden-test report was not located; organizer guide and dataset card describe different final procedures."
+        }
+      }
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-20",
+      "final_assessment_status": "not_established_from_reviewed_sources",
+      "evidence_source_url": "https://medvidu.github.io/",
+      "basis": "Workshop schedule includes challenge awards, but a dated, edition-specific final ranking or completed hidden-test report was not located; organizer guide and dataset card describe different final procedures.",
+      "qualification": "Review of publicly available documents only; no algorithm was independently rerun."
+    },
+    "review_coding": {
+      "vision_language_objective": "documented",
+      "vision_language_objective_assessed": "not_established",
+      "report_generation_label": "excluded_surgical_captioning",
+      "foundation_model_objective": "not_coded_from_participant_model_choice",
+      "basis": "Video-language outputs are formal tasks; 2026-10-25 human confirmation resolves prediction-file public evaluation as Phase I and Docker final evaluation for shortlisted teams as Phase II. This does not independently verify task-level final scores.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid",
+      "task_families": [
+        "Classification",
+        "Localization",
+        "Quality / suitability assessment",
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "2026-10-25用户人工确认：同一多任务挑战赛的第一阶段提交预测文件并进行公开排行榜评估；第二阶段由入围团队提交Docker进行最终评估。两种提交方式按评估阶段区分，不是不同任务赛道。结合既有隐藏测试说明，整体流程归为hybrid。",
+        "phases": [
+          {
+            "phase": "Phase I: public leaderboard evaluation",
+            "eligible_participants": "Participants",
+            "scoring_submission": "Prediction/result files",
+            "inference_executor": "Participants",
+            "data_model_flow": "data-to-model"
+          },
+          {
+            "phase": "Phase II: final evaluation",
+            "eligible_participants": "Shortlisted teams",
+            "scoring_submission": "Docker containers",
+            "inference_executor": "Evaluation side",
+            "test_data": "Held-out final test data, per existing dataset-card evidence",
+            "data_model_flow": "model-to-data"
+          }
+        ],
+        "evidence_basis": "User-confirmed phase assignment combined with retained source evidence for held-out Docker testing"
+      },
+      "decision_history": [
+        "2026-10-25用户人工确认：同一多任务挑战赛的第一阶段提交预测文件并进行公开排行榜评估；第二阶段由入围团队提交Docker进行最终评估。两种提交方式按评估阶段区分，不是不同任务赛道。结合既有隐藏测试说明，整体流程归为hybrid。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/medvidu-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/medvidu_phase_20261025/user_confirmation.json",
+          "review_date": "2026-10-25",
+          "section": "Human-confirmed submission-phase assignment"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "data_model_flow_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Unknown",
+            "state": "Not established",
+            "rationale": "官方数据卡规定独立隐藏测试与Docker最终提交，而挑战指南仍写MedVidBench预测提交；需组织者明确二者的正式阶段关系。"
+          }
+        }
+      ]
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "Localization",
+        "Quality / suitability assessment",
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "Localization",
+        "Quality / suitability assessment",
+        "Report generation"
+      ],
+      "previous_emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "Localization": "Declared task output",
+        "Quality / suitability assessment": "Declared task output",
+        "Report generation": "Declared task output"
+      },
+      "note_zh": "竞赛任务包括安全/动作分类、质量技能评价、时空定位、caption和summary；工作坊广泛征稿主题不作为挑战赛额外任务。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://medvidu.github.io/",
+          "local_source": "_collection/task_objective_audit_20261025/sources/medvidu-2026_6232427c34.txt",
+          "sha256": "2fafd160a31d8f2b0360f3911eb533c85425d605aaa56268078cdcbdc7f49920"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Surgical field"
+          ],
+          "note": "官方说明覆盖腹腔镜、开放/机器人手术与护理视频；统一记录操作场景，不由视频来源名称推断全部患者器官。"
+        },
+        "disease": {
+          "state": "Not established",
+          "value": [],
+          "note": "Previous disease coding retained; not reclassified in this audit"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://medvidu.github.io/",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/6232427c34e91d74.json"
+        },
+        {
+          "url": "https://medvidu.github.io/challenge-guide.html",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/00a1f99540847c4e.json"
+        }
+      ],
+      "note_zh": "官方说明覆盖腹腔镜、开放/机器人手术与护理视频；统一记录操作场景，不由视频来源名称推断全部患者器官。",
+      "anatomical_scope": "Procedure context; full per-dataset anatomical distribution unavailable",
+      "remaining_detail": ""
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Endoscopy",
+        "Video"
+      ],
+      "harmonized_modalities": [
+        "Endoscopy",
+        "Optical procedure imaging"
+      ],
+      "video_format_documented": true,
+      "note": "Video retained as data-format attribute, not an acquisition modality. Official scope includes open surgery/nursing alongside endoscopy.",
+      "sources": [
+        {
+          "url": "https://medvidu.github.io/",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/6232427c34e91d74.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  }
+}

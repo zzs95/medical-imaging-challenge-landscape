@@ -1,0 +1,807 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "fets-2024",
+    "challenge_name": "FeTS 2024",
+    "full_name": "The Federated Tumor Segmentation (FeTS) Challenge 2024",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R41",
+      "official_programme_row_numbers": "26",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "IUPUI, USA",
+        "Intel Labs",
+        "IHU Strasbourg",
+        "Google",
+        "University of Zurich, Switzerland",
+        "UPENN, USA",
+        "TCIA, NCI, National Institutes of Health (NIH), USA",
+        "CBICA, UPENN, USA",
+        "University of Alabama at Birmingham, USA",
+        "University of Bern, Switzerland",
+        "University of Debrecen, Hungary",
+        "University of Pittsburgh Medical Center",
+        "MD Anderson Cancer Center, TX, USA",
+        "WUSM, USA",
+        "Heidelberg University, Germany",
+        "Tata Memorial Center, Ind"
+      ],
+      "registered_authors": [
+        {
+          "name": "Bakas, Spyridon",
+          "affiliation": "IUPUI, USA"
+        },
+        {
+          "name": "Linardos, Akis",
+          "affiliation": "IUPUI, USA"
+        },
+        {
+          "name": "Pati, Sarthak",
+          "affiliation": "IUPUI, USA"
+        },
+        {
+          "name": "Baid, Ujjwal",
+          "affiliation": "IUPUI, USA"
+        },
+        {
+          "name": "Sheller, Micah",
+          "affiliation": "Intel Labs"
+        },
+        {
+          "name": "Edwards, Brandon",
+          "affiliation": "Intel Labs"
+        },
+        {
+          "name": "Karargyris, Alexandros",
+          "affiliation": "IHU Strasbourg"
+        },
+        {
+          "name": "Mattson, Peter",
+          "affiliation": "Google"
+        },
+        {
+          "name": "Menze, Bjoern",
+          "affiliation": "University of Zurich, Switzerland"
+        },
+        {
+          "name": "Bilello, Michel",
+          "affiliation": "UPENN, USA"
+        },
+        {
+          "name": "Mohan, Suyash",
+          "affiliation": "UPENN, USA"
+        },
+        {
+          "name": "Freymann, John B.",
+          "affiliation": "TCIA, NCI, National Institutes of Health (NIH), USA"
+        },
+        {
+          "name": "Kirby, Justin S.",
+          "affiliation": "TCIA, NCI, National Institutes of Health (NIH), USA"
+        },
+        {
+          "name": "Davatzikos, Christos",
+          "affiliation": "CBICA, UPENN, USA"
+        },
+        {
+          "name": "Fathallah-Shaykh, Hassan",
+          "affiliation": "University of Alabama at Birmingham, USA"
+        },
+        {
+          "name": "Wiest, Roland",
+          "affiliation": "University of Bern, Switzerland"
+        },
+        {
+          "name": "Jakab, Andras",
+          "affiliation": "University of Debrecen, Hungary"
+        },
+        {
+          "name": "Colen, Rivka R.",
+          "affiliation": "University of Pittsburgh Medical Center"
+        },
+        {
+          "name": "Kotrotsou, Aikaterini",
+          "affiliation": "MD Anderson Cancer Center, TX, USA"
+        },
+        {
+          "name": "Marcus, Daniel",
+          "affiliation": "WUSM, USA"
+        },
+        {
+          "name": "Milchenko, Mikhail",
+          "affiliation": "WUSM, USA"
+        },
+        {
+          "name": "Nazeri, Arash",
+          "affiliation": "WUSM, USA"
+        },
+        {
+          "name": "Weber, Marc-Andre",
+          "affiliation": "Heidelberg University, Germany"
+        },
+        {
+          "name": "Mahajan, Abhishek",
+          "affiliation": "Tata Memorial Center, Ind"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Glioma",
+        "Brain tumor subregions"
+      ],
+      "diseases": [
+        "Glioma"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Innovative Federated Learning Aggregation Methods",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990499",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/The Federated Tumor Segmentation (FeTS) Challenge.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990499",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/The Federated Tumor Segmentation (FeTS) Challenge.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990499",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/The Federated Tumor Segmentation (FeTS) Challenge.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Ambiguous",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY; CC BY-NC (conditional non-TCIA subsets). 当届 FeTS 提案列 CC BY，非 TCIA 来源可能另加 CC BY-NC；保留来源差异，不赋予全数据统一商业使用权限。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990499",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/The Federated Tumor Segmentation (FeTS) Challenge.pdf"
+      },
+      "review_status": "Reviewed 2026-10-25; access completion",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "2024 data",
+          "category": "Approval mechanism unresolved",
+          "access_steps": [
+            "Challenge registration",
+            "Data Access form",
+            "Accept emailed team invitation"
+          ],
+          "manual_review": null
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990499",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/The Federated Tumor Segmentation (FeTS) Challenge.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990499",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/The Federated Tumor Segmentation (FeTS) Challenge.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990499",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/The Federated Tumor Segmentation (FeTS) Challenge.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nDice Similarity Coefficient (DSC), 95% Hausdorff distance (HD), - per lesion evaluation.\nCommunication/Budget time provided to the participants, defined as the product of bytes sent/received\nmultiplied by the number of federated rounds.\nSensitivity, Specificity, Precision\n\n\n\n\f                              The Federated Tumor Segmentation (FeTS) Challenge 2024\n\n\n\nThe regions evaluated using these metrics describe the whole tumor, the tumor core, and the enhancing tumor.\nNote that the tumor core includes the part of the tumor that is typically resected (i.e., enhancing, non-enhancing,\nand necrotic tumor), and the whole tumor describes all tumor sub-regions (i.e., tumor core and edema/invasion).\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nIn terms of the assessed and evaluated tumor sub-regions:\ni) the enhancing tumor describes the regions of active tumor and based on this, clinical practice characterizes the\nextent of resection.\nii) the tumor core (including necrosis) describes what is typically resected during a surgical procedure.\niii) the whole tumor as it defines the whole extent of the tumor (radiographically defined by the abnormal\nhyperintense\nT2-FLAIR signal), including the peritumoral edematous tissue and highly infiltrated area.\nIn terms of evaluation metrics we use:\ni) the Dice Similarity Coefficient, which is commonly used in the assessment of segmentation performance,\nii) the 95% Hausdorff distance as opposed to standard HD, in order to avoid outliers having too much weight,\niii) The budget will capture the communication cost for each algorithm\niv) Sensitivity and Specificity to determine whether an algorithm has the tendency to over- or undersegment.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nFor ranking of multidimensional outcomes (or metrics), for each team, we will compute the summation of their\nranks across the average of the 7 metrics described above as a univariate overall summary measure. This\nmeasure will decide the overall ranking for each specific team. To visualize the results in an intuitive fashion, we\npropose to visualize the outcome via an augmented version of radar plot [8].\nNotably, since all teams are ranked per patient, whereas the communication cost is only accounted once for the\ncomplete training phase, the communication cost will be weighted according to the number of testing subjects in\norder to give it equal importance to the quality of the tumor segmentations.\n[8] Duan R, Tong J, Lin L, Levine LD, Sammel MD, Stoddard J, Li T, Schmid CH, Chu H, Chen Y. PALM:\nPatientcentered\nTreatment Ranking via Large-scale Multivariate Network Meta-analysis. medRxiv. 2020 Jan 1\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nIf an algorithm fails to produce a result metric for a specific test case, this metric will be set to its worst possible\nvalue (0 for the DSC and the image diagonal for the HD).\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nFollowing discussions with the biostatisticians involved in the design of this challenge (Dr Kun Huang - Chair of\nDept of Biostatistics, IU), and also while considering transparency and fairness to the participants."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Prediction files (validation); aggregation code and model weights (final)",
+      "platform": "Synapse",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "The participants are required to send the output of their methods to the evaluation platform for the scoring to occur during the training and the validation phases. At the end of the validation phase, the participants are asked to identify the method they would like to evaluate in the final testing/ranking phase. To facilitate this ranking, the participants will be requested to submit to the organizers: 1. their aggregation algorithm, and 2. the weights of the selected model. The organizers will then confirm the results that the participants will be reporting during the validation phase, and those that match will then be evaluated by the organizers in a hidden testing dataset. This will enable The Federated Tumor Segmentation (FeTS) Challenge 2024 confirmation of reproducibility and comparison with results obtained by algorithms trained on pooled datasets, as well as other FL aggregation algorithms, thereby maximizing the benefit towards solving the problem of federated learning for tumor segmentation. We appreciate that this configuration might be considered restrictive to specific programming frameworks, and we are working on making this submission as inclusive as we can in terms of used programming languages or tools. Specifically, we are in open discussions with numerous developer teams of open-source FL libraries, towards writing a common set of instructions to enable the use of these frameworks by the challenge participants. Notably, Docker or other containerization technology will probably not be available due to IT restrictions in the federation of participating clinical sites. During the training and validation phases, the participants will have the chance to test the functionality of their submission through the FeTS platform (which will provide the implementation of the evaluation metrics). The aggregation algorithm requirements, specifications, and examples will be described in: miccai2024.fets.ai. The organizers will provide to all participants a code package comprising a complete framework solution for federated training on the provided multi-institutional data. This code package will comprise 1) a challenge-specific adapter layer (utilizing the FeTS platform including OpenFL as the backend library), and 2) instructions on how to run a FL simulation on a single system. Furthermore, specific instructions will be given to the participants on the parts/functions that they would need to alter the federated algorithm in the following ways: 1. The aggregation function used to fuse the collaborator model updates. 2. Which collaborators are chosen to train in each federated round. 3. The training parameters for each collaborator for each federated round. Each of these functions will have a complete default implementation, such that participants can choose which aspects they want to explore. These functions do not relate to data loading, so participants who stay \"in-bounds\" should not have to worry about direct data leakage. When participants submit their implementations, they will only include the implementations of the updated functions. They must not override any other parts of the base package at runtime. This will reduce the risk that they either accidentally or intentionally leak data across sites. It will also simplify manual inspection of submissions after the validation phase when all top-ranking participants (from the validation phase) will have their training reproduced (by us) using their code submission. Specifically, when reproducing a participant's results, we will start with a clean copy of the base package, then overwrite only these specific code files from that participant. This reproduction run will ensure only the specified functions were modified. In cases where the participant's reported results differ significantly* from our replicated results, we will investigate the cause, and if we find that the participant violated the rules of the competition, they may be disqualified. We reserve the right to determine an honest mistake was made and allow the participant to resubmit. *we will determine this exact margin and include it in the rules for the participants. We may not be able to ensure completely deterministic runs on all platforms.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10990499",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/The Federated Tumor Segmentation (FeTS) Challenge.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10990499",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/The Federated Tumor Segmentation (FeTS) Challenge.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10990499"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://www.synapse.org/fets2024",
+      "registration": "https://doi.org/10.5281/zenodo.10990499",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10990499",
+          "resolved_record_id": 10990500,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/The Federated Tumor Segmentation (FeTS) Challenge.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/The Federated Tumor Segmentation (FeTS) Challenge.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://www.synapse.org/fets2024",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/bbfaa548c41a9429.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "FeTS 2024"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Ambiguous",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Ambiguous",
+        "state": "Ambiguous",
+        "rationale": "2024-07-26 历史 Wiki：注册、与2022相同数据表、5–10分钟邮件邀请及团队权限；保留授权机制未明确，不覆盖用户对2022人工审批的确认。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "2024 data",
+            "category": "Approval mechanism unresolved",
+            "access_steps": [
+              "Challenge registration",
+              "Data Access form",
+              "Accept emailed team invitation"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "Official edition sources and explicit access procedures; temporal/platform qualifications retained",
+        "confidence": "High",
+        "source_urls": [
+          "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn54079892/wiki2/626854?wikiVersion=14"
+        ],
+        "review_date": "2026-10-25"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990499",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990499",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. The participants are required to send the output of their methods to the evaluation platform for the scoring to occur during the trainin [...] n set of instructions to enable the use of these frameworks by the challenge participants. Notably, Docker or other containerization technology will probably not be available due to IT restrictions in the federation of participating clinical sites. During the training and validation phases, the participants will have the chance to test the functionality of their submission through the FeTS platform (which will provide the [...] l provide to all participants a code package comprising a complete framework solution for federated training on the provided multi-institutional data. This code package will comprise 1) a challenge-specific adapter layer (utilizing the FeTS platform including OpenFL as the backend library), and 2) instructions on how to run a FL simulation on a single system. Furthermore, specific instructions will be given to the part"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990499",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results - 1 April 2024: Registration opens & Training and Validation data is released Participants will be able to register for the challenge in synapse.org, from April 1, 2024 until the short paper submission deadline at July 31, 2024. Data will also be made available for training (with ground truth labels) and validation (without ground truth labels). - 1 July 2024: Submission of 1) short papers reporting method & pre [...]  code & aggregated model.* *With regards to point 2, there is a possibility we will instead ask for containers instead of source code this year. We will update the synapse site accordingly in that case. - 05 July - 12 August 2024: Evaluation on testing data (by the organizers - only for participants with submitted papers). - 18 August 2024: Contacting top performing methods for preparing slides for oral pr"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990499",
+          "excerpt": ""
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/bbfaa548c41a9429.json",
+          "url": "https://www.synapse.org/fets2024",
+          "excerpt": "napse Does Synapse is the platform Sage Bionetworks uses to make biomedical research data findable, accessible, interoperable, and reusable (FAIR). Researchers, clinicians, and data scientists use Synapse to: Share large biomedical datasets across institutions, with appropriate access controls, data-use agreements, and governance. Run reproducible analyses on shared data with documented provenance. Coordinate consortium science across disease areas including Alzheimer's disease, neurofibromatosis, ALS, rare cancers, and others. Power public-facing knowledge portals such as the AD Knowledge Portal, the NF Data Portal, and the ALS Knowledge Portal. Nonprofit Identity Sage Bionetworks A 501(c)(3) nonprofit research organization EIN: 26-4489946 Seattle, Washington, USA sagebionetworks.org Trust Center — Terms of Service, Privacy Policy, f [...] ernance documents Sage Bionetworks — Mission, vision, and current work IRS Form 990 filings (via ProPublica Nonprofit Explorer) Synapse documentation and help Synapse Home crawl link This static content is provided for search engines and users with JavaScript disabled. For the full Synapse experience, please enable JavaScript in your browser. FeTS 2024 Challenge page is loading…"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/fets-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://www.synapse.org/Synapse%3Asyn54079892/discussion/threadId%3D10921",
+          "local_source": "_collection/access_backfill_round3_20261024/sources/fets2024_forum.json",
+          "review_date": "2026-10-24",
+          "section": "Round 3 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/88e9804d1a5ae8c0.json",
+          "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn54079892/wiki2/626854?wikiVersion=14",
+          "section": "Development access follow-up 2026-10-25"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-24 round 3: 当届论坛确认注册、数据表格及邮件团队邀请；与2022共用数据不证明准入机制也相同，是否人工审批仍未知。",
+        "2026-10-25 access completion: 2024-07-26 历史 Wiki：注册、与2022相同数据表、5–10分钟邮件邀请及团队权限；保留授权机制未明确，不覆盖用户对2022人工审批的确认。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "官网参与页仍指向FeTS2021；缺少2024年特定的数据申请规则。"
+          }
+        },
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Ambiguous",
+            "state": "Ambiguous",
+            "rationale": "当届论坛确认注册、数据表格及邮件团队邀请；与2022共用数据不证明准入机制也相同，是否人工审批仍未知。",
+            "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+            "access_by_scope": [
+              {
+                "scope": "2024 data",
+                "category": "Approval mechanism unresolved",
+                "access_steps": [
+                  "Challenge registration",
+                  "Data Access form",
+                  "Accept emailed team invitation"
+                ],
+                "manual_review": null
+              }
+            ],
+            "evidence_basis": "Primary protocol / metadata checked",
+            "confidence": "High",
+            "source_urls": [
+              "https://www.synapse.org/Synapse%3Asyn54079892/discussion/threadId%3D10921"
+            ]
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Ambiguous",
+        "rationale": "2024-07-26 历史 Wiki：注册、与2022相同数据表、5–10分钟邮件邀请及团队权限；保留授权机制未明确，不覆盖用户对2022人工审批的确认。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/88e9804d1a5ae8c0.json",
+          "_collection/access_completion_20261025/sources/bbfaa548c41a9429.json",
+          "_collection/access_completion_20261025/sources/6cdf003ea489e013.json",
+          "_collection/access_completion_20261025/sources/f668ff3e7714719c.json"
+        ]
+      }
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 1251,
+              "unit": "patients",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 219,
+              "unit": "patients",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 570,
+              "unit": "patients",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "United States",
+              "Germany",
+              "Switzerland",
+              "Hungary",
+              "Italy",
+              "India"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "2024 protocol explicitly reuses 2022 / BraTS2021 data; not inferred from series name.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10990499",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://www.synapse.org/fets2024",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/bbfaa548c41a9429.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/fets-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Glioma",
+        "Brain tumor subregions"
+      ],
+      "specific_diseases": [
+        "Glioma"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990499"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/fets-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY",
+        "CC BY-NC (conditional non-TCIA subsets)"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届 FeTS 提案列 CC BY，非 TCIA 来源可能另加 CC BY-NC；保留来源差异，不赋予全数据统一商业使用权限。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY. Additional comments: CC-BY, but if any of the non-TCIA contributors object to this license, the specific subset of the BraTS data will be released under a CC-BY-NC license.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10990499"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10990499"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/fets-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "United States",
+                  "Germany",
+                  "Switzerland",
+                  "Hungary",
+                  "Italy",
+                  "India"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10990499",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R41/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://www.synapse.org/fets2024",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/bbfaa548c41a9429.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/fets-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

@@ -1,0 +1,831 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "surgvu-2026",
+    "challenge_name": "Surgical Visual Understanding 2026",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "EndoVis 2026",
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Surgical video"
+      ],
+      "submodality": [
+        "Da Vinci endoscopic training videos"
+      ],
+      "body_region": [
+        "Surgical field"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Robotic tools"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Detection",
+      "secondary_task_families": [
+        "Visual Question Answering"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Tool classification and localization",
+          "task_family": "Detection",
+          "task_subtype": "Bounding-box detection",
+          "input": [
+            "Video frames"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Tool class and bounding box"
+          ],
+          "granularity": "frame",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Surgical visual question answering",
+          "task_family": "Visual Question Answering",
+          "task_subtype": "Video VQA",
+          "input": [
+            "30-second surgical clip",
+            "Question"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "One text answer"
+          ],
+          "granularity": "clip",
+          "clinical_goal": null
+        }
+      ],
+      "task_families": [
+        "Detection",
+        "VQA / multimodal QA"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Detection": "Declared task output",
+        "VQA / multimodal QA": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": true,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": true,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "Robot-assisted surgical training exercises",
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 280,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "720p videos at 60 fps",
+        "Noisy installed-tool presence labels",
+        "Eight surgical task labels",
+        "Small bounding-box-labeled validation set"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "train_unit": "Long videos from 155 training sessions; more than 840 hours and 18 million frames."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "SurgVU 2026 signed data-use agreement. 当届签署协议全文已取得：数据限比赛，公开发布前禁止转交、商业使用及另行发表；发表时间另受挑战结果投稿节点约束。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; round 2",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "2026 competition data",
+          "category": "Individual authorization",
+          "access_steps": [
+            "Members request to join",
+            "Lead emails agreement",
+            "Members accepted",
+            "Restricted download page"
+          ],
+          "manual_review": true
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "COCO mAP at IoU 0.50:0.05:0.95"
+          ],
+          "ranking": "Descending COCO mAP."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "BERTScore F1 (roberta-large)"
+          ],
+          "ranking": "For each question take maximum BERTScore-F1 against five references; average across questions. Official prose specifies baseline rescaling."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 79,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Category 1 - Prelim Phase",
+            "submission_count": 58
+          },
+          {
+            "official_phase_name": "Category 2 - Prelim Phase",
+            "submission_count": 97
+          },
+          {
+            "official_phase_name": "Category 2 - Final Phase",
+            "submission_count": 45
+          },
+          {
+            "official_phase_name": "Category 1 - Final Phase",
+            "submission_count": 37
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://surgvu26.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Task 1 predicts tool boxes/classes; generic homepage keypoint language is not treated as a scored keypoint task. 2026 VQA uses BERTScore, replacing 2025 BLEU.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/important-dates/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-28fc9fabaa93.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/surgvu26/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-32dd9838d587.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-3421abcfc757.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-62b4c23f9628.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/organizing-committee/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-6b34ec0db1e9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/submission-instructions/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-6d66dbc2b6e3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/results/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-785b64d8e65d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/evaluation-criteria/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-7ab03b693641.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/previous-challenges-resources/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-7e0d0e8a34ee.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://surgvu26.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-8482a82fbc37.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/data-description/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-a85cba5dca2a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/getting-started/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-c3cde76642d7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/challenge-categories/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-e54175c9e0c4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/challenge-guidelines/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-f3e6c57da6da.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://surgvu26.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/14-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset: final held-out sizes and licensing need verification.",
+        "evaluation: sample snippet averages reference comparisons, contrary to stated maximum; final evaluator must confirm.",
+        "submission: compute constraints and external-data policy not fully verified."
+      ],
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/surgvu-2026.json",
+          "_collection/verification_20261003/literature_context/surgvu-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "2026届Getting Started独立说明：团队负责人邮件提交协议，成员获准加入后，完成注册步骤才可下载数据。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "2026 competition data",
+            "category": "Individual authorization",
+            "access_steps": [
+              "Members request to join",
+              "Lead emails agreement",
+              "Members accepted",
+              "Restricted download page"
+            ],
+            "manual_review": true
+          }
+        ],
+        "evidence_basis": "Primary protocol / metadata checked",
+        "confidence": "High",
+        "source_urls": [
+          "https://surgvu26.grand-challenge.org/getting-started/"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-24 round 2: 2026届Getting Started独立说明：团队负责人邮件提交协议，成员获准加入后，完成注册步骤才可下载数据。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/surgvu-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/getting-started/",
+          "local_source": "_collection/access_backfill_round2_20261024/sources/c3cde76642d70ed7.json",
+          "review_date": "2026-10-24",
+          "section": "Round 2 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round2_20261024/user_review_summary.json",
+          "section": "User-supplied round 2 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "2",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid",
+      "task_families": [
+        "Detection",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Detection",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "previous_task_families": [
+        "Detection",
+        "VQA / multimodal QA"
+      ],
+      "previous_emerging_objectives": [
+        "VLM"
+      ],
+      "task_roles": {
+        "Detection": "Declared task output",
+        "VQA / multimodal QA": "Declared task output"
+      },
+      "note_zh": "保留工具检测和 VQA；评估规则支持框 mAP 与问答评分，没有独立关键点任务证据。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://surgvu26.grand-challenge.org/surgvu26/",
+          "local_source": "_collection/sources/14-32dd9838d587.json",
+          "sha256": "eff18dad7f95501f60cf693c3777693fa94c16ddac433df23d18eba06c284280"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/",
+          "local_source": "_collection/sources/14-62b4c23f9628.json",
+          "sha256": "2aab91bf11b10b390047df4bc7397a617a7092e7ef90edcda522616aa3a92b26"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/organizing-committee/",
+          "local_source": "_collection/sources/14-6b34ec0db1e9.json",
+          "sha256": "9b44e8217c9fbe91f1520dffc28aedaafc3086e7bba1645a8c1550dda2b24017"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/submission-instructions/",
+          "local_source": "_collection/sources/14-6d66dbc2b6e3.json",
+          "sha256": "99e687054800d937bcd59ba043368e9acacc34945c7c008d0bce7cfa3ef83395"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/results/",
+          "local_source": "_collection/sources/14-785b64d8e65d.json",
+          "sha256": "c3972e8d36ae9a9c666e38258a193890b7d760a47b9b974cbbde7d489ff7e56f"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/evaluation-criteria/",
+          "local_source": "_collection/sources/14-7ab03b693641.json",
+          "sha256": "cba19857bdf569ed4ee7252fdeacfb02e9876e01d0bcea012e1d36be518c6164"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/previous-challenges-resources/",
+          "local_source": "_collection/sources/14-7e0d0e8a34ee.json",
+          "sha256": "4c7b6aaacb354f8e61acb76debabe6f59716409998cb9f9de6a5362785336ce0"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/data-description/",
+          "local_source": "_collection/sources/14-a85cba5dca2a.json",
+          "sha256": "83548559649715d7c02ef9b61378e913718245c87fe8c686fdd542bced874e0a"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/getting-started/",
+          "local_source": "_collection/sources/14-c3cde76642d7.json",
+          "sha256": "e99dac0e54cedc712a5f9675d583625558f72d77f64562d4c99f2bd7f93cd841"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/challenge-categories/",
+          "local_source": "_collection/sources/14-e54175c9e0c4.json",
+          "sha256": "6ef9f07738233c0d2b5be33394f40d867c65aec3625d90148ab64355cb70c260"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/challenge-guidelines/",
+          "local_source": "_collection/sources/14-f3e6c57da6da.json",
+          "sha256": "7a58a421f5156f9f59aca01dadbf052fac20c10531ce6ea4062439301908f262"
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/",
+          "local_source": "_collection/sources/14-overview.json",
+          "sha256": "2aab91bf11b10b390047df4bc7397a617a7092e7ef90edcda522616aa3a92b26"
+        }
+      ]
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Surgical video"
+      ],
+      "harmonized_modalities": [
+        "Endoscopy"
+      ],
+      "video_format_documented": true,
+      "note": "Classified using documented acquisition context; video format retained.",
+      "sources": [
+        {
+          "url": "https://surgvu26.grand-challenge.org/data-description/",
+          "local_source": "_collection/sources/14-a85cba5dca2a.json"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "SurgVU 2026 signed data-use agreement"
+      ],
+      "scope": "Named source/development data or edition-specific signed agreement",
+      "agreement_required": true,
+      "summary_zh": "当届签署协议全文已取得：数据限比赛，公开发布前禁止转交、商业使用及另行发表；发表时间另受挑战结果投稿节点约束。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "By registering for the SurgVU 2026 sub-challenge, each team member agrees:\n\n     1.   That you intend to participate in the challenge using the provided dataset\n\n     2.   To use the provided data only in the scope of the challenge and neither pass it on to a third party nor use it for any\n          publication or for commercial uses until the dataset is released publicly.\n\n     3.   To upload results as described in the submission guidelines of the sub-challenges before the deadline including a final\n          report.\n\n     4.   Each team member is only a member of this team and no other (even if you are a team of one).\n\n     5.   That the results of the participating teams will be evaluated by the organizers using grand-challenge automated\n          evaluation system and presented during EndoVis challenge at MICCAI.\n\n     6.   That the team submission will only be considered successful if the final report, github codebase and pre-recorded\n          presentation video is complete and submitted within the deadline.\n\n     7.   That only the complete submissions are eligible for cash prizes.\n\n     8.   That by submitting the results to a challenge, participants understand and agree to include those results to allow\n          method comparison. This may be used to prepare a joint publication led by sub-challenge organizer(s). The sub-\n          challenge organizers will determine authorship order for the paper, but each participating team will have at least one\n          contributing co-author in the author list.\n\n     9.   That the data used for SurgVU 2026 can only be used for publication purposes after the results of this challenge have\n          been submitted for publication.\n\n     10. That only those individuals listed below will be considered official team members, and eligible for challenge awards\n          (including authorship on challenge publications, cash prizes, etc.)\n\n\nBy signing on behalf of each team member, I declare that I understand and agree to the terms and conditions described above.\n\n\nName:\n\nGrand-challenge team lead username:\n\nGrand-challenge team name (proposed):\n\nGrand-challenge team member usernames (if more than one team member):\n\nInstitution:\n\nDate:\n\nSignature:\n\f",
+          "source": {
+            "url": "https://drive.google.com/uc?export=download&id=1ry29hB-YGbLfeN73EfrpaNTmmYR5CbPZ",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/8a5db16cedfe1364.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://drive.google.com/uc?export=download&id=1ry29hB-YGbLfeN73EfrpaNTmmYR5CbPZ",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/8a5db16cedfe1364.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://surgvu26.grand-challenge.org/data-description/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/a85cba5dca2a7bbd.json",
+          "status": 200
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/62b4c23f9628a5b6.json",
+          "status": 200
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/prizes/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/3421abcfc757d032.json",
+          "status": 200
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/results/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/785b64d8e65d41c4.json",
+          "status": 200
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/data-download/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/d4389f704b642e38.json",
+          "status": 403
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/getting-started/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/c3cde76642d70ed7.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://surgvu26.grand-challenge.org/challenge-guidelines/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/f3e6c57da6daba71.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://drive.google.com/uc?export=download&id=1ry29hB-YGbLfeN73EfrpaNTmmYR5CbPZ",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/8a5db16cedfe1364.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Surgical field"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "2026独立数据页说明为达芬奇系统操作练习，器械检测与问答不涉及疾病分类。",
+      "sources": [
+        {
+          "url": "https://surgvu26.grand-challenge.org/data-description/",
+          "local_source": "_collection/sources/14-a85cba5dca2a.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "2026独立数据页说明为达芬奇系统操作练习，器械检测与问答不涉及疾病分类。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2026/surgvu-2026.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 280,
+              "unit": "videos",
+              "canonical_field": "dataset.population.train_count",
+              "scope": "Long videos from 155 sessions; videos and sessions are not pooled",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [],
+          "source_urls": "https://surgvu26.grand-challenge.org/important-dates/; https://surgvu26.grand-challenge.org/surgvu26/; https://surgvu26.grand-challenge.org/prizes/; https://surgvu26.grand-challenge.org/; https://surgvu26.grand-challenge.org/organizing-committee/; https://surgvu26.grand-challenge.org/submission-instructions/; https://surgvu26.grand-challenge.org/results/; https://surgvu26.grand-challenge.org/evaluation-criteria/; https://surgvu26.grand-challenge.org/previous-challenges-resources/; https://surgvu26.grand-challenge.org/challenge/statistics/; https://surgvu26.grand-challenge.org/data-description/; https://surgvu26.grand-challenge.org/getting-started/; https://surgvu26.grand-challenge.org/challenge-categories/; https://surgvu26.grand-challenge.org/challenge-guidelines/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

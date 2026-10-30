@@ -1,0 +1,538 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "atm26-2026",
+    "challenge_name": "Airway Tree Modeling 26",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "Endoscopy"
+      ],
+      "submodality": [
+        "Chest CT",
+        "Bronchoscopy video"
+      ],
+      "body_region": [
+        "Lungs",
+        "Airways"
+      ],
+      "organ_system": [
+        "Respiratory system"
+      ],
+      "organs_or_structures": [
+        "Trachea",
+        "Bronchi"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Classification"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Binary airway segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "Semantic segmentation",
+          "input": [
+            "Chest CT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Binary airway tree"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Branch-wise anatomical labeling",
+          "task_family": "Segmentation",
+          "task_subtype": "Multi-class airway labeling",
+          "input": [
+            "Chest CT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Anatomically labeled airway tree"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Bronchoscopy landmark recognition (announced)",
+          "task_family": "Classification",
+          "task_subtype": "Classification",
+          "input": [
+            "Monocular bronchoscopy frames"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Airway branch/location label"
+          ],
+          "granularity": "frame",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "Chest CT",
+        "Airway masks",
+        "Anatomical airway-branch labels",
+        "Monocular bronchoscopy video for Track 3"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA according to official preregistration; exact version not specified.",
+      "access_after_challenge": null,
+      "access_scope": "training data access as stated in the cited edition source",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Tree length detected rate",
+            "Branch detection rate",
+            "DSC",
+            "clDice",
+            "Betti-0 error"
+          ],
+          "ranking": "Mean position across metric-specific ranks in the preregistered design."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Branch accuracy",
+            "Branch F1",
+            "Subtree consistency",
+            "Topological distance",
+            "Tree accuracy"
+          ],
+          "ranking": "Mean metric-specific ranks; binary segmentation accuracy is descriptive only."
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Macro-F1",
+            "Frame accuracy",
+            "Temporal edit score",
+            "Tree accuracy"
+          ],
+          "ranking": "Preregistered mean metric-specific ranks."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 127,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Track-1 Sanity-check phase",
+            "submission_count": 97
+          },
+          {
+            "official_phase_name": "Track-2 Sanity-check phase",
+            "submission_count": 113
+          },
+          {
+            "official_phase_name": "Track-1 Validation phase",
+            "submission_count": 64
+          },
+          {
+            "official_phase_name": "Track-2 Validation phase",
+            "submission_count": 70
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://atm26.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Track 3 is announced as forthcoming on the homepage; its preregistered metrics do not establish that final Track 3 submissions took place. Dataset, evaluation and submission pages return HTTP 403.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://atm26.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/6-06b2833affd9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://atm26.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/6-5a2dae906655.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://atm26.grand-challenge.org/registration/",
+          "supports": [
+            "challenge context",
+            "data_access.access_scope",
+            "data_access.access_status"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/6-b396642687ef.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://atm26.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/6-d2cd6c54faae.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://atm26.grand-challenge.org/homepage/",
+          "supports": [
+            "task_profile",
+            "event",
+            "year",
+            "dataset"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/6-dd84d7deef9a.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://atm26.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/6-f9a3a29fca69.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://atm26.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/6-overview.json"
+        },
+        {
+          "type": "official challenge preregistration",
+          "url": "https://zenodo.org/records/19731649",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "evaluation",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/6-proposal.txt"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset: current split sizes hidden behind restricted pages.",
+        "evaluation/task_profile: confirm final implemented metrics and whether Track 3 actually opened.",
+        "submission: final external-data policy and compute limits not accessible."
+      ],
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://atm26.grand-challenge.org/registration/",
+          "local_snapshot": "_collection/sources/6-b396642687ef.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://atm26.grand-challenge.org/registration/",
+          "local_snapshot": "_collection/sources/6-b396642687ef.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/atm26-2026.json",
+          "_collection/verification_20261003/literature_context/atm26-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "ATM26要求签署DUA、注册经审批后邮件发送下载链接。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "ATM26要求签署DUA、注册经审批后邮件发送下载链接。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/b396642687efc561.json",
+          "url": "https://atm26.grand-challenge.org/registration/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/atm26-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Same as ATM22. [1] The thoracic CT scans of the BAS dataset are selected from the LIDC-IDRI dataset. [2] Shanghai Chest Hospital",
+              "url": "https://zenodo.org/records/19731649",
+              "snapshot": "_collection/sources/6-proposal.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nSame as ATM22.\n[1] The thoracic CT scans of the BAS dataset are selected from the LIDC-IDRI dataset.\n[2] Shanghai Chest Hospital",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Shanghai Chest Hospital",
+              "url": "https://zenodo.org/records/19731649",
+              "snapshot": "_collection/sources/6-proposal.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nShanghai Chest Hospital",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

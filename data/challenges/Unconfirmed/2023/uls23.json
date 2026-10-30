@@ -1,0 +1,639 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "uls23",
+    "challenge_name": "Universal Lesion Segmentation Challenge '23",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "virtual_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "Joint MICCAI Workshop on Time-Series Data Analytics and Learning (MTSAIL) and Lesion Evaluation and Assessment with Follow-Up (LEAF)",
+        "relationship": "Challenge website launched as part of the joint workshop; challenge conducted virtually",
+        "proceedings": null
+      },
+      "conference_relationship_review": {
+        "review_date": "2026-10-21",
+        "conference_assignment": "MICCAI 2023",
+        "relationship": "Website launched as part of the joint MICCAI MTSAIL–LEAF workshop",
+        "status": "documented workshop association; MIDL connection limited to short-paper submission scheduling in reviewed sources",
+        "source_url": "https://uls23.grand-challenge.org/announcements/",
+        "timeline_url": "https://uls23.grand-challenge.org/timeline/",
+        "note_zh": "已核实官网 2023-10-15 公告：挑战网站作为 MICCAI MTSAIL–LEAF 联合工作坊活动的一部分发布，可记为 MICCAI 工作坊关联。官网时间线说明赛程考虑参赛者向 MIDL 2024 投稿短文，不能据此认定为 MIDL 主办或正式关联挑战。保留 2023 年一条记录，2024 年完成评价不重复计数。"
+      },
+      "website_launch_date": "2023-10-15",
+      "additional_conference_relationships": [
+        {
+          "conference": "MIDL 2024",
+          "relationship": "Schedule designed to enable participant short-paper submissions",
+          "formal_challenge_affiliation_confirmed": null,
+          "source_url": "https://uls23.grand-challenge.org/timeline/",
+          "note": "Submission opportunity does not establish accepted papers, endorsement or MIDL challenge hosting."
+        }
+      ]
+    },
+    "organizers": {
+      "institutions": [
+        "Radboudumc",
+        "Jeroen Bosch Ziekenhuis",
+        "National Institutes of Health"
+      ],
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Thorax",
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Lesions"
+      ],
+      "diseases": [
+        "Cancer"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Universal lesion segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "CT volume of interest centered on a previously identified lesion"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "3D lesion mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "input_volume_size": [
+        256,
+        256,
+        128
+      ]
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA 4.0. 六个官方训练数据包均列 CC BY-NC-SA 4.0；另一个基线权重包的 CC BY 不计作图像许可。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "External datasets and publicly pretrained medical or general-purpose models allowed with disclosure."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Sørensen–Dice coefficient",
+            "Long-axis error",
+            "Short-axis error"
+          ],
+          "ranking": "Mean Dice over test cases is the primary segmentation score; axis errors and consistency are additional evaluations."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "challenge_launch": "2023-10-15",
+      "training_data_release": "2023-10-29",
+      "final_submission_deadline": "2024-04-10"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 1144,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Development Phase (Limited Inference Time Models)",
+            "submission_count": 253
+          },
+          {
+            "official_phase_name": "Open Test Phase  (Limited Inference Time Models)",
+            "submission_count": 25
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://uls23.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official edition name is ULS23 despite 2024 final evaluation. MIDL24 short-paper opportunity does not establish conference hosting. Lesion-centered cropping provides upstream guidance; submitted methods themselves are fully automatic.",
+      "Official announcement dated 2023-10-30 reports fully supervised training data available and DeepLesion semi-supervised data expected later that day; earlier 2023-10-29 date was planned, not proof of completed release for all data."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://uls23.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/73-1a52b87a8347.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://uls23.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/73-2bec3e614de1.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://uls23.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/73-340e1ca0c643.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://uls23.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/73-3528cec84ffd.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://uls23.grand-challenge.org/evaluation-procedure/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/73-8d37d9a44b1c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://uls23.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/73-overview.json"
+        },
+        {
+          "type": "official challenge announcements",
+          "url": "https://uls23.grand-challenge.org/announcements/",
+          "retrieved_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/uls23_announcements_followup_20261021.json",
+          "supports": [
+            "event.conference",
+            "event.workshop",
+            "event.website_launch_date"
+          ],
+          "locations": "Announcements dated 2023-10-15 and 2023-10-30"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset page is access-restricted; verify split sizes, license and complete resource limits."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.center_count",
+          "clinical_domain.organ_system"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/uls23.json",
+          "_collection/verification_20261003/literature_context/uls23.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-21",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-21",
+          "scope": "User requested writing preceding documentary findings into the original challenge JSON",
+          "fields_updated": [
+            "event.conference_relationship_review"
+          ],
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/uls23.json",
+          "previous_sha256": "f4ccfda6b8a40c8d1e3c980b97385bbffca100aaa02f5630f6029c3ec922e4a1",
+          "previous_record_backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/canonical_followup_20261021_154948/Unconfirmed/2023/uls23.json",
+          "qualification": "Targeted documentary review; pending conference relationships remain unverified. No independent human double coding asserted. Aggregate outputs not rebuilt."
+        },
+        {
+          "date": "2026-10-21",
+          "fields_updated": [
+            "event.conference",
+            "event.workshop",
+            "event.conference_relationship_review",
+            "event.additional_conference_relationships"
+          ],
+          "previous_record_backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/uls23_affiliation_20261021_155615/uls23.canonical.json",
+          "previous_sha256": "2a4bcdce31b96f7eacb1c0975c31987d8ac7ad9e3e5e03ccfefffaba6b83d8a0",
+          "note": "Official announcement retrieved successfully; MIDL timeline checked in retained official snapshot _collection/sources/73-1a52b87a8347.json. Aggregate outputs not regenerated."
+        }
+      ]
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "ULS23官方GitHub提供公开训练标注及六部分Zenodo影像下载。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "ULS23官方GitHub提供公开训练标注及六部分Zenodo影像下载。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/51b7608d0617119f.json",
+          "url": "https://github.com/DIAGNijmegen/ULS23"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/uls23.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA 4.0"
+      ],
+      "scope": "Named public development/data release only; hidden evaluation rights not inferred",
+      "agreement_required": null,
+      "summary_zh": "六个官方训练数据包均列 CC BY-NC-SA 4.0；另一个基线权重包的 CC BY 不计作图像许可。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"The ULS23 Challenge Public Training Dataset\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2023-10-23\", \"license\": {\"id\": \"cc-by-nc-sa-4.0\"}, \"description\": \"<p>This dataset contains part of the imaging data for the <a href=\\\"https://uls23.grand-challenge.org/\\\">Universal Lesion Segmentation Challenge (ULS23).</a> It contains the lesion volumes-of-interest (VOI's) for the novel annotated data of this challenge. It consists of 750 lesions from the DeepLesion dataset, 744 bone and 124 pancreas lesions from the Radboudumc. Pancreas data was collected by Natália Alves, Megan Schuurmans and Henkjan Huisman. The annotations are made available through the <a href=\\\"https://github.com/MJJdG/ULS23\\\">Challenge repository on GitHub</a>.<br>&nbsp;</p><p>The full training dataset:</p><ul><li><a href=\\\"https://zenodo.org/records/10050960\\\">Part 2</a>: kits21, LIDC-IDRI, LiTS</li><li><a href=\\\"https://zenodo.org/records/10054306\\\">Part 3</a>: MDSC task 6/7/10, NIH-LN, CCC18</li><li><a href=\\\"https://zenodo.org/records/10054702\\\">Part 4</a>: DeepLesion</li><li><a href=\\\"https://zenodo.org/records/10057471\\\">Part 5</a>: DeepLesion</li><li><a href=\\\"https://zenodo.org/records/10056235\\\">Part 6</a>: DeepLesion</li></ul><p><br>The Universal Lesion Segmentation 2023 (ULS23) data is licensed under CC BY-NC-SA 4.0&nbsp;<br>&nbsp;</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/10035161",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/db298e6d192aed48.json"
+          }
+        },
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"The ULS23 Challenge Public Training Dataset Part 2\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2023-10-29\", \"license\": {\"id\": \"cc-by-nc-sa-4.0\"}, \"description\": \"<p>This dataset contains part of the imaging data for the <a href=\\\"https://uls23.grand-challenge.org/\\\">Universal Lesion Segmentation Challenge (ULS23).</a> It contains lesion volumes-of-interest (VOI's) for previously released data. It consists of 333 kidney lesions from the KiTS21 dataset, 2.246 lung lesion from LIDC-IDRI and 888 liver lesions from the LiTS challenge. The annotations are made available through the <a href=\\\"https://github.com/MJJdG/ULS23\\\">Challenge repository on GitHub</a>.<br><br>The Universal Lesion Segmentation 2023 (ULS23) data is licensed under CC BY-NC-SA 4.0&nbsp;</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/10050960",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/22eca8fa118b00be.json"
+          }
+        },
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"The ULS23 Challenge Public Training Dataset Part 3\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2023-10-30\", \"license\": {\"id\": \"cc-by-nc-sa-4.0\"}, \"description\": \"<p>This dataset contains part of the imaging data for the <a href=\\\"https://uls23.grand-challenge.org/\\\">Universal Lesion Segmentation Challenge (ULS23).</a> It contains lesion volumes-of-interest (VOI's) for previously released data. It consists of 76 lung lesions from the MDSC_Task06 dataset, 283 pancreas lesion from MDSC_Task07 and 133 colon lesions from MDSC_Task10, 558 abdominal lymph nodes, 379 mediastinal lymph nodes from the NIH-LN dataset. It also contains the weakly annotated CCC18 data, 1.211 lesions, and part of the DeepLesion dataset. The annotations are made available through the <a href=\\\"https://github.com/MJJdG/ULS23\\\">Challenge repository on GitHub</a>.<br><br>The Universal Lesion Segmentation 2023 (ULS23) data is licensed under CC BY-NC-SA 4.0&nbsp;</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/10054306",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/c18ed032d2209aa5.json"
+          }
+        },
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"The ULS23 Challenge Public Training Dataset Part 4\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2023-10-30\", \"license\": {\"id\": \"cc-by-nc-sa-4.0\"}, \"description\": \"<p>This dataset contains part of the imaging data for the <a href=\\\"https://uls23.grand-challenge.org/\\\">Universal Lesion Segmentation Challenge (ULS23).</a> It contains lesion volumes-of-interest (VOI's) for part of the weakly annotated DeepLesion data. The annotations are made available through the <a href=\\\"https://github.com/MJJdG/ULS23\\\">Challenge repository on GitHub</a>.<br><br>The Universal Lesion Segmentation 2023 (ULS23) data is licensed under CC BY-NC-SA 4.0&nbsp;</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/10054702",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/d54326a523471b2d.json"
+          }
+        },
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"The ULS23 Challenge Public Training Dataset Part 5\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2023-10-30\", \"license\": {\"id\": \"cc-by-nc-sa-4.0\"}, \"description\": \"<p>This dataset contains part of the imaging data for the <a href=\\\"https://uls23.grand-challenge.org/\\\">Universal Lesion Segmentation Challenge (ULS23).</a> It contains lesion volumes-of-interest (VOI's) for part of the weakly annotated DeepLesion data. The annotations are made available through the <a href=\\\"https://github.com/MJJdG/ULS23\\\">Challenge repository on GitHub</a>.<br><br>The Universal Lesion Segmentation 2023 (ULS23) data is licensed under CC BY-NC-SA 4.0&nbsp;</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/10055808",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/d1b7a539ecb2244f.json"
+          }
+        },
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"The ULS23 Challenge Public Training Dataset Part 6\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2023-10-30\", \"license\": {\"id\": \"cc-by-nc-sa-4.0\"}, \"description\": \"<p>This dataset contains part of the imaging data for the <a href=\\\"https://uls23.grand-challenge.org/\\\">Universal Lesion Segmentation Challenge (ULS23).</a> It contains lesion volumes-of-interest (VOI's) for part of the weakly annotated DeepLesion data. The annotations are made available through the <a href=\\\"https://github.com/MJJdG/ULS23\\\">Challenge repository on GitHub</a>.<br><br>The Universal Lesion Segmentation 2023 (ULS23) data is licensed under CC BY-NC-SA 4.0&nbsp;</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/10056235",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/dc56ff9d4a483e9c.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/10035161",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/db298e6d192aed48.json"
+        },
+        {
+          "url": "https://zenodo.org/api/records/10050960",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/22eca8fa118b00be.json"
+        },
+        {
+          "url": "https://zenodo.org/api/records/10054306",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/c18ed032d2209aa5.json"
+        },
+        {
+          "url": "https://zenodo.org/api/records/10054702",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/d54326a523471b2d.json"
+        },
+        {
+          "url": "https://zenodo.org/api/records/10055808",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/d1b7a539ecb2244f.json"
+        },
+        {
+          "url": "https://zenodo.org/api/records/10056235",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/dc56ff9d4a483e9c.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://github.com/DIAGNijmegen/ULS23",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/51b7608d0617119f.json",
+          "status": 200
+        },
+        {
+          "url": "https://uls23.grand-challenge.org/rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/3528cec84ffd0028.json",
+          "status": 200
+        },
+        {
+          "url": "https://uls23.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/2bec3e614de10d14.json",
+          "status": 200
+        },
+        {
+          "url": "https://uls23.grand-challenge.org/timeline/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1a52b87a83478147.json",
+          "status": 200
+        },
+        {
+          "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1e460fb35d79919e.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/api/records/10035161",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/db298e6d192aed48.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/10050960",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/22eca8fa118b00be.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/10054306",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/c18ed032d2209aa5.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/10054702",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/d54326a523471b2d.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/10055808",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/d1b7a539ecb2244f.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/10056235",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/dc56ff9d4a483e9c.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/10665106",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/966e9761ce435111.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

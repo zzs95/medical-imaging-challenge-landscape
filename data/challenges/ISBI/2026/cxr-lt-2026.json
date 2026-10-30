@@ -1,0 +1,497 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cxr-lt-2026",
+    "challenge_name": "CXR-LT 2026: Long-Tailed Multi-Label Chest X-ray Benchmark for Clinical AI",
+    "full_name": "CXR-LT 2026: Long-Tailed Multi-Label Chest X-ray Benchmark for Clinical AI",
+    "year": 2026,
+    "event": {
+      "conference": "ISBI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2026-04-11",
+      "location": {
+        "city": "London",
+        "country": "United Kingdom",
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "X-ray"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Chest"
+      ],
+      "organ_system": [
+        "Respiratory"
+      ],
+      "organs_or_structures": null,
+      "diseases": [
+        "Aortic atheromatosis",
+        "Cardiomegaly",
+        "Fracture",
+        "Vertebral degenerative changes",
+        "Emphysema",
+        "Bronchiectasis",
+        "Pneumothorax",
+        "Hernia"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": null,
+      "organ_system_coding_scope": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "In-distribution multi-label chest X-ray classification",
+          "task_family": "Classification",
+          "task_subtype": "multi-label classification",
+          "input": [
+            "chest X-rays"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "finding probabilities"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Zero-shot or out-of-distribution multi-label classification",
+          "task_family": "Classification",
+          "task_subtype": "multi-label classification",
+          "input": [
+            "chest X-rays"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "probabilities for unseen findings"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "X-ray"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "reported_quantities": [
+        {
+          "source_url": "https://rad-lt.github.io/CXR-LT-2026/",
+          "unit": "chest X-ray images",
+          "raw_text": "over 160,000",
+          "phase": "curated edition collection"
+        },
+        {
+          "source_url": "https://biomedicalimaging.org/2026/challenges/",
+          "unit": "X-rays",
+          "raw_text": "over 300,000 from MIMIC and MIDRC",
+          "phase": "conference program description"
+        }
+      ]
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "agreement-required",
+      "public_download": null,
+      "hosting": "PadChest images; challenge labels supplied after organizer review",
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": "Provided challenge labels must be deleted after the event according to organizer rules.",
+      "access_scope": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": null,
+        "submission_artifact": "predictions CSV plus code ZIP"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": null,
+        "policy": "Allowed excluding reserved development/test images and unseen Task 2 label supervision."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": true,
+      "platform": "CodaLab",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "macro-averaged mean average precision",
+            "AUC",
+            "F1"
+          ],
+          "ranking": "final test-phase macro-averaged mAP"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "macro-averaged mean average precision",
+            "AUC",
+            "F1"
+          ],
+          "ranking": "final test-phase macro-averaged mAP"
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "prediction CSV and source code ZIP",
+      "platform": "CodaLab",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": [
+        "finding probabilities"
+      ]
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://rad-lt.github.io/CXR-LT-2026/",
+      "grand_challenge": null,
+      "platform": "https://www.codabench.org/competitions/11470/",
+      "dataset": null,
+      "github": "https://github.com/CXR-LT/CXR-LT-2026",
+      "challenge_paper": null
+    },
+    "notes": [
+      "Edition is listed in the ISBI 2026 official challenge program; distinct from MICCAI 2026 FoundUS and earlier series editions.",
+      "Test images were distributed for prediction, but the source is inconsistent about the timing of test-label release; hidden-test-set status is left unclassified.",
+      "The dedicated website refers to CodaLab, while some task links point to Codabench. Platform implementation should be checked before harmonized platform counting."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-20",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date of documentary extraction, not image acquisition or challenge completion.",
+      "last_verified": "2026-10-20",
+      "source_list": "ISBI 2026 official challenge program addendum",
+      "source_index": 2,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://biomedicalimaging.org/2026/challenges/",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "edition identity",
+            "conference affiliation",
+            "task scope"
+          ],
+          "basis": "ISBI 2026 lists this edition in its challenge session."
+        },
+        {
+          "type": "organizer edition website",
+          "url": "https://rad-lt.github.io/CXR-LT-2026/",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "two tasks",
+            "data access",
+            "external data",
+            "submission",
+            "final leaderboards"
+          ],
+          "basis": "The edition page displays final Task 1 and Task 2 rankings and identifies PadChest as its image source."
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Conference abstract describes over 300,000 MIMIC/MIDRC X-rays, but the edition site describes over 160,000 PadChest images; dataset source and count need organizer reconciliation.",
+        "Organizer page gives conflicting test-phase dates in its Evaluation and Important dates sections.",
+        "Distinct patient-level test sample count"
+      ],
+      "last_updated": "2026-10-20",
+      "field_evidence": {
+        "event.conference": {
+          "source_url": "https://biomedicalimaging.org/2026/challenges/",
+          "reviewed_on": "2026-10-20",
+          "basis": "Named in the ISBI 2026 official challenge program."
+        },
+        "assessment_evidence.status": {
+          "source_url": "https://rad-lt.github.io/CXR-LT-2026/",
+          "reviewed_on": "2026-10-20",
+          "basis": "Organizer edition page publishes final test-phase leaderboards for both tasks."
+        }
+      }
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-20",
+      "final_assessment_status": "final_assessment_confirmed",
+      "evidence_source_url": "https://rad-lt.github.io/CXR-LT-2026/",
+      "basis": "Organizer edition page publishes final test-phase leaderboards for both tasks.",
+      "qualification": "Public-document evidence review only; conference date or planned deadline alone does not confirm a completed assessment."
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Chest"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cardiovascular",
+            "Degenerative",
+            "Trauma",
+            "Other"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Aortic atheromatosis",
+        "Cardiomegaly",
+        "Fracture",
+        "Vertebral degenerative changes",
+        "Emphysema",
+        "Bronchiectasis",
+        "Pneumothorax",
+        "Hernia"
+      ],
+      "disease_scope_note": "Verified training-label families; OOD findings also retained as evidence",
+      "disease_review_note": "以2026官方训练标签文件为准，补入心血管、退行性、创伤及其他胸部异常；不套用2023/2024标签，也不把Mass/Nodule视为癌症。",
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/RAD-LT/CXR-LT-2026/main/CXRLT-2026-TRAINING%20DATA/Train_CLASS.txt",
+          "local_source": "_collection/disease_followup_20261025/sources/Train_CLASS.txt.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "以2026官方训练标签文件为准，补入心血管、退行性、创伤及其他胸部异常；不套用2023/2024标签，也不把Mass/Nodule视为癌症。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/ISBI/2026/cxr-lt-2026.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "ISBI/2026/cxr-lt-2026.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Provided challenge labels must be deleted after the event according to organizer rules.",
+              "sources": [
+                {
+                  "type": "official conference program",
+                  "url": "https://biomedicalimaging.org/2026/challenges/",
+                  "retrieved_on": "2026-10-20",
+                  "local_snapshot": null,
+                  "supports": [
+                    "edition identity",
+                    "conference affiliation",
+                    "task scope"
+                  ],
+                  "basis": "ISBI 2026 lists this edition in its challenge session."
+                },
+                {
+                  "type": "organizer edition website",
+                  "url": "https://rad-lt.github.io/CXR-LT-2026/",
+                  "retrieved_on": "2026-10-20",
+                  "local_snapshot": null,
+                  "supports": [
+                    "two tasks",
+                    "data access",
+                    "external data",
+                    "submission",
+                    "final leaderboards"
+                  ],
+                  "basis": "The edition page displays final Task 1 and Task 2 rankings and identifies PadChest as its image source."
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Observed final leaderboard entries",
+              "source_path": "latex_sourcev2/data/challenge_field_review_20261027/sources/cxr_lt_2026.json",
+              "url": "https://rad-lt.github.io/CXR-LT-2026/",
+              "value": {
+                "task1_listed_teams": 10,
+                "task2_listed_teams": 7
+              },
+              "scope": "Team-name rows in the official final task leaderboards, viewed 2026-10-27. Counts retain task scope and are not summed into an edition-wide unique-team total."
+            }
+          ]
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Participant-side inference",
+          "final_stage": "Designated final scored evaluation stage",
+          "evidence_scope": "Specified protocol",
+          "coding_basis": "Edition-level source rereading, 2026-10-27",
+          "evidence_path": "latex_sourcev2/data/challenge_field_review_20261027/sources/cxr_lt_2026.json",
+          "evidence_excerpt": "upload predictions on this newly released test set",
+          "rationale": "The official Test Phase requires participants to use their models on released unlabeled test data and upload predictions. Docker is requested from leading teams after testing for verification, not the scoring-stage inference protocol.",
+          "source_urls": "https://rad-lt.github.io/CXR-LT-2026/",
+          "completed_execution_claim": "Not inferred from this classification",
+          "review_date": "2026-10-27"
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Observed final leaderboard entries",
+              "source_path": "latex_sourcev2/data/challenge_field_review_20261027/sources/cxr_lt_2026.json",
+              "url": "https://rad-lt.github.io/CXR-LT-2026/",
+              "value": {
+                "task1_listed_teams": 10,
+                "task2_listed_teams": 7
+              },
+              "scope": "Team-name rows in the official final task leaderboards, viewed 2026-10-27. Counts retain task scope and are not summed into an edition-wide unique-team total."
+            }
+          ]
+        }
+      }
+    }
+  }
+}

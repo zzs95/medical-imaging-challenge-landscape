@@ -1,0 +1,579 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "conic-2022",
+    "challenge_name": "CoNIC 2022",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "ISBI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2022-03-28",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Pathology"
+      ],
+      "submodality": [
+        "H&E pathology"
+      ],
+      "body_region": [
+        "Abdomen"
+      ],
+      "organ_system": [
+        "Gastrointestinal"
+      ],
+      "organs_or_structures": [
+        "Colonic nuclei"
+      ],
+      "diseases": [
+        "Colorectal cancer",
+        "Inflammatory colonic conditions",
+        "Colonic dysplasia"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Quantification"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Nuclear segmentation and classification",
+          "task_family": "Segmentation",
+          "task_subtype": "instance segmentation",
+          "input": [
+            "H&E tissue image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Nuclear instance mask and class"
+          ],
+          "granularity": "instance-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Prediction of cellular composition",
+          "task_family": "Quantification",
+          "task_subtype": "count regression",
+          "input": [
+            "H&E tissue image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Six class-specific nuclear counts"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "classes": [
+            "Epithelial",
+            "Lymphocyte",
+            "Plasma",
+            "Eosinophil",
+            "Neutrophil",
+            "Connective tissue"
+          ]
+        },
+        {
+          "task_id": "task2",
+          "target": "Count per nuclear class"
+        }
+      ],
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": 16,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "registration-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Organizer results paper describes a non-commercial Creative Commons license; exact version not established.",
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": null,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": null,
+        "policy": "External pathology data prohibited; general-purpose pretrained models such as ImageNet allowed."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "multi-class panoptic quality (mPQ+)"
+          ],
+          "ranking": "Average class PQ computed using statistics accumulated over all images."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "multi-class coefficient of determination"
+          ],
+          "ranking": "Compute coefficient of determination per nuclear class, then average."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null,
+        "maximum_full_test_processing_minutes": 60
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": 1,
+        "final_submissions_per_team": 1,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_data_release": "2021-11-20",
+      "final_submission_deadline": "2022-03-09",
+      "challenge_event": "2022-03-28"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 1762,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Segmentation and Classification - Preliminary Test",
+            "submission_count": 242
+          },
+          {
+            "official_phase_name": "Cellular Composition - Preliminary Test",
+            "submission_count": 170
+          },
+          {
+            "official_phase_name": "Segmentation and Classification - Final Test",
+            "submission_count": 39
+          },
+          {
+            "official_phase_name": "Cellular Composition - Final Test",
+            "submission_count": 34
+          },
+          {
+            "official_phase_name": "Segmentation and Classification - Post Challenge",
+            "submission_count": 102
+          },
+          {
+            "official_phase_name": "Cellular Composition - Post Challenge",
+            "submission_count": 28
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://conic-challenge.grand-challenge.org/",
+      "dataset": null,
+      "github": "https://github.com/TissueImageAnalytics/CoNIC",
+      "challenge_paper": "https://arxiv.org/abs/2303.06274"
+    },
+    "notes": [
+      "The output of segmentation/classification can supply cell counts, but the two tasks have separate evaluation. Binary PQ is supplementary and is not used for ranking.",
+      "The organizer paper reports final submission ending March 6, while the platform timeline gives March 9; platform date is retained with this conflict recorded. The 1,658 WSI cohort is post-challenge analysis, not the competition test split."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://conic-challenge.grand-challenge.org/Evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/132-4ee845f4a209.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://conic-challenge.grand-challenge.org/Rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/132-c3c57138150b.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://conic-challenge.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/132-e141fa5ed0ed.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://conic-challenge.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/132-overview.json"
+        },
+        {
+          "type": "official organizer publication",
+          "url": "https://arxiv.org/pdf/2303.06274",
+          "local_snapshot": "_collection/sources/132-results.pdf",
+          "retrieved_on": "2026-10-02",
+          "supports": [
+            "data_access",
+            "dataset",
+            "dataset.center_count",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "evaluation.platform",
+            "submission"
+          ]
+        },
+        {
+          "type": "official challenge repository",
+          "url": "https://github.com/TissueImageAnalytics/CoNIC",
+          "local_snapshot": "_collection/sources/132-9664d3740180.json",
+          "retrieved_on": "2026-10-02",
+          "supports": [
+            "evaluation",
+            "submission"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify exact challenge split counts and dataset license version; original paper and platform differ on final deadline."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://arxiv.org/pdf/2303.06274",
+          "local_snapshot": "_collection/sources/132-results.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official organizer report, submission instructions or native platform submission statistics establishes the challenge evaluation service; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "dataset.multi_center": {
+          "source_url": "https://arxiv.org/pdf/2303.06274",
+          "local_snapshot": "_collection/sources/132-results.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer report describes 535,000 unique nuclei from 16 source centers."
+        },
+        "dataset.center_type": {
+          "source_url": "https://arxiv.org/pdf/2303.06274",
+          "local_snapshot": "_collection/sources/132-results.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer report describes 535,000 unique nuclei from 16 source centers."
+        },
+        "dataset.center_count": {
+          "source_url": "https://arxiv.org/pdf/2303.06274",
+          "local_snapshot": "_collection/sources/132-results.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Organizer report describes 535,000 unique nuclei from 16 source centers."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "dataset.center_count",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "submission.platform",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/conic-2022.json",
+          "_collection/verification_20261003/literature_context/conic-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer",
+            "Inflammatory / infectious",
+            "Other"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Colorectal cancer",
+        "Inflammatory colonic conditions",
+        "Colonic dysplasia"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "组织者报告明确当届核识别数据覆盖正常、炎症、异型增生与癌变结肠组织；不将赛后生存分析当作新增比赛任务。",
+      "sources": [
+        {
+          "url": "https://pages.up.pt/~up367235/publications/journals/2024GRAHAM2024103047.pdf",
+          "local_source": "_collection/disease_followup_20261025/sources/conic.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "组织者报告明确当届核识别数据覆盖正常、炎症、异型增生与癌变结肠组织；不将赛后生存分析当作新增比赛任务。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/ISBI/2022/conic-2022.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Observed post-challenge evaluation activity",
+              "summary": "Positive submissions recorded in explicitly named post-challenge or long-term evaluation phases.",
+              "url": "https://conic-challenge.grand-challenge.org/challenge/statistics/",
+              "snapshot": "_collection/sources/132-e141fa5ed0ed.json",
+              "scope": "Evidence that the service was used after the competitive phase; cumulative counts do not identify teams or guarantee current acceptance.",
+              "value": [
+                {
+                  "official_phase_name": "Segmentation and Classification - Preliminary Test",
+                  "submission_count": 242
+                },
+                {
+                  "official_phase_name": "Cellular Composition - Preliminary Test",
+                  "submission_count": 170
+                },
+                {
+                  "official_phase_name": "Segmentation and Classification - Final Test",
+                  "submission_count": 39
+                },
+                {
+                  "official_phase_name": "Cellular Composition - Final Test",
+                  "submission_count": 34
+                },
+                {
+                  "official_phase_name": "Segmentation and Classification - Post Challenge",
+                  "submission_count": 102
+                },
+                {
+                  "official_phase_name": "Cellular Composition - Post Challenge",
+                  "submission_count": 28
+                }
+              ],
+              "excerpt": "",
+              "snapshot_date": "2026-10-02"
+            },
+            {
+              "kind": "Observed continuation statement",
+              "summary": "Organizer report states that the submission portal was kept available and top algorithms released after the challenge.",
+              "url": "https://publikationen.bibliothek.kit.edu/1000162356/151344222",
+              "snapshot": "latex_sourcev2/data/resource_information_update_20261027/sources/227b294bd52daf.json",
+              "scope": "Retrospectively reported continuing evaluation and methods.",
+              "value": null,
+              "excerpt": " and classification leaderboard, whereas 24 teams appeared on the cellular composition\nleaderboard. Upon conclusion of the challenge, we have kept the submission portal available and release\nthe top algorithms so that future developments can continue.\n\nSegmentation and classification results\nIn Fig. 2a we display the final competition standings for the segmentation and classification task. These are\nshown in the form of a heatmap, where results are sorted by their final 𝑚𝑚𝑚𝑚𝑚𝑚 + score. We observe that the\nepithelial cell, lymphocyte and connective tissue cell classes were the easiest to segment, with average\n𝑃𝑃𝑃𝑃 + scores across all participants of 0.513, 0.496 and 0.443, respectively. On the other hand, neutrophil\nand eosinophil classes were the most difficult nuclei, with average 𝑃𝑃𝑃𝑃 + scores of 0.213 and 0.305. We\nbelieve that this was due to the large class imbalance in the dataset, with significantly fewer neutrophils\nand eosinophils. EPFL | StarDist, MDC Berlin | IFP Bern and Pathology AI were the top three submissions\non this task, with 𝑚𝑚𝑚𝑚𝑚𝑚 + scores of 0.501, 0.476 and 0.463, respectively. We display visual segmentation\nand classification results for the top participants in Fig. 3, where we observe that generally submitted\nmodels could successfully delineate the bounda",
+              "snapshot_date": "2026-10-27"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "26 segmentation/classification final-ranked teams.",
+              "url": "https://arxiv.org/pdf/2303.06274",
+              "snapshot": "_collection/sources/132-results.pdf",
+              "scope": "segmentation/classification final-ranked teams",
+              "value": {
+                "value": 26,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "8 were made for the segmentation and classification task and 165 for the cellular composition task. 26 unique teams appeared on the final segmentation and classification leaderboard, whereas 24 teams appeared on the cellular composition leaderboard. Upon conclusion of the challenge, w",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "24 cell-composition final-ranked teams.",
+              "url": "https://arxiv.org/pdf/2303.06274",
+              "snapshot": "_collection/sources/132-results.pdf",
+              "scope": "cell-composition final-ranked teams",
+              "value": {
+                "value": 24,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "on task. 26 unique teams appeared on the final segmentation and classification leaderboard, whereas 24 teams appeared on the cellular composition leaderboard. Upon conclusion of the challenge, we have kept the submission portal available and release the top algorithms so that f",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

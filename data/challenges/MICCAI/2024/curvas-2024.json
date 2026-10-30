@@ -1,0 +1,808 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "curvas-2024",
+    "challenge_name": "Calibration and Uncertainty for multiRater Volume Assessment",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "Portal-venous contrast-enhanced CT"
+      ],
+      "body_region": [
+        "Abdomen"
+      ],
+      "organ_system": [
+        "Digestive",
+        "Genitourinary"
+      ],
+      "organs_or_structures": [
+        "Pancreas",
+        "Kidneys",
+        "Liver"
+      ],
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "segmentation",
+          "official_name": "Multi-rater abdominal organ segmentation and uncertainty",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "Abdominal CT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Multiclass segmentation probabilities"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": "0 background, 1 pancreas, 2 kidney, 3 liver.",
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Three expert raters per CT.",
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "single-center",
+      "multi_center": false,
+      "international": null,
+      "center_count": 1,
+      "institutions_description": "Contrast-enhanced abdominal CT cohort from the Department of Radiology at University Hospital Erlangen, acquired August–October 2023.",
+      "population": {
+        "patient_count": 90,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "case_count": 20
+        },
+        "validation": {
+          "case_count": 5
+        },
+        "test": {
+          "case_count": 65
+        }
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC",
+      "access_after_challenge": "Organizer dataset paper states all data were released publicly once the challenge concluded.",
+      "access_scope": "all released CURVAS CT data after the 2024 challenge; validation/test were hidden during competition"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker image"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": null,
+        "policy": "Public multi-rater datasets encouraged, with attribution to QUIBQ21 where used."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "segmentation",
+          "metrics": [
+            "Consensus-region Dice",
+            "Consensus confidence",
+            "Expected Calibration Error",
+            "Continuous Ranked Probability Score"
+          ],
+          "ranking": "Combination of four ranks: Dice, uncertainty, calibration, volume; exact weighting not specified on page."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "submission_artifact": "Docker image",
+      "execution_mode": "Platform-run",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Scored submission artifact; additional reproducibility/publication materials recorded separately.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "existing_structured_fields_and_audit",
+        "summary": "已有testing字段明确Docker。",
+        "evidence_ids": [
+          "E2"
+        ],
+        "source_urls": [],
+        "user_material": null,
+        "directly_retrieved_protocol_snapshots": [],
+        "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced."
+      }
+    },
+    "schedule": {
+      "final_submission_deadline": "2024-09-06"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 83,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Sanity Check Phase",
+            "submission_count": 134
+          },
+          {
+            "official_phase_name": "Validation Phase",
+            "submission_count": 35
+          },
+          {
+            "official_phase_name": "Testing Phase",
+            "submission_count": 20
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://curvas.grand-challenge.org/",
+      "dataset": "https://zenodo.org/records/12687192",
+      "github": "https://github.com/SYCAI-Technologies/curvas-challenge",
+      "challenge_paper": "https://www.nature.com/articles/s41597-025-06473-9"
+    },
+    "notes": [
+      "2026-10-22 提交方式字段同步：已有testing字段明确Docker。"
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://curvas.grand-challenge.org/#clinical-problem",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-2a040eef241e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas.grand-challenge.org/#curvas-challenge-goal",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-2fe28b038d8f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas.grand-challenge.org/miccai-2024/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-510102927c78.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-5be875e9b882.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-758bd9811d2d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas.grand-challenge.org/#_1",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-7d7ec5314b96.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas.grand-challenge.org/curvas/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-80cffde46d9d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas.grand-challenge.org/metrics-and-evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-a67294625384.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-c92898398ea1.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas.grand-challenge.org/curvas-dataset/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-cad996469920.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas.grand-challenge.org/#winners",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-d04721ead960.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://curvas.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-e86f6d7536ea.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://curvas.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/53-overview.json"
+        },
+        {
+          "type": "official conference registered-challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "supports": [
+            "event",
+            "year"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json"
+        },
+        {
+          "type": "official organizer challenge or dataset paper",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12873139/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12873139.json",
+          "title": "A MultiRater MultiOrgan Abdominal CT Dataset for Calibration Analysis and Uncertainty Modeling in Segmentation",
+          "supports": [
+            "data_access.access_after_challenge",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "dataset.center_type",
+            "dataset.institutions_description",
+            "dataset.multi_center",
+            "evaluation.platform",
+            "links.challenge_paper",
+            "submission.platform"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://curvas.grand-challenge.org/#clinical-problem",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/curvas-2024.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "existing_structured_fields_and_audit",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/MICCAI/2024/curvas-2024.json",
+          "source_urls": [],
+          "supports": [
+            "已有testing字段明确Docker。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify exact four-rank aggregation weights and resource limits against evaluation code."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12873139/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12873139.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Dataset descriptor explicitly identifies the MICCAI 2024 CURVAS edition and distinguishes public training, private validation/test and public post-challenge release. Dataset terms are retained from its registered design, not the code license."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12873139/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12873139.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Dataset descriptor explicitly identifies the MICCAI 2024 CURVAS edition and distinguishes public training, private validation/test and public post-challenge release. Dataset terms are retained from its registered design, not the code license."
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12873139/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12873139.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Dataset descriptor explicitly identifies the MICCAI 2024 CURVAS edition and distinguishes public training, private validation/test and public post-challenge release. Dataset terms are retained from its registered design, not the code license."
+        },
+        "evaluation.platform": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12873139/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12873139.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Dataset descriptor explicitly identifies the MICCAI 2024 CURVAS edition and distinguishes public training, private validation/test and public post-challenge release. Dataset terms are retained from its registered design, not the code license."
+        },
+        "submission.platform": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12873139/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12873139.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Dataset descriptor explicitly identifies the MICCAI 2024 CURVAS edition and distinguishes public training, private validation/test and public post-challenge release. Dataset terms are retained from its registered design, not the code license."
+        },
+        "links.challenge_paper": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12873139/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12873139.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Dataset descriptor explicitly identifies the MICCAI 2024 CURVAS edition and distinguishes public training, private validation/test and public post-challenge release. Dataset terms are retained from its registered design, not the code license."
+        },
+        "dataset.multi_center": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12873139/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12873139.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official CURVAS dataset descriptor explicitly identifies the acquisition institution for the challenge CT cohort."
+        },
+        "dataset.center_type": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12873139/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12873139.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official CURVAS dataset descriptor explicitly identifies the acquisition institution for the challenge CT cohort."
+        },
+        "dataset.institutions_description": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12873139/",
+          "local_snapshot": "_collection/verification_20261003/papers/PMC12873139.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official CURVAS dataset descriptor explicitly identifies the acquisition institution for the challenge CT cohort."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://curvas.grand-challenge.org/#clinical-problem",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/curvas-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://curvas.grand-challenge.org/#clinical-problem",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/curvas-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://curvas.grand-challenge.org/#clinical-problem",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/curvas-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "last_updated": "2026-10-22",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_after_challenge",
+          "data_access.access_scope",
+          "data_access.access_status",
+          "dataset.center_type",
+          "dataset.institutions_description",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "links.challenge_paper",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/curvas-2024.json",
+          "_collection/verification_20261003/literature_context/curvas-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "existing_structured_fields_and_audit",
+          "summary": "已有testing字段明确Docker。",
+          "evidence_ids": [
+            "E2"
+          ],
+          "source_urls": [],
+          "user_material": null,
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/MICCAI/2024/curvas-2024.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Contrast-enhanced abdominal CT cohort from the Department of Radiology at University Hospital Erlangen, acquired August–October 2023.",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12873139/",
+              "snapshot": "_collection/verification_20261003/papers/PMC12873139.json",
+              "scope": "Explicit acquisition-institution or region description; partial scope retained.",
+              "value": "Contrast-enhanced abdominal CT cohort from the Department of Radiology at University Hospital Erlangen, acquired August–October 2023.",
+              "excerpt": "",
+              "snapshot_date": "2026-10-03",
+              "source_path": "MICCAI/2024/curvas-2024.json",
+              "source_field": "dataset.institutions_description"
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/curvas-2024.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Organizer dataset paper states all data were released publicly once the challenge concluded.",
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://curvas.grand-challenge.org/#clinical-problem",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-2a040eef241e.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://curvas.grand-challenge.org/#curvas-challenge-goal",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-2fe28b038d8f.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://curvas.grand-challenge.org/miccai-2024/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-510102927c78.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://curvas.grand-challenge.org/organizers/",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-5be875e9b882.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://curvas.grand-challenge.org/timeline/",
+                  "supports": [
+                    "year",
+                    "schedule",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-758bd9811d2d.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://curvas.grand-challenge.org/#_1",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-7d7ec5314b96.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://curvas.grand-challenge.org/curvas/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-80cffde46d9d.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://curvas.grand-challenge.org/metrics-and-evaluation/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-a67294625384.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://curvas.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-c92898398ea1.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://curvas.grand-challenge.org/curvas-dataset/",
+                  "supports": [
+                    "dataset",
+                    "labels_and_targets",
+                    "data_access"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-cad996469920.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://curvas.grand-challenge.org/#winners",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-d04721ead960.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://curvas.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-e86f6d7536ea.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://curvas.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/53-overview.json"
+                },
+                {
+                  "type": "official conference registered-challenge directory",
+                  "url": "https://miccai.org/sig/sig-challenges/",
+                  "supports": [
+                    "event",
+                    "year"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/0-b45d362052fd.json"
+                },
+                {
+                  "type": "official organizer challenge or dataset paper",
+                  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12873139/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/papers/PMC12873139.json",
+                  "title": "A MultiRater MultiOrgan Abdominal CT Dataset for Calibration Analysis and Uncertainty Modeling in Segmentation",
+                  "supports": [
+                    "data_access.access_after_challenge",
+                    "data_access.access_scope",
+                    "data_access.access_status",
+                    "dataset.center_type",
+                    "dataset.institutions_description",
+                    "dataset.multi_center",
+                    "evaluation.platform",
+                    "links.challenge_paper",
+                    "submission.platform"
+                  ]
+                },
+                {
+                  "type": "review-derived anatomical classification of source-recorded targets",
+                  "url": "https://curvas.grand-challenge.org/#clinical-problem",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/clinical_mapping/curvas-2024.json",
+                  "supports": [
+                    "clinical_domain.organ_system",
+                    "clinical_domain.organ_system_basis",
+                    "clinical_domain.organ_system_coding_scope"
+                  ]
+                },
+                {
+                  "type": "existing_structured_fields_and_audit",
+                  "url": null,
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/MICCAI/2024/curvas-2024.json",
+                  "source_urls": [],
+                  "supports": [
+                    "已有testing字段明确Docker。"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

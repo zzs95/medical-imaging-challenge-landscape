@@ -1,0 +1,571 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "simcol-to-3d-2022",
+    "challenge_name": "simcol-to-3d 2022",
+    "full_name": "SimCol-to-3D: Simulated Colonoscopy data for 3D (scene) reconstruction",
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "parent_event": "Endoscopic Vision Challenge",
+      "official_registration_id": "MICCAI-2022-R13"
+    },
+    "organizers": {
+      "institutions": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362287",
+        "section": "Organizers",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+        "registered_task_index": 4
+      }
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "body_region": [
+        "Abdomen"
+      ],
+      "organs_or_structures": [
+        "Colon",
+        "Colonic surface"
+      ],
+      "diseases": [],
+      "clinical_context": "Synthetic colonoscopy and real-data evaluation; no particular disease endpoint."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "secondary_task_families": [
+        "Localization"
+      ],
+      "task_families": [
+        "Reconstruction",
+        "Localization"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "SimCol-to-3D: Simulated Colonoscopy data for 3D (scene) reconstruction",
+          "task_family": "Reconstruction",
+          "task_families": [
+            "Reconstruction",
+            "Localization"
+          ],
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362287",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+            "registered_task_index": 4
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362287",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+        "registered_task_index": 4
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Endoscopy"
+      ],
+      "population": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362287",
+        "section": "Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+        "registered_task_index": 4
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362287",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+        "registered_task_index": 4
+      },
+      "access_status": "Individual authorization",
+      "review_status": "Reviewed 2026-10-24",
+      "public_download": false,
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_or_terms": "CC BY-NC-SA. 当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {},
+      "testing": {},
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nSubtask 1 will be assessed based on the mean square error between predicted and ground truth depth. Subtask 2\nwill be assessed based on the relative translation error (RTE) which reflects both local translation and rotation\nerror. For both subtasks, we will assess accuracy up to scale, which means a single scale factor is computed based\non the whole camera trajectory and applied to all predictions within the same trajectory. The third subtask will be\nassessed based on the RTE between prediction and the visually verified COLMAP (or other SfM method) result.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nWe are using the standard metrics which are commonly used in the literature of depth [a, b] and 3D camera pose\n[b, c] estimations. For camera pose we focus on the relative translation error as it is more robust. It assesses the\nlocal translation and rotation errors as opposed to the more noisy global consistency of a camera trajectory. For\nthe evaluation of real colonoscopy data, in the current clinical setup it is not possible to acquire ground truth, but\nvisually verified COLMAP (structure from motion) can be obtained. Our recent work [under review] demonstrates\nthat this can be used as pseudo-ground truth for computing the relative translation error.\n\n\n\n[a] Godard, Clément, Oisin Mac Aodha, and Gabriel J. Brostow. “Unsupervised monocular depth estimation with\nleft-right consistency.” Proceedings of the IEEE conference on computer vision and pattern recognition. 2017.\n[b] Ozyoruk, Kutsev Bengisu, et al. “EndoSLAM dataset and an unsupervised monocular visual odometry and depth\nestimation approach for endoscopic videos: [c] Endo-SfMLearner.” arXiv preprint arXiv:2006.16670 (2020)\n[c] Sturm, Jürgen, et al. \"A benchmark for the evaluation of RGB-D SLAM systems.\" 2012 IEEE/RSJ international\nconference on intelligent robots and systems. IEEE, 2012.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nSub-task 1 – depth estimation: The lowest value of the MSE over all test data will be used to declare the winner\n\n\n\fEndoscopic Vision Challenge 2022\n\nand team rankings.\nSub-task 2- pose estimation: The lowest value for the median RTE over all test examples.\nSub-task 3 - pose estimation: The lowest value for the median RTE over all test examples.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nNot allowed. Such submissions will be considered invalid.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nn/a",
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362287",
+            "section": "Metric(s); Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+            "registered_task_index": 4
+          }
+        }
+      ]
+    },
+    "submission": {
+      "submission_type": "Prediction / result files",
+      "platform": "Synapse",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Submission instructions will be posted on the sub-challenge website and will be sent to the registered participants via email. Each team must submit the running code as docker container via synapse and the results on the test set in the same format as the provided training ground truth annotations for each sub-task. This should also be accompanied by the methodology report.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6362287",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+            "registered_task_index": 4
+          }
+        }
+      ],
+      "submission_evidence_status": "Task-specific registered EndoVis protocol",
+      "decision_history": [
+        {
+          "previous_submission_type": "Docker container and prediction files",
+          "review_date": "2026-10-27"
+        }
+      ],
+      "scoring_submission_review": {
+        "basis": "Primary test prediction ZIP; Docker images are required to validate the method.",
+        "source_urls": [
+          "https://raw.githubusercontent.com/anitarau/simcol/main/EndoVis-SimCol2022_submission_guide.pdf"
+        ],
+        "local_source": "latex_sourcev2/data/paper_followup_round2_20261027/sources/simcol_guide.txt"
+      },
+      "additional_materials": [
+        {
+          "material": "Docker images for the three tasks",
+          "purpose": "Method verification"
+        },
+        {
+          "material": "LNCS report",
+          "purpose": "Method description"
+        }
+      ]
+    },
+    "schedule": {
+      "edition_year": 2022,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6362287",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+        "registered_task_index": 4
+      }
+    },
+    "publication": {
+      "registration_doi": "10.5281/zenodo.6362287"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "active_teams": null,
+      "teams_with_submission": null
+    },
+    "links": {
+      "registration": "https://doi.org/10.5281/zenodo.6362287",
+      "official_website": "https://endovis.grand-challenge.org/"
+    },
+    "notes": [
+      "Task-specific information is taken from the registered EndoVis protocol, not from unrelated child challenges."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "collection_batch": "miccai_gapfill_20261024",
+      "sources": [
+        {
+          "type": "Official registered EndoVis protocol",
+          "url": "https://doi.org/10.5281/zenodo.6362287",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/EndoVis2022.pdf",
+          "supports": [
+            "year",
+            "parent-child relation",
+            "task design",
+            "submission and evaluation protocol"
+          ],
+          "registered_task_indices": [
+            4
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ]
+    },
+    "record_relationships": {
+      "analytical_unit": "child_challenge_edition",
+      "parent_challenge_id": "endovis-2022",
+      "child_challenge_ids": []
+    },
+    "review_coding": {
+      "task_families": [
+        "Reconstruction",
+        "Localization"
+      ],
+      "emerging_objectives": [],
+      "basis": "Registered sub-challenge design",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Sub-challenge explicitly named in registered EndoVis protocol",
+      "completion_status": "Not independently recoded in this gap-fill"
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Named EndoVis child challenge; parent is not additionally counted."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "SimCol2022提交注册表后受邀加入数据用户组；真实EndoMapper训练部分另有数据申请。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362287",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362287",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Submission instructions will be posted on the sub-challenge website and will be sent to the registered participants via email. Each team must submit the running code as docker container via synapse and the results on the test set in the same format as the provided training ground truth annotations for each sub-task. This should also be accompanied by the methodology report. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple [...] e challenge results. The participating team will not be allowed to evaluate their algorithms on the test data. We will not provide results or leaderboard to participants before the challenge day. Only the last submitted docker container, output files and report will be used for the evaluation."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362287",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Challenge website and challenge registration opens: 1st April 2022 Training data release: 15th April 2022 Team registration open: 15th August 2022 Test data release: 15th August 2022 Submission deadline: 7th September 2022 Methodology report submission: 7th September 2022 (only valid docker submissions accompanied by output files and methodology report will be evaluated and included on the challenge day) Spotlight presentation: Challenge day in MICCAI2022 Decision of challenge winners: Challenge day in MICCAI2022 Joint journal submission: March 2023 Endoscopic Vision Challenge 2022"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362287",
+          "excerpt": "e number of trajectories is chosen to provide sufficiently different relative camera poses. For the test dataset we provide three trajectories each from two CT scans. Three trajectories per mesh provide sufficient information about the generalizability of a method. d) Mention further important characteristics of the training, validation and test cases (e.g. class distribution in classification tasks chosen according to"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/bac62b2a2fdf5878.json",
+          "url": "https://www.synapse.org/Synapse:syn28548633/wiki/617130",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn28548633/wiki/617130"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/af91c0233827ae2f.json",
+          "url": "https://www.synapse.org/Synapse:syn28548633/wiki/617129",
+          "retrieval_url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn28548633/wiki/617129"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/simcol-to-3d-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "SimCol2022提交注册表后受邀加入数据用户组；真实EndoMapper训练部分另有数据申请。"
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training/validation",
+              "value": 18000,
+              "unit": "cases",
+              "scope": "More than18000; synthetic",
+              "approximate": true,
+              "lower_bound": false
+            },
+            {
+              "split": "testing",
+              "value": 6000,
+              "unit": "cases",
+              "scope": "Approximate",
+              "approximate": true,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Not established",
+          "value": null
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Synthetic Unity data and separate public real dataset; generated-data site not counted as clinical acquisition center.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.6362287",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/simcol-to-3d-2022.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Colon",
+        "Colonic surface"
+      ],
+      "specific_diseases": [],
+      "review_note": "Synthetic colonoscopy and real-data evaluation; no particular disease endpoint.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362287"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/simcol-to-3d-2022.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC SA.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.6362287"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R13/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6362287"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Participant-side inference",
+          "final_stage": "Final scored test phase",
+          "evidence_scope": "Specified protocol corroborated by organizer report",
+          "coding_basis": "Edition-specific organizer paper / final submission guide, reread 2026-10-27",
+          "evidence_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/simcol_guide.txt",
+          "evidence_excerpt": "Test inputs without ground truth were provided to teams, who uploaded predictions as ZIP; additional Docker images validated the method. Verification containers do not change the primary prediction-based final scoring arrangement.",
+          "rationale": "Test inputs without ground truth were provided to teams, who uploaded predictions as ZIP; additional Docker images validated the method. Verification containers do not change the primary prediction-based final scoring arrangement.",
+          "source_urls": "https://raw.githubusercontent.com/anitarau/simcol/main/EndoVis-SimCol2022_submission_guide.pdf",
+          "completed_execution_claim": "Specified protocol corroborated by organizer report",
+          "review_date": "2026-10-27",
+          "source_section": "Test Phase opening; corroborated by report 3.4"
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer paper or official resource",
+              "source_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/simcol.txt",
+              "url": "https://arxiv.org/abs/2307.11261",
+              "section": "Abstract; 4",
+              "value": {
+                "participating_teams": 6,
+                "task1_teams": 6,
+                "task2_teams": 3,
+                "task3_teams": 2
+              },
+              "scope": "Overall and task-specific team counts retained separately; task totals overlap."
+            }
+          ],
+          "source_urls": "https://arxiv.org/abs/2307.11261",
+          "basis": "Overall and task-specific team counts retained separately; task totals overlap."
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer paper or official resource",
+              "source_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/simcol.txt",
+              "url": "https://arxiv.org/abs/2307.11261",
+              "section": "3.4",
+              "value": {
+                "test_ground_truth": "Published after the challenge"
+              },
+              "scope": "Post-challenge release of reference data explicitly reported."
+            }
+          ],
+          "source_urls": "https://arxiv.org/abs/2307.11261",
+          "basis": "Post-challenge release of reference data explicitly reported."
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer paper or official resource",
+              "source_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/simcol.txt",
+              "url": "https://arxiv.org/abs/2307.11261",
+              "section": "3.2; EndoMapper Methods: Recording endoscopies procedure",
+              "value": {
+                "synthetic_anatomy_CT_source": "University College London Hospital, UK",
+                "real_EndoMapper_source": "Hospital Clinico Universitario Lozano Blesa, Zaragoza, Spain"
+              },
+              "scope": "Partial source geography: UK CT anatomies for synthetic colons II/III; Spanish clinical videos from EndoMapper, verified in the dataset paper Methods. No location inferred for synthetic colon I."
+            },
+            {
+              "source_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/endomapper.txt",
+              "url": "https://doi.org/10.1038/s41597-023-02564-7",
+              "section": "Methods: Recording endoscopies procedure",
+              "value": "Clinical acquisition in Zaragoza, Spain"
+            }
+          ],
+          "source_urls": "https://arxiv.org/abs/2307.11261; https://doi.org/10.1038/s41597-023-02564-7",
+          "basis": "Partial source geography: UK CT anatomies for synthetic colons II/III; Spanish clinical videos from EndoMapper, verified in the dataset paper Methods. No location inferred for synthetic colon I."
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multi-center",
+          "source_urls": "https://arxiv.org/abs/2307.11261; https://doi.org/10.1038/s41597-023-02564-7",
+          "evidence_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/simcol.txt",
+          "section": "3.2; EndoMapper Methods",
+          "scope": "Multiple source institutions across CT-derived simulated data and real clinical video; not a homogeneous multicenter clinical cohort or independent-site validation."
+        }
+      },
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation with targeted organizer-paper follow-up"
+    },
+    "literature_followups": [
+      {
+        "review_date": "2026-10-27",
+        "audit_path": "latex_sourcev2/data/paper_followup_round2_20261027",
+        "fields": [
+          "final_inference",
+          "reported_participation",
+          "post_challenge_resources",
+          "geography",
+          "centers",
+          "submission"
+        ]
+      }
+    ]
+  },
+  "common_note_ids": [
+    "CN07"
+  ]
+}

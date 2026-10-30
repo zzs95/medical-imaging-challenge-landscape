@@ -1,0 +1,692 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "p2ilf-2022",
+    "challenge_name": "Preoperative to Intraoperative Laparoscopy Fusion",
+    "full_name": null,
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy",
+        "CT",
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Abdomen"
+      ],
+      "organ_system": [
+        "Hepatobiliary"
+      ],
+      "organs_or_structures": [
+        "Liver anatomical curves"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Registration"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Segmentation of liver anatomical curves",
+          "task_family": "Segmentation",
+          "task_subtype": "curve segmentation",
+          "input": [
+            "Laparoscopic video frame",
+            "Preoperative 3D liver model"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Liver silhouette, ligament, ridge and boundary curves"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "2D–3D fusion",
+          "task_family": "Registration",
+          "task_subtype": "2D–3D registration",
+          "input": [
+            "2D anatomical curves",
+            "3D liver model"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Transformation matrices"
+          ],
+          "granularity": "structure-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": true,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "mixed",
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": 3,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "Patient laparoscopic images",
+        "Preoperative liver models",
+        "Phantom data"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Unavailable at snapshot",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "2022 preregistered design: CC BY-NC-SA for research/education with citation; organizers planned to revisit terms after challenge. Current access requests are closed.",
+      "access_after_challenge": "Registered design says the organizers will revisit licenses after the challenge; post-challenge license and download availability remain unconfirmed.",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "F1-score",
+            "Hausdorff distance"
+          ],
+          "ranking": "Average ranks of F1 score and Hausdorff distance; F1 evaluated with 2% tolerance.",
+          "tolerance": "2% tolerance relative to ground-truth curves"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "re-projection error",
+            "target registration error"
+          ],
+          "ranking": null,
+          "notes": "Target registration error applies to phantom data only."
+        }
+      ],
+      "cross_task_rule": null,
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 365,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary test phase",
+            "submission_count": 48
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://p2ilf.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Detailed data and submission instructions require access. Conference association is supported by the official MICCAI satellite-event overview."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://p2ilf.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/120-73852ae934a0.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://p2ilf.grand-challenge.org/Participation/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/120-97331448d618.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://p2ilf.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/120-overview.json"
+        },
+        {
+          "type": "official organizer publication",
+          "url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+          "local_snapshot": "_collection/sources/120-supplement.pdf",
+          "retrieved_on": "2026-10-02",
+          "supports": [
+            "data_access",
+            "data_access.access_after_challenge",
+            "dataset.center_count",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "evaluation",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "event",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify actual dataset split counts and final registration ranking/submission protocol; preregistered design is not assumed to document every final change."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+          "local_snapshot": "_collection/sources/120-supplement.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container on grand-challenge website will be used. Please refer to the link: https://comic.github.io/grand- challenge.org/evaluation.html"
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+          "local_snapshot": "_collection/sources/120-supplement.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container on grand-challenge website will be used. Please refer to the link: https://comic.github.io/grand- challenge.org/evaluation.html"
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+          "local_snapshot": "_collection/sources/120-supplement.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container on grand-challenge website will be used. Please refer to the link: https://comic.github.io/grand- challenge.org/evaluation.html"
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+          "local_snapshot": "_collection/sources/120-supplement.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): Docker container on grand-challenge website will be used. Please refer to the link: https://comic.github.io/grand- challenge.org/evaluation.html"
+        },
+        "dataset.multi_center": {
+          "source_url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+          "local_snapshot": "_collection/sources/120-supplement.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered design specifies real-data training and testing drawn from three centers."
+        },
+        "dataset.center_type": {
+          "source_url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+          "local_snapshot": "_collection/sources/120-supplement.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered design specifies real-data training and testing drawn from three centers."
+        },
+        "dataset.center_count": {
+          "source_url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+          "local_snapshot": "_collection/sources/120-supplement.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered design specifies real-data training and testing drawn from three centers."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+          "local_snapshot": "_collection/sources/120-supplement.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Docker container on grand-challenge website will be used. Please refer to the link: https://comic.github.io/grand- challenge.org/evaluation.html"
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+          "local_snapshot": "_collection/sources/120-supplement.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Docker container on grand-challenge website will be used. Please refer to the link: https://comic.github.io/grand- challenge.org/evaluation.html"
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+          "local_snapshot": "_collection/sources/120-supplement.pdf",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit edition-source post-challenge policy reviewed; planned releases, continuing public access, controlled requests and required deletion are kept distinct."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_after_challenge",
+          "dataset.center_count",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_usage_mode.overall_paradigm",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/p2ilf-2022.json",
+          "_collection/verification_20261003/literature_context/p2ilf-2022.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "record_relationships": {
+      "parent_challenge_id": "endovis-2022",
+      "analytical_unit": "child_challenge_edition"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Unavailable at snapshot",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "比赛期训练数据可申请取得；最终提交容器。当前不再接受数据请求的访问状态保留，避免与比赛期间访问混同。"
+      },
+      "decision_history": [
+        "比赛期训练数据可申请取得；最终提交容器。当前不再接受数据请求的访问状态保留，避免与比赛期间访问混同。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/120-overview.json",
+          "url": "https://p2ilf.grand-challenge.org/"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/97331448d618965b.json",
+          "url": "https://p2ilf.grand-challenge.org/Participation/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/p2ilf-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Unavailable at snapshot",
+      "data_model_flow": "hybrid"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Page 9 of 26 Biomedical Image Analysis ChallengeS (BIAS) Initiative Preoperative to Intraoperative Laparoscopy Fusion The centers involved for data acquisition are: [1] Centre Hospitalier Universitaire de Clermont-Ferrand, France [2] Oxford Radcliffe Hospitals, Oxford, UK [3] Universitätsmedizin Mannheim, Germany",
+              "url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+              "snapshot": "_collection/sources/120-supplement.pdf",
+              "scope": "Acquisition answer in the edition-specific protocol. Partial task/source scope retained; proposed sources are not treated as confirmed final acquisitions.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\n                                                       Page 9 of 26                          Biomedical Image Analysis ChallengeS (BIAS) Initiative\n\fPreoperative to Intraoperative Laparoscopy Fusion\n\nThe centers involved for data acquisition are:\n[1] Centre Hospitalier Universitaire de Clermont-Ferrand, France\n[2] Oxford Radcliffe Hospitals, Oxford, UK\n[3] Universitätsmedizin Mannheim, Germany",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2022/p2ilf-2022.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Registered design says the organizers will revisit licenses after the challenge; post-challenge license and download availability remain unconfirmed.",
+              "sources": [
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://p2ilf.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/120-73852ae934a0.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://p2ilf.grand-challenge.org/Participation/",
+                  "supports": [
+                    "data_access",
+                    "data_usage_mode",
+                    "submission",
+                    "evaluation",
+                    "publication"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/120-97331448d618.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://p2ilf.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/120-overview.json"
+                },
+                {
+                  "type": "official organizer publication",
+                  "url": "https://zenodo.org/records/6362162/files/PreoperativetoIntraoperativeLaparoscopyFusion_03-16-2022_10-28-00.pdf?download=1",
+                  "local_snapshot": "_collection/sources/120-supplement.pdf",
+                  "retrieved_on": "2026-10-02",
+                  "supports": [
+                    "data_access",
+                    "data_access.access_after_challenge",
+                    "dataset.center_count",
+                    "dataset.center_type",
+                    "dataset.multi_center",
+                    "evaluation",
+                    "evaluation.platform",
+                    "evaluation.platform_evidence_stage",
+                    "evaluation.platform_scope",
+                    "event",
+                    "submission.evidence_stage",
+                    "submission.platform",
+                    "submission.submission_type"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "fields": {
+        "final_inference": {
+          "final_inference_execution": "Organizer/platform-side inference",
+          "final_stage": "Final scored test phase",
+          "evidence_scope": "Reported execution",
+          "coding_basis": "Edition-specific organizer paper / final submission guide, reread 2026-10-27",
+          "evidence_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/p2ilf.txt",
+          "evidence_excerpt": "Methods ran in a Grand Challenge Docker deployment against test inputs unavailable to teams; a separate container computed metrics.",
+          "rationale": "Methods ran in a Grand Challenge Docker deployment against test inputs unavailable to teams; a separate container computed metrics.",
+          "source_urls": "https://arxiv.org/abs/2401.15753",
+          "completed_execution_claim": "Reported execution",
+          "review_date": "2026-10-27",
+          "source_section": "Evaluation pipeline; Figure 4"
+        },
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 9,
+              "unit": "patients",
+              "scope": "Training patients",
+              "approximate": false,
+              "lower_bound": false,
+              "evidence_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/p2ilf.txt"
+            },
+            {
+              "split": "training",
+              "value": 167,
+              "unit": "laparoscopic images",
+              "scope": "Images from those nine patients",
+              "approximate": false,
+              "lower_bound": false,
+              "evidence_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/p2ilf.txt"
+            },
+            {
+              "split": "training",
+              "value": 9,
+              "unit": "3D models",
+              "scope": "Preoperative models from those nine patients",
+              "approximate": false,
+              "lower_bound": false,
+              "evidence_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/p2ilf.txt"
+            },
+            {
+              "split": "test",
+              "value": 2,
+              "unit": "patients",
+              "scope": "Held-out patients",
+              "approximate": false,
+              "lower_bound": false,
+              "evidence_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/p2ilf.txt"
+            },
+            {
+              "split": "test",
+              "value": 16,
+              "unit": "laparoscopic images",
+              "scope": "Images from those two patients",
+              "approximate": false,
+              "lower_bound": false,
+              "evidence_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/p2ilf.txt"
+            },
+            {
+              "split": "test",
+              "value": 2,
+              "unit": "3D models",
+              "scope": "Preoperative models from those two patients",
+              "approximate": false,
+              "lower_bound": false,
+              "evidence_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/p2ilf.txt"
+            }
+          ],
+          "source_urls": "https://arxiv.org/abs/2401.15753",
+          "basis": "Phase- and unit-specific retrospective quantities; overlapping samples not pooled.",
+          "source_refs": [
+            {
+              "local_snapshot": "latex_sourcev2/data/paper_followup_round2_20261027/sources/p2ilf.txt",
+              "section": "Abstract; Dataset"
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Organizer paper or official resource",
+              "source_path": "latex_sourcev2/data/paper_followup_round2_20261027/sources/p2ilf.txt",
+              "url": "https://arxiv.org/abs/2401.15753",
+              "section": "Abstract; Methods",
+              "value": {
+                "participating_teams": 6
+              },
+              "scope": "Six participating teams reported across the two challenge tasks; not a count of registrations."
+            }
+          ],
+          "source_urls": "https://arxiv.org/abs/2401.15753",
+          "basis": "Six participating teams reported across the two challenge tasks; not a count of registrations."
+        }
+      },
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation with targeted organizer-paper follow-up"
+    },
+    "literature_followups": [
+      {
+        "review_date": "2026-10-27",
+        "audit_path": "latex_sourcev2/data/paper_followup_round2_20261027",
+        "fields": [
+          "final_inference",
+          "typed_size",
+          "reported_participation"
+        ]
+      }
+    ]
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

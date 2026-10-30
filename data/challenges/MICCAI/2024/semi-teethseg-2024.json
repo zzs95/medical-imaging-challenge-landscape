@@ -1,0 +1,664 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "semi-teethseg-2024",
+    "challenge_name": "Semi-TeethSeg 2024",
+    "full_name": "Semi-supervised Teeth Segmentation",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R39",
+      "official_programme_row_numbers": "16",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "College of Media Engineering, Communication University of Zhejiang, China",
+        "College of Computer Science and Technology, Hangzhou Dianzi University, Hangzhou, China",
+        "Health Science Center, School of Biomedical Engineering, Shenzhen University, China",
+        "School of Electronic Engineering and Computer Science, Queen Mary University of London, United Kingdom",
+        "School of Mechanical, Electrical and Information Engineering, Shandong University, Weihai, China",
+        "Hangzhou Geriatric Stomatology Hospital, Hangzhou Dental Hospital Group, Division of Advanced Prosthetic Dentistry, Tohoku University Graduate School of Dentistry, State Key Laboratory of Oral Diseases, National Clinical Research Center for Oral Diseases, West China Hospital of Stomatology, Sichuan University, China"
+      ],
+      "registered_authors": [
+        {
+          "name": "Wang, Yaqi",
+          "affiliation": "College of Media Engineering, Communication University of Zhejiang, China"
+        },
+        {
+          "name": "Chen, Xiaodiao",
+          "affiliation": "College of Computer Science and Technology, Hangzhou Dianzi University, Hangzhou, China"
+        },
+        {
+          "name": "Hongyuan Zhang, Hongyuan",
+          "affiliation": "Health Science Center, School of Biomedical Engineering, Shenzhen University, China"
+        },
+        {
+          "name": "Ye, Fan",
+          "affiliation": "College of Computer Science and Technology, Hangzhou Dianzi University, Hangzhou, China"
+        },
+        {
+          "name": "Zhang, Qianni",
+          "affiliation": "School of Electronic Engineering and Computer Science, Queen Mary University of London, United Kingdom"
+        },
+        {
+          "name": "Wang, Shuai",
+          "affiliation": "School of Mechanical, Electrical and Information Engineering, Shandong University, Weihai, China"
+        },
+        {
+          "name": "Zhang, Yifan",
+          "affiliation": "Hangzhou Geriatric Stomatology Hospital, Hangzhou Dental Hospital Group, Division of Advanced Prosthetic Dentistry, Tohoku University Graduate School of Dentistry, State Key Laboratory of Oral Diseases, National Clinical Research Center for Oral Diseases, West China Hospital of Stomatology, Sichuan University, China"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "X-ray",
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Oral and maxillofacial"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Teeth",
+        "Upper and lower jaws"
+      ],
+      "diseases": [
+        "Dental caries",
+        "Periapical periodontitis",
+        "Pulpitis"
+      ],
+      "clinical_context": "Dental conditions explicitly named in target cohort; segmentation output is dentition, not disease grading."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [],
+      "task_families": [
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Semi-supervised Teeth Segmentation",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.13234394",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/99-Semi-supervised Teeth Segmentation_2024-03-03T08-55-41.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.13234394",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/99-Semi-supervised Teeth Segmentation_2024-03-03T08-55-41.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "X-ray",
+        "CT"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.13234394",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/99-Semi-supervised Teeth Segmentation_2024-03-03T08-55-41.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Not established",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND. CC BY-NC-ND；另明确比赛期间不得传播数据。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.13234394",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/99-Semi-supervised Teeth Segmentation_2024-03-03T08-55-41.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.13234394",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/99-Semi-supervised Teeth Segmentation_2024-03-03T08-55-41.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "CodaLab",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.13234394",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/99-Semi-supervised Teeth Segmentation_2024-03-03T08-55-41.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.13234394",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/99-Semi-supervised Teeth Segmentation_2024-03-03T08-55-41.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nThe segmentation inference results are evaluated using Dice Similarity Coefficient (DSC), Normalized Surface Dice\n(NSD), Panoptic Quality (PQ), Identification Accuracy (IA), Running time (RT) and Area under GPU memory-time\ncurve (GPU-area).\n\n\nAll metrics will be used to compute the ranking. We will release the code on how to calculate the eight\nperformance metrics with the python3 version.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe six metrics are complementary. Specifically, Dice Similarity Coefficient is used to measure the region error.\nNormalized Surface Dice is used to measure the boundary error. Panoptic Quality is a comprehensive metric that\n\n\n\n\n\f                                         Semi-supervised Teeth Segmentation\n\ncombines segmentation and detection quality assessment into a single measure. The Identification Accuracy\nmetric is applied to assess the object-level localization (detection) performance of teeth. Running time is used to\nmeasure the inference speed. Moreover, we also include the area under the GPU utilization-time curve to\nmeasure the GPU consumption. These evaluation metrics will guide the algorithm to strike a balance between\nperformance and efficiency.\n\n\nIn particular, the localization criterion is Mask IoU score localization criterion in segmentation challenge. Besides,\nwe have implemented a greedy strategy to match reference and predicted objects.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThe ranking scheme includes the following five steps:\n\n\nStep 1. In order to maintain consistency with our previous challenge and assess the algorithm's performance at\nthe image level, our evaluation framework will first initially compute two metrics, Dice and NSD, on a per-image\nbasis to derive the algorithm's Dice (image_Dice) and NSD (image_NSD) scores at image-level.\n\n\nStep 2. Next, given the challenge's focus on instance-level analysis, we also will employ a greedy algorithm to\nmatch the corresponding prediction results with the ground truth, allowing for the calculation of Dice\n(instance_Dice), NSD (instance_NSD), IA (instance_IA) and PQ (instance_PQ) scores at the instance level.\n\n\nStep 3. Then, the evaluation will include measurements of running time (RT) and GPU consumption (GPU_area) for\neach algorithm.\n\n\nStep 4. Take the mean of the eight metrics over the test cases, and rank separately among the teams.\n\n\nStep 5. A final overall rank is given by taking the average of the four ranks. In the case of equal average rankings\nfor two teams, they are considered tied.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nWe will exclude the participants who fail to report on the whole testing set.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThe main benefit of this ranking scheme is that it can aggregate the metrics with different dimensions. A similar\nranking scheme was also employed in MICCAI BraTS Challenge."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "CodaLab",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Submissions will be made via Docker container. The participating teams should upload their algorithm to the online submission system. We will look for sponsors for computing resources. If it is not available, we will use our local hardware. It has two 8-Cores CPUs, one NVIDIA 2080Ti GPU, and 64G RAM. Only one GPU is allowed to use during inference.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.13234394",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/99-Semi-supervised Teeth Segmentation_2024-03-03T08-55-41.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.13234394",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/99-Semi-supervised Teeth Segmentation_2024-03-03T08-55-41.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.13234394"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://toothfairychallenges.github.io/miccai2024/",
+      "registration": "https://doi.org/10.5281/zenodo.13234394",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.13234394",
+          "resolved_record_id": 13234395,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/99-Semi-supervised Teeth Segmentation_2024-03-03T08-55-41.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/99-Semi-supervised Teeth Segmentation_2024-03-03T08-55-41.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://toothfairychallenges.github.io/miccai2024/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/66140565d78fec74.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "Semi-TeethSeg"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Not established",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Not established",
+        "state": "Not established",
+        "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.13234394",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.13234394",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> Semi-supervised Teeth Segmentation • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Submissions will be made via Docker container. The participating teams should upload their algorithm to the online submission system. We will look for sponsors for computing resources. If it is not available, we will use our local hardware. It has two 8-Cores CPUs, one NVIDIA 2080Ti GPU, and 64G RAM. Only one GPU is allowed to use during infer"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.13234394",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results - Announcement of challenge's opening: March 15th, 2024 - Open for registration and Training data release: March 20th, 2024 - Deadline for validation submission: June 15th, 2024 - Deadline for testing submission:July 15th, 2024 - Invitation speakers: No later than September 1st, 2024 - Announce final results: October 6th/10th, 2024"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.13234394",
+          "excerpt": "istribution is representative of the real-world distribution. There is no unseen teeth types in the testing set. All the testing cases will be hidden fromarticipants and the Docker container will be used for submission."
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/66140565d78fec74.json",
+          "url": "https://toothfairychallenges.github.io/miccai2024/",
+          "excerpt": "6th of October in Marrakesh, Morocco. Stay tuned for more information! Don’t forget to checkout and register on challenge-specific websites. news May 27, 2025 4-6 weeks free online access to proceedings is now available Jul 12, 2024 MICCAI2024 ToothFairy Workshop accepted on the OpenReview platform Jul 8, 2024 ToothFairy2 preliminary phase started Apr 1, 2024 ToothFairy, 3DTeethLand, STS challenges website launched! Mar 8, 2024 Challenge submissions were accepted for MICCAI 2024! Ja"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/semi-teethseg-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-25 access completion: 找到 STS 2024 官网、报名/使用协议及 Codabench 赛道入口；协议本身不能证明审批还是注册即放行。"
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Not established",
+        "rationale": "找到 STS 2024 官网、报名/使用协议及 Codabench 赛道入口；协议本身不能证明审批还是注册即放行。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/a55da34577818593.json",
+          "_collection/access_completion_20261025/sources/66140565d78fec74.json",
+          "_collection/access_completion_20261025/sources/b0196500d3ad9114.json",
+          "_collection/access_completion_20261025/sources/5e1258be8b02e6b5.json",
+          "_collection/access_completion_20261025/sources/2b7b7c1ca7192c4f.json"
+        ]
+      }
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 6000,
+              "unit": "cases",
+              "scope": "Panoramic",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 200,
+              "unit": "cases",
+              "scope": "Panoramic",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 800,
+              "unit": "cases",
+              "scope": "Panoramic",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 530,
+              "unit": "cases",
+              "scope": "CBCT",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 20,
+              "unit": "cases",
+              "scope": "CBCT",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 50,
+              "unit": "cases",
+              "scope": "CBCT",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "China"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Training includes labeled/unlabeled; temporary no-dissemination rule only during challenge not proof of post-challenge policy.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.13234394",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://toothfairychallenges.github.io/miccai2024/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/66140565d78fec74.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/semi-teethseg-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Oral and maxillofacial"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Inflammatory / infectious",
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Teeth",
+        "Upper and lower jaws"
+      ],
+      "specific_diseases": [
+        "Dental caries",
+        "Periapical periodontitis",
+        "Pulpitis"
+      ],
+      "review_note": "Dental conditions explicitly named in target cohort; segmentation output is dentition, not disease grading.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.13234394"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/semi-teethseg-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-ND"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "CC BY-NC-ND；另明确比赛期间不得传播数据。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY NC ND. Additional comments: The data will be distributed under the license CC BY NC ND, and the challenge participants will need to commit to not disseminate the data during the challenge duration.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.13234394"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.13234394"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/semi-teethseg-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "China"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.13234394",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R39/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://toothfairychallenges.github.io/miccai2024/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/66140565d78fec74.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/semi-teethseg-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

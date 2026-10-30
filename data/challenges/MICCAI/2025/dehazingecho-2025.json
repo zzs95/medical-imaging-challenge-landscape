@@ -1,0 +1,574 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "dehazingecho-2025",
+    "challenge_name": "Dehazing Echocardiography Challenge 2025",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Ultrasound"
+      ],
+      "submodality": [
+        "Four-chamber echocardiography"
+      ],
+      "body_region": [
+        "Heart"
+      ],
+      "organ_system": [
+        "Cardiovascular system"
+      ],
+      "organs_or_structures": [
+        "Left ventricle"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Image Restoration",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Echocardiography dehazing",
+          "task_family": "Image Restoration",
+          "task_subtype": "Denoising / reconstruction",
+          "input": [
+            "Hazy echocardiographic frame"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Dehazed echocardiographic frame"
+          ],
+          "granularity": "image",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "Clinical echocardiography",
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "easy_to_image_cohort": {
+          "patients": 75,
+          "four_chamber_frames": 4500
+        },
+        "difficult_to_image_cohort": {
+          "patients": 40,
+          "frames": 2400
+        },
+        "note": "Cohort totals, not confirmed train/test split sizes."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "challenge-only",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 当届数据使用条款列 CC BY-NC-SA。",
+      "access_after_challenge": null,
+      "access_scope": "training data access as stated in the cited edition source",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "FID",
+            "CNR",
+            "gCNR",
+            "KS statistic (region A)",
+            "KS statistic (region B)",
+            "LV Dice",
+            "LV ASD"
+          ],
+          "ranking": "Group weights 5:3:2 for noise reduction, structural preservation and downstream segmentation."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "final_submissions": 5
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "final_phase_start": "2025-06-16",
+      "final_submission_deadline": "2025-08-15"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "method_description_required": true,
+      "method_description": "At least four pages in MICCAI format."
+    },
+    "participation_statistics": {
+      "registered_participants": 192,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Debug Phase",
+            "submission_count": 99
+          },
+          {
+            "official_phase_name": "Final Test Phase",
+            "submission_count": 74
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://dehazingecho2025.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "USFM-based left-ventricular segmentation is a downstream evaluation, not an additional participant task. The evaluation prose says seven metrics; KS is computed separately for two regions."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://dehazingecho2025.grand-challenge.org/prizes-2/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/33-197e165d7284.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/33-40cba6887cd7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dehazingecho2025.grand-challenge.org/datasets/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "dataset",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/33-414dea8bfd00.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dehazingecho2025.grand-challenge.org/registration/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/33-58380cee4d1c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dehazingecho2025.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/33-62e8eec69f83.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dehazingecho2025.grand-challenge.org/submissionevaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/33-722e7cbf5e7c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dehazingecho2025.grand-challenge.org/dehazingecho2025/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/33-a625a1dab715.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dehazingecho2025.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/33-bfd5d4cbfefc.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dehazingecho2025.grand-challenge.org/organizersponsor/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/33-cf9cbd500153.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://dehazingecho2025.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/33-f950a0734749.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://dehazingecho2025.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/33-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "evaluation: within-group metric normalization/aggregation needs verification.",
+        "dataset: final split sizes and license not publicly verified."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://dehazingecho2025.grand-challenge.org/datasets/",
+          "local_snapshot": "_collection/sources/33-414dea8bfd00.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://dehazingecho2025.grand-challenge.org/datasets/",
+          "local_snapshot": "_collection/sources/33-414dea8bfd00.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit download gate in official instructions; participation registration is not used as a proxy."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/dehazingecho-2025.json",
+          "_collection/verification_20261003/literature_context/dehazingecho-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届数据使用条款列 CC BY-NC-SA。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "CC BY-NC-SA (Attribution-NonCommercial-ShareAlike)",
+          "source": {
+            "url": "https://zenodo.org/api/records/15083974/files/221-Dehazing_Echocardiography_Challenge_2025_2025-03-25T06-16-35.pdf/content",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/d336631fdc1467a3.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/15083974/files/221-Dehazing_Echocardiography_Challenge_2025_2025-03-25T06-16-35.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/d336631fdc1467a3.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://dehazingecho2025.grand-challenge.org/datasets/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/414dea8bfd008285.json",
+          "status": 200
+        },
+        {
+          "url": "https://dehazingecho2025.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/62e8eec69f83c86b.json",
+          "status": 200
+        },
+        {
+          "url": "https://dehazingecho2025.grand-challenge.org/prizes-2/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/197e165d7284f0f2.json",
+          "status": 200
+        },
+        {
+          "url": "https://dehazingecho2025.grand-challenge.org/timeline/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/bfd5d4cbfefc7a2f.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/api/records/15083974/files/221-Dehazing_Echocardiography_Challenge_2025_2025-03-25T06-16-35.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/d336631fdc1467a3.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "easy_to_image_cohort / patients",
+              "value": 75,
+              "unit": "patients",
+              "canonical_field": "dataset.split_details.easy_to_image_cohort.patients",
+              "scope": "Source cohorts, not confirmed train/test allocations",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "easy_to_image_cohort / four_chamber_frames",
+              "value": 4500,
+              "unit": "frames",
+              "canonical_field": "dataset.split_details.easy_to_image_cohort.four_chamber_frames",
+              "scope": "Source cohorts, not confirmed train/test allocations",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "difficult_to_image_cohort / patients",
+              "value": 40,
+              "unit": "patients",
+              "canonical_field": "dataset.split_details.difficult_to_image_cohort.patients",
+              "scope": "Source cohorts, not confirmed train/test allocations",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "difficult_to_image_cohort / frames",
+              "value": 2400,
+              "unit": "frames",
+              "canonical_field": "dataset.split_details.difficult_to_image_cohort.frames",
+              "scope": "Source cohorts, not confirmed train/test allocations",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://dehazingecho2025.grand-challenge.org/datasets/",
+              "supports": [
+                "data_access",
+                "data_access.access_scope",
+                "data_access.access_status",
+                "dataset",
+                "labels_and_targets"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/33-414dea8bfd00.json"
+            }
+          ],
+          "source_urls": "https://dehazingecho2025.grand-challenge.org/prizes-2/; https://conferences.miccai.org/2025/en/challenges.asp; https://dehazingecho2025.grand-challenge.org/datasets/; https://dehazingecho2025.grand-challenge.org/registration/; https://dehazingecho2025.grand-challenge.org/; https://dehazingecho2025.grand-challenge.org/submissionevaluation/; https://dehazingecho2025.grand-challenge.org/dehazingecho2025/; https://dehazingecho2025.grand-challenge.org/timeline/; https://dehazingecho2025.grand-challenge.org/organizersponsor/; https://dehazingecho2025.grand-challenge.org/challenge/statistics/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

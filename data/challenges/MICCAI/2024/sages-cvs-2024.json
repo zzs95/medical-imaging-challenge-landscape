@@ -1,0 +1,642 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "sages-cvs-2024",
+    "challenge_name": "CVS Challenge 2024",
+    "full_name": "The SAGES Critical View of Safety Challenge",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R42",
+      "official_programme_row_numbers": "39",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Surgical Artificial Intelligence and Innovation Laboratory (SAIIL), Massachusetts General Hospital (MGH), 55 Fruit Street, Wang Ambulatory Care Center 3-339, Boston, USA",
+        "CAMMA, IHU Strasbourg, 1 Place d`Hopital, Strasbourg, France",
+        "Penn Computer Assisted Surgery and Outcomes Laboratory (PCASO), University of Pennsylvania, 3400 Spruce Street, Philadelphia, USA",
+        "Center for Advanced Medical Computing and Analysis (CAMCA), MGH, 55 Fruit Street, Boston, USA",
+        "Northwell Health, 186 East 76th Street, New York, USA"
+      ],
+      "registered_authors": [
+        {
+          "name": "Meireles, Ozanan",
+          "affiliation": "Surgical Artificial Intelligence and Innovation Laboratory (SAIIL), Massachusetts General Hospital (MGH), 55 Fruit Street, Wang Ambulatory Care Center 3-339, Boston, USA"
+        },
+        {
+          "name": "Padoy, Nicolas",
+          "affiliation": "CAMMA, IHU Strasbourg, 1 Place d`Hopital, Strasbourg, France"
+        },
+        {
+          "name": "Hashimoto, Daniel",
+          "affiliation": "Penn Computer Assisted Surgery and Outcomes Laboratory (PCASO), University of Pennsylvania, 3400 Spruce Street, Philadelphia, USA"
+        },
+        {
+          "name": "Eckhoff, Jennifer",
+          "affiliation": "Surgical Artificial Intelligence and Innovation Laboratory (SAIIL), Massachusetts General Hospital (MGH), 55 Fruit Street, Wang Ambulatory Care Center 3-339, Boston, USA"
+        },
+        {
+          "name": "Alapatt, Deepak",
+          "affiliation": "CAMMA, IHU Strasbourg, 1 Place d`Hopital, Strasbourg, France"
+        },
+        {
+          "name": "Rosman, Guy",
+          "affiliation": "Surgical Artificial Intelligence and Innovation Laboratory (SAIIL), Massachusetts General Hospital (MGH), 55 Fruit Street, Wang Ambulatory Care Center 3-339, Boston, USA"
+        },
+        {
+          "name": "Mascagni, Pietro",
+          "affiliation": "CAMMA, IHU Strasbourg, 1 Place d`Hopital, Strasbourg, France"
+        },
+        {
+          "name": "Mazallier, Jean-Paul",
+          "affiliation": "CAMMA, IHU Strasbourg, 1 Place d`Hopital, Strasbourg, France"
+        },
+        {
+          "name": "Li, Xiang",
+          "affiliation": "Center for Advanced Medical Computing and Analysis (CAMCA), MGH, 55 Fruit Street, Boston, USA"
+        },
+        {
+          "name": "Lyu, Zhiliang",
+          "affiliation": "Center for Advanced Medical Computing and Analysis (CAMCA), MGH, 55 Fruit Street, Boston, USA"
+        },
+        {
+          "name": "Choksi, Sarah",
+          "affiliation": "Northwell Health, 186 East 76th Street, New York, USA"
+        },
+        {
+          "name": "Ban, Yutong",
+          "affiliation": "Surgical Artificial Intelligence and Innovation Laboratory (SAIIL), Massachusetts General Hospital (MGH), 55 Fruit Street, Wang Ambulatory Care Center 3-339, Boston, USA"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Gallbladder",
+        "Cystic duct",
+        "Cystic artery",
+        "Hepatocystic triangle"
+      ],
+      "diseases": [
+        "Gallbladder inflammation and other gallbladder pathologies"
+      ],
+      "clinical_context": "Indications explicitly stated in the cohort; CVS evaluates surgical safety, not diagnosis."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": [],
+      "task_families": [
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Critical View of Safety Achievement",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992103",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/The SAGES Critical View of Safety Challenge_2024.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": true,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992103",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/The SAGES Critical View of Safety Challenge_2024.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "Endoscopy"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992103",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/The SAGES Critical View of Safety Challenge_2024.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Not established",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-ND. 当届提案明确列出 CC BY-NC-ND；未标明版本时不自行补写版本。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992103",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/The SAGES Critical View of Safety Challenge_2024.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992103",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/The SAGES Critical View of Safety Challenge_2024.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Grand Challenge",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992103",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/The SAGES Critical View of Safety Challenge_2024.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992103",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/The SAGES Critical View of Safety Challenge_2024.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\n\n\n\n\n\f                                     The SAGES Critical View of Safety Challenge\n\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nSubchallenge A - CVS Achievement\nPrimary metric: Mean Average Precision (mAP)\nSecondary Metrics: Per-class Counting Metric: Positive Likelihood Ratio (LR+) and Multi-class Counting Metric:\nBalanced Accuracy (BA)\n\n\nSubchallenge B - Uncertainty Quantification\nPrimary Metric: Brier Score (BS)\nSecondary Metrics: Regression accuracy on confidence and Negative Log Likelihood (NLL)\n\n\nSubchallenge C - AI Efficiency\nPrimary Metric and Secondary Metrics: same as subchallenge A, with the main difference of a limited inference\ncompute but methods that are self-certified to meet the eligibility criteria (determined based on GFLOPS/VRAM)\nwill be considered.\n\n\nSubchallenge D - Domain shift\nPrimary Metric and Secondary Metrics: same as subchallenge A.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nSubchallenge A - CVS Achievement\nWe chose a multi-threshold metric (mAP) as our primary metric as different thresholds serve different clinical\napplications of these models (e.g. for reporting vs. for guidance). Secondary metrics were chosen to compensate\nfor dataset imbalance.\n\n\nSubchallenge B - Uncertainty Quantification\nBrier Score (BS) addresses both intra-annotator agreement and average difficulty rating. The metrics Brier Score\nwere chosen to measure uncertainty calibration. In case of additional emitted confidence, using regression\naccuracy will allow the assessment of model self-awareness of uncertainty.\n\n\nSubchallenge C - AI Efficiency\nSee Justification Subchallenge A.\n\n\nSubchallenge D - Domain shift\nThe same base metrics as for subchallenge A will be used, with the exception of using a norm that is close to L\nnorm in order to check distributional robustness. The 90% quantile will be used to reduce outlier effects, and yet\nkeep the maximum norm behavior needed for robustness reasoning.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\n\n\n\n\n\f                                      The SAGES Critical View of Safety Challenge\n\naggregated to arrive at a final score/ranking.\n\nRanking is performed as customary in similar classification problems, and given the metrics leveraged on the\nsubchallenges. All of our metrics result in fully-ordered, scalar-valued, evaluations, and we will rank accordingly,\nwith respect to the primary metric in each subchallenge.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nIncomplete submissions or submissions missing results will be disqualified to avoid the introduction of bias to the\noverall results.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nFor subchallenges A, B, and C, we calculate all the metrics at a video (case) level and then average across all\nconsidered cases. Ranking will be according to the average score. For subchallenge D, we will look at the quantile\nacross variation subsets to gauge the maximum effect due to distribution shift."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "The submission instructions will be published on the CVS Challenge website as well as on grand-challenge.org. Results will be submitted via a docker container. The model output format will be published along with the The SAGES Critical View of Safety Challenge instructions. There should only be one final submission per team per sub-challenge. No evaluation of algorithms before submission of the final results will be conducted by the challenge organizer. Participants will be free to self-evaluate using internal validation sets. To note, all submissions will require inference to be possible on a single Nvidia GPU (<12 GB).",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992103",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/The SAGES Critical View of Safety Challenge_2024.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992103",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/The SAGES Critical View of Safety Challenge_2024.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10992103"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://www.cvschallenge.org/",
+      "registration": "https://doi.org/10.5281/zenodo.10992103",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10992103",
+          "resolved_record_id": 10992104,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/The SAGES Critical View of Safety Challenge_2024.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/The SAGES Critical View of Safety Challenge_2024.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://www.cvschallenge.org/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/ea2ef642436ebb0d.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "CVS Challenge"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Not established",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Not established",
+        "state": "Not established",
+        "rationale": "当前官网更新为2025年，不能将其数据访问规则直接写回2024。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992103",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992103",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. The submission instructions will be published on the CVS Challenge website as well as on grand-challenge.org. Results will be submitted via a docker container. The model output format will be published along with the The SAGES Critical View of Safety Challenge instructions. There should only be one final submission per team per sub-challenge. No evaluation of algorithms before submission of the final results will be conducted by the challenge organizer.  [...] on set. During the validation phase, participants will be given instructions to self-evaluate their dockers as a sanity check before the final submission. Only the last submission by each team will be considered for participation in the challenge."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992103",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results The training data release will be conducted in three intervals: 1) the first batch of the training data will be released mid April 2) the second batch will be released mid June 2024, 2) the third and final batch of the training data will be released mid July. Participants can join the challenge until 10 days prior to the deadline. The submission deadline is the 15th of September 2024. Results will be released during the workshop-challenge day. Release of training data: 15th April 2024 (1.Batch = 250 videos) 15th June 2024 (2. Batch = 250 videos) 15th July 2024 (3. Batch = 200 videos) Registration deadline: 10 days before deadline Submission deadline: 15th September 2024"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992103",
+          "excerpt": ""
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/ea2ef642436ebb0d.json",
+          "url": "https://www.cvschallenge.org/",
+          "excerpt": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/sages-cvs-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-25 access completion: 现行页面主要对应2025届，不能向前套用至2024。"
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Not established",
+        "rationale": "现行页面主要对应2025届，不能向前套用至2024。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/ea2ef642436ebb0d.json",
+          "_collection/access_completion_20261025/sources/68df7ad6baa0e730.json"
+        ]
+      }
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 700,
+              "unit": "videos",
+              "scope": "Approximate",
+              "approximate": true,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 300,
+              "unit": "videos",
+              "scope": "Approximate",
+              "approximate": true,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [],
+            "reported_scope": "More than 50 countries across six continents; names withheld"
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": ">60 institutions, >50 countries, 6 continents; exact locations withheld. Approx 30% from LMICs. Aggregate geographic coverage reported, individual countries not identified.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10992103",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://www.cvschallenge.org/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/ea2ef642436ebb0d.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/sages-cvs-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Inflammatory / infectious",
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Gallbladder",
+        "Cystic duct",
+        "Cystic artery",
+        "Hepatocystic triangle"
+      ],
+      "specific_diseases": [
+        "Gallbladder inflammation and other gallbladder pathologies"
+      ],
+      "review_note": "Indications explicitly stated in the cohort; CVS evaluates surgical safety, not diagnosis.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992103"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/sages-cvs-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-ND"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-ND；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY-NC-ND (Attribution-NonCommercial-NoDerivs).",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10992103"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992103"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/sages-cvs-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [],
+                "reported_scope": "More than 50 countries across six continents; names withheld"
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10992103",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R42/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://www.cvschallenge.org/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/ea2ef642436ebb0d.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/sages-cvs-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

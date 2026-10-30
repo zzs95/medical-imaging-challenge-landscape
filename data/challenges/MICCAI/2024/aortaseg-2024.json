@@ -1,0 +1,940 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "aortaseg-2024",
+    "challenge_name": "Multi-Class Segmentation of Aortic Branches and Zones in CTA",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "CTA"
+      ],
+      "body_region": [
+        "Aorta"
+      ],
+      "organ_system": [
+        "Cardiovascular"
+      ],
+      "organs_or_structures": [
+        "Aorta branches",
+        "SVS/STS aortic zones"
+      ],
+      "diseases": [
+        "Acute uncomplicated type B aortic dissection"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "segmentation",
+          "official_name": "Aortic branches and zones segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "CTA volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "23-label aortic mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "case_count": 50
+        },
+        "validation": {
+          "case_count": 10
+        },
+        "test": {
+          "case_count": 40
+        }
+      },
+      "voxel_spacing_mm": [
+        1,
+        1,
+        1
+      ]
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "DUA under IRB protocol; post-challenge noncommercial research with challenge citation.",
+      "access_after_challenge": "Participating teams may continue non-commercial research use after the challenge, with mandatory challenge-paper citation; separate result-publication restrictions also apply.",
+      "access_scope": "Data download requires signed DUA under the IRB protocol; non-commercial research may continue after challenge completion with stated restrictions.",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": null,
+        "policy": "No additional training dataset."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "segmentation",
+          "metrics": [
+            "Mean class DSC",
+            "Mean class NSD"
+          ],
+          "ranking": "Registered protocol: rank both DSC and NSD per test case, then average the 80 case-metric ranks for 40 cases."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "development_submissions": 5,
+        "final_submissions": 2
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {
+      "training_data_release": "2024-05-06",
+      "final_submission_deadline": "2024-09-30",
+      "challenge_event": "2024-10-06"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 133,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Model Development Phase",
+            "submission_count": 365
+          },
+          {
+            "official_phase_name": "Final Test Phase",
+            "submission_count": 39
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://aortaseg24.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Timeline supersedes earlier development/test dates in Task & Evaluation page. Rules simultaneously forbid separate publication and allow cited post-challenge research; retain this conflict pending DUA clarification.",
+      "Registered protocol is preregistration evidence; later official website updates take priority. Planned counts are explicitly labeled and not assumed to equal the final released cohort."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/#while-machine-learning-has-revolutionized-3d-medical-image-analysis-its-potential-in-acute-uncomplicated-type-b-aortic-dissection-autbad-the-most-common-aortic-emergency-remains-largely-unexplored-in-the-clinical-setting-autbad-is-categorized-using-svssts-zones-a-detailed-classification-system-defined-by-specific-zones-of-the-aorta-in-relation-to-aortic-branches-current-methods-for-aortic-segmentation-often-treat-this-as-a-binary-segmentation-problem-neglecting-the-essential-differentiation-between-individual-aortic-branches-and-their-relationships-to-svssts-zones",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-02da93f78e46.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/#citation",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-0d5f0450476a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/dataset/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-2a7c34d3c1d7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/taskevaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-2c8015f5620d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/#proceedings-published",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-3046f5a3943f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/dataset-access-information/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-38b67afd149d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/#clinical-relevance",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-3a23d202e9f3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/#challenge-organizers",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-4a3573a44c66.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-59a404311b62.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-72c2bd85116e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/rules-regulations/",
+          "supports": [
+            "data_access",
+            "data_access.access_after_challenge",
+            "data_access.access_scope",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-741a3b00b859.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://aortaseg24.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-8642b05493ae.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/#aortaseg24-challenge",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-8783f9eb5dff.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/similar-challenges/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-98426c2d4344.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/baseline-algorithm/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-9ee4954a6549.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/#this-challenge-has-been-proposed-to-address-these-limitations-by-offering-the-first-large-scale-dataset-of-100-cta-volumes-which-are-paired-with-detailed-annotations-for-the-aorta-its-branches-and-the-clinically-relevant-svssts-zones-participating-teams-will-have-the-opportunity-to-develop-innovative-algorithms-for-accurate-automated-and-multi-class-segmentation-of-this-intricate-vascular-structure",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-9f6e496da73a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/#multi-class-segmentation-of-aortic-branches-and-zones-in-computed-tomography-angiography",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-ba60a45899be.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/aortaseg24/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-c1a69dee3ce9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/#the-aorta-is-the-largest-artery-of-the-body-carrying-oxygenated-blood-from-the-heart-to-the-head-neck-upper-extremities-abdomen-pelvis-and-lower-extremities-pathologies-of-the-aorta-and-its-main-branches-like-dissection-aneurysm-and-atherosclerotic-disease-can-be-immediate-threats-to-life-or-limb-requiring-prompt-surgical-evaluation-and-treatment-advances-in-medical-imaging-and-therapies-including-computed-tomography-angiography-cta-and-the-endovascular-aortic-stent-grafts-have-led-to-a-paradigm-shift-in-the-management-of-aortic-disease-endovascular-abdominal-aortic-aneurysm-repair-for-example-is-now-performed-as-first-line-therapy-in-over-80-of-patients-for-minimally-invasive-repairs-involving-branch-vessels-a-detailed-3d-analysis-of-the-aortic-and-branch-vessel-anatomy-is-essential-this-includes-measuring-the-volume-and-diameter-of-the-aorta-and-individual-aortic-branches-and-zones-for-appropriate-device-selection-which-can-be-achieved-by-multi-class-segmentation-of-the-aorta-on-cta",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-c37781aed0f4.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/#by-fostering-advancements-in-image-analysis-techniques-for-cta-this-challenge-aims-to",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-db7c399f1e52.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/awards-and-authorship/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-e67bc2d794ae.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://aortaseg24.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-overview.json"
+        },
+        {
+          "type": "official conference registered-challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "supports": [
+            "event",
+            "year"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json"
+        },
+        {
+          "type": "official registered challenge protocol (preregistration, not final report)",
+          "url": "https://zenodo.org/records/10991212/files/Multi-Class%20Segmentation%20of%20Aortic%20Branches%20and%20Zo.pdf",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "dataset",
+            "evaluation",
+            "submission.evidence_stage",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/58-design-2024.txt"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify final implementation of preregistered case-metric rank aggregation, full DUA publication terms and inference resources."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/10991212/files/Multi-Class%20Segmentation%20of%20Aortic%20Branches%20and%20Zo.pdf",
+          "local_snapshot": "_collection/sources/58-design-2024.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Participating teams are required to submit their solution via Docker container."
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://aortaseg24.grand-challenge.org/rules-regulations/",
+          "local_snapshot": "_collection/sources/58-741a3b00b859.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit edition-source post-challenge policy reviewed; planned releases, continuing public access, controlled requests and required deletion are kept distinct."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://aortaseg24.grand-challenge.org/rules-regulations/",
+          "local_snapshot": "_collection/sources/58-741a3b00b859.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition rules explicitly require DUA before downloading the data."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_after_challenge",
+          "data_access.access_scope",
+          "submission.evidence_stage"
+        ],
+        "remaining_core_fields": [
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/aortaseg-2024.json",
+          "_collection/verification_20261003/literature_context/aortaseg-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "DocuSign签署协议后申请Dropbox数据访问；官网明确批准最长需24小时。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "DocuSign签署协议后申请Dropbox数据访问；官网明确批准最长需24小时。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/58-38b67afd149d.json",
+          "url": ""
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/38b67afd149d9cd1.json",
+          "url": "https://aortaseg24.grand-challenge.org/dataset-access-information/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/aortaseg-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Aorta"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cardiovascular"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Acute uncomplicated type B aortic dissection"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "注册方案的实际队列明确为CTA确诊的急性非复杂B型主动脉夹层。",
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/10991212/files/Multi-Class%20Segmentation%20of%20Aortic%20Branches%20and%20Zo.pdf",
+          "local_source": "_collection/sources/58-design-2024.txt"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "注册方案的实际队列明确为CTA确诊的急性非复杂B型主动脉夹层。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2024/aortaseg-2024.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "CTA scans were obtained from patients admitted to the University of Florida Health Shands Hospital with a diagnosis of TBAD.",
+              "url": "https://zenodo.org/records/10991212/files/Multi-Class%20Segmentation%20of%20Aortic%20Branches%20and%20Zo.pdf",
+              "snapshot": "_collection/sources/58-design-2024.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nCTA scans were obtained from patients admitted to the University of Florida Health Shands Hospital with a\ndiagnosis of TBAD.",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/aortaseg-2024.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Participating teams may continue non-commercial research use after the challenge, with mandatory challenge-paper citation; separate result-publication restrictions also apply.",
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/#while-machine-learning-has-revolutionized-3d-medical-image-analysis-its-potential-in-acute-uncomplicated-type-b-aortic-dissection-autbad-the-most-common-aortic-emergency-remains-largely-unexplored-in-the-clinical-setting-autbad-is-categorized-using-svssts-zones-a-detailed-classification-system-defined-by-specific-zones-of-the-aorta-in-relation-to-aortic-branches-current-methods-for-aortic-segmentation-often-treat-this-as-a-binary-segmentation-problem-neglecting-the-essential-differentiation-between-individual-aortic-branches-and-their-relationships-to-svssts-zones",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-02da93f78e46.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/#citation",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-0d5f0450476a.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/dataset/",
+                  "supports": [
+                    "dataset",
+                    "labels_and_targets",
+                    "data_access"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-2a7c34d3c1d7.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/taskevaluation/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-2c8015f5620d.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/#proceedings-published",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-3046f5a3943f.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/dataset-access-information/",
+                  "supports": [
+                    "dataset",
+                    "labels_and_targets",
+                    "data_access"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-38b67afd149d.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/#clinical-relevance",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-3a23d202e9f3.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/#challenge-organizers",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-4a3573a44c66.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-59a404311b62.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/timeline/",
+                  "supports": [
+                    "year",
+                    "schedule",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-72c2bd85116e.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/rules-regulations/",
+                  "supports": [
+                    "data_access",
+                    "data_access.access_after_challenge",
+                    "data_access.access_scope",
+                    "data_usage_mode",
+                    "evaluation",
+                    "publication",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-741a3b00b859.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://aortaseg24.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-8642b05493ae.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/#aortaseg24-challenge",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-8783f9eb5dff.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/similar-challenges/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-98426c2d4344.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/baseline-algorithm/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-9ee4954a6549.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/#this-challenge-has-been-proposed-to-address-these-limitations-by-offering-the-first-large-scale-dataset-of-100-cta-volumes-which-are-paired-with-detailed-annotations-for-the-aorta-its-branches-and-the-clinically-relevant-svssts-zones-participating-teams-will-have-the-opportunity-to-develop-innovative-algorithms-for-accurate-automated-and-multi-class-segmentation-of-this-intricate-vascular-structure",
+                  "supports": [
+                    "dataset",
+                    "labels_and_targets",
+                    "data_access"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-9f6e496da73a.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/#multi-class-segmentation-of-aortic-branches-and-zones-in-computed-tomography-angiography",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-ba60a45899be.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/aortaseg24/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-c1a69dee3ce9.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/#the-aorta-is-the-largest-artery-of-the-body-carrying-oxygenated-blood-from-the-heart-to-the-head-neck-upper-extremities-abdomen-pelvis-and-lower-extremities-pathologies-of-the-aorta-and-its-main-branches-like-dissection-aneurysm-and-atherosclerotic-disease-can-be-immediate-threats-to-life-or-limb-requiring-prompt-surgical-evaluation-and-treatment-advances-in-medical-imaging-and-therapies-including-computed-tomography-angiography-cta-and-the-endovascular-aortic-stent-grafts-have-led-to-a-paradigm-shift-in-the-management-of-aortic-disease-endovascular-abdominal-aortic-aneurysm-repair-for-example-is-now-performed-as-first-line-therapy-in-over-80-of-patients-for-minimally-invasive-repairs-involving-branch-vessels-a-detailed-3d-analysis-of-the-aortic-and-branch-vessel-anatomy-is-essential-this-includes-measuring-the-volume-and-diameter-of-the-aorta-and-individual-aortic-branches-and-zones-for-appropriate-device-selection-which-can-be-achieved-by-multi-class-segmentation-of-the-aorta-on-cta",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-c37781aed0f4.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/#by-fostering-advancements-in-image-analysis-techniques-for-cta-this-challenge-aims-to",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-db7c399f1e52.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/awards-and-authorship/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-e67bc2d794ae.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://aortaseg24.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-overview.json"
+                },
+                {
+                  "type": "official conference registered-challenge directory",
+                  "url": "https://miccai.org/sig/sig-challenges/",
+                  "supports": [
+                    "event",
+                    "year"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/0-b45d362052fd.json"
+                },
+                {
+                  "type": "official registered challenge protocol (preregistration, not final report)",
+                  "url": "https://zenodo.org/records/10991212/files/Multi-Class%20Segmentation%20of%20Aortic%20Branches%20and%20Zo.pdf",
+                  "supports": [
+                    "data_access",
+                    "data_usage_mode",
+                    "dataset",
+                    "evaluation",
+                    "submission.evidence_stage",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/58-design-2024.txt"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

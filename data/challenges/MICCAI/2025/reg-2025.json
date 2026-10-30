@@ -1,0 +1,1102 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "reg-2025",
+    "challenge_name": "REport Generation in pathology using Pan-Asia Giga-pixel WSIs",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Histopathology"
+      ],
+      "submodality": [
+        "H&E whole-slide images"
+      ],
+      "body_region": [
+        "Breast",
+        "Bladder",
+        "Cervix",
+        "Colon",
+        "Lung",
+        "Prostate",
+        "Stomach"
+      ],
+      "organ_system": [
+        "Respiratory",
+        "Digestive",
+        "Genitourinary",
+        "Reproductive",
+        "Breast"
+      ],
+      "organs_or_structures": [
+        "Tumor tissue"
+      ],
+      "diseases": [
+        "Cancer"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Report Generation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Structured pathology report generation",
+          "task_family": "Report Generation",
+          "task_subtype": "WSI-to-report generation",
+          "input": [
+            "Gigapixel WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Structured pathology report"
+          ],
+          "granularity": "whole slide",
+          "clinical_goal": null
+        }
+      ],
+      "task_families": [
+        "Report generation"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Report generation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": true,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Organ",
+        "Procedure",
+        "Histological type",
+        "Histological grade"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "Multicountry clinical histopathology/report pairs",
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": true,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 8494,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Histopathology"
+      ],
+      "data_components": [
+        "20× TIFF whole-slide images",
+        "JSON standardized CAP/WHO pathology reports"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "stated_total_pairs": 10494,
+        "test_phase1": 1000,
+        "test_phase2": 1000,
+        "note": "Published counts precede exclusion of corrupt TIFFs; final cleaned counts unknown."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Ambiguous",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 当届数据使用条款列 CC BY-NC-SA。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; round 3",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "2025 training",
+          "category": "Authentication unresolved",
+          "access_steps": [
+            "FTP download server",
+            "Credential requirements unverified"
+          ],
+          "manual_review": null
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "prediction submission",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": false,
+        "submission_artifact": "JSON"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": true,
+        "policy": "Additional training datasets prohibited. Pretrained weights unrestricted."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "ROUGE",
+            "BLEU",
+            "Keyword Jaccard (KEY)",
+            "Embedding cosine similarity (EMB)"
+          ],
+          "ranking": "Score = 0.15×(ROUGE+BLEU)+0.4×KEY+0.3×EMB."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Prediction JSON",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "submissions_per_team": 2
+      },
+      "task_outputs": [
+        {
+          "task_id": "task1",
+          "content": "Structured reports keyed by slide identifier"
+        }
+      ]
+    },
+    "schedule": {
+      "training_release": "2025-05-20",
+      "test1_deadline": "2025-08-01",
+      "test2_deadline": "2025-08-23",
+      "deadline_timezone": "KST 10:00",
+      "winner_announcement": "2025-09-09"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 532,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": 26,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Debug Phase",
+            "submission_count": 0
+          },
+          {
+            "official_phase_name": "Test Phase 1",
+            "submission_count": 3
+          },
+          {
+            "official_phase_name": "Test Phase 2",
+            "submission_count": 1
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://reg2025.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official homepage reports 26 submitting teams; this is distinct from current platform user counts. Best-scoring submission is selected."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge statistics page",
+          "url": "https://reg2025.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/35-03c8b1d9277a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2025.grand-challenge.org/reg2025/",
+          "supports": [
+            "challenge context",
+            "evaluation.platform"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/35-05b180875d1e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2025.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/35-29b6b81b1e5f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2025.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/35-3629306ca426.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/35-40cba6887cd7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2025.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/35-64317fb2c5f7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2025.grand-challenge.org/data-description/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/35-6a3204ef3697.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2025.grand-challenge.org/references/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/35-7464b13db9b3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2025.grand-challenge.org/task-description/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/35-d42a814eb57b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2025.grand-challenge.org/submission-evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/35-e5b765700b0d.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2025.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/35-overview.json"
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://reg2025.grand-challenge.org/challenge/statistics/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/reg-2025.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset: organ-specific counts do not sum to stated total; homepage also disagrees on institution count. Final cleaned counts require organizer report.",
+        "evaluation: exact ROUGE/BLEU variants and embedding model need code verification.",
+        "data_access: dataset license requires verification."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://reg2025.grand-challenge.org/reg2025/",
+          "local_snapshot": "_collection/sources/35-05b180875d1e.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'https://reg2025.grand-challenge.org/evaluation/test-phase-2/submissions/create/', 'url': 'https://reg2025.grand-challenge.org/evaluation/test-phase-2/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://reg2025.grand-challenge.org/challenge/statistics/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/reg-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://reg2025.grand-challenge.org/challenge/statistics/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/reg-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://reg2025.grand-challenge.org/challenge/statistics/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/reg-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "evaluation.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "data_usage_mode.overall_paradigm",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/reg-2025.json",
+          "_collection/verification_20261003/literature_context/reg-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "data_usage_mode_external_note": "Additional training datasets prohibited; pretrained weights allowed without restriction.",
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Ambiguous",
+        "state": "Ambiguous",
+        "rationale": "当届官网记录FTP训练数据发布、维护和恢复；下载服务器存在，但是否需账号或专用凭据未核实。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "2025 training",
+            "category": "Authentication unresolved",
+            "access_steps": [
+              "FTP download server",
+              "Credential requirements unverified"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "Primary protocol / metadata checked",
+        "confidence": "High",
+        "source_urls": [
+          "https://reg2025.grand-challenge.org/"
+        ]
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "训练及两个测试阶段影像提供下载；参赛者提交报告JSON。"
+      },
+      "decision_history": [
+        "训练及两个测试阶段影像提供下载；参赛者提交报告JSON。",
+        "2026-10-24 round 3: 当届官网记录FTP训练数据发布、维护和恢复；下载服务器存在，但是否需账号或专用凭据未核实。",
+        "2026-10-25 access completion: 训练数据专页返回权限限制，可确认访问门槛，尚不能区分注册与个别授权。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/35-3629306ca426.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/reg-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://reg2025.grand-challenge.org/",
+          "local_source": "_collection/access_backfill_round3_20261024/sources/3629306ca426d68d.json",
+          "review_date": "2026-10-24",
+          "section": "Round 3 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Ambiguous",
+        "rationale": "训练数据专页返回权限限制，可确认访问门槛，尚不能区分注册与个别授权。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/d42a814eb57b8d11.json",
+          "_collection/access_completion_20261025/sources/626b2649dad9e04b.json",
+          "_collection/access_completion_20261025/sources/069609f3b022d256.json",
+          "_collection/access_completion_20261025/sources/7464b13db9b325b1.json",
+          "_collection/access_completion_20261025/sources/29b6b81b1e5f122f.json",
+          "_collection/access_completion_20261025/sources/6a3204ef36971539.json",
+          "_collection/access_completion_20261025/sources/3f4aa9c7d95286e2.json",
+          "_collection/access_completion_20261025/sources/05b180875d1e66a9.json",
+          "_collection/access_completion_20261025/sources/64317fb2c5f77054.json",
+          "_collection/access_completion_20261025/sources/3629306ca426d68d.json",
+          "_collection/access_completion_20261025/sources/00d0162299036df4.json"
+        ]
+      }
+    },
+    "review_coding": {
+      "development_access": "Ambiguous",
+      "data_model_flow": "data-to-model",
+      "task_families": [
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "previous_task_families": [
+        "Report generation"
+      ],
+      "previous_emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_roles": {
+        "Report generation": "Declared task output"
+      },
+      "note_zh": "WSI 到病理文本报告；报告按标题组织仍可包含叙述性文本，保留生成与 VLM。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://reg2025.grand-challenge.org/reg2025/",
+          "local_source": "_collection/sources/35-05b180875d1e.json",
+          "sha256": "3e0cd4500138347d5a606ec630d2661873dc3c2c3ea2c8e7c9e75200873214ac"
+        },
+        {
+          "url": "https://reg2025.grand-challenge.org/",
+          "local_source": "_collection/sources/35-3629306ca426.json",
+          "sha256": "9a33bb27bd97f966849728b96133b31154913bb22a45561ffb7ae60e7e881e08"
+        },
+        {
+          "url": "https://reg2025.grand-challenge.org/data-description/",
+          "local_source": "_collection/sources/35-6a3204ef3697.json",
+          "sha256": "4e162b9e98b72f20a42384d0a519877f85fcb10e80772494f3215327f455f81d"
+        },
+        {
+          "url": "https://reg2025.grand-challenge.org/references/",
+          "local_source": "_collection/sources/35-7464b13db9b3.json",
+          "sha256": "90f85eba328af3d9a75fb6720bf0d7d16c830a2358f0e358e901ba42db239736"
+        },
+        {
+          "url": "https://reg2025.grand-challenge.org/task-description/",
+          "local_source": "_collection/sources/35-d42a814eb57b.json",
+          "sha256": "c3e1f6064feeb77ff885d896fc43657ad66e2d36d4e46befeee3cefe6f713eb0"
+        },
+        {
+          "url": "https://reg2025.grand-challenge.org/submission-evaluation/",
+          "local_source": "_collection/sources/35-e5b765700b0d.json",
+          "sha256": "9f6af710459bedbfabf606842fd5f91dd92f1e3b62edcea9d2fc53ea97d71266"
+        },
+        {
+          "url": "https://reg2025.grand-challenge.org/",
+          "local_source": "_collection/sources/35-overview.json",
+          "sha256": "9a33bb27bd97f966849728b96133b31154913bb22a45561ffb7ae60e7e881e08"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届数据使用条款列 CC BY-NC-SA。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "CC BY-NC-SA (Attribution-NonCommercial-ShareAlike)",
+          "source": {
+            "url": "https://zenodo.org/records/15081614/files/250-REport_Generation_of_pathology_using_Pan-Asia_Giga-pixel_WSIs_2025-03-17T09-35-19.pdf?download=1",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/204459024150690f.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/15081614/files/250-REport_Generation_of_pathology_using_Pan-Asia_Giga-pixel_WSIs_2025-03-17T09-35-19.pdf?download=1",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/204459024150690f.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://reg2025.grand-challenge.org/data-description/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/6a3204ef36971539.json",
+          "status": 200
+        },
+        {
+          "url": "https://reg2025.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/3629306ca426d68d.json",
+          "status": 200
+        },
+        {
+          "url": "https://reg2025.grand-challenge.org/prizes/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/64317fb2c5f77054.json",
+          "status": 200
+        },
+        {
+          "url": "https://reg2025.grand-challenge.org/reg2025/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/05b180875d1e66a9.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/records/15081613",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/82b955f13c65bfdc.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/records/15081614/files/250-REport_Generation_of_pathology_using_Pan-Asia_Giga-pixel_WSIs_2025-03-17T09-35-19.pdf?download=1",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/204459024150690f.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/records/15081614/preview/250-REport_Generation_of_pathology_using_Pan-Asia_Giga-pixel_WSIs_2025-03-17T09-35-19.pdf?include_deleted=0",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/76a031f1ab648db4.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2025/reg-2025.json",
+              "source_field": "dataset",
+              "value": {
+                "source_type": "Multicountry clinical histopathology/report pairs",
+                "routine_clinical_practice": null,
+                "anonymized": null,
+                "ethical_approval": null,
+                "center_type": null,
+                "multi_center": true,
+                "international": true,
+                "center_count": null,
+                "institutions_description": null,
+                "population": {
+                  "patient_count": null,
+                  "study_count": null,
+                  "scan_count": {
+                    "value": null,
+                    "approximate": null,
+                    "raw_text": null
+                  },
+                  "train_count": 8494,
+                  "validation_count": null,
+                  "test_count": null
+                },
+                "modalities": [
+                  "Histopathology"
+                ],
+                "data_components": [
+                  "20× TIFF whole-slide images",
+                  "JSON standardized CAP/WHO pathology reports"
+                ],
+                "collection_period": {
+                  "start_year": null,
+                  "end_year": null
+                },
+                "split_details": {
+                  "stated_total_pairs": 10494,
+                  "test_phase1": 1000,
+                  "test_phase2": 1000,
+                  "note": "Published counts precede exclusion of corrupt TIFFs; final cleaned counts unknown."
+                }
+              },
+              "sources": [
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://reg2025.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-03c8b1d9277a.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/reg2025/",
+                  "supports": [
+                    "challenge context",
+                    "evaluation.platform"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-05b180875d1e.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/organizers/",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-29b6b81b1e5f.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-3629306ca426.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-40cba6887cd7.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/prizes/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-64317fb2c5f7.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/data-description/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-6a3204ef3697.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/references/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-7464b13db9b3.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/task-description/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-d42a814eb57b.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/submission-evaluation/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-e5b765700b0d.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-overview.json"
+                },
+                {
+                  "type": "review-derived anatomical classification of source-recorded targets",
+                  "url": "https://reg2025.grand-challenge.org/challenge/statistics/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/clinical_mapping/reg-2025.json",
+                  "supports": [
+                    "clinical_domain.organ_system",
+                    "clinical_domain.organ_system_basis",
+                    "clinical_domain.organ_system_coding_scope"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2025/reg-2025.json",
+              "source_field": "participation_statistics",
+              "value": {
+                "registered_participants": 532,
+                "registered_teams": null,
+                "active_participants": null,
+                "active_teams": null,
+                "participants_with_submission": null,
+                "teams_with_submission": 26,
+                "qualified_teams": null,
+                "finalist_teams": null,
+                "submissions": {
+                  "directory_summary_submissions": null,
+                  "total_submissions": null,
+                  "by_task": null,
+                  "by_phase": [
+                    {
+                      "official_phase_name": "Debug Phase",
+                      "submission_count": 0
+                    },
+                    {
+                      "official_phase_name": "Test Phase 1",
+                      "submission_count": 3
+                    },
+                    {
+                      "official_phase_name": "Test Phase 2",
+                      "submission_count": 1
+                    }
+                  ]
+                },
+                "statistics_snapshot_date": "2026-10-02",
+                "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+                "notes": [
+                  "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+                ]
+              },
+              "sources": [
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://reg2025.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-03c8b1d9277a.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/reg2025/",
+                  "supports": [
+                    "challenge context",
+                    "evaluation.platform"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-05b180875d1e.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/organizers/",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-29b6b81b1e5f.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-3629306ca426.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-40cba6887cd7.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/prizes/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-64317fb2c5f7.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/data-description/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-6a3204ef3697.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/references/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-7464b13db9b3.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/task-description/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-d42a814eb57b.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/submission-evaluation/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-e5b765700b0d.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2025.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/35-overview.json"
+                },
+                {
+                  "type": "review-derived anatomical classification of source-recorded targets",
+                  "url": "https://reg2025.grand-challenge.org/challenge/statistics/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/clinical_mapping/reg-2025.json",
+                  "supports": [
+                    "clinical_domain.organ_system",
+                    "clinical_domain.organ_system_basis",
+                    "clinical_domain.organ_system_coding_scope"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 8494,
+              "unit": "WSI/report pairs",
+              "canonical_field": "dataset.population.train_count",
+              "scope": "Published pre-cleaning count; final corrupt-TIFF exclusions not quantified",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [],
+          "source_urls": "https://reg2025.grand-challenge.org/challenge/statistics/; https://reg2025.grand-challenge.org/reg2025/; https://reg2025.grand-challenge.org/organizers/; https://reg2025.grand-challenge.org/; https://conferences.miccai.org/2025/en/challenges.asp; https://reg2025.grand-challenge.org/prizes/; https://reg2025.grand-challenge.org/data-description/; https://reg2025.grand-challenge.org/references/; https://reg2025.grand-challenge.org/task-description/; https://reg2025.grand-challenge.org/submission-evaluation/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

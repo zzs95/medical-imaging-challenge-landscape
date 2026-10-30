@@ -1,0 +1,783 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "feta-2024",
+    "challenge_name": "FeTA 2024",
+    "full_name": "Fetal Tissue Annotation Challenge",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R20",
+      "official_programme_row_numbers": "4",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Universtiy of Lausanne",
+        "University Children's Hospital Zurich",
+        "Medical University of Vienna",
+        "UCSF",
+        "Harvard Medical School",
+        "University of Lausanne",
+        "King's College London",
+        "Imperial College London"
+      ],
+      "registered_authors": [
+        {
+          "name": "Bach Cuadra, Meritxell",
+          "affiliation": "Universtiy of Lausanne"
+        },
+        {
+          "name": "Payette, Kelly",
+          "affiliation": "University Children's Hospital Zurich"
+        },
+        {
+          "name": "Jakab, Andras",
+          "affiliation": "University Children's Hospital Zurich"
+        },
+        {
+          "name": "Licandro, Roxane",
+          "affiliation": "Medical University of Vienna"
+        },
+        {
+          "name": "Barkovich, Matt",
+          "affiliation": "UCSF"
+        },
+        {
+          "name": "Li, Hongwei Bran",
+          "affiliation": "Harvard Medical School"
+        },
+        {
+          "name": "Roulet, Margaux",
+          "affiliation": "University of Lausanne"
+        },
+        {
+          "name": "Zalevskyi, Vladyslav",
+          "affiliation": "University of Lausanne"
+        },
+        {
+          "name": "Sanchez, Thomas",
+          "affiliation": "University of Lausanne"
+        },
+        {
+          "name": "Fajardo Rojas, Diego",
+          "affiliation": "King's College London"
+        },
+        {
+          "name": "Li, Liu",
+          "affiliation": "Imperial College London"
+        },
+        {
+          "name": "Hutter, Jana",
+          "affiliation": "King's College London"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Fetal brain",
+        "Brain biometry"
+      ],
+      "diseases": [
+        "Pathological fetal neurodevelopment"
+      ],
+      "clinical_context": "Source explicitly distinguishes normal/pathological fetal development; individual malformation diagnoses not specified."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "secondary_task_families": [
+        "Quantification"
+      ],
+      "task_families": [
+        "Segmentation",
+        "Quantification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Generalizable Fetal Brain Segmentation",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10986045",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Fetal Brain Biometry",
+          "task_family": "Quantification",
+          "task_families": [
+            "Quantification"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10986045",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10986045",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10986045",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Individual authorization",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": true,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Kispi challenge-specific non-commercial terms; Vienna Data Transfer Agreement. Kispi 数据限非商业挑战用途；Vienna 数据另签 DTA；Task 2 适用条款仍标待确认，不扩展为全赛道确定许可。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10986045",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10986045",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Grand Challenge",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10986045",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10986045",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nFour complementary evaluation metrics will be used to compute the rankings:\n- Dice similarity coefficient (DSC) to measure the spatial overlap [31] [32]\n- the 95th percentile of Hausdorff distance (HD95) (https://github.com/deepmind/surface-distance) to quantify the\ncontour distance.\n- Volume similarity to measure the volume difference [31]\n- the Euler characteristic (EC), defined k-dimensional Betti numbers to quantify topological correctness. ([33][34]).\n\n\nIn addition, intracranial volume will be calculated, but not used in the rankings. Intracranial volume will be\ndetermined by adding all labels together.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nAs the task is a segmentation task, the DSC was chosen, as it is the most popular segmentation metric. However,\nwe would like not just an overlap metric, but we are also interested in the shape and volume, therefore we will\ninclude the HD95 (shape) and VS (volume), and the final ranking will take all three metrics into account. We will\ninclude a topological metric as well, given the preliminary analysis we conducted on topology in our previous\nchallenge (FeTA 2022, https://arxiv.org/abs/2402.09463).",
+          "registered_ranking_text": "Fetal Tissue Annotation Challenge\n\na) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThis ranking system was developed in order to take four different metric types equally into account. We also\nwanted to determine not just average ranking, but see if algorithms performed better in when the image was high\nquality vs low quality, as well as how well they perform on the pathological vs the neurotypical brains.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nThe only possibility for missing data would be if an algorithm does not find any of one label in the final label map,\nor if the entire label map is empty, or if biometry segments are missing or equal 0.\n\n\nIf there are missing results, the worst possible value will be used. For example, if a label does not exist in the label\nmap, it will receive a DSC and VS of 0, and the HD95 will be double the max value of the other algorithms\nsubmitted (to ensure it is ranked last for that sub-ranking).\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThe two tasks will have independent rankings.\nFor fetal tissue segmentation task, a final score incorporating the four metrics (DSC, HD95, VS, EC) will be\ndetermined. All metrics will be calculated for each label within each of the corresponding predicted label maps of\nthe fetal brain volumes in the testing set. The mean and standard deviation of each label will be calculated, and\nthe participating algorithms will be ranked from low to high (HD95, EC), where the lowest score receives the\nhighest scoring rank (best), and from high to low (DSC, VS), where the highest value will receive highest scoring\nrank (best). For each label, the four rankings were added together, and the algorithm with the highest ranking was\nranked first.\n\n\nResults of the challenge will be run through the ChallengeR toolkit, specifically designed to calculate and display\nimaging challenge results [38]."
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10986045",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf",
+            "registered_task_index": 2
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10986045",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf",
+            "registered_task_index": 2
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nThe ranking will be based on the measurement error in percentage (ME) which is the difference between\nestimated measurement and the actual measurement in comparison to the actual measurement.\nIn addition, we will compute the R^2 coefficient between the predictions and the ground truth for each region to\nassess the spread of the prediction, but we will not use it in the ranking.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nTask 2 targets the fetal biometry accuracy of the estimated segments (in mm). It is thus a regression task and\nclassical mean absolute/squared error metrics will be used. Also the quality of the fit between GT and predicted\nvalues will be evaluated through the R2 (but not used for the ranking).\n\n\n\n\n\f                                           Fetal Tissue Annotation Challenge",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nThis ranking system was developed in order to take two different metric types equally into account. We also\nwanted to determine not just average ranking, but see if algorithms performed better in when the image was high\nquality vs low quality, as well as how well they perform on the pathological vs the neurotypical brains.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nThe only possibility for missing data would be if an algorithm does not find any of one label in the final label map,\nor if the entire label map is empty, or if biometry segments are missing or equal 0.\n\n\nIf there are missing results, the worst possible value will be used. For example, if a label does not exist in the label\nmap, it will receive a DSC and VS of 0, and the HD95 will be double the max value of the other algorithms\nsubmitted (to ensure it is ranked last for that sub-ranking).\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThe two tasks will have independent rankings. For biometry, a final score considering all cases using\nmeasurement error in percentage as a metric will be obtained for each team. For each case, each team will be\nranked from low to high, where the lowest ME score receives the highest scoring rank (best). Hence, a ranking\nbased on the sum of the ranking score across all cases can be calculated.\n\n\nThe results of the challenge will be run through the ChallengeR toolkit, specifically designed to calculate and\ndisplay imaging challenge results [36]."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Participants will create a Docker container with their algorithm, and provide this to the challenge organizers. Once the website is up, it will contain instructions on how to containerize the algorithms, and the organizers will provide support to the participants when requested. The organizers will run the Docker container on the test data set using publicly available evaluation code. The organizers will inform the participants if the Docker container fails to run, and allow the participants to provide a fix. https://feta.grand-challenge.org/Submission/ (available after challenge registration)",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10986045",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "protocol_description": "Participants will create a Docker container with their algorithm, and provide this to the challenge organizers. Once the website is up, it will contain instructions on how to containerize the algorithms, and the organizers will provide support to the participants when requested. The organizers will run the Docker container on the test data set using publicly available evaluation code. The organizers will inform the participants if the Docker container fails to run, and allow the participants to provide a fix. https://feta.grand-challenge.org/Submission/ (available after challenge registration)",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10986045",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10986045",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10986045"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://feta.grand-challenge.org",
+      "registration": "https://doi.org/10.5281/zenodo.10986045",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10986045",
+          "resolved_record_id": 10986046,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/Fetal Tissue Annotation Challenge.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://feta.grand-challenge.org",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/af4f5166660fedac.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "FeTA"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Segmentation",
+        "Quantification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Individual authorization",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Individual authorization",
+        "state": "Documented and classifiable",
+        "rationale": "The edition protocol specifies the controlled Kispi data licence and a custom Vienna transfer agreement before receipt."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10986045",
+          "excerpt": "649159/wiki/610007); non-commercial use only for the challenge purpose. Custom Vienna Data Transfer Agreement that each participant must sign prior to receiving the data."
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10986045",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Participants will create a Docker container with their algorithm, and provide this to the challenge organizers. Once the website is up, it will contain instructions on how to containerize the algorithms, and the organizers will provide support to the participants when requested. The organizers will run the Docker container on the test data set using publicly available evaluation code. The organizers will inform the participants if the Docker container fails to run, and allow the participants to provide a fix. https://feta.grand-challenge.org/Submission/ (available after challenge registration) b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. No multiple submission will be allowed. The evaluation will be performed on the submitted Docker containers at the organizers institute. Resubmissions are only allowed in cases of technical errors with the Docker. After the MICCAI challenge session, new submissions and updates may be made."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10986045",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Training Data Release: May, 2024 Registration: Will be announced once the challenge is accepted Docker Submission Deadline: 2 months before the challenge session Top 10 teams informed: 2 weeks before the challenge, so they can prepare a presentation Fetal Tissue Annotation Challenge Complete results will be announced at the challenge session"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10986045",
+          "excerpt": "This renders the collection of data challenging and makes our data unique. Our dataset is the first publicly released fetal brain dataset consisting of manually annotated volumes with multiple classes, making this a unique dataset. Fetal Tissue Annotation Challenge Finally, the distribution of GAs and number of pathologic subjects is equal between the test and training data. In addition, we are increasi"
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10986045",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10986045",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Participants will create a Docker container with their algorithm, and provide this to the challenge organizers. Once the website is up, it will contain instructions on how to containerize the algorithms, and the organizers will provide support to the participants when requested. The organizers will run the Docker container on the test data set using publicly available evaluation code. The organizers will inform the participants if the Docker container fails to run, and allow the participants to provide a fix. https://feta.grand-challenge.org/Submission/ (available after challenge registration) b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. No multiple submission will be allowed. The evaluation will be performed on the submitted Docker containers at the organizers institute. Resubmissions are only allowed in cases of technical errors with the Docker. After the MICCAI challenge session, new submissions and updates may be made."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10986045",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Idem as Task 1."
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10986045",
+          "excerpt": ""
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/af4f5166660fedac.json",
+          "url": "https://feta.grand-challenge.org",
+          "excerpt": "Home Organizing Team Data Description Data Download Evaluation And Ranking Submission Instructions Program Faqs Algorithm Description Guidelines Contact Information Feta 2021 Old Info Feta 2022 Top 5 Submissions Feta-2022 Old-Info-Feta-2022 Email organizers Fetal Tissue Annotation and Segmentation Challenge (FeTA) ¶ The Fetal Tissue Annotation and S"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "development",
+              "value": 80,
+              "unit": "volumes",
+              "scope": "Kispi",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "development",
+              "value": 40,
+              "unit": "volumes",
+              "scope": "Vienna",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 40,
+              "unit": "volumes",
+              "scope": "Kispi",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 40,
+              "unit": "volumes",
+              "scope": "Vienna",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 40,
+              "unit": "volumes",
+              "scope": "CHUV",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 40,
+              "unit": "volumes",
+              "scope": "UCSF",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 20,
+              "unit": "volumes",
+              "scope": "KCL",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "Switzerland",
+              "Austria",
+              "United Kingdom"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Documented and classifiable",
+          "value": "Noncommercial use only for challenge purpose under custom Kispi license and Vienna transfer agreement."
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Both tasks share cohort; countries partial, UCSF country not explicit in cited excerpt.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10986045",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://feta.grand-challenge.org",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/af4f5166660fedac.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/feta-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Congenital / developmental"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Fetal brain",
+        "Brain biometry"
+      ],
+      "specific_diseases": [
+        "Pathological fetal neurodevelopment"
+      ],
+      "review_note": "Source explicitly distinguishes normal/pathological fetal development; individual malformation diagnoses not specified.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10986045"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10986045"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/feta-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "Kispi challenge-specific non-commercial terms",
+        "Vienna Data Transfer Agreement"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": true,
+      "summary_zh": "Kispi 数据限非商业挑战用途；Vienna 数据另签 DTA；Task 2 适用条款仍标待确认，不扩展为全赛道确定许可。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Registered task/section 1",
+          "text": "Custom Kispi data license (current FeTA license can be found here under Terms of Use: https://www.synapse.org/(dash)!Synapse:syn25649159/wiki/610007); non-commercial use only for the challenge purpose. Custom Vienna Data Transfer Agreement that each participant must sign prior to receiving the data.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10986045"
+          }
+        },
+        {
+          "scope": "Registered task/section 2",
+          "text": "The same as above, non-commercial use only for the challenge purpose (to be further confirmed).",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10986045"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10986045"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/feta-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "Switzerland",
+                  "Austria",
+                  "United Kingdom"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10986045",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://feta.grand-challenge.org",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/af4f5166660fedac.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/feta-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/feta-2024.json",
+              "source_field": "resource_characteristics_review.fields.post_challenge",
+              "value": "Noncommercial use only for challenge purpose under custom Kispi license and Vienna transfer agreement.",
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10986045",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R20/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://feta.grand-challenge.org",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/af4f5166660fedac.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/feta-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

@@ -1,0 +1,777 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "midi-b-2024",
+    "challenge_name": "MIDI-B 2024",
+    "full_name": "Medical Image De-Identification Benchmark",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R29",
+      "official_programme_row_numbers": "50",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "NIH",
+        "U Arkansas",
+        "Pixelmed",
+        "Fredrick National Laboratory for Cancer Research",
+        "Deloitte",
+        "Sage Bionetworks"
+      ],
+      "registered_authors": [
+        {
+          "name": "Keyvan Farahani",
+          "affiliation": "NIH"
+        },
+        {
+          "name": "Fred Prior",
+          "affiliation": "U Arkansas"
+        },
+        {
+          "name": "U Arkansas",
+          "affiliation": "U Arkansas"
+        },
+        {
+          "name": "David Clunie",
+          "affiliation": "Pixelmed"
+        },
+        {
+          "name": "Ulrike Wagner",
+          "affiliation": "Fredrick National Laboratory for Cancer Research"
+        },
+        {
+          "name": "Benjamin Kopchick",
+          "affiliation": "Deloitte"
+        },
+        {
+          "name": "Jurgen Klenk",
+          "affiliation": "Deloitte"
+        },
+        {
+          "name": "Jake Albrecht",
+          "affiliation": "Sage Bionetworks"
+        },
+        {
+          "name": "James Eddy",
+          "affiliation": "Sage Bionetworks"
+        },
+        {
+          "name": "Linmin Pei",
+          "affiliation": "Fredrick National Laboratory for Cancer Research"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "X-ray",
+        "Mammography",
+        "PET",
+        "CT",
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Breast",
+        "Chest",
+        "Abdomen",
+        "Pelvis"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Breast",
+        "Lung",
+        "Liver",
+        "Prostate"
+      ],
+      "diseases": [
+        "Multiple cancers"
+      ],
+      "clinical_context": "Explicit multi-cancer source cohorts; task is de-identification, not cancer diagnosis."
+    },
+    "task_profile": {
+      "primary_task_family": "De-identification",
+      "secondary_task_families": [],
+      "task_families": [
+        "De-identification"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Image De identification",
+          "task_family": "De-identification",
+          "task_families": [
+            "De-identification"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7835355",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/MedicalImageDe-IdentificationBenchmark_08-05-2024.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7835355",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/MedicalImageDe-IdentificationBenchmark_08-05-2024.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "X-ray",
+        "Mammography",
+        "PET",
+        "CT",
+        "MRI"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7835355",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/MedicalImageDe-IdentificationBenchmark_08-05-2024.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY. 当届提案明确列出 CC BY；未标明版本时不自行补写版本。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7835355",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/MedicalImageDe-IdentificationBenchmark_08-05-2024.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24; round 3",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "Public preliminary training subset",
+          "category": "Public download",
+          "access_steps": [
+            "TCIA or Imaging Data Commons"
+          ],
+          "manual_review": false
+        },
+        {
+          "scope": "Larger validation/test",
+          "category": "Registration; additional approval unresolved",
+          "access_steps": [
+            "Register for challenge",
+            "Receive evaluation data"
+          ],
+          "manual_review": null
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7835355",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/MedicalImageDe-IdentificationBenchmark_08-05-2024.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7835355",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/MedicalImageDe-IdentificationBenchmark_08-05-2024.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7835355",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/MedicalImageDe-IdentificationBenchmark_08-05-2024.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\n\nThe metric used for the Medical Image Deidentification Benchmark (MIDI-B) challenge will be deviation\nfrom the answer key.\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe MIDI-B challenge is a rule-based de-identification challenge. The metric for success lies in an\nalgorithm's ability to accurately anonymize PHI/PII in images, conform to the DICOM standard, and\nperform best practices, as described in the challenge instructions.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nRanking will be based on anonymization of DICOM metadata and burnt-in information in three categories:\nHIPAA identifiers, DICOM Standard, and Best practice. A link to the HIPAA identifiers is provided in the\nReference section.\nb) Describe the method(s) used to manage submissions with missing results on test cases.\nA missing result will count as a zero entry, or failed attempt at deidentification of the subject image.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\n\fMedical Image De-Identification Benchmark\n\nDeidentification of PHI/PII is required by law to preserve patient privacy. We will provide each participant\nwith the result of their algorithm performance in each of the three categories."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Processed images and mapping tables",
+      "platform": "Synapse",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "a) Describe the method used for result submission. Preferably, provide a link to the submission instructions. The submission method for validation and test phases will be through download of the corresponding dataset from the Synapse platform. Instructions will be provided in the challenge website.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.7835355",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/MedicalImageDe-IdentificationBenchmark_08-05-2024.pdf",
+            "registered_task_index": 1
+          }
+        }
+      ],
+      "submission_evidence_status": "Primary artifact identified by human review; format-specific limitations retained",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null,
+      "primary_artifacts": [
+        "De-identified DICOM files",
+        "Patient and UID mapping CSV tables"
+      ],
+      "additional_artifacts": [],
+      "execution": "Participants de-identify locally; organizers evaluate the uploaded files.",
+      "format_by_task_or_phase": [
+        {
+          "archive_examples": [
+            "ZIP",
+            "tar"
+          ],
+          "directories": {
+            "data/": "de-identified DICOM",
+            "mappings/": [
+              "patient_id_mapping.csv",
+              "uid_mapping.csv"
+            ]
+          },
+          "mapping_headers": [
+            "id_old",
+            "id_new"
+          ]
+        }
+      ],
+      "format_limitations": [],
+      "source_urls": [
+        "https://challenges.synapse.org/Challenges/DetailsPage/Task1?id=syn53065760"
+      ],
+      "evidence_basis": "Human-supplied review of edition-specific organizer documentation",
+      "review_date": "2026-10-24",
+      "review_source": "_collection/submission22_review_20261024/user_review.txt",
+      "source_reference": "https://challenges.synapse.org/Challenges/DetailsPage/Task1?id=syn53065760"
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.7835355",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/MedicalImageDe-IdentificationBenchmark_08-05-2024.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.7835355"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://www.synapse.org/MIDI_B_De_identification",
+      "registration": "https://doi.org/10.5281/zenodo.7835355",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.7835355",
+          "resolved_record_id": 11349051,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/MedicalImageDe-IdentificationBenchmark_08-05-2024.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/MedicalImageDe-IdentificationBenchmark_08-05-2024.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://www.synapse.org/MIDI_B_De_identification",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/c137e034f2560145.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Source cited in supplied human submission review",
+          "url": "https://challenges.synapse.org/Challenges/DetailsPage/Task1?id=syn53065760",
+          "supports": [
+            "Submission protocol"
+          ],
+          "reviewed_on": "2026-10-24",
+          "review_record": "_collection/submission22_review_20261024/user_review.txt"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/task_sections.json",
+      "submission_human_review": {
+        "reviewed_on": "2026-10-24",
+        "local_review": "_collection/submission22_review_20261024/user_review.txt",
+        "basis": "Human-supplied review of edition-specific organizer documentation",
+        "scope": "Submission artifact, format and executor; source assertions supplied by human review, not a new independent audit of all linked pages."
+      }
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "MIDI-B"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "De-identification"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Public download",
+      "data_model_flow": "data-to-model"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "NCI当届公告确认初步训练子集通过TCIA/IDC公开提供，也允许自有DICOM训练。此分类限公开开发子集；较大验证／测试数据需参赛注册，额外审批未说明。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "Public preliminary training subset",
+            "category": "Public download",
+            "access_steps": [
+              "TCIA or Imaging Data Commons"
+            ],
+            "manual_review": false
+          },
+          {
+            "scope": "Larger validation/test",
+            "category": "Registration; additional approval unresolved",
+            "access_steps": [
+              "Register for challenge",
+              "Receive evaluation data"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "Primary protocol / metadata checked",
+        "confidence": "High",
+        "source_urls": [
+          "https://datacommons.cancer.gov/news/national-cancer-institute-nci-medical-image-de-identification-benchmark-challenge-midi-b"
+        ]
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7835355",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7835355",
+          "excerpt": "o the submission instructions. The submission method for validation and test phases will be through download of the corresponding dataset from the Synapse platform. Instructions will be provided in the challenge website. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple r"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7835355",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Challenge website open for registration: May 10 Training phase start date: May 10 - Aug 3 Validation phase: Aug 4 - 30 Medical Image De-Identification Benchmark Short paper submission deadline: Aug 30 Test phase: Sept 4 - 6"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7835355",
+          "excerpt": ""
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/c137e034f2560145.json",
+          "url": "https://www.synapse.org/MIDI_B_De_identification",
+          "excerpt": "napse Does Synapse is the platform Sage Bionetworks uses to make biomedical research data findable, accessible, interoperable, and reusable (FAIR). Researchers, clinicians, and data scientists use Synapse to: Share large biomedical datasets across institutions, with appropriate access controls, data-use agreements, and governance. Run reproducible analyses on shared data with documented provenance. Coordinate consortium science across disease areas including Alzheimer's disease, neurofibromatosis, ALS, rare cancers, and others. Power public-facing knowledge portals such as the AD Knowledge Portal, the NF Data Portal, and the ALS Knowledge Portal. Nonprofit Identity Sage Bionetworks A 501(c)(3) nonprofit research organization EIN: 26-4489946 Seattle, Washington, USA sagebionetworks.org Trust Center — Terms of Service, Privacy Policy, f [...] ernance documents Sage Bionetworks — Mission, vision, and current work IRS Form 990 filings (via ProPublica Nonprofit Explorer) Synapse documentation and help Synapse Home crawl link This static content is provided for search engines and users with JavaScript disabled. For the full Synapse experience, please enable JavaScript in your browser. MIDI-B De-identification Challenge page is loading…"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/midi-b-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://datacommons.cancer.gov/news/national-cancer-institute-nci-medical-image-de-identification-benchmark-challenge-midi-b",
+          "local_source": "_collection/access_backfill_round3_20261024/sources/f0471ae557af19ae.json",
+          "review_date": "2026-10-24",
+          "section": "Round 3 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-24 round 3: NCI当届公告确认初步训练子集通过TCIA/IDC公开提供，也允许自有DICOM训练。此分类限公开开发子集；较大验证／测试数据需参赛注册，额外审批未说明。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train sample",
+              "value": 21,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 216,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 322,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "United States"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "TCIA source across US and unspecified international sites; own training data also permitted.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.7835355",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://www.synapse.org/MIDI_B_De_identification",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/c137e034f2560145.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/midi-b-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Breast",
+            "Chest",
+            "Abdomen",
+            "Pelvis"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Breast",
+        "Lung",
+        "Liver",
+        "Prostate"
+      ],
+      "specific_diseases": [
+        "Multiple cancers"
+      ],
+      "review_note": "Explicit multi-cancer source cohorts; task is de-identification, not cancer diagnosis.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7835355"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/midi-b-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "CC BY.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.7835355"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.7835355"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/midi-b-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "United States"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.7835355",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "https://www.synapse.org/MIDI_B_De_identification",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/c137e034f2560145.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/midi-b-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Page 3 of 12 Biomedical Image Analysis ChallengeS (BIAS) Initiative Medical Image De-Identification Benchmark Open call challenge.",
+              "url": "https://doi.org/10.5281/zenodo.7835355",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R29/MedicalImageDe-IdentificationBenchmark_08-05-2024.pdf",
+              "scope": "Edition-specific lifecycle answer: open-call continuation or a stated future release. Policy/plan coverage only, not evidence that continuing evaluation actually ran.",
+              "value": null,
+              "excerpt": "continued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time event). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some modifications (repeated event). Examples: • One-time event with fixed conference submission deadline • Open call (challenge opens for new submissions after conference deadline) • Repeated event with annual fixed conference submission deadline Page 3 of 12 Biomedical Image Analysis ChallengeS (BIAS) Initiative Medical Image De-Identification Benchmark Open call challenge. ",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

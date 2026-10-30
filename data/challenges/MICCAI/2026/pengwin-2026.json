@@ -1,0 +1,632 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "pengwin-2026",
+    "challenge_name": "Peripelvic Fracture Segmentation and Reduction Planning",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": "2026-09-27",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "Peripelvic CT"
+      ],
+      "body_region": [
+        "Pelvis",
+        "Proximal femur"
+      ],
+      "organ_system": [
+        "Musculoskeletal system"
+      ],
+      "organs_or_structures": [
+        "Pelvic bones",
+        "Fracture fragments"
+      ],
+      "diseases": [
+        "Peripelvic fractures"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": [
+        "Registration"
+      ],
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "PENGWIN-Auto",
+          "task_family": "Segmentation",
+          "task_subtype": "Automatic instance segmentation",
+          "input": [
+            "CT"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Anatomical and fracture-fragment segmentation"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "PENGWIN-Interact",
+          "task_family": "Segmentation",
+          "task_subtype": "Interactive instance segmentation",
+          "input": [
+            "CT",
+            "Pre-simulated clicks"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Fracture-fragment segmentation"
+          ],
+          "granularity": "3D volume",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "PENGWIN-Reduction",
+          "task_family": "Registration",
+          "task_subtype": "Fracture reduction planning",
+          "input": [
+            "Fractured bone geometry"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Rigid restoration matrix per fragment"
+          ],
+          "granularity": "fragment",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": true,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": null,
+      "center_count": 7,
+      "institutions_description": null,
+      "population": {
+        "patient_count": 500,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "Clinical peripelvic fracture CT",
+        "Anatomical and fragment labels",
+        "Simulated fracture cases",
+        "Reference reduction transformations"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "preregistered_clinical_split": {
+          "training": 350,
+          "validation": 50,
+          "test": 100
+        },
+        "simulation": "16,000 simulated fractures generated from 400 healthy CTs; do not count simulations as clinical patients."
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 2026 年数据使用条款列 CC BY-NC-SA。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Public data and open pretrained networks allowed; report comparison with official-data-only training."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "IoU",
+            "ASSD",
+            "HD95",
+            "Local DSC",
+            "Recognition quality"
+          ],
+          "ranking": "Rank averaged metrics for anatomy and fragments, aggregate ranks; total execution time resolves ties."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "IoU",
+            "ASSD",
+            "HD95",
+            "Local DSC",
+            "Recognition quality"
+          ],
+          "ranking": "Preregistered four click-simulation strategies yield twenty per-case metrics; combine ranks across strategies then average five metric ranks; time resolves ties."
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Rotation error",
+            "Translation error",
+            "Target reduction error",
+            "Chamfer distance",
+            "Part accuracy"
+          ],
+          "ranking": "Average across fragments within clinical cases; mean of five metric ranks on clinical test set only. Target reduction error resolves ties; simulated test is descriptive."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": [
+        {
+          "task_id": "task1",
+          "content": "Anatomical/fragment segmentation"
+        },
+        {
+          "task_id": "task2",
+          "content": "Segmentation using standardized simulated interaction points"
+        },
+        {
+          "task_id": "task3",
+          "content": "Rigid six-degree-of-freedom restoration transform per fragment"
+        }
+      ]
+    },
+    "schedule": {
+      "training_release": "2026-04-24",
+      "final_submission_deadline": "2026-08-19",
+      "deadline_timezone": "AoE UTC−12 23:59",
+      "method_description_deadline": "2026-08-22",
+      "results_announcement": "2026-09-02"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 389,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Task 2: PENGWIN-Interact-Preliminary",
+            "submission_count": 73
+          },
+          {
+            "official_phase_name": "Task 1: PENGWIN-Auto - Preliminary",
+            "submission_count": 276
+          },
+          {
+            "official_phase_name": "Task 3: PENGWIN-Reduction-Preliminary",
+            "submission_count": 74
+          },
+          {
+            "official_phase_name": "Task 1: PENGWIN-Auto - Final Test",
+            "submission_count": 108
+          },
+          {
+            "official_phase_name": "Task 2: PENGWIN-Interact-Final Test",
+            "submission_count": 63
+          },
+          {
+            "official_phase_name": "Task 3: PENGWIN-Reduction-Final Test",
+            "submission_count": 40
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://pengwin2026.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Task 2 inference is fully automatic with provided simulated clicks; no human access to hidden test cases. Best final run counted. Top three teams release code. Separate publications have a 12-month embargo after results. Preregistered splits/metrics used where final task pages return HTTP 403.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin2026.grand-challenge.org/awards/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/15-2efeb262b320.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin2026.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/15-38257b90f976.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin2026.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/15-54cfd9ec600f.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://pengwin2026.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/15-590e2cc55bc3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin2026.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/15-6d67bb78eb43.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin2026.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/15-a48b7b4739e3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin2026.grand-challenge.org/pengwin2026/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/15-cafe37a28822.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin2026.grand-challenge.org/result/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/15-d961294261b0.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin2026.grand-challenge.org/conference-schedule/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/15-f26fd64ea4f6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://pengwin2026.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/15-overview.json"
+        },
+        {
+          "type": "official challenge preregistration",
+          "url": "https://zenodo.org/records/19726894",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "evaluation",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/15-proposal.txt"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset: final task-specific splits versus preregistered counts require verification.",
+        "evaluation: final implementation and click protocol behind restricted pages; records retain preregistered design."
+      ],
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/pengwin-2026.json",
+          "_collection/verification_20261003/literature_context/pengwin-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "2026三个赛道的训练数据均直接链接公开Zenodo记录。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026三个赛道的训练数据均直接链接公开Zenodo记录。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/7c1831d58ccffbb8.json",
+          "url": "https://pengwin2026.grand-challenge.org/datasets/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/pengwin-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "2026 年数据使用条款列 CC BY-NC-SA。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "Please note that the data license should not differ among sources. In case a license has to be changed, it has to be reported to the MICCAI challenges team and changed in the proposal. CC BY-NC-SA (Attribution-NonCommercial-ShareAlike)",
+          "source": {
+            "url": "https://zenodo.org/records/19726894",
+            "local_source": "_collection/sources/15-proposal.txt"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/19726894",
+          "local_source": "_collection/sources/15-proposal.txt"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://zenodo.org/api/records/19726894",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/aab4c5f085edb73f.json",
+          "status": 200
+        },
+        {
+          "url": "https://pengwin2026.grand-challenge.org/rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/54cfd9ec600f892a.json",
+          "status": 200
+        },
+        {
+          "url": "https://pengwin2026.grand-challenge.org/datasets/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/7c1831d58ccffbb8.json",
+          "status": 200
+        },
+        {
+          "url": "https://pengwin2026.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/a48b7b4739e3d44e.json",
+          "status": 200
+        },
+        {
+          "url": "https://pengwin2026.grand-challenge.org/awards/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/2efeb262b3208365.json",
+          "status": 200
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "The CT data for this challenge were acquired from a multi-center consortium comprising seven clinical institutions to ensure data diversity and robustness. These centers include Beijing Jishuitan Hospital, Foshan Hospital of Traditional Chinese Medicine, The First Hospital of Jilin University, The Second Hospital of Jilin University, Nanfang Hospital (Southern Medical University), Tongji Hospital, and CUHK Medical Centre.",
+              "url": "https://zenodo.org/records/19726894",
+              "snapshot": "_collection/sources/15-proposal.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nThe CT data for this challenge were acquired from a multi-center consortium comprising seven clinical institutions\nto ensure data diversity and robustness. These centers include Beijing Jishuitan Hospital, Foshan Hospital of\nTraditional Chinese Medicine, The First Hospital of Jilin University, The Second Hospital of Jilin University, Nanfang\nHospital (Southern Medical University), Tongji Hospital, and CUHK Medical Centre.",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

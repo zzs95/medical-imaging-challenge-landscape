@@ -1,0 +1,523 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "ms-multi-spine-2025",
+    "challenge_name": "Multiple Sclerosis Spinal Cord Lesion Detection from MultiSequence MRIs",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "MICCAI 2025",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Spine"
+      ],
+      "organ_system": [
+        "Central nervous system"
+      ],
+      "organs_or_structures": [
+        "Spinal cord lesions"
+      ],
+      "diseases": [
+        "Multiple sclerosis"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Detection",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Detect spinal cord lesions",
+          "task_family": "Detection",
+          "task_subtype": null,
+          "input": [
+            "Multi-sequence spinal cord MRI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Lesion instances with probabilities"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ],
+      "training_and_testing_note": "Some MRI modalities are missing for individual patients; methods must handle incomplete multi-sequence inputs."
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": true,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Spinal cord lesions"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "MRI"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "request-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "access_scope": "Training-data download access requested through the official 'ask access here' form.",
+      "license_review_status": "Ambiguous",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design."
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Virtual Imaging Platform",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Mean sensitivity at 0.25, 0.5, 1, 2 and 3 false positives per case"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.14051167",
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Virtual Imaging Platform",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://portal.fli-iam.irisa.fr/ms-multi-spine/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 47,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2025/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/40cba6887cd7753d.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://portal.fli-iam.irisa.fr/ms-multi-spine/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/48ca96ca051c626a.json",
+          "supports": [
+            "challenge context",
+            "clinical_domain",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "homepage fields where stated",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/14051167",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-14051167.txt",
+          "supports": [
+            "clinical_domain",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://portal.fli-iam.irisa.fr/ms-multi-spine/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/ms-multi-spine-2025.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://zenodo.org/records/14051167",
+          "local_snapshot": "_collection/sources_other/protocol-14051167.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): The participating teams will be requested to submit their algorithms in the form of a Docker container to the Docker repository of the Challenge Pipeline. Detailed instructions for the docker interface and submission will be provided to the participants as we did for previous challenges (https://gitlab.inria.fr/amasson/lesion-segmentatio n-challenge-miccai21/-/blob/master/SUBMISSION_GUIDELINES.md). In a nutshell, the four following steps will be required : 1. build a Docker or Singularity image containing the method, 2. create a Boutiques (https://boutiques.github.io/) descriptor of the tool, 3. make the image and descriptor available to the "
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/14051167",
+          "local_snapshot": "_collection/sources_other/protocol-14051167.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): The participating teams will be requested to submit their algorithms in the form of a Docker container to the Docker repository of the Challenge Pipeline. Detailed instructions for the docker interface and submission will be provided to the participants as we did for previous challenges (https://gitlab.inria.fr/amasson/lesion-segmentatio n-challenge-miccai21/-/blob/master/SUBMISSION_GUIDELINES.md). In a nutshell, the four following steps will be required : 1. build a Docker or Singularity image containing the method, 2. create a Boutiques (https://boutiques.github.io/) descriptor of the tool, 3. make the image and descriptor available to the "
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/14051167",
+          "local_snapshot": "_collection/sources_other/protocol-14051167.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): The participating teams will be requested to submit their algorithms in the form of a Docker container to the Docker repository of the Challenge Pipeline. Detailed instructions for the docker interface and submission will be provided to the participants as we did for previous challenges (https://gitlab.inria.fr/amasson/lesion-segmentatio n-challenge-miccai21/-/blob/master/SUBMISSION_GUIDELINES.md). In a nutshell, the four following steps will be required : 1. build a Docker or Singularity image containing the method, 2. create a Boutiques (https://boutiques.github.io/) descriptor of the tool, 3. make the image and descriptor available to the "
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/14051167",
+          "local_snapshot": "_collection/sources_other/protocol-14051167.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): The participating teams will be requested to submit their algorithms in the form of a Docker container to the Docker repository of the Challenge Pipeline. Detailed instructions for the docker interface and submission will be provided to the participants as we did for previous challenges (https://gitlab.inria.fr/amasson/lesion-segmentatio n-challenge-miccai21/-/blob/master/SUBMISSION_GUIDELINES.md). In a nutshell, the four following steps will be required : 1. build a Docker or Singularity image containing the method, 2. create a Boutiques (https://boutiques.github.io/) descriptor of the tool, 3. make the image and descriptor available to the "
+        },
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/14051167",
+          "local_snapshot": "_collection/sources_other/protocol-14051167.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/14051167",
+          "local_snapshot": "_collection/sources_other/protocol-14051167.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/14051167",
+          "local_snapshot": "_collection/sources_other/protocol-14051167.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_access.access_status": {
+          "source_url": "https://portal.fli-iam.irisa.fr/ms-multi-spine/",
+          "local_snapshot": "_collection/sources_other/48ca96ca051c626a.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official challenge page explicitly requires requesting access to the training data."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://portal.fli-iam.irisa.fr/ms-multi-spine/",
+          "local_snapshot": "_collection/sources_other/48ca96ca051c626a.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official challenge page explicitly requires requesting access to the training data."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/14051167",
+          "local_snapshot": "_collection/sources_other/protocol-14051167.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/14051167",
+          "local_snapshot": "_collection/sources_other/protocol-14051167.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/14051167",
+          "local_snapshot": "_collection/sources_other/protocol-14051167.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: The participating teams will be requested to submit their algorithms in the form of a Docker container to the Docker repository of the Challenge Pipeline. Detailed instructions for the docker interface and submission will be provided to the participants as we did for previous challenges (https://gitlab.inria.fr/amasson/lesion-segmentatio n-challenge-miccai21/-/blob/master/SUBMISSION_GUIDELINES.md). In a nutshell, the four following steps will be required : 1. build a Docker or Singularity image "
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/14051167",
+          "local_snapshot": "_collection/sources_other/protocol-14051167.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: The participating teams will be requested to submit their algorithms in the form of a Docker container to the Docker repository of the Challenge Pipeline. Detailed instructions for the docker interface and submission will be provided to the participants as we did for previous challenges (https://gitlab.inria.fr/amasson/lesion-segmentatio n-challenge-miccai21/-/blob/master/SUBMISSION_GUIDELINES.md). In a nutshell, the four following steps will be required : 1. build a Docker or Singularity image "
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://portal.fli-iam.irisa.fr/ms-multi-spine/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/ms-multi-spine-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://portal.fli-iam.irisa.fr/ms-multi-spine/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/ms-multi-spine-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://portal.fli-iam.irisa.fr/ms-multi-spine/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/ms-multi-spine-2025.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/ms-multi-spine-2025.json",
+          "_collection/verification_20261003/literature_context/ms-multi-spine-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Ambiguous",
+      "terms_documented": false,
+      "detail_level": "Provisional terms",
+      "licence_names": [
+        "Proposed OFSEP / CHU de Rennes DUA"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "提案给出详细 DUA 草案和引用、禁止再识别及共享约束，但明确写 planned DUA；最终生效版本尚未取得。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "Below is the planned DUA, participants will have to accept and comply with in order to access the data: Access to OFSEP and CHU de Rennes MRI used for the MICCAI 2025 challenge Multiple Sclerosis Spinal Cord Lesions Detection from MultiSequence MRIs I request access to the data collected in the digital repository of the OFSEP/CHU de Rennes MICCAI 2025 Cohort provided in the context of the MICCAI 2025 challenge. By accepting this agreement, I become the data controller (as defined under the European GDPR) of the data that I have access to, and I am responsible that I access these data under the GDPR obligations and the specific following terms: 1. I will comply with all relevant rules and regulations imposed by my institution and my government. This agreement never has prevalence over existing general data protection regulations that are applicable in my country. 2. I will not attempt to establish or retrieve the identity of the study participants. I will not link these data to any other database in a way that could provide identifying information. I shall not request the pseudonymisation key that would link these data to an individual's personal information, nor will I accept any additional information about individual participants under this Data Use Agreement. 3. I will not redistribute these data or share access to these data with others, unless they have independently applied and been granted access to these data, i.e., signed this Data Use Agreement. This includes individuals in my institution. 4. When sharing secondary or derivative data (e.g. group statistical maps, learnt models or templates), I will only do so if they are on a group level, and information from individual participants cannot be deduced. 5. I will reference the specific source of the accessed data when publicly presenting any results or algorithms that benefited from their use: (a) Papers, book chapters, books, posters, oral presentations, and all other presentations of results derived from the data should acknowledge the origin of the data as indicated in the Terms of use below (b) Authors of publications or presentations using the data should cite relevant publications describing the methods developed and used as described in the Terms of use below (c) Neither the [Research centre/University Department] or [University] or [Institution], nor the researchers that provide this data will be liable for any results and/or derived data. 6. I will register my [Research centre/University Department] or [University] or [Institution] in the agreement form and I accept that it is cited on the OFSEP website; I will register using my professional email address. 7. I will have the right to use this dataset for a period of 3 years starting from the date when access to the dataset will be granted. If I need to use this data for more time, I will have to ask for an extension on this website (https://shanoir.irisa.fr). Otherwise, I will have to delete them from my disk after this period of three years. 8. I will not publicly present any results or algorithms that benefited from the use of these data until 12 months after the challenge results have been presented at the MICCAI conference. 9. I will not use this data or a derivative product of it for a commercial use – if looking for a commercial use of the dataset or unsure, please contact OFSEP (projects@ofsep.org). 10. I will inform OFSEP and CHU de Rennes of the publication of my article with its references via the email addresses publications@ofsep.org. 11. I agree to be contacted from time to time by OFSEP and CHU de Rennes staffs in charge of projects and publications in order to follow the progress of my work. 12. Failure to abide by these guidelines will result in termination of my privileges to access these data. Terms of use When using part or all of this data, please adhere to the following guidelines: 1) Indicate in Methods Multiple Sclerosis Spinal Cord Lesions Detection from MultiSequence MRIs Data were generated i) by participating neurologists in the framework of Observatoire Français de la Sclérose en Plaques (OFSEP), the French MS registry (Vukusic et al. 2020). They collect clinical data prospectively in the European Database for Multiple Sclerosis (EDMUS) software (Confavreux et al. 1992). MRI of patients were provided as part of a care protocol. Nominative data are deleted from MRI before transfer and storage on the Shanoir platform (Sharing NeurOImagingResources, shanoir.org). Vukusic S, Casey R, Rollot F, Brochet B, Pelletier J, Laplaud D-A, et al. Observatoire Français de la Sclérose en Plaques (OFSEP): A unique multimodal nationwide MS registry in France. Mult Scler. 2020;26(1):118–22. Confavreux C, Compston DAS, Hommes OR, McDonald WI, Thompson AJ. EDMUS, a European database for multiple sclerosis. J Neurol Neurosurg Psychiatry 1992; 55: 671-676. ii) by data collected as part of MAPMS and MSTRACTS research protocols (MAPMS: NCT04918225, MSTRACTS: NCT04220814). Nominative data are deleted from MRI before transfer and storage on the Shanoir platform (Sharing NeurOImagingResources, shanoir.org). Please cite the challenge dataset description article, the challenge paper, and the MAPMS and MS TRACTS cohort description in any publication using a part or all of the dataset images, when they will become available (see https://portal.fli-iam.irisa.fr/ms-multi-spine/ for updates). 2) Add to Acknowledgments This work was carried out i) in collaboration with The Observatoire Français de la Sclérose en Plaques (OFSEP), who is supported by a grant provided by the French State and handled by the Agence Nationale de la Recherche, within the framework of the France 2030 program, under the reference ANR-10-COHO-002, by the Eugène Devic EDMUS Foundation against multiple sclerosis and by the ARSEP Foundation; ii) in collaboration with the CHU de Rennes, the promoter of the MAPMS and MS TRACTS cohorts. These cohorts were funded by the ARSEP foundation and by CHU de Rennes CORECT grants.",
+          "source": {
+            "url": "https://zenodo.org/records/14051167",
+            "local_source": "_collection/sources_other/protocol-14051167.txt"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/records/14051167",
+          "local_source": "_collection/sources_other/protocol-14051167.txt"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Data were acquired in several French clinical centers over the past 10 years. Overall, they come from 35 different clinical centers.",
+              "url": "https://zenodo.org/records/14051167",
+              "snapshot": "_collection/sources_other/protocol-14051167.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nData were acquired in several French clinical centers over the past 10 years. Overall, they come from 35 different\nclinical centers.",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

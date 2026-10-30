@@ -1,0 +1,931 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "towards-3d-atlas-of-human-body-bodymaps-2024",
+    "challenge_name": "Towards 3D Atlas of Human Body (BodyMaps)",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "ISBI 2024",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      },
+      "additional_associations": [
+        {
+          "conference": "MICCAI 2024",
+          "relationship": "Listed in official MICCAI registered challenge programme; existing primary conference retained",
+          "source": "https://miccai.org/sig/sig-challenges/",
+          "registration_doi": "10.5281/zenodo.10992088"
+        }
+      ]
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Whole body",
+        "Abdomen"
+      ],
+      "organ_system": [
+        "Multisystem"
+      ],
+      "organs_or_structures": [
+        "Anatomical structures"
+      ],
+      "diseases": [
+        "Abdominal tumors; histological behavior unspecified at collection level"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "BodyMaps anatomical segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "multi-class segmentation",
+          "input": [
+            "3D CT volumes"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Anatomical segmentation masks"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Anatomical structures"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": true,
+      "center_count": 88,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": 10142,
+          "approximate": false,
+          "raw_text": "10,142 three-dimensional CT volumes (AbdomenAtlas)"
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": {
+          "value": 1000,
+          "unit": "CT volumes",
+          "raw_text": "W-1K external validation dataset"
+        }
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "dataset_structure": {
+        "training_reference": "AbdomenAtlas: 25 annotated anatomical structures",
+        "external_validation": "W-1K: 15 annotated anatomical structures"
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA 4.0; Additional dataset-use conditions. 公开 AbdomenAtlas1.0Mini 数据卡列 CC BY-NC-SA 4.0，另有禁止再分发等条款；仅记录该来源训练集范围。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": true,
+        "submission_artifact": "Docker link sent to organizers"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "submission_artifact": "Docker link sent to organizers",
+      "execution_mode": "Organizer-run",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Scored submission artifact; additional reproducibility/publication materials recorded separately.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "existing_structured_fields_and_audit",
+        "summary": "已有审查明确邮件发送Docker链接，组织者运行隐藏测试。",
+        "evidence_ids": [
+          "E7"
+        ],
+        "source_urls": [],
+        "user_material": null,
+        "directly_retrieved_protocol_snapshots": [],
+        "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced."
+      }
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "related_dataset_and_benchmark_paper": {
+        "title": "AbdomenAtlas: A large-scale, detailed-annotated, & multi-center dataset for efficient transfer learning and open algorithmic benchmarking",
+        "authors": [
+          {
+            "given": "Wenxuan",
+            "family": "Li"
+          },
+          {
+            "given": "Chongyu",
+            "family": "Qu"
+          },
+          {
+            "given": "Xiaoxi",
+            "family": "Chen"
+          },
+          {
+            "given": "Pedro R.A.S.",
+            "family": "Bassi"
+          },
+          {
+            "given": "Yijia",
+            "family": "Shi"
+          },
+          {
+            "given": "Yuxiang",
+            "family": "Lai"
+          },
+          {
+            "given": "Qian",
+            "family": "Yu"
+          },
+          {
+            "given": "Huimin",
+            "family": "Xue"
+          },
+          {
+            "given": "Yixiong",
+            "family": "Chen"
+          },
+          {
+            "given": "Xiaorui",
+            "family": "Lin"
+          },
+          {
+            "given": "Yutong",
+            "family": "Tang"
+          },
+          {
+            "given": "Yining",
+            "family": "Cao"
+          },
+          {
+            "given": "Haoqi",
+            "family": "Han"
+          },
+          {
+            "given": "Zheyuan",
+            "family": "Zhang"
+          },
+          {
+            "given": "Jiawei",
+            "family": "Liu"
+          },
+          {
+            "given": "Tiezheng",
+            "family": "Zhang"
+          },
+          {
+            "given": "Yujiu",
+            "family": "Ma"
+          },
+          {
+            "given": "Jincheng",
+            "family": "Wang"
+          },
+          {
+            "given": "Guang",
+            "family": "Zhang"
+          },
+          {
+            "given": "Alan",
+            "family": "Yuille"
+          },
+          {
+            "given": "Zongwei",
+            "family": "Zhou"
+          }
+        ],
+        "journal": "Medical Image Analysis",
+        "year": 2024,
+        "volume": "97",
+        "article_number": "103285",
+        "doi": "10.1016/j.media.2024.103285",
+        "url": "https://doi.org/10.1016/j.media.2024.103285",
+        "pmid": "39116766",
+        "publication_status": "published_peer_reviewed_article",
+        "online_date_reported_by_user": "2024-07-30",
+        "online_date_independently_verified": false,
+        "online_date_note": "PubMed direct retrieval returned a cookie interstitial; retrieved Crossref metadata confirms year/volume/article but omits online day.",
+        "reviewed_full_text": "https://arxiv.org/html/2407.16697v2",
+        "reviewed_manuscript_version": "v2",
+        "reviewed_manuscript_version_date": "2025-07-08",
+        "relationship_to_challenge": "Dataset, challenge design and preliminary algorithmic benchmarking; Section 5 discusses BodyMaps ISBI/MICCAI 2024 context.",
+        "result_scope": {
+          "table": "Table 5",
+          "label": "Preliminary results",
+          "datasets": [
+            "TotalSegmentator",
+            "JHH"
+          ],
+          "comparison": "SuPreM and comparator algorithms; in-domain versus out-of-domain performance",
+          "competition_final_result_evidence": false
+        },
+        "edition_counting_note": "Article and revised manuscript are supporting publications, not additional challenge editions."
+      },
+      "final_competition_report_status": "not_established"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://codalab.lisn.upsaclay.fr/competitions/16919",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "This record concerns the ISBI 2024 BodyMaps edition. The same series also appeared in the MICCAI 2024 program; counts and rules from later editions are not merged.",
+      "2026-10-22: 仍待补：日程、评价工具及后续数据集研究不能单独确认2024最终排名。",
+      "2026-10-22: 4月20日公布结果仍为日程条目，验证入口不等于2024最终榜；最终结果未补齐。",
+      "2026-10-22: BodyMaps 2024：已补入同行评议AbdomenAtlas论文（Medical Image Analysis 2024, 97:103285）。第5节支持挑战设计，表5为初步基准结果，不是参赛队最终排名。2024最终竞赛结果仍未确认；arXiv v2更新于2025，不新增赛事。",
+      "2026-10-22 最新人工完成确认（替代旧完成待查状态）：BodyMaps 2024：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+      "2026-10-22 提交方式字段同步：已有审查明确邮件发送Docker链接，组织者运行隐藏测试。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 69,
+      "sources": [
+        {
+          "type": "official challenge source",
+          "url": "https://codalab.lisn.upsaclay.fr/competitions/16919",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/40f0ee6525ae72d9.json",
+          "supports": [
+            "challenge identity",
+            "task_profile",
+            "clinical_domain",
+            "dataset or rules where stated",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official conference program, browser extraction",
+          "url": "https://biomedicalimaging.org/2024/accepted-challenges-tutorials/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/isbi-2024-web.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation",
+            "task_profile",
+            "clinical_domain"
+          ]
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://codalab.lisn.upsaclay.fr/competitions/16919",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/towards-3d-atlas-of-human-body-bodymaps-2024.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://ccvl.jhu.edu/bodymaps/index.html",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_59a9d37186d1_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "仍待补：日程、评价工具及后续数据集研究不能单独确认2024最终排名。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://ccvl.jhu.edu/bodymaps/index.html",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_59a9d37186d1_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "4月20日公布结果仍为日程条目，验证入口不等于2024最终榜；最终结果未补齐。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        },
+        {
+          "type": "published article metadata",
+          "url": "https://api.crossref.org/works/10.1016/j.media.2024.103285",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bodymaps_abdomenatlas_crossref_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "DOI metadata confirms Medical Image Analysis volume 97, article 103285, 2024; online day not supplied in this retrieved metadata."
+          ]
+        },
+        {
+          "type": "author manuscript full text",
+          "url": "https://arxiv.org/html/2407.16697v2",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bodymaps_abdomenatlas_fulltext_20261022.json",
+          "retrieved_on": "2026-10-22",
+          "supports": [
+            "arXiv v2 dated July 8 2025: Section 5 describes BodyMaps and Table 5 explicitly reports preliminary benchmark comparisons, not final competition ranks."
+          ]
+        },
+        {
+          "type": "existing_structured_fields_and_audit",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/ISBI/2024/towards-3d-atlas-of-human-body-bodymaps-2024.json",
+          "source_urls": [],
+          "supports": [
+            "已有审查明确邮件发送Docker链接，组织者运行隐藏测试。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "data_usage_mode.overall_paradigm",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/towards-3d-atlas-of-human-body-bodymaps-2024.json",
+          "_collection/verification_20261003/literature_context/towards-3d-atlas-of-human-body-bodymaps-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "field_evidence": {
+        "clinical_domain.organ_system": {
+          "source_url": "https://codalab.lisn.upsaclay.fr/competitions/16919",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/towards-3d-atlas-of-human-body-bodymaps-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://codalab.lisn.upsaclay.fr/competitions/16919",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/towards-3d-atlas-of-human-body-bodymaps-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://codalab.lisn.upsaclay.fr/competitions/16919",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/towards-3d-atlas-of-human-body-bodymaps-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "仍待补：日程、评价工具及后续数据集研究不能单独确认2024最终排名。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "undetermined",
+            "evidence_state": "searched_not_established",
+            "evidence_ids": [
+              "E1"
+            ],
+            "reason": "Official 2024 protocol and dates available, but no edition-specific final scores or organizer retrospective located in the checked sources. Scheduled release dates are not completion evidence."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/ISBI/2024/towards-3d-atlas-of-human-body-bodymaps-2024.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "4月20日公布结果仍为日程条目，验证入口不等于2024最终榜；最终结果未补齐。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/ISBI/2024/towards-3d-atlas-of-human-body-bodymaps-2024.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "BodyMaps 2024：已补入同行评议AbdomenAtlas论文（Medical Image Analysis 2024, 97:103285）。第5节支持挑战设计，表5为初步基准结果，不是参赛队最终排名。2024最终竞赛结果仍未确认；arXiv v2更新于2025，不新增赛事。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bodymaps_abdomenatlas_20261022_145215/ISBI/2024/towards-3d-atlas-of-human-body-bodymaps-2024.json"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "BodyMaps 2024：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/four_human_confirmations_20261022_152301/ISBI/2024/towards-3d-atlas-of-human-body-bodymaps-2024.json"
+        },
+        {
+          "date": "2026-10-22",
+          "basis_type": "existing_structured_fields_and_audit",
+          "summary": "已有审查明确邮件发送Docker链接，组织者运行隐藏测试。",
+          "evidence_ids": [
+            "E7"
+          ],
+          "source_urls": [],
+          "user_material": null,
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/ISBI/2024/towards-3d-atlas-of-human-body-bodymaps-2024.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "BodyMaps 2024：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+        "basis_type": "explicit_user_confirmation",
+        "user_instruction": "BodyMaps 2024、FETUS 2026、MOOD 2025、PUFISEG 2025 都已经完成",
+        "propagation_status": "Canonical JSON, audit, current triage CSV/Excel, decisions and reports synchronized; manuscript and aggregate statistics not regenerated."
+      },
+      "remaining_questions": [],
+      "basis": "BodyMaps 2024：用户明确确认已经完成，当前完成状态更新为confirmed，依据类型为人工确认。旧公开文档中的缺证或延期记录保留为历史，不再作为当前完成状态待办；未新增独立核验的最终成绩、获奖或完成日期。",
+      "benchmark_assessment": {
+        "value": "confirmed",
+        "scope": "preliminary algorithmic benchmark in related paper",
+        "competition_final_assessment": "not_established",
+        "evidence_ids": [
+          "E6"
+        ]
+      },
+      "event_state": "completed",
+      "completion_basis": "explicit_user_confirmation",
+      "completion_adjudication": {
+        "decision_id": "towards-3d-atlas-of-human-body-bodymaps-2024_human_completion_20261022",
+        "date": "2026-10-22",
+        "authorized_by": "user",
+        "instruction": "BodyMaps 2024、FETUS 2026、MOOD 2025、PUFISEG 2025 都已经完成",
+        "analysis_id": "towards-3d-atlas-of-human-body-bodymaps-2024",
+        "edition_year": 2024,
+        "completion_status": "confirmed",
+        "basis_type": "explicit_user_confirmation",
+        "exact_completion_date": null,
+        "independently_verified_final_completion_by_this_update": false,
+        "qualification": "Explicit human confirmation of actual completion, distinct from plan-based adjudications. Previous documentary evidence and limitations retained; no new public results were independently verified in this update."
+      },
+      "qualification": "Explicit human confirmation of actual completion, distinct from plan-based adjudications. Previous documentary evidence and limitations retained; no new public results were independently verified in this update.",
+      "optional_documentary_limitations": [
+        "Locate edition-specific 2024 final ranks, awards or a result report; AbdomenAtlas Table 5 preliminary baseline tests do not establish participant final competition assessment."
+      ],
+      "documentary_final_assessment_status_before_human_confirmation": "not_established"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "2024官网明确完成注册后随Entry Number发送训练下载链接；公开开发数据、本地训练、组织者隐藏JHH-1K测试。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "2024官网明确完成注册后随Entry Number发送训练下载链接；公开开发数据、本地训练、组织者隐藏JHH-1K测试。"
+      },
+      "decision_history": [
+        "2024官网明确完成注册后随Entry Number发送训练下载链接；公开开发数据、本地训练、组织者隐藏JHH-1K测试。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_59a9d37186d1_20261022.json",
+          "url": "https://ccvl.jhu.edu/bodymaps/index.html"
+        },
+        {
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_59a9d37186d1_20261022.json",
+          "url": "https://ccvl.jhu.edu/bodymaps/index.html"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/towards-3d-atlas-of-human-body-bodymaps-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA 4.0",
+        "Additional dataset-use conditions"
+      ],
+      "scope": "Named source/development data or edition-specific signed agreement",
+      "agreement_required": null,
+      "summary_zh": "公开 AbdomenAtlas1.0Mini 数据卡列 CC BY-NC-SA 4.0，另有禁止再分发等条款；仅记录该来源训练集范围。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "AbdomenAtlas/AbdomenAtlas1.0Mini · Datasets at Hugging Face Hugging Face Models Datasets Spaces Buckets new Docs Enterprise Pricing Website Tasks HuggingChat Collections Languages Organizations Community Blog Posts Daily Papers Hardware Learn Discord Forum GitHub Solutions Team & Enterprise Hugging Face PRO Enterprise Support Inference Providers Inference Endpoints Storage Buckets Log In Sign Up Datasets: AbdomenAtlas / AbdomenAtlas1.0Mini Like 12 Follow AbdomenAtlas 55 Tasks: Image Segmentation Size: 1K<n<10K ArXiv: arxiv: 2411.03670 Tags: medical License: cc-by-nc-sa-4.0 Dataset card Files Files and versions xet Community 3 You need to agree to share your Hugging Face information to access this dataset This repository is publicly accessible, but you have to accept the conditions to access its files and content . Terms and Conditions for Using the AbdomenAtlas 1.0 Mini Dataset 1. Acceptance of Terms Accessing and using the AbdomenAtlas 1.0 Mini dataset implies your agreement to these terms and conditions. If you disagree with any part, please refrain from using the dataset. 2. Permitted Use The dataset is intended solely for academic, research, and educational purposes. Any commercial exploitation of the dataset without prior permission is strictly forbidden. You must adhere to all relevant laws, regulations, and research ethics, including data privacy and protection standards. 3. Data Protection and Privacy Acknowledge the presence of sensitive information within the dataset and commit to maintaining data confidentiality. Direct attempts to re-identify individuals from the dataset are prohibited. Ensure compliance with data protection laws such as GDPR and HIPAA. 4. Attribution Cite the dataset and acknowledge the providers in any publications resulting from its use. Claims of ownership or exclusive rights over the dataset or derivatives are not permitted. 5. Redistribution Redistribution of the dataset or any portion thereof is not allowed. Sharing derived data must respect the privacy and confidentiality terms set forth. 6. Disclaimer The dataset is provided \"as is\" without warranty of any kind, either expressed or implied, including but not limited to the accuracy or completeness of the data. 7. Limitation of Liability Under no circumstances will the dataset providers be liable for any claims or damages resulting from your use of the dataset. 8. Access Revocation Violation of these terms may result in the termination of your access to the dataset. 9. Amendments The terms and conditions may be updated at any time; continued use of the dataset signifies acceptance of the new terms. 10. Governing Law These terms are governed by the laws of the location of the dataset providers, excluding conflict of law rules. Consent: Accessing and using the AbdomenAtlas 1.0 Mini dataset signifies your acknowledgment and agreement to these terms and conditions. Log in or Sign Up to review the conditions and access this dataset content. Paper Citation Acknowledgements License Uploading AbdomenAtlas to HuggingFace Dataset Summary One of the largest, fully-annotated CT dataset to date, including 5,195 annotated CT volumes (with spleen, liver, kidneys, stomach, \ngallbladder, pancreas, aorta, and IVC annotations). Submit your Checkpoint for External Evaluation and Join the Touchstone Benchmarking Project! The Benchmarking Project aims to compare diverse semantic segmentation algorithms. \nWe, the CCVL research group at Johns Hopkins University, invite you to contribute to this initiative. \nTrain your AI algorithm using AbomenAtlas1.0 (and/or other datasets) and send us your trained checkpoint\nalong with basic information about your model, such as the names of its training datasets. We will evaluate your checkpoint on JHH , a large private dataset at Johns Hopkins University. \nOur external evaluation is being conducted on an unprecedented scale : \nJHH comprises more than 5,000 CT volumes , originating from a hospital that is absent from any public \ndataset . \nThis allows us to evaluate neural networks in an unseen clinical environment. \nTo increase data diversity in evaluation, we will also test your model on public datasets from diverse contries. \nAfterward, we will send you your model's performance, and we will invite you to include \nit in our future online leaderboard. Please email psalvad2@jh.edu for information on how to prepare and submit your checkpoint and for\nopportunities to collaborate in our future publications! Dataset variants: AbdomenAtlas1.0Mini - 5,195 annotated CT volumes, improved label quality for aorta and kidneys _AbdomenAtlas1.0Mini - same as above, but structured as large zip files, to facilitate downloading AbdomenAtlas1.0MiniBeta - 5,195 annotated CT volumes, with noisy labels for aorta and kidneys Downloading Instructions 1- Register at Huggingface, accept our terms and conditions, and create an access token: Create a Huggingface account Log in Accept our terms and conditions for acessing this dataset (top of this page) Create a Huggingface access token and copy it (you will use it in step 3, in paste_your_token_here) 2- Install the Hugging Face library: pip install huggingface_hub[hf_transfer]==0.24.0\nHF_HUB_ENABLE_HF_TRANSFER=1 [Optional] Alternative without HF Trasnsfer (slower) pip install huggingface_hub==0.24.0 3- Download the dataset: mkdir AbdomenAtlas cd AbdomenAtlas\nhuggingface-cli download AbdomenAtlas/AbdomenAtlas1.0Mini --token paste_your_token_here --repo-type dataset --local-dir . [Optional] Resume downloading In case you had a previous interrupted download, just run the huggingface-cli download command above again. huggingface-cli download AbdomenAtlas/AbdomenAtlas1.0Mini --token paste_your_token_here --repo-type dataset --local-dir . Paper AbdomenAtlas-8K: Annotating 8,000 CT Volumes for Multi-Organ Segmentation in Three Weeks Chongyu Qu 1 , Tiezheng Zhang 1 , Hualin Qiao 2 , Jie Liu 3 , Yucheng Tang 4 , Alan L. Yuille 1 , and Zongwei Zhou 1,* 1 Johns Hopkins University, 2 Rutgers University, 3 City University of Hong Kong, 4 NVIDIA NeurIPS 2023 paper | code | dataset | annotation | poster How Well Do Supervised 3D Models Transfer to Medical Imaging Tasks? Wenxuan Li , Alan Yuille , and Zongwei Zhou * Johns Hopkins University International Conference on Learning Representations (ICLR) 2024 (oral; top 1.2%) paper | code Citation @article{li2024abdomenatlas,\n  title={AbdomenAtlas: A large-scale, detailed-annotated, \\& multi-center dataset for efficient transfer learning and open algorithmic benchmarking},\n  author={Li, Wenxuan and Qu, Chongyu and Chen, Xiaoxi and Bassi, Pedro RAS and Shi, Yijia and Lai, Yuxiang and Yu, Qian and Xue, Huimin and Chen, Yixiong and Lin, Xiaorui and others},\n  journal={Medical Image Analysis},\n  pages={103285},\n  year={2024},\n  publisher={Elsevier},\n  url={https://github.com/MrGiovanni/AbdomenAtlas}\n}\n\n@article{bassi2024touchstone,\n  title={Touchstone Benchmark: Are We on the Right Way for Evaluating AI Algorithms for Medical Segmentation?},\n  author={Bassi, Pedro RAS and Li, Wenxuan and Tang, Yucheng and Isensee, Fabian and Wang, Zifu and Chen, Jieneng and Chou, Yu-Cheng and Kirchhoff, Yannick and Rokuss, Maximilian and Huang, Ziyan and others},\n  journal={arXiv preprint arXiv:2411.03670},\n  year={2024}\n}\n\n@inproceedings{li2024well,\n  title={How Well Do Supervised Models Transfer to 3D Image Segmentation?},\n  author={Li, Wenxuan and Yuille, Alan and Zhou, Zongwei},\n  booktitle={The Twelfth International Conference on Learning Representations},\n  year={2024}\n}\n\n@article{qu2023abdomenatlas,\n  title={Abdomenatlas-8k: Annotating 8,000 CT volumes for multi-organ segmentation in three weeks},\n  author={Qu, Chongyu and Zhang, Tiezheng and Qiao, Hualin and Tang, Yucheng and Yuille, Alan L and Zhou, Zongwei},\n  journal={Advances in Neural Information Processing Systems},\n  volume={36},\n  year={2023}\n} Acknowledgements This work was supported by the Lustgarten Foundation for Pancreatic Cancer Research and partially by the Patrick J. McGovern Foundation Award. We appreciate the effort of the MONAI Team to provide open-source code for the community. License AbdomenAtlas 1.0 is licensed under CC BY-NC-SA 4.0. Uploading AbdomenAtlas to HuggingFace The file AbdomenAtlasUploadMultipleFolders.ipynb has the code we used to upload AbdomenAtlas to Hugging Face. It may be ncessary to run the script multiple times, until it finishes without an uploading error. The uploading script requires PyTorch, huggingface_hub, and Jupyter Notebook. Copy to bucket new Downloads last month 2,136 Total file size: 326 GB Paper for AbdomenAtlas/AbdomenAtlas1.0Mini Touchstone Benchmark: Are We on the Right Way for Evaluating AI\n  Algorithms for Medical Segmentation? Paper • 2411.03670 • Published Nov 6, 2024 System theme Company TOS Privacy About Careers Website Models Datasets Spaces Pricing Docs",
+          "source": {
+            "url": "https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/26f6fd25aa5fa70d.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/26f6fd25aa5fa70d.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://ccvl.jhu.edu/bodymaps/index.html",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/59a9d37186d109a2.json",
+          "status": 200
+        },
+        {
+          "url": "https://codalab.lisn.upsaclay.fr/competitions/16919",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/40f0ee6525ae72d9.json",
+          "status": null
+        },
+        {
+          "url": "https://api.crossref.org/works/10.1016/j.media.2024.103285",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/9fc7b020e4e5585d.json",
+          "status": 200
+        },
+        {
+          "url": "https://biomedicalimaging.org/2024/accepted-challenges-tutorials/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/54a5e45049fdcfff.json",
+          "status": 403
+        },
+        {
+          "url": "https://huggingface.co/datasets/AbdomenAtlas/AbdomenAtlas1.0Mini",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/26f6fd25aa5fa70d.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://github.com/MrGiovanni/AbdomenAtlas",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/65d2bfea0caa5bfe.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen",
+            "Whole body"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Other"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Abdominal tumors; histological behavior unspecified at collection level"
+      ],
+      "disease_scope_note": "Partial source-dataset context; malignancy and full disease spectrum unresolved",
+      "disease_review_note": "AbdomenAtlas明确部分病例有肿瘤，可补充肿瘤背景；未将全部未分型肿瘤自动归为恶性癌症，也不采用后续3.0扩展范围。",
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/2407.16697v2",
+          "local_source": "_collection/disease_followup_20261025/sources/bodymaps.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "AbdomenAtlas明确部分病例有肿瘤，可补充肿瘤背景；未将全部未分型肿瘤自动归为恶性癌症，也不采用后续3.0扩展范围。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/ISBI/2024/towards-3d-atlas-of-human-body-bodymaps-2024.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "ISBI/2024/towards-3d-atlas-of-human-body-bodymaps-2024.json",
+              "source_field": "dataset",
+              "value": {
+                "source_type": null,
+                "routine_clinical_practice": null,
+                "anonymized": null,
+                "ethical_approval": null,
+                "center_type": null,
+                "multi_center": true,
+                "international": true,
+                "center_count": 88,
+                "institutions_description": null,
+                "population": {
+                  "patient_count": null,
+                  "study_count": null,
+                  "scan_count": {
+                    "value": 10142,
+                    "approximate": false,
+                    "raw_text": "10,142 three-dimensional CT volumes (AbdomenAtlas)"
+                  },
+                  "train_count": null,
+                  "validation_count": null,
+                  "test_count": {
+                    "value": 1000,
+                    "unit": "CT volumes",
+                    "raw_text": "W-1K external validation dataset"
+                  }
+                },
+                "modalities": [
+                  "CT"
+                ],
+                "data_components": null,
+                "collection_period": {
+                  "start_year": null,
+                  "end_year": null
+                },
+                "dataset_structure": {
+                  "training_reference": "AbdomenAtlas: 25 annotated anatomical structures",
+                  "external_validation": "W-1K: 15 annotated anatomical structures"
+                }
+              },
+              "sources": [
+                {
+                  "type": "official challenge source",
+                  "url": "https://codalab.lisn.upsaclay.fr/competitions/16919",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/40f0ee6525ae72d9.json",
+                  "supports": [
+                    "challenge identity",
+                    "task_profile",
+                    "clinical_domain",
+                    "dataset or rules where stated",
+                    "homepage fields where stated"
+                  ]
+                },
+                {
+                  "type": "official conference program, browser extraction",
+                  "url": "https://biomedicalimaging.org/2024/accepted-challenges-tutorials/",
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources_other/isbi-2024-web.json",
+                  "supports": [
+                    "challenge identity",
+                    "event affiliation",
+                    "task_profile",
+                    "clinical_domain"
+                  ]
+                },
+                {
+                  "type": "review-derived anatomical classification of source-recorded targets",
+                  "url": "https://codalab.lisn.upsaclay.fr/competitions/16919",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/clinical_mapping/towards-3d-atlas-of-human-body-bodymaps-2024.json",
+                  "supports": [
+                    "clinical_domain.organ_system",
+                    "clinical_domain.organ_system_basis",
+                    "clinical_domain.organ_system_coding_scope"
+                  ]
+                },
+                {
+                  "type": "documentary follow-up source",
+                  "url": "https://ccvl.jhu.edu/bodymaps/index.html",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_59a9d37186d1_20261022.json",
+                  "reviewed_on": "2026-10-22",
+                  "retrieval_scope": "Direct public HTTP request",
+                  "source_accessible": true,
+                  "supports": [
+                    "仍待补：日程、评价工具及后续数据集研究不能单独确认2024最终排名。"
+                  ]
+                },
+                {
+                  "type": "documentary follow-up source",
+                  "url": "https://ccvl.jhu.edu/bodymaps/index.html",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_59a9d37186d1_20261022.json",
+                  "reviewed_on": "2026-10-22",
+                  "supports": [
+                    "4月20日公布结果仍为日程条目，验证入口不等于2024最终榜；最终结果未补齐。"
+                  ],
+                  "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+                },
+                {
+                  "type": "published article metadata",
+                  "url": "https://api.crossref.org/works/10.1016/j.media.2024.103285",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bodymaps_abdomenatlas_crossref_20261022.json",
+                  "retrieved_on": "2026-10-22",
+                  "supports": [
+                    "DOI metadata confirms Medical Image Analysis volume 97, article 103285, 2024; online day not supplied in this retrieved metadata."
+                  ]
+                },
+                {
+                  "type": "author manuscript full text",
+                  "url": "https://arxiv.org/html/2407.16697v2",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bodymaps_abdomenatlas_fulltext_20261022.json",
+                  "retrieved_on": "2026-10-22",
+                  "supports": [
+                    "arXiv v2 dated July 8 2025: Section 5 describes BodyMaps and Table 5 explicitly reports preliminary benchmark comparisons, not final competition ranks."
+                  ]
+                },
+                {
+                  "type": "existing_structured_fields_and_audit",
+                  "url": null,
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/ISBI/2024/towards-3d-atlas-of-human-body-bodymaps-2024.json",
+                  "source_urls": [],
+                  "supports": [
+                    "已有审查明确邮件发送Docker链接，组织者运行隐藏测试。"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02"
+  ]
+}

@@ -1,0 +1,735 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "amos-mm-2024",
+    "challenge_name": "AMOS-MM 2024",
+    "full_name": "AMOS-MM: Abdominal Multimodal Analysis Challenge",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R05",
+      "official_programme_row_numbers": "41",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "The University of Hongkong",
+        "Stanford University"
+      ],
+      "registered_authors": [
+        {
+          "name": "Ji, Yuanfeng",
+          "affiliation": "The University of Hongkong"
+        },
+        {
+          "name": "Ge, Chongjian",
+          "affiliation": "The University of Hongkong"
+        },
+        {
+          "name": "Li, Ruijiang",
+          "affiliation": "Stanford University"
+        },
+        {
+          "name": "Luo, Ping",
+          "affiliation": "The University of Hongkong"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Abdominal organs",
+        "Abdominal abnormalities"
+      ],
+      "diseases": [
+        "Mixed abdominal pathological findings"
+      ],
+      "clinical_context": "Reporting/VQA cover mixed positive cases; unspecified tumors are not sufficient to claim a specific cancer diagnosis."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "secondary_task_families": [
+        "VQA / multimodal QA"
+      ],
+      "task_families": [
+        "Report generation",
+        "VQA / multimodal QA"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Medical Report Generation",
+          "task_family": "Report generation",
+          "task_families": [
+            "Report generation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992154",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Medical Visual Question Answering",
+          "task_family": "VQA / multimodal QA",
+          "task_families": [
+            "VQA / multimodal QA"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992154",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ],
+      "task_role_scope": {
+        "Report generation": "Declared task output",
+        "VQA / multimodal QA": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": true,
+      "visual_question_answering": true,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992154",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "CT"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992154",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Not established",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-SA. 当届 AMOS-MM 提案明确声明 CC BY-SA；保留当届声明，不用其他年份 AMOS 条款替换。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992154",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992154",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "CodaLab",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992154",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992154",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nTo assess the performance of algorithms in medical report generation, three metrics are commonly used: BLEU,\nfor linguistic accuracy; Rouge-L, focusing on recall by evaluating the longest common subsequence with reference\ntexts; and METEOR, aligning both precision and recall, considering synonyms and grammar. For ranking the\nalgorithms, the average values of these three metrics are employed, providing a balanced evaluation that\nencompasses various aspects of an algorithm's output, including accuracy, coherence, and overall quality. This\nmethod ensures a comprehensive assessment of each algorithm's capability to generate medically accurate and\nlinguistically coherent reports.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nThe choice of metrics (BLEU, Rouge-L, METEOR) for the first task in the AMOS-MM Challenge is justified by their\nwidespread use in evaluating text generation tasks, including their application in previous studies like MIMIC-CXR.\nWhile these metrics have limitations in fully capturing clinical correctness or the depth of medical insights in the\ngenerated reports, evaluating clinical accuracy is inherently complex. To balance the challenge's scope and\nfeasibility, these metrics are considered sufficient. They provide a reliable measure of linguistic alignment with\nground truth texts, which is crucial in a biomedical context where accuracy and coherence of reports are\nparamount.",
+          "registered_ranking_text": "AMOS-MM: Abdominal Multimodal Analysis Challenge\n\na) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nFor the task1, the method involves aggregating results across test cases using the selected metrics. Specifically,\nthe average value for each metric (BLEU, Rouge-L, METEOR) is calculated across all cases. Then, a ranking is\nassigned to each algorithm based on these average values for each metric. The ranks for each metric are summed\nup, and the algorithm with the lowest total rank across all three metrics is deemed the winner.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nIf any submission fails to provide a result for a specific case, the metric for that case will be set to zero.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nFor the task1, the method involves aggregating results across test cases using the selected metrics. Specifically,\nthe average value for each metric (BLEU, Rouge-L, METEOR) is calculated across all cases. Then, a ranking is\nassigned to each algorithm based on these average values for each metric. The ranks for each metric are summed\nup, and the algorithm with the lowest total rank across all three metrics is deemed the winner."
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992154",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf",
+            "registered_task_index": 2
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992154",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf",
+            "registered_task_index": 2
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\n\n\nFor the second task in the AMOS-MM Challenge, where the questions are in a multiple-choice format, the\nevaluation is straightforwardly based on accuracy. This metric measures the percentage of questions where the\nalgorithm's selected answer matches the correct answer.\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nFor the second task in the AMOS-MM Challenge, the chosen metric is accuracy, which is particularly suitable for\nthe multiple-choice question format of this task. This metric was selected because it directly quantifies how often\nthe algorithm correctly identifies the right answer from the given options, a clear and objective measure of\nperformance.",
+          "registered_ranking_text": "AMOS-MM: Abdominal Multimodal Analysis Challenge\n\na) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nFor the task2, the performance ranking of algorithms is determined by computing the accuracy across all test\ncases.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nIf any submission fails to provide a result for a specific case, the metric for that case will be set to zero.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nFor the task2, the performance ranking of algorithms is determined by computing the accuracy across all test\ncases."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Prediction files",
+      "platform": "CodaLab",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Due to the challenges posed by the storage and computational demands of the large-scale CT dataset, we will deviate from the AMOS22 docker submission process. AMOS-MM will be divided into two distinct phases: online validation and online testing. In both phases, participants will perform metric computations by submitting their prediction results to our platform (hosted in CodaLab platform). The online validation phase will become publicly accessible following the release of the training data. As for the online testing phase, it will open to participants 48 hours after final phase started. During this phase, teams are required to complete their analysis and submit their results within the specified deadline.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992154",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "protocol_description": "Due to the challenges posed by the storage and computational demands of the large-scale CT dataset, we will deviate from the AMOS22 docker submission process. AMOS-MM will be divided into two distinct phases: online validation and online testing. In both phases, participants will perform metric computations by submitting their prediction results to our platform (hosted in CodaLab platform). The online validation phase will become publicly accessible following the release of the training data. As for the online testing phase, it will open to participants 48 hours after final phase started. During this phase, teams are required to complete their analysis and submit their results within the specified deadline.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10992154",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10992154",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10992154"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://www.codabench.org/competitions/3137/",
+      "registration": "https://doi.org/10.5281/zenodo.10992154",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10992154",
+          "resolved_record_id": 10992155,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://www.codabench.org/competitions/3137/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/7bef0c0568136260.json",
+          "http_status": null,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "AMOS-MM"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Report generation",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Not established",
+      "data_model_flow": "data-to-model",
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Not established",
+        "state": "Not established",
+        "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "Development and evaluation inputs are released to entrants, who perform inference and return prediction/result files for scoring. Auxiliary code verification is not recoded as the primary evaluation workflow."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992154",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992154",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Due to the challenges posed by the storage and computational demands of the large-scale CT dataset, we will deviate from the AMOS22 docker submission process. AMOS-MM will be divided into two distinct phases: online validation and online testing. In both phases, participants will perform metric computations by submitting their prediction results to our platform (hosted in CodaLab platform). The online validation phase will become publicly accessible following the release of the training data. As for the online testing phase, it will open to participants 48 hours after final phase started. During this phase, teams are required to complete their analysis and submit their results within the specified deadline. b) Provide information on the po"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992154",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Training Data Release & Registration Opening: Date: May 1, 2024 Release of training cases with URL on the official challenge website. Registration for the challenge opens on the same day. Online Validation Phase: Start Date: June 1, 2024 Following the release of the training data, this phase opens for participants to begin submitting their results for validation. AMOS-MM: Abdominal Multimodal Analysis Challenge Online Test Phase & Submission "
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992154",
+          "excerpt": ""
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992154",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992154",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Due to the challenges posed by the storage and computational demands of the large-scale CT dataset, we will deviate from the AMOS22 docker submission process. AMOS-MM will be divided into two distinct phases: online validation and online testing. In both phases, participants will perform metric computations by submitting their prediction results to our platform (hosted in CodaLab platform). The online validation phase will become publicly accessible following the release of the training data. As for the online testing phase, it will open to participants 48 hours after final phase started. During this phase, teams are required to complete their analysis and submit their results within the specified deadline. b) Provide information on the po"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992154",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Training Data Release & Registration Opening: Date: May 1, 2024 Release of training cases with URL on the official challenge website. Registration for the challenge opens on the same day. AMOS-MM: Abdominal Multimodal Analysis Challenge Online Validation Phase: Start Date: June 1, 2024 Following the release of the training data, this phase opens for participants to begin submitting their results for validation. Online Test Phase & Submission "
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992154",
+          "excerpt": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/amos-mm-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-25 access completion: 找到现行公开 AMOS-MM 下载链接；赛后开放状态不能直接证明2024比赛期间准入。"
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Not established",
+        "rationale": "找到现行公开 AMOS-MM 下载链接；赛后开放状态不能直接证明2024比赛期间准入。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/be8ef7172a80c7c6.json",
+          "_collection/access_completion_20261025/sources/6bc7140d7ac31660.json",
+          "_collection/access_completion_20261025/sources/55b13190554eadd0.json",
+          "_collection/access_completion_20261025/sources/7bef0c0568136260.json"
+        ]
+      }
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 1500,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 300,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 500,
+              "unit": "cases",
+              "scope": "Edition dataset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "China"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Report/VQA tasks share cases; four expected questions per case not multiplied into patients.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10992154",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/amos-mm-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Abdominal organs",
+        "Abdominal abnormalities"
+      ],
+      "specific_diseases": [
+        "Mixed abdominal pathological findings"
+      ],
+      "review_note": "Reporting/VQA cover mixed positive cases; unspecified tumors are not sufficient to claim a specific cancer diagnosis.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992154"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992154"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/amos-mm-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Report generation",
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "previous_task_families": [
+        "Report generation",
+        "VQA / multimodal QA"
+      ],
+      "previous_emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_roles": {
+        "Report generation": "Declared task output",
+        "VQA / multimodal QA": "Declared task output"
+      },
+      "note_zh": "报告生成与 VQA 两类输出；问答题材涉及推理，但未要求独立理由输出，不增计 explicit reasoning。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10992154",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.txt",
+          "sha256": "ae8bcfb1f95ba77901b52cacb9146eea9d80ab98918f433a0ed5b13ebfabf024"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届 AMOS-MM 提案明确声明 CC BY-SA；保留当届声明，不用其他年份 AMOS 条款替换。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition data-use section",
+          "text": "We follow the CC BY-SA (Attribution-ShareAlike) adopted by AMOS22.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10992154"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10992154"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/amos-mm-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "China"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.10992154",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/amos-mm-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Open call (used data will always be available to the community after the competition is over)",
+              "url": "https://doi.org/10.5281/zenodo.10992154",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R05/AMOS-MM_ Abdominal Multimodal Analysis Challenge.pdf",
+              "scope": "Edition-specific lifecycle answer: open-call continuation or a stated future release. Policy/plan coverage only, not evidence that continuing evaluation actually ran.",
+              "value": null,
+              "excerpt": "continued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time event). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some modifications (repeated event). Examples: • One-time event with fixed conference submission deadline • Open call (challenge opens for new submissions after conference deadline) • Repeated event with annual fixed conference submission deadline Open call (used data will always be available to the community after the competition is over) ",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

@@ -1,0 +1,734 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "mood-2024",
+    "challenge_name": "MOOD 2024",
+    "full_name": "Medical Out-of-Distribution Analysis Challenge 2024",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R30",
+      "official_programme_row_numbers": "9",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Div. Medical Image Computing (MIC), German Cancer Research Center (DKFZ)",
+        "Div Computer Assisted Medical Interventions (CAMI), German Cancer Research Center (DKFZ)"
+      ],
+      "registered_authors": [
+        {
+          "name": "Zimmerer, David",
+          "affiliation": "Div. Medical Image Computing (MIC), German Cancer Research Center (DKFZ)"
+        },
+        {
+          "name": "Köhler, Gregor",
+          "affiliation": "Div. Medical Image Computing (MIC), German Cancer Research Center (DKFZ)"
+        },
+        {
+          "name": "Jäger, Paul",
+          "affiliation": "Div. Medical Image Computing (MIC), German Cancer Research Center (DKFZ)"
+        },
+        {
+          "name": "Full, Peter",
+          "affiliation": "Div. Medical Image Computing (MIC), German Cancer Research Center (DKFZ)"
+        },
+        {
+          "name": "Maier-Hein, Klaus",
+          "affiliation": "Div. Medical Image Computing (MIC), German Cancer Research Center (DKFZ)"
+        },
+        {
+          "name": "Reinke, Annika",
+          "affiliation": "Div Computer Assisted Medical Interventions (CAMI), German Cancer Research Center (DKFZ)"
+        },
+        {
+          "name": "Maier-Hein, Lena",
+          "affiliation": null
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI",
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain",
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Brain",
+        "Abdominal structures"
+      ],
+      "diseases": [],
+      "clinical_context": "Artificially introduced anomalies in brain MRI and abdominal CT. No particular disease is implied by anomaly detection."
+    },
+    "task_profile": {
+      "primary_task_family": "Anomaly Detection",
+      "secondary_task_families": [],
+      "task_families": [
+        "Anomaly Detection"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Sample-Level",
+          "task_family": "Anomaly Detection",
+          "task_families": [
+            "Anomaly Detection"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991106",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Object-Level",
+          "task_family": "Anomaly Detection",
+          "task_families": [
+            "Anomaly Detection"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991106",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": false,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991106",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI",
+        "CT"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991106",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "HCP Open Access Data Use Terms; CC BY 3.0 (abdominal CT). 脑数据采用 HCP Open Access Data Use Terms；腹部 CT 为 CC BY 3.0；未把整项归为统一开放许可。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991106",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf"
+      },
+      "review_status": "Human-confirmed 2026-10-25",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Competition-time training/development data",
+      "access_by_scope": [
+        {
+          "scope": "Training/development",
+          "category": "Account registration",
+          "access_steps": [
+            "Register",
+            "Download development data"
+          ],
+          "manual_review": null
+        }
+      ],
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991106",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Synapse",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991106",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991106",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nAverage Precision (AP), which \"summarizes a precision-recall curve as the weighted mean of precisions achieved\nat each threshold, with the increase in recall from the previous threshold used as the weight\" (https://scikitlearn.\norg/stable/modules/generated/sklearn.metrics.average_precision_score.html) . For more information see [9] or\nhttps://scikit-learn.org/stable/modules/generated/sklearn.metrics.average_precision_score.html.\nOur evaluation code can be found here: https://github.com/MIC-DKFZ/mood\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nWe chose AP since it is more robust to AUROC with regard to class imbalance (despite us being able to control it\nand keep it at 1/2 to 2/3 ) and has been suggested by many recent papers [2,3,4,6,9]. However, since this is the\namong most used and often recommended metrics we chose AP, but after the challenge might investigate\ndifferent metrics, such as object-level detection metrics (choosing an abnormality threshold based on a hold-out\nvalidation set similar to [23]) and present it in the paper as well as on the leaderboard (e.g. AUROC, FPR@95 ).",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\n\n\n\n\n\f                                   Medical Out-of-Distribution Analysis Challenge 2024\n\naggregated to arrive at a final score/ranking.\n\nWe chose AP since it is more robust to AUROC with regard to class imbalance (despite us being able to control it\nand keep it at 1/2 to 2/3 ) and has been suggested by many recent papers [2,3,4,6,9]. However, since this is the\namong most used and often recommended metrics we chose AP, but after the challenge might investigate\ndifferent metrics and present them in the paper as well as on the leaderboard (e.g. AUROC, FPR@95 ).\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSince we use docker-based testing we assume that almost all participants will process all cases. However, should\none case be not considered, we will assign it the lowest given anomaly score (= 0).\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nFor each sample, the users should report an anomaly score, indicating the certainty of detecting the anomaly in\nthe given image. We expect the scores to be in the interval [0-1], where 0 is the lowest score indicating no\nabnormality and 1 is the highest score indicating the most abnormal input (Scores above and below the interval\nwill be clamped to [0-1]). We will use the reported scores together with the ground truth labels to calculate the AP\nover the whole dataset. The ranking for one dataset will then be given by the AP over the whole dataset. We\ncombine the two datasets by choosing a consolidation ranking schema."
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991106",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf",
+            "registered_task_index": 2
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991106",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf",
+            "registered_task_index": 2
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nAs it was successful for last year's edition and corresponded more closely to a human-aligned metric, in contrast\nto AP, we here opt for a more object-centric metric.\nHere a GT object is either given by a rendered object or a (connected) segmented (natural) anomaly.\nA prediction object is obtained in the following way: The participants can decide if they want to submit a binary\nprediction (0 or 1) or a continuous score (0-1). In the case of a continuous score, we use a toy-dataset (similar to\nthe toy-dataset presented to the participants) to determine the best binarization threshold with respect to the\npresented metric on this toy-dataset. We then use the binarization threshold to binarize the continuous score. On\nthe binarized score, we apply connected component analysis to find individual objects and discard all objects that\nare smaller than half the size of the smallest anomaly in our test set and all objects with are more than two times\nbigger than the biggest object in our test set (to sort out low-frequency noise). This procedure then outputs the\nprediction objects.\nWe then match the GT objects and the prediction objects in the following way to obtain TP, FP, FN:\nIf the center of mass of the prediction object falls in the convex hull of the GT object and the size difference is only\nat max a factor of two (= 0.5 * GT-object size < prediction-object size < 2*GT-object size), then we consider the GT\nobject to be detected, resulting in a TP. If a GT object was not matched/detected by any prediction object we\nconsider this an FN. If a prediction object could not be matched to a GT object, we consider this an FP. We iterate\nover all images and objects in the dataset and obtain all TP, FP, FN for the whole dataset. The final score is then\ngiven by the F1 score (using the determined TPs, FPs, FNs).\nOur evaluation code will be available here: https://github.com/MIC-DKFZ/mood\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\n\n\n\n\n\f                                 Medical Out-of-Distribution Analysis Challenge 2024\n\nWe chose this metric in contrast to AP since this better matched the objective of localizing and detecting an\nabnromal image part. AP, similar to dice, tends to put unproportional importance on 'big' objects, which, even\ndespite batching, can mask some undetected objects. Here an object-detection-based metric can be more fitting.\nWe opted for this center of mass and size-based matching and not an IoU-based score since we found this better\naligns with the detection of an object which could then be presented to a physician for further review than an\narbitrary IoU threshold. An expert radiologist confirmed this to be a reasonable approach.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\nSince scans in the test set can be normal and contain no anomalies and scans might contain multiple anomalies, a\nper-case score is not optimal (as it would have a high per-scan variance and give very extreme values). Thus we\nfirst calculate a whole-dataset score and then combine the different datasets with consolidation ranking (giving\nboth datasets the same importance). This code has been previously tested on multiple in-house projects (e.g. [26]\n) where the predictions have been reviewed by an expert radiologist and the code was made public for last year's\nedition.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSince we use docker-based testing we assume that almost all participants will process all cases. However, should\none case be not considered, we will assign it 0 TPs, FPs, and FNs (similar to an 'all 0' prediction).\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nFor each voxel, the users should report an anomaly score, indicating the certainty of detecting the anomaly for\nthe given voxels. We expect the scores to be in the interval [0-1], where 0 is the lowest score indicating no\nabnormality and 1 is the highest score indicating the most abnormal input (Scores above and below the interval\nwill be clamped to [0-1]) or binary [0,1]. We will use the reported scores together with the ground truth labels to\ncalculate the TPs, FPs, FNs over the whole dataset. The ranking for one dataset will then be given by the F1 over\nthe whole dataset (given the TPs, FPs, FNs). We combine the two datasets by choosing a consolidation ranking\nschema."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Synapse",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Docker container on the Synapse platform. Link to submission instructions: https://www.synapse.org/(hashtag)!Synapse:syn21989704 or medicalood.dkfz.de/web/",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991106",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "protocol_description": "Docker container on the Synapse platform. Link to submission instructions: https://www.synapse.org/(hashtag)!Synapse:syn21989704 or medicalood.dkfz.de/web/",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.10991106",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf",
+            "registered_task_index": 2
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.10991106",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.10991106"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://www.synapse.org/mood",
+      "registration": "https://doi.org/10.5281/zenodo.10991106",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.10991106",
+          "resolved_record_id": 10991107,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/Medical Out-of-Distribution Analysis Challenge 2024.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://www.synapse.org/mood",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/f25ac1fc0bf9454d.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "MOOD"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Anomaly Detection"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。",
+        "scope": "Competition-time training/development data",
+        "access_by_scope": [
+          {
+            "scope": "Training/development",
+            "category": "Account registration",
+            "access_steps": [
+              "Register",
+              "Download development data"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "Human confirmation supplied by user; no new independent web verification",
+        "confidence": "Human-confirmed",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991106",
+          "excerpt": " will any additional information about individual human subjects be released to me under these Open Access Data Use Terms. I will comply with all relevant rules and regulations imposed by my institution. This may mean that I need my research to be approved or declared exempt by a committee that oversees research on human subjects, e.g. my IRB or Ethics Committee. The released HCP data are not considered [...] ed and upon request, the HCP will provide a certificate stating that you have accepted the HCP Open Access Data Use Terms. I may redistribute original WU-Minn HCP Open Access data and any derived data as long as the data are redistributed under these same Data Use Terms. Medical Out-of-Distribution Analysis Challenge 2024 I will acknowledge the use of WU-Minn HCP data and data derived from WU-Minn HCP data when publicly presenting any results or algorithms that benefitted from their use. Papers, book chapters, books, posters, oral presentations, and all other printed and digital presentations of results derived from HCP data should contain the following wording in the acknowledgments section: \"Data were provided [...] esearch; and by the McDonnell Center for Systems Neuroscience at Washington University.\" Authors of publications or presentations using WU-Minn HCP data should cite relevant publications describing the methods used by the HCP to acquire and process the data. The specific publications that are appropriate to cite in any given study will depend on what HCP data were used and for what purposes. An annotated and appropriately up-to-date list of publications that may warrant consideration is available at http://www.humanconnectome.org/about/acknowledgehcp.html The WU-Minn HCP Consortium as a whole should not be included as an author of publications or presentations if this authorship would be based solely on the use of WU-Minn HCP data. Failure to abide by these guidelines will result in termination of my privileges to access WU-Minn HCP data.\" For the Abdominal data the following Licence applies: \"Citations & Data Usage Policy This collection is freely available to browse, download, and use for commercial, scientific and educational purposes as outlined in the Creative Commons Attribution 3.0 Unported License. See TCIA's Data Usage Policies and Restrictions for additional details. Questions may be directed to help@cancerimagingarchive.net. Please be sure to include the follow"
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991106",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker container on the Synapse platform. Link to submission instructions: https://www.synapse.org/(hashtag)!Synapse:syn21989704 or medicalood.dkfz.de/web/ b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges all [...] h will not be included in the final testset. We also already made the \"toy\" case and testing script publicly available so that the participants can check beforehand if their submission won't cause any errors and to compare the reported results with their own to check for any additional occurring errors. Additionally, a dedicated toy-case evaluation queue will be available where participants can submit t"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991106",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) Medical Out-of-Distribution Analysis Challenge 2024 • associated workshop days (if any) • the release date(s) of the results Release of training cases: 15 March 2024 Registration Until: 15 August 2024 Submission of Dockers: 16 August 2024 Invitation of the participants to present their results: 1 September 2024 Release date of the results: MICCAI 2024"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991106",
+          "excerpt": "rding to real-world distribution vs. equal class distribution) and justify the choice. Since we use publicly available data and to prevent misconduct we do not fully disclose our testing data distribution (since the goal is to detect potentially unknown anomalies). However, we are willing to share this information with the reviewers, if it would be helpful ( and if the reviewers agree not to take part i"
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991106",
+          "excerpt": " will any additional information about individual human subjects be released to me under these Open Access Data Use Terms. I will comply with all relevant rules and regulations imposed by my institution. This may mean that I need my research to be approved or declared exempt by a committee that oversees research on human subjects, e.g. my IRB or Ethics Committee. The released HCP data are not considered [...] ed and upon request, the HCP will provide a certificate stating that you have accepted the HCP Open Access Data Use Terms. I may redistribute original WU-Minn HCP Open Access data and any derived data as long as the data are redistributed under these same Data Use Terms. I will acknowledge the use of WU-Minn HCP data and data derived from WU-Minn HCP data when publicly presenting any results or algorithms that benefitted from their use. Papers, book chapters, books, posters, oral presentations, and all other printed and digital presentations of results derived from HCP data should contain the following wording in the acknowledgments section: \"Data were provided [...] esearch; and by the McDonnell Center for Systems Neuroscience at Washington University.\" Authors of publications or presentations using WU-Minn HCP data should cite relevant publications describing the methods used by the HCP to acquire and process the data. The specific publications that are appropriate to cite in any given study will depend on what HCP data were used and for what purposes. An annotated and appropriately up-to-date list of publications that may warrant consideration is available at http://www.humanconnectome.org/about/acknowledgehcp.html The WU-Minn HCP Consortium as a whole should not be included as an author of publications or presentations if this authorship would be based solely on the use of WU-Minn HCP data. Failure to abide by these guidelines will result in termination of my privileges to access WU-Minn HCP data.\" For the Abdominal data the following Licence applies: \"Citations & Data Usage Policy This collection is freely available to browse, download, and use for commercial, scientific and educational purposes as outlined in the Creative Commons Attribution 3.0 Unported License. See TCIA's Data Usage Policies and Restrictions for additional details. Questions may be directed to help@cancerimagingarchive.net. Please be sure to include the follow"
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991106",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Docker container on the Synapse platform. Link to submission instructions: https://www.synapse.org/(hashtag)!Synapse:syn21989704 or medicalood.dkfz.de/web/ b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges all [...] h will not be included in the final testset. We also already made the \"toy\" case and testing script publicly available so that the participants can check beforehand if their submission won't cause any errors and to compare the reported results with their own to check for any additional occurring errors. Additionally, a dedicated toy-case evaluation queue will be available where participants can submit t"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991106",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Release of training cases: 15 March 2024 Registration Until: 15 August 2024 Submission of Dockers: 16 August 2024 Medical Out-of-Distribution Analysis Challenge 2024 Invitation of the participants to present their results: 1 September 2024 Release date of the results: MICCAI 2024"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991106",
+          "excerpt": "rding to real-world distribution vs. equal class distribution) and justify the choice. Since we use publicly available data and to prevent misconduct we do not fully disclose our testing data distribution (since the goal is to detect potentially unknown anomalies). However, we are willing to share this information with the reviewers, if it would be helpful ( and if the reviewers agree not to take part i"
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/f25ac1fc0bf9454d.json",
+          "url": "https://www.synapse.org/mood",
+          "excerpt": "napse Does Synapse is the platform Sage Bionetworks uses to make biomedical research data findable, accessible, interoperable, and reusable (FAIR). Researchers, clinicians, and data scientists use Synapse to: Share large biomedical datasets across institutions, with appropriate access controls, data-use agreements, and governance. Run reproducible analyses on shared data with documented provenance. Coordinate consortium science across disease areas including Alzheimer's disease, neurofibromatosis, ALS, rare cancers, and others. Power public-facing knowledge portals such as the AD Knowledge Portal, the NF Data Portal, and the ALS Knowledge Portal. Nonprofit Identity Sage Bionetworks A 501(c)(3) nonprofit research organization EIN: 26-4489946 Seattle, Washington, USA sagebionetworks.org Trust Center — Terms of Service, Privacy Policy, f [...] ernance documents Sage Bionetworks — Mission, vision, and current work IRS Form 990 filings (via ProPublica Nonprofit Explorer) Synapse documentation and help Synapse Home crawl link This static content is provided for search engines and users with JavaScript disabled. For the full Synapse experience, please enable JavaScript in your browser. Medical Out-of-Distribution Analysis Challenge 2025 page is l"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/mood-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_registration_20261025/user_confirmation.json",
+          "review_date": "2026-10-25",
+          "section": "User-confirmed registration/download; scope limited to pending editions"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-25: 2026-10-25用户人工确认：注册后下载开发数据。按当前待核查清单中的该届记录回填；未额外推断审批自动化或验证／测试数据开放。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "train",
+              "value": 800,
+              "unit": "cases",
+              "scope": "Brain",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 550,
+              "unit": "cases",
+              "scope": "Abdomen",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 688,
+              "unit": "cases",
+              "scope": "Brain sample-level",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 599,
+              "unit": "cases",
+              "scope": "Abdomen sample-level",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 542,
+              "unit": "cases",
+              "scope": "Brain pixel-level",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 358,
+              "unit": "cases",
+              "scope": "Abdomen pixel-level",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Not established",
+          "value": {
+            "countries": [],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "Brain HCP single acquisition site; abdominal CT source from 15 clinical sites explicitly described in source section a. Shared training cohorts across tasks.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.10991106",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "https://www.synapse.org/mood",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/f25ac1fc0bf9454d.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/mood-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain",
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "organs_or_structures": [
+        "Brain",
+        "Abdominal structures"
+      ],
+      "specific_diseases": [],
+      "review_note": "Artificially introduced anomalies in brain MRI and abdominal CT. No particular disease is implied by anomaly detection.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991106"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991106"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/mood-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "HCP Open Access Data Use Terms",
+        "CC BY 3.0 (abdominal CT)"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "脑数据采用 HCP Open Access Data Use Terms；腹部 CT 为 CC BY 3.0；未把整项归为统一开放许可。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Registered task/section 1",
+          "text": "For the Brain Data the following Licence applies: \"I will not attempt to establish the identity of or attempt to contact any of the included human subjects. I understand that under no circumstances will the code that would link these data to Protected Health Information be given to me, nor will any additional information about individual human subjects be released to me under these Open Access Data Use Terms. I will comply with all relevant rules and regulations imposed by my institution. This may mean that I need my research to be approved or declared exempt by a committee that oversees research on human subjects, e.g. my IRB or Ethics Committee. The released HCP data are not considered de-identified, insofar as certain combinations of HCP Restricted Data (available through a separate process) might allow identification of individuals. Different committees operate under different national, state and local laws and may interpret regulations differently, so it is important to ask about this. If needed and upon request, the HCP will provide a certificate stating that you have accepted the HCP Open Access Data Use Terms. I may redistribute original WU-Minn HCP Open Access data and any derived data as long as the data are redistributed under these same Data Use Terms. Medical Out-of-Distribution Analysis Challenge 2024 I will acknowledge the use of WU-Minn HCP data and data derived from WU-Minn HCP data when publicly presenting any results or algorithms that benefitted from their use. Papers, book chapters, books, posters, oral presentations, and all other printed and digital presentations of results derived from HCP data should contain the following wording in the acknowledgments section: \"Data were provided [in part] by the Human Connectome Project, WU-Minn Consortium (Principal Investigators: David Van Essen and Kamil Ugurbil; 1U54MH091657) funded by the 16 NIH Institutes and Centers that support the NIH Blueprint for Neuroscience Research; and by the McDonnell Center for Systems Neuroscience at Washington University.\" Authors of publications or presentations using WU-Minn HCP data should cite relevant publications describing the methods used by the HCP to acquire and process the data. The specific publications that are appropriate to cite in any given study will depend on what HCP data were used and for what purposes. An annotated and appropriately up-to-date list of publications that may warrant consideration is available at http://www.humanconnectome.org/about/acknowledgehcp.html The WU-Minn HCP Consortium as a whole should not be included as an author of publications or presentations if this authorship would be based solely on the use of WU-Minn HCP data. Failure to abide by these guidelines will result in termination of my privileges to access WU-Minn HCP data.\" For the Abdominal data the following Licence applies: \"Citations & Data Usage Policy This collection is freely available to browse, download, and use for commercial, scientific and educational purposes as outlined in the Creative Commons Attribution 3.0 Unported License. See TCIA's Data Usage Policies and Restrictions for additional details. Questions may be directed to help@cancerimagingarchive.net. Please be sure to include the following citations in your work if you use this data set: Data Citation Smith K, Clark K, Bennett W, Nolan T, Kirby J, Wolfsberger M, Moulton J, Vendt B, Freymann J. (2015). Data From CT_COLONOGRAPHY. The Cancer Imaging Archive. http://doi.org/10.7937/K9/TCIA.2015.NWTESAY1\"",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10991106"
+          }
+        },
+        {
+          "scope": "Registered task/section 2",
+          "text": "For the Brain Data the following Licence applies: \"I will not attempt to establish the identity of or attempt to contact any of the included human subjects. I understand that under no circumstances will the code that would link these data to Protected Health Information be given to me, nor will any additional information about individual human subjects be released to me under these Open Access Data Use Terms. I will comply with all relevant rules and regulations imposed by my institution. This may mean that I need my research to be approved or declared exempt by a committee that oversees research on human subjects, e.g. my IRB or Ethics Committee. The released HCP data are not considered de-identified, insofar as certain combinations of HCP Restricted Data (available through a separate process) might allow identification of individuals. Different committees operate under different national, state and local laws and may interpret regulations differently, so it is important to ask about this. If needed and upon request, the HCP will provide a certificate stating that you have accepted the HCP Open Access Data Use Terms. I may redistribute original WU-Minn HCP Open Access data and any derived data as long as the data are redistributed under these same Data Use Terms. I will acknowledge the use of WU-Minn HCP data and data derived from WU-Minn HCP data when publicly presenting any results or algorithms that benefitted from their use. Papers, book chapters, books, posters, oral presentations, and all other printed and digital presentations of results derived from HCP data should contain the following wording in the acknowledgments section: \"Data were provided [in part] by the Human Connectome Project, WU-Minn Consortium (Principal Investigators: David Van Medical Out-of-Distribution Analysis Challenge 2024 Essen and Kamil Ugurbil; 1U54MH091657) funded by the 16 NIH Institutes and Centers that support the NIH Blueprint for Neuroscience Research; and by the McDonnell Center for Systems Neuroscience at Washington University.\" Authors of publications or presentations using WU-Minn HCP data should cite relevant publications describing the methods used by the HCP to acquire and process the data. The specific publications that are appropriate to cite in any given study will depend on what HCP data were used and for what purposes. An annotated and appropriately up-to-date list of publications that may warrant consideration is available at http://www.humanconnectome.org/about/acknowledgehcp.html The WU-Minn HCP Consortium as a whole should not be included as an author of publications or presentations if this authorship would be based solely on the use of WU-Minn HCP data. Failure to abide by these guidelines will result in termination of my privileges to access WU-Minn HCP data.\" For the Abdominal data the following Licence applies: \"Citations & Data Usage Policy This collection is freely available to browse, download, and use for commercial, scientific and educational purposes as outlined in the Creative Commons Attribution 3.0 Unported License. See TCIA's Data Usage Policies and Restrictions for additional details. Questions may be directed to help@cancerimagingarchive.net. Please be sure to include the following citations in your work if you use this data set: Data Citation Smith K, Clark K, Bennett W, Nolan T, Kirby J, Wolfsberger M, Moulton J, Vendt B, Freymann J. (2015). Data From CT_COLONOGRAPHY. The Cancer Imaging Archive. http://doi.org/10.7937/K9/TCIA.2015.NWTESAY1\"",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.10991106"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R30/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.10991106"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

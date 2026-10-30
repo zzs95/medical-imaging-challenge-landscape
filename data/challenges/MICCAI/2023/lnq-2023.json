@@ -1,0 +1,561 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "lnq-2023",
+    "challenge_name": "LNQ2023",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "MICCAI 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "Contrast-enhanced CT"
+      ],
+      "body_region": [
+        "Thorax"
+      ],
+      "organ_system": [
+        "Lymphatic"
+      ],
+      "organs_or_structures": [
+        "Mediastinal lymph nodes"
+      ],
+      "diseases": [
+        "Cancer in clinical-trial cohort; primary sites unspecified"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Mediastinal Lymph Node Quantification",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "Thoracic CT volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Lymph node segmentation mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": "Partial training annotations support weak supervision; validation/test annotations are complete.",
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "train": {
+          "scan_count": 383,
+          "patient_count": 383
+        },
+        "validation": {
+          "scan_count": 20,
+          "patient_count": 20
+        },
+        "test": {
+          "scan_count": 100,
+          "patient_count": 100
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "registration-required",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY. 当届方案声明数据将按 CC BY 发布，可用于赛后研究；记录声明的政策，不把计划发布写成已核验下载。",
+      "access_after_challenge": null,
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Score",
+            "Average Symmetric Surface Distance"
+          ],
+          "ranking": "Rank per metric and subject, average ranks per subject, then average across subjects."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 515,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Phase 1 - Validation",
+            "submission_count": 264
+          },
+          {
+            "official_phase_name": "Phase 2 - Validation (Algorithm Tuning)",
+            "submission_count": 98
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://lnq2023.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": "https://arxiv.org/abs/2408.10069"
+    },
+    "notes": [
+      "Final organizer paper Table 1 gives 383 training scans; third-party summaries are not used to substitute 393."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://lnq2023.grand-challenge.org/lnq2023/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/91-15f7a799be5a.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://lnq2023.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/91-6a01545b8395.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lnq2023.grand-challenge.org/evaluation-guideline/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/91-6c88fb07cecb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lnq2023.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/91-8d2ec3657f2a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lnq2023.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/91-b6320b8c0bba.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lnq2023.grand-challenge.org/goals/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/91-c6eae70b0e90.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lnq2023.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/91-ca0f0fed5132.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lnq2023.grand-challenge.org/timeline-2/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/91-d2569c7ea015.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://lnq2023.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/91-overview.json"
+        },
+        {
+          "type": "official conference challenge directory",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "_collection/sources/0-b45d362052fd.json",
+          "supports": [
+            "event.conference"
+          ],
+          "retrieved_on": "2026-10-02"
+        },
+        {
+          "type": "official organizer publication",
+          "url": "https://arxiv.org/pdf/2408.10069",
+          "local_snapshot": "_collection/sources/91-results.pdf",
+          "supports": [
+            "dataset",
+            "evaluation",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify current dataset license and external-data policy; platform data/submission pages require access."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/lnq-2023.json",
+          "_collection/verification_20261003/literature_context/lnq-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届方案声明数据将按 CC BY 发布，可用于赛后研究；记录声明的政策，不把计划发布写成已核验下载。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Edition-specific data-use section 1",
+          "text": "Page 8 of 20 Biomedical Image Analysis ChallengeS (BIAS) Initiative Mediastinal Lymph Node Quantification (LNQ): Segmentation of Heterogeneous CT Data Additional comments: Data will be released under the CC BY license, allowing for further research use after the challenge is complete. We will investigate sharing the data via The Cancer Image Archive or other methods (e.g. Zenodo).",
+          "source": {
+            "url": "https://zenodo.org/api/records/7844666/files/MediastinalLymphNodeQuantification(LNQ)%20SegmentationofHeterogeneousCTData_04-19-2023_10-06-00.pdf/content",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/de0ac204a6148696.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/7844666/files/MediastinalLymphNodeQuantification(LNQ)%20SegmentationofHeterogeneousCTData_04-19-2023_10-06-00.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/de0ac204a6148696.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://lnq2023.grand-challenge.org/rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/8d2ec3657f2a5d05.json",
+          "status": 200
+        },
+        {
+          "url": "https://lnq2023.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/ca0f0fed51323639.json",
+          "status": 200
+        },
+        {
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/b45d362052fd0112.json",
+          "status": 200
+        },
+        {
+          "url": "https://lnq2023.grand-challenge.org/goals/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/c6eae70b0e9074dd.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/api/records/7844666/files/MediastinalLymphNodeQuantification(LNQ)%20SegmentationofHeterogeneousCTData_04-19-2023_10-06-00.pdf/content",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/de0ac204a6148696.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Chest"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Cancer in clinical-trial cohort; primary sites unspecified"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "官网明确数据来自癌症临床试验，评价纵隔淋巴结分割；不自行限定为肺癌。",
+      "sources": [
+        {
+          "url": "https://lnq2023.grand-challenge.org/lnq2023/",
+          "local_source": "_collection/sources/91-15f7a799be5a.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "官网明确数据来自癌症临床试验，评价纵隔淋巴结分割；不自行限定为肺癌。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2023/lnq-2023.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "16 validation-submitting teams.",
+              "url": "https://arxiv.org/pdf/2408.10069",
+              "snapshot": "_collection/sources/91-results.pdf",
+              "scope": "validation-submitting teams",
+              "value": {
+                "value": 16,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "thods by providing a new, partially annotated dataset and a robust evaluation framework. A total of 16 teams from 5 countries submitted predictions to the validation leaderboard, and 6 teams from 3 countries participated in the evaluation phase. The results highlighted both the",
+              "snapshot_date": ""
+            },
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "6 final evaluation teams.",
+              "url": "https://arxiv.org/pdf/2408.10069",
+              "snapshot": "_collection/sources/91-results.pdf",
+              "scope": "final evaluation teams",
+              "value": {
+                "value": 6,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "work. A total of 16 teams from 5 countries submitted predictions to the validation leaderboard, and 6 teams from 3 countries participated in the evaluation phase. The results highlighted both the potential and the current limitations of weakly-supervised approaches. On one han",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

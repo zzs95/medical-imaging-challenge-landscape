@@ -1,0 +1,560 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "lcr-mpi-2026",
+    "challenge_name": "Low Concentration Reconstruction Challenge in Magnetic Particle Imaging",
+    "full_name": "Low Concentration Reconstruction Challenge in Magnetic Particle Imaging",
+    "year": 2026,
+    "event": {
+      "conference": "ISBI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2026-04-11",
+      "location": {
+        "city": "London",
+        "country": "United Kingdom",
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Other"
+      ],
+      "submodality": null,
+      "body_region": null,
+      "organ_system": null,
+      "organs_or_structures": null,
+      "diseases": null,
+      "clinical_context": null,
+      "organ_system_basis": null,
+      "organ_system_coding_scope": null,
+      "modality_detail": "Magnetic particle imaging (FFL-MPI)",
+      "body_region_applicability": "Not applicable: physical phantoms and simulated targets"
+    },
+    "task_profile": {
+      "primary_task_family": "Reconstruction",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Low-concentration magnetic particle image reconstruction",
+          "task_family": "Reconstruction",
+          "task_subtype": "image reconstruction",
+          "input": [
+            "low-concentration FFL-MPI measurements"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "reconstructed images"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": true,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Other"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "LCR-MPI custom data-use terms. 官方规则限定比赛用途，其他用途、转交及商业使用须书面许可。",
+      "access_after_challenge": null,
+      "access_scope": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": false,
+        "submission_artifact": "ZIP containing 3D float64 NPY reconstructions in ID_results and OOD_results"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Organizer-operated MPI Lab leaderboard",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "SSIM",
+            "PSNR",
+            "NRMSE"
+          ],
+          "ranking": "SSIM primary; PSNR and NRMSE tie-breakers per organizer rules"
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "prediction file",
+      "platform": "MPI Lab",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "submission_artifact": "ZIP containing 3D float64 NPY reconstructions in ID_results and OOD_results",
+      "execution_mode": "Participant-run",
+      "submission_evidence_status": "confirmed",
+      "submission_type_scope": "Scored submission artifact; additional reproducibility/publication materials recorded separately.",
+      "submission_workflow_review": {
+        "date": "2026-10-22",
+        "basis_type": "user_provided_protocol_excerpt",
+        "summary": "LCR-MPI 2026：提交your_team_name.zip，内含ID_results/id_*.npy与OOD_results/ood_*.npy三维重建结果；NPY采用float64存储，保留[0,1]连续值且不作有损量化。归类为预测/重建结果文件提交；前五名后续可执行代码复核仍单独记录。",
+        "independently_verified_in_this_update": false,
+        "qualification": "User-supplied file specification; wrapped/OCR fragments normalized. No exact array dimensions, axis order, scoring automation, or missing recommended code inferred."
+      },
+      "additional_materials": [
+        {
+          "artifact": "Executable code",
+          "phase": "After ranking, top five teams",
+          "purpose": "technical/result verification",
+          "execution_mode": "Organizer-run"
+        }
+      ],
+      "additional_materials_count_as_primary_scored_artifact": false,
+      "reconstruction_submission_specification": {
+        "archive_format": "ZIP",
+        "archive_name_template": "your_team_name.zip",
+        "directories": {
+          "ID_results": {
+            "filename_pattern": "id_*.npy",
+            "examples": [
+              "id_01.npy",
+              "id_02.npy"
+            ]
+          },
+          "OOD_results": {
+            "filename_pattern": "ood_*.npy",
+            "examples": [
+              "ood_01.npy",
+              "ood_02.npy"
+            ]
+          }
+        },
+        "prediction_format": "NumPy .npy",
+        "array_dimensions": 3,
+        "array_shape": null,
+        "axis_order": null,
+        "storage_dtype": "float64",
+        "value_range": [
+          0,
+          1
+        ],
+        "value_semantics": "continuous reconstruction values",
+        "quantization_policy": "Preserve continuous values without lossy quantization",
+        "format_basis": "user_provided_protocol_excerpt"
+      }
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://www.mpilab.net/LCR-MPI-Challenge/",
+      "grand_challenge": null,
+      "platform": "https://www.mpilab.net/LCR-MPI-Challenge/VerifRes/leaderboard/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Edition is listed in the ISBI 2026 official challenge program; distinct from MICCAI 2026 FoundUS and earlier series editions.",
+      "2026-10-22 提交方式字段同步：提交重建结果；前五名排名后另交代码复核。文件格式未明，不能归类Docker。",
+      "2026-10-22 最新重建结果提交格式确认：LCR-MPI 2026：提交your_team_name.zip，内含ID_results/id_*.npy与OOD_results/ood_*.npy三维重建结果；NPY采用float64存储，保留[0,1]连续值且不作有损量化。归类为预测/重建结果文件提交；前五名后续可执行代码复核仍单独记录。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-20",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date of documentary extraction, not image acquisition or challenge completion.",
+      "last_verified": "2026-10-20",
+      "source_list": "ISBI 2026 official challenge program addendum",
+      "source_index": 3,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://biomedicalimaging.org/2026/challenges/",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "edition identity",
+            "conference affiliation",
+            "task scope"
+          ],
+          "basis": "ISBI 2026 lists this edition in its challenge session."
+        },
+        {
+          "type": "organizer edition website",
+          "url": "https://www.mpilab.net/LCR-MPI-Challenge/",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "reconstruction objective",
+            "timeline",
+            "metrics"
+          ],
+          "basis": "Organizer describes FFL-MPI reconstruction, SSIM primary ranking, and a March 2026 submission close."
+        },
+        {
+          "type": "organizer leaderboard",
+          "url": "https://www.mpilab.net/LCR-MPI-Challenge/VerifRes/leaderboard/",
+          "retrieved_on": "2026-10-20",
+          "local_snapshot": null,
+          "supports": [
+            "dated submitted scores"
+          ],
+          "basis": "A ranked results board shows March 2026 entries, but its final award status is not unambiguous."
+        },
+        {
+          "type": "user_supplied_review",
+          "url": null,
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "source_urls": [
+            "https://www.mpilab.net/LCR-MPI-Challenge/",
+            "https://www.mpilab.net/LCR-MPI-Challenge/datasets/",
+            "https://www.mpilab.net/LCR-MPI-Challenge/user/login/?next=%2FLCR-MPI-Challenge%2FVerifRes%2Fsubmission-of-results%2F"
+          ],
+          "supports": [
+            "提交重建结果；前五名排名后另交代码复核。文件格式未明，不能归类Docker。"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Final organizer ranking or award announcement",
+        "Dataset scale and access terms",
+        "Whether visible leaderboard is final or preliminary"
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "event.conference": {
+          "source_url": "https://biomedicalimaging.org/2026/challenges/",
+          "reviewed_on": "2026-10-20",
+          "basis": "Named in the ISBI 2026 official challenge program."
+        },
+        "assessment_evidence.status": {
+          "source_url": "https://www.mpilab.net/LCR-MPI-Challenge/",
+          "reviewed_on": "2026-10-20",
+          "basis": "The organizer states that submission closed and final results would be announced after review; the available board alone does not establish a completed final ranking."
+        }
+      },
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "basis_type": "user_supplied_review",
+          "summary": "提交重建结果；前五名排名后另交代码复核。文件格式未明，不能归类Docker。",
+          "evidence_ids": [
+            "E3"
+          ],
+          "source_urls": [
+            "https://www.mpilab.net/LCR-MPI-Challenge/",
+            "https://www.mpilab.net/LCR-MPI-Challenge/datasets/",
+            "https://www.mpilab.net/LCR-MPI-Challenge/user/login/?next=%2FLCR-MPI-Challenge%2FVerifRes%2Fsubmission-of-results%2F"
+          ],
+          "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/submission21_user_review_20261022.txt",
+          "directly_retrieved_protocol_snapshots": [],
+          "qualification": "User-reviewed sources and existing record evidence are distinguished from newly retrieved official protocol snapshots. No new final scores or completion judgments introduced.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/submission32_reconciliation_20261022_155358/ISBI/2026/lcr-mpi-2026.json"
+        },
+        {
+          "date": "2026-10-22",
+          "basis_type": "user_provided_protocol_excerpt",
+          "summary": "LCR-MPI 2026：提交your_team_name.zip，内含ID_results/id_*.npy与OOD_results/ood_*.npy三维重建结果；NPY采用float64存储，保留[0,1]连续值且不作有损量化。归类为预测/重建结果文件提交；前五名后续可执行代码复核仍单独记录。",
+          "independently_verified_in_this_update": false,
+          "qualification": "User-supplied file specification; wrapped/OCR fragments normalized. No exact array dimensions, axis order, scoring automation, or missing recommended code inferred.",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/lcr_npy_submission_20261022_160052/ISBI/2026/lcr-mpi-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-20",
+      "final_assessment_status": "not_established_from_reviewed_sources",
+      "evidence_source_url": "https://www.mpilab.net/LCR-MPI-Challenge/",
+      "basis": "The organizer states that submission closed and final results would be announced after review; the available board alone does not establish a completed final ranking.",
+      "qualification": "Public-document evidence review only; conference date or planned deadline alone does not confirm a completed assessment."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "LCR-MPI官网要求注册后领取数据；数据页提供训练和测试下载，既有规则明确本地重建后提交NPY预测，后续代码仅复核。"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "LCR-MPI官网要求注册后领取数据；数据页提供训练和测试下载，既有规则明确本地重建后提交NPY预测，后续代码仅复核。"
+      },
+      "decision_history": [
+        "LCR-MPI官网要求注册后领取数据；数据页提供训练和测试下载，既有规则明确本地重建后提交NPY预测，后续代码仅复核。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/74253a83a049ddcc.json",
+          "url": "https://www.mpilab.net/LCR-MPI-Challenge/"
+        },
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/21064fc90140acc3.json",
+          "url": "https://www.mpilab.net/LCR-MPI-Challenge/datasets/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/lcr-mpi-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "data-to-model"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "review_scope": "Anatomy follow-up; pre-existing disease classification unchanged",
+      "fields": {
+        "body_region": {
+          "state": "Not applicable",
+          "value": [],
+          "note": "官方数据说明PDF为图片版，已逐页查看：实测部分为28个phantom数据集，另有模拟数据。人体解剖部位不适用；不再保留为缺失。"
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.mpilab.net/LCR-MPI-Challenge/datasets/",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/21064fc90140acc3.json"
+        },
+        {
+          "url": "https://mpilab.net/media/mpiData/readme.pdf",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/bac43d671e97f015.pdf"
+        }
+      ],
+      "note_zh": "官方数据说明PDF为图片版，已逐页查看：实测部分为28个phantom数据集，另有模拟数据。人体解剖部位不适用；不再保留为缺失。",
+      "anatomical_scope": "Physical phantom and simulated target images",
+      "remaining_detail": "",
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "官方数据说明为实体/模拟模体低浓度MPI重建，不针对患者疾病。",
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "官方数据说明为实体/模拟模体低浓度MPI重建，不针对患者疾病。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/ISBI/2026/lcr-mpi-2026.json"
+        }
+      ]
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Other"
+      ],
+      "harmonized_modalities": [
+        "Magnetic particle imaging"
+      ],
+      "video_format_documented": false,
+      "note": "Replace Other using explicit recorded input/submodality.",
+      "sources": [
+        {
+          "url": "https://www.mpilab.net/LCR-MPI-Challenge/",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/74253a83a049ddcc.json"
+        },
+        {
+          "url": "https://mpilab.net/media/mpiData/readme.pdf",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/bac43d671e97f015.pdf"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "LCR-MPI custom data-use terms"
+      ],
+      "scope": "Explicitly identified competition rules or named source data; not all components implied",
+      "agreement_required": null,
+      "summary_zh": "官方规则限定比赛用途，其他用途、转交及商业使用须书面许可。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": " & Copyright All data provided by the challenge organizers is protected by copyright and is exclusively for use in this ISBI 2026 challenge. Any use, redistribution, or commercial application of the data outside the scope of this competition is strictly prohibited without prior written permission from the organizers. 2. External Data & Models The use of external public datasets and publicly available pre-trained models is permitted, provided they are clearly disclosed and cited in the final method description. 3. Eligibility The challenge is open to teams from academia, industry, and independent researchers, subject to compliance with local laws and ",
+          "source": {
+            "url": "https://www.mpilab.net/LCR-MPI-Challenge/datasets/",
+            "local_source": "_collection/anatomy_modality_audit_20261025/sources/21064fc90140acc3.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.mpilab.net/LCR-MPI-Challenge/datasets/",
+          "local_source": "_collection/anatomy_modality_audit_20261025/sources/21064fc90140acc3.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  }
+}

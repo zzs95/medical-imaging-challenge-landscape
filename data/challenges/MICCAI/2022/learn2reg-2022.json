@@ -1,0 +1,869 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "learn2reg-2022",
+    "challenge_name": "Learn2Reg 2022",
+    "full_name": "Learn2Reg – The Challenge (2022)",
+    "year": 2022,
+    "event": {
+      "conference": "MICCAI 2022",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2022-R22",
+      "official_programme_row_numbers": "17",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Uni Lübeck",
+        "Radboudumc and Fraunhofer MEVIS"
+      ],
+      "registered_authors": [
+        {
+          "name": "Mattias Heinrich",
+          "affiliation": "Uni Lübeck"
+        },
+        {
+          "name": "Lasse Hansen",
+          "affiliation": "Uni Lübeck"
+        },
+        {
+          "name": "Alessa Hering",
+          "affiliation": "Radboudumc and Fraunhofer MEVIS"
+        },
+        {
+          "name": "Christoph Großbröhmer",
+          "affiliation": "Uni Lübeck"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "MRI",
+        "Ultrasound"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Head / brain",
+        "Chest",
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Brain structures",
+        "Lung structures and nodules",
+        "Abdominal organs"
+      ],
+      "diseases": [
+        "Colorectal cancer with liver metastases",
+        "Lung tumor follow-up",
+        "COPD",
+        "Suspected ventral hernia"
+      ],
+      "clinical_context": "Only explicit challenge cohorts and registration targets included; hypothetical future applications and undisclosed self-configuration tasks do not add body regions."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "secondary_task_families": [
+        "Tracking"
+      ],
+      "task_families": [
+        "Registration",
+        "Tracking"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Tracking of Lung Nodules",
+          "task_family": "Registration",
+          "task_families": [
+            "Registration",
+            "Tracking"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361979",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Multi Task Registration",
+          "task_family": "Registration",
+          "task_families": [
+            "Registration"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361979",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+            "registered_task_index": 2
+          }
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Self Configuring Meta Learning",
+          "task_family": "Registration",
+          "task_families": [
+            "Registration"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361979",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+            "registered_task_index": 3
+          }
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": false,
+      "detection": false,
+      "classification": false,
+      "localization": false,
+      "registration": true,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6361979",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "CT",
+        "MRI",
+        "Ultrasound"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6361979",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6361979",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24; targeted access backfill",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition-listed public training/validation resources; hidden final-test data excluded",
+      "license_review_status": "Ambiguous",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6361979",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Grand Challenge",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361979",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361979",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\n1) TRE of landmarks located at the center of gravity of the lung nodules\n2) Robustness: 30% highest TRE of all cases\n3) Dice Score of lung lobe segmentations\n4) SD (standard deviation) of log Jacobian determinant\n5) Run-time computation time (only awarded when evaluation server is used with provided docker container)\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nDSC or TRE respectively measure accuracy; HD95 measures reliability; Outliers are penalised with the robustness\nscore (30% of lowest mean DSC or 30% of highest mean TRE)\nThe smoothness of transformations (SD of log Jacobian determinant) are important in registration, see references\nof Kabus and Leow\nRun-time computation time is relevant for clinical applications.\n\n\n**Rebuttal** After accuracy, time and smoothness metrics are converted into significance ranks for each team and\ntask, we employ a geometric average across those scores. This way outlier solutions that may e.g. provide good\naccuracy at the cost of very little smoothness will be penalised more severely as compared to a simple arithmetic\nmean (see Ranking methods)\n\n\n----\nWe have considered inverse consistency as additional metric, which is controversial among researchers in medical\nregistration. We decided to not use it as competitive (ranking) metric, but compute it for informative reasons (i.e.\nthe question whether inverse-consistent algorithms are more robust).\n\n\n\n\n\n\fLearn2Reg - The Challenge (2022)",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nAll metrics but 4) (robustness) use mean rank per case (ranks are normalised to between 0.1 and 1, higher being\nbetter). For multi-label tasks the ranks are computed per structure and later averaged. As done in the Medical\nSegmentation Decathlon we will employ \"significant ranks\" http://medicaldecathlon.com/files/MSD-Ranking-\nscheme.pdf\nAcross all metrics an overall score is aggregated using the geometric mean. This encourages consistency across\ncriteria. The time ranks are only considered with 50% weight (since not all participants are able to use docker\ncontainers for evaluation).\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nMissing results will be awarded the lowest rank (potentially shared and averaged across teams).\n\n\n**Rebuttal** With this approach, we want to keep the entry barrier for new participants as low as possible so that\nthey can submit their methods to only some tasks. Nevertheless, we will additionally perform an evaluation of\ncomplete submissions for the gain of information.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nThe geometric mean encourages consistency across criteria. A ten-fold difference between highest and lowest\nscore is fixed to be independent of number of participants."
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361979",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+            "registered_task_index": 2
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361979",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+            "registered_task_index": 2
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nLung CT (see Task1)\nAbdomen CT/MR and OASIS MR:\n1) DSC (Dice similarity coefficient) of segmentations\n2) HD95 (95% percentile of Haussdorff distance) of segmentations\n\n\n\fLearn2Reg - The Challenge (2022)\n\n3) Robustness: 30% lowest DSC of all cases\n4) SD (standard deviation) of log Jacobian determinant\n5) Run-time computation time (only awarded when evaluation server is used with provided docker container)\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nsee above",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nsee above\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nsee above\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nsee above"
+        },
+        {
+          "task_id": "task3",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361979",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+            "registered_task_index": 3
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361979",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+            "registered_task_index": 3
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n  • Example 1: Dice Similarity Coefficient (DSC)\n  • Example 2: Area under curve (AUC)\nsee Task 1 and 2\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nsee above",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are aggregated\nto arrive at a final score/ranking.\n\nsee above\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nsee above\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nsee above"
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Docker containers; prediction displacement fields (task-specific)",
+      "platform": "Grand Challenge",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Validation of phase 1: Docker container containing the trained network. Phase 2: Docker container containing the training scripts. **Rebuttal** We encourage participants to only submit containers that can be run in a rootless mode to increase the usability of the submitted Docker containers on computational servers.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361979",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "protocol_description": "Either submission of displacement fields through Grand-Challenge or submission of docker through grand- challenge (required for time bonus)",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361979",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+            "registered_task_index": 2
+          }
+        },
+        {
+          "task_id": "task3",
+          "protocol_description": "Intend to submit and pre-evaluation is requested before July 2022 to ensure enough processing hardware for hyper-parameter search.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.6361979",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+            "registered_task_index": 3
+          }
+        }
+      ],
+      "submission_evidence_status": "Edition-specific registered protocol; verification-only materials distinguished in submission_type.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null
+    },
+    "schedule": {
+      "edition_year": 2022,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.6361979",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.6361979"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "https://learn2reg.grand-challenge.org/",
+      "registration": "https://doi.org/10.5281/zenodo.6361979",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "resolved_record_id": 6361980,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "https://learn2reg.grand-challenge.org/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/01e9ff88395e4ad4.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "Learn2Reg"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Registration",
+        "Tracking"
+      ],
+      "emerging_objectives": [],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "2022年官方任务页提供公开训练／验证数据链接；仅据当届列明的开放开发资源定类，不推断隐藏测试集开放。",
+        "scope": "Edition-listed public training/validation resources; hidden final-test data excluded",
+        "evidence_basis": "Primary protocol / dataset metadata checked on 2026-10-24; no medical images downloaded",
+        "source_urls": [
+          "https://learn2reg.grand-challenge.org/learn2reg-2022/"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Development data are made available to entrants, while submitted algorithms are executed centrally or held-out data are retained for at least part of the scored assessment. Track/phase details remain in the linked protocol. The whole-edition category combines heterogeneous task-specific arrangements; it does not imply identical data availability in every task."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Validation of phase 1: Docker container containing the trained network. Phase 2: Docker container containing the training scripts. **Rebuttal** We encourage participants to only submit containers that can be run in a rootless mode to increase the usability of the submitted Docker containers on computational servers. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. Participants will get the opportunity to upload their dockers to be evaluated on the validation data of phase 1 in order to avoid any pitfalls (wrong orientation, etc.). We also provide our evaluation scripts to test them on the training data."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results February 2022: registration to challenge open Early March 2022: release of training data of phase 1, release of evaluation metrics and instructions for docker submission July 2022: evaluation of phase 1 in conjunction with WBIR 2022; invitation to best five teams to train their algorithm on larger dataset August 2022: final evaluation MICCAI 2022: presentation of results Learn2Reg - The Challenge (2022)"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "excerpt": "ted to train their network on a hidden larger dataset that includes annotations that cannot be made publicly available.\" changed to \"Those algorithms will be invited to submit a docker container for training their network, which will be run by the challenge organisers on a hidden larger dataset that includes data and annotations that cannot be made publicly available.\" d) Mention further important characteristics of the training, validation and test cases (e.g. class distribution in classification tasks chosen according to real-world distribution vs. equal class distribution) and justify the choice. We aim to select a diverse dataset regarding scann"
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "excerpt": "erably, provide a link to the submission instructions. Learn2Reg - The Challenge (2022) Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Either submission of displacement fields through Grand-Challenge or submission of docker through grand- challenge (required for time bonus) b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final results. For example, many challenges allow submission of multiple results, and only the last run is officially counted to compute challenge results. Participants will get the opportunity to upload their dockers to be evaluated on the validation data to avoid any pitfalls (wrong orientation, etc.). We also provide our evaluation scripts to test them on the training data."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results September 2021: all training and validation data for multi-task registration (Abdomen MR-CT, Lung CT and OASIS) is already available February 2022: registration to challenge open July 2022: optional evaluation of validation results and discussion at WBIR 2022 August 2022: final evaluation MICCAI 2022: presentation of results"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "excerpt": "s. Lung CT: one case is a pair of inspiration and expiration CT with manual annotations, additional training data is provided by preprocessing the public DIR-Lab to same dimensions which comprise 10 4DCT sequences with at least 300 landmark pairs each. OASIS MRI: one case is a single MRI scan with segmentation information of 35 anatomical brain structures b) State the total number of training, validation and test cases. Abdomen MR-CT: training: 8 +  [...] ow number, but by providing very dense supervision (keypoint correspondences) we are confident that registration networks can be trained successfully. OASIS MRI: for inter-subject registration 416 training pairs enable 172'640 registration pairs which is an ideal case for supervised learning. The number of test subjects was restricted to limit the required transfer of displacement fields but still provides suitable variability for robust significance testing. Data augmentation can help to overcome limitations of small datasets (cf. K Eppenhoff and J Pluim \"Pulmonary ct registration through supervised learning with convolutional neural networks\" TMI 2018). d) Mention further important characteristics of the training, validation and test cases (e.g. class distribution in classification tasks chosen according to real-world distribution vs. equal class distribution) and justify the choice. Abdomen MR/CT: In this intra-subject registration task, a number of paired MR/CT scans can be directly employed for supervised training. Cross-domain learning can be an integral part of this challenge task with the provision of unpaired CT and MRI scans. OASIS MR: In this inter-subject registration task, all potential pairs can be employed for training. To limit the amount of test transformations to be processed, we will announce around 100 randomly selected pairs of test subjects that should be registered for evaluation. To measure inverse consistency of algorithms, we will include a subset of bi- directive cases). Learn2Reg - The Challenge (2022)"
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Intend to submit and pre-evaluation is requested before July 2022 to ensure enough processing hardware for hyper-parameter search. b) Pr [...] lts on Task 2 is mandatory before July 2022 with a note to the organisers that participation in the docker training of Task 2 is intended. The best teams on this pre- evaluation (at least five teams) will be invited to submit dockers for hidden multitask evaluation. The pre-selection is to ensure that enough processing hardware for hyper-parameter search is available."
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results February 2022: registration to challenge open important no training data will be released (hidden learning) July 2022: compulsory evaluation of validation results on Task 2, invitation to best five teams to submit dockers for hidden multitask evaluation August 2022: submission of docker MICCAI 2022: evaluation and presentation of results Learn2Reg - The Challenge (2022)"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "excerpt": "locations. The whole dataset will contain information about voxel dimensions and the case IDs to be registered. b) State the total number of training, validation and test cases. the number of training scans will range from 20 to 100 with a varying number of anatomical labels c) Explain why a total number of cases and the specific proportion of training, validation and test cases was chosen. some variabili [...] imagesTr/img0001_0000.nii.gz labelsTr/img0001.nii.gz dataset.json etc), masks that are available at test time are provided as additional image channel (imagesTr/img0001_0001.nii.gz etc.)"
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/01e9ff88395e4ad4.json",
+          "url": "https://learn2reg.grand-challenge.org/",
+          "excerpt": " Zoom: 925 4554 4193 https://wse.zoom.us/j/92545544193 Learn2Reg 2026 - Task 1 - PSMAReg ¶ PSMAReg: registration of pre-therapy and follow-up whole-body PSMA PET/CT scans for therapy planning, dosimetry, and response assessment. For this task, Learn2Reg 2026 is partnering with the Society of Nuclear Medicine and Molecular Imaging (SNMMI) * to promote a clinically grounded benchmark for longitudinal registration in nuclear medicine imaging. Participants are asked to estimate deformable displacement fields that align each follow-up moving scan to its corresponding baseline fixed scan. The task evaluates longitudinal whole-body PSMA PET/CT registration before and after therapy, with an emphasis on robustness to anatomical change, multimodal image appearance differences, preservation of PET quantification, and variability across patient cohorts. Data Summary: ¶ Training and validation: 597 PSMA PET/CT scans from 378 patients, including 164 patient [...] roader Learn2Reg organizing team. Learn2Reg 2026 - Task 2 - Learn2Breath ¶ Learn2Breath: focuses on registration of inspiratory and expiratory chest CT scans to enable robust quantification of lung biomechanics and disease progression. For this task, Learn2Reg 2026 is partnering with the large, multicenter, Genetic Epidemiology of COPD (COPDGene) study for clinically relevant evaluation of image registration quality. Participants are asked to estimate deformable displacement fields that align each expiratory chest CT scan to its corresponding fixed scan (inspiratory chest CT). Data Summary: ¶ Training and validation: 200 paired inspiratory and expiratory images for training, and 10 pairs for validation [...] est CT scans from the COPDGene study with a large volume change of at least 2 liters (L). Learn2Reg Publications ¶ Learn2Reg 2025 Proceedings released on Springer LNCS. Learn2Reg LUMIR 2024 paper published in Medical Image Analysis . Also available on arXiv . Learn2Reg 2024 summary article appears in MELBA . Learn2Reg Newsletter: If you like to be added to the Learn2Reg newsletter, please fill out this  [...] ion, zero-deformation fields for sanity checks and other useful utilities for developing your image registration algorithm. Motivation : ¶ Standardised benchmark for the best conventional and learning-based medical registration methods: Analyse accuracy, robustness and speed on complementary tasks for clinical impact. Remove entry barriers for new teams with expertise in deep learning but not necessarily registration. Learn2Reg removes pitfalls for learning and applying transformations by providing: python evaluation code for voxel displacement fields and open-source code all evaluation metrics anatomical segmentation labels, manual landmarks, masks and keypoint correspondences for deep learning Learn2Reg addresses four of the imminent challenges of medical image registration: learning from relatively small datasets estimating large deformations dealing with multi-modal scans learning from noisy annotations Evaluation : Comprehensive and fair evaluation criteria that include: Dice/surface distance and TRE to measure accuracy and robustness of transferring anatomical ann [...] romote plausible deformations, low computation time for easier clinical translation evaluated using docker containers on GPUs provided by organisers. Organisers / Contact: Junyu Chen (Johns Hopkins University, MD, USA) M. Faizyab A. Chaudhary (Johns Hopkins University, MD, USA) Shuwen Wei (Johns Hopkins University, MD, USA) Yihao Liu (Vanderbilt University, TN, USA) Lianrui Zuo (Vanderbilt University, TN, USA) Ha"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/learn2reg-2022.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://learn2reg.grand-challenge.org/learn2reg-2022/",
+          "local_source": "_collection/access_backfill_20261024/sources/4fd17c774b494a35.json",
+          "review_date": "2026-10-24",
+          "section": "Development-data access; edition and phase scope retained"
+        },
+        {
+          "local_source": "_collection/access_backfill_20261024/user_evidence.txt",
+          "url": "",
+          "section": "User-supplied follow-up; classification checked against the linked primary sources"
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct.",
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "decision_history": [
+        "2026-10-24 access backfill: 2022年官方任务页提供公开训练／验证数据链接；仅据当届列明的开放开发资源定类，不推断隐藏测试集开放。"
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 100,
+              "unit": "cases",
+              "scope": "Lung tracking Phase1",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 20,
+              "unit": "cases",
+              "scope": "Lung tracking Phase1",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "training",
+              "value": 1300,
+              "unit": "cases",
+              "scope": "Lung tracking Phase2",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 200,
+              "unit": "cases",
+              "scope": "Lung tracking Phase2",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "testing",
+              "value": 500,
+              "unit": "cases",
+              "scope": "Lung tracking Phase2",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "USA"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multi-center"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "NLST source cohort from33centers; not evidence all33selected for this edition. Additional task splits retained in source excerpts; ranges not converted to exact totals.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.6361979",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html"
+        },
+        {
+          "url": "https://learn2reg.grand-challenge.org/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/01e9ff88395e4ad4.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/learn2reg-2022.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Head / brain",
+            "Chest",
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer",
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Brain structures",
+        "Lung structures and nodules",
+        "Abdominal organs"
+      ],
+      "specific_diseases": [
+        "Colorectal cancer with liver metastases",
+        "Lung tumor follow-up",
+        "COPD",
+        "Suspected ventral hernia"
+      ],
+      "review_note": "Only explicit challenge cohorts and registration targets included; hypothetical future applications and undisclosed self-configuration tasks do not add body regions.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/learn2reg-2022.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Ambiguous",
+      "terms_documented": false,
+      "detail_level": "Provisional terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "总体提案的 CC BY-NC-SA 仍标为待确认。官网数据页按来源另列 OASIS DUA 与 CuRIOUS 2020 私有测试 NDA；历史条件不自动套用于 2022 全部任务，统一最终许可尚未核实。",
+      "qualifications": [
+        "Proposed licence explicitly marked to be confirmed.",
+        "本轮分开记录协议要求、全文可读性、数据适用范围与再利用条款；有条款线索不等于已取得全部数据权利。"
+      ],
+      "scoped_terms": [
+        {
+          "scope": "Registered task/section 1",
+          "text": "CC BY NC SA. Additional comments: to be confirmed",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.6361979"
+          }
+        },
+        {
+          "scope": "Registered task/section 2",
+          "text": "Learn2Reg - The Challenge (2022) CC BY NC SA. Additional comments: to be confirmed",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.6361979"
+          }
+        },
+        {
+          "scope": "Registered task/section 3",
+          "text": "no data has to be shared",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.6361979"
+          }
+        },
+        {
+          "scope": "Historical source datasets; not automatically applicable to 2022",
+          "text": "OASIS 指向其 DUA；CuRIOUS 2020 私有测试数据不得分享或用于挑战评价之外。该历史测试条件不能直接代替 2022 届协议。",
+          "source": {
+            "url": "https://learn2reg.grand-challenge.org/Datasets/",
+            "local_source": "_collection/data_license_followup_20261025/sources/e4aa61122dc40da8.json"
+          },
+          "applicability": "Historical only; 2022 mapping unresolved"
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.6361979"
+        },
+        {
+          "url": "https://learn2reg.grand-challenge.org/Datasets/",
+          "local_source": "_collection/data_license_followup_20261025/sources/e4aa61122dc40da8.json"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability.",
+      "agreement_full_text_verified": "Not verified",
+      "dataset_scope_verified": "Not verified for complete licence terms",
+      "reuse_terms_verified": "Not verified",
+      "followup_review": "data_license_followup_20261025"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2022/learn2reg-2022.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "USA"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.6361979",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2022/en/MICCAI2022-CHALLENGES.html",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2022.html"
+                },
+                {
+                  "url": "https://learn2reg.grand-challenge.org/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/01e9ff88395e4ad4.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/learn2reg-2022.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Repeated event as open call challenge.",
+              "url": "https://doi.org/10.5281/zenodo.6361979",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2022-R22/Learn2Reg-TheChallenge(2022)_03-16-2022_10-26-10.pdf",
+              "scope": "Edition-specific lifecycle answer: open-call continuation or a stated future release. Policy/plan coverage only, not evidence that continuing evaluation actually ran.",
+              "value": null,
+              "excerpt": "continued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time event). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some modifications (repeated event). Page 3 of 34 Biomedical Image Analysis ChallengeS (BIAS) Initiative Learn2Reg - The Challenge (2022) Examples: • One-time event with fixed conference submission deadline • Open call (challenge opens for new submissions after conference deadline) • Repeated event with annual fixed conference submission deadline Repeated event as open call challenge. ",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

@@ -1,0 +1,642 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "ai4life-cidc25-2025",
+    "challenge_name": "AI4Life Calcium Imaging Denoising Challenge 2025",
+    "full_name": null,
+    "year": 2025,
+    "event": {
+      "conference": "Standalone",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Microscopy"
+      ],
+      "submodality": [
+        "Calcium fluorescence time series"
+      ],
+      "body_region": [
+        "Neuronal samples"
+      ],
+      "organ_system": [
+        "Nervous system"
+      ],
+      "organs_or_structures": [
+        "Neurons"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Image Restoration",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Content generalisation",
+          "task_family": "Image Restoration",
+          "task_subtype": "Denoising / reconstruction",
+          "input": [
+            "Noisy calcium-imaging stack"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Denoised stack"
+          ],
+          "granularity": "spatiotemporal stack",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Noise level generalisation",
+          "task_family": "Image Restoration",
+          "task_subtype": "Denoising / reconstruction",
+          "input": [
+            "Noisy stack at unseen noise level"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Denoised stack"
+          ],
+          "granularity": "spatiotemporal stack",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "synthetic calcium-imaging videos",
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": 4,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "training": "Four noisy TIFF stacks, each 1500×490×490, with two noise levels.",
+        "validation": "Noisy and clean data for inspection and model selection only.",
+        "test": {
+          "task1": 2,
+          "task2": 1
+        }
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY 4.0. 官方训练与验证数据记录均列 CC BY 4.0。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": true,
+        "policy": "Unsupervised/self-supervised training only. Clean validation targets may be used for model selection and early stopping, but not weight updates. Pretrained models must be disclosed."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Spatiotemporal SNR (stSNR)",
+            "SI-PSNR"
+          ],
+          "ranking": "Mean stSNR across test stacks; SI-PSNR is secondary."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Spatiotemporal SNR (stSNR)",
+            "SI-PSNR"
+          ],
+          "ranking": "Mean stSNR across test stacks; SI-PSNR is secondary."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": 60,
+        "max_ram_gb": 32,
+        "reserved_ram_gb": null,
+        "gpu": "NVIDIA T4",
+        "gpu_vram_gb": 16
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "preliminary_submissions_per_user_per_task": 5,
+        "final_submissions_per_task": 2
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "final_submission_deadline": "2025-08-31"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "code_release_required": true
+    },
+    "participation_statistics": {
+      "registered_participants": 70,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Preliminary Phase: Content Generalisation",
+            "submission_count": 10
+          },
+          {
+            "official_phase_name": "Final Submission Phase: Content Generalization",
+            "submission_count": 33
+          },
+          {
+            "official_phase_name": "Preliminary Phase: Noise Level Generalization",
+            "submission_count": 6
+          },
+          {
+            "official_phase_name": "Final Submission Phase: Noise Level Generalization",
+            "submission_count": 16
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://ai4life-cidc25.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Joint leaderboard requires participation in both tasks. Clean targets cannot be used as supervised training pairs."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-cidc25.grand-challenge.org/tasks-and-datasets/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/24-09b04817f1e1.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-cidc25.grand-challenge.org/challenge-results/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/24-36568f51033d.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://ai4life-cidc25.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/24-5696edbd7273.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-cidc25.grand-challenge.org/how-to-submit-your-algorithm/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/24-6ab682e3de63.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-cidc25.grand-challenge.org/ai4life-cidc25/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/24-73d9186b8c04.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-cidc25.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/24-822f0a12feec.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-cidc25.grand-challenge.org/cidc25-evaluation-metrics/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/24-95419f5895f2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-cidc25.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/24-966e342f1f1e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://ai4life-cidc25.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/24-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "evaluation.stSNR spatial/temporal mixing coefficients are displayed as a formula image; not transcribed.",
+        "data_access: dataset license requires further verification."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/ai4life-cidc25-2025.json",
+          "_collection/verification_20261003/literature_context/ai4life-cidc25-2025.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "当届训练及验证数据分别直接链接Zenodo15799507和15807610；人工账号验证用于提交算法，不是数据下载审批。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "当届训练及验证数据分别直接链接Zenodo15799507和15807610；人工账号验证用于提交算法，不是数据下载审批。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/09b04817f1e1cc25.json",
+          "url": "https://ai4life-cidc25.grand-challenge.org/tasks-and-datasets/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/ai4life-cidc25-2025.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "conference_affiliation_review": {
+      "review_date": "2026-10-25",
+      "previous_analysis_conference": "Standalone",
+      "analysis_conference": "Standalone",
+      "primary_conference": null,
+      "organizing_arrangement": "Project / institution-led competition",
+      "primary_relationship": "Project/institution organized; no designated conference host",
+      "related_events": [],
+      "note_zh": "维持AI4Life项目组织；不因数据集或方法论文的会议发表改变赛事归属。",
+      "sources": [
+        {
+          "url": "https://ai4life-cidc25.grand-challenge.org/ai4life-cidc25/",
+          "local_source": "_collection/sources/24-73d9186b8c04.json",
+          "sha256": "03ad265af27203f6679b32b15bd7ee5eeecd537c3681b19df5a24107be97b188"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY 4.0"
+      ],
+      "scope": "Named public development/data release only; hidden evaluation rights not inferred",
+      "agreement_required": null,
+      "summary_zh": "官方训练与验证数据记录均列 CC BY 4.0。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"AI4Life-CIDC25-Training\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2025-07-03\", \"license\": {\"id\": \"cc-by-4.0\"}, \"description\": \"<p>Synthetic training data for the AI4Life Calcium Imaging Denoising Challenge (CIDC) 2025.</p>\\n<p>Data includes 4 different in-silico samples for Calcium Imaging, corrupted with two different noise intensities.</p>\\n<p>Data shape are [1500, 490, 490].&nbsp;Data will be released publicly upon challenge start.</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/15799507",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/aeb61971f47368e6.json"
+          }
+        },
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"AI4Life-CIDC25-Validation\", \"resource_type\": {\"title\": \"Dataset\", \"type\": \"dataset\"}, \"publication_date\": \"2025-07-04\", \"license\": {\"id\": \"cc-by-4.0\"}, \"description\": \"<p>Synthetic validation data for the AI4Life Calcium Imaging Denoising Challenge (CIDC) 2025.</p>\\n<p>Data includes one different in-silico video sample for Calcium Imaging, in clean version (F0) and different noise levels.</p>\\n<p>Data shape are [1500, 490, 490].</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/15807610",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/935a149feda29e92.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/15799507",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/aeb61971f47368e6.json"
+        },
+        {
+          "url": "https://zenodo.org/api/records/15807610",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/935a149feda29e92.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://ai4life-cidc25.grand-challenge.org/tasks-and-datasets/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/09b04817f1e1cc25.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://ai4life-cidc25.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/822f0a12feec0e1d.json",
+          "status": 200
+        },
+        {
+          "url": "https://ai4life-cidc25.grand-challenge.org/organizers/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/966e342f1f1e45d6.json",
+          "status": 200
+        },
+        {
+          "url": "https://ai4life-cidc25.grand-challenge.org/ai4life-cidc25/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/73d9186b8c04363a.json",
+          "status": 200
+        },
+        {
+          "url": "https://zenodo.org/api/records/15799507",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/aeb61971f47368e6.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/15807610",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/935a149feda29e92.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Neuronal samples"
+          ]
+        },
+        "disease": {
+          "state": "Not applicable",
+          "value": []
+        }
+      },
+      "specific_diseases": [],
+      "disease_scope_note": "No disease-specific task/cohort: explicit healthy, synthetic, specimen or skills setting",
+      "disease_review_note": "官方明确训练数据为模拟神经元钙成像，用于信号去噪而非疾病诊断。",
+      "sources": [
+        {
+          "url": "https://ai4life-cidc25.grand-challenge.org/tasks-and-datasets/",
+          "local_source": "_collection/sources/24-09b04817f1e1.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "官方明确训练数据为模拟神经元钙成像，用于信号去噪而非疾病诊断。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/Standalone/2025/ai4life-cidc25-2025.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "training",
+              "value": 4,
+              "unit": "TIFF stacks",
+              "canonical_field": "dataset.split_details.training",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://ai4life-cidc25.grand-challenge.org/tasks-and-datasets/",
+              "supports": [
+                "dataset",
+                "labels_and_targets",
+                "data_access"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/24-09b04817f1e1.json"
+            }
+          ],
+          "source_urls": "https://ai4life-cidc25.grand-challenge.org/tasks-and-datasets/; https://ai4life-cidc25.grand-challenge.org/challenge-results/; https://ai4life-cidc25.grand-challenge.org/challenge/statistics/; https://ai4life-cidc25.grand-challenge.org/how-to-submit-your-algorithm/; https://ai4life-cidc25.grand-challenge.org/ai4life-cidc25/; https://ai4life-cidc25.grand-challenge.org/; https://ai4life-cidc25.grand-challenge.org/cidc25-evaluation-metrics/; https://ai4life-cidc25.grand-challenge.org/organizers/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

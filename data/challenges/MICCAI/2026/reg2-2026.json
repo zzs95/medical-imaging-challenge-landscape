@@ -1,0 +1,811 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "reg2-2026",
+    "challenge_name": "Pathologist REasoning-Guided REport Generation Challenge",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Histopathology"
+      ],
+      "submodality": [
+        "H&E whole-slide images"
+      ],
+      "body_region": [
+        "Breast",
+        "Colon",
+        "Lung",
+        "Prostate",
+        "Stomach",
+        "Bladder",
+        "Uterus"
+      ],
+      "organ_system": [
+        "Respiratory",
+        "Digestive",
+        "Genitourinary",
+        "Reproductive",
+        "Breast"
+      ],
+      "organs_or_structures": [
+        "Diagnostic tissue"
+      ],
+      "diseases": [
+        "Multiple carcinomas",
+        "Lymphoma",
+        "Adenomas and dysplasia",
+        "Chronic active colitis",
+        "Chronic gastritis",
+        "Granulomatous inflammation",
+        "Leiomyoma"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Report Generation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Pathology report and reasoning generation",
+          "task_family": "Report Generation",
+          "task_subtype": "Image-to-report generation",
+          "input": [
+            "H&E WSI"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Pathology report and diagnostic reasoning graph"
+          ],
+          "granularity": "whole slide",
+          "clinical_goal": null
+        }
+      ],
+      "task_families": [
+        "Clinical reasoning",
+        "Report generation"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Clinical reasoning": "Declared task output",
+        "Report generation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": true,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": true,
+      "international": true,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": {
+          "value": 12000,
+          "approximate": true,
+          "raw_text": "about 12000"
+        },
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "20× anonymized H&E TIFF WSIs",
+        "CAP/WHO-structured reports",
+        "Diagnostic reasoning Q&A graphs"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "test_phase1": 350,
+        "test_phase2": 70,
+        "note": "Counts subject to change according to official data page."
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": false,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA (version not specified)",
+      "access_after_challenge": null,
+      "access_scope": "training/development data; not a claim that hidden test data are public"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Binary path validity",
+            "Edge-F1",
+            "Mean edge semantic similarity",
+            "Background-ROI visual grounding score",
+            "Counterfactual reasoning accuracy"
+          ],
+          "ranking": "Preregistered weighted reasoning/grounding/counterfactual components with weights to be determined; subset-wise metric ranks aggregated for final ranking."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "training_release": "2026-05-11",
+      "test1_deadline": "2026-06-29",
+      "test2_start": "2026-07-01",
+      "test2_deadline": "2026-07-20",
+      "deadline_timezone": "KST 18:00 / UTC 09:00"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 334,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Debug Phase",
+            "submission_count": 239
+          },
+          {
+            "official_phase_name": "Test Phase 1",
+            "submission_count": 93
+          },
+          {
+            "official_phase_name": "Test Phase 2",
+            "submission_count": 59
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://reg2026.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Task generates a report and explicit pathologist-style reasoning. Public preregistration distinguishes workflow reasoning, visual grounding and counterfactual reasoning. Evaluation endpoint is restricted; preregistered details are not assumed to equal final implemented settings.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://reg2026.grand-challenge.org/data-description/",
+          "supports": [
+            "challenge context",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_access.is_public",
+            "data_access.public_download"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/12-0be9557ccb8f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2026.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/12-305bc71dde7f.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2026.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/12-46fe564d545c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2026.grand-challenge.org/references/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/12-55a14196ee6a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2026.grand-challenge.org/reg2026/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/12-5fbf661435b5.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2026.grand-challenge.org/prizes/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/12-86726b86447e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2026.grand-challenge.org/task-description/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/12-a761e5bf58f9.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://reg2026.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/12-d3c9eb7329a7.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://reg2026.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/12-overview.json"
+        },
+        {
+          "type": "official challenge preregistration",
+          "url": "https://zenodo.org/records/19848983",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "evaluation",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/12-proposal.txt"
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://reg2026.grand-challenge.org/data-description/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/reg2-2026.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "evaluation: final component weights and submission schemas behind restricted evaluation page.",
+        "submission: Docker versus prediction-only artifacts, runtime and external-data policy require final rules verification."
+      ],
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://reg2026.grand-challenge.org/data-description/",
+          "local_snapshot": "_collection/sources/12-0be9557ccb8f.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.is_public": {
+          "source_url": "https://reg2026.grand-challenge.org/data-description/",
+          "local_snapshot": "_collection/sources/12-0be9557ccb8f.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.public_download": {
+          "source_url": "https://reg2026.grand-challenge.org/data-description/",
+          "local_snapshot": "_collection/sources/12-0be9557ccb8f.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://reg2026.grand-challenge.org/data-description/",
+          "local_snapshot": "_collection/sources/12-0be9557ccb8f.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://reg2026.grand-challenge.org/data-description/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/reg2-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://reg2026.grand-challenge.org/data-description/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/reg2-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://reg2026.grand-challenge.org/data-description/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/reg2-2026.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_access.is_public",
+          "data_access.public_download"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/reg2-2026.json",
+          "_collection/verification_20261003/literature_context/reg2-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Clinical reasoning",
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation",
+        "Clinical Reasoning"
+      ],
+      "previous_task_families": [
+        "Clinical reasoning",
+        "Report generation"
+      ],
+      "previous_emerging_objectives": [
+        "VLM",
+        "Report generation",
+        "Clinical Reasoning"
+      ],
+      "task_roles": {
+        "Clinical reasoning": "Declared task output",
+        "Report generation": "Declared task output"
+      },
+      "note_zh": "病理报告加明确结构化理由；agentic 愿景不构成实际工具动作要求，故不添加 Agent。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://reg2026.grand-challenge.org/data-description/",
+          "local_source": "_collection/sources/12-0be9557ccb8f.json",
+          "sha256": "2b3d1954bcf31b24fb766990d5748c83646356062e85436f0b4d58a874255f86"
+        },
+        {
+          "url": "https://reg2026.grand-challenge.org/",
+          "local_source": "_collection/sources/12-305bc71dde7f.json",
+          "sha256": "8c863845662d21ee0a5b393087b7e6efd6c536c40bb817d41dc9d7c8a8144dff"
+        },
+        {
+          "url": "https://reg2026.grand-challenge.org/references/",
+          "local_source": "_collection/sources/12-55a14196ee6a.json",
+          "sha256": "a97ecf6965ded51cd0044ec8d814962988bfd7dbe9c11bcc0c6255cf0ca03dd9"
+        },
+        {
+          "url": "https://reg2026.grand-challenge.org/reg2026/",
+          "local_source": "_collection/sources/12-5fbf661435b5.json",
+          "sha256": "0f92f77a7ae599204fb36f3b810a078197b9e09d5aa41cd553deb0afad2da0f8"
+        },
+        {
+          "url": "https://reg2026.grand-challenge.org/task-description/",
+          "local_source": "_collection/sources/12-a761e5bf58f9.json",
+          "sha256": "0d4f3d6b430b70cb702f3aa2705ce316279a92d4aa20fe7e9ab1ddb3e07a3255"
+        },
+        {
+          "url": "https://reg2026.grand-challenge.org/",
+          "local_source": "_collection/sources/12-overview.json",
+          "sha256": "8c863845662d21ee0a5b393087b7e6efd6c536c40bb817d41dc9d7c8a8144dff"
+        },
+        {
+          "url": "https://zenodo.org/records/19848983",
+          "local_source": "_collection/sources/12-proposal.txt",
+          "sha256": "8bb4be1e5eb13310c2cb569124c0a91645a12f5e0024650a397b06f39b58efc3"
+        }
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Clinical reasoning",
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation",
+        "Clinical Reasoning"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Bladder",
+            "Breast",
+            "Colon",
+            "Lung",
+            "Prostate",
+            "Stomach",
+            "Uterus"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer",
+            "Inflammatory / infectious",
+            "Other"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Multiple carcinomas",
+        "Lymphoma",
+        "Adenomas and dysplasia",
+        "Chronic active colitis",
+        "Chronic gastritis",
+        "Granulomatous inflammation",
+        "Leiomyoma"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "数据页直接列出7器官诊断类别，覆盖癌症、炎症和良性/癌前病变；多标签保留。",
+      "sources": [
+        {
+          "url": "https://reg2026.grand-challenge.org/data-description/",
+          "local_source": "_collection/sources/12-0be9557ccb8f.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "数据页直接列出7器官诊断类别，覆盖癌症、炎症和良性/癌前病变；多标签保留。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2026/reg2-2026.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2026/reg2-2026.json",
+              "source_field": "dataset",
+              "value": {
+                "source_type": null,
+                "routine_clinical_practice": null,
+                "anonymized": null,
+                "ethical_approval": null,
+                "center_type": null,
+                "multi_center": true,
+                "international": true,
+                "center_count": null,
+                "institutions_description": null,
+                "population": {
+                  "patient_count": null,
+                  "study_count": null,
+                  "scan_count": {
+                    "value": null,
+                    "approximate": null,
+                    "raw_text": null
+                  },
+                  "train_count": {
+                    "value": 12000,
+                    "approximate": true,
+                    "raw_text": "about 12000"
+                  },
+                  "validation_count": null,
+                  "test_count": null
+                },
+                "modalities": null,
+                "data_components": [
+                  "20× anonymized H&E TIFF WSIs",
+                  "CAP/WHO-structured reports",
+                  "Diagnostic reasoning Q&A graphs"
+                ],
+                "collection_period": {
+                  "start_year": null,
+                  "end_year": null
+                },
+                "split_details": {
+                  "test_phase1": 350,
+                  "test_phase2": 70,
+                  "note": "Counts subject to change according to official data page."
+                }
+              },
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2026.grand-challenge.org/data-description/",
+                  "supports": [
+                    "challenge context",
+                    "data_access.access_scope",
+                    "data_access.access_status",
+                    "data_access.is_public",
+                    "data_access.public_download"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/12-0be9557ccb8f.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2026.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/12-305bc71dde7f.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2026.grand-challenge.org/organizers/",
+                  "supports": [
+                    "organizers",
+                    "event"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/12-46fe564d545c.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2026.grand-challenge.org/references/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/12-55a14196ee6a.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2026.grand-challenge.org/reg2026/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/12-5fbf661435b5.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2026.grand-challenge.org/prizes/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/12-86726b86447e.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2026.grand-challenge.org/task-description/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/12-a761e5bf58f9.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://reg2026.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/12-d3c9eb7329a7.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://reg2026.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/12-overview.json"
+                },
+                {
+                  "type": "official challenge preregistration",
+                  "url": "https://zenodo.org/records/19848983",
+                  "supports": [
+                    "task_profile",
+                    "dataset",
+                    "evaluation",
+                    "data_access"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/12-proposal.txt"
+                },
+                {
+                  "type": "review-derived anatomical classification of source-recorded targets",
+                  "url": "https://reg2026.grand-challenge.org/data-description/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/clinical_mapping/reg2-2026.json",
+                  "supports": [
+                    "clinical_domain.organ_system",
+                    "clinical_domain.organ_system_basis",
+                    "clinical_domain.organ_system_coding_scope"
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

@@ -1,0 +1,697 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "rare26-2026",
+    "challenge_name": "RARE26",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": "2026-09-27",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "EndoVis 2026",
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy"
+      ],
+      "submodality": [
+        "Barrett esophagus endoscopy"
+      ],
+      "body_region": [
+        "Esophagus"
+      ],
+      "organ_system": [
+        "Digestive system"
+      ],
+      "organs_or_structures": [
+        "Barrett mucosa"
+      ],
+      "diseases": [
+        "Early neoplasia"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Early neoplasia classification",
+          "task_family": "Classification",
+          "task_subtype": "Classification",
+          "input": [
+            "Endoscopic image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Neoplasia versus nondysplasia"
+          ],
+          "granularity": "image",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Ambiguous",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "已取得2026官方设计文件RARE部分（第3–8页），数据使用条款列CC BY-NC；RARE25来源训练数据卡及2026参赛者报告为CC BY-NC-SA。各来源/版本适用范围尚待协调，维持Ambiguous，不把代码MIT作为数据许可。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24; round 3",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "2026 training",
+          "category": "Participation versus data authorization unresolved",
+          "access_steps": [
+            "Signed rules",
+            "Identity verification",
+            "Data-specific approval not established"
+          ],
+          "manual_review": null
+        }
+      ],
+      "license_review_status": "Ambiguous",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Publicly licensed external data and pretrained models allowed with disclosure."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "PPV at 90% recall",
+            "AUROC (secondary)",
+            "AUPRC (secondary)"
+          ],
+          "ranking": "Use all nondysplastic images, resample neoplasia with replacement at 1:100 prevalence; median PPV@90Recall over 1000 repetitions. AUROC/AUPRC do not affect ranking."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      },
+      "code_release_required": true,
+      "method_description": "All code must be published under MIT license for final leaderboard eligibility."
+    },
+    "participation_statistics": {
+      "registered_participants": 381,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Sanity Check",
+            "submission_count": 334
+          },
+          {
+            "official_phase_name": "Open Development Phase",
+            "submission_count": 272
+          },
+          {
+            "official_phase_name": "Closed Testing Phase",
+            "submission_count": 34
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://rare26.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "2026 binary neoplasia classification; scores on RARE25 results page are not copied as 2026 participation/result statistics.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-02",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://rare26.grand-challenge.org/rare25-results/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/17-18d38c9050d9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rare26.grand-challenge.org/announcements-news/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/17-1dbf029c272b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rare26.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/17-338313bcee28.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rare26.grand-challenge.org/phases-rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/17-3f6b772c5431.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://rare26.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/17-853fc2c868e6.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rare26.grand-challenge.org/overview-goals/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/17-87ddfa714589.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rare26.grand-challenge.org/task-evaluation/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/17-cacd368fbe46.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rare26.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/17-cec5f09d7781.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rare26.grand-challenge.org/algorithm-submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/17-e6b9acac289b.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rare26.grand-challenge.org/organizing-team/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/17-eb14ae755773.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://rare26.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/17-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "dataset: split counts and license behind restricted dataset page.",
+        "submission: resource limits and final deadline require further verification."
+      ],
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "searched_no_additional_fields_verified",
+        "fields_added": [],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/rare26-2026.json",
+          "_collection/verification_20261003/literature_context/rare26-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "last_updated": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Ambiguous",
+        "state": "Ambiguous",
+        "rationale": "签署规则和真实身份验证可确认参赛审核，但是否属于获得训练数据的审批条件仍未明确。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "2026 training",
+            "category": "Participation versus data authorization unresolved",
+            "access_steps": [
+              "Signed rules",
+              "Identity verification",
+              "Data-specific approval not established"
+            ],
+            "manual_review": null
+          }
+        ],
+        "evidence_basis": "User-supplied official registration/rules review",
+        "confidence": "Partial",
+        "source_urls": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-24 round 2: 已知注册及数据使用规则，数据权限与注册的关系未明确。",
+        "2026-10-24 round 3: 签署规则和真实身份验证可确认参赛审核，但是否属于获得训练数据的审批条件仍未明确。",
+        "2026-10-25 access completion: 报名身份要求已知，但未明确其与训练数据下载权限之间的关系。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/rare26-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round2_20261024/user_review_summary.json",
+          "section": "User-supplied round 2 findings, summarized; independent checks stated separately"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round3_20261024/user_review_summary.json",
+          "section": "User-supplied round 3 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "2",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        },
+        {
+          "superseded_on": "2026-10-24",
+          "round": "3",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已知注册及数据使用规则，数据权限与注册的关系未明确。",
+            "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+            "access_by_scope": [],
+            "evidence_basis": "User-supplied round 2 unresolved-issue summary; no new classification asserted",
+            "confidence": "Partial",
+            "source_urls": []
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Ambiguous",
+        "rationale": "报名身份要求已知，但未明确其与训练数据下载权限之间的关系。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/cacd368fbe466d09.json",
+          "_collection/access_completion_20261025/sources/08c52a1ce39d43fd.json",
+          "_collection/access_completion_20261025/sources/eb14ae7557733076.json",
+          "_collection/access_completion_20261025/sources/18d38c9050d9ec8d.json",
+          "_collection/access_completion_20261025/sources/87ddfa714589a47a.json",
+          "_collection/access_completion_20261025/sources/3f6b772c5431e591.json",
+          "_collection/access_completion_20261025/sources/338313bcee28e7cc.json",
+          "_collection/access_completion_20261025/sources/1dbf029c272b284d.json",
+          "_collection/access_completion_20261025/sources/cec5f09d778130e4.json"
+        ]
+      }
+    },
+    "review_coding": {
+      "development_access": "Ambiguous",
+      "data_model_flow": "hybrid"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Ambiguous",
+      "terms_documented": false,
+      "detail_level": "Edition/source applicability unresolved",
+      "licence_names": [
+        "CC BY-NC (2026 design)",
+        "CC BY-NC-SA 4.0 (RARE25 source training images)"
+      ],
+      "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "已取得2026官方设计文件RARE部分（第3–8页），数据使用条款列CC BY-NC；RARE25来源训练数据卡及2026参赛者报告为CC BY-NC-SA。各来源/版本适用范围尚待协调，维持Ambiguous，不把代码MIT作为数据许可。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "2026 declared challenge design",
+          "text": "CC BY-NC (Attribution-NonCommercial)",
+          "source": {
+            "url": "https://zenodo.org/api/records/19697093/files/305-Endoscopic_Vision_Challenge_2026_2026-02-20T21-58-39.pdf/content",
+            "local_source": "_collection/legacy_license_followup_20261025/sources/e9aedcd7865959cf.json",
+            "evidence_type": "Official 2026 structured design, RARE section pp. 3–8"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://rare26.grand-challenge.org/rare25-results/",
+          "local_source": "_collection/sources/17-18d38c9050d9.json"
+        },
+        {
+          "url": "https://rare26.grand-challenge.org/announcements-news/",
+          "local_source": "_collection/sources/17-1dbf029c272b.json"
+        },
+        {
+          "url": "https://rare26.grand-challenge.org/timeline/",
+          "local_source": "_collection/sources/17-338313bcee28.json"
+        },
+        {
+          "url": "https://rare26.grand-challenge.org/phases-rules/",
+          "local_source": "_collection/sources/17-3f6b772c5431.json"
+        },
+        {
+          "url": "https://rare26.grand-challenge.org/challenge/statistics/",
+          "local_source": "_collection/sources/17-853fc2c868e6.json"
+        },
+        {
+          "url": "https://github.com/nmgsmit/RARE26-Team-internship",
+          "local_source": "_collection/legacy_license_followup_20261025/sources/2fbe52abdf963543.json",
+          "evidence_type": "Participant report"
+        },
+        {
+          "url": "https://huggingface.co/datasets/TimJaspersTue/RARE25-train",
+          "local_source": "_collection/legacy_license_followup_20261025/sources/ffc32dc8d8d2aa35.json",
+          "evidence_type": "Official source"
+        },
+        {
+          "url": "https://zenodo.org/api/records/19697093/files/305-Endoscopic_Vision_Challenge_2026_2026-02-20T21-58-39.pdf/content",
+          "local_source": "_collection/legacy_license_followup_20261025/sources/e9aedcd7865959cf.json",
+          "evidence_type": "Official 2026 structured design, RARE section pp. 3–8"
+        }
+      ],
+      "substantive_terms_documented": false,
+      "search_attempts": [
+        {
+          "url": "https://rare26.grand-challenge.org/phases-rules/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/3f6b772c5431e591.json",
+          "status": 200
+        },
+        {
+          "url": "https://rare26.grand-challenge.org/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/cec5f09d778130e4.json",
+          "status": 200
+        },
+        {
+          "url": "https://rare26.grand-challenge.org/timeline/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/338313bcee28e7cc.json",
+          "status": 200
+        },
+        {
+          "url": "https://rare26.grand-challenge.org/rare25-results/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/18d38c9050d9ec8d.json",
+          "status": 200
+        },
+        {
+          "url": "https://www.dropbox.com/scl/fi/5dm24ohyv65gi9d4d9dv0/EndoVis_Rules.pdf?rlkey=0rzddq688zc65fkhe5tcdtwlj&e=2&dl=0",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/b7aeab274b4e077a.json",
+          "status": 200
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance.",
+      "previous_review": {
+        "review_date": "2026-10-25",
+        "review_cohort": "Previously reviewed 215",
+        "review_population": "Legacy 101 previously unestablished records",
+        "state": "Not established",
+        "terms_documented": false,
+        "detail_level": "Not established",
+        "licence_names": [],
+        "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+        "agreement_required": null,
+        "summary_zh": "当届规则中的 MIT 要求针对参赛代码，未取得影像数据许可条款。",
+        "qualifications": [],
+        "scoped_terms": [],
+        "sources": [
+          {
+            "url": "https://rare26.grand-challenge.org/rare25-results/",
+            "local_source": "_collection/sources/17-18d38c9050d9.json"
+          },
+          {
+            "url": "https://rare26.grand-challenge.org/announcements-news/",
+            "local_source": "_collection/sources/17-1dbf029c272b.json"
+          },
+          {
+            "url": "https://rare26.grand-challenge.org/timeline/",
+            "local_source": "_collection/sources/17-338313bcee28.json"
+          },
+          {
+            "url": "https://rare26.grand-challenge.org/phases-rules/",
+            "local_source": "_collection/sources/17-3f6b772c5431.json"
+          },
+          {
+            "url": "https://rare26.grand-challenge.org/challenge/statistics/",
+            "local_source": "_collection/sources/17-853fc2c868e6.json"
+          }
+        ],
+        "substantive_terms_documented": false,
+        "search_attempts": [
+          {
+            "url": "https://rare26.grand-challenge.org/phases-rules/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/3f6b772c5431e591.json",
+            "status": 200
+          },
+          {
+            "url": "https://rare26.grand-challenge.org/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/cec5f09d778130e4.json",
+            "status": 200
+          },
+          {
+            "url": "https://rare26.grand-challenge.org/timeline/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/338313bcee28e7cc.json",
+            "status": 200
+          },
+          {
+            "url": "https://rare26.grand-challenge.org/rare25-results/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/18d38c9050d9ec8d.json",
+            "status": 200
+          },
+          {
+            "url": "https://www.dropbox.com/scl/fi/5dm24ohyv65gi9d4d9dv0/EndoVis_Rules.pdf?rlkey=0rzddq688zc65fkhe5tcdtwlj&e=2&dl=0",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/b7aeab274b4e077a.json",
+            "status": 200
+          }
+        ],
+        "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+      },
+      "supplemental_user_review": "_collection/legacy_license_followup_20261025/user_review.txt"
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

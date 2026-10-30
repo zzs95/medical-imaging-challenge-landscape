@@ -1,0 +1,843 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "puma-2024",
+    "challenge_name": "PUMA: Panoptic segmentation of nUclei and tissue in MelanomA",
+    "full_name": null,
+    "year": 2024,
+    "event": {
+      "conference": "Standalone",
+      "event_type": "standalone_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Pathology"
+      ],
+      "submodality": [
+        "H&E histopathology"
+      ],
+      "body_region": [
+        "Skin"
+      ],
+      "organ_system": [
+        "Dermatologic"
+      ],
+      "organs_or_structures": [
+        "Melanoma tissue",
+        "Cell nuclei"
+      ],
+      "diseases": [
+        "Primary melanoma",
+        "Metastatic melanoma"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "tissue",
+          "official_name": "Shared tissue segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "semantic segmentation",
+          "input": [
+            "ROI with context"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Five tissue-class mask"
+          ],
+          "granularity": "pixel-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "nuclei_track1",
+          "official_name": "Track 1 nuclei segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "instance segmentation with three-class labels",
+          "input": [
+            "ROI with context"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Nucleus polygons: tumor, TILs, other"
+          ],
+          "granularity": "instance-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "nuclei_track2",
+          "official_name": "Track 2 nuclei segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "instance segmentation with ten-class labels",
+          "input": [
+            "ROI with context"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Nucleus polygons with ten cell classes"
+          ],
+          "granularity": "instance-level",
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": "Medical expert annotations checked/corrected by dermatopathologist.",
+      "tasks": [
+        {
+          "task_id": "tissue",
+          "classes": [
+            "stroma",
+            "blood vessel",
+            "tumor",
+            "epidermis",
+            "necrosis"
+          ]
+        },
+        {
+          "task_id": "nuclei_track2",
+          "classes": [
+            "tumor",
+            "lymphocyte",
+            "plasma cell",
+            "histiocyte",
+            "melanophage",
+            "neutrophil",
+            "stromal cell",
+            "epithelium",
+            "endothelium",
+            "apoptotic cell"
+          ]
+        }
+      ],
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null,
+        "roi_count": 310
+      },
+      "modalities": [
+        "Pathology"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "splits": {
+        "public_train": {
+          "roi_count": 206
+        },
+        "preliminary_test": {
+          "roi_count": 10
+        },
+        "final_test": {
+          "roi_count": 94
+        }
+      },
+      "roi_size_pixels": [
+        1024,
+        1024
+      ],
+      "context_roi_size_pixels": [
+        5120,
+        5120
+      ],
+      "microns_per_pixel": 0.22
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Public download",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC0. 官方 PUMA Dataset 页面链接的数据集记录标注 CC0；另保留规则中的发表及引用要求，不外推隐藏测试。",
+      "access_after_challenge": null,
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Public data and pretrained models under permissive open-source licenses allowed with download links."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "tissue",
+          "metrics": [
+            "Micro Dice"
+          ],
+          "ranking": "Mean task rank with track-specific nuclei macro F1; background excluded."
+        },
+        {
+          "task_id": "nuclei_track1",
+          "metrics": [
+            "Macro F1"
+          ],
+          "ranking": "Centroid matching within 15 pixels; mean rank with tissue task."
+        },
+        {
+          "task_id": "nuclei_track2",
+          "metrics": [
+            "Macro F1"
+          ],
+          "ranking": "Centroid matching within 15 pixels; mean rank with tissue task."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": null,
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null,
+        "max_container_size_gb": 10
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "preliminary_submissions": 10,
+        "final_submissions": 1
+      },
+      "task_outputs": {
+        "tissue": ".tif segmentation",
+        "nuclei": ".json nucleus polygons"
+      }
+    },
+    "schedule": {
+      "training_data_release": "2024-10-10",
+      "test_phase_start": "2025-01-25",
+      "final_submission_deadline": "2025-03-15"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 457,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Track 2: Preliminary test phase",
+            "submission_count": 216
+          },
+          {
+            "official_phase_name": "Track 1: Preliminary test phase",
+            "submission_count": 172
+          },
+          {
+            "official_phase_name": "Track 1: Final test phase",
+            "submission_count": 16
+          },
+          {
+            "official_phase_name": "Track 2: Final test phase",
+            "submission_count": 30
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://puma.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Submission Instructions explicitly names PUMA 2024. This edition opened in October 2024 and concluded in March 2025; directory year follows the explicit edition name."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/#ref6",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-08cd384fa591.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/#ref3",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-0f36db9e55f2.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/timeline/",
+          "supports": [
+            "year",
+            "schedule",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-174bb99991ff.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/puma/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-1be5988a1a95.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/#ref7",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-1e75e97104fb.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-230edeecbdc9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/#ref9",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-2ee0a99f552e.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/#ref4",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-46f79c6a9a77.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/winner-announcement/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-5b33aff4997a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/faq/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-5c1bfa6a9aca.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/dataset/",
+          "supports": [
+            "dataset",
+            "labels_and_targets",
+            "data_access"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-78c10b540086.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/#ref1",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-9dae1ceccf28.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/#ref2",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-a37eaf872b2e.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://puma.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-aea176aae322.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/submission-instructions/",
+          "supports": [
+            "data_usage_mode",
+            "evaluation.platform",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-b7ec60af2150.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/#ref5",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-be18c0dd8d06.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/submission/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-dbd93fc6d674.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/#panoptic-segmentation-of-nuclei-and-tissue-in-advanced-melanoma",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-eb2e58e7f63a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/#ref8",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-ed6cf075efa3.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_usage_mode",
+            "submission",
+            "evaluation",
+            "publication"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-fdb870c3e224.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-ffae5de8d9f1.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://puma.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/50-overview.json"
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://puma.grand-challenge.org/#ref6",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/puma-2024.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Verify conference hosting, dataset license and exact training count after removal of inconsistent ROI."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://puma.grand-challenge.org/submission-instructions/",
+          "local_snapshot": "_collection/sources/50-b7ec60af2150.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official organizer report, submission instructions or native platform submission statistics establishes the challenge evaluation service; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://puma.grand-challenge.org/#ref6",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/puma-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://puma.grand-challenge.org/#ref6",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/puma-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://puma.grand-challenge.org/#ref6",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/puma-2024.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "evaluation.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "submission.platform",
+          "dataset.multi_center",
+          "dataset.center_count"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/puma-2024.json",
+          "_collection/verification_20261003/literature_context/puma-2024.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Public download",
+        "state": "Documented and classifiable",
+        "rationale": "PUMA官方数据页明确公开训练集并链接Zenodo；最新数据修订发生在赛后，仍保留训练和隐藏测试区分。"
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "PUMA官方数据页明确公开训练集并链接Zenodo；最新数据修订发生在赛后，仍保留训练和隐藏测试区分。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/access_flow_full_audit_20261024/sources/78c10b5400863a7b.json",
+          "url": "https://puma.grand-challenge.org/dataset/"
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/puma-2024.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Public download",
+      "data_model_flow": "hybrid"
+    },
+    "conference_affiliation_review": {
+      "review_date": "2026-10-25",
+      "previous_analysis_conference": "Unknown",
+      "analysis_conference": "Standalone",
+      "primary_conference": null,
+      "organizing_arrangement": "Independent challenge",
+      "primary_relationship": "Independent challenge — human-confirmed",
+      "related_events": [
+        {
+          "venue": "MIDL",
+          "year": 2024,
+          "relationship": "Dataset short-paper publication only",
+          "count_as_primary": false
+        }
+      ],
+      "note_zh": "按用户确认归为独立challenge。MIDL2024相关数据集短文记录保留；主要统计归属为Standalone，按2024届计一次。",
+      "sources": [
+        {
+          "url": "https://puma.grand-challenge.org/puma/",
+          "local_source": "_collection/conference_audit_20261025/sources/1be5988a1a958a6.json",
+          "sha256": "2fad2b8e998d677604a8fd74b72185083dbb0ee0cf2a6a79edc01a85afaac3ed"
+        },
+        {
+          "local_source": "_collection/puma_independent_confirmation_20261025/human_confirmation.json",
+          "sha256": "e66ae4e3a1bc492e4de5e5acc79ef883df07d7c5ac849e90c9b3929e435c7e5d",
+          "url": "",
+          "type": "Explicit human confirmation",
+          "supports": "Independent challenge statistical assignment"
+        }
+      ],
+      "assignment_basis": "Explicit human confirmation"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC0"
+      ],
+      "scope": "Named public development/data release only; hidden evaluation rights not inferred",
+      "agreement_required": null,
+      "summary_zh": "官方 PUMA Dataset 页面链接的数据集记录标注 CC0；另保留规则中的发表及引用要求，不外推隐藏测试。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Named dataset metadata or official data-use page",
+          "text": "{\"title\": \"Melanoma Histopathology Dataset with Tissue and Nuclei Annotations\", \"resource_type\": {\"title\": \"Image\", \"type\": \"image\"}, \"publication_date\": \"2025-02-14\", \"license\": {\"id\": \"cc-zero\"}, \"description\": \"<h2><strong>Description</strong>:</h2>\\n<p>This dataset is designed for development of deep learning models for segmentation of nuclei and tissue in melanoma H&amp;E stained histopathology. Existing nuclei segmentation models that are trained on non-melanoma specific datasets have low performance due to the ability of melanocytes to mimic other cell types, whereas existing melanoma specific models utilize older, sub-optimal techniques. Moreover, these models do not provide tissue annotations necessary for determining the localization of tumor-infiltrating lymphocytes, which may hold value for predictive and prognostic tasks. To address this, we created a melanoma specific dataset with nuclei and tissue annotations.&nbsp;<br><br></p>\\n<h2><strong>Methodology</strong>:</h2>\\n<p><strong>Sample Collection</strong>:</p>\\n<p>Regions of interest (ROIs) were sampled from H&amp;E stained slides of 103 primary melanoma specimens and 102 metastatic melanoma specimens, scanned using a Hamamatsu scanner at 40&times; magnification (0.23 &mu;m per pixel). All slides were obtained from regular diagnostic procedures.<br>From each specimen, a 40&times; magnified ROI of 1024&times;1024 pixels was selected for annotation. Additionally, a context ROI of 5120&times;5120 pixels was sampled to provide information about the broader context for the annotation process. Selection was performed by a trained medical expert (M.S.) and subsequently verified by a dermatopathologist (W.B.). Manual ROI selection ensured the inclusion of diverse tissue and nuclei types.</p>\\n<p><strong>Annotation Process</strong>:</p>\\n<ul>\\n<li><strong>Nuclei segmentation<br></strong>Nuclei segmentations were generated using Hover-Net pretrained on the PanNuke dataset. Manual annotation adjustments were performed by author M.S. using QuPath, with the following nuclei categories: tumor, stroma, vascular endothelium, histiocyte, melanophage, lymphocyte, plasma cell, neutrophil, apoptotic cell, and epithelium. All annotations were reviewed and corrected, where needed, by a dermatopathologist (W.B.).</li>\\n<li><strong>Tissue segmentation<br></strong>Tissue segmentations were created manually using QuPath by M.S., with the following categories: tumor, stroma, epidermis, necrosis, blood vessel, and background. Annotations were reviewed and corrected, where needed, by a dermatopathologist (W.B.).</li>\\n</ul>\\n<p><strong>Quality Control</strong>: <br>To assess the reliability of the annotations, intra- and interobserver agreement (by pathologist G.B.) were determined on 12 randomly selected ROIs.</p>\\n<ul>\\n<li><strong>Nuclei segmentation<br></strong>The intraobserver overall precision was 84.89%, with a recall of 86.45%, and an F1 score of 85.66%. Interobserver overall precision was 80.34%, with a recall of 80.62%, and an F1 score of 80.20%. These results are based on the sum of all true positive, false positive, and false negative counts for the 12 ROIs.</li>\\n<li><strong>Tissue segmentation<br></strong>The DICE score was determined on the same 12 randomly selected ROIs. The average intraobserver DICE score was 0.90, and the interobserver DICE score was also 0.90.</li>\\n</ul>\\n<p>&nbsp;</p>\\n<p><strong>Version 3</strong>:<br>Removed sample \\\"training_set_metastatic_roi_103\\\" due to inconsistencies in annotation file.</p>\\n<p><strong>Version 4:<br></strong>Sample training_set_metastatic_roi_088 missed one color annotation for a nuclei_apoptosis in the geojson file rendering it qupath uncompatible. This is fixed in the new version.&nbsp;</p>\"}",
+          "source": {
+            "url": "https://zenodo.org/api/records/14869398",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/19a9bce53d54dca7.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://zenodo.org/api/records/14869398",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/19a9bce53d54dca7.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://puma.grand-challenge.org/dataset/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/78c10b5400863a7b.json",
+          "status": 200,
+          "error": null
+        },
+        {
+          "url": "https://zenodo.org/api/records/14869398",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/19a9bce53d54dca7.json",
+          "status": 200,
+          "error": null
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "public_train",
+              "value": 206,
+              "unit": "regions of interest",
+              "canonical_field": "dataset.splits.public_train.roi_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "preliminary_test",
+              "value": 10,
+              "unit": "regions of interest",
+              "canonical_field": "dataset.splits.preliminary_test.roi_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "final_test",
+              "value": 94,
+              "unit": "regions of interest",
+              "canonical_field": "dataset.splits.final_test.roi_count",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://puma.grand-challenge.org/dataset/",
+              "supports": [
+                "dataset",
+                "labels_and_targets",
+                "data_access"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/50-78c10b540086.json"
+            }
+          ],
+          "source_urls": "https://puma.grand-challenge.org/#ref6; https://puma.grand-challenge.org/#ref3; https://puma.grand-challenge.org/timeline/; https://puma.grand-challenge.org/puma/; https://puma.grand-challenge.org/#ref7; https://puma.grand-challenge.org/organizers/; https://puma.grand-challenge.org/#ref9; https://puma.grand-challenge.org/#ref4; https://puma.grand-challenge.org/winner-announcement/; https://puma.grand-challenge.org/faq/; https://puma.grand-challenge.org/dataset/; https://puma.grand-challenge.org/#ref1; https://puma.grand-challenge.org/#ref2; https://puma.grand-challenge.org/challenge/statistics/; https://puma.grand-challenge.org/submission-instructions/; https://puma.grand-challenge.org/#ref5; https://puma.grand-challenge.org/submission/; https://puma.grand-challenge.org/#panoptic-segmentation-of-nuclei-and-tissue-in-advanced-melanoma; https://puma.grand-challenge.org/#ref8; https://puma.grand-challenge.org/rules/; https://puma.grand-challenge.org/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

@@ -1,0 +1,721 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "odin-2026",
+    "challenge_name": "ODIN 2026 Challenges",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": null,
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "ODIN 2026",
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "CBCT",
+        "Optical 3D surface scans",
+        "Photography"
+      ],
+      "submodality": [
+        "Dental CBCT",
+        "Intraoral meshes/photos"
+      ],
+      "body_region": [
+        "Oral / maxillofacial region"
+      ],
+      "organ_system": [
+        "Dental / oral system"
+      ],
+      "organs_or_structures": [
+        "Teeth",
+        "Jaws",
+        "Occlusion"
+      ],
+      "diseases": [
+        "Malocclusion",
+        "Dental crowding and spacing abnormalities"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Report Generation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "ToothFairy4 surgical report generation",
+          "task_family": "Report Generation",
+          "task_subtype": "Image-to-report generation",
+          "input": [
+            "Jaw CBCT volume"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Maxillofacial/surgical report"
+          ],
+          "granularity": "study",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Bite2Text orthodontic report generation",
+          "task_family": "Report Generation",
+          "task_subtype": "Image-to-report generation",
+          "input": [
+            "Upper/lower intraoral scans",
+            "Intraoral photographs"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Orthodontic report"
+          ],
+          "granularity": "study",
+          "clinical_goal": null
+        }
+      ],
+      "task_families": [
+        "Report generation"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Report generation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": true,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": null,
+      "data_components": [
+        "CBCT and surgical reports",
+        "Upper/lower intraoral meshes",
+        "Intraoral photographs",
+        "Orthodontic reports in original language and English translation"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "split_details": {
+        "task1": {
+          "train_CBCT_volumes": 630,
+          "test_CBCT_volumes": 50
+        },
+        "task2": {
+          "train_patient_cases": 1000,
+          "test_patient_cases": 50
+        },
+        "note": "Bite2Text training size corrected from struck-through 2000 to 1000 on current official page."
+      }
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public-with-terms",
+      "public_download": true,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": false,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA (version not specified)",
+      "access_after_challenge": null,
+      "access_scope": "training/development data; not a claim that hidden test data are public"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "RadFact logical precision",
+            "RadFact logical recall",
+            "BLEU-4",
+            "METEOR",
+            "Expert Arena Elo"
+          ],
+          "ranking": "Automatic screening: 0.8×RadFact logical F1 + 0.2×mean(BLEU-4,METEOR). Top methods (up to seven) enter blinded clinical report comparisons; final ordering uses Arena/Elo scores."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "RadFact logical precision",
+            "RadFact logical recall",
+            "BLEU-4",
+            "METEOR",
+            "Expert Arena Elo"
+          ],
+          "ranking": "Automatic screening: 0.8×RadFact logical F1 + 0.2×mean(BLEU-4,METEOR). Top methods (up to seven) enter blinded clinical report comparisons; final ordering uses Arena/Elo scores."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 116,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Task 1 - ToothFairy4: Debugging Phase",
+            "submission_count": 118
+          },
+          {
+            "official_phase_name": "Task 2 - Bite2Text: Debugging Phase",
+            "submission_count": 121
+          },
+          {
+            "official_phase_name": "Task 1 - ToothFairy4: Test Phase",
+            "submission_count": 46
+          },
+          {
+            "official_phase_name": "Task 2 - Bite2Text: Test Phase",
+            "submission_count": 44
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://odin2026.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Final automatic ranking occurs offline because live platform omits RadFact logical scores. Up to seven methods enter expert pairwise report comparison and Elo ranking. This edition is report generation, not the 2025 ToothFairy segmentation tasks.",
+      "Challenge information collected on 2026-10-02. Underlying medical-image acquisition dates are not inferred from the challenge year, data release date, or information collection date."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://odin2026.grand-challenge.org/important-dates/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/7-0e98c7b408c9.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odin2026.grand-challenge.org/ranking/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/7-0fad4224ed4a.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odin2026.grand-challenge.org/challenge-winners/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/7-684b38f19d8c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odin2026.grand-challenge.org/organizers/",
+          "supports": [
+            "organizers",
+            "event"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/7-9fd664ff5b96.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odin2026.grand-challenge.org/datasets/",
+          "supports": [
+            "data_access",
+            "data_access.access_scope",
+            "data_access.access_status",
+            "data_access.is_public",
+            "data_access.public_download",
+            "dataset",
+            "labels_and_targets"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/7-a50fe2c94511.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odin2026.grand-challenge.org/odin2026/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/7-b0723f3254ab.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://odin2026.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/7-d330a81cd0ba.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odin2026.grand-challenge.org/faq/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/7-d3e49b4b6306.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odin2026.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/7-e36e0605d0ab.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odin2026.grand-challenge.org/how-to-submit/",
+          "supports": [
+            "submission",
+            "data_usage_mode"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/7-e91564ca3471.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://odin2026.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/7-overview.json"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "submission: final resource limits and external-data policy not fully verified.",
+        "evaluation: expert comparison stopping rule and finalized Elo configuration not disclosed in reviewed pages."
+      ],
+      "field_evidence": {
+        "data_access.access_status": {
+          "source_url": "https://odin2026.grand-challenge.org/datasets/",
+          "local_snapshot": "_collection/sources/7-a50fe2c94511.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.is_public": {
+          "source_url": "https://odin2026.grand-challenge.org/datasets/",
+          "local_snapshot": "_collection/sources/7-a50fe2c94511.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.public_download": {
+          "source_url": "https://odin2026.grand-challenge.org/datasets/",
+          "local_snapshot": "_collection/sources/7-a50fe2c94511.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        },
+        "data_access.access_scope": {
+          "source_url": "https://odin2026.grand-challenge.org/datasets/",
+          "local_snapshot": "_collection/sources/7-a50fe2c94511.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official source explicitly releases the training/development data for external use with stated terms."
+        }
+      },
+      "last_updated": "2026-10-03",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_access.access_scope",
+          "data_access.access_status",
+          "data_access.is_public",
+          "data_access.public_download"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_after_challenge",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/odin-2026.json",
+          "_collection/verification_20261003/literature_context/odin-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "previous_task_families": [
+        "Report generation"
+      ],
+      "previous_emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_roles": {
+        "Report generation": "Declared task output"
+      },
+      "note_zh": "CBCT及口扫/照片到临床叙述性报告，保留 VLM/生成；不把参赛管线的分割预处理当作独立比赛输出。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://odin2026.grand-challenge.org/ranking/",
+          "local_source": "_collection/sources/7-0fad4224ed4a.json",
+          "sha256": "807d52c7b02381c14999d99d9247f2feddc21c4e0cf3b96cb14e17fb8903f3b3"
+        },
+        {
+          "url": "https://odin2026.grand-challenge.org/challenge-winners/",
+          "local_source": "_collection/sources/7-684b38f19d8c.json",
+          "sha256": "2da0d87111083af5daab0b30ce3dc77a13d319ff9879e7d7cff7eeb1fd682d7a"
+        },
+        {
+          "url": "https://odin2026.grand-challenge.org/datasets/",
+          "local_source": "_collection/sources/7-a50fe2c94511.json",
+          "sha256": "8c40f096a790d27756e41a8a0c3a709a293569ea4f3514db6ae3d98b0d6c2e27"
+        },
+        {
+          "url": "https://odin2026.grand-challenge.org/odin2026/",
+          "local_source": "_collection/sources/7-b0723f3254ab.json",
+          "sha256": "ebcab92905b29e57f1e223db97dab0824a5202ab03d966ea63fd39079f3925e7"
+        },
+        {
+          "url": "https://odin2026.grand-challenge.org/faq/",
+          "local_source": "_collection/sources/7-d3e49b4b6306.json",
+          "sha256": "c4343a4e9e905070007da7574be3394121c393ed1978beef4b96d47d304d6de4"
+        },
+        {
+          "url": "https://odin2026.grand-challenge.org/",
+          "local_source": "_collection/sources/7-e36e0605d0ab.json",
+          "sha256": "c4785b75bd3a84a1a258f8a5d5b68e9f612f7e37f169d9a6f4801a0bfb5b8d06"
+        },
+        {
+          "url": "https://odin2026.grand-challenge.org/how-to-submit/",
+          "local_source": "_collection/sources/7-e91564ca3471.json",
+          "sha256": "5cffbf4915951b340d62d461947ad312b78bc20fdf84b39f10e398e5c6aa3643"
+        },
+        {
+          "url": "https://odin2026.grand-challenge.org/",
+          "local_source": "_collection/sources/7-overview.json",
+          "sha256": "c4785b75bd3a84a1a258f8a5d5b68e9f612f7e37f169d9a6f4801a0bfb5b8d06"
+        }
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Report generation"
+      ],
+      "emerging_objectives": [
+        "VLM",
+        "Report generation"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "CT",
+        "Optical 3D surface scans",
+        "Photography"
+      ],
+      "harmonized_modalities": [
+        "CT",
+        "Clinical photography",
+        "Optical 3D surface scans"
+      ],
+      "video_format_documented": false,
+      "note": "Explicit synonym/group mapping; preserve original clinical_domain labels.",
+      "sources": [
+        {
+          "url": "https://odin2026.grand-challenge.org/important-dates/",
+          "local_source": "_collection/sources/7-0e98c7b408c9.json"
+        },
+        {
+          "url": "https://odin2026.grand-challenge.org/ranking/",
+          "local_source": "_collection/sources/7-0fad4224ed4a.json"
+        },
+        {
+          "url": "https://odin2026.grand-challenge.org/challenge-winners/",
+          "local_source": "_collection/sources/7-684b38f19d8c.json"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Oral / maxillofacial region"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Other"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Malocclusion",
+        "Dental crowding and spacing abnormalities"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "官方Bite2Text任务明确错颌与拥挤/间隙等报告内容；不从正畸操作推断先天病。",
+      "sources": [
+        {
+          "url": "https://odin2026.grand-challenge.org/",
+          "local_source": "_collection/sources/7-overview.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "官方Bite2Text任务明确错颌与拥挤/间隙等报告内容；不从正畸操作推断先天病。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/MICCAI/2026/odin-2026.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    },
+    "record_field_review": {
+      "review_date": "2026-10-27",
+      "method": "Field-specific reconciliation of existing source-linked records with targeted source rereading",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "task1 / train_CBCT_volumes",
+              "value": 630,
+              "unit": "volumes",
+              "canonical_field": "dataset.split_details.task1.train_CBCT_volumes",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task1 / test_CBCT_volumes",
+              "value": 50,
+              "unit": "volumes",
+              "canonical_field": "dataset.split_details.task1.test_CBCT_volumes",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task2 / train_patient_cases",
+              "value": 1000,
+              "unit": "patient cases",
+              "canonical_field": "dataset.split_details.task2.train_patient_cases",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "task2 / test_patient_cases",
+              "value": 50,
+              "unit": "patient cases",
+              "canonical_field": "dataset.split_details.task2.test_patient_cases",
+              "scope": "Recorded task / phase / subset",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ],
+          "basis": "Unit-bearing quantities already present in the reviewed record, or explicitly specified in the cited protocol; no pooling across units, tasks or overlapping phases.",
+          "source_refs": [
+            {
+              "type": "official challenge page",
+              "url": "https://odin2026.grand-challenge.org/datasets/",
+              "supports": [
+                "data_access",
+                "data_access.access_scope",
+                "data_access.access_status",
+                "data_access.is_public",
+                "data_access.public_download",
+                "dataset",
+                "labels_and_targets"
+              ],
+              "retrieved_on": "2026-10-02",
+              "local_snapshot": "_collection/sources/7-a50fe2c94511.json"
+            }
+          ],
+          "source_urls": "https://odin2026.grand-challenge.org/important-dates/; https://odin2026.grand-challenge.org/ranking/; https://odin2026.grand-challenge.org/challenge-winners/; https://odin2026.grand-challenge.org/organizers/; https://odin2026.grand-challenge.org/datasets/; https://odin2026.grand-challenge.org/odin2026/; https://odin2026.grand-challenge.org/challenge/statistics/; https://odin2026.grand-challenge.org/faq/; https://odin2026.grand-challenge.org/; https://odin2026.grand-challenge.org/how-to-submit/"
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

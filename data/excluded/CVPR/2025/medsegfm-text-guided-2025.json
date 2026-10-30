@@ -1,0 +1,322 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "medsegfm-text-guided-2025",
+    "challenge_name": "Foundation Models for Text-guided 3D Biomedical Image Segmentation",
+    "full_name": "Foundation Models for Text-guided 3D Biomedical Image Segmentation",
+    "year": 2025,
+    "event": {
+      "conference": "CVPR 2025 - Foundation Models for Medical Vision Workshop",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2025-06-11",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": [
+        "University of Toronto",
+        "University Health Network",
+        "Vector Institute",
+        "University of California, Santa Cruz"
+      ],
+      "international": true
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT",
+        "MRI",
+        "PET",
+        "Ultrasound",
+        "Microscopy"
+      ],
+      "submodality": null,
+      "body_region": null,
+      "organ_system": null,
+      "organs_or_structures": null,
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Segmentation",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Text-guided 3D segmentation",
+          "task_family": "Segmentation",
+          "task_subtype": "text-conditioned segmentation",
+          "input": [
+            "3D biomedical image",
+            "Text describing the target structure"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Semantic or instance segmentation mask"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ],
+      "learning_paradigms": [
+        "Foundation models",
+        "Vision-language segmentation"
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": {
+          "value": 200000,
+          "unit": "3D image-mask pairs",
+          "approximate": false,
+          "lower_bound": true,
+          "raw_text": "more than 200,000 3D image-mask pairs"
+        },
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT",
+        "MRI",
+        "PET",
+        "Ultrasound",
+        "Microscopy"
+      ],
+      "data_components": [
+        "3D biomedical images",
+        "Segmentation masks"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "training_regimes": [
+        {
+          "name": "Full data"
+        },
+        {
+          "name": "10% coreset",
+          "subset_of": "Full data"
+        }
+      ]
+    },
+    "data_access": {
+      "is_public": true,
+      "access_status": "public development data; competition registration required",
+      "public_download": true,
+      "hosting": "Hugging Face",
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Approved public datasets and model weights require prior declaration; public weights must be adapted rather than submitted unchanged."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Codabench validation and organizer Docker evaluation",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Dice Similarity Coefficient",
+            "Normalized Surface Dice",
+            "Instance F1 at IoU 0.5",
+            "Dice on matched true-positive instances"
+          ],
+          "ranking": null
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Validation masks; final Docker container and technical report",
+      "platform": "Codabench and organizer email",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": 32,
+        "reserved_ram_gb": null,
+        "gpu": "NVIDIA RTX 5000",
+        "gpu_vram_gb": 16,
+        "max_processing_time_per_class_seconds": 60
+      },
+      "submission_limits": {
+        "final_successful_submissions_per_track": 1
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "results_release": "2025-06-11"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": null
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": "2026-10-03",
+      "statistics_status": "current platform snapshot",
+      "notes": [
+        "Participant accounts are not teams. Cumulative platform counts are not treated as edition-specific final participation."
+      ],
+      "platform_snapshot": {
+        "participant_accounts": 170,
+        "submission_count": 72,
+        "scope": "Shared CVPR 2025–2026 platform; no annual attribution is available."
+      }
+    },
+    "links": {
+      "official": "https://www.codabench.org/competitions/5651/",
+      "grand_challenge": null,
+      "platform": "https://www.codabench.org/competitions/5651/",
+      "dataset": "https://huggingface.co/datasets/junma/CVPR-BiomedSegFM",
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "The hosting page contains both 2025 and 2026 information. Cumulative users and submissions are not assigned to either edition.",
+      "The 10% coreset is contained within the full dataset and is not an additional cohort."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "last_updated": "2026-10-03",
+      "collection_date_definition": "Date of web and literature metadata collection, not medical-image acquisition.",
+      "source_list": "challenge_list_other_platforms_22_26_v4.json",
+      "source_list_index": 34,
+      "source_list_index_base": 1,
+      "collection_status": "partially_verified",
+      "sources": [
+        {
+          "type": "Official organizer source",
+          "url": "https://www.codabench.org/api/competitions/5651/?format=api",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/1e29d39f9fd592ef.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule",
+            "participation_statistics.platform_snapshot",
+            "organizers"
+          ],
+          "snapshot_sha256": "84119570eb9356ae63fc8ffb7ae796250b657bea1c68980d852abc4e351b1815"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://fmv-cvpr25workshop.github.io/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/aac3e9b2493204bf.json",
+          "supports": [
+            "event",
+            "organizers"
+          ],
+          "snapshot_sha256": "124d61a72b9935f77a3c462cd1dd1b2a898850f9680fb223358fed19a1e59a3a"
+        }
+      ],
+      "unresolved_fields": [
+        "dataset.population.validation_count",
+        "dataset.population.test_count",
+        "dataset.population.patient_count",
+        "dataset.center_count",
+        "dataset.collection_period.start_year",
+        "data_access.license_or_terms",
+        "participation_statistics.registered_teams"
+      ],
+      "verification_policy": "Only edition-specific official evidence populates facts; unknown values remain null."
+    },
+    "record_level": "challenge_track",
+    "scope_status": "core_medical_imaging",
+    "count_in_core_medical_imaging_review": true,
+    "count_in_edition_statistics": false,
+    "parent_challenge_id": "medsegfm-2025"
+  }
+}

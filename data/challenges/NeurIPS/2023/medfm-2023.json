@@ -1,0 +1,843 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "medfm-2023",
+    "challenge_name": "Foundation Model Prompting for Medical Image Classification",
+    "full_name": null,
+    "year": 2023,
+    "event": {
+      "conference": "NeurIPS 2023",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "X-ray",
+        "Endoscopy",
+        "Pathology"
+      ],
+      "submodality": [
+        "Chest radiograph",
+        "Colon histopathology"
+      ],
+      "body_region": [
+        "Chest",
+        "Gastrointestinal tract"
+      ],
+      "organ_system": [
+        "Digestive"
+      ],
+      "organs_or_structures": null,
+      "diseases": [
+        "Colorectal cancer",
+        "Colorectal polyps",
+        "Thoracic diseases, unspecified subtypes"
+      ],
+      "clinical_context": null,
+      "organ_system_basis": "derived_anatomical_classification",
+      "organ_system_coding_scope": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "chest",
+          "official_name": "ChestDR classification",
+          "task_family": "Classification",
+          "task_subtype": "multi-label classification",
+          "input": [
+            "Chest X-ray"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Disease probabilities"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "endo",
+          "official_name": "Endo classification",
+          "task_family": "Classification",
+          "task_subtype": "multi-label classification",
+          "input": [
+            "Endoscopy image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Ulcer, erosion, polyp and tumor probabilities"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "colon",
+          "official_name": "ColonPath classification",
+          "task_family": "Classification",
+          "task_subtype": "binary classification",
+          "input": [
+            "Colon pathology image"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Non-lesion/lesion probabilities"
+          ],
+          "granularity": "image-level",
+          "clinical_goal": null
+        }
+      ],
+      "task_families": [
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Classification": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": "Few-shot samples counted by patients, not images; only official 1/5/10-shot subsets allowed.",
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "X-ray",
+        "Endoscopy",
+        "Pathology"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "MedFM competition data-use terms. 比赛期间数据及下载链接不得转交或再分发，数据仅限比赛；赛后免费开放是声明，不替代完整后续许可。",
+      "access_after_challenge": "Rules state competition data will become publicly available and free for use after the competition; distinguish this planned policy from independently verified current dataset access.",
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "data-to-model",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "data-to-model",
+        "test_data_visible_to_participants": true,
+        "server_side_inference": false,
+        "submission_artifact": "Prediction/result files",
+        "qualification": "Test images released; participants infer locally and submit results for platform scoring. Separate from model execution and hidden reference labels."
+      },
+      "external_data": {
+        "allowed": false,
+        "disclosure_required": true,
+        "policy": "External medical image datasets prohibited; foundation models from natural images or language allowed and must be disclosed."
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "chest",
+          "metrics": [
+            "AUC",
+            "mAP"
+          ],
+          "ranking": "Averaged over 1/5/10-shot settings and datasets; testing repeats each setting five times."
+        },
+        {
+          "task_id": "endo",
+          "metrics": [
+            "AUC",
+            "mAP"
+          ],
+          "ranking": "Averaged over 1/5/10-shot settings and datasets; testing repeats each setting five times."
+        },
+        {
+          "task_id": "colon",
+          "metrics": [
+            "AUC",
+            "Accuracy"
+          ],
+          "ranking": "Averaged over 1/5/10-shot settings and datasets; testing repeats each setting five times."
+        }
+      ],
+      "cross_task_rule": null
+    },
+    "submission": {
+      "submission_type": "Prediction/result files",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null,
+        "validation_submissions_per_day": 1,
+        "final_successful_submissions": 3
+      },
+      "task_outputs": null,
+      "validation_artifact": "ZIP of CSV predictions",
+      "previous_recorded_design": {
+        "submission_type": "Docker container",
+        "qualification": "Superseded by implemented results-only phase; not evidence of final Docker submission."
+      },
+      "final_artifact": "Prediction/result files",
+      "evidence_stage": "implemented_results_only_validation_and_final_phases"
+    },
+    "schedule": {
+      "training_data_release": "2023-05-26",
+      "final_submission_deadline": "2023-09-15",
+      "challenge_event": "2023-12-15"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": 1024,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "official_phase_name": "Challenge - Validation (Results Submission ONLY)",
+            "submission_count": 114
+          },
+          {
+            "official_phase_name": "Challenge - Evaluation (Results Submission ONLY)",
+            "submission_count": 71
+          },
+          {
+            "official_phase_name": "Challenge - For Public",
+            "submission_count": 4
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-02",
+      "statistics_status": "current platform snapshot; includes ongoing or post-challenge activity where applicable",
+      "notes": [
+        "Platform participants are users, not teams. Phase counts are kept under their official names; they are not assumed to represent unique teams or original competition-only submissions."
+      ]
+    },
+    "links": {
+      "grand_challenge": "https://medfm2023.grand-challenge.org/",
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Some training/validation images share patients; organizers explicitly state reserved test data is separate.",
+      "2026-10-22 canonical synchronization: submission: final prediction/result files, superseded Docker wording retained as history; assessment: final and foundation-model objective confirmed; testing flow: released images and participant-side inference."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-03",
+      "sources": [
+        {
+          "type": "official challenge page",
+          "url": "https://medfm2023.grand-challenge.org/medfm2023/",
+          "supports": [
+            "challenge context",
+            "evaluation.platform",
+            "submission.platform"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/86-4c0d04dc1e4c.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://medfm2023.grand-challenge.org/",
+          "supports": [
+            "challenge context"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/86-6b0cc1d41149.json"
+        },
+        {
+          "type": "official challenge statistics page",
+          "url": "https://medfm2023.grand-challenge.org/challenge/statistics/",
+          "supports": [
+            "participation_statistics"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/86-79796379d659.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://medfm2023.grand-challenge.org/rules/",
+          "supports": [
+            "data_access",
+            "data_access.access_after_challenge",
+            "data_usage_mode",
+            "evaluation",
+            "publication",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/86-a156b6845c96.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://medfm2023.grand-challenge.org/metrics/",
+          "supports": [
+            "evaluation",
+            "submission"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/86-f085beb996f8.json"
+        },
+        {
+          "type": "official challenge page",
+          "url": "https://medfm2023.grand-challenge.org/",
+          "supports": [
+            "challenge identity",
+            "clinical_domain",
+            "task_profile"
+          ],
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources/86-overview.json"
+        },
+        {
+          "type": "review-derived anatomical classification of source-recorded targets",
+          "url": "https://medfm2023.grand-challenge.org/medfm2023/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/medfm-2023.json",
+          "supports": [
+            "clinical_domain.organ_system",
+            "clinical_domain.organ_system_basis",
+            "clinical_domain.organ_system_coding_scope"
+          ]
+        },
+        {
+          "type": "previously reviewed documentary evidence",
+          "url": "https://medfm2023.grand-challenge.org/awards/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/medfm_award_1.png",
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/medfm-2023.json",
+          "propagated_on": "2026-10-22",
+          "supports": [
+            "Certificate names the 2023 challenge, winning team and foundation-model few-shot adaptation solution."
+          ]
+        },
+        {
+          "type": "previously reviewed documentary evidence",
+          "url": "https://medfm2023.grand-challenge.org/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_6b0cc1d411495f.json",
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/medfm-2023.json",
+          "propagated_on": "2026-10-22",
+          "supports": [
+            "Native prediction-file evaluation phase and separate later public phase; few-shot split constraints explicitly specified."
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset page access-restricted; verify exact patient/image split counts and dataset license."
+      ],
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was collected from official sources; not the acquisition date of the underlying medical images.",
+      "field_evidence": {
+        "evaluation.platform": {
+          "source_url": "https://medfm2023.grand-challenge.org/medfm2023/",
+          "local_snapshot": "_collection/sources/86-4c0d04dc1e4c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'leaderboard', 'url': 'https://medfm2023.grand-challenge.org/evaluation/challenge-for-public-long-term/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "submission.platform": {
+          "source_url": "https://medfm2023.grand-challenge.org/medfm2023/",
+          "local_snapshot": "_collection/sources/86-4c0d04dc1e4c.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Official edition page links to its evaluation/leaderboard endpoint: {'text': 'leaderboard', 'url': 'https://medfm2023.grand-challenge.org/evaluation/challenge-for-public-long-term/submissions/create/'}; reviewed for the named edition, not inferred from directory presence alone."
+        },
+        "data_access.access_after_challenge": {
+          "source_url": "https://medfm2023.grand-challenge.org/rules/",
+          "local_snapshot": "_collection/sources/86-a156b6845c96.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit edition-source post-challenge policy reviewed; planned releases, continuing public access, controlled requests and required deletion are kept distinct."
+        },
+        "clinical_domain.organ_system": {
+          "source_url": "https://medfm2023.grand-challenge.org/medfm2023/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/medfm-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_basis": {
+          "source_url": "https://medfm2023.grand-challenge.org/medfm2023/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/medfm-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        },
+        "clinical_domain.organ_system_coding_scope": {
+          "source_url": "https://medfm2023.grand-challenge.org/medfm2023/",
+          "local_snapshot": "_collection/verification_20261003/clinical_mapping/medfm-2023.json",
+          "reviewed_on": "2026-10-03",
+          "basis": "Derived anatomical classification of previously recorded organ/structure targets and body regions. This is review coding, not organizer terminology; no disease or healthy cohort status is inferred."
+        }
+      },
+      "last_updated": "2026-10-22",
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "clinical_domain.organ_system",
+          "clinical_domain.organ_system_basis",
+          "clinical_domain.organ_system_coding_scope",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "submission.platform"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_usage_mode.overall_paradigm",
+          "dataset.multi_center",
+          "dataset.center_count",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/medfm-2023.json",
+          "_collection/verification_20261003/literature_context/medfm-2023.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "action": "Propagate already authorized review decisions into original challenge JSON",
+          "changes": [
+            "submission: final prediction/result files, superseded Docker wording retained as history",
+            "assessment: final and foundation-model objective confirmed",
+            "testing flow: released images and participant-side inference"
+          ],
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/medfm-2023.json",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/canonical_decisions_sync_20261022_013012/NeurIPS/2023/medfm-2023.json",
+          "new_external_search": false,
+          "aggregate_rebuilt": false
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "basis": "Official winner certificate and evaluation context establish completed challenge assessment; workshop date alone not used.",
+      "audit_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/medfm-2023.json",
+      "objective_assessment": [
+        {
+          "objective": "Foundation-model orientation",
+          "value": "confirmed",
+          "evidence_ids": [
+            "E1",
+            "E2"
+          ],
+          "reason": "Official award is for a foundation-model few-shot adaptation solution in the explicitly constrained adaptation challenge. Published result files and winner evidence link the objective to performed evaluation."
+        }
+      ],
+      "scope": "Existing completed documentary review propagated to canonical record; no new external evidence collected in this turn."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "当届主页取得数据步骤明确注册、验证账号及加入赛事，未列额外人工申请审批。"
+      },
+      "data_model_flow": {
+        "category": "data-to-model",
+        "state": "Documented and classifiable",
+        "rationale": "当届主页取得数据步骤明确注册、验证账号及加入赛事，未列额外人工申请审批。"
+      },
+      "decision_history": [
+        "训练数据发布用于本地少样本适配；2023年8月25日测试图像发布，最终提交预测文件。",
+        "当届主页取得数据步骤明确注册、验证账号及加入赛事，未列额外人工申请审批。"
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/sources/86-4c0d04dc1e4c.json",
+          "url": ""
+        },
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/medfm-2023.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ]
+    },
+    "review_coding": {
+      "development_access": "Account registration",
+      "data_model_flow": "data-to-model",
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_task_families": [
+        "Classification"
+      ],
+      "previous_emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output"
+      },
+      "note_zh": "组织者明确设定基础模型少样本适配及外部数据规则；分类为下游任务，FM 并非从参赛模型名称推断。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://medfm2023.grand-challenge.org/medfm2023/",
+          "local_source": "_collection/sources/86-4c0d04dc1e4c.json",
+          "sha256": "dcb622967f813ca22035f7c11aaaaa1b009c2b22c34179f1132eea245e55179c"
+        },
+        {
+          "url": "https://medfm2023.grand-challenge.org/",
+          "local_source": "_collection/sources/86-6b0cc1d41149.json",
+          "sha256": "63fbe3685817f2daf2b91e5eccc8a392ce7c8e92db276c79b9ad23dd93d9bc02"
+        },
+        {
+          "url": "https://medfm2023.grand-challenge.org/rules/",
+          "local_source": "_collection/sources/86-a156b6845c96.json",
+          "sha256": "b5a33af58e8255ccc62db17661dc9e59ea4aab7004f4d6a1a880f9b75da5ffcc"
+        },
+        {
+          "url": "https://medfm2023.grand-challenge.org/metrics/",
+          "local_source": "_collection/sources/86-f085beb996f8.json",
+          "sha256": "3d3894f501a8548b670aa127069b4255e24bf9f23cbe31b425b28d5aa8c68044"
+        },
+        {
+          "url": "https://medfm2023.grand-challenge.org/",
+          "local_source": "_collection/sources/86-overview.json",
+          "sha256": "63fbe3685817f2daf2b91e5eccc8a392ce7c8e92db276c79b9ad23dd93d9bc02"
+        },
+        {
+          "url": "https://medfm2023.grand-challenge.org/",
+          "local_source": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_6b0cc1d411495f.json",
+          "sha256": "8d44e57ad31f71b5183cc5302a618036dc1237b8ff57ea77a6ed76e491e23af6"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "MedFM competition data-use terms"
+      ],
+      "scope": "Explicitly identified competition rules or named source data; not all components implied",
+      "agreement_required": null,
+      "summary_zh": "比赛期间数据及下载链接不得转交或再分发，数据仅限比赛；赛后免费开放是声明，不替代完整后续许可。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Official data/rules or dataset-report statement",
+          "text": "Home Committee Rules Datasets Baseline And Tutorial Evaluation And Metrics Awards Email organizers Competition Rules ¶ Dataset ¶ 1. Redistribution or transferring of competition data or data links is not allowed during the competition. Participants should use the data only for this competition. The competition data will be publicly available and free for use after the competition. 2. All participants are not allowed to use external medical image dataset during this challenge. The foundation models in other areas such as natural images and natural language processing area are allowed. All participants should give links of pretra",
+          "source": {
+            "url": "https://medfm2023.grand-challenge.org/rules/",
+            "local_source": "_collection/sources/86-a156b6845c96.json"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://medfm2023.grand-challenge.org/rules/",
+          "local_source": "_collection/sources/86-a156b6845c96.json"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked clinical scope review",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Chest",
+            "Gastrointestinal tract"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cancer",
+            "Other"
+          ]
+        }
+      },
+      "specific_diseases": [
+        "Colorectal cancer",
+        "Colorectal polyps",
+        "Thoracic diseases, unspecified subtypes"
+      ],
+      "disease_scope_note": "Explicit task or cohort condition",
+      "disease_review_note": "当届任务明确结肠肿瘤组织分类、息肉/病变分类及胸部疾病筛查；不补造胸片的完整病种清单。",
+      "sources": [
+        {
+          "url": "https://medfm2023.grand-challenge.org/medfm2023/",
+          "local_source": "_collection/sources/86-4c0d04dc1e4c.json"
+        }
+      ],
+      "review_history": [
+        {
+          "date": "2026-10-25",
+          "field": "disease",
+          "previous_state": "Not established",
+          "previous_specific_diseases": null,
+          "review_note": "当届任务明确结肠肿瘤组织分类、息肉/病变分类及胸部疾病筛查；不补造胸片的完整病种清单。",
+          "audit": "latex_sourcev2/data/disease_followup_20261025/reviewed_116_editions.csv",
+          "backup": "_collection/disease_followup_20261025/before/NeurIPS/2023/medfm-2023.json"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "NeurIPS/2023/medfm-2023.json",
+              "source_field": "data_access.access_after_challenge",
+              "value": "Rules state competition data will become publicly available and free for use after the competition; distinguish this planned policy from independently verified current dataset access.",
+              "sources": [
+                {
+                  "type": "official challenge page",
+                  "url": "https://medfm2023.grand-challenge.org/medfm2023/",
+                  "supports": [
+                    "challenge context",
+                    "evaluation.platform",
+                    "submission.platform"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/86-4c0d04dc1e4c.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://medfm2023.grand-challenge.org/",
+                  "supports": [
+                    "challenge context"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/86-6b0cc1d41149.json"
+                },
+                {
+                  "type": "official challenge statistics page",
+                  "url": "https://medfm2023.grand-challenge.org/challenge/statistics/",
+                  "supports": [
+                    "participation_statistics"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/86-79796379d659.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://medfm2023.grand-challenge.org/rules/",
+                  "supports": [
+                    "data_access",
+                    "data_access.access_after_challenge",
+                    "data_usage_mode",
+                    "evaluation",
+                    "publication",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/86-a156b6845c96.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://medfm2023.grand-challenge.org/metrics/",
+                  "supports": [
+                    "evaluation",
+                    "submission"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/86-f085beb996f8.json"
+                },
+                {
+                  "type": "official challenge page",
+                  "url": "https://medfm2023.grand-challenge.org/",
+                  "supports": [
+                    "challenge identity",
+                    "clinical_domain",
+                    "task_profile"
+                  ],
+                  "retrieved_on": "2026-10-02",
+                  "local_snapshot": "_collection/sources/86-overview.json"
+                },
+                {
+                  "type": "review-derived anatomical classification of source-recorded targets",
+                  "url": "https://medfm2023.grand-challenge.org/medfm2023/",
+                  "retrieved_on": "2026-10-03",
+                  "local_snapshot": "_collection/verification_20261003/clinical_mapping/medfm-2023.json",
+                  "supports": [
+                    "clinical_domain.organ_system",
+                    "clinical_domain.organ_system_basis",
+                    "clinical_domain.organ_system_coding_scope"
+                  ]
+                },
+                {
+                  "type": "previously reviewed documentary evidence",
+                  "url": "https://medfm2023.grand-challenge.org/awards/",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/medfm_award_1.png",
+                  "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/medfm-2023.json",
+                  "propagated_on": "2026-10-22",
+                  "supports": [
+                    "Certificate names the 2023 challenge, winning team and foundation-model few-shot adaptation solution."
+                  ]
+                },
+                {
+                  "type": "previously reviewed documentary evidence",
+                  "url": "https://medfm2023.grand-challenge.org/",
+                  "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/direct_6b0cc1d411495f.json",
+                  "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/medfm-2023.json",
+                  "propagated_on": "2026-10-22",
+                  "supports": [
+                    "Native prediction-file evaluation phase and separate later public phase; few-shot split constraints explicitly specified."
+                  ]
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN01"
+  ]
+}

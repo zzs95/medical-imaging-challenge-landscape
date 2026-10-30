@@ -1,0 +1,710 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "orena-focus-2026",
+    "challenge_name": "Foreign Object Contextual Understanding for Safe Surgical AI",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy",
+        "Video"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Other"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Retained surgical items"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Visual Question Answering",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "FRAME Track (Single-Frame Understanding)",
+          "task_family": "Visual Question Answering",
+          "task_subtype": null,
+          "input": [
+            "Surgical frame",
+            "Question"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Answer about surgical foreign objects"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "SEGMENT Track (Short-Context Video Understanding)",
+          "task_family": "Visual Question Answering",
+          "task_subtype": null,
+          "input": [
+            "Short surgical video segment",
+            "Question"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Answer about surgical foreign objects"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task3",
+          "official_name": "PROCEDURE Track (Long-Context Video Understanding)",
+          "task_family": "Visual Question Answering",
+          "task_subtype": null,
+          "input": [
+            "Full-length surgical procedure video",
+            "Question"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Answer about surgical foreign objects"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ],
+      "task_families": [
+        "VQA / multimodal QA"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "VQA / multimodal QA": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": true,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Retained surgical items"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Endoscopy",
+        "Video"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Ambiguous",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "preregistered_data_license": "Custom data usage agreement",
+      "review_status": "Reviewed 2026-10-24; round 2",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+      "access_by_scope": [
+        {
+          "scope": "HeiCo QA annotations",
+          "category": "Public download",
+          "access_steps": [
+            "Public Hugging Face annotations"
+          ],
+          "manual_review": false
+        },
+        {
+          "scope": "LapChole competition resources",
+          "category": "Individual authorization",
+          "access_steps": [
+            "HF account",
+            "Access request",
+            "Individual approval"
+          ],
+          "manual_review": true
+        }
+      ]
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design.",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "platform": "Organizer-hosted",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Accuracy",
+            "Expected Cost"
+          ],
+          "ranking": "Accuracy is the primary ranking metric; question-type metrics such as Expected Cost are used for detailed analysis.",
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Accuracy",
+            "Expected Cost"
+          ],
+          "ranking": "Accuracy is the primary ranking metric; question-type metrics such as Expected Cost are used for detailed analysis.",
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 2 / ASSESSMENT METHODS / Metric(s)"
+        },
+        {
+          "task_id": "task3",
+          "metrics": [
+            "Accuracy",
+            "Expected Cost"
+          ],
+          "ranking": "Accuracy is the primary ranking metric; question-type metrics such as Expected Cost are used for detailed analysis.",
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 3 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19848528",
+      "platform_evidence_stage": "registered_design",
+      "platform_scope": "Platform designated in this edition's registered design; final operational deployment not independently established by this source."
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Organizer-hosted",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://or-arena.org/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 29,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://or-arena.org/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/4126d1e519cee503.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19848528",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "supports": [
+            "clinical_domain",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "evaluation.platform",
+            "evaluation.platform_evidence_stage",
+            "evaluation.platform_scope",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-03",
+      "field_evidence": {
+        "dataset.multi_center": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "dataset.center_type": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "evaluation.platform": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): All submissions must be made through the challenge website, which will be based on grand-challenge. Algorithm submissions will be via Docker containers. Precise instructions will be provided alongside a template repository before the pre-evaluation phase starts. Docker containers must work without internet access. Inference will be limited to a single GPU and must be completed within a maximum time budget per question. If the answering of a question takes longer than the budget, the respective question will be treated as answered incorrectly. The budget will be depending on the track: - FRAME track: 5 seconds* on a 48GB VRAM GPU - SEGMENT tra"
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): All submissions must be made through the challenge website, which will be based on grand-challenge. Algorithm submissions will be via Docker containers. Precise instructions will be provided alongside a template repository before the pre-evaluation phase starts. Docker containers must work without internet access. Inference will be limited to a single GPU and must be completed within a maximum time budget per question. If the answering of a question takes longer than the budget, the respective question will be treated as answered incorrectly. The budget will be depending on the track: - FRAME track: 5 seconds* on a 48GB VRAM GPU - SEGMENT tra"
+        },
+        "evaluation.platform_evidence_stage": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): All submissions must be made through the challenge website, which will be based on grand-challenge. Algorithm submissions will be via Docker containers. Precise instructions will be provided alongside a template repository before the pre-evaluation phase starts. Docker containers must work without internet access. Inference will be limited to a single GPU and must be completed within a maximum time budget per question. If the answering of a question takes longer than the budget, the respective question will be treated as answered incorrectly. The budget will be depending on the track: - FRAME track: 5 seconds* on a 48GB VRAM GPU - SEGMENT tra"
+        },
+        "evaluation.platform_scope": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design answer (not the form's examples): All submissions must be made through the challenge website, which will be based on grand-challenge. Algorithm submissions will be via Docker containers. Precise instructions will be provided alongside a template repository before the pre-evaluation phase starts. Docker containers must work without internet access. Inference will be limited to a single GPU and must be completed within a maximum time budget per question. If the answering of a question takes longer than the budget, the respective question will be treated as answered incorrectly. The budget will be depending on the track: - FRAME track: 5 seconds* on a 48GB VRAM GPU - SEGMENT tra"
+        },
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: All submissions must be made through the challenge website, which will be based on grand-challenge. Algorithm submissions will be via Docker containers. Precise instructions will be provided alongside a template repository before the pre-evaluation phase starts. Docker containers must work without internet access. Inference will be limited to a single GPU and must be completed within a maximum time budget per question. If the answering of a question takes longer than the budget, the respective q"
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19848528",
+          "local_snapshot": "_collection/sources_other/protocol-19848528.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: All submissions must be made through the challenge website, which will be based on grand-challenge. Algorithm submissions will be via Docker containers. Precise instructions will be provided alongside a template repository before the pre-evaluation phase starts. Docker containers must work without internet access. Inference will be limited to a single GPU and must be completed within a maximum time budget per question. If the answering of a question takes longer than the budget, the respective q"
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "evaluation.platform",
+          "evaluation.platform_evidence_stage",
+          "evaluation.platform_scope",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "dataset.center_count",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/orena-focus-2026.json",
+          "_collection/verification_20261003/literature_context/orena-focus-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03"
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Ambiguous",
+        "state": "Ambiguous",
+        "rationale": "当前原记录为Not established，并非已分类为人工授权。补记HeiCo公开资源和LapChole申请审批，保持按数据来源区分，不将LapChole规则推广到全部数据。",
+        "scope": "Edition development resources; task/dataset and date qualifiers in access_by_scope",
+        "access_by_scope": [
+          {
+            "scope": "HeiCo QA annotations",
+            "category": "Public download",
+            "access_steps": [
+              "Public Hugging Face annotations"
+            ],
+            "manual_review": false
+          },
+          {
+            "scope": "LapChole competition resources",
+            "category": "Individual authorization",
+            "access_steps": [
+              "HF account",
+              "Access request",
+              "Individual approval"
+            ],
+            "manual_review": true
+          }
+        ],
+        "evidence_basis": "Primary protocol / metadata checked",
+        "confidence": "High",
+        "source_urls": [
+          "https://raw.githubusercontent.com/IMSY-DKFZ/orena-focus/main/README.md",
+          "https://or-arena.org/save-focus/data/",
+          "https://huggingface.co/datasets/orena-dkfz/lapchole-focus-vqa"
+        ]
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-24 round 2: 当前原记录为Not established，并非已分类为人工授权。补记HeiCo公开资源和LapChole申请审批，保持按数据来源区分，不将LapChole规则推广到全部数据。",
+        "2026-10-25 access completion: LapChole 审批资源与 HeiCo 公开资源并存，保留分来源准入。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/orena-focus-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/IMSY-DKFZ/orena-focus/main/README.md",
+          "local_source": "_collection/access_backfill_round2_20261024/sources/f098ded23c290591.json",
+          "review_date": "2026-10-24",
+          "section": "Round 2 development access; task and temporal scope retained"
+        },
+        {
+          "url": "https://or-arena.org/save-focus/data/",
+          "local_source": "_collection/access_backfill_round2_20261024/sources/e29becf1a5b042f9.json",
+          "review_date": "2026-10-24",
+          "section": "Round 2 development access; task and temporal scope retained"
+        },
+        {
+          "url": "https://huggingface.co/datasets/orena-dkfz/lapchole-focus-vqa",
+          "local_source": "_collection/access_backfill_round2_20261024/sources/22b5a2c82693a2c8.json",
+          "review_date": "2026-10-24",
+          "section": "Round 2 development access; task and temporal scope retained"
+        },
+        {
+          "url": "",
+          "local_source": "latex_sourcev2/data/access_backfill_round2_20261024/user_review_summary.json",
+          "section": "User-supplied round 2 findings, summarized; independent checks stated separately"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-24",
+          "round": "2",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Ambiguous",
+        "rationale": "LapChole 审批资源与 HeiCo 公开资源并存，保留分来源准入。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/d4ce5a858ac62dbb.json",
+          "_collection/access_completion_20261025/sources/c7bca566dfd23862.json"
+        ]
+      }
+    },
+    "review_coding": {
+      "development_access": "Ambiguous",
+      "data_model_flow": "hybrid",
+      "task_families": [
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "VQA / multimodal QA"
+      ],
+      "emerging_objectives": [
+        "VLM"
+      ],
+      "previous_task_families": [
+        "VQA / multimodal QA"
+      ],
+      "previous_emerging_objectives": [
+        "VLM"
+      ],
+      "task_roles": {
+        "VQA / multimodal QA": "Declared task output"
+      },
+      "note_zh": "短/长片段问答；分割、检测、跟踪用于数据标注，不是独立参赛输出；不从推理措辞或可用 RAG 增加 Reason/Agent。",
+      "foundation_model_basis": "Not coded: participant model choices or application motivation are insufficient",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://or-arena.org/",
+          "local_source": "_collection/sources_other/4126d1e519cee503.json",
+          "sha256": "cc7e0718845bceca92b0309991839d123d044e357b36de1faa7206803c79e4bd"
+        },
+        {
+          "url": "https://zenodo.org/records/19848528",
+          "local_source": "_collection/sources_other/protocol-19848528.txt",
+          "sha256": "33116237e9e4725edf3c9326df72c2b7272427306c4ca8048ad40f4282e5df72"
+        }
+      ]
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Endoscopy",
+        "Video"
+      ],
+      "harmonized_modalities": [
+        "Endoscopy"
+      ],
+      "video_format_documented": true,
+      "note": "Video retained as data-format attribute, not an acquisition modality.",
+      "sources": [
+        {
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "local_source": "_collection/sources_other/eecea60a02acc8f1.json"
+        },
+        {
+          "url": "https://or-arena.org/",
+          "local_source": "_collection/sources_other/4126d1e519cee503.json"
+        },
+        {
+          "url": "https://zenodo.org/records/19848528",
+          "local_source": "_collection/sources_other/protocol-19848528.txt"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "The 30 HeiCo videos were recorded at Heidelberg University Hospital. The test data was acquired from more than 5 centers not represented in the training data.",
+              "url": "https://zenodo.org/records/19848528",
+              "snapshot": "_collection/sources_other/protocol-19848528.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\nThe 30 HeiCo videos were recorded at Heidelberg University Hospital. The test data was acquired from more than\n5 centers not represented in the training data.",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

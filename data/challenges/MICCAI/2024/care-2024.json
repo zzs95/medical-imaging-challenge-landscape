@@ -1,0 +1,1193 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "care-2024",
+    "challenge_name": "CARE 2024",
+    "full_name": "Towards real world medical image analysis",
+    "year": 2024,
+    "event": {
+      "conference": "MICCAI 2024",
+      "event_type": "conference_challenge",
+      "official_registration_id": "MICCAI-2024-R45",
+      "official_programme_row_numbers": "44",
+      "challenge_event_date": null,
+      "location": null
+    },
+    "organizers": {
+      "institutions": [
+        "Department of Population Health, University of Oxford, Oxford, UK",
+        "Nuffield Department of Surgical Sciences, University of Oxford, Oxford, UK",
+        "School of Data Science, Fudan University, Shanghai, China",
+        "School of Imaging, Fujian Medical University, Fuzhou, China",
+        "CIC-IT 1433, INSERM, Université de Lorraine and CHRU Nancy, Nancy, France",
+        "School of Computing Sciences, University of East Anglia, Norwich, U.K",
+        "Renji Hospital, School of Medicine, Shanghai Jiao Tong UniversityShanghai, China",
+        "Department of Radiology, Zhongshan Hospital, Fudan University, Shanghai, China",
+        "Institute of Science and Technology for Brain-Inspired Intelligence, Fudan University, Shanghai, China",
+        "Shanghai Public Health Clinical Center, Fudan University,Shanghai, China",
+        "School of Electronics & Computer Science, University of Southampton, Southampton, UK",
+        "Bioengineering Department and Imperial-X, Imperial College London, London, UK",
+        "Department of College of Physics and Information Engineering Fuzhou University, Fuzhou, China",
+        "College of Physics and Information Engineering, Fuzhou University, Fuzhou, China"
+      ],
+      "registered_authors": [
+        {
+          "name": "Wu, Fuping",
+          "affiliation": "Department of Population Health, University of Oxford, Oxford, UK"
+        },
+        {
+          "name": "Gao, Shangqi",
+          "affiliation": "Nuffield Department of Surgical Sciences, University of Oxford, Oxford, UK"
+        },
+        {
+          "name": "Zhuang, Xiahai",
+          "affiliation": "School of Data Science, Fudan University, Shanghai, China"
+        },
+        {
+          "name": "Ding, Wangbin",
+          "affiliation": "School of Imaging, Fujian Medical University, Fuzhou, China"
+        },
+        {
+          "name": "Wang, Sihan",
+          "affiliation": "School of Data Science, Fudan University, Shanghai, China"
+        },
+        {
+          "name": "Odille, Freddy",
+          "affiliation": "CIC-IT 1433, INSERM, Université de Lorraine and CHRU Nancy, Nancy, France"
+        },
+        {
+          "name": "Chen, Bailiang",
+          "affiliation": "CIC-IT 1433, INSERM, Université de Lorraine and CHRU Nancy, Nancy, France"
+        },
+        {
+          "name": "Ma, Yingliang",
+          "affiliation": "School of Computing Sciences, University of East Anglia, Norwich, U.K"
+        },
+        {
+          "name": "Wu, Lianming",
+          "affiliation": "Renji Hospital, School of Medicine, Shanghai Jiao Tong UniversityShanghai, China"
+        },
+        {
+          "name": "Yang, Shan",
+          "affiliation": "Department of Radiology, Zhongshan Hospital, Fudan University, Shanghai, China"
+        },
+        {
+          "name": "Chen, Yinyin",
+          "affiliation": "Department of Radiology, Zhongshan Hospital, Fudan University, Shanghai, China"
+        },
+        {
+          "name": "Liu, Jiyao",
+          "affiliation": "Institute of Science and Technology for Brain-Inspired Intelligence, Fudan University, Shanghai, China"
+        },
+        {
+          "name": "Shi, Nannan",
+          "affiliation": "Shanghai Public Health Clinical Center, Fudan University,Shanghai, China"
+        },
+        {
+          "name": "Gao, Zheyao",
+          "affiliation": "School of Data Science, Fudan University, Shanghai, China"
+        },
+        {
+          "name": "Li, Yuxin",
+          "affiliation": "School of Data Science, Fudan University, Shanghai, China"
+        },
+        {
+          "name": "Shi, Yuxin",
+          "affiliation": "Shanghai Public Health Clinical Center, Fudan University,Shanghai, China"
+        },
+        {
+          "name": "Sheng, Xicheng",
+          "affiliation": "School of Data Science, Fudan University, Shanghai, China"
+        },
+        {
+          "name": "Chen, Yiming",
+          "affiliation": "School of Data Science, Fudan University, Shanghai, China"
+        },
+        {
+          "name": "Li, Lei",
+          "affiliation": "School of Electronics & Computer Science, University of Southampton, Southampton, UK"
+        },
+        {
+          "name": "Yang, Guang",
+          "affiliation": "Bioengineering Department and Imperial-X, Imperial College London, London, UK"
+        },
+        {
+          "name": "Lin, Xingtao",
+          "affiliation": "Department of College of Physics and Information Engineering Fuzhou University, Fuzhou, China"
+        },
+        {
+          "name": "Huang, Liqin",
+          "affiliation": "College of Physics and Information Engineering, Fuzhou University, Fuzhou, China"
+        },
+        {
+          "name": "Zhuang, Xiahai",
+          "affiliation": "School of Data Science, Fudan University, Shanghai, China"
+        }
+      ],
+      "international": null,
+      "evidence_scope": "Registration metadata; task-specific organizer lists are preserved in the protocol."
+    },
+    "clinical_domain": {
+      "modality": [
+        "MRI",
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Heart",
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Myocardium",
+        "Left atrium",
+        "Heart substructures",
+        "Liver"
+      ],
+      "diseases": [
+        "Myocardial infarction",
+        "Atrial fibrillation",
+        "Valvular and congenital heart disease",
+        "Liver fibrosis"
+      ],
+      "clinical_context": "Disease context explicitly described in the task or challenge cohort."
+    },
+    "task_profile": {
+      "primary_task_family": "Multiple / composite",
+      "secondary_task_families": [
+        "Registration",
+        "Quantification",
+        "Classification"
+      ],
+      "task_families": [
+        "Classification",
+        "Quantification / measurement",
+        "Registration",
+        "Segmentation"
+      ],
+      "coding": "multi-label",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Transferring Foundation Models for Multi-continent Real-World Medical Image Analysis",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Myocardial Pathology Segmentation",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation",
+            "Registration",
+            "Quantification"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 2
+          }
+        },
+        {
+          "task_id": "task3",
+          "official_name": "Liver Fibrosis Quantification and Analysis",
+          "task_family": "Classification",
+          "task_families": [
+            "Classification",
+            "Segmentation",
+            "Registration"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 3
+          }
+        },
+        {
+          "task_id": "task4",
+          "official_name": "Whole Heart Segmentation",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 4
+          }
+        },
+        {
+          "task_id": "task5",
+          "official_name": "Left Atrial and Scar Quantification & Segmentation",
+          "task_family": "Segmentation",
+          "task_families": [
+            "Segmentation",
+            "Quantification"
+          ],
+          "task_subtype": null,
+          "input": null,
+          "output": null,
+          "granularity": null,
+          "clinical_goal": null,
+          "protocol_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Task description",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 5
+          }
+        }
+      ],
+      "task_role_scope": {
+        "Classification": "Declared task output",
+        "Quantification / measurement": "Declared task output",
+        "Registration": "Declared supporting task in registered design",
+        "Segmentation": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": true,
+      "detection": false,
+      "classification": true,
+      "localization": false,
+      "registration": true,
+      "reconstruction": false,
+      "synthesis": false,
+      "enhancement": false,
+      "prognosis": false,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.11046754",
+        "section": "Target entity(ies)",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf"
+      }
+    },
+    "dataset": {
+      "modalities": [
+        "MRI",
+        "CT"
+      ],
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "multi_center": null,
+      "center_count": null,
+      "source_type": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.11046754",
+        "section": "Data source(s); Training and test case characteristics",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf"
+      },
+      "structured_quantity_extraction_status": "Not yet harmonized; edition-specific descriptions retained in protocol."
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Account registration",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "CC BY-NC-SA. 当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "access_after_challenge": null,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.11046754",
+        "section": "Data usage agreement",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "access_evidence": "resource_protocol_review.development_access",
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": null,
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": null,
+        "server_side_inference": null
+      },
+      "external_data": {
+        "allowed": null
+      },
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.11046754",
+        "section": "Participation policies; Submission method",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf"
+      },
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "platform": "Organizer-run evaluation portal",
+      "hidden_test_set": null,
+      "online_evaluation": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 1
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 1
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nDice Similarity Coefficient (DSC); Average Surface Distance (ASD); Hausdorff Distance (HD).\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nFor segmentation and quantification:\nDSC is well-suited for assessing the overlap or agreement between the predicted segmentation and the ground\n\n\n\n\n\f                                      Towards real world medical image analysis\n\ntruth, making it particularly useful when the regions of interest in medical images may partially overlap.\nBoth DSC and HD provide quantitative measures of segmentation accuracy, allowing for objective evaluation of\nsegmentation algorithms. DSC quantifies the degree of overlap, while HD measures the maximum distance\nbetween two sets, indicating the degree of boundary mismatch.\nASD specifically focuses on measuring the average distance between the surfaces of the predicted segmentation\nand the ground truth and is sensitive to errors near the boundaries of segmented regions.\nFor classification, AUC assesses the model's ability to distinguish between positive and negative instances across\nvarious threshold values. Accuracy is a straightforward metric that measures the proportion of correctly classified\ninstances out of the total.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\n***(Update)***\nThe average of metrics, i.e., Dice Similarity Coefficient (DSC); Average Surface Distance (ASD); Hausdorff Distance\n(HD) is utilized to range performance.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nOnly complete submissions are evaluated.\n\nc) Justify why the described ranking scheme(s) was/were used.\n\n***(Update)We will set different awards for each task, i.e., best performance and best paper. Specifically, the best\nperformance award only takes the quantitative results of participants into account, which is computed by\naveraging multiple metrics described in each track, while the best paper will be awarded based on the average of\npaper scores evaluated by reviewers.***"
+        },
+        {
+          "task_id": "task2",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 2
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 2
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nDice Similarity Coefficient (DSC), Hausdorff Distance (HD), Average Surface Distance (ASD);\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nSame as above.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\n***(Update)***\nThe average of metrics, i.e., Dice Similarity Coefficient (DSC), Hausdorff Distance (HD), and Average Surface\nDistance (ASD) is utilized to range performance.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSame as above\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nSame as above."
+        },
+        {
+          "task_id": "task3",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 3
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 3
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nClassification: Area under curve (AUC); Accuracy;\nSegmentation: Dice Similarity Coefficient (DSC), Hausdorff Distance\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nSame as above.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\n***(Update)***\nThe performance of classification and segmentation is ranged separately.\nFor classification, the average of metrics, i.e., Area under curve (AUC) and accuracy; is utilized to range\nperformance.\nFor segmentation, the average of metrics, i.e., Dice Similarity Coefficient (DSC) and Hausdorff Distance is utilized\nto range performance.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSame as above\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nSame as above."
+        },
+        {
+          "task_id": "task4",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 4
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 4
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nDice Similarity Coefficient (DSC), Hausdorff Distance (HD), Average Surface Distance (ASD).\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nSame as above.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\n***(Update)***\nThe average of metrics, i.e., Dice Similarity Coefficient (DSC), Hausdorff Distance (HD), and Average Surface\nDistance (ASD) is utilized to range performance.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSame as above\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nSame as above."
+        },
+        {
+          "task_id": "task5",
+          "metrics": null,
+          "ranking": null,
+          "metrics_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Metric(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 5
+          },
+          "ranking_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Ranking method(s)",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 5
+          },
+          "registered_metrics_text": "a) Define the metric(s) to assess a property of an algorithm. These metrics should reflect the desired algorithm\nproperties described in assessment aim(s) (see above). State which metric(s) were used to compute the ranking(s) (if\nany).\n\n  • Example 1: Dice Similarity Coefficient (DSC)\n\n  • Example 2: Area under curve (AUC)\n\nDice Similarity Coefficient (DSC); Average Surface Distance (ASD); Hausdorff Distance (HD).\n\nb) Justify why the metric(s) was/were chosen, preferably with reference to the biomedical application.\n\nSame as above.",
+          "registered_ranking_text": "a) Describe the method used to compute a performance rank for all submitted algorithms based on the generated\nmetric results on the test cases. Typically the text will describe how results obtained per case and metric are\naggregated to arrive at a final score/ranking.\n\n***(Update)***\nThe average of metrics, i.e., Dice Similarity Coefficient (DSC); Average Surface Distance (ASD); Hausdorff Distance\n(HD) is utilized to range performance.\n\nb) Describe the method(s) used to manage submissions with missing results on test cases.\n\nSame as above\n\nc) Justify why the described ranking scheme(s) was/were used.\n\nSame as above."
+        }
+      ],
+      "execution_evidence_scope": "Documented submission protocol; not an independent audit of runtime infrastructure."
+    },
+    "submission": {
+      "submission_type": "Prediction files (validation); Docker containers (final testing)",
+      "platform": "Organizer-run evaluation portal",
+      "registered_task_submissions": [
+        {
+          "task_id": "task1",
+          "protocol_description": "Algorithm output may be evaluated online or be sent by e-mail. Similar to LAScarQS2022, we established an online evaluation platform to support outputs online evaluation.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 1
+          }
+        },
+        {
+          "task_id": "task2",
+          "protocol_description": "Same as above.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 2
+          }
+        },
+        {
+          "task_id": "task3",
+          "protocol_description": "Same as above.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 3
+          }
+        },
+        {
+          "task_id": "task4",
+          "protocol_description": "Same as above.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 4
+          }
+        },
+        {
+          "task_id": "task5",
+          "protocol_description": "Same as above.",
+          "source_reference": {
+            "source_url": "https://doi.org/10.5281/zenodo.11046754",
+            "section": "Submission method",
+            "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+            "registered_task_index": 5
+          }
+        }
+      ],
+      "submission_evidence_status": "Updated official 2024 instructions supersede registered proposal for Track 1; other task protocol details retained.",
+      "additional_materials": [],
+      "runtime_limits": null,
+      "submission_limits": null,
+      "format_by_task_or_phase": [
+        {
+          "task": "TFM4MedIA / Track 1",
+          "phase": "Validation",
+          "artifact": "NIfTI prediction files"
+        },
+        {
+          "task": "TFM4MedIA / Track 1",
+          "phase": "Final test",
+          "artifact": "Docker model",
+          "execution": "Organizer executes on unseen test data"
+        }
+      ],
+      "updated_official_protocol_url": "https://www.zmic.org.cn/care_2024/track1/"
+    },
+    "schedule": {
+      "edition_year": 2024,
+      "protocol_reference": {
+        "source_url": "https://doi.org/10.5281/zenodo.11046754",
+        "section": "Challenge schedule",
+        "local_protocol": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf"
+      }
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "results_publication_verified": null,
+      "registration_doi": "10.5281/zenodo.11046754"
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_teams": null,
+      "teams_with_submission": null,
+      "finalist_teams": null,
+      "submissions": null,
+      "statistics_snapshot_date": null
+    },
+    "links": {
+      "official_website": "http://www.zmic.org.cn/care_2024/",
+      "registration": "https://doi.org/10.5281/zenodo.11046754",
+      "official_registry": "https://miccai.org/sig/sig-challenges/",
+      "official_conference_programme": "https://conferences.miccai.org/2024/en/challenges.asp"
+    },
+    "notes": [
+      "Edition-specific gap-fill from the MICCAI official registry and registered protocol; no later-edition facts were copied."
+    ],
+    "provenance": {
+      "last_verified": "2026-10-24",
+      "sources": [
+        {
+          "type": "Official MICCAI registered-challenge list",
+          "url": "https://miccai.org/sig/sig-challenges/",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/society_challenges.html",
+          "supports": [
+            "identity",
+            "edition year",
+            "registration DOI"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official registered challenge protocol",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "resolved_record_id": 11046755,
+          "local_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+          "text_snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.txt",
+          "supports": [
+            "task definitions",
+            "modalities",
+            "submission protocol",
+            "metrics and ranking design"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official annual conference programme",
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_snapshot": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html",
+          "supports": [
+            "conference affiliation"
+          ],
+          "retrieved_on": "2026-10-24"
+        },
+        {
+          "type": "Official event link from annual programme",
+          "url": "http://www.zmic.org.cn/care_2024/",
+          "local_snapshot": "_collection/miccai_gapfill_20261024/sources/574b6518ed22e07d.json",
+          "http_status": 200,
+          "supports": [
+            "linked website; edition applicability must be checked before using mutable content"
+          ],
+          "retrieved_on": "2026-10-24"
+        }
+      ],
+      "collection_batch": "miccai_gapfill_20261024",
+      "unresolved_fields": [
+        "harmonized dataset quantities",
+        "administrative data access",
+        "post-challenge availability",
+        "comparable active-team counts"
+      ],
+      "protocol_extraction_path": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json"
+    },
+    "record_relationships": {
+      "analytical_unit": "annual_edition",
+      "parent_challenge_id": null,
+      "child_challenge_ids": [],
+      "registration_aliases": [
+        "CARE"
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification",
+        "Quantification / measurement",
+        "Registration",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "basis": "Organizer-defined tasks; participant model choice alone does not define an emerging objective.",
+      "development_access": "Account registration",
+      "data_model_flow": "hybrid",
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "assessment_evidence": {
+      "identity_status": "Official edition registration verified",
+      "conference_programme_entry": true,
+      "completion_status": "Not independently recoded in this gap-fill",
+      "basis": "This record supplements source coverage; final ranks and capability-level outcomes are not conditions for coding the registered design."
+    },
+    "current_inclusion_decision": {
+      "analysis_include": true,
+      "decision_scope": "Expanded coverage inventory; not yet part of the frozen 216-unit manuscript snapshot.",
+      "decision_date": "2026-10-24",
+      "reason": "Official medical/biomedical imaging competition edition in 2022–2024."
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-24",
+      "scope": "Development-data access and whole-competition data/model flow; edition-specific protocol coding",
+      "development_access": {
+        "category": "Account registration",
+        "state": "Documented and classifiable",
+        "rationale": "The official 2024 track page links registration to obtaining dataset access; an evaluation account is assigned after registration."
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "The updated official 2024 track instructions supersede the registration proposal: validation predictions are uploaded, while test images remain unseen and Docker models are submitted for organizer execution."
+      },
+      "sources": [
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Algorithm output may be evaluated online or be sent by e-mail. Similar to LAScarQS2022, we established an online evaluation platform to "
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Training data release: April 1st, 2024 ***(Updata)Validation evaluation: May 1st, 2024 Test data evaluation: July 1st, 2024*** Submission deadline: July 15th, 2024 Notification of acceptance: July 23rd, 2024 Workshop camera ready: July 31st, 2024 Workshop date: (TBA) Towards real world medical image analysis"
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": ""
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Same as above. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final re"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Same as above."
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": ""
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Same as above. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final re"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Same as above."
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": ""
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": " used for result submission. Preferably, provide a link to the submission instructions. Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Same as above. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final re"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Same as above."
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": "of training, validation and test cases was chosen. We introduce diverse new data to enrich the open-access dataset released in MM-WHS challenge 2017. For previously available data, we keep the original split. For new CT data, we assign images to training and validation sets. For new MRI data, we assign images from one center to training and validation sets, and the other to the test set. This approach n"
+        },
+        {
+          "section": "Data usage agreement",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": ""
+        },
+        {
+          "section": "Submission method",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": "rovide a link to the submission instructions. Towards real world medical image analysis Examples: • Docker container on the Synapse platform. Link to submission instructions: <URL> • Algorithm output was sent to organizers via e-mail. Submission instructions were sent by e-mail. Same as above. b) Provide information on the possibility for participating teams to evaluate their algorithms before submitting final re"
+        },
+        {
+          "section": "Challenge schedule",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": "allenge. Preferably, this should include • the release date(s) of the training cases (if any) • the registration date/period • the release date(s) of the test cases and validation cases (if any) • the submission date(s) • associated workshop days (if any) • the release date(s) of the results Same as above."
+        },
+        {
+          "section": "Training and test case characteristics",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "excerpt": "stage, to test the model generalizability. 5.In this task, we include more cases to enrich the open-access dataset released in LAScarQS2022. Addition of new data to the training set enables consistent benchmark for longitudinal analysis, allowing for a precise evaluation of how emerging technologies and more diverse training data influence the evolution and performance of LA scar quantification algorith"
+        },
+        {
+          "section": "website",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/574b6518ed22e07d.json",
+          "url": "http://www.zmic.org.cn/care_2024/",
+          "excerpt": "cal image segmentation is of great values. Our Contribution In this challenge, we set up a fair and public stage for developing and validating algorithms and applications of transferring foundation models to diverse real-world medical images to address specific practical medical image analysis problems, as well as using conventional methods without pre-trained models. Datasets Four specific datasets wil"
+        },
+        {
+          "section": "Official edition data/registration instructions",
+          "local_source": "_collection/access_flow_review_20261024/sources/e1b92653c8688880.json",
+          "url": "https://www.zmic.org.cn/care_2024/track1/",
+          "excerpt": "m foundation models to be consistently effective across all tasks as well as on OOD datasets. Rules Publicly available data and pretrained model are allowed. Registration Please register here to participate in the challenge and get access to the dataset! Submission Guidance Model Submission After registration, we will assign participants an account to login into our TFM4MedIA evaluation platform . Participants can directly upload your predictions on the validation data (in nifty format) via the website. Note that evaluation of validation data will be allowed up to 10 times for each task per team. For fair comparison, the test dataset will remain unseen. Participants need to submit their docker models for testing. Paper Submission Please refer to our paper submission guidance . Docker Submission (New!!!) Since the aim of TM4MedIA is one model for all tasks, we make the name/directory/paths of a specific test task anonymous to avoid anyone using the information to select a specfiic model (e.g., nnUnet) for each test task. Therefore, we copy all test images of a specific task into [...] en apply prompts to images, the orientation of loading images should be set to axcodes=\"PLS\" . Your docker should read the input test images from the directory “:/input/images”, load the input prompts from the path “:/input/prompts.json”, and output the corresponding predictions into the directory “:/output”. The recommended structure of the directory “:/output” is :/output |-- Case ID1_pred.nii.gz |--  [...] e schedule for this track is as follows. All deadlines(DDLs) are on 23:59 in Pacific Standard Time. Training Data Release May 10, 2024 Validation Phase June 10, 2024 to July 7, 2024 (DDL) July 1, 2024 to September 25, 2024 (DDL) Test Phase July 7, 2024 to August 7, 2024 (DDL) August 15, 2024 to September 15, 2024 Abstract Submission July 15, 2024 (DDL) July 25, 2024 (DDL) August 22, 2024 (DDL) Paper Submission August  [...] ) Workshop (Half-Day) October 10, 2024 Citations Please cite these papers when you use the data for publications: @article { Wu2023SemiSL , author = {Wu, Fuping and Zhuang, Xiahai} , journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence} , title = {Minimizing Estimated Risks on Unlabeled Data: A New Formulation for Semi-Supervised Medical Image Segmentation} , year = {2023} , volume "
+        }
+      ],
+      "limitations": [
+        "Protocol coding does not assert independent observation of every server execution.",
+        "Participation registration, data-use licences and administrative data-access gates are distinct."
+      ]
+    },
+    "resource_characteristics_review": {
+      "review_date": "2026-10-25",
+      "basis": "Source-linked documentary extraction; prior human-confirmed splits retained for CIAS/GBMS",
+      "fields": {
+        "typed_size": {
+          "state": "Documented and classifiable",
+          "value": [
+            {
+              "split": "source",
+              "value": 1250,
+              "unit": "cases",
+              "scope": "Whole challenge lower bound",
+              "approximate": false,
+              "lower_bound": true
+            },
+            {
+              "split": "development",
+              "value": 280,
+              "unit": "patients",
+              "scope": "Myocardial",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 75,
+              "unit": "patients",
+              "scope": "Myocardial",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "train",
+              "value": 368,
+              "unit": "cases",
+              "scope": "Liver",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "validation",
+              "value": 30,
+              "unit": "cases",
+              "scope": "Liver",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 299,
+              "unit": "cases",
+              "scope": "Liver",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "development",
+              "value": 116,
+              "unit": "patients",
+              "scope": "Whole heart",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 96,
+              "unit": "patients",
+              "scope": "Whole heart",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 34,
+              "unit": "patients",
+              "scope": "LA scar",
+              "approximate": false,
+              "lower_bound": false
+            },
+            {
+              "split": "test",
+              "value": 64,
+              "unit": "patients",
+              "scope": "LA segmentation",
+              "approximate": false,
+              "lower_bound": false
+            }
+          ]
+        },
+        "geography": {
+          "state": "Documented and classifiable",
+          "value": {
+            "countries": [
+              "United Kingdom",
+              "France",
+              "China",
+              "United States"
+            ],
+            "reported_scope": ""
+          }
+        },
+        "centers": {
+          "state": "Documented and classifiable",
+          "value": "Multicenter"
+        },
+        "post_challenge": {
+          "state": "Not established",
+          "value": null
+        },
+        "active_teams": {
+          "state": "Not established",
+          "value": null
+        }
+      },
+      "review_note": "18 healthcare centers / 10 institutions. Source country error: Beth Israel is labeled Israel in one institution list; use explicit overall four-country statement, do not propagate conflicting label. Cohorts overlap, source lower bound not a sum.",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json"
+        },
+        {
+          "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+          "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+        },
+        {
+          "url": "http://www.zmic.org.cn/care_2024/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/574b6518ed22e07d.json"
+        },
+        {
+          "local_source": "latex_sourcev2/data/resource_audit_20261025/care-2024.json",
+          "section": "Field-level review with scoped extracts"
+        }
+      ]
+    },
+    "clinical_classification_review": {
+      "review_date": "2026-10-25",
+      "basis": "Edition-specific documentary clinical extraction; no new human-confirmation claim",
+      "fields": {
+        "body_region": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Heart",
+            "Abdomen"
+          ]
+        },
+        "disease": {
+          "state": "Documented and classifiable",
+          "value": [
+            "Cardiovascular",
+            "Congenital / developmental",
+            "Other"
+          ]
+        }
+      },
+      "organs_or_structures": [
+        "Myocardium",
+        "Left atrium",
+        "Heart substructures",
+        "Liver"
+      ],
+      "specific_diseases": [
+        "Myocardial infarction",
+        "Atrial fibrillation",
+        "Valvular and congenital heart disease",
+        "Liver fibrosis"
+      ],
+      "review_note": "Disease context explicitly described in the task or challenge cohort.",
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754"
+        },
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754"
+        },
+        {
+          "local_source": "latex_sourcev2/data/clinical_audit_20261025/care-2024.json",
+          "section": "Edition-specific clinical field audit"
+        }
+      ]
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification",
+        "Quantification / measurement",
+        "Registration",
+        "Segmentation"
+      ],
+      "emerging_objectives": [
+        "Foundation models"
+      ],
+      "previous_task_families": [
+        "Classification",
+        "Quantification / measurement",
+        "Registration",
+        "Segmentation"
+      ],
+      "previous_emerging_objectives": [
+        "Foundation models"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output",
+        "Quantification / measurement": "Declared task output",
+        "Registration": "Declared supporting task in registered design",
+        "Segmentation": "Declared task output"
+      },
+      "note_zh": "保留注册设计中的分类、分割、配准及测量；配准是声明的支持性任务，不能据此声称有独立配准榜单。Task 1 明确涉及基础模型迁移。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://doi.org/10.5281/zenodo.11046754",
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.txt",
+          "sha256": "a0f42cd935e1aa6bfd14221ac49839a5dd167a4bcc4240e456bf673e4ec3f6f9"
+        },
+        {
+          "url": "http://www.zmic.org.cn/care_2024/",
+          "local_source": "_collection/miccai_gapfill_20261024/sources/574b6518ed22e07d.json",
+          "sha256": "8d2ed27c41740953947914fdd16cc5c7abef5e6be1818c1c25fc9f2d47871022"
+        }
+      ]
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "CC BY-NC-SA"
+      ],
+      "scope": "Declared edition-specific data-use terms; task/phase distinctions retained",
+      "agreement_required": null,
+      "summary_zh": "当届提案明确列出 CC BY-NC-SA；未标明版本时不自行补写版本。",
+      "qualifications": [],
+      "scoped_terms": [
+        {
+          "scope": "Registered task/section 1",
+          "text": "CC BY-NC-SA",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.11046754"
+          }
+        },
+        {
+          "scope": "Registered task/section 2",
+          "text": "Same as above.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.11046754"
+          }
+        },
+        {
+          "scope": "Registered task/section 3",
+          "text": "Towards real world medical image analysis Same as above.",
+          "source": {
+            "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+            "url": "https://doi.org/10.5281/zenodo.11046754"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json",
+          "url": "https://doi.org/10.5281/zenodo.11046754"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "not_inferred": "No licence version, commercial permission, redistribution right, or automatic/manual access mechanism inferred from portal or download availability."
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Documented and classifiable",
+          "evidence": [
+            {
+              "kind": "Retained source-linked extraction",
+              "source_path": "MICCAI/2024/care-2024.json",
+              "source_field": "resource_characteristics_review.fields.geography",
+              "value": {
+                "countries": [
+                  "United Kingdom",
+                  "France",
+                  "China",
+                  "United States"
+                ],
+                "reported_scope": ""
+              },
+              "sources": [
+                {
+                  "url": "https://doi.org/10.5281/zenodo.11046754",
+                  "local_source": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/task_sections.json"
+                },
+                {
+                  "url": "https://conferences.miccai.org/2024/en/challenges.asp",
+                  "local_source": "latex_sourcev2/data/miccai_official_coverage_20261024/official_2024.html"
+                },
+                {
+                  "url": "http://www.zmic.org.cn/care_2024/",
+                  "local_source": "_collection/miccai_gapfill_20261024/sources/574b6518ed22e07d.json"
+                },
+                {
+                  "local_source": "latex_sourcev2/data/resource_audit_20261025/care-2024.json",
+                  "section": "Field-level review with scoped extracts"
+                }
+              ],
+              "scope": "Prior documented extraction retained; original scope and qualifications apply."
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Stated continuation policy / plan",
+              "summary": "Open call (challenge opens for new submissions after conference deadline)",
+              "url": "https://doi.org/10.5281/zenodo.11046754",
+              "snapshot": "_collection/miccai_gapfill_20261024/MICCAI-2024-R45/Towards real world medical image analysis.pdf",
+              "scope": "Edition-specific lifecycle answer: open-call continuation or a stated future release. Policy/plan coverage only, not evidence that continuing evaluation actually ran.",
+              "value": null,
+              "excerpt": "continued after the challenge has taken place.Not every challenge closes after the submission deadline (one-time Page 4 of 54 Biomedical Image Analysis ChallengeS (BIAS) Initiative Towards real world medical image analysis event). Sometimes it is possible to submit results after the deadline (open call) or the challenge is repeated with some modifications (repeated event). Examples: • One-time event with fixed conference submission deadline • Open call (challenge opens for new submissions after conference deadline) • Repeated event with annual fixed conference submission deadline Open call (challenge opens for new submissions after conference deadline) ",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported teams; phase/status retained",
+              "summary": "150 reported participating teams; retrospective 2025 proposal.",
+              "url": "https://zenodo.org/records/15045249",
+              "snapshot": "_collection/sources_other/protocol-15045249.txt",
+              "scope": "reported participating teams; retrospective 2025 proposal",
+              "value": {
+                "value": 150,
+                "unit": "teams",
+                "approximate": false
+              },
+              "excerpt": "ess the complexities of real-world medical imaging analysis. In our first edition CARE 2024, we had 150 teams participating, accepted 23 papers (9 oral presentations), and conducted over 450 online evaluations. Based on CARE 2024, we extend the challenge with the following enhan",
+              "snapshot_date": ""
+            }
+          ]
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN03",
+    "CN04"
+  ]
+}

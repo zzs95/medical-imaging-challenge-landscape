@@ -1,0 +1,620 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "multisat-2026",
+    "challenge_name": "MultiBypass Surgical Action Triplet Challenge 2026",
+    "full_name": null,
+    "year": 2026,
+    "event": {
+      "conference": "MICCAI 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      }
+    },
+    "organizers": {
+      "institutions": null,
+      "international": null
+    },
+    "clinical_domain": {
+      "modality": [
+        "Endoscopy",
+        "Video"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": [
+        "Surgical instruments",
+        "Action triplets"
+      ],
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Surgical Action Triplet Recognition",
+          "task_family": "Classification",
+          "task_subtype": null,
+          "input": [
+            "Laparoscopic gastric bypass video frames"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Instrument–verb–target surgical action triplets"
+          ],
+          "granularity": null,
+          "clinical_goal": null
+        }
+      ]
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": [
+        "Surgical instruments",
+        "Action triplets"
+      ],
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": 4,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Endoscopy",
+        "Video"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      }
+    },
+    "data_access": {
+      "is_public": null,
+      "access_status": "Ambiguous",
+      "public_download": null,
+      "hosting": null,
+      "registration_required_for_challenge_participation": null,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "preregistered_data_license": "CC BY-NC-SA",
+      "review_status": "Reviewed 2026-10-25; access completion",
+      "access_evidence": "resource_protocol_review.development_access",
+      "access_by_scope": []
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": null
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": null,
+        "server_side_inference": null,
+        "submission_artifact": null
+      },
+      "external_data": {
+        "allowed": null,
+        "disclosure_required": null,
+        "policy": null
+      },
+      "evidence_stage": "registered_design",
+      "interpretation": "Inferred from explicitly released training data and centrally run final model/container evaluation; describes registered phase design.",
+      "review_status": "Reviewed 2026-10-24",
+      "flow_evidence": "resource_protocol_review.data_model_flow"
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": null,
+      "platform": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Mean Average Precision (mAP)",
+            "Macro F1-score"
+          ],
+          "ranking": null,
+          "design_status": "Manually reviewed task-specific metrics from the official preregistered design; final operational rules may differ.",
+          "evidence_section": "TASK 1 / ASSESSMENT METHODS / Metric(s)"
+        }
+      ],
+      "cross_task_rule": null,
+      "design_document": "10.5281/zenodo.19713857"
+    },
+    "submission": {
+      "submission_type": "Docker container",
+      "platform": "Secure institutional upload",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": null,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": null
+      },
+      "submission_limits": {
+        "sanity_check_successful_submissions_per_day": null,
+        "final_submissions_per_team": null,
+        "additional_distinct_final_algorithms_possible_with_organizer_approval": null
+      },
+      "task_outputs": null,
+      "preregistered_artifact": "Docker container",
+      "platform_scope": "Institutional container transfer; the listed Seafile/S3/Dropbox options are examples, not confirmed services.",
+      "evidence_stage": "registered_design"
+    },
+    "schedule": {},
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": {
+        "workshop": null,
+        "paper_length_pages": null,
+        "proceedings": null,
+        "independent_from_challenge": null
+      }
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": null,
+      "statistics_status": null
+    },
+    "links": {
+      "official": "https://camma-public.github.io/mbt40_challenge/",
+      "grand_challenge": null,
+      "platform": null,
+      "dataset": null,
+      "github": null,
+      "challenge_paper": null
+    },
+    "notes": [
+      "Official conference program confirms the edition. Task definitions and assessment metrics are recorded from the linked preregistered design, which may differ from final operational rules.",
+      "2026-10-22: 仍待补：机构会后回顾支持活动举办，但未取得最终评分、获奖或隐藏测试证据。",
+      "2026-10-22: 最终结果新增确认：宁波诺丁汉大学官方公告MultiBypass Surgical Action Triplet Challenge 2026全球第一名；更新既有记录，不新增赛事。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-02",
+      "collection_date_format": "YYYY-MM-DD",
+      "collection_date_description": "Date challenge information was first collected from official sources; not the acquisition date of the underlying medical images.",
+      "last_verified": "2026-10-03",
+      "source_list": "challenge_list_other_platforms_22_26.json",
+      "source_index": 8,
+      "sources": [
+        {
+          "type": "official conference program",
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/eecea60a02acc8f1.json",
+          "supports": [
+            "challenge identity",
+            "event affiliation"
+          ]
+        },
+        {
+          "type": "official challenge website",
+          "url": "https://camma-public.github.io/mbt40_challenge/",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/35dc3a2e32ad5861.json",
+          "supports": [
+            "challenge context",
+            "task_profile",
+            "clinical_domain",
+            "homepage fields where stated"
+          ]
+        },
+        {
+          "type": "official preregistered challenge design",
+          "url": "https://zenodo.org/records/19713857",
+          "retrieved_on": "2026-10-02",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "supports": [
+            "clinical_domain",
+            "data_usage_mode.evidence_stage",
+            "data_usage_mode.interpretation",
+            "data_usage_mode.overall_paradigm",
+            "data_usage_mode.testing.paradigm",
+            "data_usage_mode.training.paradigm",
+            "dataset.center_count",
+            "dataset.center_type",
+            "dataset.multi_center",
+            "preregistered evaluation design",
+            "submission.evidence_stage",
+            "submission.platform",
+            "submission.platform_scope",
+            "submission.submission_type",
+            "task_profile"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://www.ihu-strasbourg.eu/miccai-2026-ihu-strasbourg-camma-surgical-ia/?lang=en",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_b244c267a6c0_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "仍待补：机构会后回顾支持活动举办，但未取得最终评分、获奖或隐藏测试证据。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://www.nottingham.edu.cn/en/press-release/news-article.aspx?id=ef1998d3-2640-42b5-85c9-16d7701d78a9&language=en-GB",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_ae8a3b373048_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "最终结果新增确认：宁波诺丁汉大学官方公告MultiBypass Surgical Action Triplet Challenge 2026全球第一名；更新既有记录，不新增赛事。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        }
+      ],
+      "collection_status": "partially_verified",
+      "unresolved_fields": [
+        "Dataset counts and split units, access conditions, final submission rules, final ranking implementation, and edition-specific participation statistics require further verification where null.",
+        "Assessment metric lists are an initial extraction and may be incomplete; bespoke metrics, subtask assignments and ranking contributions require further review."
+      ],
+      "last_updated": "2026-10-22",
+      "field_evidence": {
+        "dataset.multi_center": {
+          "source_url": "https://zenodo.org/records/19713857",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "dataset.center_type": {
+          "source_url": "https://zenodo.org/records/19713857",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Edition-specific registered design explicitly describes a multicenter dataset or named distinct source hospitals. This records design scope; it does not establish that all planned centers were used in final testing."
+        },
+        "dataset.center_count": {
+          "source_url": "https://zenodo.org/records/19713857",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered dataset explicitly comprises 40 surgical videos across four centers."
+        },
+        "submission.platform": {
+          "source_url": "https://zenodo.org/records/19713857",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered design specifies institutional Docker delivery; no commercial execution platform inferred."
+        },
+        "submission.platform_scope": {
+          "source_url": "https://zenodo.org/records/19713857",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Registered design specifies institutional Docker delivery; no commercial execution platform inferred."
+        },
+        "data_usage_mode.overall_paradigm": {
+          "source_url": "https://zenodo.org/records/19713857",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19713857",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.interpretation": {
+          "source_url": "https://zenodo.org/records/19713857",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.training.paradigm": {
+          "source_url": "https://zenodo.org/records/19713857",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "data_usage_mode.testing.paradigm": {
+          "source_url": "https://zenodo.org/records/19713857",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Phase classification inferred from this edition's explicit training release and organizer-run model/container evaluation. Design evidence is distinguished from confirmed final operation."
+        },
+        "submission.submission_type": {
+          "source_url": "https://zenodo.org/records/19713857",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Participating team will submit their Docker containers via a secure institutional submission link (e.g., Seafile/S3/Dropbox server). The details of the submission guidelines, including a Docker template with defined input/output protocols, will be provided on the website after rebuttal."
+        },
+        "submission.evidence_stage": {
+          "source_url": "https://zenodo.org/records/19713857",
+          "local_snapshot": "_collection/sources_other/protocol-19713857.txt",
+          "reviewed_on": "2026-10-03",
+          "basis": "Explicit submission artifact in the edition's registered-design answer: Participating team will submit their Docker containers via a secure institutional submission link (e.g., Seafile/S3/Dropbox server). The details of the submission guidelines, including a Docker template with defined input/output protocols, will be provided on the website after rebuttal."
+        }
+      },
+      "missing_information_review": {
+        "reviewed_on": "2026-10-03",
+        "status": "missing_fields_enriched",
+        "fields_added": [
+          "data_usage_mode.evidence_stage",
+          "data_usage_mode.interpretation",
+          "data_usage_mode.overall_paradigm",
+          "data_usage_mode.testing.paradigm",
+          "data_usage_mode.training.paradigm",
+          "dataset.center_count",
+          "dataset.center_type",
+          "dataset.multi_center",
+          "submission.evidence_stage",
+          "submission.platform",
+          "submission.platform_scope",
+          "submission.submission_type"
+        ],
+        "remaining_core_fields": [
+          "data_access.access_status",
+          "data_access.access_after_challenge",
+          "evaluation.platform",
+          "clinical_domain.organ_system",
+          "clinical_domain.diseases"
+        ],
+        "literature_search_snapshots": [
+          "_collection/verification_20261003/literature/multisat-2026.json",
+          "_collection/verification_20261003/literature_context/multisat-2026.json"
+        ],
+        "report": "_collection/verification_20261003/summary.json",
+        "qualification": "Individual source audit and literature discovery performed; all discovered papers and unresolved fields are not thereby verified."
+      },
+      "last_searched": "2026-10-03",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "仍待补：机构会后回顾支持活动举办，但未取得最终评分、获奖或隐藏测试证据。",
+          "previous_assessment": {
+            "value": "not_established",
+            "event_state": "undetermined",
+            "evidence_state": "searched_not_established",
+            "evidence_ids": [],
+            "reason": "Public application leaderboard remains a coming-soon notice; final dates and methods description alone do not confirm completed assessment."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/MICCAI/2026/multisat-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "最终结果新增确认：宁波诺丁汉大学官方公告MultiBypass Surgical Action Triplet Challenge 2026全球第一名；更新既有记录，不新增赛事。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/MICCAI/2026/multisat-2026.json"
+        }
+      ]
+    },
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "最终结果新增确认：宁波诺丁汉大学官方公告MultiBypass Surgical Action Triplet Challenge 2026全球第一名；更新既有记录，不新增赛事。",
+        "source_urls": [
+          "https://www.nottingham.edu.cn/en/press-release/news-article.aspx?id=ef1998d3-2640-42b5-85c9-16d7701d78a9&language=en-GB"
+        ],
+        "evidence_ids": [
+          "E4"
+        ],
+        "details": {
+          "award_rank": 1,
+          "team": "University of Nottingham Ningbo China team led by Xiangjian He",
+          "publication_date": "2026-10-12",
+          "quantitative_score": null
+        },
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_round2_user_20261022.txt",
+        "propagation_status": "Original JSON, audit, current CSV/Excel/reports updated; manuscript/figures/frozen release not regenerated."
+      },
+      "remaining_questions": [],
+      "basis": "最终结果新增确认：宁波诺丁汉大学官方公告MultiBypass Surgical Action Triplet Challenge 2026全球第一名；更新既有记录，不新增赛事。",
+      "evidence_type": "institutional_final_result_announcement",
+      "outcome": {
+        "award_rank": 1,
+        "team": "University of Nottingham Ningbo China team led by Xiangjian He",
+        "publication_date": "2026-10-12",
+        "quantitative_score": null
+      }
+    },
+    "resource_protocol_review": {
+      "review_date": "2026-10-25",
+      "scope": "Development-data administrative access and whole-competition data/model flow, edition-specific follow-up",
+      "development_access": {
+        "category": "Ambiguous",
+        "state": "Ambiguous",
+        "rationale": "官方 Dataset 页面源文件明确先注册并同意 DUA、再请求数据，通过 S3/Seafile/Dropbox 分发；未说明请求自动通过还是人工审批。已确认申请流程，授权机制仍待明确。",
+        "evidence_basis": "Official edition sources and explicit access procedures; temporal/platform qualifications retained",
+        "review_date": "2026-10-25",
+        "source_urls": [
+          "https://raw.githubusercontent.com/camma-public/mbt40_challenge/main/src/pages/Dataset.tsx"
+        ],
+        "access_by_scope": []
+      },
+      "data_model_flow": {
+        "category": "hybrid",
+        "state": "Documented and classifiable",
+        "rationale": "Retained previously reviewed classification; no new inference made in this follow-up."
+      },
+      "decision_history": [
+        "2026-10-25 access completion: 官方 Dataset 页面源文件明确先注册并同意 DUA、再请求数据，通过 S3/Seafile/Dropbox 分发；未说明请求自动通过还是人工审批。已确认申请流程，授权机制仍待明确。"
+      ],
+      "sources": [
+        {
+          "local_source": "latex_sourcev2/data/access_flow_audit_20261024/multisat-2026.json",
+          "url": "",
+          "section": "Field-level follow-up audit"
+        },
+        {
+          "local_source": "_collection/access_completion_20261025/sources/c8c5b68734b1c47e.json",
+          "url": "https://raw.githubusercontent.com/camma-public/mbt40_challenge/main/src/pages/Dataset.tsx",
+          "section": "Development access follow-up 2026-10-25"
+        }
+      ],
+      "limitations": [
+        "Data licences, participation registration and individual data-access approval are coded separately.",
+        "An unavailable website or HTTP error does not establish that the competition withheld data.",
+        "Protocol classification does not claim independent observation of every execution."
+      ],
+      "development_access_history": [
+        {
+          "superseded_on": "2026-10-25",
+          "record": {
+            "category": "Not established",
+            "state": "Not established",
+            "rationale": "已核对当届描述及可访问的数据/参与入口，仍未明确直接下载、账号注册或人工授权中的哪一种；许可或比赛注册本身不足以定类。"
+          }
+        }
+      ],
+      "access_followup_20261025": {
+        "status": "Reviewed",
+        "decision": "Ambiguous",
+        "rationale": "官方 Dataset 页面源文件明确先注册并同意 DUA、再请求数据，通过 S3/Seafile/Dropbox 分发；未说明请求自动通过还是人工审批。已确认申请流程，授权机制仍待明确。",
+        "attempted_sources": [
+          "_collection/access_completion_20261025/sources/35dc3a2e32ad5861.json",
+          "_collection/access_completion_20261025/sources/89620d225c4552e8.json",
+          "_collection/access_completion_20261025/sources/c8c5b68734b1c47e.json",
+          "_collection/access_completion_20261025/sources/d4ce5a858ac62dbb.json",
+          "_collection/access_completion_20261025/sources/c7bca566dfd23862.json",
+          "_collection/access_completion_20261025/sources/6c42a787f2ed4f89.json"
+        ]
+      }
+    },
+    "review_coding": {
+      "development_access": "Ambiguous",
+      "data_model_flow": "hybrid"
+    },
+    "modality_harmonization_review": {
+      "review_date": "2026-10-25",
+      "original_analysis_labels": [
+        "Endoscopy",
+        "Video"
+      ],
+      "harmonized_modalities": [
+        "Endoscopy"
+      ],
+      "video_format_documented": true,
+      "note": "Video retained as data-format attribute, not an acquisition modality.",
+      "sources": [
+        {
+          "url": "https://conferences.miccai.org/2026/en/challenges.asp",
+          "local_source": "_collection/sources_other/eecea60a02acc8f1.json"
+        },
+        {
+          "url": "https://camma-public.github.io/mbt40_challenge/",
+          "local_source": "_collection/sources_other/35dc3a2e32ad5861.json"
+        },
+        {
+          "url": "https://zenodo.org/records/19713857",
+          "local_source": "_collection/sources_other/protocol-19713857.txt"
+        }
+      ]
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Source geography / named acquisition location",
+              "summary": "Page 11 of 16 Biomedical Image Analysis ChallengeS (BIAS) Initiative MultiBypass Surgical Action Triplet Challenge 2026 Total of four following centers were selected for collecting video recordings C1. University Hospital of Strasbourg, France C2. Bern University Hospital, Bern, Switzerland C3. University Digestive Health Care Center - Clarunis, University Hospital of Basel, Basel, Switzerland C4. University Hospital of Zurich, Zurich, Switzerland",
+              "url": "https://zenodo.org/records/19713857",
+              "snapshot": "_collection/sources_other/protocol-19713857.txt",
+              "scope": "Source- or task-specific location information; not an exhaustive geographic inventory. Registered designs are statements of dataset scope, not proof of completed acquisition at every planned site.",
+              "value": null,
+              "excerpt": "Specify the center(s)/institute(s) in which the data was acquired and/or the data providing platform/source (e.g.\nprevious challenge). If this information is not provided (e.g. for anonymization reasons), specify why.\n\n\n\n\n                                                     Page 11 of 16                 Biomedical Image Analysis ChallengeS (BIAS) Initiative\n\f                                   MultiBypass Surgical Action Triplet Challenge 2026\n\nTotal of four following centers were selected for collecting video recordings\nC1. University Hospital of Strasbourg, France\nC2. Bern University Hospital, Bern, Switzerland\nC3. University Digestive Health Care Center - Clarunis, University Hospital of Basel, Basel, Switzerland\nC4. University Hospital of Zurich, Zurich, Switzerland",
+              "snapshot_date": ""
+            }
+          ]
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        }
+      }
+    }
+  },
+  "common_note_ids": [
+    "CN02",
+    "CN05"
+  ]
+}

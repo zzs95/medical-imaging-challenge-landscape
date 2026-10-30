@@ -1,0 +1,993 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "general-ct-diagnosis-2026",
+    "challenge_name": "Foundation Models for General CT Image Diagnosis",
+    "full_name": "Foundation Models for General CT Image Diagnosis",
+    "year": 2026,
+    "event": {
+      "conference": "CVPR 2026",
+      "event_type": "conference_challenge",
+      "challenge_event_date": "2026-06-03",
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": "CVPR26-FMV",
+        "relationship": "Official venue name confirmed by user and present in saved OpenReview venue heading; associated with the challenge publication/review venue.",
+        "proceedings": null
+      },
+      "official_venue_name": "CVPR26-FMV",
+      "openreview_venue_title": "CVPR 2026: Foundation Models for General CT Image Diagnosis",
+      "name_review": {
+        "reviewed_on": "2026-10-21",
+        "basis": "User explicitly confirmed CVPR26-FMV as the official name; saved OpenReview text contains the same name.",
+        "source_file": "CVPR/2026/cvpr26_fmv.txt",
+        "previous_conference_label": "CVPR 2026 - Foundation Models for Medical Vision Workshop",
+        "scope": "Naming correction only; challenge identity, track counts and event date are not changed."
+      }
+    },
+    "organizers": {
+      "institutions": [
+        "University of Toronto",
+        "University Health Network",
+        "Vector Institute",
+        "University of California, Santa Cruz"
+      ],
+      "international": true
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": null,
+      "body_region": [
+        "Chest",
+        "Abdomen"
+      ],
+      "organ_system": null,
+      "organs_or_structures": null,
+      "diseases": [
+        "COVID-19",
+        "Pulmonary nodule malignancy",
+        "Abdominal abnormalities"
+      ],
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Classification",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Linear probing",
+          "task_family": "Classification",
+          "task_subtype": "representation evaluation",
+          "input": [
+            "3D CT",
+            "Optional region masks"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Frozen foundation-model features for organizer-trained binary classifiers"
+          ],
+          "granularity": "study-level",
+          "clinical_goal": null
+        },
+        {
+          "task_id": "task2",
+          "official_name": "Embedding aggregation optimization",
+          "task_family": "Classification",
+          "task_subtype": "foundation-model adaptation",
+          "input": [
+            "3D CT",
+            "Designated pretrained foundation-model weights"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "Features, custom classification head and adaptation script"
+          ],
+          "granularity": "study-level",
+          "clinical_goal": null
+        }
+      ],
+      "learning_paradigms": [
+        "Foundation models",
+        "Linear probing",
+        "Vision-language model adaptation"
+      ],
+      "competition_tracks": [
+        "Full-data linear probing",
+        "10% coreset linear probing",
+        "Vision-only embedding aggregation",
+        "Vision-language embedding aggregation"
+      ],
+      "vision_language_scope_review": {
+        "reviewed_on": "2026-10-21",
+        "declared_direction": "Vision-language model embedding adaptation for downstream CT classification",
+        "participant_method_evidence": "MEDA local manuscript confirms validation evaluation of Merlin-derived representations. Its exact competition track is not explicitly identified in the PDF.",
+        "final_track_assessment": "not_established",
+        "separate_capability_question": "Explicit image-language interaction is a separate endpoint description, not a prerequisite for recognizing a vision-language-model adaptation direction.",
+        "remaining_check": "Nonblocking documentation gap: final results for the VL model-adaptation track. Task classification is resolved; no dialogue/report-generation endpoint is claimed.",
+        "statistics_scope": "Record-level clarification only; existing manuscript-wide taxonomy and aggregate objective counts have not been changed."
+      },
+      "task_scope_review": {
+        "reviewed_on": "2026-10-21",
+        "status": "task_classification_resolved",
+        "primary_task": "CT diagnosis / binary classification",
+        "foundation_model_objective": "Representation generalization and adaptation",
+        "evaluation_methods": [
+          "Linear probing",
+          "Embedding aggregation optimization"
+        ],
+        "visual_question_answering": false,
+        "dialogue": false,
+        "report_generation": false,
+        "image_text_generation": false,
+        "vision_language_model_adaptation_track": true,
+        "scope": "False flags apply to requested challenge tasks, not all capabilities of submitted pretrained models. The official Vision-language track adapts Merlin or Pillar-0 for classification.",
+        "basis": "Retained official platform overview explicitly states all tasks are binary classifications and lists the LP and EAO tracks; user confirms this classification.",
+        "source_url": "https://www.codabench.org/competitions/12650/",
+        "source_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/ct12650.json",
+        "nonblocking_evidence_gap": "Final result of the specific VL adaptation track is not established in reviewed sources; whole-event completion remains confirmed.",
+        "aggregate_status": "No manuscript-wide taxonomy or aggregate counts regenerated."
+      },
+      "task_families": [
+        "Classification"
+      ],
+      "coding": "multi-label",
+      "task_role_scope": {
+        "Classification": "Declared task output"
+      }
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": true,
+      "localization": null,
+      "registration": null,
+      "reconstruction": null,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": false,
+      "visual_question_answering": false,
+      "reasoning": null,
+      "agent": null,
+      "dialogue": false,
+      "image_text_generation": false
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": null,
+      "routine_clinical_practice": null,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": null,
+      "multi_center": null,
+      "international": null,
+      "center_count": null,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": {
+          "value": 10000,
+          "unit": "CT scans",
+          "approximate": false,
+          "lower_bound": true,
+          "raw_text": "10,000+ CT scans"
+        },
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "CT"
+      ],
+      "data_components": null,
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "downstream_datasets": [
+        "AMOS abdominal classification",
+        "COVID-19 CT",
+        "LUNA25 lung-nodule malignancy"
+      ],
+      "downstream_binary_task_count": 17
+    },
+    "data_access": {
+      "is_public": false,
+      "access_status": "registration-and-approval-required",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": "Official downstream dataset card; component-specific terms; Original-source licences; attribution required. 官方CodaBench记录直接链接该数据仓库。数据卡明确须保留原始来源署名并分别遵守COVID-CT、LUNA25、AMOS等来源条款；当前卡还列STOIC2021及其CC BY-NC 4.0。",
+      "access_after_challenge": null,
+      "license_review_status": "Documented and classifiable",
+      "license_evidence": "data_license_review"
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Declared approved public resources only. Coreset LP requires pretraining from scratch; EAO restricts participants to designated weights per track."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Codabench validation; organizer-run Docker test",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "Balanced accuracy",
+            "AUROC",
+            "Runtime"
+          ],
+          "ranking": "Average task-wise metric ranks; runtime is ranked once."
+        },
+        {
+          "task_id": "task2",
+          "metrics": [
+            "Balanced accuracy",
+            "AUROC",
+            "Runtime"
+          ],
+          "ranking": "Average task-wise metric ranks; runtime is ranked once."
+        }
+      ],
+      "cross_task_rule": null,
+      "validation_ranking": "Balanced accuracy only; AUROC is not included on the validation leaderboard."
+    },
+    "submission": {
+      "submission_type": "Validation predictions; final feature-extraction Docker and adaptation scripts",
+      "platform": "Codabench and organizer email",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": null,
+        "max_ram_gb": 32,
+        "reserved_ram_gb": null,
+        "gpu": "NVIDIA RTX 4090",
+        "gpu_vram_gb": null,
+        "max_processing_time_per_case_seconds": 40
+      },
+      "submission_limits": {
+        "final_successful_submissions_per_track": 1
+      },
+      "task_outputs": null
+    },
+    "schedule": {
+      "opening": "2026-02-01",
+      "validation_start": "2026-02-15",
+      "validation_end": "2026-05-10",
+      "final_submission_start": "2026-05-10",
+      "final_submission_end": "2026-05-15",
+      "paper_submission_end": "2026-06-30"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": null,
+      "top_teams_invited_to_challenge_manuscript": null,
+      "separate_participant_publication_allowed_without_embargo": null,
+      "optional_workshop_submission": null,
+      "participant_reports": [
+        {
+          "title": "How well can a frozen CT foundation model diagnose disease from a 3D scan?",
+          "url": "https://kaiko.ai/insights-hub/cvpr-2026-ct-fm-challenge/",
+          "date": "2026-07-22",
+          "type": "technical article; not an organizer challenge report",
+          "track_scope": "Task 1, track 1"
+        },
+        {
+          "title": "Disease-Adaptive Multi-Representation Fusion for General CT Diagnosis",
+          "local_pdf": "CVPR/2026/15_Disease_Adaptive_Multi_Repr.pdf",
+          "type": "local participant manuscript",
+          "track_scope": "Vision-Only Embedding Aggregation Optimization",
+          "publication_status": "not independently verified"
+        },
+        {
+          "title": "MEDA: Metric-Conditioned Decision Adaptation for Multi-Target CT Recognition",
+          "local_pdf": "CVPR/2026/10_MEDA_Metric_Conditioned_Dec.pdf",
+          "type": "local manuscript",
+          "publication_status": "not independently verified",
+          "track_scope": "not explicitly stated; CT classification adaptation"
+        }
+      ]
+    },
+    "participation_statistics": {
+      "registered_participants": null,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null
+      },
+      "statistics_snapshot_date": "2026-10-03",
+      "statistics_status": "current platform snapshot",
+      "notes": [
+        "Participant accounts are not teams. Cumulative platform counts are not treated as edition-specific final participation."
+      ],
+      "platform_snapshot": {
+        "participant_accounts": 148,
+        "submission_count": 203,
+        "scope": "Current competition platform activity, not final team participation."
+      },
+      "source_reported_counts": [
+        {
+          "source_url": "https://kaiko.ai/insights-hub/cvpr-2026-ct-fm-challenge/",
+          "publication_date": "2026-07-22",
+          "reported_participants": 139,
+          "open_validation_submissions": 209,
+          "scope": "Participant article describes challenge context; participant unit and exact track coverage are not sufficiently specified for active-team statistics.",
+          "interpretation": "Preserved separately from the earlier 148-account/203-submission platform snapshot; differing scope or dates are not reconciled by assumption."
+        }
+      ]
+    },
+    "links": {
+      "official": "https://www.codabench.org/competitions/12650/",
+      "grand_challenge": null,
+      "platform": "https://www.codabench.org/competitions/12650/",
+      "dataset": "https://huggingface.co/datasets/kmin06/CVPR26-3DCTFMCompetition",
+      "github": "https://github.com/kmin940/CVPR26-3DCTFMCompetition",
+      "challenge_paper": null
+    },
+    "notes": [
+      "Vision-language refers to the pretrained model/adaptation track, not a requirement to produce clinical reasoning or reports.",
+      "The full-data and coreset tracks use overlapping training resources.",
+      "2026-10-21: kaiko/NKI report concerns Task 1, track 1. Vision-language-aligned pretraining in this entry does not establish a separate image-language task assessment. Article participation/submission counts are retained with their source scope.",
+      "2026-10-22: 维持赛事已有结果；FlexiCT奖项未独立对应VLM适配赛道，不新增VQA、对话或报告生成标签。",
+      "2026-10-22: FlexiCT第二名不独立对应VLM适配赛道；继续不新增VQA、对话、报告生成标签。"
+    ],
+    "provenance": {
+      "collection_date": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "collection_date_definition": "Date of web and literature metadata collection, not medical-image acquisition.",
+      "source_list": "challenge_list_other_platforms_22_26_v4.json",
+      "source_list_index": 73,
+      "source_list_index_base": 1,
+      "collection_status": "partially_verified",
+      "sources": [
+        {
+          "type": "Official organizer source",
+          "url": "https://www.codabench.org/api/competitions/12650/?format=api",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/367c596f7e432ba8.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule",
+            "participation_statistics.platform_snapshot",
+            "organizers"
+          ],
+          "snapshot_sha256": "0307cb3a9d4e9e7ecfa9a571df364b1da7584fa7e0d8bfabdcdec0c848e33fe5"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://fmv-cvpr26workshop.github.io/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/0a836807274c47c8.json",
+          "supports": [
+            "event",
+            "organizers"
+          ],
+          "snapshot_sha256": "2b6745b44403364b185c5298c97ba4ef2f28a22adcb8a6db2c56275f7a0e04ad"
+        },
+        {
+          "type": "participant-authored technical article",
+          "url": "https://kaiko.ai/insights-hub/cvpr-2026-ct-fm-challenge/",
+          "retrieved_on": "2026-10-21",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/general_ct_kaiko_followup_20261021.json",
+          "supports": [
+            "participant_method_evidence",
+            "publication.participant_reports",
+            "participation_statistics.source_reported_counts"
+          ]
+        },
+        {
+          "type": "user-provided local participant manuscript",
+          "local_document": "CVPR/2026/15_Disease_Adaptive_Multi_Repr.pdf",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/general_ct_damf_local_20261021.json",
+          "reviewed_on": "2026-10-21",
+          "supports": [
+            "participant_method_evidence",
+            "publication.participant_reports"
+          ]
+        },
+        {
+          "type": "reviewer descriptions in user-pasted OpenReview activity feed",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/general_ct_openreview_user_paste_20261021.json",
+          "reviewed_on": "2026-10-21",
+          "supports": [
+            "literature_review_leads"
+          ],
+          "qualification": "Indirect discovery evidence only; no independent OpenReview retrieval or paper verification."
+        },
+        {
+          "type": "user-provided local manuscript; full text inspected",
+          "local_document": "CVPR/2026/10_MEDA_Metric_Conditioned_Dec.pdf",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/general_ct_meda_local_20261021.json",
+          "reviewed_on": "2026-10-21",
+          "supports": [
+            "participant_method_evidence",
+            "literature_review_leads"
+          ]
+        },
+        {
+          "type": "user-confirmed official venue name with user-saved OpenReview text",
+          "local_document": "CVPR/2026/cvpr26_fmv.txt",
+          "reviewed_on": "2026-10-21",
+          "supports": [
+            "event.official_venue_name",
+            "event.workshop.name",
+            "event.openreview_venue_title"
+          ]
+        },
+        {
+          "type": "user-saved OpenReview venue text; not newly fetched online",
+          "local_document": "CVPR/2026/cvpr26_fmv2.txt",
+          "reviewed_on": "2026-10-21",
+          "supports": [
+            "event.official_venue_name"
+          ],
+          "qualification": "Same substantive recent-activity text; only back-navigation label and appended venue title differ. No additional track-specific final-result evidence."
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://github.com/ricklisz/FlexiCT/blob/main/readme.md",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_followup_5b44acab11b7_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "retrieval_scope": "Direct public HTTP request",
+          "source_accessible": true,
+          "supports": [
+            "维持赛事已有结果；FlexiCT奖项未独立对应VLM适配赛道，不新增VQA、对话或报告生成标签。"
+          ]
+        },
+        {
+          "type": "documentary follow-up source",
+          "url": "https://github.com/ricklisz/FlexiCT/blob/main/readme.md",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/round2_5b44acab11b7_20261022.json",
+          "reviewed_on": "2026-10-22",
+          "supports": [
+            "FlexiCT第二名不独立对应VLM适配赛道；继续不新增VQA、对话、报告生成标签。"
+          ],
+          "retrieval_scope": "Direct public source retrieval; access status retained in snapshot"
+        }
+      ],
+      "unresolved_fields": [
+        "dataset.population.patient_count",
+        "dataset.center_count",
+        "dataset.collection_period.start_year",
+        "data_access.license_or_terms",
+        "participation_statistics.registered_teams"
+      ],
+      "verification_policy": "Only edition-specific official evidence populates facts; unknown values remain null.",
+      "targeted_review_history": [
+        {
+          "reviewed_on": "2026-10-21",
+          "result": "2026 linear-probing method/results corroborated by participant account. Separate VLM-track coding question remains open; no aggregate objective counts changed."
+        },
+        {
+          "reviewed_on": "2026-10-21",
+          "result": "Local DAMF manuscript identifies the vision-only Task 2 track and validation-only results. No change to completed-event or VLM-specific assessment coding."
+        },
+        {
+          "reviewed_on": "2026-10-21",
+          "result": "MEDA/Submission10 identified as a candidate Merlin-adaptation report from pasted reviews. Explicit VLM-track assignment and assessed image-language endpoint remain unverified. Other workshop segmentation reports are not assigned to this competition by venue heading alone."
+        },
+        {
+          "reviewed_on": "2026-10-21",
+          "result": "MEDA full text verifies Merlin pretraining provenance and downstream validation classification, not a text-conditioned endpoint or final VLM-track result. No change to objective-assessment confirmation."
+        },
+        {
+          "reviewed_on": "2026-10-21",
+          "result": "Recorded official venue name CVPR26-FMV on explicit user confirmation, separated from the descriptive challenge title."
+        },
+        {
+          "reviewed_on": "2026-10-21",
+          "source_file": "CVPR/2026/cvpr26_fmv2.txt",
+          "sha256": "4eb8b162490531369b3c0faee610689c0e4376dea6245813486dc527cbd25671",
+          "comparison_file": "CVPR/2026/cvpr26_fmv.txt",
+          "comparison_result": "Same substantive recent-activity text; only back-navigation label and appended venue title differ. No additional track-specific final-result evidence.",
+          "source_type": "user-saved OpenReview venue text; not newly fetched online"
+        },
+        {
+          "reviewed_on": "2026-10-21",
+          "status": "task_classification_resolved",
+          "primary_task": "CT diagnosis / binary classification",
+          "foundation_model_objective": "Representation generalization and adaptation",
+          "evaluation_methods": [
+            "Linear probing",
+            "Embedding aggregation optimization"
+          ],
+          "visual_question_answering": false,
+          "dialogue": false,
+          "report_generation": false,
+          "image_text_generation": false,
+          "vision_language_model_adaptation_track": true,
+          "scope": "False flags apply to requested challenge tasks, not all capabilities of submitted pretrained models. The official Vision-language track adapts Merlin or Pillar-0 for classification.",
+          "basis": "Retained official platform overview explicitly states all tasks are binary classifications and lists the LP and EAO tracks; user confirms this classification.",
+          "source_url": "https://www.codabench.org/competitions/12650/",
+          "source_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/ct12650.json",
+          "nonblocking_evidence_gap": "Final result of the specific VL adaptation track is not established in reviewed sources; whole-event completion remains confirmed.",
+          "aggregate_status": "No manuscript-wide taxonomy or aggregate counts regenerated."
+        },
+        {
+          "date": "2026-10-22",
+          "scope": "Batch documentary outcome follow-up",
+          "summary": "维持赛事已有结果；FlexiCT奖项未独立对应VLM适配赛道，不新增VQA、对话或报告生成标签。",
+          "previous_assessment": {
+            "value": "confirmed",
+            "event_state": "completed",
+            "evidence_state": "documented",
+            "evidence_ids": [
+              "E1",
+              "E3"
+            ],
+            "reason": "Official 2026 award establishes assessment; 2025 testing tables on the reused page were not transferred to 2026."
+          },
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/bulk_results_followup_20261022_125913/CVPR/2026/general-ct-diagnosis-2026.json",
+          "source_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/bulk_user_review_20261022.txt"
+        },
+        {
+          "date": "2026-10-22",
+          "summary": "FlexiCT第二名不独立对应VLM适配赛道；继续不新增VQA、对话、报告生成标签。",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/round2_outcomes_20261022_133640/CVPR/2026/general-ct-diagnosis-2026.json"
+        }
+      ],
+      "field_evidence": {
+        "task_taxonomy.language_task_absence": {
+          "source_url": "https://www.codabench.org/competitions/12650/",
+          "local_snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/ct12650.json",
+          "reviewed_on": "2026-10-21",
+          "basis": "Official overview states all tasks are binary classifications; LP and EAO descriptions request CT features and classification, including the VL-model adaptation track."
+        }
+      }
+    },
+    "record_level": "challenge_track",
+    "scope_status": "core_medical_imaging",
+    "count_in_core_medical_imaging_review": true,
+    "count_in_edition_statistics": true,
+    "participant_method_evidence": [
+      {
+        "source_url": "https://kaiko.ai/insights-hub/cvpr-2026-ct-fm-challenge/",
+        "publication_date": "2026-07-22",
+        "reviewed_on": "2026-10-21",
+        "source_type": "participant-authored technical article",
+        "team": "fomofo (kaiko / Netherlands Cancer Institute)",
+        "edition_year": 2026,
+        "task": "Task 1, track 1: linear probing",
+        "method_summary": "Frozen TAP-CT and SPECTRE representations are combined through distillation and feature aggregation, followed by a linear classifier. SPECTRE contributes vision-language-aligned representations.",
+        "evaluated_output": "CT disease classification",
+        "reported_test_metrics": {
+          "balanced_accuracy": 0.654,
+          "AUROC": 0.714,
+          "runtime_seconds": 9.414
+        },
+        "result_scope": "Participant reports first place and provides a final-test results table; retained as participant-reported evidence, not a replacement for organizer ranking rules.",
+        "vision_language_interpretation": "Supports use of vision-language-aligned representations in a participant method. Does not independently establish execution or results of the separate vision-language embedding-aggregation track, or an explicit image-language evaluation endpoint.",
+        "snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/general_ct_kaiko_followup_20261021.json"
+      },
+      {
+        "source_type": "user-provided local participant manuscript",
+        "title": "Disease-Adaptive Multi-Representation Fusion for General CT Diagnosis",
+        "local_pdf": "CVPR/2026/15_Disease_Adaptive_Multi_Repr.pdf",
+        "reviewed_on": "2026-10-21",
+        "edition_year": 2026,
+        "track": "Vision-Only Embedding Aggregation Optimization",
+        "task": "Task 2",
+        "method": "DAMF combines global and spatial representations from a frozen CT-NEXUS vision-only encoder with disease-specific classification/fusion heads.",
+        "evaluated_output": "17 binary CT disease-classification targets",
+        "evaluation_phase": "Local development/validation split",
+        "reported_validation_metrics": {
+          "macro_balanced_accuracy": 0.7462,
+          "macro_AUROC": 0.7531
+        },
+        "source_locations": [
+          "p.1 abstract",
+          "p.5 sections 3.1–3.2",
+          "p.6 Table 1",
+          "p.7 closing paragraph"
+        ],
+        "limitations": "Table 1 explicitly distinguishes local development results from challenge rankings. Validation selected checkpoints and fusion weights; the closing paragraph explicitly does not infer an official test rank. No evidence for the separate vision-language track is supplied.",
+        "openreview_identity": "Not verified against KQhGnTPh60",
+        "snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/general_ct_damf_local_20261021.json"
+      },
+      {
+        "title": "MEDA: Metric-Conditioned Decision Adaptation for Multi-Target CT Recognition",
+        "authors": [
+          "Dharini Raghavan",
+          "Amritpal Singh",
+          "Anant Madabhushi"
+        ],
+        "source_type": "user-provided local manuscript; full text inspected",
+        "local_pdf": "CVPR/2026/10_MEDA_Metric_Conditioned_Dec.pdf",
+        "reviewed_on": "2026-10-21",
+        "model": "Merlin (identified through section 3.2 and reference 1)",
+        "pretraining": "Paired CT volumes, radiology reports and structured clinical supervision, as described in section 3.2.",
+        "evaluated_pipeline": "CT volume -> frozen volumetric representation -> target-specific classifier and decision threshold.",
+        "evaluated_output": "17 binary CT classification targets",
+        "language_use_scope": "Vision-language pretraining provenance; no explicit text input, text output or image-language endpoint described in the reported downstream evaluation.",
+        "track_identity": "Not explicitly stated in this PDF. Association with the CVPR 2026 submission is supplied by the user-pasted OpenReview venue context; a specific VLM track is not independently established.",
+        "evaluation_phase": "Validation and training-partition cross-validation",
+        "reported_validation_metrics": {
+          "mean_balanced_accuracy": 0.738,
+          "mean_AUROC": 0.746
+        },
+        "reported_cross_validation_metrics": {
+          "mean_balanced_accuracy": 0.672,
+          "mean_AUROC": 0.706
+        },
+        "validation_instance_scope": "1898 target-wise validation instances; not asserted to be 1898 unique patients or scans.",
+        "final_test_results_reported": false,
+        "source_locations": [
+          "pp.3–4 section 2.1 and Figure 1",
+          "p.6 sections 3.1–3.2",
+          "pp.7–8 Tables 1–3",
+          "p.11 conclusion and reference 1"
+        ],
+        "interpretation": "Confirms adaptation of a vision-language-pretrained representation for image classification at the participant-method level; does not establish completed assessment of an image-language capability or a specific final VLM-track result.",
+        "snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/general_ct_meda_local_20261021.json"
+      }
+    ],
+    "literature_review_leads": [
+      {
+        "title": "MEDA: Metric-Conditioned Decision Adaptation for Multi-Target CT Recognition",
+        "submission_number": 10,
+        "source_type": "reviewer descriptions in user-pasted OpenReview activity feed",
+        "reviewed_on": "2026-10-21",
+        "reported_model": "Frozen Merlin CT encoder, described by reviewers as a 3D vision-language model",
+        "reported_task": "17 binary CT classification targets",
+        "reported_phase": "validation",
+        "reported_validation_metrics": {
+          "mean_balanced_accuracy": 0.738,
+          "mean_AUROC": 0.746
+        },
+        "track_identity": "not established; pasted review explicitly notes missing track description",
+        "text_input_or_image_language_endpoint": "not established from pasted reviews",
+        "final_test_result": "not established from pasted reviews",
+        "status": "Original local PDF inspected: model and validation metrics verified; specific challenge track and final test assessment remain unestablished.",
+        "snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/general_ct_openreview_user_paste_20261021.json",
+        "original_paper_followup": {
+          "local_pdf": "CVPR/2026/10_MEDA_Metric_Conditioned_Dec.pdf",
+          "reviewed_on": "2026-10-21",
+          "snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/general_ct_meda_local_20261021.json"
+        }
+      }
+    ],
+    "assessment_evidence": {
+      "as_of_date": "2026-10-22",
+      "final_assessment_status": "confirmed",
+      "latest_documentary_followup": {
+        "reviewed_on": "2026-10-22",
+        "summary": "FlexiCT第二名不独立对应VLM适配赛道；继续不新增VQA、对话、报告生成标签。",
+        "source_urls": [
+          "https://github.com/ricklisz/FlexiCT/blob/main/readme.md"
+        ],
+        "evidence_ids": [
+          "E8"
+        ],
+        "details": {},
+        "user_material": "latex_sourcev2/data/evidence_reaudit_20261021/sources/batch_round2_user_20261022.txt",
+        "propagation_status": "Original JSON, audit, current CSV/Excel/reports updated; manuscript/figures/frozen release not regenerated."
+      },
+      "remaining_questions": [
+        "Final result of the specific VL adaptation track is not established in reviewed sources; whole-event completion remains confirmed. This is a nonblocking evidence note, not an unresolved task-category decision."
+      ]
+    },
+    "task_objective_review": {
+      "review_date": "2026-10-25",
+      "scope": "Targeted re-review of 49 editions already carrying an emerging-objective label",
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [
+        "Foundation models",
+        "VLM"
+      ],
+      "previous_task_families": [
+        "Classification"
+      ],
+      "previous_emerging_objectives": [
+        "Foundation models",
+        "VLM"
+      ],
+      "task_roles": {
+        "Classification": "Declared task output"
+      },
+      "note_zh": "图像分类输出，组织者分别规定视觉/视觉语言表征的线性探测及适配设置；保留 FM/VLM，不因输入或模型类型增计报告/VQA。",
+      "foundation_model_basis": "Organizer-defined pretraining, reusable representation or adaptation objective",
+      "text_output_rule": "Narrative report/caption distinct from VQA, prompt/question generation, finite-category classification and predefined clinical-field prediction",
+      "sources": [
+        {
+          "url": "https://www.codabench.org/api/competitions/12650/?format=api",
+          "local_source": "_collection/v4_20261003/sources/367c596f7e432ba8.json",
+          "sha256": "0307cb3a9d4e9e7ecfa9a571df364b1da7584fa7e0d8bfabdcdec0c848e33fe5"
+        },
+        {
+          "url": "https://fmv-cvpr26workshop.github.io/",
+          "local_source": "_collection/v4_20261003/sources/0a836807274c47c8.json",
+          "sha256": "2b6745b44403364b185c5298c97ba4ef2f28a22adcb8a6db2c56275f7a0e04ad"
+        }
+      ]
+    },
+    "review_coding": {
+      "task_families": [
+        "Classification"
+      ],
+      "emerging_objectives": [
+        "Foundation models",
+        "VLM"
+      ],
+      "task_objective_basis": "Source-linked 49-edition review, 2026-10-25; see task_objective_review"
+    },
+    "data_license_review": {
+      "review_date": "2026-10-25",
+      "review_cohort": "Previously reviewed 215",
+      "review_population": "Legacy 101 previously unestablished records",
+      "state": "Documented and classifiable",
+      "terms_documented": true,
+      "detail_level": "Substantive terms",
+      "licence_names": [
+        "Original-source licences; attribution required"
+      ],
+      "scope": "Official downstream dataset card; component-specific terms",
+      "agreement_required": null,
+      "summary_zh": "官方CodaBench记录直接链接该数据仓库。数据卡明确须保留原始来源署名并分别遵守COVID-CT、LUNA25、AMOS等来源条款；当前卡还列STOIC2021及其CC BY-NC 4.0。",
+      "qualifications": [
+        "按明确的来源许可遵循及署名要求计为已有使用条件；全部组件、预训练资源和比赛时版本尚未逐项核销，不采用统一CC BY-NC-SA。"
+      ],
+      "scoped_terms": [
+        {
+          "scope": "Official downstream dataset card; component-specific terms",
+          "text": "官方CodaBench记录直接链接该数据仓库。数据卡明确须保留原始来源署名并分别遵守COVID-CT、LUNA25、AMOS等来源条款；当前卡还列STOIC2021及其CC BY-NC 4.0。",
+          "text_type": "Reviewer paraphrase",
+          "source": {
+            "url": "https://www.codabench.org/api/competitions/12650/?format=api",
+            "local_source": "_collection/v4_20261003/sources/367c596f7e432ba8.json",
+            "evidence_type": "Official source"
+          }
+        },
+        {
+          "scope": "Official downstream dataset card; component-specific terms",
+          "text": "官方CodaBench记录直接链接该数据仓库。数据卡明确须保留原始来源署名并分别遵守COVID-CT、LUNA25、AMOS等来源条款；当前卡还列STOIC2021及其CC BY-NC 4.0。",
+          "text_type": "Reviewer paraphrase",
+          "source": {
+            "url": "https://huggingface.co/datasets/kmin06/CVPR26-3DCTFMCompetition/raw/main/README.md",
+            "local_source": "_collection/legacy_license_followup_20261025/sources/9f9679c933f5acfe.json",
+            "evidence_type": "Official source"
+          }
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.codabench.org/api/competitions/12650/?format=api",
+          "local_source": "_collection/v4_20261003/sources/367c596f7e432ba8.json",
+          "evidence_type": "Official source"
+        },
+        {
+          "url": "https://huggingface.co/datasets/kmin06/CVPR26-3DCTFMCompetition/raw/main/README.md",
+          "local_source": "_collection/legacy_license_followup_20261025/sources/9f9679c933f5acfe.json",
+          "evidence_type": "Official source"
+        }
+      ],
+      "substantive_terms_documented": true,
+      "search_attempts": [
+        {
+          "url": "https://fmv-cvpr26workshop.github.io/",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/0a836807274c47c8.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/kmin940/CVPR26-3DCTFMCompetition",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1474c06672ae1fed.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/ricklisz/FlexiCT/blob/main/readme.md",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/5b44acab11b794a8.json",
+          "status": 200
+        },
+        {
+          "url": "https://huggingface.co/datasets/kmin06/CVPR26-3DCTFMCompetition",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/ad10ab464e053eae.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/kmin940/CVPR26-3DCTFMCompetition/blob/main/download_data.sh",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/25281e58429dc094.json",
+          "status": 200
+        },
+        {
+          "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/1e460fb35d79919e.json",
+          "status": 200
+        },
+        {
+          "url": "https://github.com/ricklisz/FlexiCT/blob/main/LICENSE",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/b2ee0c2866171cc6.json",
+          "status": 200
+        },
+        {
+          "url": "https://huggingface.co/datasets/kmin06/CVPR26-3DCTFMCompetition#license-and-attribution",
+          "local_source": "_collection/legacy_license_audit_20261025/sources/22849fa76d8d1834.json",
+          "status": 200
+        }
+      ],
+      "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance.",
+      "evidence_basis": "Official rules, dataset metadata or organizer report",
+      "confidence": "High within stated data scope",
+      "previous_review": {
+        "review_date": "2026-10-25",
+        "review_cohort": "Previously reviewed 215",
+        "review_population": "Legacy 101 previously unestablished records",
+        "state": "Ambiguous",
+        "terms_documented": false,
+        "detail_level": "Scope applicability unresolved",
+        "licence_names": [],
+        "scope": "Declared edition-specific data-use terms; phase/task distinctions retained",
+        "agreement_required": null,
+        "summary_zh": "页面仅在数据征集部分列 CC BY-NC-SA，无法确认它覆盖本届实际参赛开发数据；不将贡献者要求当作全部训练数据许可。",
+        "qualifications": [],
+        "scoped_terms": [
+          {
+            "scope": "Official data/rules or dataset-report statement",
+            "text": "i-label\\n* Subject information (e.g., age, gender, final diagnosis): We don't require the patient information.\\n* Data format: NifTI for 3D images\\n* License: CC-BY-NC-SA license; The images will be publicly available to the community after the competition, but the ground truth is hidden on the challenge platform for long-term benchmarking. \\n* Data transmission method: Google Drive, OneDrive, et al. \\n* Others: The data should be not public yet since all the current public datasets are allowed for model training. Data contributors can participate in the challenge but are not eligible for awards. \\n\\nIf this opportunity interests you, please send an",
+            "source": {
+              "url": "https://www.codabench.org/api/competitions/12650/?format=api",
+              "local_source": "_collection/v4_20261003/sources/367c596f7e432ba8.json"
+            }
+          },
+          {
+            "scope": "Official data/rules or dataset-report statement",
+            "text": "formation (e.g., age, gender, final diagnosis): We don't require the patient information.\\n* Data format: NifTI for 3D images\\n* License: CC-BY-NC-SA license; The images will be publicly available to the community after the competition, but the ground truth is hidden on the challenge platform for long-term benchmarking. \\n* Data transmission method: Google Drive, OneDrive, et al. \\n* Others: The data should be not public yet since all the current public datasets are allowed for model training. Data contributors can participate in the challenge but are not eligible for awards. \\n\\nIf this opportunity interests you, please send an email to medseg20s@g",
+            "source": {
+              "url": "https://www.codabench.org/api/competitions/12650/?format=api",
+              "local_source": "_collection/v4_20261003/sources/367c596f7e432ba8.json"
+            }
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.codabench.org/api/competitions/12650/?format=api",
+            "local_source": "_collection/v4_20261003/sources/367c596f7e432ba8.json"
+          }
+        ],
+        "substantive_terms_documented": false,
+        "search_attempts": [
+          {
+            "url": "https://fmv-cvpr26workshop.github.io/",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/0a836807274c47c8.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/kmin940/CVPR26-3DCTFMCompetition",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/1474c06672ae1fed.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/ricklisz/FlexiCT/blob/main/readme.md",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/5b44acab11b794a8.json",
+            "status": 200
+          },
+          {
+            "url": "https://huggingface.co/datasets/kmin06/CVPR26-3DCTFMCompetition",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/ad10ab464e053eae.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/kmin940/CVPR26-3DCTFMCompetition/blob/main/download_data.sh",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/25281e58429dc094.json",
+            "status": 200
+          },
+          {
+            "url": "https://docs.github.com/site-policy/github-terms/github-terms-of-service",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/1e460fb35d79919e.json",
+            "status": 200
+          },
+          {
+            "url": "https://github.com/ricklisz/FlexiCT/blob/main/LICENSE",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/b2ee0c2866171cc6.json",
+            "status": 200
+          },
+          {
+            "url": "https://huggingface.co/datasets/kmin06/CVPR26-3DCTFMCompetition#license-and-attribution",
+            "local_source": "_collection/legacy_license_audit_20261025/sources/22849fa76d8d1834.json",
+            "status": 200
+          }
+        ],
+        "not_inferred": "No data rights inferred from software/article copyright, portal, registration, public downloads or other editions. Named licences describe declared terms, not independent legal clearance."
+      }
+    },
+    "resource_information_review": {
+      "reviewed_on": "2026-10-27",
+      "method": "All 337 canonical records reconciled; targeted re-reading of archived official material and additional source retrieval. See codebook and search log.",
+      "codebook": "latex_sourcev2/data/resource_information_update_20261027/codebook.txt",
+      "fields": {
+        "geography": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "post_challenge_resources": {
+          "state": "Not established",
+          "prior_narrow_state": "Not established",
+          "evidence": []
+        },
+        "reported_participation": {
+          "state": "Documented and classifiable",
+          "prior_narrow_state": "Not established",
+          "evidence": [
+            {
+              "kind": "Reported participants; unit/status qualified",
+              "summary": "Source-reported participation count; retain exact unit and scope instead of requiring a harmonized active-team definition.",
+              "url": "https://kaiko.ai/insights-hub/cvpr-2026-ct-fm-challenge/",
+              "snapshot": "latex_sourcev2/data/evidence_reaudit_20261021/sources/general_ct_kaiko_followup_20261021.json",
+              "scope": "No conversion of registered accounts or submission attempts into teams; reported team/participant definitions remain source-specific. Existing source-linked extraction reconciled in this update; source-reported participation does not establish independent validation of the reported number.",
+              "value": {
+                "source_reported_counts": [
+                  {
+                    "source_url": "https://kaiko.ai/insights-hub/cvpr-2026-ct-fm-challenge/",
+                    "publication_date": "2026-07-22",
+                    "reported_participants": 139,
+                    "open_validation_submissions": 209,
+                    "scope": "Participant article describes challenge context; participant unit and exact track coverage are not sufficiently specified for active-team statistics.",
+                    "interpretation": "Preserved separately from the earlier 148-account/203-submission platform snapshot; differing scope or dates are not reconciled by assumption."
+                  }
+                ]
+              },
+              "excerpt": "",
+              "snapshot_date": "2026-07-22",
+              "source_path": "CVPR/2026/general-ct-diagnosis-2026.json",
+              "source_field": "participation_statistics"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
