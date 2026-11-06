@@ -129,7 +129,7 @@ Paths in this table are relative to `challenge.current_inclusion_decision`.
 
 | Variable | Observed type | Definition |
 | --- | --- | --- |
-| `analysis_include` | boolean | Whether this record belongs to the 337-edition primary analytical subset. |
+| `analysis_include` | boolean | Whether this record belongs to the 342-edition primary analytical subset. |
 | `date` | string | Date attached to the enclosing source, event, review or decision; distinguish it from edition and acquisition dates. Unit/format: Date as recorded; retain incomplete dates and timezone qualifications. |
 | `decision_basis` | string | Evidence or reasoning supporting decision. |
 | `decision_date` | string | Date associated with decision. Unit/format: Date as recorded; retain incomplete dates and timezone qualifications. |
@@ -226,7 +226,7 @@ Paths in this table are relative to `challenge.expanded_inventory_inclusion`.
 
 | Variable | Observed type | Definition |
 | --- | --- | --- |
-| `analysis_include` | boolean | Whether this record belongs to the 337-edition primary analytical subset. |
+| `analysis_include` | boolean | Whether this record belongs to the 342-edition primary analytical subset. |
 | `decision_date` | string | Date associated with decision. Unit/format: Date as recorded; retain incomplete dates and timezone qualifications. |
 | `reason` | string | Reason for the enclosing decision, revision, exclusion or qualification. |
 

@@ -4,28 +4,36 @@
 
 Structured metadata for a landscape review of medical and biomedical imaging challenges. Records describe competition objectives, imaging tasks, clinical context, datasets, access conditions, submission and evaluation procedures, and documentary evidence.
 
-The analytical subset contains **337 challenge editions** from 2022–2026. This repository also preserves 15 records excluded from that subset and one legacy ACROBAT record, with their status made explicit in the index. It accompanies *Medical Imaging Challenges in the Foundation-Model Era: A Landscape Review of Emerging Paradigms and Future Directions*.
+The analytical subset contains **342 challenge editions** from 2022–2026. This repository also preserves 14 records excluded from that subset and one legacy ACROBAT record, with their status made explicit in the index. It accompanies *Medical Imaging Challenges in the Foundation-Model Era: A Landscape Review of Emerging Paradigms and Future Directions*.
 
-**Package snapshot: 30 October 2026.** This is the packaging date, not a new verification date for every source. Collection and review dates remain in individual records. This is a non-exhaustive landscape collection, not a census of all medical imaging competitions.
+**Package snapshot: 5 November 2026.** This is the packaging date, not a new verification date for every source. Collection and review dates remain in individual records. This is a non-exhaustive landscape collection, not a census of all medical imaging competitions.
+
+**Eligibility cutoff: 1 November 2026.** A qualifying imaging competition or dated algorithm-evaluation round is included when registration, challenge development-data access, or a submission phase had formally opened by this date. Final testing, results, and a conference presentation may occur later. Announcements alone and undated continuous benchmarks are insufficient. Restricted participation and evaluation of already-trained algorithms do not by themselves exclude a dated round. Organizer-designated competition years are retained where available; otherwise the participation-opening year is used, separately from the conference year.
+
+This update adds Light My Cells 2, LUNOVO26, COBRA and OWL to 2026, and PRISM-AI to 2025. Annual totals are **57 / 68 / 76 / 68 / 73**. COBRA is moved from excluded to included. The five records were source-checked on 3 November; the verification date is not backdated. OWL raises the emerging-objective subset to **62**, while established execution/outcome counts remain **57 / 55**. See `review/cutoff_update_20261101.json`.
+
+The release contains challenge metadata, indexes, variable documentation and review records. This local release has not been pushed to GitHub.
+
+Local repackaging on 5 November 2026 preserves the analytical population and original source-review dates. See [release notes](docs/RELEASE_20261105.md).
 
 ## Coverage and analytical units
 
 | Record group | Number | Location | Use in the review |
 | --- | ---: | --- | --- |
-| Included annual editions | 337 | `data/challenges/` | Primary analysis |
-| Excluded records in the current manifest | 15 | `data/excluded/` | Selection transparency; exclude from primary totals |
+| Included annual editions | 342 | `data/challenges/` | Primary analysis |
+| Excluded records in the current manifest | 14 | `data/excluded/` | Selection transparency; exclude from primary totals |
 | Legacy ACROBAT 2023 record | 1 | `data/legacy/` | Historical context only; outside the current manifest |
-| All individual challenge JSON files | **353** | All three directories | Filter by `analysis_include` before analysis |
+| All individual challenge JSON files | **357** | All three directories | Filter by `analysis_include` before analysis |
 
-The current manifest contains **352 dated records = 337 included + 15 excluded**. The legacy record is additional and must not be counted as another included edition. The manuscript's earlier screening ledger and undated contextual record describe a different stage of selection; this package is not a copy of all 383 screening entries.
+The current manifest contains **356 dated records = 342 included + 14 excluded**. The legacy record is additional and must not be counted as another included edition. The manuscript's earlier screening ledger and undated contextual record describe a different stage of selection; this package is not a copy of all 383 screening entries.
 
 | Edition year | 2022 | 2023 | 2024 | 2025 | 2026 | Total |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Included editions | 57 | 68 | 76 | 67 | 69 | **337** |
+| Included editions | 57 | 68 | 76 | 68 | 73 | **342** |
 
 An analytical unit is a challenge edition. Repeated annual editions can contribute separate units. Parent competitions and their separately represented constituent challenges are not counted twice. Task families are multi-label **edition-level** counts: an edition contributes once to each applicable family even if several tracks use that output. Track-level descriptions remain in `task_profile.tasks`.
 
-The included set contains 61 editions with at least one emerging AI objective and 93 edition–objective label assignments. The six overlapping labels are:
+The included set contains 62 editions with at least one emerging AI objective and 94 edition–objective label assignments. The six overlapping labels are:
 
 | Label in the analytical inventory | Editions |
 | --- | ---: |
@@ -38,11 +46,11 @@ The included set contains 61 editions with at least one emerging AI objective an
 
 These labels describe organizer-defined objectives. They do not establish that every associated assessment was executed or that the intended capability was demonstrated.
 
-Data entry points: [record index](data/index.json) for inclusion status and file paths; [analytical inventory](data/analysis_inventory.json) for the 337 included editions. Use the framework mappings and variable dictionary below to interpret the fields.
+Data entry points: [record index](data/index.json) for inclusion status and file paths; [analytical inventory](data/analysis_inventory.json) for the 342 included editions. Use the framework mappings and variable dictionary below to interpret the fields.
 
 ## Analytical frameworks and supporting variables
 
-The review uses two linked frameworks: the **six collection-wide dimensions in manuscript Table 1** describe all **337 included editions**, and the **seven capability-assessment fields** examine **61 editions with emerging AI objectives**, retaining **93 edition–objective records**. The six dimensions include an *Emerging AI objectives* dimension, whose six overlapping objective labels are listed above. The seven assessment fields apply to the full emerging-objective subset, including vision–language and reasoning objectives, rather than only the thirty foundation-model-oriented editions.
+The review uses two linked frameworks: the **six collection-wide dimensions in manuscript Table 1** describe all **342 included editions**, and the **seven capability-assessment fields** examine **62 editions with emerging AI objectives**, retaining **94 edition–objective records**. The six dimensions include an *Emerging AI objectives* dimension, whose six overlapping objective labels are listed above. The seven assessment fields apply to the full emerging-objective subset, including vision–language and reasoning objectives, rather than only the thirty foundation-model-oriented editions.
 
 The tables below map the manuscript's concepts to variables used to examine them. **`I.` means a row of `data/analysis_inventory.json`; `C.` means the `challenge` object inside an individual JSON.** These are shorthand prefixes for this documentation. A group name identifies its nested variables as well; `[]` denotes an array item. The mapping identifies supporting fields and their interpretation, not a requirement that every field be populated in every edition. Source records, review decisions and harmonized analytical categories retain their distinct roles.
 
@@ -61,7 +69,7 @@ The dedicated resource-policy analysis of thirty foundation-model-oriented editi
 
 ### Seven capability-assessment fields
 
-These fields follow the manuscript's *Emerging AI objectives and assessment evidence* methods and Supplementary Methods SM7. They connect an intended capability to an assessment and its supporting evidence. They are **analytical fields synthesized across sources**, not seven standardized keys present in every challenge JSON. The JSON paths below identify relevant source-level information; the separate focused-analysis ledgers supply the reconciled objective/component states.
+These fields follow the manuscript's *Emerging AI objectives and assessment evidence* methods and Supplementary Methods SM7. They connect an intended capability to an assessment and its supporting evidence. They are **analytical fields synthesized across sources**, not seven standardized keys present in every challenge JSON. The JSON paths below identify relevant source-level information. They do not by themselves reproduce the manuscript's component-level assessment counts.
 
 | Assessment field | Variables examined in this package | Evidence needed for the assessment interpretation |
 | --- | --- | --- |
@@ -73,18 +81,6 @@ These fields follow the manuscript's *Emerging AI objectives and assessment evid
 | **6. Execution evidence** | `C.assessment_evidence.execution_evidence[].task_id`, `C.assessment_evidence.execution_evidence[].phase`, `C.assessment_evidence.execution_evidence[].status`, `C.assessment_evidence.execution_evidence[].scope`, `C.assessment_evidence.execution_evidence[].source_url`, `C.evaluation.phase_execution_evidence`, `C.evaluation.final_assessment_evidence`. | Organizer or participant accounts, assessment records or explicit confirmations that the **same specified assessment** was performed. Preserve task/phase, qualifications and explicit non-implementation. Neither `I.completion_status` nor a protocol-only `I.final_inference_execution` classification establishes component execution. [Execution/outcome evidence](docs/variables/assessment-evidence.md). |
 | **7. Outcome evidence** | `C.assessment_evidence.outcome_evidence`, `C.assessment_evidence.track_results`, `C.assessment_evidence.award_outcomes`, `C.evaluation.tasks[].competition_outcome`, `C.evaluation.tasks[].outcome_evidence_ids`, `C.evaluation.tasks[].qualification`. | Scores, analytical findings, placements, task awards or directly confirmed results linked to the assessment. A combined score can support an explicitly included component without isolating its contribution. Detailed public component results are recorded separately; a paper in preparation or bare event-completion statement is insufficient. [Outcome variables](docs/variables/assessment-evidence.md); [task-level evaluation](docs/variables/evaluation.md). |
 
-### Focused-analysis ledger fields and package coverage
-
-The following files are in the **separate capability-evidence audit**, not in this metadata ZIP. Their names and columns are listed to make the manuscript-to-variable mapping explicit. A missing or empty `C.assessment_evidence` object in an individual JSON does not establish that the focused review found no evidence: that review also used the separate source catalog and ledgers. The exported JSON files alone do not reproduce the complete component-specific evidence counts in Figure 7.
-
-| Audit file and unit | Fields supporting the seven-item framework |
-| --- | --- |
-| `edition_evidence.csv` — 61 edition rows | `edition_id`, `year`, `objectives`, `intended_capability` document the intended capability; `evidence_scope`, `source_ids`, `review_date` and `review_method` preserve the interpretation and provenance. |
-| `objective_evidence.csv` — 93 edition–objective rows | `edition_id` and `objective` identify the linkage; `endpoint_state` and `specified` record assessment specification; `execution_state` and `executed` record execution; `outcome_state` and `outcome_information` record outcomes. `detailed_public_result_state`, `detailed_public_results`, `outcome_information_scope`, `scope` and `source_ids` preserve the narrower results category and evidence boundaries. |
-| `component_evidence.csv` — 305 edition–component rows | `assessment_component` identifies objective-linked assessment, grounding, human clinical expert assessment, clinical content/error assessment or independent-site/out-of-domain testing. `specification_state`/`specification_finding`, `execution_state`/`execution_finding` and `outcome_state`/`outcome_finding` record the separate evidence stages. `counted_specified`, `counted_executed`, `counted_outcome_information` and `counted_detailed_public_results` are aggregation flags. `detailed_public_result_state`, `outcome_information_type`, `outcome_information_scope`, `assessment_scope_and_rationale`, `source_ids`, `source_urls` and `review_date` preserve interpretation and source support. |
-
-The **305 rows = 61 editions × five assessment components** are documentary review records, not 305 executed assessments. The seven analytical fields yield five coverage rows in Figure 7: intended capability links the objective to its endpoint; clinical assessment separates into expert review and clinical content/error; execution and outcome evidence become separate stages for every component. Counts require a specified assessment and subsequent evidence for that same assessment, count each edition at most once per component, and do not establish complete coverage of every objective. The four documentary states are documented/classifiable, ambiguous, not established and not applicable; an explicit report of non-implementation is distinguished from missing evidence. These states are not an ordinal quality scale or a checklist required of every competition.
-
 ### Tracing a variable to its evidence
 
 For either framework, follow the edition identifier from the index to its individual record, then examine `C.provenance.field_evidence`, `C.provenance.sources[].url`, `C.provenance.sources[].type`, `C.provenance.sources[].supports`, `C.provenance.sources[].reviewed_on` and `C.provenance.sources[].qualification`, together with the relevant task/phase-specific sources and review rationale. `I.source_urls` supplies a compact source list. These fields identify what a source supports and the limits of that support; their presence alone does not establish verification or execution. See the [source and provenance definitions](docs/variables/sources-provenance.md).
@@ -95,7 +91,7 @@ For example, [VLM3D 2026](data/challenges/MICCAI/2026/vlm3d-2026.json) retains t
 
 Variable definitions are grouped into separate files. Click a group below to view its fields, observed types, meanings and scope. Each page identifies the JSON parent path and links back here. Start with [dictionary conventions](docs/variables/conventions.md) for array paths, units and missing-value interpretation.
 
-The [complete field CSV](docs/field_catalog.csv) also provides all **4,595 observed named property paths** across the records, index, analytical inventory and packaging-review metadata, including definitions, types, units/formats, examples and record-presence counts. These are nested property paths, not 4,595 independent analytical variables. Shared notes and collection-template fields have their own documentation below.
+The [complete field CSV](docs/field_catalog.csv) also provides all **5,085 observed named property paths** across the records, index, analytical inventory and packaging-review metadata, including definitions, types, units/formats, examples and record-presence counts. These are nested property paths, not 5,085 independent analytical variables. Shared notes and collection-template fields have their own documentation below.
 
 ### Individual challenge JSON variables
 
@@ -124,7 +120,7 @@ The [complete field CSV](docs/field_catalog.csv) also provides all **4,595 obser
 | --- | --- |
 | [Paths, types, units and missing values](docs/variables/conventions.md) | How to read all field definitions. |
 | [Record index](docs/variables/index.md) | Inclusion flags, edition identifiers, file paths and checksums. |
-| [Analytical inventory](docs/variables/analysis-inventory.md) | Harmonized variables for the 337 included editions and emerging-objective labels. |
+| [Analytical inventory](docs/variables/analysis-inventory.md) | Harmonized variables for the 342 included editions and emerging-objective labels. |
 | [Shared notes](docs/variables/shared-notes.md) | Definitions of the CN01–CN07 identifiers. |
 | [Collection template](docs/variables/collection-template.md) | Original template metadata, instructions and candidate-label fields. |
 | [Packaging review](docs/variables/packaging-review.md) | Per-record cleanup variables and audit-summary fields. |

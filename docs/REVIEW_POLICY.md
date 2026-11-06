@@ -27,3 +27,7 @@ Internal archive references are retained as provenance identifiers. Files from t
 - **Protocol and source scope:** initial submission rules, later operational arrangements, and edition-specific updates can differ. These are not interchangeable duplicate notes.
 
 `review/record_review.csv` gives one row per record and the number of cleanup actions, other remark fields, historical fields, archive references and workflow-language candidates. Candidate counts are inspection flags, not automatic deletion decisions. `review_summary.json` summarizes the audit. Detailed before/after values remain in the local packaging audit, outside this public-oriented package.
+
+## Participation-cutoff update, 3 November 2026
+
+The preceding cleanup audit describes the original 353-file package. The current package contains 357 indexed records (342 included, 14 excluded, one legacy). Four new records and the reinstated COBRA record were source-checked for participation opening by 1 November 2026. This is a substantive eligibility update, not merely a remark cleanup. Prior human-review claims apply to the original cohort; no independent human validation of the five supplemental records is claimed. Timetables are not treated as execution or outcome evidence.

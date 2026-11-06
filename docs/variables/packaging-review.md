@@ -31,7 +31,7 @@ These fields describe the documentation-cleanup audit, not the scientific evalua
 
 | Variable | Observed type | Definition |
 | --- | --- | --- |
-| `annual_analysis_counts` | object | Counts of included editions by calendar year, using the 337-edition analytical inventory. |
+| `annual_analysis_counts` | object | Counts of included editions by calendar year, using the 342-edition analytical inventory. |
 | `annual_analysis_counts.2022` | integer | Number of included analytical editions assigned to calendar year 2022. |
 | `annual_analysis_counts.2023` | integer | Number of included analytical editions assigned to calendar year 2023. |
 | `annual_analysis_counts.2024` | integer | Number of included analytical editions assigned to calendar year 2024. |
@@ -50,7 +50,7 @@ These fields describe the documentation-cleanup audit, not the scientific evalua
 | `files_with_workflow_candidates` | integer | Number of individual records containing text flagged as historical workflow language. |
 | `groups` | object | Counts of included, excluded and legacy individual records in the packaging summary. |
 | `groups.excluded` | integer | Number of records in the current manifest excluded from the primary analysis. |
-| `groups.included` | integer | Number of challenge records in the 337-edition primary analysis. |
+| `groups.included` | integer | Number of challenge records in the 342-edition primary analysis. |
 | `groups.legacy` | integer | Number of additional historical records outside the current manifest. |
 | `inventory_hash_differences` | array | Edition identifiers whose current source JSON checksum differs from the checksum stored in the original analytical inventory. |
 | `original_record_bytes` | integer | Combined byte size of the original individual challenge JSON files. |

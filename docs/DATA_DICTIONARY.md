@@ -33,7 +33,7 @@ Definitions are organized into the following thematic files. Each file preserves
 | --- | --- |
 | [Paths, types, units and missing values](variables/conventions.md) | How to read all field definitions. |
 | [Record index](variables/index.md) | Inclusion flags, edition identifiers, file paths and checksums. |
-| [Analytical inventory](variables/analysis-inventory.md) | Harmonized variables for the 337 included editions and emerging-objective labels. |
+| [Analytical inventory](variables/analysis-inventory.md) | Harmonized variables for the 342 included editions and emerging-objective labels. |
 | [Shared notes](variables/shared-notes.md) | Definitions of the CN01–CN07 identifiers. |
 | [Collection template](variables/collection-template.md) | Original template metadata, instructions and candidate-label fields. |
 | [Packaging review](variables/packaging-review.md) | Per-record cleanup variables and audit-summary fields. |

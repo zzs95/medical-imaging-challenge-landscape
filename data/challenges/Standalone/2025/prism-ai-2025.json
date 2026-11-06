@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.1",
+  "challenge": {
+    "challenge_id": "prism-ai-2025",
+    "challenge_name": "PRISM-AI Challenge: Mammography-based Breast Cancer Risk Prediction",
+    "year": 2025,
+    "event": {
+      "conference": "PRISM-AI research project; 2025 registration / 2026 evaluation",
+      "primary_statistical_affiliation": "Standalone"
+    },
+    "eligibility_review": {
+      "opening": "2025-12",
+      "opening_precision": "month; exact day not documented",
+      "eligibility_cutoff": "2026-11-01",
+      "review_date": "2026-11-03",
+      "status_at_cutoff": "Participation open or already under way; final outcomes not established in this review",
+      "rationale": "A bounded organized evaluation with registration closure, algorithm-submission deadline and common analysis plan qualifies even without a model-development phase. No official annual edition is specified; 2025 registration opening determines the analytical year, separately from 2026 assessment.",
+      "evidence": "Registration opened in December 2025 and closed in June 2026; debugging submissions opened on 4 August. The final test was postponed to 2 November, after the cutoff, so final execution and results are not counted. Existing algorithms predict five-year risk from mammograms, with discrimination, calibration and clinical-utility assessments.",
+      "limitation": "No prescribed training dataset. Example inputs are for format checking, not a supplied training cohort. The hidden evaluation cohort covers twenty Dutch screening units; source-cohort and primary-analysis quantities retain separate scopes. Participation rules alone do not establish a data-use licence."
+    },
+    "clinical_domain": {
+      "modality": [
+        "X-ray"
+      ],
+      "body_region": [
+        "Breast"
+      ],
+      "diseases": [
+        "Cancer"
+      ]
+    },
+    "task_profile": {
+      "task_families": [
+        "Prognosis"
+      ],
+      "emerging_objectives": []
+    },
+    "dataset": {
+      "reported_quantities": [
+        {
+          "split": "source cohort",
+          "value": 79736,
+          "unit": "women"
+        },
+        {
+          "split": "primary analysis cohort",
+          "value": 72076,
+          "unit": "women"
+        }
+      ],
+      "center_type": "Multi-center"
+    },
+    "data_access": {
+      "review_category": "Not applicable",
+      "data_use_terms_established": null
+    },
+    "submission": {
+      "platform": "Grand Challenge",
+      "scored_artifacts": [
+        "Containers / packaged algorithms"
+      ],
+      "final_inference_execution": "Organizer/platform-side inference",
+      "evidence_scope": "Specified protocol"
+    },
+    "assessment_evidence": {
+      "final_execution_established": null,
+      "final_outcomes_established": null,
+      "cutoff": "2026-11-01",
+      "scope": "Timetables and open phases do not establish assessment execution."
+    },
+    "provenance": {
+      "source_urls": [
+        "https://prisma24.grand-challenge.org/timeline/",
+        "https://prisma24.grand-challenge.org/prisma24/",
+        "https://prisma24.grand-challenge.org/data/",
+        "https://prisma24.grand-challenge.org/rules/"
+      ],
+      "reviewed_on": "2026-11-03",
+      "review_method": "Source-linked supplementary documentary review; prior-period start dates checked retrospectively."
+    }
+  }
+}

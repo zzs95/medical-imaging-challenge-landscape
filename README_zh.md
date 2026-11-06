@@ -4,28 +4,36 @@
 
 本数据包为医学及生物医学影像比赛的全景综述提供结构化元数据，记录比赛目标、影像任务、临床背景、数据集、访问条件、提交与评估流程，以及相关文档证据。
 
-分析子集包含 2022–2026 年的 **337 届比赛**。本仓库还保留了 15 条未纳入该子集的记录，以及 1 条 ACROBAT 历史记录，具体状态见索引。本数据包对应论文 *Medical Imaging Challenges in the Foundation-Model Era: A Landscape Review of Emerging Paradigms and Future Directions*。
+分析子集包含 2022–2026 年的 **342 届比赛**。本仓库还保留了 14 条未纳入该子集的记录，以及 1 条 ACROBAT 历史记录，具体状态见索引。本数据包对应论文 *Medical Imaging Challenges in the Foundation-Model Era: A Landscape Review of Emerging Paradigms and Future Directions*。
 
-**数据包快照：2026 年 10 月 30 日。** 这是打包日期；各来源的采集和审查日期保留在对应记录中，并不因本次打包而更新。本数据集属于非穷尽的全景性收集，并非所有医学影像比赛的完整普查。
+**数据包快照：2026 年 11 月 5 日。** 这是打包日期；各来源的采集和审查日期保留在对应记录中，并不因本次打包而更新。本数据集属于非穷尽的全景性收集，并非所有医学影像比赛的完整普查。
+
+**纳入截止：2026 年 11 月 1 日。** 符合影像范围的正式比赛或有明确轮次的算法评估，只要截至该日已开放报名、开发数据或提交阶段即可纳入；最终评估、结果公布和会议展示可在以后举行。仅有筹办公告及无明确轮次的持续基准不纳入。参与者范围受限、评估已有算法或没有开发阶段，不单独构成排除理由。优先保留组织者指定的比赛年度；未指定时按开放参与年份归属，会议年份另记。
+
+本次补入 Light My Cells 2、LUNOVO26、COBRA、OWL（2026）及 PRISM-AI（2025）。年度数量为 **57 / 68 / 76 / 68 / 73**。COBRA 从排除记录移入纳入清单；五项来源于11月3日核查，核查日期未回填为截止日期。新兴目标为 **62 届**，已建立的执行/结果证据仍为 **57 / 55**。详见 `review/cutoff_update_20261101.json`。
+
+本包包含比赛元数据、索引、变量说明和审查记录。本次只更新本地，未推送 GitHub。
+
+2026 年 11 月 5 日重新打包，分析样本及原始来源核查日期不变。见[本次更新说明](docs/RELEASE_20261105.md)。
 
 ## 数据范围与分析单位
 
 | 记录类别 | 数量 | 位置 | 在综述中的用途 |
 | --- | ---: | --- | --- |
-| 纳入分析的年度比赛 | 337 | `data/challenges/` | 主要分析 |
-| 当前清单中排除的记录 | 15 | `data/excluded/` | 保留筛选依据，不计入主要分析总数 |
+| 纳入分析的年度比赛 | 342 | `data/challenges/` | 主要分析 |
+| 当前清单中排除的记录 | 14 | `data/excluded/` | 保留筛选依据，不计入主要分析总数 |
 | ACROBAT 2023 历史记录 | 1 | `data/legacy/` | 历史背景，位于当前清单之外 |
-| 全部独立比赛 JSON 文件 | **353** | 上述三个目录 | 分析前按 `analysis_include` 筛选 |
+| 全部独立比赛 JSON 文件 | **357** | 上述三个目录 | 分析前按 `analysis_include` 筛选 |
 
-当前清单包含 **352 条有明确年份的记录 = 337 条纳入 + 15 条排除**。额外保留的历史记录不能作为另一届纳入比赛计数。论文早期筛选台账及其中未注明年份的背景记录属于另一个筛选阶段；本包并非全部 383 条筛选记录的副本。
+当前清单包含 **356 条有明确年份的记录 = 342 条纳入 + 14 条排除**。额外保留的历史记录不能作为另一届纳入比赛计数。论文早期筛选台账及其中未注明年份的背景记录属于另一个筛选阶段；本包并非全部 383 条筛选记录的副本。
 
 | 届次年份 | 2022 | 2023 | 2024 | 2025 | 2026 | 合计 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 纳入届数 | 57 | 68 | 76 | 67 | 69 | **337** |
+| 纳入届数 | 57 | 68 | 76 | 68 | 73 | **342** |
 
 分析单位为一届比赛，同一系列不同年度可分别计数。父比赛与单独列出的子比赛避免重复计数。任务族采用多标签的**届次级**统计：即使同一届有多个赛道产生相同输出，该届在相应任务族中也只计一次。赛道级描述保留在 `task_profile.tasks` 中。
 
-纳入子集中，61 届至少具有一个新兴 AI 目标，共形成 93 条届次—目标标签记录。六个可重叠的标签如下：
+纳入子集中，62 届至少具有一个新兴 AI 目标，共形成 94 条届次—目标标签记录。六个可重叠的标签如下：
 
 | 分析清单中的标签 | 届数 |
 | --- | ---: |
@@ -38,10 +46,10 @@
 
 这些标签描述组织者定义的目标，不代表每项相关评估都已执行或预期能力已得到证明。
 
-数据入口：[记录索引](data/index.json)提供纳入状态和文件路径；[分析清单](data/analysis_inventory.json)提供 337 届纳入比赛的统一分析变量。字段解释见下方框架对应表和变量字典。
+数据入口：[记录索引](data/index.json)提供纳入状态和文件路径；[分析清单](data/analysis_inventory.json)提供 342 届纳入比赛的统一分析变量。字段解释见下方框架对应表和变量字典。
 
 ## 论文分析框架与变量考证依据
-论文使用两个相互衔接的框架：Table 1 的**六类全局分析维度**覆盖全部 **337 届**；**七项能力评估条目**用于具有新兴 AI 目标的 **61 届**，保留 **93 条届次—目标记录**。六类全局维度中的“新兴 AI 目标”本身又包含六个可重叠的目标标签，见上表。七项条目覆盖基础模型、视觉—语言、推理等目标，并非仅针对 30 届基础模型导向比赛。
+论文使用两个相互衔接的框架：Table 1 的**六类全局分析维度**覆盖全部 **342 届**；**七项能力评估条目**用于具有新兴 AI 目标的 **62 届**，保留 **94 条届次—目标记录**。六类全局维度中的“新兴 AI 目标”本身又包含六个可重叠的目标标签，见上表。七项条目覆盖基础模型、视觉—语言、推理等目标，并非仅针对 30 届基础模型导向比赛。
 
 以下用 **`I.` 表示 `data/analysis_inventory.json` 中的一行，`C.` 表示单个比赛 JSON 内的 `challenge` 对象**。两者仅为说明中的缩写，不是额外 JSON 键。组名涵盖其嵌套字段，`[]` 表示列表元素。表中列出考证时使用的字段及解释规则，不要求每届比赛都有全部字段；原始信息、审查决策与统一分析标签分别解释。
 
@@ -60,7 +68,7 @@
 
 ### 七项能力评估条目
 
-本框架对应论文“Emerging AI objectives and assessment evidence”方法部分及补充方法 SM7。七项是跨来源综合得到的**分析条目**，不代表每个比赛 JSON 都有七个同名标准键。下表列出原始 JSON 的考证入口，专项账本则保留综合后的目标级和组件级状态。
+本框架对应论文“Emerging AI objectives and assessment evidence”方法部分及补充方法 SM7。七项是跨来源综合得到的**分析条目**，不代表每个比赛 JSON 都有七个同名标准键。下表列出原始 JSON 的考证入口；这些字段本身不构成论文组件级评估统计的完整复现依据。
 
 | 条目 | 纳入考证的包内变量 | 判断所需证据 |
 | --- | --- | --- |
@@ -72,18 +80,6 @@
 | **6. 执行证据（Execution evidence）** | `C.assessment_evidence.execution_evidence[].task_id`、`C.assessment_evidence.execution_evidence[].phase`、`C.assessment_evidence.execution_evidence[].status`、`C.assessment_evidence.execution_evidence[].scope`、`C.assessment_evidence.execution_evidence[].source_url`、`C.evaluation.phase_execution_evidence`、`C.evaluation.final_assessment_evidence`。 | 组织者或参赛者报告、评估记录或明确确认，须支持**同一已规定评估**实际执行。保留任务、阶段及限定，明确未执行与证据缺失分别记录。`I.completion_status` 全局完成状态或仅有方案依据的 `I.final_inference_execution` 最终推理分类不能替代组件执行证据。[执行与结果](docs/variables/assessment-evidence.md)。 |
 | **7. 结果证据（Outcome evidence）** | `C.assessment_evidence.outcome_evidence`、`C.assessment_evidence.track_results`、`C.assessment_evidence.award_outcomes`、`C.evaluation.tasks[].competition_outcome`、`C.evaluation.tasks[].outcome_evidence_ids`、`C.evaluation.tasks[].qualification`。 | 与该评估对应的分数、分析发现、名次、任务奖项或直接确认结果。组合分数可支持明确包含的组件，但不分离组件贡献；详细公开结果另行记录。论文筹备状态或笼统的比赛结束陈述不构成结果证据。[结果字段](docs/variables/assessment-evidence.md)；[任务级评估](docs/variables/evaluation.md)。 |
 
-### 专项账本字段与本包覆盖范围
-
-以下文件属于**独立的能力评估审查账本，未包含在本 ZIP 中**，在此列出列名用于说明论文框架的实际编码依据。单个 JSON 中 `C.assessment_evidence` 缺失或为空，不意味着专项审查没有找到证据；专项分析还使用单独的来源目录和账本。因此，仅靠本包 JSON 不能完整复现 Figure 7 的组件证据计数。
-
-| 专项文件与分析单位 | 对应字段 |
-| --- | --- |
-| `edition_evidence.csv`：61 条届次记录 | `edition_id`、`year`、`objectives`、`intended_capability`描述预期能力；`evidence_scope`、`source_ids`、`review_date`、`review_method`记录范围、来源和审查方法。 |
-| `objective_evidence.csv`：93 条届次—目标记录 | `edition_id`、`objective`建立目标关联；`endpoint_state`、`specified`表示评估规定；`execution_state`、`executed`表示执行；`outcome_state`、`outcome_information`表示结果。`detailed_public_result_state`、`detailed_public_results`、`outcome_information_scope`、`scope`、`source_ids`保留公开详细结果和证据范围。 |
-| `component_evidence.csv`：305 条届次—组件记录 | `assessment_component`标识目标相关、grounding、临床专家、临床内容/错误、独立机构/域外五类组件。`specification_state`/`specification_finding`、`execution_state`/`execution_finding`、`outcome_state`/`outcome_finding`分开记录三个证据阶段；`counted_specified`、`counted_executed`、`counted_outcome_information`、`counted_detailed_public_results`是汇总标志。`detailed_public_result_state`、`outcome_information_type`、`outcome_information_scope`、`assessment_scope_and_rationale`、`source_ids`、`source_urls`、`review_date`保留结果类别、判断理由及来源。 |
-
-**305 = 61 届 × 5 类组件**，表示文档审查记录数，不是执行了 305 次评估。七项条目对应 Figure 7 的五行覆盖统计：预期能力关联目标和终点，临床评估拆为人工专家与临床内容/错误，执行及结果作为每个组件的独立阶段。同一行须先有明确评估规定，后续证据须对应同一评估；每届在每个组件中最多计一次，不意味着其全部目标都已评估。四类文档状态为“已记录且可分类、含糊、未建立、不适用”；明确未执行与缺失证据分别记录。这些状态不构成质量等级，也不是每场比赛都必须具备的检查清单。
-
 ### 如何追溯考证依据
 
 从索引中的届次标识进入单个记录，再结合 `C.provenance.field_evidence`、`C.provenance.sources[].url`、`C.provenance.sources[].type`、`C.provenance.sources[].supports`、`C.provenance.sources[].reviewed_on`、`C.provenance.sources[].qualification`以及具体任务/阶段的来源和判断理由核对。`I.source_urls`提供精简来源列表。这些字段说明来源支持哪些陈述及其限制，字段存在本身不证明已经核实或实际执行。[来源与溯源说明](docs/variables/sources-provenance.md)。
@@ -94,7 +90,7 @@
 
 变量定义已按主题拆分为独立文件。点击下列分类可查看字段、实际类型、含义和适用范围。各页面标明 JSON 父路径，并提供返回 README 的链接。建议先查看[字典阅读规则](docs/variables/conventions.md)，了解列表路径、单位与缺失值的解释方式。
 
-[完整字段 CSV](docs/field_catalog.csv)包含独立比赛记录、索引、分析清单和打包审查元数据中 **4,595 个实际命名字段路径**的定义、类型、单位或格式、示例及记录出现次数。这些是嵌套字段路径，并非 4,595 个独立分析变量。公共备注和采集模板字段另有下方对应文档。
+[完整字段 CSV](docs/field_catalog.csv)包含独立比赛记录、索引、分析清单和打包审查元数据中 **5,085 个实际命名字段路径**的定义、类型、单位或格式、示例及记录出现次数。这些是嵌套字段路径，并非 5,085 个独立分析变量。公共备注和采集模板字段另有下方对应文档。
 
 ### 比赛 JSON 变量
 
@@ -123,7 +119,7 @@
 | --- | --- |
 | [路径、类型、单位与缺失值](docs/variables/conventions.md) | 各类字段定义的阅读规则。 |
 | [记录索引](docs/variables/index.md) | 纳入标志、届次标识、文件路径与校验值。 |
-| [统一分析变量](docs/variables/analysis-inventory.md) | 337 届纳入比赛的统一分析变量及新兴目标标签。 |
+| [统一分析变量](docs/variables/analysis-inventory.md) | 342 届纳入比赛的统一分析变量及新兴目标标签。 |
 | [公共备注](docs/variables/shared-notes.md) | CN01–CN07 标识对应的定义。 |
 | [共用采集规则](docs/variables/collection-template.md) | 原始模板元数据、填写规则及候选标签字段。 |
 | [打包审查变量](docs/variables/packaging-review.md) | 逐记录清理变量和审查汇总字段。 |

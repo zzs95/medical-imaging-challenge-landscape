@@ -1,0 +1,494 @@
+{
+  "schema_version": "1.2",
+  "release_format_version": "1.0",
+  "challenge": {
+    "challenge_id": "cobra-2026",
+    "challenge_name": "COBRA 2026: Cone-Beam CT Reconstruction for Radiation Therapy",
+    "full_name": "COBRA 2026: Cone-Beam CT Reconstruction for Radiation Therapy",
+    "year": 2026,
+    "event": {
+      "conference": "MIDL 2026 challenge introduction / MIDL 2027 final event",
+      "event_type": "conference_challenge",
+      "challenge_event_date": null,
+      "location": {
+        "city": null,
+        "country": null,
+        "venue": null,
+        "room": null
+      },
+      "workshop": {
+        "name": null,
+        "relationship": null,
+        "proceedings": null
+      },
+      "final_event_year": 2027,
+      "conference_relationship_review": {
+        "current_inventory_year": 2026,
+        "conference_assignment": "MIDL 2026 introduction / MIDL 2027 final event",
+        "relationship": "conference-linked challenge spanning years",
+        "status": "included_under_participation_open_cutoff",
+        "source_url": "https://cobra2026.grand-challenge.org/",
+        "existing_record": "MIDL/2026/cobra-2026.json",
+        "note_zh": "2026年7月开放参赛；按2026-11-01启动截止条件纳入。2027年最终活动不另计一届。"
+      }
+    },
+    "organizers": {
+      "institutions": [
+        "UMC Utrecht",
+        "LMU Munich",
+        "Université de Lyon",
+        "Skåne University Hospital",
+        "Medical University of Vienna",
+        "UAS Wiener Neustadt",
+        "Medical University of Graz",
+        "University of Cologne"
+      ],
+      "international": true
+    },
+    "clinical_domain": {
+      "modality": [
+        "CT"
+      ],
+      "submodality": [
+        "Cone-beam CT"
+      ],
+      "body_region": null,
+      "organ_system": null,
+      "organs_or_structures": null,
+      "diseases": null,
+      "clinical_context": null
+    },
+    "task_profile": {
+      "primary_task_family": "Reconstruction",
+      "secondary_task_families": null,
+      "tasks": [
+        {
+          "task_id": "task1",
+          "official_name": "Cone-beam CT reconstruction for radiation therapy",
+          "task_family": "Reconstruction",
+          "task_subtype": "projection-to-volume reconstruction",
+          "input": [
+            "CBCT projection measurements",
+            "Acquisition geometry"
+          ],
+          "optional_training_input": null,
+          "output": [
+            "3D CBCT reconstruction in Hounsfield units"
+          ],
+          "granularity": "voxel-level",
+          "clinical_goal": null
+        }
+      ],
+      "task_families": [
+        "Reconstruction"
+      ],
+      "emerging_objectives": []
+    },
+    "task_taxonomy": {
+      "segmentation": null,
+      "detection": null,
+      "classification": null,
+      "localization": null,
+      "registration": null,
+      "reconstruction": true,
+      "synthesis": null,
+      "enhancement": null,
+      "prognosis": null,
+      "report_generation": null,
+      "visual_question_answering": null,
+      "reasoning": null,
+      "agent": null
+    },
+    "labels_and_targets": {
+      "target_entity": null,
+      "label_semantics": null,
+      "fine_grained_anatomy": null,
+      "official_description": null,
+      "annotation_source": null,
+      "tasks": null,
+      "auxiliary_labels": null
+    },
+    "dataset": {
+      "source_type": "Routine clinical cone-beam CT",
+      "routine_clinical_practice": true,
+      "anonymized": null,
+      "ethical_approval": null,
+      "center_type": "Multi-center",
+      "multi_center": true,
+      "international": null,
+      "center_count": 6,
+      "institutions_description": null,
+      "population": {
+        "patient_count": null,
+        "study_count": null,
+        "scan_count": {
+          "value": null,
+          "approximate": null,
+          "raw_text": null
+        },
+        "train_count": null,
+        "validation_count": null,
+        "test_count": null
+      },
+      "modalities": [
+        "Cone-beam CT",
+        "Planning CT"
+      ],
+      "data_components": [
+        "Real and synthetic projections",
+        "Acquisition geometry",
+        "Original CBCT",
+        "Deformed planning CT"
+      ],
+      "collection_period": {
+        "start_year": null,
+        "end_year": null
+      },
+      "reported_quantities": null
+    },
+    "data_access": {
+      "is_public": false,
+      "access_status": "registration-and-approval-required",
+      "public_download": false,
+      "hosting": null,
+      "registration_required_for_challenge_participation": true,
+      "verified_grand_challenge_account_required_for_challenge": null,
+      "dua_required": null,
+      "open_use": null,
+      "attribution_required": null,
+      "commercial_use_allowed_without_permission": null,
+      "commercial_permission_required": null,
+      "redistribution_allowed": null,
+      "license_or_terms": null,
+      "access_after_challenge": null,
+      "review_category": "Individual authorization",
+      "data_use_terms_established": null
+    },
+    "data_usage_mode": {
+      "overall_paradigm": "hybrid",
+      "training": {
+        "paradigm": "data-to-model",
+        "training_data_downloadable": true
+      },
+      "testing": {
+        "paradigm": "model-to-data",
+        "test_data_visible_to_participants": false,
+        "server_side_inference": true,
+        "submission_artifact": "Docker container"
+      },
+      "external_data": {
+        "allowed": true,
+        "disclosure_required": true,
+        "policy": "Public external datasets and pretrained models available before 2026-07-13 may be used; private external CBCT data are prohibited."
+      }
+    },
+    "evaluation": {
+      "hidden_test_set": true,
+      "online_evaluation": true,
+      "platform": "Grand Challenge",
+      "tasks": [
+        {
+          "task_id": "task1",
+          "metrics": [
+            "MAE (HU)",
+            "PSNR",
+            "Normalized cross-correlation",
+            "Normalized mutual information",
+            "BiomedCLIP embedding cosine similarity",
+            "FlexiCT embedding cosine similarity"
+          ],
+          "ranking": "RankThenMean: patient-averaged metric ranks, mean within each of three metric groups, then equal-weight average over groups; synthetic-subset rank resolves ties."
+        }
+      ],
+      "cross_task_rule": null,
+      "validation_metrics": [
+        "MAE (HU)",
+        "PSNR",
+        "Normalized cross-correlation",
+        "Normalized mutual information"
+      ],
+      "protocol_status": "Planned final evaluation; not completed as of the metadata collection date."
+    },
+    "submission": {
+      "submission_type": "Validation predictions; hidden-test Docker container",
+      "platform": "Grand Challenge",
+      "runtime_limits": {
+        "max_processing_time_per_case_minutes": 20,
+        "max_ram_gb": 32,
+        "reserved_ram_gb": null,
+        "gpu": null,
+        "gpu_vram_gb": 16,
+        "max_gpus": 1
+      },
+      "submission_limits": {
+        "max_team_members": 5,
+        "validation_submissions_per_week": 3,
+        "preliminary_test_submissions_total": 5,
+        "final_test_submissions_total": 2,
+        "last_final_submission_counts": true
+      },
+      "task_outputs": null,
+      "scored_artifacts": [
+        "Containers / packaged algorithms",
+        "Prediction / result files"
+      ],
+      "final_inference_execution": "Organizer/platform-side inference",
+      "evidence_scope": "Specified protocol"
+    },
+    "schedule": {
+      "training_release": "2026-07-13",
+      "virtual_kickoff_revised": "2026-08-10",
+      "validation_start": "2026-12-01",
+      "validation_end": "2027-02-15",
+      "test_start": "2027-01-29",
+      "test_end": "2027-02-15",
+      "results_release": "2027-03-22",
+      "post_challenge_start": "2027-04-01",
+      "post_challenge_end": "2032-03-01",
+      "final_event_period": "May–July 2027; exact date not confirmed"
+    },
+    "publication": {
+      "challenge_results_manuscript_planned": true,
+      "top_teams_invited_to_challenge_manuscript": 3,
+      "separate_participant_publication_allowed_without_embargo": false,
+      "optional_workshop_submission": null,
+      "embargo_policy": "Six months from final event; waiver when citing the overview paper."
+    },
+    "participation_statistics": {
+      "registered_participants": 175,
+      "registered_teams": null,
+      "active_participants": null,
+      "active_teams": null,
+      "participants_with_submission": null,
+      "teams_with_submission": null,
+      "qualified_teams": null,
+      "finalist_teams": null,
+      "submissions": {
+        "directory_summary_submissions": null,
+        "total_submissions": null,
+        "by_task": null,
+        "by_phase": [
+          {
+            "phase": "Preliminary test",
+            "count": 0
+          },
+          {
+            "phase": "Test",
+            "count": 0
+          }
+        ]
+      },
+      "statistics_snapshot_date": "2026-10-03",
+      "statistics_status": "Pre-evaluation registration snapshot",
+      "notes": [
+        "Participants are account holders, not teams. Zero submissions precede the planned evaluation opening."
+      ]
+    },
+    "links": {
+      "official": "https://cobra2026.grand-challenge.org/",
+      "grand_challenge": "https://cobra2026.grand-challenge.org/",
+      "platform": null,
+      "dataset": null,
+      "github": "https://github.com/cobra-challenge-2026",
+      "challenge_paper": null
+    },
+    "notes": [
+      "The 2026 edition year denotes launch/introduction. Results and the final scientific event are scheduled in 2027; no completed-test outcomes are asserted.",
+      "The public dataset and submission pages require access; scan counts, acquisition dates and detailed dataset licensing remain unverified.",
+      "2026-11-03: reincluded under the participation-open cutoff; prior exclusion retained in provenance history."
+    ],
+    "provenance": {
+      "collection_date": "2026-10-03",
+      "last_verified": "2026-10-03",
+      "last_updated": "2026-10-22",
+      "collection_date_definition": "Date of web and literature metadata collection, not medical-image acquisition.",
+      "source_list": "challenge_list_other_platforms_22_26_v4.json",
+      "source_list_index": 110,
+      "source_list_index_base": 1,
+      "collection_status": "partially_verified",
+      "sources": [
+        {
+          "type": "Official organizer source",
+          "url": "https://cobra2026.grand-challenge.org/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/c4391cc03bc97bb4.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule",
+            "publication",
+            "organizers",
+            "participation_statistics"
+          ],
+          "snapshot_sha256": "91fa3c1da3ac176830d94c9c63f26c27a8cbb25ee3fb36485980c6ebb4bc58ed"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://cobra2026.grand-challenge.org/evaluation/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/fe88a495e786e2a2.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule",
+            "publication",
+            "organizers",
+            "participation_statistics"
+          ],
+          "snapshot_sha256": "7d20b9bec6486885d6d51328611f5ba5532e5284291d30d7e953641bc0da94da"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://cobra2026.grand-challenge.org/timetablerules/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/79ef8870ab225c41.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule",
+            "publication",
+            "organizers",
+            "participation_statistics"
+          ],
+          "snapshot_sha256": "8b31a8f2e4f049f79f53c33c57ca5c78bcfd19c8102f2d7648ecc44d74134e35"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://cobra2026.grand-challenge.org/organizers/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/36a74745ea2c4e05.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule",
+            "publication",
+            "organizers",
+            "participation_statistics"
+          ],
+          "snapshot_sha256": "f3294485e968d32ef7a8d677c723a733a2308e387d24429b04fabdd07ad07ed0"
+        },
+        {
+          "type": "Official organizer source",
+          "url": "https://cobra2026.grand-challenge.org/challenge/statistics/",
+          "retrieved_on": "2026-10-03",
+          "local_snapshot": "_collection/v4_20261003/sources/a387bbd1c3747615.json",
+          "supports": [
+            "task_profile",
+            "dataset",
+            "data_access",
+            "evaluation",
+            "submission",
+            "schedule",
+            "publication",
+            "organizers",
+            "participation_statistics"
+          ],
+          "snapshot_sha256": "a8ed41c11a8fa3e6e32da425c83e5603d0fe6f5794b44d616b08267ceda3370d"
+        }
+      ],
+      "unresolved_fields": [
+        "dataset.population.scan_count",
+        "data_access.dataset_license",
+        "event.final_event_date",
+        "dataset.population.patient_count",
+        "dataset.collection_period.start_year",
+        "data_access.license_or_terms",
+        "participation_statistics.registered_teams"
+      ],
+      "verification_policy": "Only edition-specific official evidence populates facts; unknown values remain null.",
+      "targeted_review_history": [
+        {
+          "date": "2026-10-21",
+          "scope": "User requested writing preceding documentary findings into the original challenge JSON",
+          "fields_updated": [
+            "event.conference_relationship_review",
+            "eligibility_review"
+          ],
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/cobra-2026.json",
+          "previous_sha256": "4494a59f391b315b8c21aa6fdd0dd6e868c7e0f96cc7b81914b62caa979441c3",
+          "previous_record_backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/canonical_followup_20261021_154948/MIDL/2026/cobra-2026.json",
+          "qualification": "Targeted documentary review; pending conference relationships remain unverified. No independent human double coding asserted. Aggregate outputs not rebuilt."
+        },
+        {
+          "date": "2026-10-22",
+          "action": "Propagate already authorized review decisions into original challenge JSON",
+          "changes": [
+            "count_in_edition_statistics=false; temporal exclusion made operational in canonical record",
+            "medical-imaging scope remains true because exclusion is temporal"
+          ],
+          "review_record": "latex_sourcev2/data/evidence_reaudit_20261021/records/cobra-2026.json",
+          "backup": "latex_sourcev2/data/evidence_reaudit_20261021/backups/canonical_decisions_sync_20261022_013012/MIDL/2026/cobra-2026.json",
+          "new_external_search": false,
+          "aggregate_rebuilt": false
+        },
+        {
+          "review_date": "2026-11-03",
+          "scope": "Reinclusion under participation-open cutoff",
+          "previous_eligibility_review": {
+            "value": "exclude_from_end_by_2026_analysis",
+            "reason": "Official final event has moved to MIDL 2027. Retain in screening/audit ledger, not silently count as a completed 2026 competition.",
+            "evidence_ids": [
+              "E1"
+            ],
+            "evidence_sources": [
+              {
+                "id": "E1",
+                "url": "https://cobra2026.grand-challenge.org/",
+                "location": "Challenge introduction",
+                "summary": "Current official description says final event is at MIDL 2027.",
+                "snapshot": "sources/direct_c4391cc03bc97b.json",
+                "retrieval_scope": "Retained original source or current official indexed/publisher result as specified; review date 2026-10-21"
+              }
+            ],
+            "aggregate_application_status": "Exclusion saved and canonical counting flag disabled; historical aggregate outputs not regenerated.",
+            "include_in_primary_analysis": false
+          },
+          "changes": [
+            "Participation opened 13 July 2026; 2027 final event no longer excludes this round.",
+            "Counts and figures rebuilt; no completed final outcome inferred."
+          ]
+        }
+      ],
+      "supplementary_source_urls": [
+        "https://cobra2026.grand-challenge.org/",
+        "https://cobra2026.grand-challenge.org/timetablerules/",
+        "https://cobra2026.grand-challenge.org/evaluation/"
+      ]
+    },
+    "record_level": "challenge_edition",
+    "scope_status": "core_medical_or_biomedical_imaging",
+    "count_in_core_medical_imaging_review": true,
+    "count_in_edition_statistics": true,
+    "eligibility_review": {
+      "opening": "2026-07-13",
+      "opening_precision": "registration and training phase",
+      "eligibility_cutoff": "2026-11-01",
+      "review_date": "2026-11-03",
+      "status_at_cutoff": "Participation open or already under way; final outcomes not established in this review",
+      "rationale": "Previously retained but excluded for a 2027 final event. Reincluded because registration/training opened in July 2026. One cross-year competition, not a separate 2027 analytical unit.",
+      "evidence": "Official timetable specifies registration/training release on 13 July 2026, validation in December and final test/results in 2027. Clinical projections from six centers are combined with synthetic data. Final test uses organizer/platform execution; validation prediction files are retained as a separate scoring artifact.",
+      "limitation": "Dataset quantity and acquisition countries were not established from reviewed sources. General discussion of thorax/pelvis artifacts does not identify the actual cohort anatomy. Existing registration-and-approval access coding is retained. Continued evaluation is a specified future phase, not an observed operational service.",
+      "value": "include_participation_open_by_cutoff",
+      "include_in_primary_analysis": true,
+      "aggregate_application_status": "342-edition local update rebuilt"
+    },
+    "assessment_evidence": {
+      "final_execution_established": null,
+      "final_outcomes_established": null,
+      "cutoff": "2026-11-01",
+      "scope": "Timetables and open phases do not establish assessment execution."
+    }
+  }
+}

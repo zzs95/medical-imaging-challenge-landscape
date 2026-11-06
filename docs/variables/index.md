@@ -7,7 +7,7 @@ These variables occur in each row of `data/index.json` and `data/index.csv`.
 
 | Variable | Observed type | Definition |
 | --- | --- | --- |
-| `analysis_include` | boolean | Whether this record belongs to the 337-edition primary analytical subset. |
+| `analysis_include` | boolean | Whether this record belongs to the 342-edition primary analytical subset. |
 | `challenge_name` | string | Recorded short or customary name of the competition edition. |
 | `edition_id` | string | Identifier of the analytical edition used to join the index, inventory and individual record. |
 | `exclusion_reason` | null / string | Recorded reason why the edition is outside the primary analytical subset. |
